@@ -3,10 +3,21 @@ h1 {
   margin-left: 20px;
 }
 
-p{
-  color: #e0e0eb;
+.fleft {
+  float: left;
 }
 
-img{
-  right: 20px;
+.fright {
+  float: right;
+}
+
+#main-header {
+  margin-top: 280px;
+  margin-left:40px;
+  font-size: 3.5em;
+}
+
+#img1{
+  margin-top:40px;
+  margin-right: 80px;
 }
