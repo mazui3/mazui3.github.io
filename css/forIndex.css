@@ -15,14 +15,14 @@ h1 {
   float: left;
 }
 
-.hidden{
+/* .hidden{
   display: none !important;
-}
+} */
 
 
 #main-header {
-  margin-top: 280px;
-  margin-left: 22%;
+  margin-top: 20%;
+  margin-left: 20%;
   font-size: 3.5em;
   position:relative;
 }
@@ -30,11 +30,5 @@ h1 {
 #img1{
   position:absolute;
   margin-top:3%;
-  margin-right: 8%;
-}
-
-#img2{
-  position:absolute;
-  margin-top: 400px;
-
+  margin-right: 9%;
 }
