@@ -11,17 +11,30 @@ h1 {
   float: right;
 }
 
+.fleft{
+  float: left;
+}
+
+.hidden{
+  display: none !important;
+}
+
+
 #main-header {
   margin-top: 280px;
-  margin-left: 25%;
+  margin-left: 22%;
   font-size: 3.5em;
+  position:relative;
 }
 
 #img1{
-  margin-top:40px;
-  margin-right: 80px;
+  position:absolute;
+  margin-top:3%;
+  margin-right: 8%;
 }
 
 #img2{
-  float: left;
+  position:absolute;
+  margin-top: 400px;
+
 }
