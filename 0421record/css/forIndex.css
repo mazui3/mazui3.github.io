@@ -1,6 +1,6 @@
 p{
   line-height: 160%;
-  color: #afafaf;
+  color: #84849B;
   margin-left: 5%;
   margin-top: 4%;
   margin-right:50%;
@@ -27,5 +27,5 @@ p{
   right: 18%;
   float:right;
   bottom : auto;
-  display: none;
+  /* display: none; */
 }
