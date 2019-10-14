@@ -13,7 +13,7 @@ h1 {
 
 #main-header {
   margin-top: 280px;
-  margin-left:40px;
+  margin-left: 25%;
   font-size: 3.5em;
 }
 
@@ -24,6 +24,4 @@ h1 {
 
 #img2{
   float: left;
-  margin-top:40px;
-  margin-right: 80px;
 }

@@ -6,30 +6,41 @@
   <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
 
   <meta charset = "UTF-8">
-  <title>index.html</title>
+  <title>Underlake Library</title>
   <link rel = "stylesheet"
    type = "text/css"
    href = "css/forIndex.css" />
+   <script src = "js/main.js">
+     document.getElementById("img2").style.display = "none";
+   </script>
+
+<link rel="icon" href="img/icon.png">
 
   </head>
 
+
   <body style="background-color:black;">
+
+<!--main-header-->
     <div data-aos="fade-up" data-aos-anchor=".other-element" data-aos-duration="1000">
-        <h1 id = "main-header" class = "fleft"> Wow... Many cools </h1>
+        <h1 id = "main-header" class = "fleft"> Let it be a title </h1>
     </div>
 
+<!--img1-->
       <div data-aos="fade-left" data-aos-duration="1000">
-        <img id = "img1" class = "fright" src="img/001.png" alt="?" height="650" width="560">
+        <img id = "img1" class = "fright" src="img/001.png" alt="?" height="650" width="560"/>
       </div>
 
-        <img id = "img2" scr="img/002.png" alt="0421record" height="300" width="300">
-
-
+<!--bottoms-->
+      <button id = "init" class = "0421record"/>
+      <img id = "img2" src="img/002.png" height="140" width="140"/>
 
     <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+
     <script>
       AOS.init();
     </script>
+
   </body>
 
 </html>
