@@ -1,11 +1,31 @@
 p{
   line-height: 160%;
-  color: #7575a3;
+  color: #afafaf;
   margin-left: 5%;
   margin-top: 4%;
   margin-right:50%;
 }
 
+.right {
+  float: right;
+}
+
 #first{
   margin-top: 20%;
+}
+
+#img2{
+  position: fixed;
+  top:60%;
+  right: 5%;
+  bottom: auto;
+}
+
+/* we set to none first */
+#menu {
+  position:fixed;
+  right: 18%;
+  float:right;
+  bottom : auto;
+  display: none;
 }
