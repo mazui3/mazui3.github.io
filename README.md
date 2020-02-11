@@ -1,5 +1,4 @@
-# mazuisan.github.io
+# mazui3.github.io
 
 #we welcome our new member goldenBigTree!
-#hello
-heelo
+#we change name from mazuisan.github.io to mazui3.github.io
