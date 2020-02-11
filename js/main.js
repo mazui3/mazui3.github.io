@@ -1,7 +1,7 @@
-// let b1 = document.getElementById("B1");
 
 
-
-document.getElementById("main-header").onclick = function () {
-   document.getElementById("img2").style.display="block";
+if((navigator.userAgent.match(/(phone|pad|pod|iPhone|iPod|ios|iPad|Android|Mobile|BlackBerry|IEMobile|MQQBrowser|JUC|Fennec|wOSBrowser|BrowserNG|WebOS|Symbian|Windows Phone)/i))) {
+    window.location.href = "";     //手机
+} else {
+    window.location.href = "";        //电脑
 }
