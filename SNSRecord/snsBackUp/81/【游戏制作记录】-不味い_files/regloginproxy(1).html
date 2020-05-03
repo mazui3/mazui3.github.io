@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<!-- saved from url=(0077)https://mazui3.lofter.com/html/reglogin/regloginproxy.html#operate=notlogined -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>proxy</title>
+<script>
+(function(){
+try{
+    var _operate = location.hash.replace(/#?operate=/, ''),
+        _topwindow = parent.parent;
+    
+    if(_operate=='refresh'){
+    	_topwindow.reload();
+    } else if(_operate=='open'){
+    	_topwindow.showRegLoginLayer();
+    } else if(_operate=='logined'){
+    	_topwindow.setLoginFlag(true);
+    } else if(_operate=='notlogined'){
+    	_topwindow.setLoginFlag(false);
+    } else if(_operate=='logined4control'){
+        _topwindow.setLoginFlag4Control(true);
+    } else if(_operate=='notlogined4control'){
+        _topwindow.setLoginFlag4Control(false);
+    }
+    
+}catch(ex){}
+})();
+</script>
+</head>
+<body>
+
+</body></html>
