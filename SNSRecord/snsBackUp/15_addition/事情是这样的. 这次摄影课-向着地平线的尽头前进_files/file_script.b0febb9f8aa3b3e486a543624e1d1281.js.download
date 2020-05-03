@@ -1,0 +1,64 @@
+$(document).ready(function () {
+	var isOldIE = function(){return $.browser.msie && $.browser.version.substr(0,1)<7;}();
+
+	$(".w-line .linel2").bind({
+		mouseover:function(){$("#about_btn .w-icn").css({"visibility":"visible","opacity":"1","filter":"alpha(opacity=100)"})},
+		mouseout:function(){$("#about_btn .w-icn").css({"visibility":"hidden","opacity":"0","filter":"alpha(opacity=0)"})},
+		click:function(){
+			$(".aboutcont").fadeToggle();
+			if ($(this).hasClass('linel2')) {
+				$(this).removeClass('linel2').addClass('linel');
+			} else {
+				$(this).removeClass('linel').addClass('linel2');
+			}
+		}
+	});
+    $('#aboutme_btn').click(function(){
+        $(".aboutcont").fadeToggle();
+        if ($(".w-line .more").hasClass('linel2')) {
+                $(".w-line .more").removeClass('linel2').addClass('linel');
+            } else {
+                $(".w-line .more").removeClass('linel').addClass('linel2');
+            }
+        return false;
+    });
+    $('#search_btn').click(function(){
+        $("#search_content").fadeToggle();
+        $("#search_content").find('input').focus();
+        return false;
+    });
+	$(".g-hd").bind({
+		mouseover:function(){$(this).addClass("j-hdhover");},
+		mouseout:function(){$(this).removeClass("j-hdhover");}
+	});					  
+	$(".m-about p").bind({
+		mouseover:function(){$(this).addClass("j-phover");},
+		mouseout:function(){$(this).removeClass("j-phover");}
+	});
+	if(isOldIE){
+		$(".m-post").bind({
+			mouseover:function(){$(this).addClass("j-pthover");},
+			mouseout:function(){$(this).removeClass("j-pthover");}
+		});
+	}
+    $(window).scroll(function() {
+        if($(window).scrollTop() >= $(window).height()) {
+            $('#gtotop').css('visibility', 'visible');
+        } else {
+            $('#gtotop').css('visibility', 'hidden');
+        }
+    });
+
+    if (!window.permalink) {
+        $('.posts').infinitescroll({
+            navSelector : "div.m-page",
+            nextSelector : "div.m-page a.next",
+            itemSelector : ".posts .m-post",
+            loading : {
+                speed : 1,
+                msgText  : "",
+                finishedMsg : ""
+            }
+        });
+    }
+});
