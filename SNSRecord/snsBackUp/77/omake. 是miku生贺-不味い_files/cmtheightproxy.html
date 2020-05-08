@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<!-- saved from url=(0055)http://mazui3.lofter.com/cmtheightproxy.html#height=694 -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>commentHeightIframeProxy</title>
+<script>
+(function(){
+try{
+	var _hash = location.hash;
+	var _isFirstClick = _hash.indexOf('&firstclick')>=0;
+	_hash = _hash.replace('&firstclick', '');
+    var height = _hash.replace(/#?height=/, ''),
+        iframe = parent.parent.document.getElementById('comment_frame');
+    iframe.setAttribute('height', height);
+    iframe.height = height;
+    if(!_isFirstClick) parent.parent.focus();
+    //parent.parent.document.getElementById('lofter_controls').style.zoom = '1';
+}catch(ex){}
+})();
+</script>
+</head>
+<body>
+
+</body></html>
