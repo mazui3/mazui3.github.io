@@ -1,7 +1,5 @@
 # mazui3.github.io
 
-# we welcome our new member goldenBigTree!
-
 # to do list
 这个主页是用于存放mazui3的原创设定集合地.
 
