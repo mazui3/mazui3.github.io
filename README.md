@@ -1,7 +1,7 @@
 # mazui3.github.io
 
 # to do list
-这个主页是用于存放mazui3的原创设定集合地.
+这个主页是用于存放mazui的原创设定集合地.
 
 
 发布日期:未确定
