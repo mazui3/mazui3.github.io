@@ -11,5 +11,4 @@
 预定做的:sns使用记录整理
 
 
-ig:mazui_3
-lofter+weibo:mazui3
+email:mazui.and.rio@gmail.com
