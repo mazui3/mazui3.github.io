@@ -1,4 +1,5 @@
-
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+/*
 .fleft {
   float: left;
 }
@@ -10,9 +11,23 @@
 .fleft{
   float: left;
 }
+*/
 
-.hidden{
-  display: none !important;
+.withImg{
+  position: absolute;
+  margin-left: 20%;
+}
+
+img:nth-of-type(1){
+    float: right;
+    position: absolute;
+    height : 218%;
+    width : 100%;
+}
+body{
+  margin: 0;
+  font-family: 'Ubuntu';
+
 }
 
 h1 {
@@ -22,11 +37,36 @@ h1 {
   margin-top: 28%;
   margin-left: 20%;
   position:relative;
+  float: left;
 }
 
+span{
+  width:100%;
+  background: pink;
+  display:block;
+  height: 3px;
+  position: relative;
+  margin-top: 20px;
+}
 
 #img1{
   position:absolute;
   margin-top:3%;
   margin-right: 9%;
 }
+
+h2 {
+  font-size: 3em;
+  max-width: 75vw;
+  color: #e0e0eb;
+  margin-left: 20%;
+  position:relative;
+}
+
+.selection{
+  margin-top: 100%;
+  color: pink;
+
+}
+
+section:nth-child(odd){}
