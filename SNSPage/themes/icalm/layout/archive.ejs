@@ -8,7 +8,7 @@
       })
   %>
   <% for (const y of Object.keys(years).reverse()) { %>
-    
+
     <%- partial('_partial/time-sec', { year: y, posts: years[y].reverse() }) %>
   <% } %>
 </div>
