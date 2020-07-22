@@ -1,0 +1,3 @@
+[submodule "SNSPage/themes/icalm/source/js/fancybox"]
+	path = SNSPage/themes/icalm/source/js/fancybox
+	url = https://github.com/fancyapps/fancybox.git

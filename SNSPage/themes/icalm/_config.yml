@@ -16,6 +16,7 @@ rss: /atom.xml
 # Content
 excerpt_link: Read On »
 
+
 # Will be shown on the bottom.
 ## To add new icon, just copy .svg to source/assets/ and add entries below.
 media:
