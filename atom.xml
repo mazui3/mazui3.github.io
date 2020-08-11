@@ -3,11 +3,11 @@
   <title></title>
   
   
-  <link href="https://mazui3.github.io/SNSPage/atom.xml" rel="self"/>
+  <link href="http://yoursite.com/atom.xml" rel="self"/>
   
-  <link href="https://mazui3.github.io/SNSPage/"/>
+  <link href="http://yoursite.com/"/>
   <updated>2020-08-11T16:30:45.088Z</updated>
-  <id>https://mazui3.github.io/SNSPage/</id>
+  <id>http://yoursite.com/</id>
   
   <author>
     <name>Mazui</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>制作记录_流落之所</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/08/02/P085/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/08/02/P085/</id>
+    <link href="http://yoursite.com/2020/08/02/P085/"/>
+    <id>http://yoursite.com/2020/08/02/P085/</id>
     <published>2020-08-02T21:34:47.000Z</published>
     <updated>2020-08-11T16:30:45.088Z</updated>
     
@@ -30,21 +30,21 @@
     
     
     
-    <category term="日记" scheme="https://mazui3.github.io/SNSPage/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
-    <category term="项目记录" scheme="https://mazui3.github.io/SNSPage/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>summer heat</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/07/10/P105/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/07/10/P105/</id>
+    <link href="http://yoursite.com/2020/07/10/P105/"/>
+    <id>http://yoursite.com/2020/07/10/P105/</id>
     <published>2020-07-11T01:25:35.000Z</published>
     <updated>2020-08-11T03:41:51.947Z</updated>
     
@@ -58,17 +58,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>来自U君的生日祝福</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/07/04/P102/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/07/04/P102/</id>
+    <link href="http://yoursite.com/2020/07/04/P102/"/>
+    <id>http://yoursite.com/2020/07/04/P102/</id>
     <published>2020-07-04T04:23:22.000Z</published>
     <updated>2020-08-11T01:47:01.646Z</updated>
     
@@ -83,17 +83,17 @@
     
     
     
-    <category term="朋友给的画" scheme="https://mazui3.github.io/SNSPage/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>miku和清早的红茶</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/04/28/P069/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/04/28/P069/</id>
+    <link href="http://yoursite.com/2020/04/28/P069/"/>
+    <id>http://yoursite.com/2020/04/28/P069/</id>
     <published>2020-04-28T18:26:42.000Z</published>
     <updated>2020-08-02T03:30:01.147Z</updated>
     
@@ -106,20 +106,20 @@
       
     
     
-    <content src="https://mazui3.github.io/SNSPage/images/posts/P069.png" type="image"/>
+    <content src="http://yoursite.com/images/posts/P069.png" type="image"/>
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="https://mazui3.github.io/SNSPage/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>p丸的兔子系列一周年</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/04/05/P070/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/04/05/P070/</id>
+    <link href="http://yoursite.com/2020/04/05/P070/"/>
+    <id>http://yoursite.com/2020/04/05/P070/</id>
     <published>2020-04-05T18:37:27.000Z</published>
     <updated>2020-08-02T03:29:55.250Z</updated>
     
@@ -133,17 +133,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="https://mazui3.github.io/SNSPage/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>前世是社畜的催稿天使</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/03/09/P086/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/03/09/P086/</id>
+    <link href="http://yoursite.com/2020/03/09/P086/"/>
+    <id>http://yoursite.com/2020/03/09/P086/</id>
     <published>2020-03-09T23:46:26.000Z</published>
     <updated>2020-08-03T00:54:39.827Z</updated>
     
@@ -157,17 +157,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>Hackathon记录_UnstressfulSpace</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/02/01/P067/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/02/01/P067/</id>
+    <link href="http://yoursite.com/2020/02/01/P067/"/>
+    <id>http://yoursite.com/2020/02/01/P067/</id>
     <published>2020-02-01T19:14:11.000Z</published>
     <updated>2020-08-02T03:31:09.480Z</updated>
     
@@ -182,19 +182,19 @@
     
     
     
-    <category term="日记" scheme="https://mazui3.github.io/SNSPage/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="项目记录" scheme="https://mazui3.github.io/SNSPage/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>些许回忆</title>
-    <link href="https://mazui3.github.io/SNSPage/2020/01/02/P082/"/>
-    <id>https://mazui3.github.io/SNSPage/2020/01/02/P082/</id>
+    <link href="http://yoursite.com/2020/01/02/P082/"/>
+    <id>http://yoursite.com/2020/01/02/P082/</id>
     <published>2020-01-02T22:27:55.000Z</published>
     <updated>2020-08-03T01:21:19.163Z</updated>
     
@@ -208,17 +208,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>2019的年终总结</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/12/30/P041/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/12/30/P041/</id>
+    <link href="http://yoursite.com/2019/12/30/P041/"/>
+    <id>http://yoursite.com/2019/12/30/P041/</id>
     <published>2019-12-30T20:21:32.000Z</published>
     <updated>2020-08-03T01:48:39.239Z</updated>
     
@@ -238,17 +238,17 @@
     
     
     
-    <category term="日记" scheme="https://mazui3.github.io/SNSPage/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>半梦半醒时会在厕所看到独角兽吗?</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/12/16/P047/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/12/16/P047/</id>
+    <link href="http://yoursite.com/2019/12/16/P047/"/>
+    <id>http://yoursite.com/2019/12/16/P047/</id>
     <published>2019-12-17T04:43:45.000Z</published>
     <updated>2020-08-03T01:46:38.079Z</updated>
     
@@ -263,17 +263,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>夜晚的涂鸦恶作剧</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/12/02/P040/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/12/02/P040/</id>
+    <link href="http://yoursite.com/2019/12/02/P040/"/>
+    <id>http://yoursite.com/2019/12/02/P040/</id>
     <published>2019-12-02T20:14:07.000Z</published>
     <updated>2020-08-01T00:47:17.543Z</updated>
     
@@ -287,17 +287,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>社交游戏和国际友人和扯淡</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/11/24/P068/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/11/24/P068/</id>
+    <link href="http://yoursite.com/2019/11/24/P068/"/>
+    <id>http://yoursite.com/2019/11/24/P068/</id>
     <published>2019-11-24T19:18:04.000Z</published>
     <updated>2020-08-02T03:30:15.423Z</updated>
     
@@ -314,14 +314,14 @@
     
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>无力感</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/10/06/P062/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/10/06/P062/</id>
+    <link href="http://yoursite.com/2019/10/06/P062/"/>
+    <id>http://yoursite.com/2019/10/06/P062/</id>
     <published>2019-10-06T17:19:15.000Z</published>
     <updated>2020-08-03T01:28:52.649Z</updated>
     
@@ -335,17 +335,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>GJ记录_U.N.OWEN.</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/09/30/P065/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/09/30/P065/</id>
+    <link href="http://yoursite.com/2019/09/30/P065/"/>
+    <id>http://yoursite.com/2019/09/30/P065/</id>
     <published>2019-09-30T17:44:54.000Z</published>
     <updated>2020-08-02T03:32:22.191Z</updated>
     
@@ -361,19 +361,19 @@
     
     
     
-    <category term="日记" scheme="https://mazui3.github.io/SNSPage/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="https://mazui3.github.io/SNSPage/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="项目记录" scheme="https://mazui3.github.io/SNSPage/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
   <entry>
     <title>侦探事务所的日常和DLC的解码</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/09/15/P061/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/09/15/P061/</id>
+    <link href="http://yoursite.com/2019/09/15/P061/"/>
+    <id>http://yoursite.com/2019/09/15/P061/</id>
     <published>2019-09-15T17:09:08.000Z</published>
     <updated>2020-08-02T03:36:01.063Z</updated>
     
@@ -387,17 +387,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="https://mazui3.github.io/SNSPage/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>来自朋友的阿怜世界旅行</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/09/11/P071/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/09/11/P071/</id>
+    <link href="http://yoursite.com/2019/09/11/P071/"/>
+    <id>http://yoursite.com/2019/09/11/P071/</id>
     <published>2019-09-11T18:41:23.000Z</published>
     <updated>2020-08-02T03:29:31.453Z</updated>
     
@@ -411,17 +411,17 @@
     
     
     
-    <category term="朋友给的画" scheme="https://mazui3.github.io/SNSPage/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="https://mazui3.github.io/SNSPage/tags/oc/"/>
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>侵略地球二人组</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/09/03/P066/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/09/03/P066/</id>
+    <link href="http://yoursite.com/2019/09/03/P066/"/>
+    <id>http://yoursite.com/2019/09/03/P066/</id>
     <published>2019-09-03T18:04:12.000Z</published>
     <updated>2020-08-03T01:28:38.889Z</updated>
     
@@ -436,15 +436,15 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>魔法少女雀雀</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/08/21/P081/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/08/21/P081/</id>
+    <link href="http://yoursite.com/2019/08/21/P081/"/>
+    <id>http://yoursite.com/2019/08/21/P081/</id>
     <published>2019-08-21T20:57:27.000Z</published>
     <updated>2020-08-03T01:25:39.201Z</updated>
     
@@ -458,15 +458,15 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
   </entry>
   
   <entry>
     <title>end roll of the lonely one</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/08/15/P107/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/08/15/P107/</id>
+    <link href="http://yoursite.com/2019/08/15/P107/"/>
+    <id>http://yoursite.com/2019/08/15/P107/</id>
     <published>2019-08-16T01:56:04.000Z</published>
     <updated>2020-08-11T02:01:37.737Z</updated>
     
@@ -481,17 +481,17 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="https://mazui3.github.io/SNSPage/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
   <entry>
     <title>miku与跟随她的</title>
-    <link href="https://mazui3.github.io/SNSPage/2019/07/31/P059/"/>
-    <id>https://mazui3.github.io/SNSPage/2019/07/31/P059/</id>
+    <link href="http://yoursite.com/2019/07/31/P059/"/>
+    <id>http://yoursite.com/2019/07/31/P059/</id>
     <published>2019-07-31T15:43:45.000Z</published>
     <updated>2020-08-03T01:44:58.943Z</updated>
     
@@ -509,10 +509,10 @@
     
     
     
-    <category term="画" scheme="https://mazui3.github.io/SNSPage/categories/%E7%94%BB/"/>
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="https://mazui3.github.io/SNSPage/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
