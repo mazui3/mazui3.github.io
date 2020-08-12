@@ -100,14 +100,56 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>是给一款叫做细胞神曲的rpg游戏画的同人.<br><a data-fancybox="gallery" href="P061_1.png"><img src="P061_1.png"></a><br>早晨和工作和热乎乎的红茶<br><br><br><a data-fancybox="gallery" href="P061_2.png"><img src="P062_1.png"></a><br>第一天就职与珍珠奶茶<br><a data-fancybox="gallery" href="P061_3.png"><img src="P061_3.png"></a><br><a data-fancybox="gallery" href="P061_4.png"><img src="P061_4.png"></a><br>做输入法而画的小q版.<br><br><br><br><br><br><br><br></p>
-<p>关于DLC最后ed出现的背景二进制数字.<br>弹幕已经有解密了,少了句话可能是被冲掉了…<br>这里记载一下解码的方法Zzz.<br>跟我熟的朋友知道我喜欢这种东西(忍不住,就是想写,原谅我).<br><br></p>
-<p>思路是这样.<br>这是组非常有规则的数字,每组都是8个数字.没有遮盖,很清楚,这时候想到说不定是可以解的东西.<br>up主桑有把”神”的解码写出来,是unicode.一般了解加密者的方法都是提示.</p>
-<p>从头开始.<br>8位的二进制.熟悉的朋友会想到是转成16进制很方便.<br>〇〇〇〇 ××××&lt;——这样的各式.前面4位对应一个数字,后面四位对应一个数字.合在一起就是16进制的数了.</p>
-<p>比如说0100是4.<br>1111是f(十进制的15).<br>那么01001111就是4f(十进制的79).<br>(便捷方法是因为16是2^4,可以用计算证明).</p>
-<p>第一组的8位二进制转换完是e7.<br>最初以为…每组代表了个字.所以e7对应了什么还有些犹豫…ascii最多到7f.</p>
-<p>插播一下ascii和unicode的事情…<br>我们所阅读的文字,英文,符号等等.是如何存储到电脑里的?<br>ascii,全程是American Standard Code for Information Interchange.<br>字面意思就是从普通的码到信息的转变(字符的转变).英文字母是可以用它来代表的.随着信息的更多…要兼容不同语言…我们的汉字甚至是颜表情(还种类超多)是用unicode来表示.<br>对照着这样我们的信息都可以转换成最后的0和1.<br>更多贴个科普合集,废话这么多会被人揍(dbq)…-&gt;【☆】<br><a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av21376839/">https://www.bilibili.com/video/av21376839/</a></p>
-<p>unicode的特征是e开头的6位.<br>所以转换完的前6位-&gt;e7b4b0,是【細】.<br>到这里明白方法是对的了.<br>接下来是苦力活.<br>在线的一个转换器-&gt;【☆】<br><a target="_blank" rel="noopener" href="https://so-zou.jp/web-app/text/encode-decode/">https://so-zou.jp/web-app/text/encode-decode/</a><br>(用英文怎么搜都搜不到果然还是得用日语搜啊…)</p>
+  <p>是给一款叫做细胞神曲的rpg游戏画的同人.</p>
+<img src="/2019/09/15/P061/P062_1.png" class="">
+<p>早晨和工作和热乎乎的红茶</p>
+<a id="more"></a>
+<br>
+<img src="/2019/09/15/P061/P062_2.png" class="">
+第一天就职与珍珠奶茶
+<br>
+<br>
+<br>
+<br>
+<br>
+<img src="/2019/09/15/P061/P062_3.png" class="">
+<img src="/2019/09/15/P061/P062_4.png" class="">
+做输入法而画的小q版.
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+<br>
+关于DLC最后ed出现的背景二进制数字.
+
+<p>弹幕已经有解密了,少了句话可能是被冲掉了…</p>
+<p>这里记载一下解码的方法Zzz.</p>
+<p>跟我熟的朋友知道我喜欢这种东西(忍不住,就是想写,原谅我).<br><br></p>
+<p>思路是这样.</p>
+<p>这是组非常有规则的数字,每组都是8个数字.没有遮盖,很清楚,这时候想到说不定是可以解的东西.</p>
+<p>up主桑有把”神”的解码写出来,是unicode.一般了解加密者的方法都是提示.</p>
+<p>从头开始.</p>
+<p>8位的二进制.熟悉的朋友会想到是转成16进制很方便.</p>
+<p>〇〇〇〇 ××××&lt;——这样的各式.前面4位对应一个数字,后面四位对应一个数字.合在一起就是16进制的数了.</p>
+<p>比如说0100是4.</p>
+<p>1111是f(十进制的15).</p>
+<p>那么01001111就是4f(十进制的79).</p>
+<p>(便捷方法是因为16是2^4,可以用计算证明).</p>
+<p>第一组的8位二进制转换完是e7.</p>
+<p>最初以为…每组代表了个字.所以e7对应了什么还有些犹豫…ascii最多到7f.</p>
+<p>插播一下ascii和unicode的事情…</p>
+<p>我们所阅读的文字,英文,符号等等.是如何存储到电脑里的?</p>
+<p>ascii,全程是American Standard Code for Information Interchange.</p>
+<p>字面意思就是从普通的码到信息的转变(字符的转变).英文字母是可以用它来代表的.随着信息的更多…要兼容不同语言…我们的汉字甚至是颜表情(还种类超多)是用unicode来表示.</p>
+<p>对照着这样我们的信息都可以转换成最后的0和1.</p>
+<p>更多贴个科普合集,废话这么多会被人揍(dbq)…-&gt;<a target="_blank" rel="noopener" href="https://www.bilibili.com/video/av21376839/">https://www.bilibili.com/video/av21376839/</a></p>
+<p>unicode的特征是e开头的6位.</p>
+<p>所以转换完的前6位-&gt;e7b4b0,是【細】.</p>
+<p>到这里明白方法是对的了.</p>
+<p>接下来是苦力活.<br>在线的一个转换器-&gt;<a target="_blank" rel="noopener" href="https://so-zou.jp/web-app/text/encode-decode/">https://so-zou.jp/web-app/text/encode-decode/</a></p>
+<p>(用英文怎么搜都搜不到果然还是得用日语搜啊…)</p>
 <p>e7b4b0 e8839e e7a59e e69bb2</p>
 <p>細胞神曲</p>
 <p>2d 43 6f 45 2d</p>
@@ -124,7 +166,13 @@
 <p>神が最初に仕組んだ戯曲であり、ハツトリを初鳥とされることでセオドアと因子づけられた、セオドアが干</p>
 <p>e6</p>
 <p>这里没有写完,最后剩下的是e6…干涉的涉unicode是【e6d89】.大概…是这样吧.<br>谢谢群里的大家揪了我的错.可能还有错,1和0看瞎我眼.</p>
-<p>满满的一页是两句话,可以看出二进制对于存储消息是很,占用面积大呢(???).<br><a data-fancybox="gallery" href="P061_5.png"><img src="P061_5.png"></a></p>
+<p>满满的一页是两句话,可以看出二进制对于存储消息是很,占用面积大呢(???).</p>
+
+<br>
+<br>
+<br>
+<br>
+<br>
  
       <!-- reward -->
       

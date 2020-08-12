@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-12T01:16:06.976Z</updated>
+  <updated>2020-08-12T20:31:35.229Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,10 +21,10 @@
     <link href="http://yoursite.com/2020/08/02/P085/"/>
     <id>http://yoursite.com/2020/08/02/P085/</id>
     <published>2020-08-02T21:34:47.000Z</published>
-    <updated>2020-08-12T01:16:06.976Z</updated>
+    <updated>2020-08-12T20:31:35.229Z</updated>
     
     
-    <summary type="html">&lt;p&gt;为[流落之所]制作过程的记录.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;为【流落之所】制作过程的记录.&lt;/p&gt;</summary>
     
     
     
@@ -44,16 +44,10 @@
     <link href="http://yoursite.com/2020/07/10/P105/"/>
     <id>http://yoursite.com/2020/07/10/P105/</id>
     <published>2020-07-11T01:25:35.000Z</published>
-    <updated>2020-08-11T03:41:51.947Z</updated>
+    <updated>2020-08-12T20:27:28.975Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P105.jpg&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2020/07/10/P105/P105.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -69,16 +63,10 @@
     <link href="http://yoursite.com/2020/07/04/P102/"/>
     <id>http://yoursite.com/2020/07/04/P102/</id>
     <published>2020-07-04T04:23:22.000Z</published>
-    <updated>2020-08-11T01:47:01.646Z</updated>
+    <updated>2020-08-12T20:26:40.689Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;&lt;p&gt;“ 你将自己推入的冒险 “&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P102_1.jpg&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;blockquote&gt;&lt;p&gt;“ 你将自己推入的冒险 “&lt;/p&gt;</summary>
     
     
     
@@ -94,19 +82,12 @@
     <link href="http://yoursite.com/2020/04/28/P069/"/>
     <id>http://yoursite.com/2020/04/28/P069/</id>
     <published>2020-04-28T18:26:42.000Z</published>
-    <updated>2020-08-02T03:30:01.147Z</updated>
+    <updated>2020-08-12T20:25:22.753Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P069.png&quot;&gt;&lt;img src=&quot;P069.png&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;今年份Forfange的miku投稿.&lt;br&gt;这次的题目是cozy at</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2020/04/28/P069/P069.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;今年份Forfange的miku投稿.&lt;/p&gt;</summary>
     
-    
-    <content src="http://yoursite.com/images/posts/P069.png" type="image"/>
     
     
     <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
@@ -121,16 +102,10 @@
     <link href="http://yoursite.com/2020/04/05/P070/"/>
     <id>http://yoursite.com/2020/04/05/P070/</id>
     <published>2020-04-05T18:37:27.000Z</published>
-    <updated>2020-08-02T03:29:55.250Z</updated>
+    <updated>2020-08-12T20:24:34.541Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P070.png&quot;&gt;&lt;img src=&quot;P070.png&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;我一个很喜欢的视频主做的神烦系列一周年了…&lt;br&gt;是个不可以带着脑子看的系列,但很解压.&lt;br&gt;【&lt;a</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2020/04/05/P070/P070.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -146,16 +121,10 @@
     <link href="http://yoursite.com/2020/03/09/P086/"/>
     <id>http://yoursite.com/2020/03/09/P086/</id>
     <published>2020-03-09T23:46:26.000Z</published>
-    <updated>2020-08-03T00:54:39.827Z</updated>
+    <updated>2020-08-12T20:23:58.444Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P086_1.jpeg&quot;&gt;&lt;img src=&quot;P086_1.jpeg&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P086_2.jpeg&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2020/03/09/P086/P086_1.jpeg&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -171,16 +140,10 @@
     <link href="http://yoursite.com/2020/02/01/P067/"/>
     <id>http://yoursite.com/2020/02/01/P067/</id>
     <published>2020-02-01T19:14:11.000Z</published>
-    <updated>2020-08-02T03:31:09.480Z</updated>
+    <updated>2020-08-12T20:22:58.073Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;这个学期的game</summary>
-        
-      
+    <summary type="html">&lt;p&gt;这个学期的game jam咕了.&lt;/p&gt;</summary>
     
     
     
@@ -198,16 +161,10 @@
     <link href="http://yoursite.com/2020/01/02/P082/"/>
     <id>http://yoursite.com/2020/01/02/P082/</id>
     <published>2020-01-02T22:27:55.000Z</published>
-    <updated>2020-08-03T01:21:19.163Z</updated>
+    <updated>2020-08-12T19:32:35.811Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P082_1.png&quot;&gt;&lt;img src=&quot;P082_1.png&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot;</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2020/01/02/P082/P082_1.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -223,22 +180,11 @@
     <link href="http://yoursite.com/2019/12/30/P041/"/>
     <id>http://yoursite.com/2019/12/30/P041/</id>
     <published>2019-12-30T20:21:32.000Z</published>
-    <updated>2020-08-03T01:48:39.239Z</updated>
+    <updated>2020-08-12T19:30:01.064Z</updated>
     
     
-      
-      
-        
-        
     <summary type="html">&lt;p&gt;年末总结.&lt;/p&gt;
-&lt;p&gt;这次是作为普通在他国学数学大学生的闲聊.&lt;br&gt;…毕竟这里是个生活博客嘛(再一次.&lt;/p&gt;
-&lt;br&gt;
-&lt;br&gt;
-&lt;br&gt;
-
-&lt;p&gt;翻了翻博客,这是第三篇了.&lt;br&gt;每年都觉得没有做太多的事情,但读上一年的总结文章,无论是语气还是思想都改变了不少.这</summary>
-        
-      
+&lt;p&gt;这次是作为普通在他国学数学大学生的闲聊.&lt;/p&gt;</summary>
     
     
     
@@ -254,16 +200,10 @@
     <link href="http://yoursite.com/2019/12/16/P047/"/>
     <id>http://yoursite.com/2019/12/16/P047/</id>
     <published>2019-12-17T04:43:45.000Z</published>
-    <updated>2020-08-03T01:46:38.079Z</updated>
+    <updated>2020-08-12T19:28:11.925Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P047.png&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/12/16/P047/P047.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -279,16 +219,10 @@
     <link href="http://yoursite.com/2019/12/02/P040/"/>
     <id>http://yoursite.com/2019/12/02/P040/</id>
     <published>2019-12-02T20:14:07.000Z</published>
-    <updated>2020-08-01T00:47:17.543Z</updated>
+    <updated>2020-08-12T19:27:17.697Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P040_1.png&quot;&gt;&lt;img src=&quot;P040_1.png&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P040_2.png&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/12/02/P040/P040_2.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -304,18 +238,10 @@
     <link href="http://yoursite.com/2019/11/24/P068/"/>
     <id>http://yoursite.com/2019/11/24/P068/</id>
     <published>2019-11-24T19:18:04.000Z</published>
-    <updated>2020-08-02T03:30:15.423Z</updated>
+    <updated>2020-08-12T19:25:17.972Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;这篇文章由19年退坑的笔记和17年刚入坑没多久的笔记构成,算是记录了抽卡游戏的记录.&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;/p&gt;
-&lt;p&gt;#2019&lt;br&gt;这里是里约的午后闲聊.&lt;/p&gt;
-&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot;</summary>
-        
-      
+    <summary type="html">&lt;p&gt;这篇文章由19年退坑的笔记和17年刚入坑没多久的笔记构成,算是记录了抽卡游戏的记录.&lt;/p&gt;</summary>
     
     
     
@@ -329,16 +255,10 @@
     <link href="http://yoursite.com/2019/10/06/P062/"/>
     <id>http://yoursite.com/2019/10/06/P062/</id>
     <published>2019-10-06T17:19:15.000Z</published>
-    <updated>2020-08-03T01:28:52.649Z</updated>
+    <updated>2020-08-12T19:21:35.565Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P062_1.png&quot;&gt;&lt;img src=&quot;P062_1.png&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P062_2.png&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;p&gt;(´・ω・｀)&lt;/p&gt;</summary>
     
     
     
@@ -354,17 +274,10 @@
     <link href="http://yoursite.com/2019/09/30/P065/"/>
     <id>http://yoursite.com/2019/09/30/P065/</id>
     <published>2019-09-30T17:44:54.000Z</published>
-    <updated>2020-08-02T03:32:22.191Z</updated>
+    <updated>2020-08-12T19:18:03.389Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;【游戏制作记录】&lt;br&gt;参加Game Jam Fall2019,48小时限制游戏制作的活动记录.&lt;/p&gt;
-&lt;p&gt;游戏名称: U.N.OWEN.&lt;br&gt;制作软件:</summary>
-        
-      
+    <summary type="html">&lt;p&gt;【游戏制作记录】&lt;br&gt;参加Game Jam Fall2019,48小时限制游戏制作的活动记录.&lt;/p&gt;</summary>
     
     
     
@@ -382,16 +295,12 @@
     <link href="http://yoursite.com/2019/09/15/P061/"/>
     <id>http://yoursite.com/2019/09/15/P061/</id>
     <published>2019-09-15T17:09:08.000Z</published>
-    <updated>2020-08-02T03:36:01.063Z</updated>
+    <updated>2020-08-12T19:08:41.906Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;是给一款叫做细胞神曲的rpg游戏画的同人.&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P061_1.png&quot;&gt;&lt;img src=&quot;P061_1.png&quot;&gt;&lt;/a&gt;&lt;br&gt;早晨和工作和热乎乎的红茶&lt;br&gt;&lt;br&gt;&lt;br&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;p&gt;是给一款叫做细胞神曲的rpg游戏画的同人.&lt;/p&gt;
+&lt;img src=&quot;/2019/09/15/P061/P062_1.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;早晨和工作和热乎乎的红茶&lt;/p&gt;</summary>
     
     
     
@@ -407,16 +316,10 @@
     <link href="http://yoursite.com/2019/09/11/P071/"/>
     <id>http://yoursite.com/2019/09/11/P071/</id>
     <published>2019-09-11T18:41:23.000Z</published>
-    <updated>2020-08-02T03:29:31.453Z</updated>
+    <updated>2020-08-12T19:03:30.848Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P071_1.jpg&quot;&gt;&lt;img src=&quot;P071_1.jpg&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P071_2.jpg&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/09/11/P071/P071_1.jpg&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -432,17 +335,10 @@
     <link href="http://yoursite.com/2019/09/03/P066/"/>
     <id>http://yoursite.com/2019/09/03/P066/</id>
     <published>2019-09-03T18:04:12.000Z</published>
-    <updated>2020-08-03T01:28:38.889Z</updated>
+    <updated>2020-08-12T19:00:14.907Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P066.png&quot;&gt;&lt;img src=&quot;P066.png&quot;&gt;&lt;/a&gt;&lt;/p&gt;
-&lt;div class=&quot;bili_video&quot;&gt;&lt;iframe</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/09/03/P066/P066.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -452,20 +348,34 @@
   </entry>
   
   <entry>
+    <title>miku与跟随她的</title>
+    <link href="http://yoursite.com/2019/08/31/P059/"/>
+    <id>http://yoursite.com/2019/08/31/P059/</id>
+    <published>2019-08-31T15:43:45.000Z</published>
+    <updated>2020-08-12T18:04:26.753Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2019/08/31/P059/P059.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;未来へ.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>魔法少女雀雀</title>
     <link href="http://yoursite.com/2019/08/21/P081/"/>
     <id>http://yoursite.com/2019/08/21/P081/</id>
     <published>2019-08-21T20:57:27.000Z</published>
-    <updated>2020-08-03T01:25:39.201Z</updated>
+    <updated>2020-08-12T18:06:24.880Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;雀雀是我的同校好战友.跟雀去学校的写生社团非常开心,这里是给雀画的她自设小动图.&lt;br&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P081_1.gif&quot;&gt;&lt;img src=&quot;P081_1.gif&quot;&gt;&lt;/a&gt;&lt;br&gt;&lt;a</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/08/21/P081/P081_1.gif&quot; class=&quot;&quot;&gt;</summary>
     
     
     
@@ -479,41 +389,10 @@
     <link href="http://yoursite.com/2019/08/15/P107/"/>
     <id>http://yoursite.com/2019/08/15/P107/</id>
     <published>2019-08-16T01:56:04.000Z</published>
-    <updated>2020-08-11T02:01:37.737Z</updated>
+    <updated>2020-08-12T18:05:13.886Z</updated>
     
     
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P107_2.jpeg&quot;&gt;&lt;img</summary>
-        
-      
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>miku与跟随她的</title>
-    <link href="http://yoursite.com/2019/07/31/P059/"/>
-    <id>http://yoursite.com/2019/07/31/P059/</id>
-    <published>2019-07-31T15:43:45.000Z</published>
-    <updated>2020-08-03T01:44:58.943Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a data-fancybox=&quot;gallery&quot; href=&quot;P059.png&quot;&gt;&lt;img</summary>
-        
-      
+    <summary type="html">&lt;img src=&quot;/2019/08/15/P107/P107_2.jpeg&quot; class=&quot;&quot;&gt;</summary>
     
     
     
