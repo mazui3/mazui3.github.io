@@ -1,6 +1,6 @@
 .sidebar {
-  left: -8rem;
-  width: 8rem;
+  left: -9rem;
+  width: 9rem;
 }
 .sidebar.on {
   left: 0;
@@ -9,15 +9,15 @@
   margin-left: 0 !important;
 }
 .navbar-toggle {
-  left: 9.5rem;
+  left: 10.5rem;
 }
 .search-form-wrap {
-  right: 8rem;
+  right: 9rem;
 }
 @media (min-width: 768px) {
   .outer,
   .wrap {
-    width: 80rem !important;
+    width: 72rem !important;
   }
 }
 @media (max-width: 768px) {
@@ -25,6 +25,6 @@
     display: none !important;
   }
   .content.on {
-    transform: translateX(8rem);
+    transform: translateX(9rem);
   }
 }
