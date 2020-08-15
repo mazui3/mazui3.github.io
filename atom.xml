@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-13T17:34:57.181Z</updated>
+  <updated>2020-08-15T14:53:57.489Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,51 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>什么竟然还有的奇奇怪怪作业</title>
+    <link href="http://yoursite.com/2020/08/15/P113/"/>
+    <id>http://yoursite.com/2020/08/15/P113/</id>
+    <published>2020-08-15T05:01:11.000Z</published>
+    <updated>2020-08-15T14:53:57.489Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;(´・д・｀)ﾔﾀﾞ&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="奇怪作业" scheme="http://yoursite.com/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>恭喜乔迁和欢迎光临</title>
+    <link href="http://yoursite.com/2020/08/13/P111/"/>
+    <id>http://yoursite.com/2020/08/13/P111/</id>
+    <published>2020-08-14T03:42:04.000Z</published>
+    <updated>2020-08-15T15:07:38.482Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;好久不见的杂谈.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>miku与交响乐</title>
     <link href="http://yoursite.com/2020/08/13/P110/"/>
     <id>http://yoursite.com/2020/08/13/P110/</id>
     <published>2020-08-13T17:27:18.000Z</published>
-    <updated>2020-08-13T17:34:57.181Z</updated>
+    <updated>2020-08-14T03:40:37.847Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/08/13/P110/P110_1.png&quot; class=&quot;&quot;&gt;</summary>
@@ -98,11 +138,30 @@
   </entry>
   
   <entry>
+    <title>老兔与丹与宾果的承诺</title>
+    <link href="http://yoursite.com/2020/07/04/P114/"/>
+    <id>http://yoursite.com/2020/07/04/P114/</id>
+    <published>2020-07-04T05:01:16.000Z</published>
+    <updated>2020-08-15T14:53:32.590Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;是给老兔的生日贺图,实际上做完是八月中旬的事了,就动用了时间魔法师的力量让生贺们整整齐齐(认罪).&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>来自U君的生日祝福</title>
     <link href="http://yoursite.com/2020/07/04/P102/"/>
     <id>http://yoursite.com/2020/07/04/P102/</id>
     <published>2020-07-04T04:23:22.000Z</published>
-    <updated>2020-08-13T17:30:17.858Z</updated>
+    <updated>2020-08-14T03:45:46.965Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;&lt;p&gt;“ 你将自己推入的冒险 “&lt;br&gt;&lt;img src=&quot;/2020/07/04/P102/P102_1.jpg&quot; class=&quot;&quot;&gt;&lt;/p&gt;</summary>
@@ -192,6 +251,25 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>来自大家的兄妹生日祝福</title>
+    <link href="http://yoursite.com/2020/01/03/P112/"/>
+    <id>http://yoursite.com/2020/01/03/P112/</id>
+    <published>2020-01-04T04:46:26.000Z</published>
+    <updated>2020-08-14T12:47:16.778Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/01/03/P112/P112_1.jpg&quot; class=&quot;&quot;&gt;</summary>
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
@@ -326,83 +404,6 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>侦探事务所的日常和DLC的解码</title>
-    <link href="http://yoursite.com/2019/09/15/P061/"/>
-    <id>http://yoursite.com/2019/09/15/P061/</id>
-    <published>2019-09-15T17:09:08.000Z</published>
-    <updated>2020-08-12T19:08:41.906Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;是给一款叫做细胞神曲的rpg游戏画的同人.&lt;/p&gt;
-&lt;img src=&quot;/2019/09/15/P061/P062_1.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;早晨和工作和热乎乎的红茶&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来自朋友的阿怜世界旅行</title>
-    <link href="http://yoursite.com/2019/09/11/P071/"/>
-    <id>http://yoursite.com/2019/09/11/P071/</id>
-    <published>2019-09-11T18:41:23.000Z</published>
-    <updated>2020-08-12T19:03:30.848Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2019/09/11/P071/P071_1.jpg&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>侵略地球二人组</title>
-    <link href="http://yoursite.com/2019/09/03/P066/"/>
-    <id>http://yoursite.com/2019/09/03/P066/</id>
-    <published>2019-09-03T18:04:12.000Z</published>
-    <updated>2020-08-12T19:00:14.907Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2019/09/03/P066/P066.png&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-  </entry>
-  
-  <entry>
-    <title>miku与跟随她的</title>
-    <link href="http://yoursite.com/2019/08/31/P059/"/>
-    <id>http://yoursite.com/2019/08/31/P059/</id>
-    <published>2019-08-31T15:43:45.000Z</published>
-    <updated>2020-08-12T22:37:23.649Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2019/08/31/P059/P059.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;未来へ.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
