@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-15T14:53:57.489Z</updated>
+  <updated>2020-08-15T15:27:13.370Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/08/15/P113/"/>
     <id>http://yoursite.com/2020/08/15/P113/</id>
     <published>2020-08-15T05:01:11.000Z</published>
-    <updated>2020-08-15T14:53:57.489Z</updated>
+    <updated>2020-08-15T15:27:13.370Z</updated>
     
     
     <summary type="html">&lt;p&gt;(´・д・｀)ﾔﾀﾞ&lt;/p&gt;</summary>
@@ -76,29 +76,6 @@
   </entry>
   
   <entry>
-    <title>制作记录_流落之所</title>
-    <link href="http://yoursite.com/2020/08/02/P085/"/>
-    <id>http://yoursite.com/2020/08/02/P085/</id>
-    <published>2020-08-02T21:34:47.000Z</published>
-    <updated>2020-08-12T21:12:55.585Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;为【流落之所】制作过程的记录.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
     <title>summer heat</title>
     <link href="http://yoursite.com/2020/07/10/P105/"/>
     <id>http://yoursite.com/2020/07/10/P105/</id>
@@ -142,7 +119,7 @@
     <link href="http://yoursite.com/2020/07/04/P114/"/>
     <id>http://yoursite.com/2020/07/04/P114/</id>
     <published>2020-07-04T05:01:16.000Z</published>
-    <updated>2020-08-15T14:53:32.590Z</updated>
+    <updated>2020-08-15T15:25:29.572Z</updated>
     
     
     <summary type="html">&lt;p&gt;是给老兔的生日贺图,实际上做完是八月中旬的事了,就动用了时间魔法师的力量让生贺们整整齐齐(认罪).&lt;/p&gt;</summary>
@@ -404,6 +381,27 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>侦探事务所的日常和DLC的解码</title>
+    <link href="http://yoursite.com/2019/09/15/P061/"/>
+    <id>http://yoursite.com/2019/09/15/P061/</id>
+    <published>2019-09-15T17:09:08.000Z</published>
+    <updated>2020-08-12T19:08:41.906Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;是给一款叫做细胞神曲的rpg游戏画的同人.&lt;/p&gt;
+&lt;img src=&quot;/2019/09/15/P061/P062_1.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;早晨和工作和热乎乎的红茶&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
