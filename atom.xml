@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-08-15T15:27:13.370Z</updated>
+  <updated>2020-09-02T14:20:21.767Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,24 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给U君的口信2</title>
+    <link href="http://yoursite.com/2020/09/01/P115/"/>
+    <id>http://yoursite.com/2020/09/01/P115/</id>
+    <published>2020-09-02T01:49:01.000Z</published>
+    <updated>2020-09-02T14:20:21.767Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/09/01/P115/P115.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;今年就写在博客这里吧.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>什么竟然还有的奇奇怪怪作业</title>
@@ -381,27 +399,6 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>侦探事务所的日常和DLC的解码</title>
-    <link href="http://yoursite.com/2019/09/15/P061/"/>
-    <id>http://yoursite.com/2019/09/15/P061/</id>
-    <published>2019-09-15T17:09:08.000Z</published>
-    <updated>2020-08-12T19:08:41.906Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;是给一款叫做细胞神曲的rpg游戏画的同人.&lt;/p&gt;
-&lt;img src=&quot;/2019/09/15/P061/P062_1.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;早晨和工作和热乎乎的红茶&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
   </entry>
   
