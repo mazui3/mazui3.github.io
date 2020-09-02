@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-02T15:09:29.404Z</updated>
+  <updated>2020-09-02T15:17:21.844Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -18,13 +18,13 @@
   
   <entry>
     <title>给U君的口信2</title>
-    <link href="http://yoursite.com/2020/09/01/P115/"/>
-    <id>http://yoursite.com/2020/09/01/P115/</id>
-    <published>2020-09-02T01:49:01.000Z</published>
-    <updated>2020-09-02T15:09:29.404Z</updated>
+    <link href="http://yoursite.com/2020/09/03/P115/"/>
+    <id>http://yoursite.com/2020/09/03/P115/</id>
+    <published>2020-09-03T04:00:00.000Z</published>
+    <updated>2020-09-02T15:17:21.844Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;/2020/09/01/P115/P115.png&quot; class=&quot;&quot;&gt;
+    <summary type="html">&lt;img src=&quot;/2020/09/03/P115/P115.png&quot; class=&quot;&quot;&gt;
 &lt;p&gt;今年就写在博客这里吧.&lt;/p&gt;</summary>
     
     
