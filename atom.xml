@@ -35,6 +35,25 @@
   </entry>
   
   <entry>
+    <title>夜晚</title>
+    <link href="http://yoursite.com/2020/08/17/P116/"/>
+    <id>http://yoursite.com/2020/08/17/P116/</id>
+    <published>2020-08-17T15:18:28.000Z</published>
+    <updated>2020-09-02T15:22:30.385Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/08/17/P116/P116.png&quot; class=&quot;&quot;&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
+    
+  </entry>
+  
+  <entry>
     <title>什么竟然还有的奇奇怪怪作业</title>
     <link href="http://yoursite.com/2020/08/15/P113/"/>
     <id>http://yoursite.com/2020/08/15/P113/</id>
@@ -378,27 +397,6 @@
     
     
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>GJ记录_U.N.OWEN.</title>
-    <link href="http://yoursite.com/2019/09/30/P065/"/>
-    <id>http://yoursite.com/2019/09/30/P065/</id>
-    <published>2019-09-30T17:44:54.000Z</published>
-    <updated>2020-08-12T19:18:03.389Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;【游戏制作记录】&lt;br&gt;参加Game Jam Fall2019,48小时限制游戏制作的活动记录.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
