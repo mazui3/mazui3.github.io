@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-06T13:21:05.082Z</updated>
+  <updated>2020-09-08T05:00:08.976Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,31 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>世界的图书馆管理员和画到一半的阿怜</title>
+    <link href="http://yoursite.com/2020/09/08/P118/"/>
+    <id>http://yoursite.com/2020/09/08/P118/</id>
+    <published>2020-09-08T04:27:18.000Z</published>
+    <updated>2020-09-08T05:00:08.976Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/09/08/P118/P118_2.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;世界的图书馆管理员.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>温度</title>
     <link href="http://yoursite.com/2020/09/05/P117/"/>
     <id>http://yoursite.com/2020/09/05/P117/</id>
     <published>2020-09-05T19:08:19.000Z</published>
-    <updated>2020-09-06T13:21:05.082Z</updated>
+    <updated>2020-09-08T04:50:40.050Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/09/05/P117/P117.png&quot; class=&quot;&quot;&gt;</summary>
@@ -380,23 +400,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>社交游戏和国际友人和扯淡</title>
-    <link href="http://yoursite.com/2019/11/24/P068/"/>
-    <id>http://yoursite.com/2019/11/24/P068/</id>
-    <published>2019-11-24T19:18:04.000Z</published>
-    <updated>2020-08-12T19:25:17.972Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这篇文章由19年退坑的笔记和17年刚入坑没多久的笔记构成,算是记录了抽卡游戏的记录.&lt;/p&gt;</summary>
-    
-    
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
