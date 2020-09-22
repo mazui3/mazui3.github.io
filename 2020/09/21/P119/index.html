@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">619</span>
+            <span class="post-count">630</span>
         </span>
     </span>
 
@@ -100,10 +100,10 @@
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>使用语言C++.</p>
+  <p>使用语言C++14.</p>
 <a id="more"></a>
 <p>这个小代码里有些功能是想拓展的但没有写.</p>
-<p>现在的功能是配备一份name.txt的文件.里面是每行一个@name的格式.</p>
+<p>现在的功能是配备一份names.txt的文件.里面是每行一个@name的格式.</p>
 <p>在run这个程序的时候,输入任何不是@的字符就会开始抽奖.</p>
 <p>很久之前写的,也比较乱.但问题是有段日子没有写C++了…重新捡起来需要点时间.</p>
 <br>
@@ -115,14 +115,14 @@
 <br>
 <br>
 <br>
-复录:Makefile.
+复录:Makefile.这次不需要使用.
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">CXX &#x3D; g++</span><br><span class="line">CXXFLAGS &#x3D; -std&#x3D;c++14 -Wall -Werror&#x3D;vla -MMD -L&#x2F;usr&#x2F;X11&#x2F;lib</span><br><span class="line">EXEC &#x3D; nameOfTheProject</span><br><span class="line">OBJECTS &#x3D; main.o sub.o</span><br><span class="line">DEPENDS &#x3D; $&#123;OBJECTS:.o&#x3D;.d&#125;</span><br><span class="line"></span><br><span class="line">$&#123;EXEC&#125;: $&#123;OBJECTS&#125;</span><br><span class="line">        $&#123;CXX&#125; $&#123;CXXFLAGS&#125; $&#123;OBJECTS&#125; -o $&#123;EXEC&#125;  -lX11</span><br><span class="line"></span><br><span class="line">-include $&#123;DEPENDS&#125;</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">        rm $&#123;OBJECTS&#125; $&#123;EXEC&#125; $&#123;DEPENDS&#125;</span><br><span class="line">.PHONY: clean</span><br></pre></td></tr></table></figure>
 <br>
 <br>
 <br>
 <br>
-再复录:试图唤醒沉睡的记忆.
+再复录:compile代码,试图唤醒沉睡的记忆.
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -std&#x3D;c++14 -o a.out main.cpp</span><br></pre></td></tr></table></figure>
  
@@ -142,6 +142,15 @@
 
    
   <nav class="article-nav">
+    
+      <a href="/2020/09/22/P120/" class="article-nav-link">
+        <strong class="article-nav-caption">Prev</strong>
+        <div class="article-nav-title">
+          
+            数字母用小代码
+          
+        </div>
+      </a>
     
     
       <a href="/2020/09/08/P118/" class="article-nav-link">

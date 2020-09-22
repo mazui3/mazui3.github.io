@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-22T14:11:42.560Z</updated>
+  <updated>2020-09-22T15:59:34.996Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,14 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>数字母用小代码</title>
+    <link href="http://yoursite.com/2020/09/22/P120/"/>
+    <id>http://yoursite.com/2020/09/22/P120/</id>
+    <published>2020-09-22T14:48:39.000Z</published>
+    <updated>2020-09-22T15:59:34.996Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用语言C++14.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+  </entry>
+  
+  <entry>
     <title>(补)抽奖用小代码</title>
     <link href="http://yoursite.com/2020/09/21/P119/"/>
     <id>http://yoursite.com/2020/09/21/P119/</id>
     <published>2020-09-22T00:33:22.000Z</published>
-    <updated>2020-09-22T14:11:42.560Z</updated>
+    <updated>2020-09-22T16:00:11.998Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用语言C++.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;使用语言C++14.&lt;/p&gt;</summary>
     
     
     
@@ -378,25 +397,6 @@
     
     
     <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>半梦半醒时会在厕所看到独角兽吗?</title>
-    <link href="http://yoursite.com/2019/12/16/P047/"/>
-    <id>http://yoursite.com/2019/12/16/P047/</id>
-    <published>2019-12-17T04:43:45.000Z</published>
-    <updated>2020-08-12T19:28:11.925Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2019/12/16/P047/P047.png&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
