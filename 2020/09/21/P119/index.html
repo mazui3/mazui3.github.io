@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">670</span>
+            <span class="post-count">688</span>
         </span>
     </span>
 
@@ -115,9 +115,16 @@
 <br>
 <br>
 <br>
-复录:makefile.
+复录:Makefile.
 
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">CXX &#x3D; g++</span><br><span class="line">CXXFLAGS &#x3D; -std&#x3D;c++14 -Wall -Werror&#x3D;vla -MMD -L&#x2F;usr&#x2F;X11&#x2F;lib</span><br><span class="line">EXEC &#x3D; nameOfTheProject</span><br><span class="line">OBJECTS &#x3D; main.o sub.o</span><br><span class="line">DEPENDS &#x3D; $&#123;OBJECTS:.o&#x3D;.d&#125;</span><br><span class="line"></span><br><span class="line">$&#123;EXEC&#125;: $&#123;OBJECTS&#125;</span><br><span class="line">        $&#123;CXX&#125; $&#123;CXXFLAGS&#125; $&#123;OBJECTS&#125; -o $&#123;EXEC&#125;  -lX11</span><br><span class="line"></span><br><span class="line">-include $&#123;DEPENDS&#125;</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">        rm $&#123;OBJECTS&#125; $&#123;EXEC&#125; $&#123;DEPENDS&#125;</span><br><span class="line">.PHONY: clean</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+<br>
+再复录:试图唤醒沉睡的记忆.
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -o a.out main.cpp</span><br></pre></td></tr></table></figure>
  
       <!-- reward -->
       
