@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-21T00:04:41.023Z</updated>
+  <updated>2020-09-22T00:48:15.462Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>(补)抽奖用小代码</title>
+    <link href="http://yoursite.com/2020/09/21/P119/"/>
+    <id>http://yoursite.com/2020/09/21/P119/</id>
+    <published>2020-09-22T00:33:22.000Z</published>
+    <updated>2020-09-22T00:48:15.462Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;使用语言C++.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>世界的图书馆管理员和画到一半的阿怜</title>
@@ -291,7 +310,7 @@
     <link href="http://yoursite.com/2020/02/01/P067/"/>
     <id>http://yoursite.com/2020/02/01/P067/</id>
     <published>2020-02-01T19:14:11.000Z</published>
-    <updated>2020-08-12T20:22:58.073Z</updated>
+    <updated>2020-09-22T00:36:25.814Z</updated>
     
     
     <summary type="html">&lt;p&gt;这个学期的game jam咕了.&lt;/p&gt;</summary>
@@ -381,25 +400,6 @@
     
     
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>夜晚的涂鸦恶作剧</title>
-    <link href="http://yoursite.com/2019/12/02/P040/"/>
-    <id>http://yoursite.com/2019/12/02/P040/</id>
-    <published>2019-12-02T20:14:07.000Z</published>
-    <updated>2020-08-12T19:27:17.697Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2019/12/02/P040/P040_2.png&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
