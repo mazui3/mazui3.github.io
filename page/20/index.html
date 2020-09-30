@@ -57,7 +57,7 @@
       <h1><a href="/"></a></h1>
       <div id="subtitle-box">
         
-          <span id="subtitle">最新一次更新是2020的9月30号…!!</span>
+        <span id="subtitle"></span>
         
       </div>
       <div>
@@ -72,9 +72,26 @@
 
 
 
+<script src="https://cdn.jsdelivr.net/npm/typed.js@2.0.11/lib/typed.min.js"></script>
+
 
 <!-- Subtitle -->
 
+  <script>
+    try {
+      var typed = new Typed("#subtitle", {
+        strings: ['最新一次更新是2020的9月30号…!!', '更新的是2020的9月22号的小文章补全…!!', ''],
+        startDelay: 0,
+        typeSpeed: 110,
+        loop: false,
+        backSpeed: 80,
+        showCursor: true
+      });
+    } catch (err) {
+      console.log(err)
+    }
+  </script>
+  
 <div id="main">
   <section class="outer">
   <article class="articles">
