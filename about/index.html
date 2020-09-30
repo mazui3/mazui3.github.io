@@ -101,7 +101,7 @@
 twi&ig: mazui_3
 
 <p>lofter&amp;weibo: mazui3</p>
-<p>email: <a href="mailto:&#x6d;&#x61;&#122;&#117;&#x69;&#x2e;&#x61;&#x6e;&#x64;&#46;&#114;&#105;&#x6f;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;">&#x6d;&#x61;&#122;&#117;&#x69;&#x2e;&#x61;&#x6e;&#x64;&#46;&#114;&#105;&#x6f;&#x40;&#x67;&#109;&#97;&#105;&#108;&#46;&#x63;&#x6f;&#109;</a></p>
+<p>email: <a href="mailto:&#x6d;&#x61;&#122;&#117;&#x69;&#46;&#97;&#110;&#100;&#46;&#x72;&#x69;&#x6f;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;">&#x6d;&#x61;&#122;&#117;&#x69;&#46;&#97;&#110;&#100;&#46;&#x72;&#x69;&#x6f;&#64;&#x67;&#109;&#97;&#x69;&#108;&#46;&#99;&#x6f;&#x6d;</a></p>
 <br>
 谢谢阅览,祝你生活平安.
 <br>
@@ -181,7 +181,7 @@ twi&ig: mazui_3
 <nav class="navbar">
   
   <div class="logo">
-    <a href="/"><img src="/images/ayer_test.svg" alt=""></a>
+    <a href="/"><img src="/images/logo.png" alt=""></a>
   </div>
   
   <ul class="nav nav-main">
@@ -403,7 +403,70 @@ twi&ig: mazui_3
 
 <!-- CodeCopy -->
 
+
+<link rel="stylesheet" href="/css/clipboard.css">
+
+<script src="https://cdn.jsdelivr.net/npm/clipboard@2/dist/clipboard.min.js"></script>
+<script>
+  function wait(callback, seconds) {
+    var timelag = null;
+    timelag = window.setTimeout(callback, seconds);
+  }
+  !function (e, t, a) {
+    var initCopyCode = function(){
+      var copyHtml = '';
+      copyHtml += '<button class="btn-copy" data-clipboard-snippet="">';
+      copyHtml += '<i class="ri-file-copy-2-line"></i><span>COPY</span>';
+      copyHtml += '</button>';
+      $(".highlight .code pre").before(copyHtml);
+      $(".article pre code").before(copyHtml);
+      var clipboard = new ClipboardJS('.btn-copy', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+      clipboard.on('success', function(e) {
+        let $btn = $(e.trigger);
+        $btn.addClass('copied');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-checkbox-circle-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPIED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-checkbox-circle-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+      clipboard.on('error', function(e) {
+        e.clearSelection();
+        let $btn = $(e.trigger);
+        $btn.addClass('copy-failed');
+        let $icon = $($btn.find('i'));
+        $icon.removeClass('ri-file-copy-2-line');
+        $icon.addClass('ri-time-line');
+        let $span = $($btn.find('span'));
+        $span[0].innerText = 'COPY FAILED';
+        
+        wait(function () { // 等待两秒钟后恢复
+          $icon.removeClass('ri-time-line');
+          $icon.addClass('ri-file-copy-2-line');
+          $span[0].innerText = 'COPY';
+        }, 2000);
+      });
+    }
+    initCopyCode();
+  }(window, document);
+</script>
+
+
 <!-- CanvasBackground -->
+
+
+<script src="/js/dz.js"></script>
+
 
 
     
