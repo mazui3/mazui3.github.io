@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-23T20:04:08.888Z</updated>
+  <updated>2020-09-30T04:35:05.012Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,14 +17,14 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>数字母用小代码</title>
+    <title>一点点stream cipher记录和数字母用小代码</title>
     <link href="http://yoursite.com/2020/09/22/P120/"/>
     <id>http://yoursite.com/2020/09/22/P120/</id>
     <published>2020-09-22T14:48:39.000Z</published>
-    <updated>2020-09-23T20:04:08.888Z</updated>
+    <updated>2020-09-30T04:35:05.012Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用语言C++14.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.&lt;/p&gt;</summary>
     
     
     

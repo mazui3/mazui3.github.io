@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    数字母用小代码 |  
+    一点点stream cipher记录和数字母用小代码 |  
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -59,7 +59,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  数字母用小代码
+  一点点stream cipher记录和数字母用小代码
 </h1>
  
 
@@ -78,7 +78,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">1.3k</span>
+            <span class="post-count">2.6k</span>
         </span>
     </span>
 
@@ -87,26 +87,122 @@
         <span class="post-meta-item-icon">
             <i class="ri-book-open-line"></i>
             <span class="post-meta-item-text"> Reading time≈</span>
-            <span class="post-count">7 min</span>
+            <span class="post-count">12 min</span>
         </span>
     </span>
 </div>
  
     </div>
       
+    <div class="tocbot"></div>
+
 
 
 
   
     <div class="article-entry" itemprop="articleBody">
        
-  <p>使用语言C++14.</p>
+  <p>中文维基翻译是流密码,是一种对称加密算法.</p>
 <a id="more"></a>
-<p>根据之前写的小东西复建一下.</p>
+
+<p>起因是这样,这个学期我回去重上co487,密码学.上次drop的原因是期中考撞上疫情爆发,我也没学好,手忙脚乱的炸掉两门期中,就干脆二进宫了.</p>
+<p>这次的作业老师出的比上次的老师…要难些(笑),不过记录一下.</p>
+<p>有答题是给了三种加密方法和三份加密后的文件,直接让我们分析并解密.</p>
+<p>三种是</p>
+<ul>
+<li><p>Random simple substitution cipher</p>
+</li>
+<li><p>Vigenere cipher</p>
+</li>
+<li><p>Transposition cipher</p>
+</li>
+</ul>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 id="Substitution-cipher"><a href="#Substitution-cipher" class="headerlink" title="Substitution cipher"></a>Substitution cipher</h2><p>维基介绍:</p>
+<blockquote><p>簡易替換加密是一種以特定方式改變字母表上字母順序，並以此順序書寫的加密方式。這樣一張改變了字母次序的字母表即為『替換表』。</p>
+<p>替換表可以以偏移或逆轉（分別為凱撒密碼和阿特巴希密碼（英語：Atbash））或更複雜方式構造，此時稱之為『混合表』。傳統上會先把一個關鍵詞寫在字母表最前面，再刪去重複字母，這樣就能得到一個混合表。</p>
+<p>例子<br>使用混合表系統，關鍵字為“zebras”：</p>
+<p>明文為    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>密文為    ZEBRASCDFGHIJKLMNOPQTUVWXY<br>明文為：</p>
+<p>flee at once. we are discovered!<br>加密结果为：</p>
+<p>SIAA ZQ LKBA. VA ZOA RFPBLUAOAR!</p>
+</blockquote>
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 id="Vigenere-cipher"><a href="#Vigenere-cipher" class="headerlink" title="Vigenere cipher"></a>Vigenere cipher</h2><p>维基介绍:</p>
+<blockquote><p>在一个凱撒密碼中，字母表中的每一字母都会作一定的偏移，例如偏移量为3时，A就转换为了D、B转换为了E……而维吉尼亚密码则是由一些偏移量不同的恺撒密码组成。</p>
+<p>为了生成密码，需要使用表格法。这一表格包括了26行字母表，每一行都由前一行向左偏移一位得到。具体使用哪一行字母表进行编译是基于密钥进行的，在过程中会不断地变换。</p>
+<p>例如，假设明文为：</p>
+<p>ATTACKATDAWN</p>
+<p>选择某一关键词并重复而得到密钥，如关键词为LEMON时，密钥为：</p>
+<p>LEMONLEMONLE</p>
+<p>对于明文的第一个字母A，对应密钥的第一个字母L，于是使用表格中L行字母表进行加密，得到密文第一个字母L。类似地，明文第二个字母为T，在表格中使用对应的E行进行加密，得到密文第二个字母X。以此类推，可以得到：</p>
+<p>明文：ATTACKATDAWN<br>密钥：LEMONLEMONLE<br>密文：LXFOPVEFRNHR</p>
+<p>解密的过程则与加密相反。例如：根据密钥第一个字母L所对应的L行字母表，发现密文第一个字母L位于A列，因而明文第一个字母为A。密钥第二个字母E对应E行字母表，而密文第二个字母X位于此行T列，因而明文第二个字母为T。以此类推便可得到明文。</p>
+<p>用数字0-25代替字母A-Z，维吉尼亚密码的加密文法可以写成同余的形式：</p>
+<p>C_i = P_i + K_i (mod 26)</p>
+<p>解密方法则能写成：</p>
+<p>P_i = C_i - K_i (mod 26)</p>
+</blockquote>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<h2 id="Transposition-cipher"><a href="#Transposition-cipher" class="headerlink" title="Transposition cipher"></a>Transposition cipher</h2><p>维基…没有中文介绍!!<br>我自己概括的话是:将字母按一行n个字母分好组,然后在每组里做位置移动.</p>
+<blockquote><p>For example, suppose we use the keyword ZEBRAS and the message WE ARE DISCOVERED. FLEE AT ONCE. In a regular columnar transposition, we write this into the grid as follows:</p>
+<p>6 3 2 4 1 5<br>W E A R E D<br>I S C O V E<br>R E D F L E<br>E A T O N C<br>E Q K J E U</p>
+<p>比如说这里是第一列换到第六列的位置,第二列换到第三列的位置,以此类推.为使满足n*6的字母数,多加了5个随机的字母.</p>
+<p>providing five nulls (QKJEU), these letters can be randomly selected as they just fill out the incomplete columns and are not part of the message. The ciphertext is then read off as:</p>
+<p>EVLNE ACDTK ESEAQ ROFOJ DEECU WIREE</p>
+</blockquote>
+
+<br>
+<br>
+<br>
+<br>
+<br>
+
+<p>以上就是作业中出现的三种加密方式.</p>
+<p>判断哪个是哪个的方法是分析每个字母和两个字母组合的出现频率.</p>
+<p>在英文中每个字母的使用频率是不同的.</p>
+<img src="/2020/09/22/P120/P120.png" class="">
+
+<p>每两个字母的组合也有不同的频率.</p>
+<img src="/2020/09/22/P120/P120_1.png" class="">
+
+<p>在这个情况下分析三种加密方式,通过三种的加密文有/没有这两种频率倾向来猜测加密种类.</p>
+<p>一开始想着写个小代码来测频率,于是翻出了(上一篇文章的)旧代码想来写个C++也练下手.结果写的又丑又长,想着时间不打够就去找online的测试网站.</p>
+<p>之后跟朋友对答案发现对方用python写了码,写两页就写完所有功能了,我…我的这么长还没测两个字母的频率呢…</p>
+<p>然后在这里记录一下使用的辅助工具…!!很厉害.</p>
+<p>首先是cryptool.</p>
+<p><a target="_blank" rel="noopener" href="https://www.cryptool.org/en/">https://www.cryptool.org/en/</a></p>
+<p>这是款很老很老的软件但是很厉害,它里面包括了很多常见的加密方法,可以输入key来加密/解密.</p>
+<p>最厉害的是里面还附带了[分析]这个功能,能一定程度的根据加密方式在不需要key的情况下猜测原文.也就是一键还原功能.</p>
+<p>虽然准确率不是特别高但是非常好玩…</p>
+<p>因为准确率不大行所以也用个这个网站帮忙.</p>
+<p><a target="_blank" rel="noopener" href="https://crypto.interactive-maths.com/frequency-analysis-breaking-the-code.html">https://crypto.interactive-maths.com/frequency-analysis-breaking-the-code.html</a></p>
+<br>
+<br>
+然后是Transposition cipher的网站.
+
+<p><a target="_blank" rel="noopener" href="https://tholman.com/other/transposition/">https://tholman.com/other/transposition/</a></p>
+<p>输入排列时每组的长度,然后直接根据拖动来调整字母位置,导出明文/密文.这个也相当好玩……<br><br><br><br><br><br><br><br><br><br></p>
+<p>最后是小代码.</p>
+<p>使用语言C++14.</p>
 <p>现在是数字母小代码.在names.txt放入想要数的段落(数英文only,大小写通用).</p>
 <p>添加了跳过功能,可以隔着输入的数字来数字母,比如[abcd]如果跳跃2就是只数[ac].</p>
 <p>也加入了从哪里数功能,跳过1[abcd]可以数[bcd].</p>
-<p>暂时先这样,优化和话唠等死线完再更新(ddl微笑着看着我).</p>
 <br>
 <br>
 <br>
