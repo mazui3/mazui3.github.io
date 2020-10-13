@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-09-30T04:35:05.012Z</updated>
+  <updated>2020-10-13T01:06:25.700Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>灰桑家的小林</title>
+    <link href="http://yoursite.com/2020/10/12/P121/"/>
+    <id>http://yoursite.com/2020/10/12/P121/</id>
+    <published>2020-10-13T01:04:04.000Z</published>
+    <updated>2020-10-13T01:06:25.700Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/10/12/P121/P121.png&quot; class=&quot;&quot;&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+  </entry>
   
   <entry>
     <title>一点点stream cipher记录和数字母用小代码</title>
@@ -380,26 +397,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2019的年终总结</title>
-    <link href="http://yoursite.com/2019/12/30/P041/"/>
-    <id>http://yoursite.com/2019/12/30/P041/</id>
-    <published>2019-12-30T20:21:32.000Z</published>
-    <updated>2020-08-12T19:30:01.064Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;年末总结.&lt;/p&gt;
-&lt;p&gt;这次是作为普通在他国学数学大学生的闲聊.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
