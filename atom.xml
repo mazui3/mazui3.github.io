@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-10-19T01:27:28.366Z</updated>
+  <updated>2020-11-09T15:58:53.683Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,47 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于A/B testing的笔记</title>
+    <link href="http://yoursite.com/2020/11/03/P124/"/>
+    <id>http://yoursite.com/2020/11/03/P124/</id>
+    <published>2020-11-03T22:31:05.000Z</published>
+    <updated>2020-11-09T15:58:53.683Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
+&lt;p&gt;个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="飞哥的任务罢了(嘘)" scheme="http://yoursite.com/tags/%E9%A3%9E%E5%93%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BD%A2%E4%BA%86-%E5%98%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>宾果和老兔和乱七八糟的万圣节快乐</title>
+    <link href="http://yoursite.com/2020/10/31/P122/"/>
+    <id>http://yoursite.com/2020/10/31/P122/</id>
+    <published>2020-10-31T17:50:31.000Z</published>
+    <updated>2020-11-11T02:58:34.146Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/10/31/P122/bingo.PNG&quot; class=&quot;&quot;&gt;
+
+&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
   
   <entry>
     <title>灰桑家的小林</title>
@@ -38,7 +79,7 @@
     <link href="http://yoursite.com/2020/09/22/P120/"/>
     <id>http://yoursite.com/2020/09/22/P120/</id>
     <published>2020-09-22T14:48:39.000Z</published>
-    <updated>2020-10-21T06:17:22.189Z</updated>
+    <updated>2020-11-08T04:44:40.299Z</updated>
     
     
     <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.&lt;/p&gt;</summary>
@@ -359,44 +400,6 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来自大家的兄妹生日祝福</title>
-    <link href="http://yoursite.com/2020/01/03/P112/"/>
-    <id>http://yoursite.com/2020/01/03/P112/</id>
-    <published>2020-01-04T04:46:26.000Z</published>
-    <updated>2020-08-14T12:47:16.778Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/01/03/P112/P112_1.jpg&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>些许回忆</title>
-    <link href="http://yoursite.com/2020/01/02/P082/"/>
-    <id>http://yoursite.com/2020/01/02/P082/</id>
-    <published>2020-01-02T22:27:55.000Z</published>
-    <updated>2020-08-12T19:32:35.811Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/01/02/P082/P082_1.png&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
