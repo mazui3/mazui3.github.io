@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-09T15:58:53.683Z</updated>
+  <updated>2020-11-11T03:42:03.811Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>sore家的obake和他给我的麻醉</title>
+    <link href="http://yoursite.com/2020/11/10/P125/"/>
+    <id>http://yoursite.com/2020/11/10/P125/</id>
+    <published>2020-11-11T03:33:10.000Z</published>
+    <updated>2020-11-11T03:42:03.811Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/11/10/P125/P125.png&quot; class=&quot;&quot;&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+  </entry>
+  
+  <entry>
     <title>关于A/B testing的笔记</title>
     <link href="http://yoursite.com/2020/11/03/P124/"/>
     <id>http://yoursite.com/2020/11/03/P124/</id>
     <published>2020-11-03T22:31:05.000Z</published>
-    <updated>2020-11-09T15:58:53.683Z</updated>
+    <updated>2020-11-11T03:40:51.718Z</updated>
     
     
     <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
@@ -41,7 +58,7 @@
     <link href="http://yoursite.com/2020/10/31/P122/"/>
     <id>http://yoursite.com/2020/10/31/P122/</id>
     <published>2020-10-31T17:50:31.000Z</published>
-    <updated>2020-11-11T02:58:34.146Z</updated>
+    <updated>2020-11-11T04:06:11.792Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/10/31/P122/bingo.PNG&quot; class=&quot;&quot;&gt;
@@ -62,7 +79,7 @@
     <link href="http://yoursite.com/2020/10/12/P121/"/>
     <id>http://yoursite.com/2020/10/12/P121/</id>
     <published>2020-10-13T01:04:04.000Z</published>
-    <updated>2020-10-19T01:27:28.366Z</updated>
+    <updated>2020-11-11T03:59:29.798Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/10/12/P121/P121.png&quot; class=&quot;&quot;&gt;</summary>
@@ -71,6 +88,8 @@
     
     <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
@@ -379,27 +398,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hackathon记录_UnstressfulSpace</title>
-    <link href="http://yoursite.com/2020/02/01/P067/"/>
-    <id>http://yoursite.com/2020/02/01/P067/</id>
-    <published>2020-02-01T19:14:11.000Z</published>
-    <updated>2020-09-22T00:36:25.814Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;这个学期的game jam咕了.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-    <category term="项目记录" scheme="http://yoursite.com/tags/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
   </entry>
   
