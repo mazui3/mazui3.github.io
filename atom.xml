@@ -1,12 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title></title>
+  <title>Underlake Reading Room</title>
   
-  
+  <subtitle>这里是图书馆外的休息室🌟</subtitle>
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-11T03:42:03.811Z</updated>
+  <updated>2020-11-11T18:26:57.988Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>sore家的obake和他给我的麻醉</title>
+    <title>sore家的obake和sore给我的</title>
     <link href="http://yoursite.com/2020/11/10/P125/"/>
     <id>http://yoursite.com/2020/11/10/P125/</id>
     <published>2020-11-11T03:33:10.000Z</published>
-    <updated>2020-11-11T03:42:03.811Z</updated>
+    <updated>2020-11-11T18:26:57.988Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/10/P125/P125.png&quot; class=&quot;&quot;&gt;</summary>
@@ -38,7 +38,7 @@
     <link href="http://yoursite.com/2020/11/03/P124/"/>
     <id>http://yoursite.com/2020/11/03/P124/</id>
     <published>2020-11-03T22:31:05.000Z</published>
-    <updated>2020-11-11T03:40:51.718Z</updated>
+    <updated>2020-11-11T17:47:05.319Z</updated>
     
     
     <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
@@ -75,11 +75,11 @@
   </entry>
   
   <entry>
-    <title>灰桑家的小林</title>
+    <title>灰桑家的小林和灰桑给我的</title>
     <link href="http://yoursite.com/2020/10/12/P121/"/>
     <id>http://yoursite.com/2020/10/12/P121/</id>
     <published>2020-10-13T01:04:04.000Z</published>
-    <updated>2020-11-11T03:59:29.798Z</updated>
+    <updated>2020-11-11T13:48:45.306Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/10/12/P121/P121.png&quot; class=&quot;&quot;&gt;</summary>
