@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="前言感谢来访!! 建了这个地方用于存放从2015开始的SNS记录.大多为老福特笔记用+学习用博客的备份.2020开始老福特不再作为笔记用的记录,这里是最后会存放想法,生活,笔记的地方.也许开源和去中心化是自由的归属.        我笔名是Mazui,称呼是里约.在某个post下讲了关于博主名字的来源和两位形象的设定.-&gt;麻醉和里约 普通学生.喜欢自己编原创角色和故事玩.关于角色会放在图书">
@@ -111,6 +111,7 @@
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
@@ -150,11 +151,38 @@
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
   </ul>
 </nav>
 
 
 
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
 
 </div>
     </header>
@@ -220,7 +248,7 @@
 <br>
 <br>
 
-<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p>twi&amp;ig: mazui_3<br>lofter&amp;weibo: mazui3<br>email: <a href="mailto:&#x6d;&#x61;&#122;&#x75;&#x69;&#x2e;&#x61;&#x6e;&#100;&#46;&#x72;&#x69;&#x6f;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;">&#x6d;&#x61;&#122;&#x75;&#x69;&#x2e;&#x61;&#x6e;&#100;&#46;&#x72;&#x69;&#x6f;&#x40;&#103;&#109;&#97;&#105;&#x6c;&#x2e;&#99;&#111;&#109;</a><br><br><br>谢谢阅览,祝你生活平安.<br><br><br><br><br><br><br><br></p>
+<h3 id="联系方式"><a href="#联系方式" class="headerlink" title="联系方式"></a>联系方式</h3><p>twi&amp;ig: mazui_3<br>lofter&amp;weibo: mazui3<br>email: <a href="mailto:&#109;&#x61;&#122;&#x75;&#105;&#x2e;&#x61;&#x6e;&#x64;&#46;&#x72;&#105;&#x6f;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;">&#109;&#x61;&#122;&#x75;&#105;&#x2e;&#x61;&#x6e;&#x64;&#46;&#x72;&#105;&#x6f;&#x40;&#103;&#109;&#97;&#105;&#108;&#46;&#99;&#111;&#x6d;</a><br><br><br>谢谢阅览,祝你生活平安.<br><br><br><br><br><br><br><br></p>
 <p>  <img src="teaTime.png" alt="你发现了夕阳和Ada喝下午茶的地方(??)"></p>
 
       </div>
@@ -299,7 +327,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">125</span>
+          <span class="site-state-item-count">127</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -366,7 +394,7 @@
     </span>
 
 
-    <span title="Symbols count total">82k</span>
+    <span title="Symbols count total">83k</span>
   -->
 
   <!--
@@ -374,7 +402,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:15</span>
+    <span title="Reading time total">1:16</span>
 
   -->
   
@@ -384,7 +412,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有58.3k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有59.2k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -423,6 +451,10 @@
   
 
 
+
+
+  
+<script src="/js/local-search.js"></script>
 
 
 
