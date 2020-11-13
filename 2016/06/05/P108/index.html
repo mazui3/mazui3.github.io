@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.2">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
-  <link rel="mask-icon" href="/images/star.svg" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
-  <script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":18},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="L(・∀・ L) ｵｰｲ　　(」・∀・)」 ｵｰｲ">
@@ -35,16 +29,15 @@
 <meta property="og:description" content="L(・∀・ L) ｵｰｲ　　(」・∀・)」 ｵｰｲ">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2016-06-05T04:36:05.000Z">
-<meta property="article:modified_time" content="2020-08-14T03:41:04.934Z">
+<meta property="article:modified_time" content="2020-11-13T00:51:43.793Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="树哥是神">
 <meta name="twitter:card" content="summary">
 
-
 <link rel="canonical" href="http://yoursite.com/2016/06/05/P108/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -64,78 +57,65 @@
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-   <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
 <link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  <ul class="main-menu menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
@@ -166,121 +146,13 @@
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
-</div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
-  </div>
-</div>
-
-    </div>
-  </div>
 
 </div>
-        
-  
-  <div class="toggle sidebar-toggle">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-  </div>
-
-  <aside class="sidebar">
-
-    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
-      <ul class="sidebar-nav">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E7%BB%93%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">完结章</span></a></li></ol></div>
-        </section>
-        <!--/noindex-->
-
-        <section class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
-    <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/images/logo_1.JPG">
-  <p class="site-author-name" itemprop="name">Mazui</p>
-  <div class="site-description" itemprop="description"></div>
-</div>
-<div class="site-state-wrap site-overview-item animated">
-  <nav class="site-state">
-      <div class="site-state-item site-state-posts">
-          <a href="/archives/">
-        
-          <span class="site-state-item-count">125</span>
-          <span class="site-state-item-name">posts</span>
-        </a>
-      </div>
-      <div class="site-state-item site-state-categories">
-            <a href="/categories/">
-          
-        <span class="site-state-item-count">4</span>
-        <span class="site-state-item-name">categories</span></a>
-      </div>
-      <div class="site-state-item site-state-tags">
-            <a href="/tags/">
-          
-        <span class="site-state-item-count">8</span>
-        <span class="site-state-item-name">tags</span></a>
-      </div>
-  </nav>
-</div>
-  <div class="links-of-author site-overview-item animated">
-      <span class="links-of-author-item">
-        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://weibo.com/mazui3" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;mazui3" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
-      </span>
-      <span class="links-of-author-item">
-        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
-      </span>
-  </div>
-
-
-
-        </section>
-      </div>
-    </div>
-  </aside>
-  <div class="sidebar-dimmer"></div>
-
-
     </header>
 
     
@@ -289,24 +161,19 @@
     <span>0%</span>
   </div>
 
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
 
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
 
-    <div class="main-inner post posts-expand">
-      
+          <div class="content post posts-expand">
+            
 
-      
-
-  
-
-
-<div class="post-block">
+    
   
   
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2016/06/05/P108/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -323,40 +190,36 @@
           陆地海洋与天空
         </h1>
 
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
 
-      <time title="Created: 2016-06-05 00:36:05" itemprop="dateCreated datePublished" datetime="2016-06-05T00:36:05-04:00">2016-06-05</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-08-13 23:41:04" itemprop="dateModified" datetime="2020-08-13T23:41:04-04:00">2020-08-13</time>
-      </span>
+              <time title="Created: 2016-06-05 00:36:05" itemprop="dateCreated datePublished" datetime="2016-06-05T00:36:05-04:00">2016-06-05</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-12 19:51:43" itemprop="dateModified" datetime="2020-11-12T19:51:43-05:00">2020-11-12</time>
+              </span>
 
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>13k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>12 mins.</span>
-    </span>
-</div>
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>13k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>12 mins.</span>
+            </span>
 
         </div>
       </header>
@@ -365,6 +228,8 @@
     
     
     <div class="post-body" itemprop="articleBody">
+
+      
         <p>L(・∀・ L) ｵｰｲ　　(」・∀・)」 ｵｰｲ</p>
 <a id="more"></a>
 <h4 id="1"><a href="#1" class="headerlink" title="1 "></a>1 </h4><br>
@@ -378,7 +243,8 @@
 <p>比如在痛斥炎焱蠢哭到炎焱青筋暴突，我也会立马表示你蠢在了我的萌点上，嘲讽谢子安四肢短小到谢子安试图召唤神龙，我也会当机立断的表示我跪下来比你矮多了。</p>
 <p>而当我第一次在幼儿园遇见沈燕然的时候，我就想好了我要嘲讽他那像抹了一层均匀的蜂窝煤一样的皮肤，而当我想后路的时候，脑袋里居然是【你黑的气色不错】和【黑的倒也锃油瓦亮】。不过也从来都没用上就是了。 </p>
 <p>被自己贫乏的语言震惊的我决定按兵不动，思量一下合适的赞美，可是搜肠刮肚了一个礼拜无果，我打算直接上。</p>
-<p> “小子，哪个黑窟窿里钻出来的啊？” “新疆。”</p>
+<p> “小子，哪个黑窟窿里钻出来的啊？” </p>
+<p>“新疆。”</p>
 <p> “嘿，真别说。你丫一到晚上娘都找不着你吧？”沈燕然一对招子在黑黝黝的脸上显得光彩熠熠，他瞥了我一眼都像是翻了个巨大的白眼。</p>
 <p>可惜他看了我一眼之后无论我怎么挑衅他都没有反应，每天都认认真真的脱裤子，撒尿，和泥巴。 我想这一定是成为种马男主角之路上必须收买的NPC。</p>
 <p>于是接下来很长一段时间我都围在他身边，热心的嘘寒问暖，试图刷高一点好感度，皇天不负有心人，沈燕然对我说了第二句话： “有点痛，忍一下。” 接下来我的脸上就多了一个骨节分明的拳印。 </p>
@@ -386,7 +252,8 @@
 <p>经过我对我的新朋友的一番观察，我默默的给他起了个昵称【呆子】。词汇是浅显直白了一点，胜在贴切。</p>
 <p>我发现他唱歌像触电，跳舞像抽筋，画画像和泥巴，最可怕的是居然完全没有请教我的意愿！唯一愿意干的事就是在空地上傻跑，让我觉得他上辈子一定是条哈士奇。</p>
 <p> 综上所述，我对我的新朋友并不是太满意，好在他并没有对我流露出嫌弃的意思，我妈妈也教导我搭伙过日子要懂得包容和忍让，于是我便勉为其难的答应了双方父母从小学到初中都给我俩安一班里，美名其曰【互相有个照应。】 </p>
-<p>现在想想我的苦逼人生也是窝自己作死做出来的，要是我当初擦亮眼睛，寻找到一个在爱情道路上能勾肩嗒背地去偷女神内衣的革命好战友的话，我的恋爱史会颓废到掰来掰去掰不出第二个女人嘛！<br><br><br><br><br><br><br><br><br><br><br><br></p>
+<p>现在想想我的苦逼人生也是窝自己作死做出来的，要是我当初擦亮眼睛，寻找到一个在爱情道路上能勾肩嗒背地去偷女神内衣的革命好战友的话，我的恋爱史会颓废到掰来掰去掰不出第二个女人嘛！</p>
+<p><br><br><br><br><br><br><br><br><br><br><br></p>
 <h4 id="2"><a href="#2" class="headerlink" title="2"></a>2</h4><br>
 <br>
 <br>
@@ -396,7 +263,13 @@
 <p>大概到小学五年级的时候，第一次对恋爱这种事有点映像。</p>
 <p>偶然间听到男生们在讲班花喜欢我，语气里不小心溢出来了羡慕嫉妒恨。如果我告诉那班花我的第一反应是自豪我无边的魅力的话，估计已经入土为安，化作春泥更护花了吧。</p>
 <p> 班花的确是很漂亮，成绩也好的很，但是性格蛮横完全不是我的类型。</p>
-<p>自从知道了她喜欢我以后，稍微一留心就会发现，那个女生表达喜欢的方式居然是有事没事骂我一顿。 “喂，陆海空，作业交了没？” “当然交了啊。” “哼，早上跟沈燕然偷打篮球了吧！” “是啊。拜托，两件事情有芝麻大小的关系吗？” “你以后上学来了就乖乖地给我坐在座位上早读知不知道！哪有学生到五年级了还跟你们两个一样只知道玩！你要是再被我发现早上去打篮球的话当心我告诉班主任！” “……姐姐饶命！” 哼，臭三八！这么凶以后肯定嫁不出去啊！</p>
+<p>自从知道了她喜欢我以后，稍微一留心就会发现，那个女生表达喜欢的方式居然是有事没事骂我一顿。</p>
+<p> “喂，陆海空，作业交了没？”</p>
+<p> “当然交了啊。” </p>
+<p>“哼，早上跟沈燕然偷打篮球了吧！”</p>
+<p> “是啊。拜托，两件事情有芝麻大小的关系吗？” </p>
+<p>“你以后上学来了就乖乖地给我坐在座位上早读知不知道！哪有学生到五年级了还跟你们两个一样只知道玩！你要是再被我发现早上去打篮球的话当心我告诉班主任！”</p>
+<p> “……姐姐饶命！” 哼，臭三八！这么凶以后肯定嫁不出去啊！</p>
 <p> 不过这个三八偶尔也会对我温柔一下的，比如中午吃完饭发水果的时候小番茄会多给我一个。于是我很怕这个三八在毕业的时候来个惊天动地的告白，我会超级困扰的。</p>
 <p>于是我召集沈燕然开了一个紧急会议。 会议的大体内容就是共同商定一下，我要不要好心提醒班花【老子没有把她当娘们看】这件事。 </p>
 <p>由于会议结果是一票赞成，一票拒绝回答，那么就当他默认吧。</p>
@@ -414,7 +287,8 @@
 
 <p> 当我在初中教室里看到沈燕然的时候，我感到黑幕大无边，缘分两字已经不能涵盖了我妈妈让我交【正经朋友】的良苦用心了。</p>
 <p>而当我看到同样在瞪着我的班花时，我相信了这世上有一种缘分叫孽缘。</p>
-<p> 天亡吾也！ 我尽量装作谁都没有看见，直奔最后一排小心为妙。毕竟我也是有尊严的，哥就算是坨翔也是天底下最帅的一坨翔，哪轮得到你用那么嫌弃的目光亵渎。 可惜，走到一半我突然走不动了。 我又迈了几下腿，感觉像在跑步机上，我回头恶狠狠一望，果然是沈燕然那厮拽着我衣角。</p>
+<p> 天亡吾也！ 我尽量装作谁都没有看见，直奔最后一排小心为妙。毕竟我也是有尊严的，哥就算是坨翔也是天底下最帅的一坨翔，哪轮得到你用那么嫌弃的目光亵渎。</p>
+<p> 可惜，走到一半我突然走不动了。 我又迈了几下腿，感觉像在跑步机上，我回头恶狠狠一望，果然是沈燕然那厮拽着我衣角。</p>
 <p>我怒极攻心，不要命的朝他爪子拍去，幸好他闪的及时，没有造成仇恨。权衡再三，我认识到跟这种所有技能点都加在武力值上的人硬拼绝对没有好果子吃，顺从地停了下来。 </p>
 <p>沈燕然那厮放开了我的衣服，轻咳了一声用手虚掩在嘴前：“我给你留了位置的。”说罢头向班花旁边的空位偏了偏。 ……你以为用手遮着脸我就看不出你一脸的暗爽吗！！说好要做彼此的天使的呢！？？ </p>
 <p>我自然是不希望初中同学知道我的小学黑历史，那肯定不能表现出我跟班花关系烂到家，所以我现在只能期待班花一巴掌把沈呆子拍晕，作为想出这种坏点子的小惩罚。可是你他娘一脸娇羞地别过头，10个男人11个看着是欲拒还迎是怎么回事？我的清白果然又要葬送在这个女人手里了…… </p>
@@ -424,25 +298,34 @@
 <p>结果我探亲完在校门口等了半天也没等到沈燕然。</p>
 <p>沈燕然肯定是不会自己走的，他妈妈要是看到他丢下我自己回来绝对会放个大招秒掉血皮尚薄的沈燕然。 于是我就寻思着那呆子摊上事了，没准摊上大事了。</p>
 <p>虽然他今天对我不仁，善良的本性却使我无法袖手旁观，唉。 果不其然，沈燕然正被一个只到他下巴的女生数落，我偷听了一会好像是【两车相撞，我很心伤】。</p>
-<p>沈呆子听人数落还得低着头，把那【真心悔过】的小眼神传达出去。我在心里大笑三声，沈燕然你也有今天！当初你打老子就怎么就牛逼哄哄地直接揍地上了？！ </p>
-<p>这时有个女生犹犹豫豫地想上前劝劝，恩？好像就是救我一命的女神？算了，看在你早上帮我渡了一劫的分上，我就不让你受这遭鸡同鸭讲的罪了。 “诶诶，同学你几班的啊？”我迅速的插进了他们中间。 “四班。”女生没好气的回了我一句就打算继续向沈燕然开炮。</p>
-<p> “啊呀好巧好巧，我们也是四班的嘿！” “那我今天就担起为班级除害的重担——”等等等，这孩子怎么像脱缰的野马一样不受控制？ “啊，反正大家以后都是同学，姑奶奶行行好放过他吧！”我挡在了沈燕然前面，顺便在呆愣愣的沈呆子背上拍得啪啪作响：“呆子！还不道歉！” 嘶——拍得我手都疼了。</p>
-<p> “对不起。”沈燕然一板一眼地说完，抿了抿嘴又道：“我帮你修。” 女生听了眉毛一挑，理了理书包真就准备走了。你看，多大点儿事嘛！ 这时候我发现早上的女生突然就特别尴尬地站在了半近不远的距离， 好像进也不是退也不是。</p>
+<p>沈呆子听人数落还得低着头，把那【真心悔过】的小眼神传达出去。</p>
+<p>我在心里大笑三声，沈燕然你也有今天！当初你打老子就怎么就牛逼哄哄地直接揍地上了？！ </p>
+<p>这时有个女生犹犹豫豫地想上前劝劝，恩？好像就是救我一命的女神？算了，看在你早上帮我渡了一劫的分上，我就不让你受这遭鸡同鸭讲的罪了。</p>
+<p> “诶诶，同学你几班的啊？”我迅速的插进了他们中间。 “四班。”女生没好气的回了我一句就打算继续向沈燕然开炮。</p>
+<p> “啊呀好巧好巧，我们也是四班的嘿！” “那我今天就担起为班级除害的重担——”等等等，这孩子怎么像脱缰的野马一样不受控制？</p>
+<p> “啊，反正大家以后都是同学，姑奶奶行行好放过他吧！”我挡在了沈燕然前面，顺便在呆愣愣的沈呆子背上拍得啪啪作响：“呆子！还不道歉！” 嘶——拍得我手都疼了。</p>
+<p> “对不起。”沈燕然一板一眼地说完，抿了抿嘴又道：“我帮你修。” </p>
+<p>女生听了眉毛一挑，理了理书包真就准备走了。你看，多大点儿事嘛！ 这时候我发现早上的女生突然就特别尴尬地站在了半近不远的距离， 好像进也不是退也不是。</p>
 <p>啧，难道我好心办坏事了？ 我赶紧冲过去：“是同班同学吧？你好我是陆海空。”<br><br><br><br><br><br><br><br><br><br><br><br></p>
 <h4 id="4"><a href="#4" class="headerlink" title="4"></a>4</h4><br>
 <br>
 <br>
-后来知道那胆大包天敢骂沈拳皇的女侠叫谢子安，不过那不重要，重要的是她跟劝架未遂的女生好像关系很好，那个女生叫炎焱，后来坐到了我前面。 坐近了以后才发现以前一时头脑发热在心里叫炎焱女神多傻缺，根本就是一个菜市场大妈！不，长得很好看的菜市场大妈。
+后来知道那胆大包天敢骂沈拳皇的女侠叫谢子安，不过那不重要，重要的是她跟劝架未遂的女生好像关系很好，那个女生叫炎焱，后来坐到了我前面。
 
-<p>“啊啊~今天遇到了一个小正太萌死了！” “欸，我今天也遇……” “听我说！！眼睛超大的，睫毛有那么长！”说罢用食指与大拇指比了一大段距离。 “哦。”天啊！谁来救救这个花痴 ！“我上次也遇到一个皮肤超白的小正太，头发天然卷的嗷嗷嗷！” “我会到学校贴吧里发帖的。” “蛤？” “快来围观我们班的花痴。” “什么啊！陆海空！！！！！”</p>
+<p> 坐近了以后才发现以前一时头脑发热在心里叫炎焱女神多傻缺，根本就是一个菜市场大妈！不，长得很好看的菜市场大妈。</p>
+<p>“啊啊~今天遇到了一个小正太萌死了！” “欸，我今天也遇……” “听我说！！眼睛超大的，睫毛有那么长！”说罢用食指与大拇指比了一大段距离。 “哦。”</p>
+<p>天啊！谁来救救这个花痴 ！“我上次也遇到一个皮肤超白的小正太，头发天然卷的嗷嗷嗷！” “我会到学校贴吧里发帖的。” “蛤？” “快来围观我们班的花痴。” “什么啊！陆海空！！！！！”</p>
 <p> 后来越来越熟，就把企鹅号跟手机号都不小心透露给了炎焱，这下我真的就24小时受骚扰了。</p>
-<p> 不过，也蛮不赖的。 额……我是说反正我也很闲。 一天聊天的时候突然有了跟炎焱告白的想法，想到的时候感觉浑身都跟打鸡血一样亢奋，就像是一只脚跨入了成人的世界，带给我这种青少年大脑皮层都发麻的战栗感。</p>
+<p> 不过，也蛮不赖的。 额……我是说反正我也很闲。</p>
+<p> 一天聊天的时候突然有了跟炎焱告白的想法，想到的时候感觉浑身都跟打鸡血一样亢奋，就像是一只脚跨入了成人的世界，带给我这种青少年大脑皮层都发麻的战栗感。</p>
 <p>现在回想起来，根本就没有任何的深思熟虑，寻找刺激比喜欢占得更多，一定要回忆的话，敲下那句【阿姨洗铁路】的时候脑袋里想的都是好玩。 </p>
 <p>打出去第二天我就后悔了，陆海空你看看你干的什么混帐事！你就应该滚回娘胎里重熔再生，融出个机器猫一样的手打不了字才好！ 不过想想还是有点舍不得我这张俊脸的。</p>
 <p> 晚上打开QQ的时候发现炎炎只是回了句【啊？什么意思】</p>
-<p> 慢着，先让机智的我判断一下她是真不懂还是假不懂。这是脑内分析软体又想起了优雅地女声【我相信这是阴谋，如果你能找到比她更天然呆的女孩子的话】 …..总觉得这语气略带鄙夷是怎么回事啊，这年头怎么连我端庄的软件姐姐都用起来沈呆瓜那种姥姥不疼舅舅不爱的语调。</p>
+<p> 慢着，先让机智的我判断一下她是真不懂还是假不懂。</p>
+<p>这是脑内分析软体又想起了优雅地女声【我相信这是阴谋，如果你能找到比她更天然呆的女孩子的话】 …..总觉得这语气略带鄙夷是怎么回事啊，这年头怎么连我端庄的软件姐姐都用起来沈呆瓜那种姥姥不疼舅舅不爱的语调。</p>
 <p>不过忠言逆耳利于行，几乎瞬间就激起了我对炎炎反应的好奇心，她不会晚上就绑了我去民政局吧？</p>
-<p>好奇归好奇，我对自己告个白还扭扭捏捏的写了句日文，以及没有正确认识到男女在中日文化交流深度上的不同感到羞耻。于是豪气云干地打了句【自行百度】 那边【噢】了一声便没有了后续，八成给吓傻了或者是幸福来得太突然！</p>
+<p>好奇归好奇，我对自己告个白还扭扭捏捏的写了句日文，以及没有正确认识到男女在中日文化交流深度上的不同感到羞耻。</p>
+<p>于是豪气云干地打了句【自行百度】 那边【噢】了一声便没有了后续，八成给吓傻了或者是幸福来得太突然！</p>
 <p>这样也挺好的，等明儿炎炎三观修复一点，我在一边义正严辞【你能信我这种流氓吗？必须不行啊！】问题说不定就解决了，这样想想人生真是一片光明啊，没准马上我就能当上总经理，出任CEO，迎娶白富美，登上人生巅峰，想想还有点小激动呢！<br><br><br><br><br><br><br><br><br><br><br><br></p>
 <h4 id="5"><a href="#5" class="headerlink" title="5"></a>5</h4><br>
 <br>
@@ -455,7 +338,8 @@
 <p>该死！随便怎么讲都好，为什么要那么认真？！我根本没有办法拒绝这样的口气你不知道吗？ </p>
 <p>我颓然的倒在椅背上，缓慢的敲了一个“好”发给了炎焱，便落荒而逃地关闭了电脑。</p>
 <p>直到晚上躺进被窝，我都觉得浑身的血都被换成了二锅头，也不是上次那种花儿与少年的豪情，我就觉得整个人烧的像只被四川火锅煮的青蛙，越挣扎越气闷。</p>
-<p>真奇了怪了，按理来说有个貌美的妹子告白，又顺利的在了一起应该是我肖想了很多年的人生啊！我讨厌炎焱吗？不可能啊，AV画风我都能忍，炎焱的脸怎么看都是豪华配置，性格虽然花痴了点……额，相当花痴，本质上还是蛮符合窝梦想的【温柔可人】 </p>
+<p>真奇了怪了，按理来说有个貌美的妹子告白，又顺利的在了一起应该是我肖想了很多年的人生啊！</p>
+<p>我讨厌炎焱吗？不可能啊，AV画风我都能忍，炎焱的脸怎么看都是豪华配置，性格虽然花痴了点……额，相当花痴，本质上还是蛮符合窝梦想的【温柔可人】 </p>
 <p>反正睡不着了，我干脆起身做到了床边的大理石飘窗上，借着月光欣赏我倒影在大理石上的俊脸，好像透着一股淡淡的死气，我立马想到了我那脸上透着汹涌死气的好友沈燕然，便一拍大腿决定找他纾解一下心中的悸动。 </p>
 <p>“陆海空。”沈燕然这个人接电话的习惯很恐怖，从不跟正常人一样说“喂？”或者“你好”，而是看了来电显示直接点名，被他凉凉的这么一喊我瞬间怂了一半。 </p>
 <p>“小……小的在”我去你能不能不要这样条件反射的狗腿啊！ “怎么？”沈燕然六根清净的声音又传了过来，我瞬间意识到找他当知心姐姐不如立刻手动挖个树洞。 </p>
@@ -466,7 +350,8 @@
 <br>
 班里90%的人不知道的情况下，我和炎炎开始了交往。 
 
-<p>其实我完全没有隐瞒关系的意思，也不会有早恋影响不好之类得困扰，毕竟大家都知道我的信誉等级一直徘徊在【健康的翔】和【不健康的翔】中。 炎炎反倒还恶声恶气地威胁子安和笙芋不准说出去，在我看来她明明是挺想提溜个喇叭吼一声【老娘泡到了大学霸】的，这次的反常也许是她比我更清楚我。</p>
+<p>其实我完全没有隐瞒关系的意思，也不会有早恋影响不好之类得困扰，毕竟大家都知道我的信誉等级一直徘徊在【健康的翔】和【不健康的翔】中。</p>
+<p> 炎炎反倒还恶声恶气地威胁子安和笙芋不准说出去，在我看来她明明是挺想提溜个喇叭吼一声【老娘泡到了大学霸】的，这次的反常也许是她比我更清楚我。</p>
 <p>我不在谈恋爱。</p>
 <p> 虽然我很真诚的告诉炎炎我不介意告诉大家老子明草有主了这回事，但积攒的好感度十分有限，几次很冷淡的回应炎炎想一起去图书馆写作业的要求以后，我莫名奇妙的和女朋友陷入了冷战。</p>
 <p> 我觉得十分冤屈，这种事情提不起劲就是提不起劲，喝脉动也轴不回来我与45度与竖直方向成角的身姿，而且我告诉炎炎，就算周末作业我也是可以在学校里写完的，如果她在图书馆里穿着文艺长裙，从作业中蓦然抬首那是很美的，但如果她一转头发现男朋友一边吃着薯片一边看七龙珠，薯片屑还掉了满书，那就很倒胃口了。</p>
@@ -498,7 +383,8 @@
 <p>炎炎的脸正好也褪了颜色，她不好意思的朝我笑笑，若无其事的问道：“Y中的天才班你知道的吧，大家都叫它一休班的，进去了就跟老同学很难再见的那个。” </p>
 <p>我挑了挑嘴角表示我怎么可能不知道，16年来我都相信【它】注定要变成【我】的。</p>
 <p> “那你会去考吗？”炎炎的声音一如继往的轻快，句末却有点失控的吊高，清澈的眼睛也牢牢地盯住我，睫毛都在轻轻的颤抖。 怎么觉得她讲话比谢子安还见血封喉呢，我低着头苦笑。 </p>
-<p>没有人比我更想溺死在普通世界的温暖里了，也没有人比我更希望挣脱一成不变。<br>但从前我的挣扎都是小打小闹，好像只要朝父母撒娇地说着舍不得，就可以弥补今后的空缺了，他们最终都会微笑着把我送走。</p>
+<p>没有人比我更想溺死在普通世界的温暖里了，也没有人比我更希望挣脱一成不变。</p>
+<p>但从前我的挣扎都是小打小闹，好像只要朝父母撒娇地说着舍不得，就可以弥补今后的空缺了，他们最终都会微笑着把我送走。</p>
 <p>这次，我却觉得炎焱把纤细的脖子贴到了我的手掌上，稍稍一用力就会溅一脸血。 </p>
 <p>炎焱盯着我，像老鼠盯着地缝一样盯着我，想蚊子盯着母牛一样盯着我，像公猫盯着母猫一样盯着我。和上一次不欢而散的谈话气氛出奇的一致，只不过这次我实在受不来炎焱犹如实质的目光，率先别开头去，落荒而逃。 </p>
 <p>结果到晚上我都觉得我五脏六腑里郁结了一口污气，咳不出来又咽不下去。 困扰多年的老便秘，欸。 </p>
@@ -587,7 +473,7 @@
 <p> 吃完第二根棒棒糖的时候天已经微亮了，嘴里好像真的全是酒味，脑子也不大灵光，觉得对面满架子的紫藤花都是我摸过的那一朵，上面还有我因为太紧张按出的指印，下一秒炎焱就会撑着伞出现，笑着说一些平凡到我早就忘记的话。</p>
 <p> 我起身拍了拍裤子上的土，告诉自己，翻篇儿了，陆海空。 还有啊，下次不要再买水蜜桃味的棒棒糖了，那个水蜜桃的样子实在太像炎焱两颊的皮肤了。</p>
 <p> 那么……买西瓜味的吧？ 恩，希望下一个女朋友的胸能像西瓜那么大。<br><br><br><br></p>
-<p> ——Fin——<br><br><br><br><br><br><br><br><br><br></p>
+<p> ——Fin——<br><br></p>
 
     </div>
 
@@ -595,35 +481,36 @@
     
     
 
-    <footer class="post-footer">
+      <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/%E6%A0%91%E5%93%A5%E6%98%AF%E7%A5%9E/" rel="tag"><i class="fa fa-tag"></i> 树哥是神</a>
+              <a href="/tags/%E6%A0%91%E5%93%A5%E6%98%AF%E7%A5%9E/" rel="tag"># 树哥是神</a>
           </div>
 
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2016/06/05/P023/" rel="prev" title="TAT人物印象">
-                  <i class="fa fa-chevron-left"></i> TAT人物印象
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2016/05/29/P096/" rel="next" title="骗你的">
-                  骗你的 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2016/05/29/P096/" rel="prev" title="骗你的">
+      <i class="fa fa-chevron-left"></i> 骗你的
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2016/06/05/P023/" rel="next" title="TAT人物印象">
+      TAT人物印象 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
   </article>
-</div>
+  
+  
+  
 
 
 
-
-
-
-      
+          </div>
+          
 
 <script>
   window.addEventListener('tabs:register', () => {
@@ -632,7 +519,7 @@
       activeClass = localStorage.getItem('comments_active') || activeClass;
     }
     if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
       if (activeTab) {
         activeTab.click();
       }
@@ -641,21 +528,101 @@
   if (CONFIG.comments.storage) {
     window.addEventListener('tabs:click', event => {
       if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
+      let commentClass = event.target.classList[1];
       localStorage.setItem('comments_active', commentClass);
     });
   }
 </script>
 
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-4"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1 </span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#%E5%AE%8C%E7%BB%93%E7%AB%A0"><span class="nav-number">8.</span> <span class="nav-text">完结章</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_1.JPG">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">125</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">19</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/mazui3" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;mazui3" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
     </div>
-  </main>
+  </aside>
+  <div id="sidebar-dimmer"></div>
 
-  <footer class="footer">
-    <div class="footer-inner">
-      
 
-      
+      </div>
+    </main>
 
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
 
 <div class="copyright">
   
@@ -665,83 +632,76 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mazui</span>
-</div>
 
- <!--
-<div class="wordcount">
-  <span class="post-meta-item">
+<!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
+
+
     <span title="Symbols count total">82k</span>
-  </span>
-  <span class="post-meta-item">
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="Reading time total">1:15</span>
-  </span>
-</div>
--->
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">休息室一共有58.3k的老兔正在打瞌睡</span>
 </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
+<script src="/js/utils.js"></script>
 
-
-
-
-  <script src="/js/local-search.js"></script>
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
+<script src="/js/next-boot.js"></script>
 
 
-
-
-
-
-
-
-
-  <script>
-    NProgress.configure({
-      showSpinner: true
-    });
-    NProgress.start();
-    document.addEventListener('readystatechange', () => {
-      if (document.readyState === 'interactive') {
-        NProgress.inc(0.8);
-      }
-      if (document.readyState === 'complete') {
-        NProgress.done();
-      }
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.start();
-    });
-    document.addEventListener('pjax:success', () => {
-      NProgress.done();
-    });
-  </script>
 
 
   
+
+
+
+
+
+
+
 
 
 

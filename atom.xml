@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-12T23:41:43.875Z</updated>
+  <updated>2020-11-13T02:11:53.582Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/11/12/P126/"/>
     <id>http://yoursite.com/2020/11/12/P126/</id>
     <published>2020-11-12T21:40:35.000Z</published>
-    <updated>2020-11-12T23:41:43.875Z</updated>
+    <updated>2020-11-13T02:11:53.582Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/12/P126/P126_5.PNG&quot; class=&quot;&quot;&gt;
@@ -29,8 +29,12 @@
     
     
     
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
     
   </entry>
   
@@ -39,15 +43,17 @@
     <link href="http://yoursite.com/2020/11/10/P125/"/>
     <id>http://yoursite.com/2020/11/10/P125/</id>
     <published>2020-11-11T03:33:10.000Z</published>
-    <updated>2020-11-12T18:43:49.091Z</updated>
+    <updated>2020-11-13T02:10:14.450Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/10/P125/P125.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
+    
+    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
     
   </entry>
   
@@ -76,7 +82,7 @@
     <link href="http://yoursite.com/2020/10/31/P122/"/>
     <id>http://yoursite.com/2020/10/31/P122/</id>
     <published>2020-10-31T17:50:31.000Z</published>
-    <updated>2020-11-12T23:44:00.580Z</updated>
+    <updated>2020-11-13T02:10:25.327Z</updated>
     
     
     <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;/p&gt;</summary>
@@ -88,6 +94,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    
   </entry>
   
   <entry>
@@ -95,7 +103,7 @@
     <link href="http://yoursite.com/2020/10/12/P121/"/>
     <id>http://yoursite.com/2020/10/12/P121/</id>
     <published>2020-10-13T01:04:04.000Z</published>
-    <updated>2020-11-11T19:55:32.143Z</updated>
+    <updated>2020-11-13T02:11:42.144Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/10/12/P121/P121.png&quot; class=&quot;&quot;&gt;</summary>
@@ -106,6 +114,10 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/tags/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
   </entry>
   
@@ -133,7 +145,7 @@
     <link href="http://yoursite.com/2020/09/21/P119/"/>
     <id>http://yoursite.com/2020/09/21/P119/</id>
     <published>2020-09-22T00:33:22.000Z</published>
-    <updated>2020-11-11T19:56:01.078Z</updated>
+    <updated>2020-11-13T02:13:53.638Z</updated>
     
     
     <summary type="html">&lt;p&gt;使用语言C++14.&lt;/p&gt;</summary>
@@ -152,7 +164,7 @@
     <link href="http://yoursite.com/2020/09/08/P118/"/>
     <id>http://yoursite.com/2020/09/08/P118/</id>
     <published>2020-09-08T04:27:18.000Z</published>
-    <updated>2020-11-12T19:06:49.119Z</updated>
+    <updated>2020-11-13T02:12:05.779Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/09/08/P118/P118_2.png&quot; class=&quot;&quot;&gt;
@@ -165,6 +177,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
+    
   </entry>
   
   <entry>
@@ -172,7 +186,7 @@
     <link href="http://yoursite.com/2020/09/05/P117/"/>
     <id>http://yoursite.com/2020/09/05/P117/</id>
     <published>2020-09-05T19:08:19.000Z</published>
-    <updated>2020-11-11T19:58:16.106Z</updated>
+    <updated>2020-11-13T02:12:12.089Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/09/05/P117/P117.png&quot; class=&quot;&quot;&gt;</summary>
@@ -184,6 +198,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
   </entry>
   
   <entry>
@@ -191,7 +207,7 @@
     <link href="http://yoursite.com/2020/09/03/P115/"/>
     <id>http://yoursite.com/2020/09/03/P115/</id>
     <published>2020-09-03T04:00:00.000Z</published>
-    <updated>2020-11-12T19:07:20.334Z</updated>
+    <updated>2020-11-13T02:12:21.456Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/09/03/P115/P115.png&quot; class=&quot;&quot;&gt;
@@ -201,6 +217,8 @@
     
     <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
+    
+    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
     
   </entry>
   
@@ -249,7 +267,7 @@
     <link href="http://yoursite.com/2020/08/13/P111/"/>
     <id>http://yoursite.com/2020/08/13/P111/</id>
     <published>2020-08-14T03:42:04.000Z</published>
-    <updated>2020-11-12T20:18:18.433Z</updated>
+    <updated>2020-11-13T02:08:37.122Z</updated>
     
     
     <summary type="html">&lt;p&gt;好久不见的杂谈.&lt;/p&gt;</summary>
@@ -268,7 +286,7 @@
     <link href="http://yoursite.com/2020/08/13/P110/"/>
     <id>http://yoursite.com/2020/08/13/P110/</id>
     <published>2020-08-13T17:27:18.000Z</published>
-    <updated>2020-11-12T20:18:37.532Z</updated>
+    <updated>2020-11-13T02:07:19.192Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/08/13/P110/P110_1.png&quot; class=&quot;&quot;&gt;</summary>
@@ -280,6 +298,8 @@
     
     <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
     
+    <category term="vocaloid" scheme="http://yoursite.com/tags/vocaloid/"/>
+    
   </entry>
   
   <entry>
@@ -287,7 +307,7 @@
     <link href="http://yoursite.com/2020/07/10/P105/"/>
     <id>http://yoursite.com/2020/07/10/P105/</id>
     <published>2020-07-11T01:25:35.000Z</published>
-    <updated>2020-08-12T20:27:28.975Z</updated>
+    <updated>2020-11-13T01:12:19.635Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/07/10/P105/P105.png&quot; class=&quot;&quot;&gt;</summary>
@@ -299,6 +319,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
   </entry>
   
   <entry>
@@ -306,15 +328,13 @@
     <link href="http://yoursite.com/2020/07/04/P109/"/>
     <id>http://yoursite.com/2020/07/04/P109/</id>
     <published>2020-07-04T23:19:13.000Z</published>
-    <updated>2020-11-12T20:20:45.431Z</updated>
+    <updated>2020-11-13T02:07:12.246Z</updated>
     
     
     <summary type="html">&lt;p&gt;嘿嘿只是想保存一下饺宝给我画的两张麻醉.&lt;/p&gt;
 &lt;img src=&quot;/2020/07/04/P109/P109_2.jpg&quot; class=&quot;&quot;&gt;</summary>
     
     
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
@@ -326,7 +346,7 @@
     <link href="http://yoursite.com/2020/07/04/P114/"/>
     <id>http://yoursite.com/2020/07/04/P114/</id>
     <published>2020-07-04T05:01:16.000Z</published>
-    <updated>2020-11-12T20:21:20.102Z</updated>
+    <updated>2020-11-13T02:12:27.751Z</updated>
     
     
     <summary type="html">&lt;p&gt;是给老兔的生日贺图,实际上做完是八月中旬的事了,就动用了时间魔法师的力量让生贺们整整齐齐(认罪).&lt;/p&gt;</summary>
@@ -338,6 +358,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    
   </entry>
   
   <entry>
@@ -345,7 +367,7 @@
     <link href="http://yoursite.com/2020/07/04/P102/"/>
     <id>http://yoursite.com/2020/07/04/P102/</id>
     <published>2020-07-04T04:23:22.000Z</published>
-    <updated>2020-11-12T20:23:05.747Z</updated>
+    <updated>2020-11-13T01:11:57.677Z</updated>
     
     
     <summary type="html">&lt;blockquote&gt;&lt;p&gt;“ 你将自己推入的冒险 “&lt;br&gt;&lt;img src=&quot;/2020/07/04/P102/P102_1.jpg&quot; class=&quot;&quot;&gt;&lt;/p&gt;</summary>
@@ -357,6 +379,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
   </entry>
   
   <entry>
@@ -364,7 +388,7 @@
     <link href="http://yoursite.com/2020/04/28/P069/"/>
     <id>http://yoursite.com/2020/04/28/P069/</id>
     <published>2020-04-28T18:26:42.000Z</published>
-    <updated>2020-11-12T20:39:56.039Z</updated>
+    <updated>2020-11-13T01:09:47.737Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/04/28/P069/P069.png&quot; class=&quot;&quot;&gt;
@@ -376,6 +400,8 @@
     
     
     <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
+    
+    <category term="vocaloid" scheme="http://yoursite.com/tags/vocaloid/"/>
     
   </entry>
   

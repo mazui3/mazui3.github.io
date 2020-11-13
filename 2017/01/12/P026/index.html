@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.2">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
-  <link rel="mask-icon" href="/images/star.svg" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
-  <script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":18},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="ｲｯﾃﾗ━━━━━━ヽ(´∀｀ヽ)━━━━━━ﾝ!!!!">
@@ -51,19 +45,19 @@
 <meta property="og:image" content="http://yoursite.com/2017/01/12/P026/P026_15.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/01/12/P026/P026_16.jpg">
 <meta property="article:published_time" content="2017-01-12T22:57:03.000Z">
-<meta property="article:modified_time" content="2020-08-12T05:17:04.101Z">
+<meta property="article:modified_time" content="2020-11-13T00:37:11.741Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="杂谈">
 <meta property="article:tag" content="oc">
+<meta property="article:tag" content="在日落之前">
 <meta property="article:tag" content="奇怪作业">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2017/01/12/P026/P026_2.jpg">
 
-
 <link rel="canonical" href="http://yoursite.com/2017/01/12/P026/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -83,78 +77,65 @@
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-   <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
 <link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  <ul class="main-menu menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
@@ -185,52 +166,284 @@
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
+
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-</div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/P026/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_1.JPG">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          小春日与12年级美术展
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-01-12 17:57:03" itemprop="dateCreated datePublished" datetime="2017-01-12T17:57:03-05:00">2017-01-12</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-12 19:37:11" itemprop="dateModified" datetime="2020-11-12T19:37:11-05:00">2020-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%94%BB/" itemprop="url" rel="index"><span itemprop="name">画</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.8k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>3 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>ｲｯﾃﾗ━━━━━━ヽ(´∀｀ヽ)━━━━━━ﾝ!!!!</p>
+<a id="more"></a>
+<h1 id="before-the-art-show"><a href="#before-the-art-show" class="headerlink" title="[before the art show]"></a>[before the art show]</h1><br>
+due day一周前
+我今天朕要宠幸谁好呢.
+
+<p>due day12小时前<br>作业A:叫爸爸<br>作业B:叫爸爸</p>
+<p>…………………………爸爸!!!!</p>
+<img src="/2017/01/12/P026/P026_2.jpg" class="">
+<br>
+期末了,就算我的vita酱放在了枕边我都没有时间打p4g了哭哭.
+我art show的主人公是小春日哦!!
+前两天查看了下旧博文…这孩子也要过两岁生日了,时间过得太快了.
+
+<br>
+<br>
+<br>
+
+<h1 id="the-art-show"><a href="#the-art-show" class="headerlink" title="[the art show]"></a>[the art show]</h1><br>
+<br>
+
+<p>各位新年好.</p>
+<p>这个学期美术课大部分的时间都在准备这个show,在这里做个总结(唠嗑).<br>以及赶上申请大学准备作品集也是这段时间,试了各种不熟悉的东西.<br>虽然多半被画室的老师否了.<br>主角是我家的小春日,画得又有些小孩子.<br>不是很现实的红发打扮,然而却有代表有些nerd的眼镜.在故事里的设定也是藏在人群里的超强NPC,拿它来当主角再适合不过了.</p>
+<br>
+Art show是在学校的theater,黑色的背景再加上自带的灯,整体的效果真的是很不错.
+
+<p>因为我有带声音,所以老师让我摆在了大门口.<br>超豪华待遇啊!!!<br>然而我的东西最乱啊!!!!(抱头遁地.<br><br><br>一进门看到的是我的短片.</p>
+<img src="/2017/01/12/P026/P026_3.jpg" class="">
+<p>和我的树.</p>
+<br>
+(啊…老师总是忘记把我的电脑打开……)
+<br>
+
+<br>
+<br>
+
+<h3 id="【Wandering】"><a href="#【Wandering】" class="headerlink" title="【Wandering】"></a>【Wandering】</h3><br>
+<br>
+
+<p>啊我把电脑打开了w.</p>
+<img src="/2017/01/12/P026/P026_4.jpg" class="">
+
+<p>(↓顺便一提把明信片也放在了这个桌子上发放↓)</p>
+<p>(真的要发不出去了啊哈哈我已经开始练习以叠纸牌的方法叠明信片了x)</p>
+<p>【b站存了个有声音的档】</p>
+<div class="bili_video"><iframe src="https://player.bilibili.com/player.html?aid=NaN&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" width="544" height="452" allowfullscreen="true"> </iframe></div>
+<p>正式挑战了动画!!!<br>是小春日在雨中奔跑.先是小春日本体——</p>
+<img src="/2017/01/12/P026/P026_run.gif" class="">
+
+<p>然后是背景的定格动画.<br>去年学了在摄影棚中照相,高档的器材不玩一次怎么能算美术课毕业.<br>借此机会借来了灯与架子.</p>
+<p>(↓我的脚↓)</p>
+
+
+<p>↓雨滴担当的发票↓</p>
+<img src="/2017/01/12/P026/P026_6.jpg" class="">
+
+<p>(不过最后效果真的不是很好hhh)<br>普通的发票在摄影棚下都可以变得好看!!(；-；)<br>最后拖到软件中合着BGM就成啦.</p>
+<p><br><br></p>
+<h3 id="【Crowd】"><a href="#【Crowd】" class="headerlink" title="【Crowd】"></a>【Crowd】</h3><br>
+
+
+<img src="/2017/01/12/P026/P026_1.jpg" class="">
+<br>
+
+<img src="/2017/01/12/P026/P026_7.jpg" class="">
+
+<p>(土下座)因为今年的新年明信片就是那这张凑的,所以一点儿都不喜庆,真是对不住了…!!<br>在初期计划的时候就把电绘算进去了一张.不过最后怎么展示还是苦恼了很久.</p>
+<p><br><br></p>
+<h3 id="【Flow】"><a href="#【Flow】" class="headerlink" title="【Flow】"></a>【Flow】</h3><br>
+
+<img src="/2017/01/12/P026/P026_8.jpg" class="">
+<p>我的老师是摄影师,去年跟她学了摄影.<br>洗胶卷洗照片真的很有意思,而且我是喜欢能拿到手里的上世纪实物派,还是胶卷比较适合我.<br>不过隔了一个学期再挑战摄影还是觉得摄影太玄学了…作为一个本命担当R都抽不到的P还是早日放弃吧.</p>
+<p>↓不巧选了最冷的一天去大多村转了一圈,这是在火车站↓</p>
+<img src="/2017/01/12/P026/P026_9.jpg" class="">
+
+<p>↓圣诞节时的火鸡大餐↓</p>
+<img src="/2017/01/12/P026/P026_10.jpg" class="">
+
+<p>↓和老弟他们的散步↓</p>
+<img src="/2017/01/12/P026/P026_11.jpg" class="">
+
+<p><br><br><br><br></p>
+<h3 id="【Rest】"><a href="#【Rest】" class="headerlink" title="【Rest】"></a>【Rest】</h3><p>使用材料是黏土.最初的主题是躺在夜晚的公路上.更直白的原因是实现把自家女儿实体化一次.<br>然而公路没有成功赶上show(捶地.<br>赶这黏土的时候我的眼镜二代正好碎了,就拿它去凑了.</p>
+<img src="/2017/01/12/P026/P026_12.jpg" class="">
+
+<p>拥挤的城市中能感到空旷的也许是大马路了吧.<br>还记得那次在世博会呆到夜晚毕园,从世博园回我的伯父的家.<br>走出来的时候半夜也没有车,一群人就走在大马路的正中间,享受着四轮的待遇.突然地就很想躺下来看星星,超惬意.</p>
+<p><br><br><br><br></p>
+<h3 id="【Private-Space】"><a href="#【Private-Space】" class="headerlink" title="【Private Space】"></a>【Private Space】</h3><br>
+
+<p>这张有参考些构图</p>
+<img src="/2017/01/12/P026/P026_13.jpg" class="">
+
+<p>水彩.应该是完全无关的人物然而手一顺就画了习惯的发型…可恶有些出戏.<br>狭窄的空间能给我安全感.甚至内心深处还有会相信钻到狭小的橱柜里能让时间都暂停.<br>一小会儿也好,想抛下家人钻到衣橱里打游戏,抛下学校藏到locker里看实况,抛下工作躲到行李箱里看电影.<br>在属于我的空间外的事情什么都不知道哦.</p>
+<p><br><br><br><br></p>
+<h3 id="【Missing-Half】"><a href="#【Missing-Half】" class="headerlink" title="【Missing Half】"></a>【Missing Half】</h3><img src="/2017/01/12/P026/P026_14.jpg" class="">
+
+<p>这幅是油画.油画比水彩亲民多了!!<br>想画的是孩子想象中婚礼的花.花花绿绿的,不大真实.<br>“长大后的梦想是成为新娘”这样的愿望经常可以在电视剧里看到呢(笑.<br>对配偶有着美好的憧憬.幻想着对方可能的优点,可能是温柔,可能是有趣,也可能很聪明.<br>但是当渐渐渐渐的,当年龄靠近那时的梦想时,或者是自己的朋友交上了男朋友,看着他们的打情骂俏,对自己的憧憬却模糊了.<br>等着的是到底什么呢.<br><br></p>
+<p>顺便一提我的幼时梦想是想挣钱.超简单直白.<br><br><br><br><br></p>
+<h3 id="【最后是那个抢镜的树】"><a href="#【最后是那个抢镜的树】" class="headerlink" title="【最后是那个抢镜的树】"></a>【最后是那个抢镜的树】</h3><p>和从一元店里买回来的树屋w.<br><br><br><br></p>
+<img src="/2017/01/12/P026/P026_15.jpg" class="">
+<img src="/2017/01/12/P026/P026_16.jpg" class="">
+<p>(可恶远看超乱的,近看倒是还行???布置的时候乱到我差点跪下来)<br><br></p>
+<p>这个树是从家背后的树丛里抗回来的.<br>只是个布置,小时候就对树屋有莫名的热爱,也许是受小熊维尼的影响.<br>然后贴上了到处收集来的纸头,从博物馆里的传单到巧克力的包装纸,什么都有.我还剪掉了个老弟的地球仪x<br>围在桌子中间,不让人近距离观看.<br>有点像回不去的comfort zone吧.</p>
+<p><br><br></p>
+<p>以上就是全部了!!!非常感谢阅读.</p>
+<p><br><br></p>
+<p>12年级的美术课也上完了呢,有点寂寞.<br>最后是我的artist statement.<br>如果你跳过的话我给你总结一下,讲的是【大人的世界好难】.<br><br></p>
+<blockquote><p>I was born and raised in a crowded place.<br>When I was in my hometown, school represents most of my memories.<br>When the bell rang for lunch, people rushed down the stairs to the cafeteria and lined up and queues filled the hall. Every day it was a 500 metres race.<br>People wear the same uniforms and are divided into groups, lines, and squares.<br>People are like the ocean tide.<br>Mediocre was the philosophy of life, my Grade 10 art teacher wrote on the board the first day teaching us. She was right, in some ways. Not everyone can save the world.<br>I feel safe in that tide.<br>But where does that tide go?<br>People work as hard as possible to get into the school they want. Then, they get the job they want. Then, they get married. Then, hey buy a house, maybe 2 bed and 2 bath condo in the area which has the right school for kids in the future.<br>That anxiety and pushes me to move forward.<br>I grow up, learning to be polite, friendly and thinking about others. But nobody teaches us the meaning of marriage or money or hard work. No nobody teaches us about us.<br>And I am trying to question what I learn and what I see, but the tide never stops going.<br>I become a weirdo in the middle of the crowd.</p>
+</blockquote>
 
     </div>
-  </div>
 
-</div>
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+              <a href="/tags/oc/" rel="tag"># oc</a>
+              <a href="/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/" rel="tag"># 在日落之前</a>
+              <a href="/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/" rel="tag"># 奇怪作业</a>
+          </div>
+
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/01/02/P083/" rel="prev" title="前辈的私人辅导">
+      <i class="fa fa-chevron-left"></i> 前辈的私人辅导
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/01/29/P049/" rel="next" title="电器和我">
+      电器和我 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
+    <div class="sidebar-inner">
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
+      <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
         </li>
@@ -239,20 +452,20 @@
         </li>
       </ul>
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-        </section>
-        <!--/noindex-->
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#before-the-art-show"><span class="nav-number">1.</span> <span class="nav-text">[before the art show]</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#the-art-show"><span class="nav-number">2.</span> <span class="nav-text">[the art show]</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Wandering%E3%80%91"><span class="nav-number">2.0.1.</span> <span class="nav-text">【Wandering】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Crowd%E3%80%91"><span class="nav-number">2.0.2.</span> <span class="nav-text">【Crowd】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Flow%E3%80%91"><span class="nav-number">2.0.3.</span> <span class="nav-text">【Flow】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Rest%E3%80%91"><span class="nav-number">2.0.4.</span> <span class="nav-text">【Rest】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Private-Space%E3%80%91"><span class="nav-number">2.0.5.</span> <span class="nav-text">【Private Space】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90Missing-Half%E3%80%91"><span class="nav-number">2.0.6.</span> <span class="nav-text">【Missing Half】</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E3%80%90%E6%9C%80%E5%90%8E%E6%98%AF%E9%82%A3%E4%B8%AA%E6%8A%A2%E9%95%9C%E7%9A%84%E6%A0%91%E3%80%91"><span class="nav-number">2.0.7.</span> <span class="nav-text">【最后是那个抢镜的树】</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/images/logo_1.JPG">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -270,12 +483,12 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
@@ -292,320 +505,21 @@
 
 
 
-        </section>
       </div>
+
     </div>
   </aside>
-  <div class="sidebar-dimmer"></div>
+  <div id="sidebar-dimmer"></div>
 
 
-    </header>
+      </div>
+    </main>
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-      
-
-      
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/01/12/P026/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/logo_1.JPG">
-      <meta itemprop="name" content="Mazui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Underlake Reading Room">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          小春日与12年级美术展
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-01-12 17:57:03" itemprop="dateCreated datePublished" datetime="2017-01-12T17:57:03-05:00">2017-01-12</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-08-12 01:17:04" itemprop="dateModified" datetime="2020-08-12T01:17:04-04:00">2020-08-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E7%94%BB/" itemprop="url" rel="index"><span itemprop="name">画</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>2.8k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>3 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>ｲｯﾃﾗ━━━━━━ヽ(´∀｀ヽ)━━━━━━ﾝ!!!!</p>
-<a id="more"></a>
-<p><b>[before the art show]</b><br><br><br>due day一周前<br>我今天朕要宠幸谁好呢.</p>
-<p>due day12小时前<br>作业A:叫爸爸<br>作业B:叫爸爸</p>
-<p>…………………………爸爸!!!!</p>
-<img src="/2017/01/12/P026/P026_2.jpg" class="">
-<br>
-期末了,就算我的vita酱放在了枕边我都没有时间打p4g了哭哭.
-
-<p>我art show的主人公是小春日哦!!</p>
-<p>前两天查看了下旧博文…这孩子也要过两岁生日了,时间过得太快了.</p>
-<br>
-<br>
-<br>
-<b>[the art show]</b>
-<br>
-<br>
-
-<p>各位新年好.</p>
-<p>这个学期美术课大部分的时间都在准备这个show,在这里做个总结(唠嗑).</p>
-<p>以及赶上申请大学准备作品集也是这段时间,试了各种不熟悉的东西.</p>
-<p>虽然多半被画室的老师否了.</p>
-<p>主角是我家的小春日,画得又有些小孩子.</p>
-<p>不是很现实的红发打扮,然而却有代表有些nerd的眼镜.在故事里的设定也是藏在人群里的超强NPC,拿它来当主角再适合不过了.</p>
-<br>
-Art show是在学校的theater,黑色的背景再加上自带的灯,整体的效果真的是很不错.
-
-<p>因为我有带声音,所以老师让我摆在了大门口.</p>
-<p>超豪华待遇啊!!!</p>
-<p>然而我的东西最乱啊!!!!(抱头遁地.<br><br><br>一进门看到的是我的短片.</p>
-<img src="/2017/01/12/P026/P026_3.jpg" class="">
-<p>和我的树.</p>
-<br>
-(啊…老师总是忘记把我的电脑打开……)
-<br>
-
-<br>
-<br>
-<b>【Wandering】</b>
-<br>
-<br>
-
-<p>啊我把电脑打开了w.</p>
-<img src="/2017/01/12/P026/P026_4.jpg" class="">
-
-<p>(↓顺便一提把明信片也放在了这个桌子上发放↓)</p>
-<p>(真的要发不出去了啊哈哈我已经开始练习以叠纸牌的方法叠明信片了x)</p>
-<p>【b站存了个有声音的档】</p>
-<div class="bili_video"><iframe src="https://player.bilibili.com/player.html?aid=NaN&page=1" scrolling="no" border="0" frameborder="no" framespacing="0" width="544" height="452" allowfullscreen="true"> </iframe></div>
-
-<p>正式挑战了动画!!!</p>
-<p>是小春日在雨中奔跑.先是小春日本体——</p>
-<img src="/2017/01/12/P026/P026_run.gif" class="">
-
-<p>然后是背景的定格动画.</p>
-<p>去年学了在摄影棚中照相,高档的器材不玩一次怎么能算美术课毕业.<br>借此机会借来了灯与架子.</p>
-<p>(↓我的脚↓)</p>
-
-
-<p>↓雨滴担当的发票↓</p>
-<img src="/2017/01/12/P026/P026_6.jpg" class="">
-
-<p>(不过最后效果真的不是很好hhh)</p>
-<p>普通的发票在摄影棚下都可以变得好看!!(；-；)</p>
-<p>最后拖到软件中合着BGM就成啦.</p>
-<p><br><br></p>
-<p><b>【Crowd】</b><br><br></p>
-<img src="/2017/01/12/P026/P026_1.jpg" class="">
-<br>
-
-<img src="/2017/01/12/P026/P026_7.jpg" class="">
-
-<p>(土下座)因为今年的新年明信片就是那这张凑的,所以一点儿都不喜庆,真是对不住了…!!</p>
-<p>在初期计划的时候就把电绘算进去了一张.不过最后怎么展示还是苦恼了很久.</p>
-<p><br><br></p>
-<p><b>【Flow】</b><br><br></p>
-<img src="/2017/01/12/P026/P026_8.jpg" class="">
-<p>我的老师是摄影师,去年跟她学了摄影.</p>
-<p>洗胶卷洗照片真的很有意思,而且我是喜欢能拿到手里的上世纪实物派,还是胶卷比较适合我.</p>
-<p>不过隔了一个学期再挑战摄影还是觉得摄影太玄学了…作为一个本命担当R都抽不到的P还是早日放弃吧.</p>
-<p>↓不巧选了最冷的一天去大多村转了一圈,这是在火车站↓</p>
-<img src="/2017/01/12/P026/P026_9.jpg" class="">
-
-<p>↓圣诞节时的火鸡大餐↓</p>
-<img src="/2017/01/12/P026/P026_10.jpg" class="">
-
-<p>↓和老弟他们的散步↓</p>
-<img src="/2017/01/12/P026/P026_11.jpg" class="">
-
-<p><br><br><br><br></p>
-<p><b>【Rest】</b></p>
-<p>使用材料是黏土.最初的主题是躺在夜晚的公路上.更直白的原因是实现把自家女儿实体化一次.</p>
-<p>然而公路没有成功赶上show(捶地.</p>
-<p>赶这黏土的时候我的眼镜二代正好碎了,就拿它去凑了.</p>
-<img src="/2017/01/12/P026/P026_12.jpg" class="">
-
-<p>拥挤的城市中能感到空旷的也许是大马路了吧.</p>
-<p>还记得那次在世博会呆到夜晚毕园,从世博园回我的伯父的家.</p>
-<p>走出来的时候半夜也没有车,一群人就走在大马路的正中间,享受着四轮的待遇.突然地就很想躺下来看星星,超惬意.</p>
-<p><br><br><br><br></p>
-<p><b>【Private Space】</b></p>
-<br>
-
-<p>这张有参考些构图</p>
-<img src="/2017/01/12/P026/P026_13.jpg" class="">
-
-
-<p>水彩.应该是完全无关的人物然而手一顺就画了习惯的发型…可恶有些出戏.</p>
-<p>狭窄的空间能给我安全感.甚至内心深处还有会相信钻到狭小的橱柜里能让时间都暂停.</p>
-<p>一小会儿也好,想抛下家人钻到衣橱里打游戏,抛下学校藏到locker里看实况,抛下工作躲到行李箱里看电影.</p>
-<p>在属于我的空间外的事情什么都不知道哦.</p>
-<p><br><br><br><br></p>
-<p><b>【Missing Half】</b></p>
-<img src="/2017/01/12/P026/P026_14.jpg" class="">
-
-<p>这幅是油画.油画比水彩亲民多了!!</p>
-<p>想画的是孩子想象中婚礼的花.花花绿绿的,不大真实.</p>
-<p>“长大后的梦想是成为新娘”这样的愿望经常可以在电视剧里看到呢(笑.</p>
-<p>对配偶有着美好的憧憬.幻想着对方可能的优点,可能是温柔,可能是有趣,也可能很聪明.</p>
-<p>但是当渐渐渐渐的,当年龄靠近那时的梦想时,或者是自己的朋友交上了男朋友,看着他们的打情骂俏,对自己的憧憬却模糊了.</p>
-<p>等着的是到底什么呢.<br><br></p>
-<p>顺便一提我的幼时梦想是想挣钱.超简单直白.</p>
-<p><br><br><br><br></p>
-<p><b>【最后是那个抢镜的树】</b><br>和从一元店里买回来的树屋w.<br><br><br><br></p>
-<img src="/2017/01/12/P026/P026_15.jpg" class="">
-<img src="/2017/01/12/P026/P026_16.jpg" class="">
-<p>(可恶远看超乱的,近看倒是还行???布置的时候乱到我差点跪下来)<br><br></p>
-<p>这个树是从家背后的树丛里抗回来的.</p>
-<p>只是个布置,小时候就对树屋有莫名的热爱,也许是受小熊维尼的影响.</p>
-<p>然后贴上了到处收集来的纸头,从博物馆里的传单到巧克力的包装纸,什么都有.我还剪掉了个老弟的地球仪x</p>
-<p>围在桌子中间,不让人近距离观看.</p>
-<p>有点像回不去的comfort zone吧.</p>
-<p><br><br></p>
-<p>以上就是全部了!!!非常感谢阅读.</p>
-<p><br><br></p>
-<p>12年级的美术课也上完了呢,有点寂寞.</p>
-<p>最后是我的artist statement.<br>如果你跳过的话我给你总结一下,讲的是【大人的世界好难】.<br><br></p>
-<blockquote><p>I was born and raised in a crowded place.<br>When I was in my hometown, school represents most of my memories.<br>When the bell rang for lunch, people rushed down the stairs to the cafeteria and lined up and queues filled the hall. Every day it was a 500 metres race.<br>People wear the same uniforms and are divided into groups, lines, and squares.<br>People are like the ocean tide.<br>Mediocre was the philosophy of life, my Grade 10 art teacher wrote on the board the first day teaching us. She was right, in some ways. Not everyone can save the world.<br>I feel safe in that tide.<br>But where does that tide go?<br>People work as hard as possible to get into the school they want. Then, they get the job they want. Then, they get married. Then, hey buy a house, maybe 2 bed and 2 bath condo in the area which has the right school for kids in the future.<br>That anxiety and pushes me to move forward.<br>I grow up, learning to be polite, friendly and thinking about others. But nobody teaches us the meaning of marriage or money or hard work. No nobody teaches us about us.<br>And I am trying to question what I learn and what I see, but the tide never stops going.<br>I become a weirdo in the middle of the crowd.</p>
-</blockquote>
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
-              <a href="/tags/oc/" rel="tag"><i class="fa fa-tag"></i> oc</a>
-              <a href="/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/" rel="tag"><i class="fa fa-tag"></i> 奇怪作业</a>
-          </div>
-
+    <footer class="footer">
+      <div class="footer-inner">
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2017/01/29/P049/" rel="prev" title="电器和我">
-                  <i class="fa fa-chevron-left"></i> 电器和我
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2017/01/02/P083/" rel="next" title="前辈的私人辅导">
-                  前辈的私人辅导 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-      
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      
-
-      
-
+        
 
 <div class="copyright">
   
@@ -615,83 +529,76 @@ Art show是在学校的theater,黑色的背景再加上自带的灯,整体的效
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mazui</span>
-</div>
 
- <!--
-<div class="wordcount">
-  <span class="post-meta-item">
+<!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
+
+
     <span title="Symbols count total">82k</span>
-  </span>
-  <span class="post-meta-item">
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="Reading time total">1:15</span>
-  </span>
-</div>
--->
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">休息室一共有58.3k的老兔正在打瞌睡</span>
 </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
+<script src="/js/utils.js"></script>
 
-
-
-
-  <script src="/js/local-search.js"></script>
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
+<script src="/js/next-boot.js"></script>
 
 
-
-
-
-
-
-
-
-  <script>
-    NProgress.configure({
-      showSpinner: true
-    });
-    NProgress.start();
-    document.addEventListener('readystatechange', () => {
-      if (document.readyState === 'interactive') {
-        NProgress.inc(0.8);
-      }
-      if (document.readyState === 'complete') {
-        NProgress.done();
-      }
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.start();
-    });
-    document.addEventListener('pjax:success', () => {
-      NProgress.done();
-    });
-  </script>
 
 
   
+
+
+
+
+
+
+
 
 
 

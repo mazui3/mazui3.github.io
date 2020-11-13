@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.2">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
-  <link rel="mask-icon" href="/images/star.svg" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
-  <script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":18},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="写个年终总结.今年过的很艰辛了.">
@@ -36,17 +30,17 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2017/12/29/P030/P030_s.jpg">
 <meta property="article:published_time" content="2017-12-30T03:05:14.000Z">
-<meta property="article:modified_time" content="2020-08-12T21:35:44.896Z">
+<meta property="article:modified_time" content="2020-11-13T00:18:04.464Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="杂谈">
+<meta property="article:tag" content="年终总结">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2017/12/29/P030/P030_s.jpg">
-
 
 <link rel="canonical" href="http://yoursite.com/2017/12/29/P030/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -66,78 +60,65 @@
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-   <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
 <link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  <ul class="main-menu menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
@@ -168,52 +149,191 @@
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
+
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-</div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/P030/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_1.JPG">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          2017的年终总结
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-12-29 22:05:14" itemprop="dateCreated datePublished" datetime="2017-12-29T22:05:14-05:00">2017-12-29</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-12 19:18:04" itemprop="dateModified" datetime="2020-11-12T19:18:04-05:00">2020-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>1 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>写个年终总结.今年过的很艰辛了.</p>
+<a id="more"></a>
+<img src="/2017/12/29/P030/P030_s.jpg" class="">
+
+<p>才发现圣诞帽漂浮在光头上面哈哈哈.<br>今年是很浩荡的一年呢.</p>
+<p>我认为进入大学之后,或者说高中毕业之后,所拥有的日常就已经结束了.之后都是每日不安定的非日常生活.<br>可能是我小学初中,甚至到高中过的太安定了,所以突然进入社会人预备级就很有冲击了.<br>简略的算了算人生旅程,能忘我的潇洒的日子根本不存在嘛.那是哪个人编出的谎言,说的高中还是大学总有年轻人逃课打游戏那样不计后果的享乐生活.没有的,不存在的,什么东西都是有后果的.一不小心就要回家种田了,game over时时刻刻离自己都是很近的.</p>
+<p>我不想回国啦!!!<br>真的好讨厌回国啦!!!</p>
+<p>(指的是回国工作)<br>(或者是回国种田…)</p>
+<p>说真的,我,一年比一年丧了,还一年比一年冷漠了.</p>
+<p>明明知道这样的状态不是很有利的,但是好像也没有改变的方法.<br>在tt centre赶作业赶到1点那种时候,大家的大脑会产生酵母菌发酵一样神奇的反应.<br>还可以听到隔壁桌很认真的思考哲学与人生.<br>人文科有什么意义呢,都是人类所创造出来的东西.科学是精准的,但也只是人类造出来的秤罢了.<br>活着说到底根本没有答案嘛,结果大家一百年之后都会死掉那么活着是干嘛啦.</p>
+<p>这种平时一直都在但是没有讨论的问题摆上桌子其实是很基本的问题了.<br>【终极问题】这种词是哪个人拿出来唬人的.前面的东西看不清就唬后面的人说很难哦,很高端哦.<br>但是大家都在往前走啊,这是没法避免的嘛.</p>
+<p>所以嘛,所以啊.</p>
+<p>明明已经到能合法喝酒的年龄了但是思维总觉得偏移了阳光健康的正常道路.<br>不不不,说不定阳光健康的那个【正常】本身就是不存在的.你想想,社会主义核心思维这种东西也是骗人的嘛.<br>存在不一定合理,个体也不一定了结总体.<br>人类真是孤独.</p>
+<p>人志各不同,能早日意识到这份该死的孤独就早日开始自己的非日常了.<br>还能接受自己就行,还能喜欢着自己就行.<br>教副科的老师学到三十岁当上了牙医但真是实在不喜欢回去重修教育,<br>她说有些人这个年纪就做着喜欢的事那是份幸运.<br>幸运啊.</p>
+<p>自由引领着成为自己想成为的人吧.<br>那先拥有自由吧.<br>自己的那份自由可能包含了每月收入,G牌驾照,大学文凭,面试经验,看懂地图,弄清公交车的方向和线路.</p>
+<p>虽然我现在才刚克服最后一项(笑).</p>
+<p>我只是最后有一点害怕.<br>我有努力想划分将自己和自己的环境分开来思考,但总体上来说,谁又不是环境的一部分呢.<br>少上网吧.<br>虽然这个人道的压榨青春的学校被很多毕业的学长们深爱着.<br>但12点走在回宿舍的路上还是想大喊一声<br>傻逼滑铁卢!!!!!!!<br>我的讲话完了.</p>
+<p>这个人要没朋友了</p>
 
     </div>
-  </div>
 
-</div>
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+              <a href="/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/" rel="tag"># 年终总结</a>
+          </div>
+
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/12/23/P058/" rel="prev" title="天空中的魔法少女">
+      <i class="fa fa-chevron-left"></i> 天空中的魔法少女
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2018/01/29/P031/" rel="next" title="随处可见的">
+      随处可见的 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
+    <div class="sidebar-inner">
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
+      <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
         </li>
@@ -222,20 +342,19 @@
         </li>
       </ul>
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-        </section>
-        <!--/noindex-->
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+      </div>
+      <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/images/logo_1.JPG">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -253,12 +372,12 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
@@ -275,218 +394,21 @@
 
 
 
-        </section>
       </div>
+
     </div>
   </aside>
-  <div class="sidebar-dimmer"></div>
+  <div id="sidebar-dimmer"></div>
 
 
-    </header>
+      </div>
+    </main>
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-      
-
-      
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/12/29/P030/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/logo_1.JPG">
-      <meta itemprop="name" content="Mazui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Underlake Reading Room">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          2017的年终总结
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-12-29 22:05:14" itemprop="dateCreated datePublished" datetime="2017-12-29T22:05:14-05:00">2017-12-29</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-08-12 17:35:44" itemprop="dateModified" datetime="2020-08-12T17:35:44-04:00">2020-08-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>1 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <p>写个年终总结.今年过的很艰辛了.</p>
-<a id="more"></a>
-<img src="/2017/12/29/P030/P030_s.jpg" class="">
-<br>
-
-
-<p>才发现圣诞帽漂浮在光头上面哈哈哈.</p>
-<p>今年是很浩荡的一年呢.<br><br></p>
-<p>我认为进入大学之后,或者说高中毕业之后,所拥有的日常就已经结束了.之后都是每日不安定的非日常生活.</p>
-<p>可能是我小学初中,甚至到高中过的太安定了,所以突然进入社会人预备级就很有冲击了.</p>
-<p>简略的算了算人生旅程,能忘我的潇洒的日子根本不存在嘛.那是哪个人编出的谎言,说的高中还是大学总有年轻人逃课打游戏那样不计后果的享乐生活.没有的,不存在的,什么东西都是有后果的.一不小心就要回家种田了,game over时时刻刻离自己都是很近的.</p>
-<p>我不想回国啦!!!</p>
-<p>真的好讨厌回国啦!!!</p>
-<p>(指的是回国工作)</p>
-<p>(或者是回国种田…)<br><br><br>说真的,我,一年比一年丧了,还一年比一年冷漠了.</p>
-<p>明明知道这样的状态不是很有利的,但是好像也没有改变的方法.</p>
-<p>在tt centre赶作业赶到1点那种时候,大家的大脑会产生酵母菌发酵一样神奇的反应.</p>
-<p>还可以听到隔壁桌很认真的思考哲学与人生.</p>
-<p>人文科有什么意义呢,都是人类所创造出来的东西.科学是精准的,但也只是人类造出来的秤罢了.</p>
-<p>活着说到底根本没有答案嘛,结果大家一百年之后都会死掉那么活着是干嘛啦.</p>
-<p>这种平时一直都在但是没有讨论的问题摆上桌子其实是很基本的问题了.</p>
-<p>【终极问题】这种词是哪个人拿出来唬人的.前面的东西看不清就唬后面的人说很难哦,很高端哦.</p>
-<p>但是大家都在往前走啊,这是没法避免的嘛.<br><br><br>所以嘛,所以啊.</p>
-<p>明明已经到能合法喝酒的年龄了但是思维总觉得偏移了阳光健康的正常道路.</p>
-<p>不不不,说不定阳光健康的那个【正常】本身就是不存在的.你想想,社会主义核心思维这种东西也是骗人的嘛.</p>
-<p>存在不一定合理,个体也不一定了结总体.</p>
-<p>人类真是孤独.<br><br></p>
-<p>人志各不同,能早日意识到这份该死的孤独就早日开始自己的非日常了.</p>
-<p>还能接受自己就行,还能喜欢着自己就行.</p>
-<p>教副科的老师学到三十岁当上了牙医但真是实在不喜欢回去重修教育,</p>
-<p>她说有些人这个年纪就做着喜欢的事那是份幸运.</p>
-<p>幸运啊.<br><br></p>
-<p>自由引领着成为自己想成为的人吧.</p>
-<p>那先拥有自由吧.</p>
-<p>自己的那份自由可能包含了每月收入,G牌驾照,大学文凭,面试经验,看懂地图,弄清<br>公交车的方向和线路.</p>
-<p>虽然我现在才刚克服最后一项(笑).</p>
-<p>我只是最后有一点害怕.</p>
-<p>我有努力想划分将自己和自己的环境分开来思考,但总体上来说,谁又不是环境的一部分呢.</p>
-<p>少上网吧.</p>
-<p>虽然这个人道的压榨青春的学校被很多毕业的学长们深爱着.</p>
-<p>但12点走在回宿舍的路上还是想大喊一声</p>
-<p>傻逼滑铁卢!!!!!!!</p>
-<p>我的讲话完了.</p>
-<p>这个人要没朋友了<br><br><br><br><br><br><br><br><br><br></p>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
-          </div>
-
+    <footer class="footer">
+      <div class="footer-inner">
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2018/01/29/P031/" rel="prev" title="随处可见的">
-                  <i class="fa fa-chevron-left"></i> 随处可见的
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2017/12/23/P058/" rel="next" title="天空中的魔法少女">
-                  天空中的魔法少女 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-      
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      
-
-      
-
+        
 
 <div class="copyright">
   
@@ -496,83 +418,76 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mazui</span>
-</div>
 
- <!--
-<div class="wordcount">
-  <span class="post-meta-item">
+<!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
+
+
     <span title="Symbols count total">82k</span>
-  </span>
-  <span class="post-meta-item">
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="Reading time total">1:15</span>
-  </span>
-</div>
--->
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">休息室一共有58.3k的老兔正在打瞌睡</span>
 </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
+<script src="/js/utils.js"></script>
 
-
-
-
-  <script src="/js/local-search.js"></script>
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
+<script src="/js/next-boot.js"></script>
 
 
-
-
-
-
-
-
-
-  <script>
-    NProgress.configure({
-      showSpinner: true
-    });
-    NProgress.start();
-    document.addEventListener('readystatechange', () => {
-      if (document.readyState === 'interactive') {
-        NProgress.inc(0.8);
-      }
-      if (document.readyState === 'complete') {
-        NProgress.done();
-      }
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.start();
-    });
-    document.addEventListener('pjax:success', () => {
-      NProgress.done();
-    });
-  </script>
 
 
   
+
+
+
+
+
+
+
 
 
 

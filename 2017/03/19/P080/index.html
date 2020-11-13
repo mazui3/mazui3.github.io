@@ -5,26 +5,20 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.2">
-
-
   <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
-  <link rel="mask-icon" href="/images/star.svg" color="#222">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
 
 <link rel="stylesheet" href="/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
-<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@5.15.1/css/all.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/animate.css@3.1.1/animate.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.css">
-  <script src="//cdn.jsdelivr.net/npm/nprogress@0.2.0/nprogress.js"></script>
-
-<script class="hexo-configurations">
+<script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","images":"/images","scheme":"Pisces","version":"8.0.2","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":18},"copycode":true,"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"prism":false,"i18n":{"placeholder":"Searching...","empty":"We didn't find any results for the search: ${query}","hits_time":"${hits} results found in ${time} ms","hits":"${hits} results found"},"path":"/search.xml","localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":true,"preload":true}};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":false,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":false},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="这里是高中最后申请大学时,为艺术类学校准备的作品.也是从这里开始作为创作者的我开始变得不同.大学选择的是数学专业,几年来对于思维方式和追求目标都跟我的起点完全不同.不以好坏来评论,这里仅供保留当年的痕迹.">
@@ -51,18 +45,17 @@
 <meta property="og:image" content="http://yoursite.com/2017/03/19/P080/P080_15.jpg">
 <meta property="og:image" content="http://yoursite.com/2017/03/19/P080/P080_16.jpg">
 <meta property="article:published_time" content="2017-03-19T20:32:49.000Z">
-<meta property="article:modified_time" content="2020-08-13T00:16:53.826Z">
+<meta property="article:modified_time" content="2020-11-13T00:33:59.954Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="杂谈">
 <meta property="article:tag" content="奇怪作业">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="http://yoursite.com/2017/03/19/P080/P080_1.jpg">
 
-
 <link rel="canonical" href="http://yoursite.com/2017/03/19/P080/">
 
 
-<script class="page-configurations">
+<script id="page-configurations">
   // https://hexo.io/docs/variables.html
   CONFIG.page = {
     sidebar: "",
@@ -82,78 +75,65 @@
 
   <noscript>
   <style>
-  body { margin-top: 2rem; }
-
+  .use-motion .brand,
   .use-motion .menu-item,
-  .use-motion .sidebar,
+  .sidebar-inner,
   .use-motion .post-block,
   .use-motion .pagination,
   .use-motion .comments,
   .use-motion .post-header,
   .use-motion .post-body,
-  .use-motion .collection-header {
-    visibility: visible;
-  }
-
-  .use-motion .header,
-  .use-motion .site-brand-container .toggle,
-  .use-motion .footer { opacity: initial; }
+  .use-motion .collection-header { opacity: initial; }
 
   .use-motion .site-title,
-  .use-motion .site-subtitle,
-  .use-motion .custom-logo-image {
+  .use-motion .site-subtitle {
     opacity: initial;
     top: initial;
   }
 
-  .use-motion .logo-line {
-    transform: scaleX(1);
-  }
-
-  .search-pop-overlay, .sidebar-nav { display: none; }
-  .sidebar-panel { display: block; }
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
   </style>
 </noscript>
 
-   <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
 <link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
-<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
-  <div class="headband"></div>
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
 
-  <main class="main">
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
       <div class="header-inner"><div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
-        <span class="toggle-line"></span>
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
     </div>
   </div>
 
   <div class="site-meta">
 
     <a href="/" class="brand" rel="start">
-      <i class="logo-line"></i>
+      <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
-      <i class="logo-line"></i>
+      <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
   </div>
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
-        <i class="fa fa-search fa-fw fa-lg"></i>
     </div>
   </div>
 </div>
 
 
 
+
 <nav class="site-nav">
-  <ul class="main-menu menu">
+  <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
     <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
@@ -184,52 +164,250 @@
     <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
-      <li class="menu-item menu-item-search">
-        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
-        </a>
-      </li>
   </ul>
 </nav>
 
 
 
-  <div class="search-pop-overlay">
-    <div class="popup search-popup">
-        <div class="search-header">
-  <span class="search-icon">
-    <i class="fa fa-search"></i>
-  </span>
-  <div class="search-input-container">
-    <input autocomplete="off" autocapitalize="off" maxlength="80"
-           placeholder="Searching..." spellcheck="false"
-           type="search" class="search-input">
-  </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
+
 </div>
-<div class="search-result-container no-result">
-  <div class="search-result-icon">
-    <i class="fa fa-spinner fa-pulse fa-5x"></i>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
   </div>
-</div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/P080/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_1.JPG">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          高中最后的奇奇怪怪作业
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2017-03-19 16:32:49" itemprop="dateCreated datePublished" datetime="2017-03-19T16:32:49-04:00">2017-03-19</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2020-11-12 19:33:59" itemprop="dateModified" datetime="2020-11-12T19:33:59-05:00">2020-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>1.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote><p>这里是高中最后申请大学时,为艺术类学校准备的作品.<br>也是从这里开始作为创作者的我开始变得不同.<br>大学选择的是数学专业,几年来对于思维方式和追求目标都跟我的起点完全不同.<br>不以好坏来评论,这里仅供保留当年的痕迹.</p>
+</blockquote>
+<a id="more"></a>
+<br>
+<br>
+<br>
+
+<h1 id="1"><a href="#1" class="headerlink" title="1."></a>1.</h1><img src="/2017/03/19/P080/P080_1.jpg" class="">
+<img src="/2017/03/19/P080/P080_2.jpg" class="">
+<img src="/2017/03/19/P080/P080_3.jpg" class="">
+<img src="/2017/03/19/P080/P080_4.jpg" class="">
+<p>还是上个礼拜的事情.</p>
+<p>以为portfolio都准备好了的我跟老师休了天假.然后发现最后一个学校要求我完全没做过的杂志设计的时候被老师一通臭骂.<br>到最后的一天的时候和老师心态平稳和平和气.<br>这是那时赶出来的排版练习.<br>还是为Wikipedia乱摘来的词句,考官没有认真读真是太好了.<br><br><br><br><br><br></p>
+<h1 id="2"><a href="#2" class="headerlink" title="2."></a>2.</h1><p>同样也是那段时间赶的作品.</p>
+<p>画了我的书架.我的书架在我心中可是爱抖露级别的,不过稍微改了一点因为不能再卡通了.<br>说起来准备portfolio这段时间最大的痛苦就是这里了.因为报的专业分别<br>是animation,illustration and graphic design.<br>所以考完了动画就很痛苦.<br>老师:你为什么画什么都那么卡通.再写实一点再写实一点.</p>
+<img src="/2017/03/19/P080/P080_5.jpg" class="">
+<img src="/2017/03/19/P080/P080_6.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="3"><a href="#3" class="headerlink" title="3."></a>3.</h1><p>这张我很喜欢.是水彩和马克笔.<br>三所学校的portfolio用上了.<br>nightschool的时候遇上了一位很喜欢blind contour的老师,就是不看着自己的纸只看着要画的东西画画,画出来的线条就很有意思了.<br>我就靠着这个技巧试图隐藏我根本没有的素描功底.<br>这张讲的是人…与…关系?<br>第一张是stopping,讲的是自身.<br>第二张是turning,讲的是做出选择.<br>第三张是walking,讲的是短时间的关系.<br>最后一张是following,讲的是长时间的关系,像是亲子关系.</p>
+<img src="/2017/03/19/P080/P080_7.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="4"><a href="#4" class="headerlink" title="4."></a>4.</h1><p>这张被老师砍掉了.</p>
+<p>掰着手指数油画有了,水彩有了,电脑画有了,钢笔画有了.<br>老师提议我画张素描,然而画到一半被她叫停.<br>【这走形太严重了,百分之五十都不到,还是算了吧】<br>然后这张是想着画像电脑平铺一样的水粉.<br>所以我所想到的是重复的元素.像我新年明信片那样画.<br>重复的元素一定情况下看着的确很爽快,但是又有些没有重点,太啰嗦的问题.<br>不过老师砍掉的原因是【你的涂的太草了】</p>
+<img src="/2017/03/19/P080/P080_8.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="5"><a href="#5" class="headerlink" title="5."></a>5.</h1><p>所报考的学校有一所很喜欢抽象画.之前那些鞋子也是因此而尝试的.<br>这张是油画,那天我…我就带了两罐颜色,深蓝和白绿.还有一点点的黄.<br>油画平铺起来的效果,真的,不好.<br>老师【正常的画法是调一种颜色不超过三笔】<br>原来是这样啊.<br><br><br>第二天:</p>
+<p>【老师我觉得颜色好难看.】<br>【那倒没有】<br>过会儿她又说<br>【但是没有那么好看,倒是真的】<br>老师我喜欢你的诚实.</p>
+<p>于是后面加上了贴了报纸的木板,想着简配上繁的效果会不会好一些.<br>最后达成的就是这很微妙的效果了.<br>【老师你觉得考官会喜欢这幅吗】<br>【那要看你怎么解释这意思了】<br>好有哲理.</p>
+<p>难道这是抽象画的本质吗.</p>
+<br>
+
+<p>顺便一提这幅画的时候我想的是【三人成虎】的故事.<br>画的是三个人与一只猴子.说小孩也可以啦.<br>如果猴子所说的话被三个人所叙述就会变得有假象道理也好,三个人所说的话被猴子所模仿也好,是指虚假的语言重量与人数的关系.<br>是不是觉得这幅画更有道理了一点(何.</p>
+<img src="/2017/03/19/P080/P080_9.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="6"><a href="#6" class="headerlink" title="6."></a>6.</h1><p>画室的混乱让这玩意看起来更乱了ww.</p>
+<p>剪贴画.<br>我还是挺喜欢这个#postme的想法的.<br>社交软件上的各种拍食物,拍风景,拍自己等等等等.<br>不过最后效果不是很好就是了.<br>贴的时候觉得左下角实在太密但是老师特意说把上面空出来.<br>解释原因的时候她扔了几个纸团在上面,画一下子看起来乱得不像画了.<br>原来如此.</p>
+<img src="/2017/03/19/P080/P080_10.jpg" class="">
+<img src="/2017/03/19/P080/P080_11.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="7"><a href="#7" class="headerlink" title="7."></a>7.</h1><p>这幅是丙烯.也是那几天像地狱一样赶出来的.<br>我高中的时候和丙烯和黑白报相处了很久,然而并不能画出没有笔触的细腻的东西…<br>画的主旨.<br>老师【这幅讲了生命的活力,春天的涌动,一切欣欣向荣.】</p>
+<p><em>虽说本质是玩颜色</em></p>
+<img src="/2017/03/19/P080/P080_12.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="8"><a href="#8" class="headerlink" title="8."></a>8.</h1><p>Alex家的狗,名字叫Manny.<br>为了送学校改了一点.<br>因为要送给Alex,所以我执意用油画继续画,老师提议用丙烯.<br>结果是没有干.考官的手碰到了颜料.<br>这件事被我当成悲伤的梗讲了三年(哈哈).</p>
+<img src="/2017/03/19/P080/P080_13.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="9"><a href="#9" class="headerlink" title="9."></a>9.</h1><p>最后一幅!!</p>
+<p>这幅加了点细节送上去了.<br>为什么以前的我形画不准但是画出来的东西很有意思呢……<br>好好复健(哭.</p>
+<img src="/2017/03/19/P080/P080_14.jpg" class="">
+<br>
+<br>
+<br>
+
+<h1 id="10"><a href="#10" class="headerlink" title="10."></a>10.</h1><p>明明说好的最后一张了但是还是想拍下这份ww.<br>考动画的portfolio像是画考卷.<br>第一次认真画透视,也是很拼的.<br>我想我是努力过了的.进不了也问心无愧.</p>
+<img src="/2017/03/19/P080/P080_15.jpg" class="">
+<img src="/2017/03/19/P080/P080_16.jpg" class="">
 
     </div>
-  </div>
 
-</div>
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"># 杂谈</a>
+              <a href="/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/" rel="tag"># 奇怪作业</a>
+          </div>
+
         
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2017/01/29/P049/" rel="prev" title="电器和我">
+      <i class="fa fa-chevron-left"></i> 电器和我
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2017/03/21/P050/" rel="next" title="老兔和朋友的rpg大冒险">
+      老兔和朋友的rpg大冒险 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
   
   <div class="toggle sidebar-toggle">
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
-    <span class="toggle-line"></span>
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
   </div>
 
   <aside class="sidebar">
+    <div class="sidebar-inner">
 
-    <div class="sidebar-inner sidebar-overview-active">
-      <ul class="sidebar-nav">
+      <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
         </li>
@@ -238,20 +416,20 @@
         </li>
       </ul>
 
-      <div class="sidebar-panel-container">
-        <!--noindex-->
-        <section class="post-toc-wrap sidebar-panel">
-        </section>
-        <!--/noindex-->
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#1"><span class="nav-number">1.</span> <span class="nav-text">1.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#2"><span class="nav-number">2.</span> <span class="nav-text">2.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#3"><span class="nav-number">3.</span> <span class="nav-text">3.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#4"><span class="nav-number">4.</span> <span class="nav-text">4.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#5"><span class="nav-number">5.</span> <span class="nav-text">5.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#6"><span class="nav-number">6.</span> <span class="nav-text">6.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#7"><span class="nav-number">7.</span> <span class="nav-text">7.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#8"><span class="nav-number">8.</span> <span class="nav-text">8.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#9"><span class="nav-number">9.</span> <span class="nav-text">9.</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#10"><span class="nav-number">10.</span> <span class="nav-text">10.</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
 
-        <section class="site-overview-wrap sidebar-panel">
-          <div class="site-author site-overview-item animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/images/logo_1.JPG">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description"></div>
 </div>
-<div class="site-state-wrap site-overview-item animated">
+<div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
@@ -269,12 +447,12 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">8</span>
+        <span class="site-state-item-count">19</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
 </div>
-  <div class="links-of-author site-overview-item animated">
+  <div class="links-of-author motion-element">
       <span class="links-of-author-item">
         <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
       </span>
@@ -291,318 +469,21 @@
 
 
 
-        </section>
       </div>
+
     </div>
   </aside>
-  <div class="sidebar-dimmer"></div>
+  <div id="sidebar-dimmer"></div>
 
 
-    </header>
+      </div>
+    </main>
 
-    
-  <div class="back-to-top">
-    <i class="fa fa-arrow-up"></i>
-    <span>0%</span>
-  </div>
-
-<noscript>
-  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
-</noscript>
-
-
-    <div class="main-inner post posts-expand">
-      
-
-      
-
-  
-
-
-<div class="post-block">
-  
-  
-
-  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2017/03/19/P080/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/logo_1.JPG">
-      <meta itemprop="name" content="Mazui">
-      <meta itemprop="description" content="">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="Underlake Reading Room">
-    </span>
-      <header class="post-header">
-        <h1 class="post-title" itemprop="name headline">
-          高中最后的奇奇怪怪作业
-        </h1>
-
-        <div class="post-meta-container">
-          <div class="post-meta">
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-calendar"></i>
-      </span>
-      <span class="post-meta-item-text">Posted on</span>
-
-      <time title="Created: 2017-03-19 16:32:49" itemprop="dateCreated datePublished" datetime="2017-03-19T16:32:49-04:00">2017-03-19</time>
-    </span>
-      <span class="post-meta-item">
-        <span class="post-meta-item-icon">
-          <i class="far fa-calendar-check"></i>
-        </span>
-        <span class="post-meta-item-text">Edited on</span>
-        <time title="Modified: 2020-08-12 20:16:53" itemprop="dateModified" datetime="2020-08-12T20:16:53-04:00">2020-08-12</time>
-      </span>
-    <span class="post-meta-item">
-      <span class="post-meta-item-icon">
-        <i class="far fa-folder"></i>
-      </span>
-      <span class="post-meta-item-text">In</span>
-        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-          <a href="/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
-        </span>
-    </span>
-
-  
-    <span class="post-meta-item" title="Symbols count in article">
-      <span class="post-meta-item-icon">
-        <i class="far fa-file-word"></i>
-      </span>
-      <span class="post-meta-item-text">Symbols count in article: </span>
-      <span>1.7k</span>
-    </span>
-    <span class="post-meta-item" title="Reading time">
-      <span class="post-meta-item-icon">
-        <i class="far fa-clock"></i>
-      </span>
-      <span class="post-meta-item-text">Reading time &asymp;</span>
-      <span>2 mins.</span>
-    </span>
-</div>
-
-        </div>
-      </header>
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-        <blockquote><p>这里是高中最后申请大学时,为艺术类学校准备的作品.<br>也是从这里开始作为创作者的我开始变得不同.<br>大学选择的是数学专业,几年来对于思维方式和追求目标都跟我的起点完全不同.<br>不以好坏来评论,这里仅供保留当年的痕迹.</p>
-</blockquote>
-<a id="more"></a>
-<br>
-<br>
-<br>
-<b>#1.</b>
-
-<img src="/2017/03/19/P080/P080_1.jpg" class="">
-<img src="/2017/03/19/P080/P080_2.jpg" class="">
-<img src="/2017/03/19/P080/P080_3.jpg" class="">
-<img src="/2017/03/19/P080/P080_4.jpg" class="">
-<p>还是上个礼拜的事情.<br><br><br>以为portfolio都准备好了的我跟老师休了天假.然后发现最后一个学校要求我完全没做过的杂志设计的时候被老师一通臭骂.</p>
-<p>到最后的一天的时候和老师心态平稳和平和气.</p>
-<p>这是那时赶出来的排版练习.</p>
-<p>还是为Wikipedia乱摘来的词句,考官没有认真读真是太好了.<br><br><br><br><br><br><br><b>#2.</b></p>
-<p>同样也是那段时间赶的作品.</p>
-<p>画了我的书架.我的书架在我心中可是爱抖露级别的,不过稍微改了一点因为不能再卡通了.</p>
-<p>说起来准备portfolio这段时间最大的痛苦就是这里了.因为报的专业分别<br>是animation,illustration and graphic design.</p>
-<p>所以考完了动画就很痛苦.</p>
-<p>老师:你为什么画什么都那么卡通.再写实一点再写实一点.</p>
-<img src="/2017/03/19/P080/P080_5.jpg" class="">
-<img src="/2017/03/19/P080/P080_6.jpg" class="">
-<br>
-<br>
-<br>
-<b>#3.</b>
-
-<p>这张我很喜欢.是水彩和马克笔.</p>
-<p>三所学校的portfolio用上了.</p>
-<p>nightschool的时候遇上了一位很喜欢blind contour的老师,就是不看着自己的纸只看着要画的东西画画,画出来的线条就很有意思了.</p>
-<p>我就靠着这个技巧试图隐藏我根本没有的素描功底.</p>
-<p>这张讲的是人…与…关系?</p>
-<p>第一张是stopping,讲的是自身.</p>
-<p>第二张是turning,讲的是做出选择.</p>
-<p>第三张是walking,讲的是短时间的关系.</p>
-<p>最后一张是following,讲的是长时间的关系,像是亲子关系.</p>
-<img src="/2017/03/19/P080/P080_7.jpg" class="">
-<br>
-<br>
-<br>
-<b>#4.</b>
-
-<p>这张被老师砍掉了.</p>
-<p>掰着手指数油画有了,水彩有了,电脑画有了,钢笔画有了.</p>
-<p>老师提议我画张素描,然而画到一半被她叫停.</p>
-<p>【这走形太严重了,百分之五十都不到,还是算了吧】</p>
-<p>然后这张是想着画像电脑平铺一样的水粉.</p>
-<p>所以我所想到的是重复的元素.像我新年明信片那样画.</p>
-<p>重复的元素一定情况下看着的确很爽快,但是又有些没有重点,太啰嗦的问题.</p>
-<p>不过老师砍掉的原因是【你的涂的太草了】</p>
-<img src="/2017/03/19/P080/P080_8.jpg" class="">
-<br>
-<br>
-<br>
-<b>#5.</b>
-
-<p>所报考的学校有一所很喜欢抽象画.之前那些鞋子也是因此而尝试的.</p>
-<p>这张是油画,那天我…我就带了两罐颜色,深蓝和白绿.还有一点点的黄.</p>
-<p>油画平铺起来的效果,真的,不好.</p>
-<p>老师【正常的画法是调一种颜色不超过三笔】</p>
-<p>原来是这样啊.<br><br><br>第二天:</p>
-<p>【老师我觉得颜色好难看.】</p>
-<p>【那倒没有】</p>
-<p>过会儿她又说</p>
-<p>【但是没有那么好看,倒是真的】</p>
-<p>老师我喜欢你的诚实.</p>
-<p>于是后面加上了贴了报纸的木板,想着简配上繁的效果会不会好一些.</p>
-<p>最后达成的就是这很微妙的效果了.</p>
-<p>【老师你觉得考官会喜欢这幅吗】</p>
-<p>【那要看你怎么解释这意思了】</p>
-<p>好有哲理.</p>
-<p>难道这是抽象画的本质吗.</p>
-<br>
-
-<p>顺便一提这幅画的时候我想的是【三人成虎】的故事.</p>
-<p>画的是三个人与一只猴子.说小孩也可以啦.</p>
-<p>如果猴子所说的话被三个人所叙述就会变得有假象道理也好,三个人所说的话被猴子所模仿也好,是指虚假的语言重量与人数的关系.</p>
-<p>是不是觉得这幅画更有道理了一点(何.</p>
-<img src="/2017/03/19/P080/P080_9.jpg" class="">
-<br>
-<br>
-<br>
-<b>#6.</b>
-画室的混乱让这玩意看起来更乱了ww.
-
-<p>剪贴画.</p>
-<p>我还是挺喜欢这个#postme的想法的.</p>
-<p>社交软件上的各种拍食物,拍风景,拍自己等等等等.</p>
-<p>不过最后效果不是很好就是了.</p>
-<p>贴的时候觉得左下角实在太密但是老师特意说把上面空出来.</p>
-<p>解释原因的时候她扔了几个纸团在上面,画一下子看起来乱得不像画了.</p>
-<p>原来如此.</p>
-<img src="/2017/03/19/P080/P080_10.jpg" class="">
-<img src="/2017/03/19/P080/P080_11.jpg" class="">
-<br>
-<br>
-<br>
-<b>#7.</b>
-
-<p>这幅是丙烯.也是那几天像地狱一样赶出来的.</p>
-<p>我高中的时候和丙烯和黑白报相处了很久,然而并不能画出没有笔触的细腻的东西…</p>
-<p>画的主旨.</p>
-<p>老师【这幅讲了生命的活力,春天的涌动,一切欣欣向荣.】</p>
-<p><em>虽说本质是玩颜色</em></p>
-<img src="/2017/03/19/P080/P080_12.jpg" class="">
-<br>
-<br>
-<br>
-<b>#8.</b>
-
-<p>Alex家的狗,名字叫Manny.</p>
-<p>为了送学校改了一点.</p>
-<p>因为要送给Alex,所以我执意用油画继续画,老师提议用丙烯.</p>
-<p>结果是没有干.考官的手碰到了颜料.</p>
-<p>这件事被我当成悲伤的梗讲了三年(哈哈).</p>
-<img src="/2017/03/19/P080/P080_13.jpg" class="">
-<br>
-<br>
-<br>
-<b>#9.</b>
-
-<p>最后一幅!!</p>
-<p>这幅加了点细节送上去了.</p>
-<p>为什么以前的我形画不准但是画出来的东西很有意思呢……</p>
-<p>好好复健(哭.</p>
-<img src="/2017/03/19/P080/P080_14.jpg" class="">
-<br>
-<br>
-<br>
-<b>#10.</b>
-
-<p>明明说好的最后一张了但是还是想拍下这份ww.</p>
-<p>考动画的portfolio像是画考卷.</p>
-<p>第一次认真画透视,也是很拼的.</p>
-<p>我想我是努力过了的.进不了也问心无愧.</p>
-<img src="/2017/03/19/P080/P080_15.jpg" class="">
-<img src="/2017/03/19/P080/P080_16.jpg" class="">
-<br>
-<br>
-<br>
-<br>
-<br>
-
-    </div>
-
-    
-    
-    
-
-    <footer class="post-footer">
-          <div class="post-tags">
-              <a href="/tags/%E6%9D%82%E8%B0%88/" rel="tag"><i class="fa fa-tag"></i> 杂谈</a>
-              <a href="/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/" rel="tag"><i class="fa fa-tag"></i> 奇怪作业</a>
-          </div>
-
+    <footer class="footer">
+      <div class="footer-inner">
         
 
-          <div class="post-nav">
-            <div class="post-nav-item">
-                <a href="/2017/03/21/P050/" rel="prev" title="老兔和朋友的rpg大冒险">
-                  <i class="fa fa-chevron-left"></i> 老兔和朋友的rpg大冒险
-                </a>
-            </div>
-            <div class="post-nav-item">
-                <a href="/2017/01/29/P049/" rel="next" title="电器和我">
-                  电器和我 <i class="fa fa-chevron-right"></i>
-                </a>
-            </div>
-          </div>
-    </footer>
-  </article>
-</div>
-
-
-
-
-
-
-      
-
-<script>
-  window.addEventListener('tabs:register', () => {
-    let { activeClass } = CONFIG.comments;
-    if (CONFIG.comments.storage) {
-      activeClass = localStorage.getItem('comments_active') || activeClass;
-    }
-    if (activeClass) {
-      const activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
-      if (activeTab) {
-        activeTab.click();
-      }
-    }
-  });
-  if (CONFIG.comments.storage) {
-    window.addEventListener('tabs:click', event => {
-      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
-      const commentClass = event.target.classList[1];
-      localStorage.setItem('comments_active', commentClass);
-    });
-  }
-</script>
-
-    </div>
-  </main>
-
-  <footer class="footer">
-    <div class="footer-inner">
-      
-
-      
-
+        
 
 <div class="copyright">
   
@@ -612,83 +493,76 @@
     <i class="fa fa-heart"></i>
   </span>
   <span class="author" itemprop="copyrightHolder">Mazui</span>
-</div>
 
- <!--
-<div class="wordcount">
-  <span class="post-meta-item">
+<!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
-      <i class="fa fa-chart-line"></i>
+      <i class="fa fa-chart-area"></i>
     </span>
+
+
     <span title="Symbols count total">82k</span>
-  </span>
-  <span class="post-meta-item">
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
     <span title="Reading time total">1:15</span>
-  </span>
-</div>
--->
-  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/pisces/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
-  </div>
 
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
 <div class="theme-info">
   <div class="powered-by"></div>
   <span class="post-count">休息室一共有58.3k的老兔正在打瞌睡</span>
 </div>
 
-    </div>
-  </footer>
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
 
   
-  <script src="//cdn.jsdelivr.net/npm/animejs@3.2.1/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
-  <script src="//cdn.jsdelivr.net/npm/@fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-<script src="/js/utils.js"></script><script src="/js/motion.js"></script><script src="/js/next-boot.js"></script>
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
 
-  
+<script src="/js/utils.js"></script>
 
-
-
-
-  <script src="/js/local-search.js"></script>
+<script src="/js/motion.js"></script>
 
 
+<script src="/js/schemes/pisces.js"></script>
 
 
+<script src="/js/next-boot.js"></script>
 
 
-
-
-
-
-
-
-
-  <script>
-    NProgress.configure({
-      showSpinner: true
-    });
-    NProgress.start();
-    document.addEventListener('readystatechange', () => {
-      if (document.readyState === 'interactive') {
-        NProgress.inc(0.8);
-      }
-      if (document.readyState === 'complete') {
-        NProgress.done();
-      }
-    });
-    document.addEventListener('pjax:send', () => {
-      NProgress.start();
-    });
-    document.addEventListener('pjax:success', () => {
-      NProgress.done();
-    });
-  </script>
 
 
   
+
+
+
+
+
+
+
 
 
 
