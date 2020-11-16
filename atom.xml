@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-13T15:09:59.884Z</updated>
+  <updated>2020-11-16T03:26:18.539Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,41 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>冬日的一点阳光</title>
+    <link href="http://yoursite.com/2020/11/15/P129/"/>
+    <id>http://yoursite.com/2020/11/15/P129/</id>
+    <published>2020-11-16T03:20:12.000Z</published>
+    <updated>2020-11-16T03:26:18.539Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2020/11/15/P129/P129.JPG&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
+  </entry>
+  
+  <entry>
     <title>海边的烟花与阿宅社交新闻</title>
     <link href="http://yoursite.com/2020/11/12/P127/"/>
     <id>http://yoursite.com/2020/11/12/P127/</id>
     <published>2020-11-13T02:13:11.000Z</published>
-    <updated>2020-11-13T15:09:59.884Z</updated>
+    <updated>2020-11-16T03:21:33.896Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;/2020/11/12/P127/P127_1.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.&lt;/p&gt;</summary>
     
     
     
@@ -106,7 +132,7 @@
     <link href="http://yoursite.com/2020/10/31/P122/"/>
     <id>http://yoursite.com/2020/10/31/P122/</id>
     <published>2020-10-31T17:50:31.000Z</published>
-    <updated>2020-11-13T02:10:25.327Z</updated>
+    <updated>2020-11-16T03:24:20.202Z</updated>
     
     
     <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;/p&gt;</summary>
@@ -404,28 +430,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>miku和清早的红茶</title>
-    <link href="http://yoursite.com/2020/04/28/P069/"/>
-    <id>http://yoursite.com/2020/04/28/P069/</id>
-    <published>2020-04-28T18:26:42.000Z</published>
-    <updated>2020-11-13T01:09:47.737Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/04/28/P069/P069.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;今年份Forfange的miku投稿.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
-    
-    <category term="vocaloid" scheme="http://yoursite.com/tags/vocaloid/"/>
     
   </entry>
   
