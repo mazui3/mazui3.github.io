@@ -29,7 +29,7 @@
 <meta property="og:description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-03T22:31:05.000Z">
-<meta property="article:modified_time" content="2020-11-12T23:38:07.456Z">
+<meta property="article:modified_time" content="2020-11-18T03:42:21.305Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="飞哥的任务罢了(嘘)">
 <meta name="twitter:card" content="summary">
@@ -232,7 +232,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-12 18:38:07" itemprop="dateModified" datetime="2020-11-12T18:38:07-05:00">2020-11-12</time>
+                <time title="Modified: 2020-11-17 22:42:21" itemprop="dateModified" datetime="2020-11-17T22:42:21-05:00">2020-11-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -249,13 +249,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>4.7k</span>
+              <span>8.3k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>4 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -326,7 +326,9 @@
 <li>Choice. what other choices do participants have</li>
 <li>Privacy(data sensitivity). what expectation of privacy and confidentiality do participants have</li>
 </ul>
+<blockquote>
 <p>Aside: 关于匿名.为确保匿名后的data还能互相分辨,会加入time stamps(one of HIPAA 18 identifiers).<br>  Anonymous data: data without any personally identifiable infomation.<br>  Anonymized data: identified or anonymous data that has been looked at and guaranteed in some way that the re-identification isk is now to non-existent.</p>
+</blockquote>
 <p>Note: 虽然没有写名字,但一些info(timestamp也可能行)还是能idenfity个人(AOL search data leak例子), may still have high re-identificaiton risk.</p>
 <br>
 <br>
@@ -446,7 +448,152 @@
 <br>
 <br>
 
-<h2 id="designing-an-experiment"><a href="#designing-an-experiment" class="headerlink" title="designing an experiment"></a>designing an experiment</h2><p>Unit of diversion</p>
+<h2 id="designing-an-experiment"><a href="#designing-an-experiment" class="headerlink" title="designing an experiment"></a>designing an experiment</h2><h3 id="Unit-of-diversion"><a href="#Unit-of-diversion" class="headerlink" title="Unit of diversion"></a>Unit of diversion</h3><p>  how we define what an individual subject is in the experience.</p>
+<p>Commonly used:</p>
+<ul>
+<li><strong>User id</strong> (user name, email address, phone number)<ul>
+<li>stable, unchanging</li>
+<li>personally identifiable</li>
+</ul>
+</li>
+<li><strong>Anonymous id</strong> (cookie)<ul>
+<li>changes when you switch browser or device</li>
+<li>users can clear cookies(easy to change)</li>
+</ul>
+</li>
+<li><strong>Event</strong><ul>
+<li>no consistent experience(for the change that is not user visible)</li>
+<li>use only for non-user-visible changes</li>
+</ul>
+</li>
+</ul>
+<p>Less common:</p>
+<ul>
+<li><strong>Device id</strong><ul>
+<li>only available for mobile</li>
+<li>tied to specific device</li>
+<li>unchangeable by user</li>
+</ul>
+</li>
+<li><strong>IP address</strong><ul>
+<li>changes when location changes</li>
+</ul>
+</li>
+</ul>
+<p>Example: unit of diversion (check means assigned to a group)</p>
+<table>
+<thead>
+<tr>
+<th align="left"></th>
+<th align="center">(desktop) homepage</th>
+<th align="center">sign in</th>
+<th align="center">visit class</th>
+<th align="center">watch video</th>
+<th align="center">(mobile) auto sign in</th>
+<th align="center">watch video</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">user-id</td>
+<td align="center">None</td>
+<td align="center">🍁</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">cookie</td>
+<td align="center">🍁</td>
+<td align="center">Note: if they did not clear their cookie</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">🍁</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">event</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+</tr>
+<tr>
+<td align="left">device id</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">🍁</td>
+<td align="center"></td>
+</tr>
+<tr>
+<td align="left">IP address</td>
+<td align="center">🍁</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+</tr>
+</tbody></table>
+<p>How we choose:</p>
+<ul>
+<li><strong>user consistency</strong> (whether cross devices/ sign in sign off border)<ul>
+<li>event(not necessary) &gt; cookie(enough) &gt; user-id(necessary)</li>
+</ul>
+</li>
+<li><strong>ethical consideration</strong> (what data is collecting/ data is identified or not)<ul>
+<li>security and confidentiality questions</li>
+<li>informed consent</li>
+</ul>
+</li>
+<li><strong>variability</strong><ul>
+<li>unit of analysis -&gt; whatever denominator of metric<br>(eg. page view if unit of analysis over click rough rate)</li>
+<li>unit of diversion(if is cookie or user id)<br>(eg. same metric click through rate is much higher than unit of analysis)<br>why: we consider what to be independent wrong.<br>Event: every single event is different random draw.<br>Cookie &amp; user id -&gt; we diverting groups of events.</li>
+</ul>
+</li>
+</ul>
+<h3 id="Population"><a href="#Population" class="headerlink" title="Population"></a>Population</h3><p>  experiment:<br>  <strong>intra-user experiment</strong> . Expose the same user to the feature being on and off over time, analyze their behavior.<br>  pitfall: Careful about choosing comparable time window. Frustration or learning problem.</p>
+<p>  searching ranking, preferences(rank order list): <strong>interleaved experiment</strong> . Expose same user to the A and B side at the same time. Useful for reordering list.</p>
+<p>  <strong>inter-user experiment</strong> . Different ppl from A side and B side.</p>
+<p>  <strong>cohort</strong> : try to match up the entering classes. At least have roughly the same parameter in two user groups.<br>  (eg. In medical experiments, match up patients in trial based on demographic info, ages, medical history, then do pair analysis.)</p>
+<p>  target:<br>  Based on info required. Restriction. Avoid overlap target.</p>
+<blockquote>
+<p>Aside: Significance<br>A p-value of 5% or lower is often considered to be statistically significant.<br>statistically significant difference: compute difference and confidence interval and see if it includes 0.(if margin of error is wider than estimated difference -&gt; includes 0 -&gt; diff is not significant)</p>
+</blockquote>
+<p>Diff between population and cohort:<br>  population is having a whole group of users. Whichin the population define cohort -&gt; people who enter the experiment at the same time.<br>(eg. divert cookie or user id, look at a particular country, during the experience could gain/lose users. Cohort: define an entering class and only look at users who entered your experiment on both sides around the same time)<br>  cohort are harder to analyze, they will take more data because you’ll lose users. Only use they when looking for user stability.</p>
+<ul>
+<li>Looking for learning effects</li>
+<li>Examining user retention</li>
+<li>Want to increase user activity</li>
+<li>Anything requiring user to be established<blockquote>
+<p>example:</p>
+</blockquote>
+<ul>
+<li>Have existing course and change structure of lesson</li>
+<li>Unit of diversion: user-id(but not all users in the course)</li>
+<li>Control: need to be a comparable cohort</li>
+</ul>
+</li>
+</ul>
+<h3 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h3><p>based on practical significance, statistical significance.<br>To calculate size, assume SE ~ 1/sqrt(N)</p>
+<blockquote>
+<p>example:<br>Experiment: change order of courses on course list<br>Metric: click-though-rate<br>Unit-of-diversion:cookies<br>α: 0.05<br>β: 0.2<br>dmin: 0.01<br>SE = 0.0628/1000 pageview</p>
+</blockquote>
+<p>Result: 300,000 -&gt; too much<br>Adjusted:</p>
+<ul>
+<li>Increase dmin, α, β</li>
+<li>change unit of diversion to page view -&gt; makes unit of diversion same as unit of analysis, variability of the metric will decrease and close to analytical estimate.</li>
+<li>target experiment to specific traffic</li>
+<li>change metric to cookie-based click-through-probability -&gt; often not make a significant difference to variability</li>
+</ul>
+<h3 id="Duration"><a href="#Duration" class="headerlink" title="Duration"></a>Duration</h3><p> consider difference between weekdays and weekends -&gt; run smaller percentage across multiple days, or run multiple tasks at the same time on smaller percentage of traffic</p>
+<blockquote>
+<p>Aside: learning effects<br>measure user learning, whether a user is adapting to a change or not.</p>
+</blockquote>
 
     </div>
 
@@ -530,7 +677,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-binomial-distruibution"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">3.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">4.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">5.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">6.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">7.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">8.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Segmenting-and-filtering-data"><span class="nav-number">8.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><span class="nav-number">8.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">9.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Boot-strapping"><span class="nav-number">9.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">10.</span> <span class="nav-text">designing an experiment</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-binomial-distruibution"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">3.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">4.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">5.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">6.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">7.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">8.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Segmenting-and-filtering-data"><span class="nav-number">8.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><span class="nav-number">8.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">9.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Boot-strapping"><span class="nav-number">9.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">10.</span> <span class="nav-text">designing an experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-diversion"><span class="nav-number">10.1.</span> <span class="nav-text">Unit of diversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Population"><span class="nav-number">10.2.</span> <span class="nav-text">Population</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Size"><span class="nav-number">10.3.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration"><span class="nav-number">10.4.</span> <span class="nav-text">Duration</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -613,7 +760,7 @@
     </span>
 
 
-    <span title="Symbols count total">83k</span>
+    <span title="Symbols count total">87k</span>
   -->
 
   <!--
@@ -621,7 +768,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">1:16</span>
+    <span title="Reading time total">1:19</span>
 
   -->
   
@@ -631,7 +778,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有59.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有59.9k的老兔正在打瞌睡</span>
 </div>
 
         
