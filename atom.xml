@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-16T03:39:15.790Z</updated>
+  <updated>2020-11-23T06:37:06.020Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>在多伦多市中心迎接2020</title>
+    <link href="http://yoursite.com/2020/11/22/P131/"/>
+    <id>http://yoursite.com/2020/11/22/P131/</id>
+    <published>2020-11-22T16:27:11.000Z</published>
+    <updated>2020-11-23T06:37:06.020Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;年初的事.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
   
   <entry>
     <title>冬日的一点阳光</title>
@@ -416,27 +435,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>老兔与丹与宾果的承诺</title>
-    <link href="http://yoursite.com/2020/07/04/P114/"/>
-    <id>http://yoursite.com/2020/07/04/P114/</id>
-    <published>2020-07-04T05:01:16.000Z</published>
-    <updated>2020-11-13T02:12:27.751Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;是给老兔的生日贺图,实际上做完是八月中旬的事了,就动用了时间魔法师的力量让生贺们整整齐齐(认罪).&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
     
   </entry>
   
