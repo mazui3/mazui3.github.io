@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-24T02:20:55.569Z</updated>
+  <updated>2020-11-24T07:28:29.365Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,23 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>给树哥看的世界观小草稿</title>
+    <link href="http://yoursite.com/2020/11/24/P132/"/>
+    <id>http://yoursite.com/2020/11/24/P132/</id>
+    <published>2020-11-24T06:32:19.000Z</published>
+    <updated>2020-11-24T07:28:29.365Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;那顺便祝贺一下Andre工作室八周年.&lt;/p&gt;</summary>
+    
+    
+    
+    
+    <category term="树哥是神" scheme="http://yoursite.com/tags/%E6%A0%91%E5%93%A5%E6%98%AF%E7%A5%9E/"/>
+    
+  </entry>
   
   <entry>
     <title>在多伦多市中心迎接2020</title>
@@ -417,24 +434,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>来自饺饺的生日祝福</title>
-    <link href="http://yoursite.com/2020/07/04/P109/"/>
-    <id>http://yoursite.com/2020/07/04/P109/</id>
-    <published>2020-07-04T23:19:13.000Z</published>
-    <updated>2020-11-13T02:07:12.246Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;嘿嘿只是想保存一下饺宝给我画的两张麻醉.&lt;/p&gt;
-&lt;img src=&quot;/2020/07/04/P109/P109_2.jpg&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
