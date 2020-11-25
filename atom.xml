@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-24T07:28:29.365Z</updated>
+  <updated>2020-11-25T04:05:05.692Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,14 +17,34 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>给树哥看的世界观小草稿</title>
+    <title>关于SQL的笔记</title>
+    <link href="http://yoursite.com/2020/11/24/P134/"/>
+    <id>http://yoursite.com/2020/11/24/P134/</id>
+    <published>2020-11-24T20:07:13.000Z</published>
+    <updated>2020-11-25T04:05:05.692Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="飞哥的任务罢了(嘘)" scheme="http://yoursite.com/tags/%E9%A3%9E%E5%93%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BD%A2%E4%BA%86-%E5%98%98/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>The amazing treasure - 番外</title>
     <link href="http://yoursite.com/2020/11/24/P132/"/>
     <id>http://yoursite.com/2020/11/24/P132/</id>
     <published>2020-11-24T06:32:19.000Z</published>
-    <updated>2020-11-24T07:28:29.365Z</updated>
+    <updated>2020-11-25T18:36:30.178Z</updated>
     
     
-    <summary type="html">&lt;p&gt;那顺便祝贺一下Andre工作室八周年.&lt;/p&gt;</summary>
+    <summary type="html">&lt;img src=&quot;/2020/11/24/P132/P132.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;那顺便祝贺一下Andre工作室八周年.&lt;/p&gt;</summary>
     
     
     
@@ -404,27 +424,6 @@
     <summary type="html">&lt;img src=&quot;/2020/08/03/P130/P130.png&quot;</summary>
         
       
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>summer heat</title>
-    <link href="http://yoursite.com/2020/07/10/P105/"/>
-    <id>http://yoursite.com/2020/07/10/P105/</id>
-    <published>2020-07-11T01:25:35.000Z</published>
-    <updated>2020-11-13T01:12:19.635Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/07/10/P105/P105.png&quot; class=&quot;&quot;&gt;</summary>
     
     
     

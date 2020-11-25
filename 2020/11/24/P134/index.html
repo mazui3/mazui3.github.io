@@ -1,0 +1,579 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="个人用笔记,写的很杂(再放送).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于SQL的笔记">
+<meta property="og:url" content="http://yoursite.com/2020/11/24/P134/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="个人用笔记,写的很杂(再放送).">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_1.png">
+<meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
+<meta property="article:modified_time" content="2020-11-25T04:05:05.692Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="飞哥的任务罢了(嘘)">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/11/24/P134/P134_1.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/11/24/P134/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于SQL的笔记 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Mailbox</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/24/P134/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_1.JPG">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于SQL的笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-24 15:07:13 / Modified: 23:05:05" itemprop="dateCreated datePublished" datetime="2020-11-24T15:07:13-05:00">2020-11-24</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>个人用笔记,写的很杂(再放送).</p>
+<a id="more"></a>
+
+<h2 id="hot-key"><a href="#hot-key" class="headerlink" title="hot key"></a>hot key</h2><p>ctrl + o -&gt; open database<br>alt + e -&gt; SQL editor<br>F9 -&gt; Execute query</p>
+<h2 id="SQL-statement"><a href="#SQL-statement" class="headerlink" title="SQL statement"></a>SQL statement</h2><h3 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">Name</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//wherever there&#x27;s island in the string, %means 前面或者后面可以有其他字符</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">Name</span> <span class="keyword">LIKE</span> <span class="string">&#x27;_island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//_ 的意思是某一个字符.island%前面可以有任何一个字符</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line"> <span class="keyword">WHERE</span> Continent <span class="keyword">IN</span> ( <span class="string">&#x27;Europe&#x27;</span>, <span class="string">&#x27;Asia&#x27;</span> ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//continent是europe或者asia</span><br></pre></td></tr></table></figure>
+<p><strong>select distinct</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Continent <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Continent <span class="keyword">FROM</span> Country;</span><br><span class="line">Using the <span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> <span class="keyword">statement</span>, you will <span class="keyword">get</span> <span class="keyword">only</span> <span class="keyword">unique</span> results.</span><br></pre></td></tr></table></figure>
+<p><strong>condition</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">    <span class="keyword">CASE</span> <span class="keyword">WHEN</span> a <span class="keyword">THEN</span> <span class="string">&#x27;true&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;false&#x27;</span> <span class="keyword">END</span> <span class="keyword">as</span> boolA,</span><br><span class="line">    <span class="keyword">CASE</span> <span class="keyword">WHEN</span> b <span class="keyword">THEN</span> <span class="string">&#x27;true&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;false&#x27;</span> <span class="keyword">END</span> <span class="keyword">as</span> boolB</span><br><span class="line">    <span class="keyword">FROM</span> booltest</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span></span><br><span class="line">  <span class="keyword">CASE</span> a <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">&#x27;true&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;false&#x27;</span> <span class="keyword">END</span> <span class="keyword">AS</span> boolA,</span><br><span class="line">  <span class="keyword">CASE</span> b <span class="keyword">WHEN</span> <span class="number">1</span> <span class="keyword">THEN</span> <span class="string">&#x27;true&#x27;</span> <span class="keyword">ELSE</span> <span class="string">&#x27;false&#x27;</span> <span class="keyword">END</span> <span class="keyword">AS</span> boolB</span><br><span class="line">  <span class="keyword">FROM</span> booltest</span><br><span class="line">;//these two are same (function)</span><br></pre></td></tr></table></figure>
+
+<h3 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h3><p>FROM clause + WHERE clause(WHERE + logical expression)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Countries <span class="keyword">WHERE</span> Continent = <span class="string">&#x27;Europe&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+
+<h3 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">UPDATE</span> Customer</span><br><span class="line">  <span class="keyword">SET</span></span><br><span class="line">    Address = <span class="string">&#x27;123 music ave&#x27;</span>,</span><br><span class="line">    Zip = <span class="string">&#x27;98056&#x27;</span></span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">5</span>; // which/where row to be updated</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">UPDATE</span> Customer</span><br><span class="line">  <span class="keyword">SET</span></span><br><span class="line">    Address = <span class="literal">NULL</span>,//如果没有的话</span><br><span class="line">    Zip = <span class="literal">NULL</span></span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
+<p>如果没有where就会把所有的都替换.</p>
+<h3 id="DELETE"><a href="#DELETE" class="headerlink" title="DELETE"></a>DELETE</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DELETE</span> <span class="keyword">FROM</span> Customer <span class="keyword">WHERE</span> <span class="keyword">id</span> = <span class="number">4</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="AS"><a href="#AS" class="headerlink" title="AS"></a>AS</h3><p>as create column的alias名字.<strong>注:as有时可以省略.</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ‘Helloworld’ <span class="keyword">AS</span> <span class="keyword">Result</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="ORDER-BY"><a href="#ORDER-BY" class="headerlink" title="ORDER BY"></a>ORDER BY</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, LifeExpectncy <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//get only Name&amp;LifeExpectncy column data.</span><br></pre></td></tr></table></figure>
+<p>Note: single quote for string, double string for most of other things(eg. identifier).</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span> <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span> <span class="keyword">DESC</span>;//descending 从z到a的顺序</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span> <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span> <span class="keyword">ASC</span>;//从a到z,默认的顺序</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> Continent, <span class="keyword">Name</span>;//按两个条件排序</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">ORDER</span> <span class="keyword">BY</span> Continent <span class="keyword">DESC</span>, Region, <span class="keyword">Name</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h3><p>选择部分(row)data.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent = <span class="string">&#x27;Europe&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="LIMIT-and-OFFSET"><a href="#LIMIT-and-OFFSET" class="headerlink" title="LIMIT and OFFSET"></a>LIMIT and OFFSET</h3><p>选择部分(row)data.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent = <span class="string">&#x27;Europe&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span> <span class="keyword">LIMIT</span> <span class="number">5</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent = <span class="string">&#x27;Europe&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span> <span class="keyword">LIMIT</span> <span class="number">5</span> <span class="keyword">OFFSET</span> <span class="number">5</span>;//5-10的数据</span><br></pre></td></tr></table></figure>
+
+<h3 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h3><p>count rows</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Population &gt; <span class="number">10000000</span> <span class="keyword">AND</span> Continent = <span class="string">&#x27;Europe&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Continent) <span class="keyword">FROM</span> Country; //count where continent has data</span><br></pre></td></tr></table></figure>
+
+<h3 id="INSERT-INTO"><a href="#INSERT-INTO" class="headerlink" title="INSERT INTO"></a>INSERT INTO</h3><p>add data</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Customer (<span class="keyword">name</span>, city, state, zip)</span><br><span class="line">  <span class="keyword">VALUES</span> (<span class="string">&#x27;Jimi Hendrix&#x27;</span>, <span class="string">&#x27;Renton&#x27;</span>, <span class="string">&#x27;WA&#x27;</span>, <span class="string">&#x27;12398&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;This&#x27;</span>, <span class="string">&#x27;Right here!&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> ( b, c ) <span class="keyword">VALUES</span> ( <span class="string">&#x27;That&#x27;</span>, <span class="string">&#x27;Over there!&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">DEFAULT</span> <span class="keyword">VALUES</span>;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> ( a, b, c ) <span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, description <span class="keyword">from</span> item;</span><br></pre></td></tr></table></figure>
+
+
+<h3 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> (</span><br><span class="line">  a <span class="built_in">INTEGER</span>,</span><br><span class="line">  b <span class="built_in">TEXT</span></span><br><span class="line">);//column name will be a and b, followed by type declaration</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;a&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="number">3</span>, <span class="string">&#x27;c&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> ( a <span class="built_in">TEXT</span> <span class="keyword">UNIQUE</span>, b <span class="built_in">TEXT</span>, c <span class="built_in">TEXT</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span> ); //UNIQUE and DEFAULT</span><br></pre></td></tr></table></figure>
+<p>Note: we can have more NULL while using UNIQUE(depends on different system)</p>
+<h3 id="DROP-TABLE"><a href="#DROP-TABLE" class="headerlink" title="DROP TABLE"></a>DROP TABLE</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> ( a <span class="built_in">TEXT</span>, b <span class="built_in">TEXT</span> );//here will have a error since the table is already created</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h2><p>when search for null</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span> <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span> <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;//opposite</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> (</span><br><span class="line">  a <span class="built_in">INTEGER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  b <span class="built_in">TEXT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  c <span class="built_in">TEXT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="ALTER"><a href="#ALTER" class="headerlink" title="ALTER"></a>ALTER</h2><p>add a new column</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> <span class="keyword">ADD</span> d <span class="built_in">TEXT</span>;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> <span class="keyword">ADD</span> e <span class="built_in">TEXT</span> <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span>;</span><br></pre></td></tr></table></figure>
+
+<h2 id="ID-columns"><a href="#ID-columns" class="headerlink" title="ID columns"></a>ID columns</h2><p><strong>this is different in different data system</strong></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> (</span><br><span class="line">  <span class="keyword">id</span> <span class="built_in">INTEGER</span> PRIMARY <span class="keyword">KEY</span>,</span><br><span class="line">  a <span class="built_in">INTEGER</span>,</span><br><span class="line">  b <span class="built_in">TEXT</span></span><br><span class="line">);</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> (a, b) <span class="keyword">VALUES</span> ( <span class="number">10</span>, <span class="string">&#x27;a&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> (a, b) <span class="keyword">VALUES</span> ( <span class="number">11</span>, <span class="string">&#x27;b&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> (a, b) <span class="keyword">VALUES</span> ( <span class="number">12</span>, <span class="string">&#x27;c&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">test</span>;</span><br></pre></td></tr></table></figure>
+
+
+<h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><p>(aka join)</p>
+<p>Each row of table has a unique key. The table’s unique key may or may not correspond with a column in the table.<br>Sometime unique key is hidden but the table must have one.<br>When a column is used as a unique key, it often called primary key.</p>
+<img src="/2020/11/24/P134/P134_1.png" class="">
+<p>通过key来连接各个表格.这是的连接用key被称为foreign keys.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E9%A3%9E%E5%93%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BD%A2%E4%BA%86-%E5%98%98/" rel="tag"># 飞哥的任务罢了(嘘)</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/24/P132/" rel="next" title="The amazing treasure - 番外">
+      The amazing treasure - 番外 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#hot-key"><span class="nav-number">1.</span> <span class="nav-text">hot key</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-statement"><span class="nav-number">2.</span> <span class="nav-text">SQL statement</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#FROM"><span class="nav-number">2.2.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.3.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DELETE"><span class="nav-number">2.4.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AS"><span class="nav-number">2.5.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.6.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#WHERE"><span class="nav-number">2.7.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.8.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#COUNT"><span class="nav-number">2.9.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.10.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.11.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.12.</span> <span class="nav-text">DROP TABLE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">3.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">4.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">5.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#database"><span class="nav-number">6.</span> <span class="nav-text">database</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_1.JPG">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">135</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">18</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">119k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">1:48</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有80.8k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
