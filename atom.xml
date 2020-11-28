@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-11-25T04:05:05.692Z</updated>
+  <updated>2020-11-28T21:53:54.893Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2020/11/24/P134/"/>
     <id>http://yoursite.com/2020/11/24/P134/</id>
     <published>2020-11-24T20:07:13.000Z</published>
-    <updated>2020-11-25T04:05:05.692Z</updated>
+    <updated>2020-11-28T21:53:54.893Z</updated>
     
     
     <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).&lt;/p&gt;</summary>
@@ -31,7 +31,9 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="飞哥的任务罢了(嘘)" scheme="http://yoursite.com/tags/%E9%A3%9E%E5%93%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BD%A2%E4%BA%86-%E5%98%98/"/>
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
   </entry>
   
@@ -40,7 +42,7 @@
     <link href="http://yoursite.com/2020/11/24/P132/"/>
     <id>http://yoursite.com/2020/11/24/P132/</id>
     <published>2020-11-24T06:32:19.000Z</published>
-    <updated>2020-11-27T14:32:09.235Z</updated>
+    <updated>2020-11-28T21:52:06.436Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/24/P132/P132.png&quot; class=&quot;&quot;&gt;
@@ -169,7 +171,7 @@
     <link href="http://yoursite.com/2020/11/03/P124/"/>
     <id>http://yoursite.com/2020/11/03/P124/</id>
     <published>2020-11-03T22:31:05.000Z</published>
-    <updated>2020-11-22T05:13:58.336Z</updated>
+    <updated>2020-11-28T16:54:14.610Z</updated>
     
     
     <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
@@ -180,7 +182,9 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="飞哥的任务罢了(嘘)" scheme="http://yoursite.com/tags/%E9%A3%9E%E5%93%A5%E7%9A%84%E4%BB%BB%E5%8A%A1%E7%BD%A2%E4%BA%86-%E5%98%98/"/>
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
   </entry>
   
