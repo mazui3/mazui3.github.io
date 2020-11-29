@@ -1,0 +1,582 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这个人真的可以做到每周学完吗……">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于data的笔记 - Week1">
+<meta property="og:url" content="http://yoursite.com/2020/11/28/P140/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="这个人真的可以做到每周学完吗……">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
+<meta property="article:modified_time" content="2020-11-29T03:56:08.578Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="Anaconda">
+<meta property="article:tag" content="Jupyter Notebooks">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2020/11/28/P140/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于data的笔记 - Week1 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <script type="text/javascript" src="/js/my_js/clicklove.js"></script>
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-heartbeat fa-fw"></i>Mailbox</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/11/28/P140/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_1.JPG">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于data的笔记 - Week1
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2020-11-28 20:56:27 / Modified: 22:56:08" itemprop="dateCreated datePublished" datetime="2020-11-28T20:56:27-05:00">2020-11-28</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.5k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这个人真的可以做到每周学完吗……</p>
+<a id="more"></a>
+
+<h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><p>可以理解成模拟环境,可以用于跑不同的python版本.</p>
+<p>conda - A command-line utility for package and environment management.</p>
+<h3 id="upgrade"><a href="#upgrade" class="headerlink" title="upgrade"></a>upgrade</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda upgrade conda</span><br><span class="line">conda upgrade --all</span><br></pre></td></tr></table></figure>
+
+<h3 id="add-package"><a href="#add-package" class="headerlink" title="add package"></a>add package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda install PACKAGE_NAME</span><br><span class="line">conda remove PACKAGE_NAME</span><br><span class="line">conda update PACKAGE_NAME</span><br></pre></td></tr></table></figure>
+
+<h3 id="managing-environments"><a href="#managing-environments" class="headerlink" title="managing environments"></a>managing environments</h3><p>真正用来跑python的环境.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n env_name [python=X.X] [LIST_OF_PACKAGES]</span><br></pre></td></tr></table></figure>
+
+<p>For example, to create an environment named my_env with Python 3.7, and install NumPy and Keras in it, use the command below.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda create -n my_env python=3.7 numpy Keras</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">conda create -n py3_env python=3</span><br><span class="line">conda create -n py2_env python=2</span><br></pre></td></tr></table></figure>
+
+<h3 id="entering-Activate-an-environment"><a href="#entering-Activate-an-environment" class="headerlink" title="entering (Activate) an environment"></a>entering (Activate) an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For  conda 4.6 and later versions on Linux/macOS/Windows, use</span></span><br><span class="line">conda activate my_env</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Linux/macOS, use</span></span><br><span class="line"><span class="built_in">source</span> activate my_env</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Windows, use</span></span><br><span class="line">activate my_env</span><br><span class="line"><span class="comment"># For  conda 4.6 and later versions on Linux/macOS/Windows, use</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Linux/macOS, use</span></span><br><span class="line"><span class="built_in">source</span> deactivate</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Windows, use</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
+<p>大概是用create先装好一个环境,什么时候用都可以进去的.不是一次性的.</p>
+<h3 id="换environment"><a href="#换environment" class="headerlink" title="换environment"></a>换environment</h3><p>Save all the above information in the current environment to a YAML file, environment.yaml, and later share this file with other users over GitHub or other means. This file will get created (or overwritten) in your current directory.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yaml</span><br></pre></td></tr></table></figure>
+<p>To create an environment from an environment file</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yaml</span><br></pre></td></tr></table></figure>
+
+<p>如果忘了自己的environment叫什么名字.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">//或者</span><br><span class="line">conda info --envs</span><br></pre></td></tr></table></figure>
+
+<h3 id="list-the-packages-inside-an-environment"><a href="#list-the-packages-inside-an-environment" class="headerlink" title="list the packages inside an environment"></a>list the packages inside an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If the environment is not activated</span></span><br><span class="line">conda list -n env_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># If the environment is activated</span></span><br><span class="line">conda list</span><br><span class="line"></span><br><span class="line"><span class="comment"># To see if a specific package, say `scipy` is installed in an environment</span></span><br><span class="line">conda list -n env_name scipy</span><br></pre></td></tr></table></figure>
+
+<h3 id="removing-an-environment"><a href="#removing-an-environment" class="headerlink" title="removing an environment"></a>removing an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env remove -n env_name</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="Jupyter-Notebooks"><a href="#Jupyter-Notebooks" class="headerlink" title="Jupyter Notebooks"></a>Jupyter Notebooks</h2><p>The notebook is a web application that allows you to combine explanatory text, math equations, code, and visualizations all in one easily sharable document.<br>我觉得蛮强的!</p>
+<h3 id="install"><a href="#install" class="headerlink" title="install"></a>install</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+
+<h3 id="Notebook-Conda-Package"><a href="#Notebook-Conda-Package" class="headerlink" title="Notebook Conda Package"></a>Notebook Conda Package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
+
+<p>Since notebooks are JSON, it is simple to convert them to other formats. Jupyter comes with a utility called nbconvert for converting to HTML, Markdown, slideshows, etc. The general syntax to convert a given mynotebook.ipynb file to another FORMAT is:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert --to FORMAT mynotebook.ipynb</span><br></pre></td></tr></table></figure>
+
+<p>The currently supported output FORMAT could be either of the following (ignore case):</p>
+<ul>
+<li>HTML,</li>
+<li>LaTeX,</li>
+<li>PDF,</li>
+<li>WebPDF,</li>
+<li>Reveal.js HTML slideshow,</li>
+<li>Markdown,</li>
+<li>Ascii,</li>
+<li>reStructuredText,</li>
+<li>executable script,</li>
+<li>notebook.</li>
+</ul>
+<p>For example, to convert a notebook to an HTML file, in your terminal use</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the package below, if not already</span></span><br><span class="line">pip install nbconvert</span><br><span class="line">jupyter nbconvert --to html mynotebook.ipynb</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/tags/data/" rel="tag"># data</a>
+              <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
+              <a href="/tags/Jupyter-Notebooks/" rel="tag"># Jupyter Notebooks</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/11/28/P141/" rel="prev" title="关于data的笔记 - Week2">
+      <i class="fa fa-chevron-left"></i> 关于data的笔记 - Week2
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/11/24/P134/" rel="next" title="关于SQL的笔记">
+      关于SQL的笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#upgrade"><span class="nav-number">1.1.</span> <span class="nav-text">upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-package"><span class="nav-number">1.2.</span> <span class="nav-text">add package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#managing-environments"><span class="nav-number">1.3.</span> <span class="nav-text">managing environments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entering-Activate-an-environment"><span class="nav-number">1.4.</span> <span class="nav-text">entering (Activate) an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2environment"><span class="nav-number">1.5.</span> <span class="nav-text">换environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-the-packages-inside-an-environment"><span class="nav-number">1.6.</span> <span class="nav-text">list the packages inside an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#removing-an-environment"><span class="nav-number">1.7.</span> <span class="nav-text">removing an environment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebooks"><span class="nav-number">2.</span> <span class="nav-text">Jupyter Notebooks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">2.1.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run"><span class="nav-number">2.2.</span> <span class="nav-text">run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notebook-Conda-Package"><span class="nav-number">2.3.</span> <span class="nav-text">Notebook Conda Package</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_1.JPG">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description"></div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">144</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">147k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">2:13</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有96.9k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+</body>
+</html>
