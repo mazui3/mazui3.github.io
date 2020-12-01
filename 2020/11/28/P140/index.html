@@ -29,7 +29,7 @@
 <meta property="og:description" content="这个人真的可以做到每周学完吗……">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
-<meta property="article:modified_time" content="2020-11-30T17:39:36.217Z">
+<meta property="article:modified_time" content="2020-12-01T14:17:10.402Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -242,7 +242,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-11-30 12:39:36" itemprop="dateModified" datetime="2020-11-30T12:39:36-05:00">2020-11-30</time>
+                <time title="Modified: 2020-12-01 09:17:10" itemprop="dateModified" datetime="2020-12-01T09:17:10-05:00">2020-12-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -317,7 +317,7 @@
 
 <h3 id="run"><a href="#run" class="headerlink" title="run"></a>run</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
 
-<h3 id="Notebook-Conda-Package"><a href="#Notebook-Conda-Package" class="headerlink" title="Notebook Conda Package"></a>Notebook Conda Package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
+<h3 id="add-package-1"><a href="#add-package-1" class="headerlink" title="add package"></a>add package</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda install nb_conda</span><br></pre></td></tr></table></figure>
 
 <p>Since notebooks are JSON, it is simple to convert them to other formats. Jupyter comes with a utility called nbconvert for converting to HTML, Markdown, slideshows, etc. The general syntax to convert a given mynotebook.ipynb file to another FORMAT is:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert --to FORMAT mynotebook.ipynb</span><br></pre></td></tr></table></figure>
@@ -338,7 +338,7 @@
 <p>For example, to convert a notebook to an HTML file, in your terminal use</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the package below, if not already</span></span><br><span class="line">pip install nbconvert</span><br><span class="line">jupyter nbconvert --to html mynotebook.ipynb</span><br></pre></td></tr></table></figure>
 
-<h3 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h3><p>read_csv() is used to load data from csv files into a Pandas dataframe.</p>
+<h3 id="CSV"><a href="#CSV" class="headerlink" title="CSV"></a>CSV</h3><h4 id="read"><a href="#read" class="headerlink" title="read"></a>read</h4><p>read_csv() is used to load data from csv files into a Pandas dataframe.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;student_scores.csv&#x27;</span>)</span><br></pre></td></tr></table></figure>
 
 
@@ -361,7 +361,7 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&#x27;student_scores.csv&#x27;</span>, index_col=<span class="string">&#x27;Name&#x27;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&#x27;student_scores.csv&#x27;</span>, index_col=[<span class="string">&#x27;Name&#x27;</span>, <span class="string">&#x27;ID&#x27;</span>])</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 
-<p>More helpful methods for assessing and building intuition about a dataset.</p>
+<h4 id="read-formats"><a href="#read-formats" class="headerlink" title="read formats"></a>read formats</h4><p>More helpful methods for assessing and building intuition about a dataset.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;cancer_data.csv&#x27;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns a tuple of the dimensions of the dataframe</span></span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
@@ -374,13 +374,13 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns the number of unique values in each column</span></span><br><span class="line">df.nunique()</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns useful descriptive statistics for each column of data</span></span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
+<h4 id="describe"><a href="#describe" class="headerlink" title="describe"></a>describe</h4><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns useful descriptive statistics for each column of data</span></span><br><span class="line">df.describe()</span><br></pre></td></tr></table></figure>
 <p>//count, mean, std, min, 25%, 50%, 75%, max</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns the first few lines in our dataframe</span></span><br><span class="line"><span class="comment"># by default, it returns the first five</span></span><br><span class="line">df.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># although, you can specify however many rows you&#x27;d like returned</span></span><br><span class="line">df.head(<span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># same thing applies to `.tail()` which returns the last few rows</span></span><br><span class="line">df.tail(<span class="number">2</span>)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># View the index number and label for each column</span></span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate(df.columns):</span><br><span class="line">    print(i, v)</span><br></pre></td></tr></table></figure>
 
-<p>We can select data using loc and iloc, which you can read more about <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">here</a>. loc uses labels of rows or columns to select data, while iloc uses the index numbers. We’ll use these to index the dataframe below.</p>
+<h4 id="loc-and-iloc"><a href="#loc-and-iloc" class="headerlink" title="loc and iloc"></a>loc and iloc</h4><p>We can select data using loc and iloc, which you can read more about <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">here</a>. loc uses labels of rows or columns to select data, while iloc uses the index numbers. We’ll use these to index the dataframe below.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select all the columns from &#x27;id&#x27; to the last mean column</span></span><br><span class="line">df_means = df.loc[:,<span class="string">&#x27;id&#x27;</span>:<span class="string">&#x27;fractal_dimension_mean&#x27;</span>]</span><br><span class="line">df_means.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># repeat the step above using index numbers</span></span><br><span class="line">df_means = df.iloc[:,:<span class="number">12</span>]</span><br><span class="line">df_means.head()</span><br></pre></td></tr></table></figure>
 
     </div>
@@ -468,7 +468,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#upgrade"><span class="nav-number">1.1.</span> <span class="nav-text">upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-package"><span class="nav-number">1.2.</span> <span class="nav-text">add package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#managing-environments"><span class="nav-number">1.3.</span> <span class="nav-text">managing environments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entering-Activate-an-environment"><span class="nav-number">1.4.</span> <span class="nav-text">entering (Activate) an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2environment"><span class="nav-number">1.5.</span> <span class="nav-text">换environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-the-packages-inside-an-environment"><span class="nav-number">1.6.</span> <span class="nav-text">list the packages inside an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#removing-an-environment"><span class="nav-number">1.7.</span> <span class="nav-text">removing an environment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebooks"><span class="nav-number">2.</span> <span class="nav-text">Jupyter Notebooks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">2.1.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run"><span class="nav-number">2.2.</span> <span class="nav-text">run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Notebook-Conda-Package"><span class="nav-number">2.3.</span> <span class="nav-text">Notebook Conda Package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSV"><span class="nav-number">2.4.</span> <span class="nav-text">CSV</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Anaconda"><span class="nav-number">1.</span> <span class="nav-text">Anaconda</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#upgrade"><span class="nav-number">1.1.</span> <span class="nav-text">upgrade</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-package"><span class="nav-number">1.2.</span> <span class="nav-text">add package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#managing-environments"><span class="nav-number">1.3.</span> <span class="nav-text">managing environments</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#entering-Activate-an-environment"><span class="nav-number">1.4.</span> <span class="nav-text">entering (Activate) an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%8D%A2environment"><span class="nav-number">1.5.</span> <span class="nav-text">换environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#list-the-packages-inside-an-environment"><span class="nav-number">1.6.</span> <span class="nav-text">list the packages inside an environment</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#removing-an-environment"><span class="nav-number">1.7.</span> <span class="nav-text">removing an environment</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jupyter-Notebooks"><span class="nav-number">2.</span> <span class="nav-text">Jupyter Notebooks</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#install"><span class="nav-number">2.1.</span> <span class="nav-text">install</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#run"><span class="nav-number">2.2.</span> <span class="nav-text">run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#add-package-1"><span class="nav-number">2.3.</span> <span class="nav-text">add package</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSV"><span class="nav-number">2.4.</span> <span class="nav-text">CSV</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#read"><span class="nav-number">2.4.1.</span> <span class="nav-text">read</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#read-formats"><span class="nav-number">2.4.2.</span> <span class="nav-text">read formats</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#describe"><span class="nav-number">2.4.3.</span> <span class="nav-text">describe</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#loc-and-iloc"><span class="nav-number">2.4.4.</span> <span class="nav-text">loc and iloc</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -551,7 +551,7 @@
     </span>
 
 
-    <span title="Symbols count total">150k</span>
+    <span title="Symbols count total">151k</span>
   -->
 
   <!--
@@ -559,7 +559,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:16</span>
+    <span title="Reading time total">2:18</span>
 
   -->
   
@@ -569,7 +569,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有97.5k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有99.2k的老兔正在打瞌睡</span>
 </div>
 
         
