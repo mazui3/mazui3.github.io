@@ -2964,9 +2964,11 @@ Alex教了一点法语!
 <img src="/2016/09/14/P087/P087_2.jpg" class="">
 <br>
 <br>
-白牙牙是我遇到的一位实况主,是很好很有感染力的人.有幸认识…
-这是那年画给他的生日礼物.
-> 白牙齿 -> [bili](https://space.bilibili.com/900186)
+
+<p>白牙牙是我遇到的一位实况主,是很好很有感染力的人.有幸认识…<br>这是那年画给他的生日礼物.</p>
+<blockquote>
+<p>白牙齿 -&gt; <a href="https://space.bilibili.com/900186">bili</a></p>
+</blockquote>
 ]]></content>
       <categories>
         <category>画</category>
@@ -5759,11 +5761,6 @@ Uu画的社团合集.
       </tags>
   </entry>
   <entry>
-    <title>Categories</title>
-    <url>/categories/index.html</url>
-    <content><![CDATA[]]></content>
-  </entry>
-  <entry>
     <title>ReadMe</title>
     <url>/about/index.html</url>
     <content><![CDATA[<p><img src="cover.png"></p>
@@ -5807,6 +5804,11 @@ Uu画的社团合集.
 ]]></content>
   </entry>
   <entry>
+    <title>Categories</title>
+    <url>/categories/index.html</url>
+    <content><![CDATA[]]></content>
+  </entry>
+  <entry>
     <title></title>
     <url>/gallery/index.html</url>
     <content><![CDATA[<h5 id="测试gallery功能一直搞不好-那就"><a href="#测试gallery功能一直搞不好-那就" class="headerlink" title="测试gallery功能一直搞不好,那就"></a>测试gallery功能一直搞不好,那就</h5><h2 id="在这里轻轻的放下两张兄妹委托"><a href="#在这里轻轻的放下两张兄妹委托" class="headerlink" title="在这里轻轻的放下两张兄妹委托"></a>在这里轻轻的放下两张兄妹委托</h2><br>
@@ -5846,7 +5848,7 @@ input {  width:100%;
   <label>
     回复用email:
     <br>
-    <input type="text" name="_replyto" placeholder="不需要回复的话也可以写名字或空着.">
+    <input type="text" name="_replyto" placeholder="不需要回复的话可以写空着.">
   </label>
 
   <!-- your other form fields go here -->
@@ -5857,11 +5859,6 @@ input {  width:100%;
 <br>
 <br>
 ]]></content>
-  </entry>
-  <entry>
-    <title>Tags</title>
-    <url>/tags/index.html</url>
-    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>Schedule</title>
@@ -5927,9 +5924,8 @@ var x = setInterval(function() {
 <br>
 <br>
 <!--https://www.plus2net.com/html_tutorial/html_calendar2.php-->
-
 <table border='1'  bordercolor='#f09080' cellspacing='0' cellpadding='0' align=center >
-<tr><td><table cellspacing='0' cellpadding='0' align=center  border='1' width='200'><td  align=center bgcolor='#f09080'>  </td><td colspan=5 align=center bgcolor='#f09080'><font size='3' face='Tahoma'>Nov 2020  </td><td  align=center bgcolor='#f09080'>   </td></tr><tr><td><font size='3' face='Tahoma'><b>Sun</b></font></td><td><font size='3' face='Tahoma'><b>Mon</b></font></td><td><font size='3' face='Tahoma'><b>Tue</b></font></td><td><font size='3' face='Tahoma'><b>Wed</b></font></td><td><font size='3' face='Tahoma'><b>Thu</b></font></td><td><font size='3' face='Tahoma'><b>Fri</b></font></td><td><font size='3' face='Tahoma'><b>Sat</b></font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>1  
+<tr><td><table cellspacing='0' cellpadding='0' align=center  border='1' width='200'><td  align=center bgcolor='#f09080'>  </td><td colspan=5 align=center bgcolor='#f09080'><font size='3' face='Tahoma'>Dec 2020  </td><td  align=center bgcolor='#f09080'>   </td></tr><tr><td><font size='3' face='Tahoma'><b>S</b></font></td><td><font size='3' face='Tahoma'><b>M</b></font></td><td><font size='3' face='Tahoma'><b>T</b></font></td><td><font size='3' face='Tahoma'><b>W</b></font></td><td><font size='3' face='Tahoma'><b>T</b></font></td><td><font size='3' face='Tahoma'><b>F</b></font></td><td><font size='3' face='Tahoma'><b>S</b></font></td></tr><tr><td> </td><td> </td><td valign=top><font size='2' face='Tahoma'>1  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>2  
 <br>
@@ -5939,11 +5935,11 @@ var x = setInterval(function() {
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>5  
 <br>
-</font></td><td valign=top><font size='2' face='Tahoma'>6  
+</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>6  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>7  
 <br>
-</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>8  
+</font></td><td valign=top><font size='2' face='Tahoma'>8  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>9  
 <br>
@@ -5953,11 +5949,11 @@ var x = setInterval(function() {
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>12  
 <br>
-</font></td><td valign=top><font size='2' face='Tahoma'>13  
+</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>13  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>14  
 <br>
-</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>15  
+</font></td><td valign=top><font size='2' face='Tahoma'>15  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>16  
 <br>
@@ -5967,11 +5963,11 @@ var x = setInterval(function() {
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>19  
 <br>
-</font></td><td valign=top><font size='2' face='Tahoma'>20  
+</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>20  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>21  
 <br>
-</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>22  
+</font></td><td valign=top><font size='2' face='Tahoma'>22  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>23  
 <br>
@@ -5981,22 +5977,28 @@ var x = setInterval(function() {
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>26  
 <br>
-</font></td><td valign=top><font size='2' face='Tahoma'>27  
+</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>27  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>28  
 <br>
-</font></td></tr><tr><td valign=top><font size='2' face='Tahoma'>29  
+</font></td><td valign=top><font size='2' face='Tahoma'>29  
 <br>
 </font></td><td valign=top><font size='2' face='Tahoma'>30  
 <br>
+</font></td><td valign=top><font size='2' face='Tahoma'>31  
+<br>
 </font></td></tr></table></td></tr></table>
-
 
 <!--https://www.timeanddate.com/clocks/freecountdown.html-->
 <!--https://countingdownto.com/-->
 
 <br>
 ]]></content>
+  </entry>
+  <entry>
+    <title>Tags</title>
+    <url>/tags/index.html</url>
+    <content><![CDATA[]]></content>
   </entry>
   <entry>
     <title>0421/ending</title>
