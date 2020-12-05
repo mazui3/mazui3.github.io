@@ -21,19 +21,18 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这个人真的可以做到每周学完吗……">
+  <meta name="description" content="那就开始吧(吧).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于data的笔记 - Week1">
 <meta property="og:url" content="http://yoursite.com/2020/11/28/P140/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="这个人真的可以做到每周学完吗……">
+<meta property="og:description" content="那就开始吧(吧).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
-<meta property="article:modified_time" content="2020-12-05T02:43:55.784Z">
+<meta property="article:modified_time" content="2020-12-05T03:35:55.138Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
-<meta property="article:tag" content="Anaconda">
 <meta property="article:tag" content="Jupyter Notebooks">
 <meta name="twitter:card" content="summary">
 
@@ -242,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-04 21:43:55" itemprop="dateModified" datetime="2020-12-04T21:43:55-05:00">2020-12-04</time>
+                <time title="Modified: 2020-12-04 22:35:55" itemprop="dateModified" datetime="2020-12-04T22:35:55-05:00">2020-12-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -259,7 +258,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>7.3k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -277,7 +276,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>这个人真的可以做到每周学完吗……</p>
+        <p>那就开始吧(吧).</p>
 <a id="more"></a>
 
 <h2 id="Anaconda"><a href="#Anaconda" class="headerlink" title="Anaconda"></a>Anaconda</h2><p>可以理解成模拟环境,可以用于跑不同的python版本.</p>
@@ -367,6 +366,8 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns a tuple of the dimensions of the dataframe</span></span><br><span class="line"><span class="comment"># 也就是可以找rows and columns</span></span><br><span class="line">df.shape</span><br></pre></td></tr></table></figure>
 <p>同时也可以这样count rows and columns</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rows = len(df.axes[<span class="number">0</span>])</span><br><span class="line">cols = len(df.axes[<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">print(<span class="string">&quot;Number of Rows: &quot;</span> + str(rows))</span><br><span class="line">print(<span class="string">&quot;Number of Columns: &quot;</span> + str(cols))</span><br></pre></td></tr></table></figure>
+<p>找某一列的数据.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># sales on march 13, 2016</span></span><br><span class="line">df[df[<span class="string">&#x27;week&#x27;</span>] == <span class="string">&#x27;2016-03-13&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># worst week for store C</span></span><br><span class="line">df[df[<span class="string">&#x27;storeC&#x27;</span>] == df[<span class="string">&#x27;storeC&#x27;</span>].min()]</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this returns the datatypes of the columns</span></span><br><span class="line">df.dtypes</span><br></pre></td></tr></table></figure>
 
@@ -386,6 +387,8 @@
 <h3 id="loc-and-iloc"><a href="#loc-and-iloc" class="headerlink" title="loc and iloc"></a>loc and iloc</h3><p>We can select data using loc and iloc, which you can read more about <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">here</a>. loc uses labels of rows or columns to select data, while iloc uses the index numbers. We’ll use these to index the dataframe below.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select all the columns from &#x27;id&#x27; to the last mean column</span></span><br><span class="line">df_means = df.loc[:,<span class="string">&#x27;id&#x27;</span>:<span class="string">&#x27;fractal_dimension_mean&#x27;</span>]</span><br><span class="line">df_means.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># repeat the step above using index numbers</span></span><br><span class="line">df_means = df.iloc[:,:<span class="number">12</span>]</span><br><span class="line">df_means.head()</span><br></pre></td></tr></table></figure>
 
+<p>计算某几行的sum.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># total sales for the last month</span></span><br><span class="line">df.iloc[<span class="number">196</span>:, <span class="number">1</span>:].sum()</span><br><span class="line"></span><br><span class="line"><span class="comment"># total sales during most recent 3 month period</span></span><br><span class="line">last_three_months = df[df[<span class="string">&#x27;week&#x27;</span>] &gt;= <span class="string">&#x27;2017-12-01&#x27;</span>]</span><br><span class="line">last_three_months.iloc[:, <span class="number">1</span>:].sum()  <span class="comment"># exclude sum of week column</span></span><br></pre></td></tr></table></figure>
 
 <h3 id="clean-data"><a href="#clean-data" class="headerlink" title="clean data"></a>clean data</h3><p>common problem:</p>
 <h4 id="missing-data-null"><a href="#missing-data-null" class="headerlink" title="missing data(null)"></a>missing data(null)</h4><p>我们可以通过对比df.info()来发现<br>要结合missing的原因和是否是随机来考虑,可以通过填充mean的方式来解决.</p>
@@ -420,7 +423,6 @@
           <div class="post-tags">
               <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
               <a href="/tags/data/" rel="tag"># data</a>
-              <a href="/tags/Anaconda/" rel="tag"># Anaconda</a>
               <a href="/tags/Jupyter-Notebooks/" rel="tag"># Jupyter Notebooks</a>
           </div>
 
@@ -524,7 +526,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">21</span>
+        <span class="site-state-item-count">20</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -578,7 +580,7 @@
     </span>
 
 
-    <span title="Symbols count total">153k</span>
+    <span title="Symbols count total">154k</span>
   -->
 
   <!--
@@ -586,7 +588,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:19</span>
+    <span title="Reading time total">2:20</span>
 
   -->
   
@@ -596,7 +598,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有99.5k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有99.6k的老兔正在打瞌睡</span>
 </div>
 
         
