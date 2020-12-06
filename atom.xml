@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-05T03:32:47.280Z</updated>
+  <updated>2020-12-06T05:56:27.525Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>朽鸦老师给我的兄妹</title>
+    <link href="http://yoursite.com/2020/12/06/P142/"/>
+    <id>http://yoursite.com/2020/12/06/P142/</id>
+    <published>2020-12-06T05:43:23.000Z</published>
+    <updated>2020-12-06T05:56:27.525Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2020/12/06/P142/P142_1.PNG&quot; class=&quot;&quot;&gt;
+&lt;img src=&quot;/2020/12/06/P142/P142_2.PNG&quot; class=&quot;&quot;&gt;
+&lt;p&gt;请大家看——————————!!!(呐喊)&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
   
   <entry>
     <title>关于data的笔记 - Week2</title>
@@ -416,25 +437,6 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="奇怪作业" scheme="http://yoursite.com/tags/%E5%A5%87%E6%80%AA%E4%BD%9C%E4%B8%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>恭喜乔迁和欢迎光临</title>
-    <link href="http://yoursite.com/2020/08/13/P111/"/>
-    <id>http://yoursite.com/2020/08/13/P111/</id>
-    <published>2020-08-14T03:42:04.000Z</published>
-    <updated>2020-11-13T02:08:37.122Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;好久不见的杂谈.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
