@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.  Aside:博客加了mathjax插件,可以更好得写数学公式(…),关于mathjax的tips. 不过也因为添加了这个插件很可能有换行bug(叹气),还是今天有bug睡一觉又没了的神秘bug,暂时没修(...).">
+  <meta name="description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.    Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的tips.感谢yihui大佬提供的hexo与mathjax不兼容的解决方式.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于(我所理解的)加密学入门">
 <meta property="og:url" content="http://yoursite.com/2020/12/14/P153/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.  Aside:博客加了mathjax插件,可以更好得写数学公式(…),关于mathjax的tips. 不过也因为添加了这个插件很可能有换行bug(叹气),还是今天有bug睡一觉又没了的神秘bug,暂时没修(...).">
+<meta property="og:description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.    Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的tips.感谢yihui大佬提供的hexo与mathjax不兼容的解决方式.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_1.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_2.png">
@@ -43,7 +43,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_13.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_14.png">
 <meta property="article:published_time" content="2020-12-14T14:20:43.000Z">
-<meta property="article:modified_time" content="2020-12-17T05:28:28.093Z">
+<meta property="article:modified_time" content="2020-12-17T23:01:36.638Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta name="twitter:card" content="summary">
@@ -254,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-17 00:28:28" itemprop="dateModified" datetime="2020-12-17T00:28:28-05:00">2020-12-17</time>
+                <time title="Modified: 2020-12-17 18:01:36" itemprop="dateModified" datetime="2020-12-17T18:01:36-05:00">2020-12-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,28 +289,26 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.</p>
+        <script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.  </p>
 <blockquote>
-<p>Aside:博客加了mathjax插件,可以更好得写数学公式(…),关于mathjax的<a target="_blank" rel="noopener" href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">tips</a>.<br />
-不过也因为添加了这个插件很可能有换行bug(叹气),还是今天有bug睡一觉又没了的神秘bug,暂时没修(...). <a id="more"></a></p>
+<p>Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的<a target="_blank" rel="noopener" href="https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference">tips</a>.<br>感谢<a target="_blank" rel="noopener" href="https://yihui.org/en/2018/07/latex-math-markdown/">yihui</a>大佬提供的hexo与mathjax不兼容的解决方式.<br><a id="more"></a></p>
 </blockquote>
-<p>加密,是不同的算法.将想要的信息按照算法和自己的密匙加密,再也通过算法和密匙解密.<br />
-破解,是在已知算法的前提下,试图找算法的破绽,也用大量的尝试不同密匙来暴力破解.</p>
-<p>不过加密方式是实时更新的.这门课我上了两次,隔了半年教材也少许有更改.<br />
-所以如果阅读这篇文章的时候距离创造时间够久了,实用意义就会减少.比如如果量子计算机使用起来,现在的加密方法肯定也得重新考虑安全性了.</p>
-<p><br> <br></p>
-<h2 id="symmetric-key-encryption-scheme-skes">Symmetric-key encryption scheme (SKES)</h2>
-<p><a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/09/22/P120/">流密码</a> 上次有简单记述.<br />
-借着上次的三种传统加密方法以外,这里是一些经常在stream cipher中出现的辅助定义.</p>
+<p>加密,是不同的算法.将想要的信息按照算法和自己的密匙加密,再也通过算法和密匙解密.<br>破解,是在已知算法的前提下,试图找算法的破绽,也用大量的尝试不同密匙来暴力破解.  </p>
+<p>不过加密方式是实时更新的.这门课我上了两次,隔了半年教材也少许有更改.<br>所以如果阅读这篇文章的时候距离创造时间够久了,实用意义就会减少.比如如果量子计算机使用起来,现在的加密方法肯定也得重新考虑安全性了.  </p>
+<p><br><br><br></p>
+<h2 id="Symmetric-key-encryption-scheme-SKES"><a href="#Symmetric-key-encryption-scheme-SKES" class="headerlink" title="Symmetric-key encryption scheme (SKES)"></a>Symmetric-key encryption scheme (SKES)</h2><p><a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/09/22/P120/">流密码</a> 上次有简单记述.<br>借着上次的三种传统加密方法以外,这里是一些经常在stream cipher中出现的辅助定义.  </p>
 <p><br></p>
-<h3 id="a-pseudorandom-bit-generator-prbg">A pseudorandom bit generator (PRBG)</h3>
-<blockquote>
-<p>Definition A pseudorandom bit generator (PRBG) is a deterministic algorithm that takes as input a (random) seed, and outputs a longer “pseudorandom” sequence called the keystream.</p>
+<h3 id="A-pseudorandom-bit-generator-PRBG"><a href="#A-pseudorandom-bit-generator-PRBG" class="headerlink" title="A pseudorandom bit generator (PRBG)"></a>A pseudorandom bit generator (PRBG)</h3><blockquote>
+<p>Definition<br>A pseudorandom bit generator (PRBG) is a deterministic algorithm that takes as input a (random) seed, and outputs a longer “pseudorandom” sequence called the keystream.  </p>
 </blockquote>
-<p>用于one-time pad.使用一次性密匙的流密码.</p>
+<p>用于one-time pad.使用一次性密匙的流密码.  </p>
 <ul>
 <li>Indistinguishability: The keystream should be “indistinguishable” from a random sequence.</li>
-<li>Unpredictability: If an adversary knows a portion c1 of ciphertext and the corresponding plaintext m1, then she can easily find the corresponding portion <span class="math inline">\({k1 = c1 ⊕ m1}\)</span> of the keystream. Thus, given portions of the keystream, it should be infeasible to learn any information about the rest of the keystream.</li>
+<li>Unpredictability: If an adversary knows a portion c1 of ciphertext and the corresponding plaintext m1, then she can easily find the corresponding portion<br><script type="math/tex">{k1 = c1 ⊕ m1}</script> of the keystream. Thus, given portions of the keystream, it should be infeasible to learn any information about the rest of the keystream.</li>
 </ul>
 <p>The keystream generator is the critical security component of stream cipher. View generator as a finite state machine:</p>
 <ul>
@@ -319,132 +317,98 @@
 <li>Output function: keystream output is function of current stored value</li>
 </ul>
 <p><br></p>
-<h3 id="linear-feedback-shift-registers-lfsr">Linear feedback shift registers (LFSR)</h3>
-<p>可以用来generate key的方式.使用initial vector,来生成更长的key.</p>
-<p>One application: A5 cipher.</p>
+<h3 id="Linear-feedback-shift-registers-LFSR"><a href="#Linear-feedback-shift-registers-LFSR" class="headerlink" title="Linear feedback shift registers (LFSR)"></a>Linear feedback shift registers (LFSR)</h3><p>可以用来generate key的方式.使用initial vector,来生成更长的key.  </p>
+<p>One application: A5 cipher.  </p>
 <blockquote>
-<p>Definition:<br />
-Any infinite periodic sequence (st) can be defined via a recurrence relation: <span class="math inline">\({ s_{t+n} = c_{n−1}s_{t+n−1} ⊕ c_{n−2}s_{t+n−2} . . . c_1s_{t+1} ⊕ c_0s_t }\)</span> where ci are binary constants.<br />
-The vector ( <span class="math inline">\({ s_0, s_1, . . . , s_{n−1} }\)</span>) is called the initial state vector.</p>
+<p>Definition:<br>Any infinite periodic sequence (st) can be defined via a recurrence relation: <script type="math/tex">{ s_{t+n} = c_{n−1}s_{t+n−1} ⊕ c_{n−2}s_{t+n−2} . . . c_1s_{t+1} ⊕ c_0s_t  }</script><br>where ci are binary constants.<br>The vector ( <script type="math/tex">{ s_0, s_1, . . . , s_{n−1} }</script>) is called the initial state vector.  </p>
 </blockquote>
 <img src="/2020/12/14/P153/P153_1.png" class="">
 <img src="/2020/12/14/P153/P153_2.png" class="">
 <blockquote>
-<p>Definition:<br />
-The period of a binary sequences(t) is said to be p if <span class="math display">\[\begin{equation}\label{eq1}
-S_{t+p} = S_{n}  
-\end{equation}\]</span> for all t, and p is the smallest such number.</p>
+<p>Definition:<br>The period of a binary sequences(t) is said to be p if <script type="math/tex">{S_{t+p} = S_{n}}</script> for all t, and p is the smallest such number.  </p>
 </blockquote>
-<p>对于LFSRs我们可以attack on small period.</p>
-<p>If the period of the keystream is less than the length of a ciphertext then two sections of message are encrypted using the same portion of keystream.<br />
-By XORing these two sections, the keystream cancels and one obtains the XOR of the plaintext strings.</p>
+<p>对于LFSRs我们可以attack on small period.  </p>
+<p>If the period of the keystream is less than the length of a ciphertext then two sections of message are encrypted using the same portion of keystream.<br>By XORing these two sections, the keystream cancels and one obtains the XOR of the plaintext strings.  </p>
 <p><br></p>
-<h3 id="rc4-stream-cipher">RC4 stream cipher</h3>
-<p>Pros:</p>
+<h3 id="RC4-stream-cipher"><a href="#RC4-stream-cipher" class="headerlink" title="RC4 stream cipher"></a>RC4 stream cipher</h3><p>Pros:  </p>
 <ul>
 <li>extremely simple</li>
 <li>extremely fast</li>
 <li>variable key length</li>
 <li>No catastrophic weakness has been found</li>
 </ul>
-<p>Cons:</p>
+<p>Cons:  </p>
 <ul>
 <li>design criteria are proprietary</li>
 <li>not much public scrutiny until the year 2001</li>
 <li>has small biases exploitable with ≈millions of ciphertexts</li>
 </ul>
-<p>RC4 has two components: A key scheduling algorithm, and a keystream generator.</p>
+<p>RC4 has two components: A key scheduling algorithm, and a keystream generator.  </p>
 <p><br></p>
 <blockquote>
-<p>Aside:<br />
-Birthday paradox: Suppose that an urn contains n numbered balls.<br />
-Suppose that balls are drawn from the urn, one at a time, with replacement. The expected number of draws before a ball is selected for a second time (called a collision) is approximately <span class="math display">\[\begin{equation}\label{eq2}
-{\sqrt {πn/2}} ≈ {\sqrt n}.
-\end{equation}\]</span></p>
-</blockquote>
-<p><br> <br></p>
-<h2 id="block-ciphers">Block ciphers</h2>
-<p>同样也是流密码,但把长度分为一段一段的block.</p>
+<p>Aside:<br>Birthday paradox: Suppose that an urn contains n numbered balls.<br>Suppose that balls are drawn from the urn, one at a time, with replacement. The expected number of draws before a ball is selected for a second time (called a collision) is approximately</p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq2}{\sqrt {πn/2}} ≈ {\sqrt n}.\end{equation}</script></blockquote>
+<p><br><br><br></p>
+<h2 id="Block-ciphers"><a href="#Block-ciphers" class="headerlink" title="Block ciphers"></a>Block ciphers</h2><p>同样也是流密码,但把长度分为一段一段的block.  </p>
 <blockquote>
-<p>Definition:<br />
-A block cipher is a symmetric-key encryption scheme in which a fixed-length block of plaintext determines an equal-sized block of ciphertext.</p>
+<p>Definition:<br>A block cipher is a symmetric-key encryption scheme in which a fixed-length block of plaintext determines an equal-sized block of ciphertext.  </p>
 </blockquote>
 <ul>
-<li>Security:
+<li><p>Security:  </p>
 <ul>
 <li>Diffusion: each ciphertext bit should depend on all plaintext bits.</li>
 <li>Confusion: the relationship between key and ciphertext bits should be complicated.</li>
 <li>Key length: should be small, but large enough to preclude exhaustive key search.</li>
-</ul></li>
-<li>Efficiency:
+</ul>
+</li>
+<li><p>Efficiency:  </p>
 <ul>
 <li>Simplicity (easier to implement and analyze).</li>
 <li>High encryption and decryption rate.</li>
 <li>Suitability for hardware or software.</li>
-</ul></li>
+</ul>
+</li>
 </ul>
 <p><br></p>
-<h3 id="data-encryption-standard-des">Data Encryption Standard (DES)</h3>
-<img src="/2020/12/14/P153/P153_3.png" class="">
+<h3 id="Data-Encryption-Standard-DES"><a href="#Data-Encryption-Standard-DES" class="headerlink" title="Data Encryption Standard (DES)"></a>Data Encryption Standard (DES)</h3><img src="/2020/12/14/P153/P153_3.png" class="">
 <blockquote>
-<p>Note: Basically, DES is (believed to be) secure against everything except brute-force key search.</p>
+<p>Note: Basically, DES is (believed to be) secure against everything except brute-force key search.  </p>
 </blockquote>
-<p>关于Feistel network:<br />
-用于DES.<br />
-<img src="/2020/12/14/P153/P153_4.png" class=""></p>
+<p>关于Feistel network:<br>用于DES.<br><img src="/2020/12/14/P153/P153_4.png" class=""></p>
 <blockquote>
-<p>Underlying principle: Take something “simple” and use it several times; hope that the result is “complicated”</p>
+<p>Underlying principle: Take something “simple” and use it several times; hope that the result is “complicated”  </p>
 </blockquote>
-<p>DES Problem:<br />
-- Small Key Size - Small Block Size</p>
-<p><br></p>
-<h3 id="des的multiple-encryption">DES的Multiple encryption:</h3>
-<p>Double-DES:<br />
-<span class="math display">\[\begin{equation}\label{eq3}
-k = (k1, k2), k1, k2 ∈ {\{0, 1\}}^{56}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}\label{eq4}
-c = E_{k2} (E_{k1} (m))
-\end{equation}\]</span></p>
-<p>Double-DES attack: Meet-in-the-middle.<br />
-Main idea: If <span class="math display">\[\begin{equation}\label{eq5}
-c = E_{k1} (E_{k2} (m))
-\end{equation}\]</span></p>
-<p>, then<br />
-<span class="math display">\[\begin{equation}\label{eq6}
-E^{−1}_{k2}(c) = E_{k1}(m)
-\end{equation}\]</span></p>
-<blockquote>
-<p>About meet-in-the-middle attack: time-memory tradeoff. The attack can be modified to decrease the storage requirements at the expense of time.</p>
-</blockquote>
-<p><br></p>
-<p>虽然两倍的DES不大行,但三倍好了些.<br />
-Three-key Triple encryption:</p>
-<p><span class="math display">\[\begin{equation}\label{eq7}
-k = (k1, k2, k3), k1, k2, k3 ∈_R {\{0, 1\}}^{56}
-\end{equation}\]</span></p>
-<p><span class="math display">\[\begin{equation}\label{eq8}
-c = E_{k3} (E_{k2} (E_{k1} (m)))
-\end{equation}\]</span></p>
-<p>Meet-in-the-middle attack takes ≈ $ 2^{112} $ steps<br />
-No proof that Triple-DES is more secure than DES.但是有大量运用.</p>
-<p><br></p>
-<h3 id="the-advanced-encryption-standard-aes">The Advanced Encryption Standard (AES)</h3>
-<p>关于Substitution-Permutation Networks:</p>
-<img src="/2020/12/14/P153/P153_5.png" class="">
-<p>AES比DES增加了Bitwise-XOR.<br />
-<img src="/2020/12/14/P153/P153_6.png" class=""></p>
-<p>关于更多的Substitution-Permutation Network加密方式:<br />
-- Rijndael (AES) - Heys cipher</p>
-<p>Key whitening: Subkey prevents an adversary from reversing the final round of substitution and permutation.<br />
-Substitution-Permutation Networks的attack:寻找bias</p>
-<p>更多-&gt;<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Piling-up_lemma">Piling-up Lemma的wiki</a>.</p>
-<blockquote>
-<p>The basic idea is to look for linear (boolean) relations among the bits which hold with probability much different from 50%.</p>
-</blockquote>
-<p><br></p>
-<h3 id="更多的block-cipher加密方法">更多的block cipher加密方法</h3>
+<p>DES Problem:  </p>
 <ul>
+<li>Small Key Size</li>
+<li>Small Block Size</li>
+</ul>
+<p><br></p>
+<h3 id="DES的Multiple-encryption"><a href="#DES的Multiple-encryption" class="headerlink" title="DES的Multiple encryption:"></a>DES的Multiple encryption:</h3><p>Double-DES:  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq3}k = (k1, k2), k1, k2 ∈ {\{0, 1\}}^{56}\end{equation}</script><script type="math/tex; mode=display">\begin{equation}\label{eq4}c = E_{k2} (E_{k1} (m))\end{equation}</script><p>Double-DES attack: Meet-in-the-middle.<br>Main idea: If</p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq5}c = E_{k1} (E_{k2} (m))\end{equation}</script><p>, then  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq6}E^{−1}_{k2}(c) = E_{k1}(m)\end{equation}</script><blockquote>
+<p>About meet-in-the-middle attack: time-memory tradeoff. The attack can be modified to decrease the storage requirements at the expense of time.  </p>
+</blockquote>
+<p><br></p>
+<p>虽然两倍的DES不大行,但三倍好了些.<br>Three-key Triple encryption:  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq7}k = (k1, k2, k3), k1, k2, k3 ∈_R {\{0, 1\}}^{56}\end{equation}</script><script type="math/tex; mode=display">\begin{equation}\label{eq8}c = E_{k3} (E_{k2} (E_{k1} (m)))\end{equation}</script><p>Meet-in-the-middle attack takes  ≈ <script type="math/tex">2^{112}</script> steps<br>No proof that Triple-DES is more secure than DES.但是有大量运用.  </p>
+<p><br></p>
+<h3 id="The-Advanced-Encryption-Standard-AES"><a href="#The-Advanced-Encryption-Standard-AES" class="headerlink" title="The Advanced Encryption Standard (AES)"></a>The Advanced Encryption Standard (AES)</h3><p>关于Substitution-Permutation Networks:  </p>
+<img src="/2020/12/14/P153/P153_5.png" class="">
+<p>AES比DES增加了Bitwise-XOR.<br><img src="/2020/12/14/P153/P153_6.png" class=""></p>
+<p>关于更多的Substitution-Permutation Network加密方式:  </p>
+<ul>
+<li>Rijndael (AES)</li>
+<li>Heys cipher</li>
+</ul>
+<p>Key whitening: Subkey prevents an adversary from reversing the final round of substitution and permutation.<br>Substitution-Permutation Networks的attack:寻找bias  </p>
+<p>更多-&gt;<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Piling-up_lemma">Piling-up Lemma的wiki</a>.  </p>
+<blockquote>
+<p>The basic idea is to look for linear (boolean) relations among the bits which hold with probability much different from 50%.  </p>
+</blockquote>
+<p><br></p>
+<h3 id="更多的block-cipher加密方法"><a href="#更多的block-cipher加密方法" class="headerlink" title="更多的block cipher加密方法"></a>更多的block cipher加密方法</h3><ul>
 <li>Electronic Codebook (ECB) mode(not secure)</li>
 <li>Cipher Block Chaining (CBC) mode</li>
 <li>Cipher Feedback (CFB) mode</li>
@@ -452,34 +416,31 @@ Substitution-Permutation Networks的attack:寻找bias</p>
 <li>Counter (CTR) mode</li>
 </ul>
 <img src="/2020/12/14/P153/P153_7.png" class="">
-<p><br> <br></p>
-<h2 id="padding">Padding</h2>
-<blockquote>
-<p>Some modes, namely ECB and CBC, require the plaintext to consist of one or more complete blocks.<br />
-The padding bits can be removed unambiguously, if the receiver knows that this padding method is used.</p>
+<p><br><br><br></p>
+<h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><blockquote>
+<p>Some modes, namely ECB and CBC, require the plaintext to consist of one or more complete blocks.<br>The padding bits can be removed unambiguously, if the receiver knows that this padding method is used.  </p>
 </blockquote>
-<p>中文翻译是填充,因为ECB CBC这样的block cipher对字数有特定的限制,于是得填充无用的字符来达到字数要求.</p>
-<p>Example:<br />
-- remove all trailing ‘0’ bits after the last ‘1’ bit 2. - remove a single ‘1’ bit.</p>
-<p><br> <br></p>
-<h2 id="hashing">Hashing</h2>
-<p>Hash的最初目的是单向的mapping.</p>
+<p>中文翻译是填充,因为ECB CBC这样的block cipher对字数有特定的限制,于是得填充无用的字符来达到字数要求.  </p>
+<p>Example:  </p>
+<ul>
+<li>remove all trailing ‘0’ bits after the last ‘1’ bit 2.</li>
+<li>remove a single ‘1’ bit.</li>
+</ul>
+<p><br><br><br></p>
+<h2 id="Hashing"><a href="#Hashing" class="headerlink" title="Hashing"></a>Hashing</h2><p>Hash的最初目的是单向的mapping.</p>
 <blockquote>
-<p>A hash function is a checksum designed to be safe from malicious tampering.<br />
-Note: The description of a hash function is public. There are no secret keys.</p>
+<p>A hash function is a checksum designed to be safe from malicious tampering.<br>Note: The description of a hash function is public. There are no secret keys.  </p>
 </blockquote>
 <img src="/2020/12/14/P153/P153_8.png" class="">
 <ul>
 <li>Preimage resistance: Hard to invert given just an output.</li>
-<li>2nd preimage resistance: Hard to find a second input that has the same hash value as a given first input.</li>
+<li>2nd preimage resistance: Hard to find a second input that has the same hash value<br>as a given first input.</li>
 <li>Collision resistance: Hard to find two different inputs that have the same hash values.</li>
 </ul>
 <blockquote>
-<p>A hash function that is preimage resistant is sometimes called a one-way hash function (OWHF).<br />
-A hash function that is preimage-, second preimage-, and collision-resistant is called a cryptographic hash function.</p>
+<p>A hash function that is preimage resistant is sometimes called a one-way hash function (OWHF).<br>A hash function that is preimage-, second preimage-, and collision-resistant is called a cryptographic hash function.  </p>
 </blockquote>
-<h3 id="applications-of-hash-functions">Applications of hash functions:</h3>
-<ul>
+<h3 id="Applications-of-hash-functions"><a href="#Applications-of-hash-functions" class="headerlink" title="Applications of hash functions:"></a>Applications of hash functions:</h3><ul>
 <li>Password protection</li>
 <li>Modification Detection Codes (MDCs)</li>
 <li>Message digests for digital signature schemes</li>
@@ -487,161 +448,96 @@ A hash function that is preimage-, second preimage-, and collision-resistant is 
 <li>Pseudorandom bit generation</li>
 <li>Key derivation function (KDF)</li>
 </ul>
-<h3 id="theorem">Theorem:</h3>
-<ol type="1">
+<h3 id="Theorem"><a href="#Theorem" class="headerlink" title="Theorem:"></a>Theorem:</h3><ol>
 <li>Collision resistance implies 2nd preimage resistance.</li>
 <li>2nd preimage resistance does not guarantee collision resistance.</li>
 <li>Collision resistance does not guarantee preimage resistance.</li>
 </ol>
-<h3 id="popular-hash-functions">Popular hash functions:</h3>
-<p>MD5, SHA-1, SHA-2, SHA-3.</p>
-<h3 id="generic-attack-for-finding-collisions">Generic attack for finding collisions</h3>
-<ol type="1">
-<li>暴力测试 -&gt; $ 2^{n} $</li>
-<li>测试 (H(x), x) -&gt; <span class="math inline">\({\sqrt { 2^{n} } }\)</span></li>
+<h3 id="Popular-hash-functions"><a href="#Popular-hash-functions" class="headerlink" title="Popular hash functions:"></a>Popular hash functions:</h3><p>MD5, SHA-1, SHA-2, SHA-3.  </p>
+<h3 id="Generic-attack-for-finding-collisions"><a href="#Generic-attack-for-finding-collisions" class="headerlink" title="Generic attack for finding collisions"></a>Generic attack for finding collisions</h3><ol>
+<li>暴力测试 -&gt; <script type="math/tex">2^{n}</script></li>
+<li>测试 (H(x), x) -&gt; <script type="math/tex">{\sqrt { 2^{n} } }</script></li>
 </ol>
-<p>原理-&gt;<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm">Pollard’s rho algorithm</a> &amp; <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd.27s_Tortoise_and_Hare">Floyd’s cycle-finding algorithm</a>.<br />
-除了单线计算等待重复的search,也可以parallel(VW Parallel Collision Search).</p>
-<h3 id="password-hashing">Password hashing</h3>
-<p>不过常见的词被hash后有收录,所以有些可以知道hash前的内容 -&gt; <a target="_blank" rel="noopener" href="https://crackstation.net/">data branch</a></p>
-<p>进阶版寻找hash的方法: Rainbow table<br />
-Rainbow tables are an example of a time-space tradeoff using hash chains.<br />
-<img src="/2020/12/14/P153/P153_10.png" class=""> <img src="/2020/12/14/P153/P153_11.png" class=""></p>
+<p>原理-&gt;<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm">Pollard’s rho algorithm</a> &amp; <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd.27s_Tortoise_and_Hare">Floyd’s cycle-finding algorithm</a>.<br>除了单线计算等待重复的search,也可以parallel(VW Parallel Collision Search).  </p>
+<h3 id="Password-hashing"><a href="#Password-hashing" class="headerlink" title="Password hashing"></a>Password hashing</h3><p>不过常见的词被hash后有收录,所以有些可以知道hash前的内容 -&gt; <a target="_blank" rel="noopener" href="https://crackstation.net/">data branch</a>  </p>
+<p>进阶版寻找hash的方法: Rainbow table<br>Rainbow tables are an example of a time-space tradeoff using hash chains.<br><img src="/2020/12/14/P153/P153_10.png" class=""><br><img src="/2020/12/14/P153/P153_11.png" class=""></p>
 <p>阻碍rainbow table的是加salt(每次运算hash加入无意义的杂数).</p>
-<p><br> <br></p>
-<h2 id="message-authentication-code-mac">Message authentication code (MAC)</h2>
-<p>用来验证信息是否被更改或被攻击.</p>
-<h3 id="definition">Definition</h3>
-<blockquote>
-<p>A message authentication code (MAC) scheme is an efficiently computable function<br />
-M : <span class="math inline">\({ {\{0, 1\} }^l × {\{0, 1\} }^* → { \{0, 1\} }^n }\)</span><br />
-written <span class="math inline">\(M(k,m) = t\)</span> , where k is the key, m is the message, and t is the tag.<br />
-Used for providing (symmetric-key) data integrity and data origin authentication.</p>
+<p><br><br><br></p>
+<h2 id="Message-authentication-code-MAC"><a href="#Message-authentication-code-MAC" class="headerlink" title="Message authentication code (MAC)"></a>Message authentication code (MAC)</h2><p>用来验证信息是否被更改或被攻击.</p>
+<h3 id="Definition"><a href="#Definition" class="headerlink" title="Definition"></a>Definition</h3><blockquote>
+<p>A message authentication code (MAC) scheme is an efficiently computable function<br>M : <script type="math/tex">{ { \{0, 1\} }^l × { \{0, 1\} }^* → { \{0, 1\} }^n }</script><br>written <script type="math/tex">M(k,m) = t</script> , where k is the key, m is the message, and t is the tag.<br>Used for providing (symmetric-key) data integrity and data origin authentication.  </p>
 </blockquote>
 <p>To provide data integrity and data origin authentication:</p>
-<ol type="1">
-<li>Alice and Bob establish a secret key <span class="math inline">\({\{0, 1\}^l }\)</span></li>
-<li>Alice compute <span class="math inline">\({t = (m, t)}\)</span> to Bob.</li>
-<li>Bob verifies that <span class="math inline">\({t = M(k, m)}\)</span>.</li>
+<ol>
+<li>Alice and Bob establish a secret key <script type="math/tex">{ { \{ 0, 1 \} }^l }</script></li>
+<li>Alice compute <script type="math/tex">{t = (m, t)}</script> to Bob.</li>
+<li>Bob verifies that <script type="math/tex">{t = M(k, m)}</script>.</li>
 </ol>
 <p>No confidentiality or non-repudiation.</p>
 <p><br></p>
-<h3 id="secure">Secure</h3>
-<p>A MAC scheme is <strong>secure</strong> if:</p>
+<h3 id="Secure"><a href="#Secure" class="headerlink" title="Secure"></a>Secure</h3><p>A MAC scheme is <strong>secure</strong> if:  </p>
 <ul>
-<li>Given some number of MAC tags <span class="math inline">\({M(k, m_i)}\)</span> for messages mi chosen by the adversary (interaction),</li>
+<li>Given some number of MAC tags <script type="math/tex">{M(k, m_i)}</script> for messages mi chosen by the adversary<br>(interaction),</li>
 <li>it is computationally infeasible (computational resources)</li>
-<li>to compute (with non-negligible probability of success) the value of <span class="math inline">\({M(k, m)}\)</span> for any message <span class="math inline">\({m \neq m_i}\)</span> (goal). In other words, a MAC scheme is secure if it is existentially unforgeable against chosen-message attack.</li>
+<li>to compute (with non-negligible probability of success) the value of <script type="math/tex">{M(k, m)}</script> for any message <script type="math/tex">{m \neq m_i}</script> (goal).<br>In other words, a MAC scheme is secure if it is existentially unforgeable against chosen-message attack.</li>
 </ul>
-<h3 id="常见的mac">常见的MAC</h3>
-<p>CBC-MAC, Encrypted CBC-MAC (EMAC)</p>
-<p>以及跟hash function组合:</p>
-<p>Secret prefix method: <span class="math inline">\({M(k, m) = H(K||m)}\)</span> (insecure)<br />
-<span class="math inline">\({M(k, m) = H(m||K)}\)</span> (H is not collision resistant, insecure)</p>
-<p>Envelope method a.k.a. Sandwich method:<br />
-<span class="math inline">\({M(k, m) = H(K∥m∥K)}\)</span></p>
-<blockquote>
-<p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then Envelope MAC with m padded to a multiple of the block length of H is a secure MAC algorithm.</p>
+<h3 id="常见的MAC"><a href="#常见的MAC" class="headerlink" title="常见的MAC"></a>常见的MAC</h3><p>CBC-MAC, Encrypted CBC-MAC (EMAC)</p>
+<p>以及跟hash function组合:  </p>
+<p>Secret prefix method:</p>
+<script type="math/tex; mode=display">{M(k, m) = H(K||m)}</script><p>(insecure)   </p>
+<script type="math/tex; mode=display">{M(k, m) = H(m||K)}</script><p>(H is not collision resistant, insecure)  </p>
+<p>Envelope method a.k.a. Sandwich method:  </p>
+<script type="math/tex; mode=display">{M(k, m) = H(K∥m∥K)}</script><blockquote>
+<p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then Envelope MAC with m padded to a multiple of the block length of H is a secure MAC algorithm.  </p>
 </blockquote>
-<p>HMAC(“Hash-based” MAC):<br />
-<img src="/2020/12/14/P153/P153_9.png" class=""> <span class="math inline">\({M(k, m) = H (K⊕opad)∥H (K⊕ipad)∥m }\)</span></p>
-<blockquote>
-<p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then HMAC is a secure MAC algorithm.</p>
+<p>HMAC(“Hash-based” MAC):<br><img src="/2020/12/14/P153/P153_9.png" class=""></p>
+<script type="math/tex; mode=display">{M(k, m) = H (K⊕opad)∥H (K⊕ipad)∥m }</script><blockquote>
+<p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then HMAC is a secure MAC algorithm.  </p>
 </blockquote>
-<p><br> <br></p>
-<h2 id="pseudorandom-generators">Pseudorandom generators</h2>
-<p>伪随机数生成器,生成看上去是随机的数列但实际是有其算法.使用seed来生成.</p>
-<h3 id="prg">PRG</h3>
-<p>A pseudorandom generator is a deterministic function that takes as input a random seed <span class="math inline">\({k ∈ {\{0, 1\}}^λ}\)</span> and outputs a random-looking binary string of length l. PRG :</p>
-<p><span class="math display">\[\begin{equation}\label{eq9}
-{\{0, 1\}}^λ → {\{0, 1\}}^l
-\end{equation}\]</span></p>
-<h3 id="prf">PRF</h3>
-<p>A pseudorandom function is a deterministic function that takes as input a random seed <span class="math inline">\({k ∈ {\{0, 1\}}^λ}\)</span> and a (non-secret) label in <span class="math inline">\({ {\{0, 1\}}^* }\)</span> and outputs a random-looking binary string of length l. PRF :</p>
-<p><span class="math display">\[\begin{equation}\label{eq10}
-{\{0, 1\}}^λ × {\{0, 1\}}^* → {\{0, 1\}}^l
-\end{equation}\]</span></p>
-<h3 id="kdf">KDF</h3>
-<p>A key derivation function is a deterministic function that takes as input a random seed <span class="math inline">\({k ∈ {\{0, 1\}}^λ}\)</span> and a (non-secret) label in <span class="math inline">\({ {\{0, 1\}}^* }\)</span> and outputs a random-looking binary string of length l. KDF :<br />
-<span class="math display">\[\begin{equation}\label{eq11}
-{\{0, 1\}}^λ × {\{0, 1\}}^* → {\{0, 1\}}^l
-\end{equation}\]</span></p>
-<blockquote>
-<p>Difference between KDFs and PRFs: KDF output should be indistinguishable from random even if the key k is non-uniform but sufficiently high entropy.</p>
+<p><br><br><br></p>
+<h2 id="Pseudorandom-generators"><a href="#Pseudorandom-generators" class="headerlink" title="Pseudorandom generators"></a>Pseudorandom generators</h2><p>伪随机数生成器,生成看上去是随机的数列但实际是有其算法.使用seed来生成.</p>
+<h3 id="PRG"><a href="#PRG" class="headerlink" title="PRG"></a>PRG</h3><p>A pseudorandom generator is a deterministic function that takes as input a random seed <script type="math/tex">{ k ∈ { \{ 0, 1 \} }^λ }</script> and outputs a random-looking binary string of length l. PRG :  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq9}{\{0, 1\}}^λ → {\{0, 1\}}^l\end{equation}</script><h3 id="PRF"><a href="#PRF" class="headerlink" title="PRF"></a>PRF</h3><p>A pseudorandom function is a deterministic function that takes as input a random seed <script type="math/tex">{ k ∈ { \{ 0, 1 \} }^λ }</script> and a (non-secret) label in <script type="math/tex">{ { \{ 0, 1 \} }^* }</script> and outputs a random-looking binary string of length l. PRF :  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq10}{ \{ 0, 1 \} }^λ × { \{ 0, 1 \} }^* → { \{ 0, 1 \} }^l\end{equation}</script><h3 id="KDF"><a href="#KDF" class="headerlink" title="KDF"></a>KDF</h3><p>A key derivation function is a deterministic function that takes as input a random seed <script type="math/tex">{ k ∈ { \{ 0, 1 \} }^λ}</script> and a (non-secret) label in <script type="math/tex">{ { \{ 0, 1 \} }^* }</script> and outputs a random-looking binary string of length l. KDF :  </p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq11}{ \{ 0, 1 \} }^λ × { \{ 0, 1 \} }^* → { \{ 0, 1 \} }^l\end{equation}</script><blockquote>
+<p>Difference between KDFs and PRFs: KDF output should be indistinguishable from random even if the key k is non-uniform but sufficiently high entropy.  </p>
 </blockquote>
-<p><br> <br></p>
-<h3 id="applications">Applications</h3>
-<p>Key streching: Password-Based Key Derivation Function 2 (PBKDF2) <span class="math display">\[\begin{equation}\label{eq12}
-k = PBKDF2(F, p, s, c, l)
-\end{equation}\]</span> where<br />
-F = keyed hash function<br />
-p = passphrase<br />
-s = salt<br />
-c = number of iterations<br />
-l = output length</p>
-<p><br> <br></p>
-<h2 id="authenticated-encryption">Authenticated encryption</h2>
-<p>结合加密和认证.</p>
-<p>Composed primitives:</p>
+<p><br><br><br></p>
+<h3 id="Applications"><a href="#Applications" class="headerlink" title="Applications"></a>Applications</h3><p>Key streching: Password-Based Key Derivation Function 2 (PBKDF2)</p>
+<script type="math/tex; mode=display">\begin{equation}\label{eq12}k = PBKDF2(F, p, s, c, l)\end{equation}</script><p>where<br>F = keyed hash function<br>p = passphrase<br>s = salt<br>c = number of iterations<br>l = output length  </p>
+<p><br><br><br></p>
+<h2 id="Authenticated-encryption"><a href="#Authenticated-encryption" class="headerlink" title="Authenticated encryption"></a>Authenticated encryption</h2><p>结合加密和认证.  </p>
+<p>Composed primitives:  </p>
 <ul>
 <li>MAC-then-encrypt (MtE) : SSL/TLS up to v1.2</li>
 <li>encrypt-then-MAC (EtM) : IPsec (safe)</li>
 <li>encrypt-and-MAC (E&amp;M) : SSH</li>
 </ul>
-<p>Goal:</p>
+<p>Goal:  </p>
 <ul>
-<li>Confidentiality: semantic security under chosen plaintext or chosen ciphertext attack<br />
-</li>
+<li>Confidentiality: semantic security under chosen plaintext or chosen ciphertext attack  </li>
 <li>Integrity: existential unforgeability under chosen message attack</li>
 </ul>
-<p>再加上padding:<br />
-- Apply MAC, then pad, then encrypt(insecure) - Apply padding, then MAC, then encrypt</p>
-<p><br> <br></p>
-<h2 id="public-key-cryptography">Public-Key Cryptography</h2>
-<p>这个是我觉得加密学比较罗曼的一个部分(...).解密方式都是公开的,因为公开,所以可以被大量验证安全性.<br />
-(自己做的更容易被解答出来,不如说所有加密的内容都会有被解答的可能,只是那是否infeasible是判定安全性的标准.)<br />
-在公开的解密方式下,保证安全性的是加密方和解密方的密匙(key).其中的问题是,密匙的安全性.</p>
-<p>Public key如字面意思,不需要私下的密匙,所有的东西都是可公开,在此前提下也能做到只有加密方和解密方能明白传递信息.<br />
-这不就是罗曼!</p>
-<p>所做到的方式是创造大量的puzzle.<br />
-解密方只需要解答其中一个puzzle就能得到解码方式,而其他人要解码得在所有的puzzle中寻找解出那个有解码方式的puzzle.通过puzzle的数量来达到infeasible的标准.</p>
-<img src="/2020/12/14/P153/P153_12.png" class="">
-<h3 id="digital-signatures">Digital Signatures</h3>
-<p>类似的思路出现在Digital Signatures里.<br />
-<img src="/2020/12/14/P153/P153_13.png" class=""></p>
-<h3 id="rsa">RSA</h3>
-<p>RSA也是可以用在Digital Signatures里的.</p>
-<p><strong><span class="math inline">\({ (n, e) }\)</span> is the public key</strong> and <strong><span class="math inline">\({ (n, d) }\)</span> is the private key</strong>.<br />
-where<br />
-- random primes <span class="math inline">\({ p }\)</span> and <span class="math inline">\({ q }\)</span> with <span class="math inline">\({ \log_2 p ≈ \log_2 q ≈ l/2}\)</span><br />
-- <span class="math inline">\({ n = pq }\)</span><br />
-- <span class="math inline">\({ φ(n) = (p−1)(q−1) }\)</span><br />
-- integer <span class="math inline">\({ e }\)</span> with <span class="math inline">\({ 1 &lt; e &lt; φ(n) }\)</span> and <span class="math inline">\({ gcd(e, φ(n)) = 1 }\)</span><br />
-- <span class="math inline">\({ d = e−1 }\)</span> in <span class="math inline">\({ \Bbb Z_φ(n) }\)</span><br />
-Note: <span class="math inline">\({ de ≡ 1 (mod φ(n)) }\)</span> by definition of <span class="math inline">\({ e^{−1} }\)</span></p>
-<p>Encryption: <span class="math inline">\({ E((n, e), m) = m^e mod n }\)</span>.<br />
-Decryption: <span class="math inline">\({ D((n, d), c) = c^d mod n }\)</span>.</p>
-<p><br> <br></p>
-<h3 id="diffiehellman-key-exchange">Diffie–Hellman key exchange</h3>
+<p>再加上padding:  </p>
 <ul>
-<li><span class="math inline">\({ p }\)</span> is a prime<br />
+<li>Apply MAC, then pad, then encrypt(insecure)</li>
+<li><p>Apply padding, then MAC, then encrypt</p>
+<p><br><br><br></p>
 </li>
-<li><span class="math inline">\({ \Bbb Z^{∗}_{p} }\)</span> is the set <span class="math inline">\({ \{1,2,...,p−1 \} }\)</span><br />
-</li>
-<li><span class="math inline">\({ g ∈ \Bbb Z^{∗}_{p} }\)</span> is an element of <span class="math inline">\({ \Bbb Z^{∗}_{p} }\)</span> of large prime order <span class="math inline">\({ q }\)</span></li>
 </ul>
-<p>Note:<br />
-<span class="math inline">\({ \Bbb Z^{∗}_{n} }\)</span> = <span class="math inline">\({ \{ x∈ \Bbb Z_{n} :gcd(x,n)=1 \} }\)</span><br />
-The <strong>order</strong> of an element <span class="math inline">\({ x∈ \Bbb Z^{∗}_{n} }\)</span> is defined to be the smallest positive integer <span class="math inline">\({ t }\)</span> such that <span class="math inline">\({ x^t =1 }\)</span> in <span class="math inline">\({ \Bbb Z^{∗}_{n} }\)</span>.<br />
-An element of <span class="math inline">\({ \Bbb Z^{∗}_{n} }\)</span> is defined to be a <strong>generator</strong> if it has the maximum possible order.</p>
-<p>The exchange:<br />
-<img src="/2020/12/14/P153/P153_14.png" class="" title="有一说一我们老师的插图真的太灵魂了"></p>
-<p>Diffie–Hellman assumption(DH):<br />
-Let <span class="math inline">\({ a, b ∈ \Bbb Z_{q} }\)</span>. Given <span class="math inline">\({ g, g^a , g^b }\)</span> , it is computationally infeasible to determine <span class="math inline">\({ g^{ab} }\)</span> .<br />
-Discrete logarithm assumption(DLOG):<br />
-Let <span class="math inline">\({ a ∈ \Bbb Z_{q} }\)</span>. Given <span class="math inline">\({ g }\)</span> and <span class="math inline">\({ g^a }\)</span> , it is computationally infeasible to determine <span class="math inline">\({ a }\)</span>. Decisional Diffie-Hellman assumption(DDH):<br />
-Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span class="math inline">\({ g, g^x , g^y }\)</span>, and either <span class="math inline">\({ g^{xy} }\)</span> or <span class="math inline">\({ g^z }\)</span>, it is computationally infeasible to determine whether you were given the real <span class="math inline">\({ g^{xy} }\)</span> or the random <span class="math inline">\({ g^z }\)</span> .<br />
-<br> <br></p>
+<h2 id="Public-Key-Cryptography"><a href="#Public-Key-Cryptography" class="headerlink" title="Public-Key Cryptography"></a>Public-Key Cryptography</h2><p>这个是我觉得加密学比较罗曼的一个部分(…).解密方式都是公开的,因为公开,所以可以被大量验证安全性.<br>(自己做的更容易被解答出来,不如说所有加密的内容都会有被解答的可能,只是那是否infeasible是判定安全性的标准.)<br>在公开的解密方式下,保证安全性的是加密方和解密方的密匙(key).其中的问题是,密匙的安全性.  </p>
+<p>Public key如字面意思,不需要私下的密匙,所有的东西都是可公开,在此前提下也能做到只有加密方和解密方能明白传递信息.<br>这不就是罗曼!  </p>
+<p>所做到的方式是创造大量的puzzle.<br>解密方只需要解答其中一个puzzle就能得到解码方式,而其他人要解码得在所有的puzzle中寻找解出那个有解码方式的puzzle.通过puzzle的数量来达到infeasible的标准.  </p>
+<img src="/2020/12/14/P153/P153_12.png" class="">
+<h3 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h3><p>类似的思路出现在Digital Signatures里.<br><img src="/2020/12/14/P153/P153_13.png" class=""></p>
+<h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><p>RSA也是可以用在Digital Signatures里的.</p>
+<p><strong><script type="math/tex">{ (n, e) }</script> is the public key</strong> and <strong><script type="math/tex">{ (n, d) }</script> is the private key</strong>.<br>where<br>1.random primes <script type="math/tex">{ p }</script> and <script type="math/tex">{ q }</script> with <script type="math/tex">{ \log_2 p ≈ \log_2 q ≈ l/2}</script><br>2.<script type="math/tex">{ n = pq }</script><br>3.<script type="math/tex">{ φ(n) = (p−1)(q−1) }</script><br>4.integer <script type="math/tex">{ e }</script> with <script type="math/tex">{ 1 < e < φ(n) }</script> and <script type="math/tex">{ gcd(e, φ(n)) = 1 }</script><br>5.<script type="math/tex">{ d = e−1 }</script> in <script type="math/tex">{ \Bbb Z_φ(n) }</script><br>Note: <script type="math/tex">{ de ≡ 1 (mod φ(n)) }</script> by definition of <script type="math/tex">{ e^{−1} }</script>  </p>
+<p>Encryption: <script type="math/tex">{ E((n, e), m) = m^e mod n }</script>.<br>Decryption: <script type="math/tex">{ D((n, d), c) = c^d mod n }</script>.  </p>
+<p><br><br><br></p>
+<h3 id="Diffie–Hellman-key-exchange"><a href="#Diffie–Hellman-key-exchange" class="headerlink" title="Diffie–Hellman key exchange"></a>Diffie–Hellman key exchange</h3><p>1.<script type="math/tex">{ p }</script> is a prime<br>2.<script type="math/tex">{ \Bbb Z^{∗}_{p} }</script> is the set <script type="math/tex">{ \{1,2,...,p−1 \} }</script><br>3.<script type="math/tex">{ g ∈ \Bbb Z^{∗}_{p} }</script> is an element of <script type="math/tex">{ \Bbb Z^{∗}_{p} }</script> of large prime order <script type="math/tex">{ q }</script></p>
+<p>Note:<script type="math/tex">{ \Bbb Z^{∗}_{n} }</script> = <script type="math/tex">{ \{ x∈ \Bbb Z_{n} :gcd(x,n)=1 \} }</script><br>The <strong>order</strong> of an element <script type="math/tex">{ x∈ \Bbb Z^{∗}_{n} }</script> is defined to be the smallest positive integer <script type="math/tex">{ t }</script> such that <script type="math/tex">{ x^t =1 }</script> in <script type="math/tex">{ \Bbb Z^{∗}_{n} }</script>.<br>An element of <script type="math/tex">{ \Bbb Z^{∗}_{n} }</script> is defined to be a <strong>generator</strong> if it has the maximum possible order.  </p>
+<p>The exchange:<br><img src="/2020/12/14/P153/P153_14.png" class="" title="有一说一我们老师的插图真的太灵魂了">  </p>
+<p>Diffie–Hellman assumption(DH):<br>Let <script type="math/tex">{ a, b ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g, g^a , g^b }</script> , it is computationally infeasible to determine <script type="math/tex">{ g^{ab} }</script> .<br>Discrete logarithm assumption(DLOG):<br>Let <script type="math/tex">{ a ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g }</script> and <script type="math/tex">{ g^a }</script> , it is computationally infeasible to determine <script type="math/tex">{ a }</script>.<br>Decisional Diffie-Hellman assumption(DDH):<br>Let <script type="math/tex">{ x, y, z ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g, g^x , g^y }</script>, and either <script type="math/tex">{ g^{xy} }</script> or <script type="math/tex">{ g^z }</script>, it is computationally infeasible to determine whether you were given the real <script type="math/tex">{ g^{xy} }</script> or the random <script type="math/tex">{ g^z }</script> .<br><br><br><br></p>
 
     </div>
 
@@ -722,7 +618,7 @@ Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#symmetric-key-encryption-scheme-skes"><span class="nav-number">1.</span> <span class="nav-text">Symmetric-key encryption scheme (SKES)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#a-pseudorandom-bit-generator-prbg"><span class="nav-number">1.1.</span> <span class="nav-text">A pseudorandom bit generator (PRBG)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#linear-feedback-shift-registers-lfsr"><span class="nav-number">1.2.</span> <span class="nav-text">Linear feedback shift registers (LFSR)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rc4-stream-cipher"><span class="nav-number">1.3.</span> <span class="nav-text">RC4 stream cipher</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#block-ciphers"><span class="nav-number">2.</span> <span class="nav-text">Block ciphers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#data-encryption-standard-des"><span class="nav-number">2.1.</span> <span class="nav-text">Data Encryption Standard (DES)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#des%E7%9A%84multiple-encryption"><span class="nav-number">2.2.</span> <span class="nav-text">DES的Multiple encryption:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#the-advanced-encryption-standard-aes"><span class="nav-number">2.3.</span> <span class="nav-text">The Advanced Encryption Standard (AES)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E7%9A%84block-cipher%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">更多的block cipher加密方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#padding"><span class="nav-number">3.</span> <span class="nav-text">Padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hashing"><span class="nav-number">4.</span> <span class="nav-text">Hashing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#applications-of-hash-functions"><span class="nav-number">4.1.</span> <span class="nav-text">Applications of hash functions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#theorem"><span class="nav-number">4.2.</span> <span class="nav-text">Theorem:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#popular-hash-functions"><span class="nav-number">4.3.</span> <span class="nav-text">Popular hash functions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#generic-attack-for-finding-collisions"><span class="nav-number">4.4.</span> <span class="nav-text">Generic attack for finding collisions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#password-hashing"><span class="nav-number">4.5.</span> <span class="nav-text">Password hashing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#message-authentication-code-mac"><span class="nav-number">5.</span> <span class="nav-text">Message authentication code (MAC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#definition"><span class="nav-number">5.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#secure"><span class="nav-number">5.2.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84mac"><span class="nav-number">5.3.</span> <span class="nav-text">常见的MAC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pseudorandom-generators"><span class="nav-number">6.</span> <span class="nav-text">Pseudorandom generators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#prg"><span class="nav-number">6.1.</span> <span class="nav-text">PRG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#prf"><span class="nav-number">6.2.</span> <span class="nav-text">PRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#kdf"><span class="nav-number">6.3.</span> <span class="nav-text">KDF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#applications"><span class="nav-number">6.4.</span> <span class="nav-text">Applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#authenticated-encryption"><span class="nav-number">7.</span> <span class="nav-text">Authenticated encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#public-key-cryptography"><span class="nav-number">8.</span> <span class="nav-text">Public-Key Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#digital-signatures"><span class="nav-number">8.1.</span> <span class="nav-text">Digital Signatures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rsa"><span class="nav-number">8.2.</span> <span class="nav-text">RSA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#diffiehellman-key-exchange"><span class="nav-number">8.3.</span> <span class="nav-text">Diffie–Hellman key exchange</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Symmetric-key-encryption-scheme-SKES"><span class="nav-number">1.</span> <span class="nav-text">Symmetric-key encryption scheme (SKES)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#A-pseudorandom-bit-generator-PRBG"><span class="nav-number">1.1.</span> <span class="nav-text">A pseudorandom bit generator (PRBG)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Linear-feedback-shift-registers-LFSR"><span class="nav-number">1.2.</span> <span class="nav-text">Linear feedback shift registers (LFSR)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RC4-stream-cipher"><span class="nav-number">1.3.</span> <span class="nav-text">RC4 stream cipher</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Block-ciphers"><span class="nav-number">2.</span> <span class="nav-text">Block ciphers</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Encryption-Standard-DES"><span class="nav-number">2.1.</span> <span class="nav-text">Data Encryption Standard (DES)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DES%E7%9A%84Multiple-encryption"><span class="nav-number">2.2.</span> <span class="nav-text">DES的Multiple encryption:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#The-Advanced-Encryption-Standard-AES"><span class="nav-number">2.3.</span> <span class="nav-text">The Advanced Encryption Standard (AES)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E6%9B%B4%E5%A4%9A%E7%9A%84block-cipher%E5%8A%A0%E5%AF%86%E6%96%B9%E6%B3%95"><span class="nav-number">2.4.</span> <span class="nav-text">更多的block cipher加密方法</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Padding"><span class="nav-number">3.</span> <span class="nav-text">Padding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hashing"><span class="nav-number">4.</span> <span class="nav-text">Hashing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Applications-of-hash-functions"><span class="nav-number">4.1.</span> <span class="nav-text">Applications of hash functions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Theorem"><span class="nav-number">4.2.</span> <span class="nav-text">Theorem:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Popular-hash-functions"><span class="nav-number">4.3.</span> <span class="nav-text">Popular hash functions:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Generic-attack-for-finding-collisions"><span class="nav-number">4.4.</span> <span class="nav-text">Generic attack for finding collisions</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Password-hashing"><span class="nav-number">4.5.</span> <span class="nav-text">Password hashing</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-authentication-code-MAC"><span class="nav-number">5.</span> <span class="nav-text">Message authentication code (MAC)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Definition"><span class="nav-number">5.1.</span> <span class="nav-text">Definition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Secure"><span class="nav-number">5.2.</span> <span class="nav-text">Secure</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%B8%B8%E8%A7%81%E7%9A%84MAC"><span class="nav-number">5.3.</span> <span class="nav-text">常见的MAC</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pseudorandom-generators"><span class="nav-number">6.</span> <span class="nav-text">Pseudorandom generators</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#PRG"><span class="nav-number">6.1.</span> <span class="nav-text">PRG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#PRF"><span class="nav-number">6.2.</span> <span class="nav-text">PRF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#KDF"><span class="nav-number">6.3.</span> <span class="nav-text">KDF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Applications"><span class="nav-number">6.4.</span> <span class="nav-text">Applications</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Authenticated-encryption"><span class="nav-number">7.</span> <span class="nav-text">Authenticated encryption</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Public-Key-Cryptography"><span class="nav-number">8.</span> <span class="nav-text">Public-Key Cryptography</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Digital-Signatures"><span class="nav-number">8.1.</span> <span class="nav-text">Digital Signatures</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#RSA"><span class="nav-number">8.2.</span> <span class="nav-text">RSA</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Diffie%E2%80%93Hellman-key-exchange"><span class="nav-number">8.3.</span> <span class="nav-text">Diffie–Hellman key exchange</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -805,7 +701,7 @@ Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span
     </span>
 
 
-    <span title="Symbols count total">174k</span>
+    <span title="Symbols count total">173k</span>
   -->
 
   <!--
@@ -813,7 +709,7 @@ Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:38</span>
+    <span title="Reading time total">2:37</span>
 
   -->
   
@@ -823,7 +719,7 @@ Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有104.7k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有104.5k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -880,61 +776,6 @@ Let <span class="math inline">\({ x, y, z ∈ \Bbb Z_{q} }\)</span>. Given <span
 
 
   
-
-  
-      
-
-<script>
-  if (typeof MathJax === 'undefined') {
-    window.MathJax = {
-      loader: {
-        source: {
-          '[tex]/amsCd': '[tex]/amscd',
-          '[tex]/AMScd': '[tex]/amscd'
-        }
-      },
-      tex: {
-        inlineMath: {'[+]': [['$', '$']]},
-        tags: 'ams'
-      },
-      options: {
-        renderActions: {
-          findScript: [10, doc => {
-            document.querySelectorAll('script[type^="math/tex"]').forEach(node => {
-              const display = !!node.type.match(/; *mode=display/);
-              const math = new doc.options.MathItem(node.textContent, doc.inputJax[0], display);
-              const text = document.createTextNode('');
-              node.parentNode.replaceChild(text, node);
-              math.start = {node: text, delim: '', n: 0};
-              math.end = {node: text, delim: '', n: 0};
-              doc.math.push(math);
-            });
-          }, '', false],
-          insertedScript: [200, () => {
-            document.querySelectorAll('mjx-container').forEach(node => {
-              let target = node.parentNode;
-              if (target.nodeName.toLowerCase() === 'li') {
-                target.parentNode.classList.add('has-jax');
-              }
-            });
-          }, '', false]
-        }
-      }
-    };
-    (function () {
-      var script = document.createElement('script');
-      script.src = '//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js';
-      script.defer = true;
-      document.head.appendChild(script);
-    })();
-  } else {
-    MathJax.startup.document.state(0);
-    MathJax.texReset();
-    MathJax.typeset();
-  }
-</script>
-
-    
 
   
 

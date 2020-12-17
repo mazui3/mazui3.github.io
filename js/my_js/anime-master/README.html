@@ -1,41 +1,45 @@
 <h1 align="center">
-<a href="https://animejs.com"><img src="/documentation/assets/img/animejs-v3-header-animation.gif" width="250"/></a> <br> anime.js
+  <a href="https://animejs.com"><img src="/documentation/assets/img/animejs-v3-header-animation.gif" width="250"/></a>
+  <br>
+  anime.js
 </h1>
-<h4 align="center">
-JavaScript animation engine | <a href="https://animejs.com" target="_blank">animejs.com</a>
-</h4>
+
+<h4 align="center">JavaScript animation engine | <a href="https://animejs.com" target="_blank">animejs.com</a></h4>
+
 <p align="center">
-<a href="https://www.npmjs.com/package/animejs" rel="nofollow"><img src="https://camo.githubusercontent.com/011820ee25bf1d3ddaf635d869903b98eccaeae7/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f616e696d656a732e7376673f7374796c653d666c61742d737175617265" alt="npm version" data-canonical-src="https://img.shields.io/npm/v/animejs.svg?style=flat-square" style="max-width:100%;"></a> <a href="https://www.npmjs.com/package/animejs" rel="nofollow"><img src="https://camo.githubusercontent.com/3e9b69d51aee25fad784a3097676696096621d47/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f616e696d656a732e7376673f7374796c653d666c61742d737175617265" alt="npm downloads" data-canonical-src="https://img.shields.io/npm/dm/animejs.svg?style=flat-square" style="max-width:100%;"></a>
+  <a href="https://www.npmjs.com/package/animejs" rel="nofollow"><img src="https://camo.githubusercontent.com/011820ee25bf1d3ddaf635d869903b98eccaeae7/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f762f616e696d656a732e7376673f7374796c653d666c61742d737175617265" alt="npm version" data-canonical-src="https://img.shields.io/npm/v/animejs.svg?style=flat-square" style="max-width:100%;"></a>
+  <a href="https://www.npmjs.com/package/animejs" rel="nofollow"><img src="https://camo.githubusercontent.com/3e9b69d51aee25fad784a3097676696096621d47/68747470733a2f2f696d672e736869656c64732e696f2f6e706d2f646d2f616e696d656a732e7376673f7374796c653d666c61742d737175617265" alt="npm downloads" data-canonical-src="https://img.shields.io/npm/dm/animejs.svg?style=flat-square" style="max-width:100%;"></a>
 </p>
+
 <blockquote align="center">
-<em>Anime.js</em> (<code>/ˈæn.ə.meɪ/</code>) is a lightweight JavaScript animation library with a simple, yet powerful API.<br> It works with CSS properties, SVG, DOM attributes and JavaScript Objects.
+  <em>Anime.js</em> (<code>/ˈæn.ə.meɪ/</code>) is a lightweight JavaScript animation library with a simple, yet powerful API.<br>
+  It works with CSS properties, SVG, DOM attributes and JavaScript Objects.
 </blockquote>
+
 <p align="center">
-<a href="#getting-started">Getting started</a> | <a href="#documentation">Documentation</a> | <a href="#demos-and-examples">Demos and examples</a> | <a href="#browser-support">Browser support</a>
+  <a href="#getting-started">Getting started</a>&nbsp;|&nbsp;<a href="#documentation">Documentation</a>&nbsp;|&nbsp;<a href="#demos-and-examples">Demos and examples</a>&nbsp;|&nbsp;<a href="#browser-support">Browser support</a>
 </p>
-<h2 id="getting-started">Getting started</h2>
-<h3 id="download">Download</h3>
-<p>Via npm</p>
-<div class="sourceCode" id="cb1"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>$ <span class="ex">npm</span> install animejs --save</span></code></pre></div>
+
+<h2 id="Getting-started"><a href="#Getting-started" class="headerlink" title="Getting started"></a>Getting started</h2><h3 id="Download"><a href="#Download" class="headerlink" title="Download"></a>Download</h3><p>Via npm</p>
+<pre><code class="lang-bash">$ npm install animejs --save
+</code></pre>
 <p>or manual <a href="https://github.com/juliangarnier/anime/archive/master.zip">download</a>.</p>
-<h3 id="usage">Usage</h3>
-<h4 id="es6-modules">ES6 modules</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="im">import</span> anime <span class="im">from</span> <span class="st">&#39;animejs/lib/anime.es.js&#39;</span><span class="op">;</span></span></code></pre></div>
-<h4 id="commonjs">CommonJS</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="kw">const</span> anime <span class="op">=</span> <span class="pp">require</span>(<span class="st">&#39;animejs&#39;</span>)<span class="op">;</span></span></code></pre></div>
-<h4 id="file-include">File include</h4>
-<p>Link <code>anime.min.js</code> in your HTML :</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="kw">&lt;script</span><span class="ot"> src=</span><span class="st">&quot;anime.min.js&quot;</span><span class="kw">&gt;&lt;/script&gt;</span></span></code></pre></div>
-<h3 id="hello-world">Hello world</h3>
-<div class="sourceCode" id="cb5"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">anime</span>({</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>  <span class="dt">targets</span><span class="op">:</span> <span class="st">&#39;div&#39;</span><span class="op">,</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="dt">translateX</span><span class="op">:</span> <span class="dv">250</span><span class="op">,</span></span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="dt">rotate</span><span class="op">:</span> <span class="st">&#39;1turn&#39;</span><span class="op">,</span></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="dt">backgroundColor</span><span class="op">:</span> <span class="st">&#39;#FFF&#39;</span><span class="op">,</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="dt">duration</span><span class="op">:</span> <span class="dv">800</span></span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>})<span class="op">;</span></span></code></pre></div>
-<h2 id="documentation"><a href="https://animejs.com/documentation/">Documentation</a></h2>
-<ul>
+<h3 id="Usage"><a href="#Usage" class="headerlink" title="Usage"></a>Usage</h3><h4 id="ES6-modules"><a href="#ES6-modules" class="headerlink" title="ES6 modules"></a>ES6 modules</h4><pre><code class="lang-javascript">import anime from &#39;animejs/lib/anime.es.js&#39;;
+</code></pre>
+<h4 id="CommonJS"><a href="#CommonJS" class="headerlink" title="CommonJS"></a>CommonJS</h4><pre><code class="lang-javascript">const anime = require(&#39;animejs&#39;);
+</code></pre>
+<h4 id="File-include"><a href="#File-include" class="headerlink" title="File include"></a>File include</h4><p>Link <code>anime.min.js</code> in your HTML :</p>
+<pre><code class="lang-html">&lt;script src=&quot;anime.min.js&quot;&gt;&lt;/script&gt;
+</code></pre>
+<h3 id="Hello-world"><a href="#Hello-world" class="headerlink" title="Hello world"></a>Hello world</h3><pre><code class="lang-javascript">anime({
+  targets: &#39;div&#39;,
+  translateX: 250,
+  rotate: &#39;1turn&#39;,
+  backgroundColor: &#39;#FFF&#39;,
+  duration: 800
+});
+</code></pre>
+<h2 id="Documentation"><a href="#Documentation" class="headerlink" title="Documentation"></a><a href="https://animejs.com/documentation/">Documentation</a></h2><ul>
 <li><a href="https://animejs.com/documentation/#cssSelector">Targets</a></li>
 <li><a href="https://animejs.com/documentation/#cssProperties">Properties</a></li>
 <li><a href="https://animejs.com/documentation/#duration">Property parameters</a></li>
@@ -50,25 +54,24 @@ JavaScript animation engine | <a href="https://animejs.com" target="_blank">anim
 <li><a href="https://animejs.com/documentation/#linearEasing">Easing functions</a></li>
 <li><a href="https://animejs.com/documentation/#remove">Helpers</a></li>
 </ul>
-<h2 id="demos-and-examples"><a href="http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/">Demos and examples</a></h2>
-<ul>
+<h2 id="Demos-and-examples"><a href="#Demos-and-examples" class="headerlink" title="Demos and examples"></a><a href="http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/">Demos and examples</a></h2><ul>
 <li><a href="http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/">CodePen demos and examples</a></li>
 <li><a href="http://juliangarnier.com">juliangarnier.com</a></li>
 <li><a href="https://animejs.com">animejs.com</a></li>
-<li><a href="http://tobiasahlin.com/moving-letters/">Moving letters</a> by <span class="citation" data-cites="tobiasahlin">[@tobiasahlin]</span>(https://twitter.com/tobiasahlin)</li>
-<li><a href="https://tympanus.net/Development/GradientTopographyAnimation/">Gradient topography animation</a> by <span class="citation" data-cites="crnacura">[@crnacura]</span>(https://twitter.com/crnacura)</li>
-<li><a href="https://tympanus.net/Development/OrganicShapeAnimations/">Organic shape animations</a> by <span class="citation" data-cites="crnacura">[@crnacura]</span>(https://twitter.com/crnacura)</li>
-<li><a href="https://tympanus.net/Tutorials/PiecesSlider/">Pieces slider</a> by <span class="citation" data-cites="lmgonzalves">[@lmgonzalves]</span>(https://twitter.com/lmgonzalves)</li>
+<li><a href="http://tobiasahlin.com/moving-letters/">Moving letters</a> by <a href="https://twitter.com/tobiasahlin">@tobiasahlin</a></li>
+<li><a href="https://tympanus.net/Development/GradientTopographyAnimation/">Gradient topography animation</a> by <a href="https://twitter.com/crnacura">@crnacura</a></li>
+<li><a href="https://tympanus.net/Development/OrganicShapeAnimations/">Organic shape animations</a> by <a href="https://twitter.com/crnacura">@crnacura</a></li>
+<li><a href="https://tympanus.net/Tutorials/PiecesSlider/">Pieces slider</a> by <a href="https://twitter.com/lmgonzalves">@lmgonzalves</a></li>
 <li><a href="https://codepen.io/juliangarnier/pen/4fe31bbe8579a256e828cd4d48c86182?editors=0100">Staggering animations</a></li>
 <li><a href="https://codepen.io/juliangarnier/pen/444ed909fd5de38e3a77cc6e95fc1884">Easings animations</a></li>
 <li><a href="https://codepen.io/juliangarnier/pen/b3bb8ca599ad0f9d00dd044e56cbdea5?editors=0010">Sphere animation</a></li>
 <li><a href="https://codepen.io/juliangarnier/pen/6ca836535cbea42157d1b8d56d00be84?editors=0010">Layered animations</a></li>
 <li><a href="https://codepen.io/juliangarnier/pen/d43e8ec355c30871cbe775193255d6f6?editors=0010">anime.js logo animation</a></li>
 </ul>
-<h2 id="browser-support">Browser support</h2>
+<h2 id="Browser-support"><a href="#Browser-support" class="headerlink" title="Browser support"></a>Browser support</h2><div class="table-container">
 <table>
 <thead>
-<tr class="header">
+<tr>
 <th>Chrome</th>
 <th>Safari</th>
 <th>IE / Edge</th>
@@ -77,7 +80,7 @@ JavaScript animation engine | <a href="https://animejs.com" target="_blank">anim
 </tr>
 </thead>
 <tbody>
-<tr class="odd">
+<tr>
 <td>24+</td>
 <td>8+</td>
 <td>11+</td>
@@ -86,5 +89,5 @@ JavaScript animation engine | <a href="https://animejs.com" target="_blank">anim
 </tr>
 </tbody>
 </table>
-<h2 id="section"><a href="https://animejs.com"><img src="/documentation/assets/img/animejs-v3-logo-animation.gif" width="150" alt="anime-js-v3-logo"/></a></h2>
-<p><a href="https://animejs.com/">Website</a> | <a href="https://animejs.com/documentation/">Documentation</a> | <a href="http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/">Demos and examples</a> | <a href="LICENSE.md">MIT License</a> | © 2019 <a href="http://juliangarnier.com">Julian Garnier</a>.</p>
+</div>
+<h2 id=""><a href="#" class="headerlink" title=""></a><a href="https://animejs.com"><img src="/documentation/assets/img/animejs-v3-logo-animation.gif" width="150" alt="anime-js-v3-logo"/></a></h2><p><a href="https://animejs.com/">Website</a> | <a href="https://animejs.com/documentation/">Documentation</a> | <a href="http://codepen.io/collection/b392d3a52d6abf5b8d9fda4e4cab61ab/">Demos and examples</a> | <a href="LICENSE.md">MIT License</a> | © 2019 <a href="http://juliangarnier.com">Julian Garnier</a>.</p>

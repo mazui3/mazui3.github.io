@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-17T05:28:28.093Z</updated>
+  <updated>2020-12-17T23:01:36.638Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,13 +21,16 @@
     <link href="http://yoursite.com/2020/12/14/P153/"/>
     <id>http://yoursite.com/2020/12/14/P153/</id>
     <published>2020-12-14T14:20:43.000Z</published>
-    <updated>2020-12-17T05:28:28.093Z</updated>
+    <updated>2020-12-17T23:01:36.638Z</updated>
     
     
-    <summary type="html">&lt;p&gt;复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.&lt;/p&gt;
+    <summary type="html">&lt;script async
+  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.  &lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;Aside:博客加了mathjax插件,可以更好得写数学公式(…),关于mathjax的&lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tips&lt;/a&gt;.&lt;br /&gt;
-不过也因为添加了这个插件很可能有换行bug(叹气),还是今天有bug睡一觉又没了的神秘bug,暂时没修(...).</summary>
+&lt;p&gt;Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的&lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tips&lt;/a&gt;.&lt;br&gt;感谢&lt;a href=&quot;https://yihui.org/en/2018/07/latex-math-markdown/&quot;&gt;yihui&lt;/a&gt;大佬提供的hexo与mathjax不兼容的解决方式.&lt;br&gt;</summary>
     
     
     
@@ -43,11 +46,11 @@
     <link href="http://yoursite.com/2020/12/11/P149/"/>
     <id>http://yoursite.com/2020/12/11/P149/</id>
     <published>2020-12-11T14:56:27.000Z</published>
-    <updated>2020-12-14T14:40:01.762Z</updated>
+    <updated>2020-12-17T21:38:36.762Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/11/P149/P149_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;《真的是期末季最后一次拿别人的图来混更》</summary>
+&lt;p&gt;《真的是期末季最后一次拿别人的图来混更》&lt;br&gt;</summary>
     
     
     
@@ -61,11 +64,11 @@
     <link href="http://yoursite.com/2020/12/09/P147/"/>
     <id>http://yoursite.com/2020/12/09/P147/</id>
     <published>2020-12-10T03:09:02.000Z</published>
-    <updated>2020-12-11T03:34:25.722Z</updated>
+    <updated>2020-12-17T21:38:42.284Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/09/P147/P147_1.JPG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;想一定要收录一下!!!</summary>
+&lt;p&gt;想一定要收录一下!!!&lt;br&gt;</summary>
     
     
     
@@ -83,11 +86,11 @@
     <link href="http://yoursite.com/2020/12/06/P143/"/>
     <id>http://yoursite.com/2020/12/06/P143/</id>
     <published>2020-12-06T16:15:08.000Z</published>
-    <updated>2020-12-08T05:50:45.845Z</updated>
+    <updated>2020-12-17T21:38:59.561Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/06/P143/P143_1.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;这次更新了下博客背景,乘机拜托U君帮我多画了几个小可爱().</summary>
+&lt;p&gt;这次更新了下博客背景,乘机拜托U君帮我多画了几个小可爱().&lt;br&gt;</summary>
     
     
     
@@ -103,12 +106,12 @@
     <link href="http://yoursite.com/2020/12/06/P142/"/>
     <id>http://yoursite.com/2020/12/06/P142/</id>
     <published>2020-12-06T05:43:23.000Z</published>
-    <updated>2020-12-07T02:09:28.613Z</updated>
+    <updated>2020-12-17T21:39:02.972Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/06/P142/P142_1.jpg&quot; class=&quot;&quot;&gt;
 &lt;img src=&quot;/2020/12/06/P142/P142_2.jpg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;请大家看——————————!!!(呐喊)</summary>
+&lt;p&gt;请大家看——————————!!!(呐喊)&lt;br&gt;</summary>
     
     
     
@@ -124,10 +127,10 @@
     <link href="http://yoursite.com/2020/12/02/P148/"/>
     <id>http://yoursite.com/2020/12/02/P148/</id>
     <published>2020-12-03T02:29:48.000Z</published>
-    <updated>2020-12-12T20:23:04.677Z</updated>
+    <updated>2020-12-17T21:38:39.438Z</updated>
     
     
-    <summary type="html">&lt;p&gt;《这个博主考期末的时候拼命摸于是找来朋友们给的oc填博客还有没救》</summary>
+    <summary type="html">&lt;p&gt;《这个博主考期末的时候拼命摸于是找来朋友们给的oc填博客还有没救》&lt;br&gt;</summary>
     
     
     
@@ -145,10 +148,10 @@
     <link href="http://yoursite.com/2020/11/28/P141/"/>
     <id>http://yoursite.com/2020/11/28/P141/</id>
     <published>2020-11-29T04:03:36.000Z</published>
-    <updated>2020-12-13T01:46:17.431Z</updated>
+    <updated>2020-12-17T21:39:05.783Z</updated>
     
     
-    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.</summary>
+    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.&lt;br&gt;</summary>
     
     
     
@@ -168,10 +171,10 @@
     <link href="http://yoursite.com/2020/11/28/P140/"/>
     <id>http://yoursite.com/2020/11/28/P140/</id>
     <published>2020-11-29T01:56:27.000Z</published>
-    <updated>2020-12-14T12:58:11.735Z</updated>
+    <updated>2020-12-17T21:39:08.653Z</updated>
     
     
-    <summary type="html">&lt;p&gt;那就开始吧(吧).</summary>
+    <summary type="html">&lt;p&gt;那就开始吧(吧).&lt;br&gt;</summary>
     
     
     
@@ -191,10 +194,10 @@
     <link href="http://yoursite.com/2020/11/24/P134/"/>
     <id>http://yoursite.com/2020/11/24/P134/</id>
     <published>2020-11-24T20:07:13.000Z</published>
-    <updated>2020-11-28T21:53:54.893Z</updated>
+    <updated>2020-12-17T21:39:28.707Z</updated>
     
     
-    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).</summary>
+    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).&lt;br&gt;</summary>
     
     
     
@@ -212,7 +215,7 @@
     <link href="http://yoursite.com/2020/11/24/P132/"/>
     <id>http://yoursite.com/2020/11/24/P132/</id>
     <published>2020-11-24T06:32:19.000Z</published>
-    <updated>2020-12-01T14:18:40.883Z</updated>
+    <updated>2020-12-17T21:39:38.430Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/24/P132/P132.png&quot; class=&quot;&quot;&gt;
@@ -230,10 +233,10 @@
     <link href="http://yoursite.com/2020/11/22/P131/"/>
     <id>http://yoursite.com/2020/11/22/P131/</id>
     <published>2020-11-22T16:27:11.000Z</published>
-    <updated>2020-11-24T02:20:55.569Z</updated>
+    <updated>2020-12-17T21:44:03.156Z</updated>
     
     
-    <summary type="html">&lt;p&gt;年初的事啦.</summary>
+    <summary type="html">&lt;p&gt;年初的事啦.&lt;br&gt;</summary>
     
     
     
@@ -249,7 +252,7 @@
     <link href="http://yoursite.com/2020/11/15/P129/"/>
     <id>http://yoursite.com/2020/11/15/P129/</id>
     <published>2020-11-16T03:20:12.000Z</published>
-    <updated>2020-11-16T03:39:15.790Z</updated>
+    <updated>2020-12-17T21:44:09.023Z</updated>
     
     
       
@@ -276,11 +279,11 @@
     <link href="http://yoursite.com/2020/11/12/P127/"/>
     <id>http://yoursite.com/2020/11/12/P127/</id>
     <published>2020-11-13T02:13:11.000Z</published>
-    <updated>2020-11-16T03:21:33.896Z</updated>
+    <updated>2020-12-17T21:44:14.410Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/12/P127/P127_1.JPG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.</summary>
+&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.&lt;br&gt;</summary>
     
     
     
@@ -300,20 +303,20 @@
     <link href="http://yoursite.com/2020/11/12/P126/"/>
     <id>http://yoursite.com/2020/11/12/P126/</id>
     <published>2020-11-12T21:40:35.000Z</published>
-    <updated>2020-11-13T02:11:53.582Z</updated>
+    <updated>2020-12-17T21:44:17.494Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/12/P126/P126_5.PNG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;时间虽然是2020年11月,但图大多有点时间啦.</summary>
+&lt;p&gt;时间虽然是2020年11月,但图大多有点时间啦.&lt;br&gt;</summary>
     
     
     
     <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
     <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
   </entry>
   
@@ -322,7 +325,7 @@
     <link href="http://yoursite.com/2020/11/10/P125/"/>
     <id>http://yoursite.com/2020/11/10/P125/</id>
     <published>2020-11-11T03:33:10.000Z</published>
-    <updated>2020-11-13T07:13:28.934Z</updated>
+    <updated>2020-12-17T21:44:20.641Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/10/P125/P125.png&quot; class=&quot;&quot;&gt;</summary>
@@ -341,11 +344,11 @@
     <link href="http://yoursite.com/2020/11/03/P124/"/>
     <id>http://yoursite.com/2020/11/03/P124/</id>
     <published>2020-11-03T22:31:05.000Z</published>
-    <updated>2020-11-28T16:54:14.610Z</updated>
+    <updated>2020-12-17T21:44:23.537Z</updated>
     
     
     <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
-&lt;p&gt;个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(...).</summary>
+&lt;p&gt;个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).&lt;br&gt;</summary>
     
     
     
@@ -363,10 +366,10 @@
     <link href="http://yoursite.com/2020/10/31/P122/"/>
     <id>http://yoursite.com/2020/10/31/P122/</id>
     <published>2020-10-31T17:50:31.000Z</published>
-    <updated>2020-11-16T03:24:20.202Z</updated>
+    <updated>2020-12-17T21:44:26.724Z</updated>
     
     
-    <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x</summary>
+    <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;br&gt;</summary>
     
     
     
@@ -384,7 +387,7 @@
     <link href="http://yoursite.com/2020/10/12/P121/"/>
     <id>http://yoursite.com/2020/10/12/P121/</id>
     <published>2020-10-13T01:04:04.000Z</published>
-    <updated>2020-12-10T03:26:41.746Z</updated>
+    <updated>2020-12-17T21:44:30.456Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/10/12/P121/P121.png&quot; class=&quot;&quot;&gt;</summary>
@@ -394,11 +397,11 @@
     <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
     
     
+    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
+    
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
-    
-    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
     
   </entry>
   
@@ -407,10 +410,10 @@
     <link href="http://yoursite.com/2020/09/22/P120/"/>
     <id>http://yoursite.com/2020/09/22/P120/</id>
     <published>2020-09-22T14:48:39.000Z</published>
-    <updated>2020-11-11T19:57:04.566Z</updated>
+    <updated>2020-12-17T21:44:33.016Z</updated>
     
     
-    <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.</summary>
+    <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.&lt;br&gt;</summary>
     
     
     
@@ -426,10 +429,10 @@
     <link href="http://yoursite.com/2020/09/21/P119/"/>
     <id>http://yoursite.com/2020/09/21/P119/</id>
     <published>2020-09-22T00:33:22.000Z</published>
-    <updated>2020-11-13T02:13:53.638Z</updated>
+    <updated>2020-12-17T21:44:35.985Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用语言C++14.</summary>
+    <summary type="html">&lt;p&gt;使用语言C++14.&lt;br&gt;</summary>
     
     
     
