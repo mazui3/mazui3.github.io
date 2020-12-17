@@ -21,12 +21,12 @@
     var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).">
+  <meta name="description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(...).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于A&#x2F;B testing的笔记">
 <meta property="og:url" content="http://yoursite.com/2020/11/03/P124/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).">
+<meta property="og:description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(...).">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="http://yoursite.com/2020/11/03/P124/P124.png">
 <meta property="article:published_time" content="2020-11-03T22:31:05.000Z">
@@ -278,58 +278,45 @@
 
       
         <p>ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.</p>
-<p>个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).</p>
-<a id="more"></a>
-<br>
-<br>
-
-<h2 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h2><p>什么不能做ab testing:</p>
+<p>个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(...). <a id="more"></a> <br> <br></p>
+<h2 id="intro">intro</h2>
+<p>什么不能做ab testing: - 需要测试的事件时间过长的feature. - 对并不存在的事件进行测试(可以比较已有的两种方案,但是无法统计未有的第三种方案反馈).</p>
+<p>什么适合做ab testing: - clear control and clear metrics. - can give out repeatable results.</p>
+<h2 id="metric-choice">metric choice</h2>
+<p>(a method of measuring something, or the results obtained from this)</p>
 <ul>
-<li>需要测试的事件时间过长的feature.</li>
-<li>对并不存在的事件进行测试(可以比较已有的两种方案,但是无法统计未有的第三种方案反馈).</li>
-</ul>
-<p>什么适合做ab testing:</p>
-<ul>
-<li>clear control and clear metrics.</li>
-<li>can give out repeatable results.</li>
-</ul>
-<h2 id="metric-choice"><a href="#metric-choice" class="headerlink" title="metric choice"></a>metric choice</h2><p>(a method of measuring something, or the results obtained from this)</p>
-<ul>
-<li><p>click through rate<br>#of clicks / #of page views</p>
-</li>
-<li><p>click through probabilty<br>Unique visitors who click / Unique visitors to page</p>
-</li>
+<li><p>click through rate #of clicks / #of page views</p></li>
+<li><p>click through probabilty Unique visitors who click / Unique visitors to page</p></li>
 </ul>
 <p>一个是couting点击数,一个是couting访问人数.</p>
-<br>
-<br>
-
-<h6 id="Aside-binomial-distruibution"><a href="#Aside-binomial-distruibution" class="headerlink" title="Aside:binomial distruibution"></a>Aside:binomial distruibution</h6><p>*mean = N * p*<br><em>standard deviation = sqrt(N * p * (1-p))</em><br>standard error = sqrt(p * (1-p) / N)</p>
-<p><em>eg.</em><br>We have N = 2000, with x = 300, find confidence level = 99%</p>
-<p><em>sol.</em><br>Phat(estimated probability) = 300/2000 = 0.15<br>m(margin of error) = z-value(for 99%) * standard error(sqrt(p * (1-p) / N))<br>=&gt; 2.58 * sqrt(0.15 * 0.85 / 2000)<br>=&gt; 0.021</p>
-<p>=&gt; P =  0.15 +- 0.021<br><br><br><br></p>
-<h2 id="hypothesis-testing"><a href="#hypothesis-testing" class="headerlink" title="hypothesis testing"></a>hypothesis testing</h2><p>null hypothesis(baseline): (例子)假设我们的改变方案不会影响任何人们的反馈(control group和experimental group没有区别).</p>
-<p>alternative hypothesis: 我们想要的变化反馈.<br><br><br><br></p>
-<h2 id="pooled-standard-error"><a href="#pooled-standard-error" class="headerlink" title="pooled standard error"></a>pooled standard error</h2><p>将control group和experimental group结合在一起的方法.</p>
+<p><br> <br></p>
+<h6 id="asidebinomial-distruibution">Aside:binomial distruibution</h6>
+<p><em>mean = N </em> p<em> </em>standard deviation = sqrt(N * p * (1-p))<em> standard error = sqrt(p </em> (1-p) / N)</p>
+<p><em>eg.</em> We have N = 2000, with x = 300, find confidence level = 99%</p>
+<p><em>sol.</em> Phat(estimated probability) = 300/2000 = 0.15 m(margin of error) = z-value(for 99%) * standard error(sqrt(p * (1-p) / N)) =&gt; 2.58 * sqrt(0.15 * 0.85 / 2000) =&gt; 0.021</p>
+<p>=&gt; P = 0.15 +- 0.021 <br> <br></p>
+<h2 id="hypothesis-testing">hypothesis testing</h2>
+<p>null hypothesis(baseline): (例子)假设我们的改变方案不会影响任何人们的反馈(control group和experimental group没有区别).</p>
+<p>alternative hypothesis: 我们想要的变化反馈. <br> <br></p>
+<h2 id="pooled-standard-error">pooled standard error</h2>
+<p>将control group和experimental group结合在一起的方法.</p>
 <p><em>our data: Xcont Xexp Ncont Nexp</em></p>
 <p>P pool hat = (Xcont + Xexp) / (Ncont + Nexp)</p>
 <p>SE pool = sqrt(P pool hat * (1 - P pool hat) * (1/Ncont + 1/Nexp))</p>
-<p>d hat(different) = P exp hat - P cont hat<br>(practical significance level - mim detectable effect)</p>
+<p>d hat(different) = P exp hat - P cont hat (practical significance level - mim detectable effect)</p>
 <p>m(margin of error) = pool standard error * 1.96</p>
-<p>For null hypothesis: d = 0, d hat ~ N(0,SEpool)<br>If d hat &gt; 1.96 * SE pool or d hat &lt; -1.96 * SE pool, reject null</p>
-<br>
-<br>
-
-<h2 id="sampling"><a href="#sampling" class="headerlink" title="sampling"></a>sampling</h2><p>eg. how many page views do we need(in each group)</p>
-<p>a = P(reject null | null true)<br>b = P(fail to reject | null false)</p>
+<p>For null hypothesis: d = 0, d hat ~ N(0,SEpool) If d hat &gt; 1.96 * SE pool or d hat &lt; -1.96 * SE pool, reject null</p>
+<p><br> <br></p>
+<h2 id="sampling">sampling</h2>
+<p>eg. how many page views do we need(in each group)</p>
+<p>a = P(reject null | null true) b = P(fail to reject | null false)</p>
 <p>small sample : a low, b high</p>
 <p>sensitivity = 1 - b(in general, we want experiment to have a high level of sensitivity at the partical significance boundary, often 80%)</p>
 <p>larger sample : a same, b lower</p>
-<p><em>online calculator for sample size</em><br><a target="_blank" rel="noopener" href="https://www.evanmiller.org/ab-testing/sample-size.html">https://www.evanmiller.org/ab-testing/sample-size.html</a></p>
-<br>
-<br>
-
-<h2 id="policy-and-ethics-for-experiment"><a href="#policy-and-ethics-for-experiment" class="headerlink" title="policy and ethics for experiment"></a>policy and ethics for experiment</h2><p>因为作为sample的基本都是人(纸上谈兵数学人很可能会忽视),所以得有实验前提和准则.</p>
+<p><em>online calculator for sample size</em> https://www.evanmiller.org/ab-testing/sample-size.html</p>
+<p><br> <br></p>
+<h2 id="policy-and-ethics-for-experiment">policy and ethics for experiment</h2>
+<p>因为作为sample的基本都是人(纸上谈兵数学人很可能会忽视),所以得有实验前提和准则.</p>
 <ul>
 <li>Risk. what risk is the participant being exposed to</li>
 <li>Benefit. what benefits might be the outcome of study</li>
@@ -337,386 +324,281 @@
 <li>Privacy(data sensitivity). what expectation of privacy and confidentiality do participants have</li>
 </ul>
 <blockquote>
-<p>Aside: 关于匿名.为确保匿名后的data还能互相分辨,会加入time stamps(one of HIPAA 18 identifiers).<br>  Anonymous data: data without any personally identifiable infomation.<br>  Anonymized data: identified or anonymous data that has been looked at and guaranteed in some way that the re-identification isk is now to non-existent.</p>
+<p>Aside: 关于匿名.为确保匿名后的data还能互相分辨,会加入time stamps(one of HIPAA 18 identifiers). Anonymous data: data without any personally identifiable infomation. Anonymized data: identified or anonymous data that has been looked at and guaranteed in some way that the re-identification isk is now to non-existent.</p>
 </blockquote>
 <p>Note: 虽然没有写名字,但一些info(timestamp也可能行)还是能idenfity个人(AOL search data leak例子), may still have high re-identificaiton risk.</p>
-<br>
-<br>
-
-<h2 id="metric"><a href="#metric" class="headerlink" title="metric"></a>metric</h2><ul>
-<li><p>sanity check metrics</p>
-</li>
-<li><p>evaluation metrics</p>
-</li>
-<li><p>external data(data collected by ppl outside of your company)</p>
-</li>
-<li><p>gather own in-depth data(Retrospective, User Experience Research, focus groups and surveys)</p>
+<p><br> <br></p>
+<h2 id="metric">metric</h2>
 <ul>
-<li>User Experience Research: Go depth with few users. Good for brainstorming. Can use special equipment. Want to valid result.</li>
-<li>Focus group: more participants less depth. Get feedback on hypotheticals. Run the risk of group think.</li>
-<li>Surveys: Useful for metrics you cannot measure yourself. Cannot directly compare to other results.</li>
-<li>Human evaluation: pay human raters to evaluate.</li>
+<li><p>sanity check metrics</p></li>
+<li><p>evaluation metrics</p></li>
+<li><p>external data(data collected by ppl outside of your company)</p></li>
+<li><p>gather own in-depth data(Retrospective, User Experience Research, focus groups and surveys)</p></li>
+<li><p>User Experience Research: Go depth with few users. Good for brainstorming. Can use special equipment. Want to valid result.</p></li>
+<li><p>Focus group: more participants less depth. Get feedback on hypotheticals. Run the risk of group think.</p></li>
+<li><p>Surveys: Useful for metrics you cannot measure yourself. Cannot directly compare to other results.</p></li>
+<li><p>Human evaluation: pay human raters to evaluate.</p></li>
 </ul>
-</li>
+<p><br> <br></p>
+<h2 id="compute-data-from-metric">compute data from metric</h2>
+<ul>
+<li>1st: what data to look at when actually compute the metric.</li>
+<li>2rd: given those events, how to summarize metric.</li>
 </ul>
-<br>
-<br>
-
-<h2 id="compute-data-from-metric"><a href="#compute-data-from-metric" class="headerlink" title="compute data from metric"></a>compute data from metric</h2><ul>
-<li><p>1st: what data to look at when actually compute the metric.</p>
-</li>
-<li><p>2rd: given those events, how to summarize metric.</p>
-</li>
-<li><p>-&gt; building intuition about your metric.</p>
-</li>
-</ul>
+<p>--&gt; building intuition about your metric.</p>
 <p>Define a metric:</p>
 <p>for example click-though-probability = (# of users who click)/(# of users who visit)</p>
-<p>Def#1: For each <time interval> :(# cookies that click)/(#cookies)<br>Question: how long is the time interval -&gt; we can add per minute click(or per hour) - as required.</p>
+<p>Def#1: For each <time interval> :(# cookies that click)/(#cookies) Question: how long is the time interval -&gt; we can add per minute click(or per hour) - as required.</p>
 <p>Def#2: Create unique ID for each page view -&gt; (#pageviews w/click within <time interval>)/(#pageviews)</p>
 <p>Def#3: (# clicks)/(#pageviews) -&gt; click-though-rate</p>
-<p>Possible situation to think about:</p>
+<p>Possible situation to think about: - double click - back button cashes page(page reload) - click-tracking bug</p>
+<h6 id="aside-segmenting-and-filtering-data">Aside: Segmenting and filtering data</h6>
+<p>data的归类和分析(比如说week over week, year over year,按地区分类,分开手机和电脑平台等).data是否bias.</p>
+<p>general categories of metrics: - sums and counts eg. # users who visited page</p>
 <ul>
-<li>double click</li>
-<li>back button cashes page(page reload)</li>
-<li>click-tracking bug</li>
+<li><p>distribution: means, medians, 25th, 75th, 90th percentiles eg. mean age of users who completed a course eg. median latency of page load</p></li>
+<li><p>probabilities and rates probability has 0 or 1 outcome in each case rate has 0 or more</p></li>
+<li><p>ratios eg. P(revenue-generating click)/P(any click)</p></li>
 </ul>
-<h6 id="Aside-Segmenting-and-filtering-data"><a href="#Aside-Segmenting-and-filtering-data" class="headerlink" title="Aside: Segmenting and filtering data"></a>Aside: Segmenting and filtering data</h6><p>data的归类和分析(比如说week over week, year over year,按地区分类,分开手机和电脑平台等).data是否bias.</p>
-<p>general categories of metrics:</p>
-<ul>
-<li><p>sums and counts<br>eg. # users who visited page</p>
-</li>
-<li><p>distribution: means, medians, 25th, 75th, 90th percentiles<br>eg. mean age of users who completed a course<br>eg. median latency of page load</p>
-</li>
-<li><p>probabilities and rates<br>probability has 0 or 1 outcome in each case<br>rate has 0 or more</p>
-</li>
-<li><p>ratios<br>eg. P(revenue-generating click)/P(any click)</p>
-</li>
-</ul>
-<br>
-<br>
-
-<h6 id="Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><a href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution" class="headerlink" title="Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)"></a>Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</h6><p>Binomial distribution:</p>
-<ul>
-<li>SE(standard error) = sqrt(β * (1 - β) / N)</li>
-<li>m(margin of error) = Z(z score confidence level) * SE</li>
-</ul>
+<p><br> <br></p>
+<h6 id="aside-calculating-variabilityvariance-or-standard-deviation-distribution">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</h6>
+<p>Binomial distribution: - SE(standard error) = sqrt(β * (1 - β) / N) - m(margin of error) = Z(z score confidence level) * SE</p>
 <table>
 <thead>
-<tr>
-<th align="left">Type of metric</th>
-<th align="center">distribution</th>
-<th align="center">estimated variance</th>
+<tr class="header">
+<th style="text-align: left;">Type of metric</th>
+<th style="text-align: center;">distribution</th>
+<th style="text-align: center;">estimated variance</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">probability</td>
-<td align="center">binomial(normal)</td>
-<td align="center">(Phat * (1 - Phat) / N)</td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">probability</td>
+<td style="text-align: center;">binomial(normal)</td>
+<td style="text-align: center;">(Phat * (1 - Phat) / N)</td>
 </tr>
-<tr>
-<td align="left">mean</td>
-<td align="center">normal</td>
-<td align="center">𝜎 ^ 2 / N</td>
+<tr class="even">
+<td style="text-align: left;">mean</td>
+<td style="text-align: center;">normal</td>
+<td style="text-align: center;">𝜎 ^ 2 / N</td>
 </tr>
-<tr>
-<td align="left">median/percentile</td>
-<td align="center">depends</td>
-<td align="center">depends</td>
+<tr class="odd">
+<td style="text-align: left;">median/percentile</td>
+<td style="text-align: center;">depends</td>
+<td style="text-align: center;">depends</td>
 </tr>
-<tr>
-<td align="left">count/difference</td>
-<td align="center">normal(often)</td>
-<td align="center">Var(x) + Var(y)</td>
+<tr class="even">
+<td style="text-align: left;">count/difference</td>
+<td style="text-align: center;">normal(often)</td>
+<td style="text-align: center;">Var(x) + Var(y)</td>
 </tr>
-<tr>
-<td align="left">rates</td>
-<td align="center">poisson</td>
-<td align="center">mean</td>
+<tr class="odd">
+<td style="text-align: left;">rates</td>
+<td style="text-align: center;">poisson</td>
+<td style="text-align: center;">mean</td>
 </tr>
-<tr>
-<td align="left">ratios</td>
-<td align="center">depends</td>
-<td align="center">depends</td>
+<tr class="even">
+<td style="text-align: left;">ratios</td>
+<td style="text-align: center;">depends</td>
+<td style="text-align: center;">depends</td>
 </tr>
-</tbody></table>
+</tbody>
+</table>
 <ul>
-<li><p>𝜎 -&gt; variants of sample</p>
-<br>
-<br>
-
-</li>
+<li>𝜎 -&gt; variants of sample</li>
 </ul>
-<h2 id="calculating-variability-empirically"><a href="#calculating-variability-empirically" class="headerlink" title="calculating variability empirically"></a>calculating variability empirically</h2><p>Uses of A/A tests:</p>
-<ul>
-<li>Compare results to what you expect(sanity check)</li>
-<li>Estimate variance and calculate confidence</li>
-<li>Directly estimate confidence interval</li>
-</ul>
-<h6 id="Boot-strapping"><a href="#Boot-strapping" class="headerlink" title="Boot strapping"></a>Boot strapping</h6><p> Run one experiment, take random sample from each side of experiment and calculate as it were a full experimental group, use as simulated experiment. Repeat. Use the result as if run multiple experiments.</p>
-<p>confidence interval(z = 1.96) vs empirical confidence interval: empirical去掉最高和最低就是interval balance.<br>注: empirical最好有more than 40 experiments to be confident.</p>
-<br>
-<br>
-
-<h2 id="designing-an-experiment"><a href="#designing-an-experiment" class="headerlink" title="designing an experiment"></a>designing an experiment</h2><h3 id="Unit-of-diversion"><a href="#Unit-of-diversion" class="headerlink" title="Unit of diversion"></a>Unit of diversion</h3><p>  how we define what an individual subject is in the experience.</p>
-<p>Commonly used:</p>
-<ul>
-<li><strong>User id</strong> (user name, email address, phone number)<ul>
-<li>stable, unchanging</li>
-<li>personally identifiable</li>
-</ul>
-</li>
-<li><strong>Anonymous id</strong> (cookie)<ul>
-<li>changes when you switch browser or device</li>
-<li>users can clear cookies(easy to change)</li>
-</ul>
-</li>
-<li><strong>Event</strong><ul>
-<li>no consistent experience(for the change that is not user visible)</li>
-<li>use only for non-user-visible changes</li>
-</ul>
-</li>
-</ul>
-<p>Less common:</p>
-<ul>
-<li><strong>Device id</strong><ul>
-<li>only available for mobile</li>
-<li>tied to specific device</li>
-<li>unchangeable by user</li>
-</ul>
-</li>
-<li><strong>IP address</strong><ul>
-<li>changes when location changes</li>
-</ul>
-</li>
-</ul>
+<p><br> <br></p>
+<h2 id="calculating-variability-empirically">calculating variability empirically</h2>
+<p>Uses of A/A tests: - Compare results to what you expect(sanity check) - Estimate variance and calculate confidence - Directly estimate confidence interval</p>
+<h6 id="boot-strapping">Boot strapping</h6>
+<p>Run one experiment, take random sample from each side of experiment and calculate as it were a full experimental group, use as simulated experiment. Repeat. Use the result as if run multiple experiments.</p>
+<p>confidence interval(z = 1.96) vs empirical confidence interval: empirical去掉最高和最低就是interval balance. 注: empirical最好有more than 40 experiments to be confident.</p>
+<p><br> <br></p>
+<h2 id="designing-an-experiment">designing an experiment</h2>
+<h3 id="unit-of-diversion">Unit of diversion</h3>
+<p>how we define what an individual subject is in the experience.</p>
+<p>Commonly used: - <strong>User id</strong> (user name, email address, phone number) - stable, unchanging - personally identifiable - <strong>Anonymous id</strong> (cookie) - changes when you switch browser or device - users can clear cookies(easy to change) - <strong>Event</strong> - no consistent experience(for the change that is not user visible) - use only for non-user-visible changes</p>
+<p>Less common: - <strong>Device id</strong> - only available for mobile - tied to specific device - unchangeable by user - <strong>IP address</strong> - changes when location changes</p>
 <p>Example: unit of diversion (check means assigned to a group)</p>
 <table>
+<colgroup>
+<col style="width: 11%" />
+<col style="width: 12%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+<col style="width: 15%" />
+</colgroup>
 <thead>
-<tr>
-<th align="left"></th>
-<th align="center">(desktop) homepage</th>
-<th align="center">sign in</th>
-<th align="center">visit class</th>
-<th align="center">watch video</th>
-<th align="center">(mobile) auto sign in</th>
-<th align="center">watch video</th>
+<tr class="header">
+<th style="text-align: left;"></th>
+<th style="text-align: center;">(desktop) homepage</th>
+<th style="text-align: center;">sign in</th>
+<th style="text-align: center;">visit class</th>
+<th style="text-align: center;">watch video</th>
+<th style="text-align: center;">(mobile) auto sign in</th>
+<th style="text-align: center;">watch video</th>
 </tr>
 </thead>
-<tbody><tr>
-<td align="left">user-id</td>
-<td align="center">None</td>
-<td align="center">🍁</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center"></td>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">user-id</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="left">cookie</td>
-<td align="center">🍁</td>
-<td align="center">Note: if they did not clear their cookie</td>
-<td align="center"></td>
-<td align="center"></td>
-<td align="center">🍁</td>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: left;">cookie</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">Note: if they did not clear their cookie</td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;"></td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="left">event</td>
-<td align="center">🍁</td>
-<td align="center">🍁</td>
-<td align="center">🍁</td>
-<td align="center">🍁</td>
-<td align="center">🍁</td>
-<td align="center">🍁</td>
+<tr class="odd">
+<td style="text-align: left;">event</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">🍁</td>
 </tr>
-<tr>
-<td align="left">device id</td>
-<td align="center">None</td>
-<td align="center">None</td>
-<td align="center">None</td>
-<td align="center">None</td>
-<td align="center">🍁</td>
-<td align="center"></td>
+<tr class="even">
+<td style="text-align: left;">device id</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">None</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;"></td>
 </tr>
-<tr>
-<td align="left">IP address</td>
-<td align="center">🍁</td>
-<td align="center">Not clear</td>
-<td align="center">Not clear</td>
-<td align="center">Not clear</td>
-<td align="center">Not clear</td>
-<td align="center">Not clear</td>
+<tr class="odd">
+<td style="text-align: left;">IP address</td>
+<td style="text-align: center;">🍁</td>
+<td style="text-align: center;">Not clear</td>
+<td style="text-align: center;">Not clear</td>
+<td style="text-align: center;">Not clear</td>
+<td style="text-align: center;">Not clear</td>
+<td style="text-align: center;">Not clear</td>
 </tr>
-</tbody></table>
-<p>How we choose:</p>
+</tbody>
+</table>
+<p>How we choose: - <strong>user consistency</strong> (whether cross devices/ sign in sign off border) - event(not necessary) &gt; cookie(enough) &gt; user-id(necessary) - <strong>ethical consideration</strong> (what data is collecting/ data is identified or not) - security and confidentiality questions - informed consent - <strong>variability</strong> - unit of analysis -&gt; whatever denominator of metric (eg. page view if unit of analysis over click rough rate) - unit of diversion(if is cookie or user id) (eg. same metric click through rate is much higher than unit of analysis) why: we consider what to be independent wrong. Event: every single event is different random draw. Cookie &amp; user id -&gt; we diverting groups of events.</p>
+<h3 id="population">Population</h3>
+<p>experiment: <strong>intra-user experiment</strong> . Expose the same user to the feature being on and off over time, analyze their behavior. pitfall: Careful about choosing comparable time window. Frustration or learning problem.</p>
+<p>searching ranking, preferences(rank order list): <strong>interleaved experiment</strong> . Expose same user to the A and B side at the same time. Useful for reordering list.</p>
+<p><strong>inter-user experiment</strong> . Different ppl from A side and B side.</p>
+<p><strong>cohort</strong> : try to match up the entering classes. At least have roughly the same parameter in two user groups. (eg. In medical experiments, match up patients in trial based on demographic info, ages, medical history, then do pair analysis.)</p>
+<p>target: Based on info required. Restriction. Avoid overlap target.</p>
+<blockquote>
+<p>Aside: Significance A p-value of 5% or lower is often considered to be statistically significant. statistically significant difference: compute difference and confidence interval and see if it includes 0.(if margin of error is wider than estimated difference -&gt; includes 0 -&gt; diff is not significant)</p>
+</blockquote>
+<p>Diff between population and cohort: population is having a whole group of users. Whichin the population define cohort -&gt; people who enter the experiment at the same time. (eg. divert cookie or user id, look at a particular country, during the experience could gain/lose users. Cohort: define an entering class and only look at users who entered your experiment on both sides around the same time) cohort are harder to analyze, they will take more data because you'll lose users. Only use they when looking for user stability. - Looking for learning effects - Examining user retention - Want to increase user activity - Anything requiring user to be established &gt;example: - Have existing course and change structure of lesson - Unit of diversion: user-id(but not all users in the course) - Control: need to be a comparable cohort</p>
+<h3 id="size">Size</h3>
+<p>based on practical significance, statistical significance. To calculate size, assume SE ~ 1/sqrt(N)</p>
+<blockquote>
+<p>example: Experiment: change order of courses on course list Metric: click-though-rate Unit-of-diversion:cookies α: 0.05 β: 0.2 dmin: 0.01 SE = 0.0628/1000 pageview</p>
+</blockquote>
+<p>Result: 300,000 -&gt; too much Adjusted: - Increase dmin, α, β - change unit of diversion to page view -&gt; makes unit of diversion same as unit of analysis, variability of the metric will decrease and close to analytical estimate. - target experiment to specific traffic - change metric to cookie-based click-through-probability -&gt; often not make a significant difference to variability</p>
+<h3 id="duration">Duration</h3>
+<p>consider difference between weekdays and weekends -&gt; run smaller percentage across multiple days, or run multiple tasks at the same time on smaller percentage of traffic</p>
+<blockquote>
+<p>Aside: learning effects measure user learning, whether a user is adapting to a change or not.</p>
+</blockquote>
+<h2 id="sanity-check">Sanity check</h2>
 <ul>
-<li><strong>user consistency</strong> (whether cross devices/ sign in sign off border)<ul>
-<li>event(not necessary) &gt; cookie(enough) &gt; user-id(necessary)</li>
+<li>Population sizing metrics based on unit of diversion -&gt; experiment population and control population are comparable</li>
+<li>Invariants(Metrics that don't expect to change)</li>
 </ul>
-</li>
-<li><strong>ethical consideration</strong> (what data is collecting/ data is identified or not)<ul>
-<li>security and confidentiality questions</li>
-<li>informed consent</li>
-</ul>
-</li>
-<li><strong>variability</strong><ul>
-<li>unit of analysis -&gt; whatever denominator of metric<br>(eg. page view if unit of analysis over click rough rate)</li>
-<li>unit of diversion(if is cookie or user id)<br>(eg. same metric click through rate is much higher than unit of analysis)<br>why: we consider what to be independent wrong.<br>Event: every single event is different random draw.<br>Cookie &amp; user id -&gt; we diverting groups of events.</li>
-</ul>
-</li>
-</ul>
-<h3 id="Population"><a href="#Population" class="headerlink" title="Population"></a>Population</h3><p>  experiment:<br>  <strong>intra-user experiment</strong> . Expose the same user to the feature being on and off over time, analyze their behavior.<br>  pitfall: Careful about choosing comparable time window. Frustration or learning problem.</p>
-<p>  searching ranking, preferences(rank order list): <strong>interleaved experiment</strong> . Expose same user to the A and B side at the same time. Useful for reordering list.</p>
-<p>  <strong>inter-user experiment</strong> . Different ppl from A side and B side.</p>
-<p>  <strong>cohort</strong> : try to match up the entering classes. At least have roughly the same parameter in two user groups.<br>  (eg. In medical experiments, match up patients in trial based on demographic info, ages, medical history, then do pair analysis.)</p>
-<p>  target:<br>  Based on info required. Restriction. Avoid overlap target.</p>
 <blockquote>
-<p>Aside: Significance<br>A p-value of 5% or lower is often considered to be statistically significant.<br>statistically significant difference: compute difference and confidence interval and see if it includes 0.(if margin of error is wider than estimated difference -&gt; includes 0 -&gt; diff is not significant)</p>
+<p>example: how to figure out whether difference is within expectation(each cookie is randomly assigned to the control or experiment group with probabilty 0.5) 1.compute standard deviation of binomial with probability 0.5 we expect. 2.multiply by z-score to get margin of error. 3.compute confidence interval around 0.5 -&gt; if control group fall within this confidence interval: experiment is setup properly. 4.check whether observed fraction is within interval.</p>
 </blockquote>
-<p>Diff between population and cohort:<br>  population is having a whole group of users. Whichin the population define cohort -&gt; people who enter the experiment at the same time.<br>(eg. divert cookie or user id, look at a particular country, during the experience could gain/lose users. Cohort: define an entering class and only look at users who entered your experiment on both sides around the same time)<br>  cohort are harder to analyze, they will take more data because you’ll lose users. Only use they when looking for user stability.</p>
+<p>how to solve: - check technically issues - retrospective analysis (endemic) - pre and post periods</p>
+<blockquote>
+<p>aside: click through probability: binomial distribution click through rate: poisson distribution</p>
+</blockquote>
+<p>online calculator:https://www.graphpad.com/quickcalcs/binomial1.cfm</p>
+<blockquote>
+<p>aside: Simpson's paradox: a trend appears in several different groups of data but disappears or reverses when these groups are combined.</p>
+</blockquote>
+<h2 id="tracking-metrics">tracking metrics</h2>
 <ul>
-<li>Looking for learning effects</li>
-<li>Examining user retention</li>
-<li>Want to increase user activity</li>
-<li>Anything requiring user to be established<blockquote>
-<p>example:</p>
-</blockquote>
-<ul>
-<li>Have existing course and change structure of lesson</li>
-<li>Unit of diversion: user-id(but not all users in the course)</li>
-<li>Control: need to be a comparable cohort</li>
-</ul>
-</li>
-</ul>
-<h3 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h3><p>based on practical significance, statistical significance.<br>To calculate size, assume SE ~ 1/sqrt(N)</p>
-<blockquote>
-<p>example:<br>Experiment: change order of courses on course list<br>Metric: click-though-rate<br>Unit-of-diversion:cookies<br>α: 0.05<br>β: 0.2<br>dmin: 0.01<br>SE = 0.0628/1000 pageview</p>
-</blockquote>
-<p>Result: 300,000 -&gt; too much<br>Adjusted:</p>
-<ul>
-<li>Increase dmin, α, β</li>
-<li>change unit of diversion to page view -&gt; makes unit of diversion same as unit of analysis, variability of the metric will decrease and close to analytical estimate.</li>
-<li>target experiment to specific traffic</li>
-<li>change metric to cookie-based click-through-probability -&gt; often not make a significant difference to variability</li>
-</ul>
-<h3 id="Duration"><a href="#Duration" class="headerlink" title="Duration"></a>Duration</h3><p> consider difference between weekdays and weekends -&gt; run smaller percentage across multiple days, or run multiple tasks at the same time on smaller percentage of traffic</p>
-<blockquote>
-<p>Aside: learning effects<br>measure user learning, whether a user is adapting to a change or not.</p>
-</blockquote>
-<h2 id="Sanity-check"><a href="#Sanity-check" class="headerlink" title="Sanity check"></a>Sanity check</h2><ul>
-<li>Population sizing metrics<br>based on unit of diversion -&gt; experiment population and control population are comparable</li>
-<li>Invariants(Metrics that don’t expect to change)</li>
-</ul>
-<blockquote>
-<p>example: how to figure out whether difference is within expectation(each cookie is randomly assigned to the control or experiment group with probabilty 0.5)<br>1.compute standard deviation of binomial with probability 0.5 we expect.<br>2.multiply by z-score to get margin of error.<br>3.compute confidence interval around 0.5 -&gt; if control group fall within this confidence interval: experiment is setup properly.<br>4.check whether observed fraction is within interval.</p>
-</blockquote>
-<p>how to solve:</p>
-<ul>
-<li>check technically issues</li>
-<li>retrospective analysis (endemic)</li>
-<li>pre and post periods</li>
-</ul>
-<blockquote>
-<p>aside:<br>click through probability: binomial distribution<br>click through rate: poisson distribution</p>
-</blockquote>
-<p>online calculator:<a target="_blank" rel="noopener" href="https://www.graphpad.com/quickcalcs/binomial1.cfm">https://www.graphpad.com/quickcalcs/binomial1.cfm</a></p>
-<blockquote>
-<p>aside:<br>Simpson’s paradox: a trend appears in several different groups of data but disappears or reverses when these groups are combined.</p>
-</blockquote>
-<h2 id="tracking-metrics"><a href="#tracking-metrics" class="headerlink" title="tracking metrics"></a>tracking metrics</h2><ul>
-<li>single:<ul>
+<li>single:</li>
 <li>hypothesis test</li>
 <li>sign test</li>
 </ul>
-</li>
-</ul>
-<p>hypothesis test:<br>SE ~ 1/sqrt(N) -&gt;when we calculate two groups -&gt; sqrt(1/N1 + 1/N2)<br>Empirical SE/sqrt(1/sample size + 1/sample size) = SE/sqrt(1/group1 size + 1/group2 size) =&gt; then we can find SE<br>different = rate experiment - rate control<br>margin of error = SE * 1.96<br>confidence interval = different +- margin of error</p>
-<p>sign test:<br>numbers of days<br>numbers of days with positive change<br>-&gt; if no difference, 50% of positive change on each day, we do a binomial(small) or normal(big number) check</p>
+<p>hypothesis test: SE ~ 1/sqrt(N) -&gt;when we calculate two groups -&gt; sqrt(1/N1 + 1/N2) Empirical SE/sqrt(1/sample size + 1/sample size) = SE/sqrt(1/group1 size + 1/group2 size) =&gt; then we can find SE different = rate experiment - rate control margin of error = SE * 1.96 confidence interval = different +- margin of error</p>
+<p>sign test: numbers of days numbers of days with positive change -&gt; if no difference, 50% of positive change on each day, we do a binomial(small) or normal(big number) check</p>
 <ul>
-<li>multiple<ul>
+<li>multiple</li>
 <li>1.assume independence</li>
 <li>2.bonferroni correction</li>
 </ul>
-</li>
-</ul>
-<p>independence:<br>α overall = (1 - α individual)^n</p>
-<p>bonferroni correction:<br>α individual = α overall / # of metric</p>
-<p>from difference and SE -&gt; we get margin of error = SE * 1.96<br>if margin of error is wider than observed difference -&gt; not statistically significant</p>
-<p>control false discovery rate(FDR)<br>FDR = E[# false positives / # rejections]</p>
-<br>
-<br>
-🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
-<br>
-<br>
-
-<h2 id="Example-process"><a href="#Example-process" class="headerlink" title="Example process"></a>Example process</h2><h3 id="Experiment-design"><a href="#Experiment-design" class="headerlink" title="Experiment design"></a>Experiment design</h3><p><strong>1.metric choice</strong><br>choose invariant + evaluation metrics</p>
-<ul>
-<li>number of cookies</li>
-<li>number of user-ids</li>
-<li>number of clicks</li>
-<li>click-through-probability</li>
-<li>gross conversion</li>
-<li>retention</li>
-<li>net conversion</li>
-</ul>
+<p>independence: α overall = (1 - α individual)^n</p>
+<p>bonferroni correction: α individual = α overall / # of metric</p>
+<p>from difference and SE -&gt; we get margin of error = SE * 1.96 if margin of error is wider than observed difference -&gt; not statistically significant</p>
+<p>control false discovery rate(FDR) FDR = E[# false positives / # rejections]</p>
+<p><br> <br> 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉 <br> <br></p>
+<h2 id="example-process">Example process</h2>
+<h3 id="experiment-design">Experiment design</h3>
+<p><strong>1.metric choice</strong> choose invariant + evaluation metrics - number of cookies - number of user-ids - number of clicks - click-through-probability - gross conversion - retention - net conversion</p>
 <blockquote>
-<p>aside:<br>gross conversion: number of user-ids to complete checkout and enroll in the free trial divided by number of unique cookies to click the “start free trial” button<br>retention: number of user-ids to remain enrolled past the 14-day boundary(make at least one payment) divided by number of user-ids to complete checkout<br>net conversion: number of user-ids to remain enrolled past the 14-day bounday(make at least one payment) divided by the number of unique cookies to click the “start free trial” button</p>
+<p>aside: gross conversion: number of user-ids to complete checkout and enroll in the free trial divided by number of unique cookies to click the "start free trial" button retention: number of user-ids to remain enrolled past the 14-day boundary(make at least one payment) divided by number of user-ids to complete checkout net conversion: number of user-ids to remain enrolled past the 14-day bounday(make at least one payment) divided by the number of unique cookies to click the "start free trial" button</p>
 </blockquote>
-<p><strong>2.measuring standard deviation</strong><br>whether or not use bonferroni correction in analysis phase</p>
+<p><strong>2.measuring standard deviation</strong> whether or not use bonferroni correction in analysis phase</p>
 <p><strong>3.sizing</strong></p>
 <p><strong>3.1.number of samples vs. power</strong></p>
 <p><strong>3.2.duration vs. exposure</strong></p>
-<br>
-
-<h2 id="Experiment-analysis"><a href="#Experiment-analysis" class="headerlink" title="Experiment analysis"></a>Experiment analysis</h2><p><strong>4.sanity checks</strong><br>calculate lower bound, upper bound, observed</p>
+<p><br></p>
+<h2 id="experiment-analysis">Experiment analysis</h2>
+<p><strong>4.sanity checks</strong> calculate lower bound, upper bound, observed</p>
 <p><strong>5.result analysis</strong></p>
-<p><strong>5.1.effect size test</strong><br>calculate lower bound, upper bound, statistical significance, practical significance</p>
-<p><strong>5.2.sigh tests</strong><br>p-value, statistical significance</p>
-<p><strong>summary</strong><br>state whether used bonferroni correction, why and why not.<br>If there are any discrepancies between the effect size hypothesis tests and the sigh test, describe the discrepancy and why think it arose.</p>
-<br>
-<br>
-🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
-<br>
-<br>
-
-<h2 id="Example-process-ver2-0"><a href="#Example-process-ver2-0" class="headerlink" title="Example process-ver2.0"></a>Example process-ver2.0</h2><p><strong>1.metric choice</strong><br>choose invariant metrics and evaluation metric</p>
-<p><strong>2.measuring standard deviation</strong><br>whether analytic estimate would be comparable to the empirical variability<br>whether expect them to be different (in which case it might be worth doing an empirical estimate if there is time)</p>
+<p><strong>5.1.effect size test</strong> calculate lower bound, upper bound, statistical significance, practical significance</p>
+<p><strong>5.2.sigh tests</strong> p-value, statistical significance</p>
+<p><strong>summary</strong> state whether used bonferroni correction, why and why not. If there are any discrepancies between the effect size hypothesis tests and the sigh test, describe the discrepancy and why think it arose.</p>
+<p><br> <br> 🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉 <br> <br></p>
+<h2 id="example-process-ver2.0">Example process-ver2.0</h2>
+<p><strong>1.metric choice</strong> choose invariant metrics and evaluation metric</p>
+<p><strong>2.measuring standard deviation</strong> whether analytic estimate would be comparable to the empirical variability whether expect them to be different (in which case it might be worth doing an empirical estimate if there is time)</p>
 <p><strong>3.sizing</strong></p>
-<p><strong>3.1.number of samples vs. power</strong><br>whether use Bonferroni correction during analysis phase, give number of pageviews need to power experiment appropriately</p>
-<p><strong>3.2.duration vs. exposure</strong><br>indicate what fraction of traffic would divert to this experiment and how many days would need to run the experiment</p>
-<h2 id="Experiment-analysis-1"><a href="#Experiment-analysis-1" class="headerlink" title="Experiment analysis"></a>Experiment analysis</h2><p><strong>4.sanity checks</strong><br>for each of invariant metrics, give the 95% confidence interval for the value expect to observe, the actual observed value, and whether the metric passes sanity check<br>if not pass -&gt; guess what went wrong based on day-by-day data</p>
+<p><strong>3.1.number of samples vs. power</strong> whether use Bonferroni correction during analysis phase, give number of pageviews need to power experiment appropriately</p>
+<p><strong>3.2.duration vs. exposure</strong> indicate what fraction of traffic would divert to this experiment and how many days would need to run the experiment</p>
+<h2 id="experiment-analysis-1">Experiment analysis</h2>
+<p><strong>4.sanity checks</strong> for each of invariant metrics, give the 95% confidence interval for the value expect to observe, the actual observed value, and whether the metric passes sanity check if not pass -&gt; guess what went wrong based on day-by-day data</p>
 <p><strong>5.result analysis</strong></p>
-<p><strong>5.1.effect size test</strong><br>for each of evaluation metrics, give 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant.</p>
-<p><strong>5.2.sigh tests</strong><br>for each of evaluation metrics, do sign test using day-by-day data, report the p-value of the sign test and whether the result is statistically significant.</p>
+<p><strong>5.1.effect size test</strong> for each of evaluation metrics, give 95% confidence interval around the difference between the experiment and control groups. Indicate whether each metric is statistically and practically significant.</p>
+<p><strong>5.2.sigh tests</strong> for each of evaluation metrics, do sign test using day-by-day data, report the p-value of the sign test and whether the result is statistically significant.</p>
 <p><strong>summary</strong></p>
-<h2 id="final-notes"><a href="#final-notes" class="headerlink" title="final notes"></a>final notes</h2><blockquote>
+<h2 id="final-notes">final notes</h2>
+<blockquote>
 <p>Aside for terms:</p>
 </blockquote>
 <blockquote>
-<p>Closed testing procedure:<br>a general method for performing more than one hypothesis test simultaneously.<br>Suppose there are k hypotheses H1,…, Hk to be tested and the overall type I error rate is α. The closed testing principle allows the rejection of any one of these elementary hypotheses, say Hi, if all possible intersection hypotheses involving Hi can be rejected by using valid local level α tests. It controls the familywise error rate for all the k hypotheses at level α in the strong sense.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Closed_testing_procedure">wiki</a></p>
+<p>Closed testing procedure: a general method for performing more than one hypothesis test simultaneously. Suppose there are k hypotheses H1,..., Hk to be tested and the overall type I error rate is α. The closed testing principle allows the rejection of any one of these elementary hypotheses, say Hi, if all possible intersection hypotheses involving Hi can be rejected by using valid local level α tests. It controls the familywise error rate for all the k hypotheses at level α in the strong sense. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Closed_testing_procedure">wiki</a></p>
 </blockquote>
 <blockquote>
-<p>Boole’s inequality<br>In probability theory, Boole’s inequality, also known as the union bound, says that for any finite or countable set of events, the probability that at least one of the events happens is no greater than the sum of the probabilities of the individual events.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boole%27s_inequality">wiki</a><br>Holm–Bonferroni method</p>
-</blockquote>
-<img src="/2020/11/03/P124/P124.png" class="">
-<blockquote>
-<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">wiki</a></p>
+<p>Boole's inequality In probability theory, Boole's inequality, also known as the union bound, says that for any finite or countable set of events, the probability that at least one of the events happens is no greater than the sum of the probabilities of the individual events. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boole%27s_inequality">wiki</a> Holm–Bonferroni method <img src="/2020/11/03/P124/P124.png" class=""> <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">wiki</a></p>
 </blockquote>
 <blockquote>
-<p>Note:<br>Type I error:<br>Erroneously rejecting the null hypothesis with a statistical analysis, then the null hypothesis is in fact true in the population.</p>
+<p>Note: Type I error: Erroneously rejecting the null hypothesis with a statistical analysis, then the null hypothesis is in fact true in the population.</p>
 </blockquote>
 <blockquote>
-<p>Bonferroni correction:<br>An adjustment applied to  p-values that is “supposed to be” applied, when two or more statistical analyses have been performed on the <strong>same</strong> sample of data.<br>The correction is supposed to be applied, as the familywise type I error rate is known to be larger than the per analysis error rate(eg. alpha = 0.05)<br>α individual = α overall / # of metric (eg. 0.05 / 3 metric = 0.017)<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bonferroni_correction">wiki</a></p>
+<p>Bonferroni correction: An adjustment applied to p-values that is "supposed to be" applied, when two or more statistical analyses have been performed on the <strong>same</strong> sample of data. The correction is supposed to be applied, as the familywise type I error rate is known to be larger than the per analysis error rate(eg. alpha = 0.05) α individual = α overall / # of metric (eg. 0.05 / 3 metric = 0.017) <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bonferroni_correction">wiki</a></p>
 </blockquote>
 <blockquote>
-<p>Familywise error rate:<br>The probability of committing at least one type 1 error amongst two or more statistical analyses on the <strong>same</strong> sample of data.<br>αFW = 1 - (1 - αPC)^c<br>c : number of comparisons performed<br>αPC : specified per contrast error rate(usually 0.05)</p>
+<p>Familywise error rate: The probability of committing at least one type 1 error amongst two or more statistical analyses on the <strong>same</strong> sample of data. αFW = 1 - (1 - αPC)^c c : number of comparisons performed αPC : specified per contrast error rate(usually 0.05)</p>
 </blockquote>
 <blockquote>
-<p>Multiple comparisons problem:<br>In statistics, the multiple comparisons, multiplicity or multiple testing problem occurs when one considers a set of statistical inferences simultaneously or infers a subset of parameters selected based on the observed values. In certain fields it is known as the look-elsewhere effect.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiple_comparisons_problem">wiki</a></p>
+<p>Multiple comparisons problem: In statistics, the multiple comparisons, multiplicity or multiple testing problem occurs when one considers a set of statistical inferences simultaneously or infers a subset of parameters selected based on the observed values. In certain fields it is known as the look-elsewhere effect. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiple_comparisons_problem">wiki</a></p>
 </blockquote>
 <blockquote>
-<p>False discovery rate<br>The false discovery rate (FDR) is a method of conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/False_discovery_rate">wiki</a></p>
+<p>False discovery rate The false discovery rate (FDR) is a method of conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons. <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/False_discovery_rate">wiki</a></p>
 </blockquote>
 
     </div>
@@ -802,7 +684,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-binomial-distruibution"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">3.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">4.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">5.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">6.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">7.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">8.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Segmenting-and-filtering-data"><span class="nav-number">8.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><span class="nav-number">8.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">9.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Boot-strapping"><span class="nav-number">9.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">10.</span> <span class="nav-text">designing an experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-diversion"><span class="nav-number">10.1.</span> <span class="nav-text">Unit of diversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Population"><span class="nav-number">10.2.</span> <span class="nav-text">Population</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Size"><span class="nav-number">10.3.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration"><span class="nav-number">10.4.</span> <span class="nav-text">Duration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sanity-check"><span class="nav-number">11.</span> <span class="nav-text">Sanity check</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracking-metrics"><span class="nav-number">12.</span> <span class="nav-text">tracking metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process"><span class="nav-number">13.</span> <span class="nav-text">Example process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment-design"><span class="nav-number">13.1.</span> <span class="nav-text">Experiment design</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis"><span class="nav-number">14.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process-ver2-0"><span class="nav-number">15.</span> <span class="nav-text">Example process-ver2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis-1"><span class="nav-number">16.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final-notes"><span class="nav-number">17.</span> <span class="nav-text">final notes</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#asidebinomial-distruibution"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">3.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">4.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">5.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">6.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">7.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">8.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#aside-segmenting-and-filtering-data"><span class="nav-number">8.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#aside-calculating-variabilityvariance-or-standard-deviation-distribution"><span class="nav-number">8.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">9.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#boot-strapping"><span class="nav-number">9.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">10.</span> <span class="nav-text">designing an experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#unit-of-diversion"><span class="nav-number">10.1.</span> <span class="nav-text">Unit of diversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#population"><span class="nav-number">10.2.</span> <span class="nav-text">Population</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#size"><span class="nav-number">10.3.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#duration"><span class="nav-number">10.4.</span> <span class="nav-text">Duration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sanity-check"><span class="nav-number">11.</span> <span class="nav-text">Sanity check</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracking-metrics"><span class="nav-number">12.</span> <span class="nav-text">tracking metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example-process"><span class="nav-number">13.</span> <span class="nav-text">Example process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#experiment-design"><span class="nav-number">13.1.</span> <span class="nav-text">Experiment design</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#experiment-analysis"><span class="nav-number">14.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#example-process-ver2.0"><span class="nav-number">15.</span> <span class="nav-text">Example process-ver2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#experiment-analysis-1"><span class="nav-number">16.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final-notes"><span class="nav-number">17.</span> <span class="nav-text">final notes</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -818,7 +700,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">152</span>
+          <span class="site-state-item-count">153</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -885,7 +767,7 @@
     </span>
 
 
-    <span title="Symbols count total">161k</span>
+    <span title="Symbols count total">174k</span>
   -->
 
   <!--
@@ -893,7 +775,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">2:27</span>
+    <span title="Reading time total">2:38</span>
 
   -->
   
@@ -903,7 +785,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有161k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有104.7k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -958,6 +840,8 @@
 
 
 
+
+  
 
   
 

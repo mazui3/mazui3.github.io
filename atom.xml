@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-12T16:45:56.298Z</updated>
+  <updated>2020-12-17T05:28:28.093Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,37 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于(我所理解的)加密学入门</title>
+    <link href="http://yoursite.com/2020/12/14/P153/"/>
+    <id>http://yoursite.com/2020/12/14/P153/</id>
+    <published>2020-12-14T14:20:43.000Z</published>
+    <updated>2020-12-17T05:28:28.093Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;Aside:博客加了mathjax插件,可以更好得写数学公式(…),关于mathjax的&lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tips&lt;/a&gt;.&lt;br /&gt;
+不过也因为添加了这个插件很可能有换行bug(叹气),还是今天有bug睡一觉又没了的神秘bug,暂时没修(...).</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+  </entry>
+  
+  <entry>
     <title>空气演奏</title>
     <link href="http://yoursite.com/2020/12/11/P149/"/>
     <id>http://yoursite.com/2020/12/11/P149/</id>
     <published>2020-12-11T14:56:27.000Z</published>
-    <updated>2020-12-12T16:45:56.298Z</updated>
+    <updated>2020-12-14T14:40:01.762Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/11/P149/P149_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;《真的是期末季最后一次拿别人的图来混更》&lt;/p&gt;</summary>
+&lt;p&gt;《真的是期末季最后一次拿别人的图来混更》</summary>
     
     
     
@@ -43,7 +65,7 @@
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/09/P147/P147_1.JPG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;想一定要收录一下!!!&lt;/p&gt;</summary>
+&lt;p&gt;想一定要收录一下!!!</summary>
     
     
     
@@ -65,7 +87,7 @@
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/06/P143/P143_1.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;这次更新了下博客背景,乘机拜托U君帮我多画了几个小可爱().&lt;/p&gt;</summary>
+&lt;p&gt;这次更新了下博客背景,乘机拜托U君帮我多画了几个小可爱().</summary>
     
     
     
@@ -86,7 +108,7 @@
     
     <summary type="html">&lt;img src=&quot;/2020/12/06/P142/P142_1.jpg&quot; class=&quot;&quot;&gt;
 &lt;img src=&quot;/2020/12/06/P142/P142_2.jpg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;请大家看——————————!!!(呐喊)&lt;/p&gt;</summary>
+&lt;p&gt;请大家看——————————!!!(呐喊)</summary>
     
     
     
@@ -105,7 +127,7 @@
     <updated>2020-12-12T20:23:04.677Z</updated>
     
     
-    <summary type="html">&lt;p&gt;《这个博主考期末的时候拼命摸于是找来朋友们给的oc填博客还有没救》&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;《这个博主考期末的时候拼命摸于是找来朋友们给的oc填博客还有没救》</summary>
     
     
     
@@ -126,7 +148,7 @@
     <updated>2020-12-13T01:46:17.431Z</updated>
     
     
-    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.</summary>
     
     
     
@@ -146,10 +168,10 @@
     <link href="http://yoursite.com/2020/11/28/P140/"/>
     <id>http://yoursite.com/2020/11/28/P140/</id>
     <published>2020-11-29T01:56:27.000Z</published>
-    <updated>2020-12-12T22:17:07.578Z</updated>
+    <updated>2020-12-14T12:58:11.735Z</updated>
     
     
-    <summary type="html">&lt;p&gt;那就开始吧(吧).&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;那就开始吧(吧).</summary>
     
     
     
@@ -172,7 +194,7 @@
     <updated>2020-11-28T21:53:54.893Z</updated>
     
     
-    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).</summary>
     
     
     
@@ -211,7 +233,7 @@
     <updated>2020-11-24T02:20:55.569Z</updated>
     
     
-    <summary type="html">&lt;p&gt;年初的事啦.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;年初的事啦.</summary>
     
     
     
@@ -258,7 +280,7 @@
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/12/P127/P127_1.JPG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.&lt;/p&gt;</summary>
+&lt;p&gt;解压涂涂家庭组,不过这次是想唠嗑.</summary>
     
     
     
@@ -282,7 +304,7 @@
     
     
     <summary type="html">&lt;img src=&quot;/2020/11/12/P126/P126_5.PNG&quot; class=&quot;&quot;&gt;
-&lt;p&gt;时间虽然是2020年11月,但图大多有点时间啦.&lt;/p&gt;</summary>
+&lt;p&gt;时间虽然是2020年11月,但图大多有点时间啦.</summary>
     
     
     
@@ -323,7 +345,7 @@
     
     
     <summary type="html">&lt;p&gt;ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.&lt;/p&gt;
-&lt;p&gt;个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).&lt;/p&gt;</summary>
+&lt;p&gt;个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(...).</summary>
     
     
     
@@ -344,7 +366,7 @@
     <updated>2020-11-16T03:24:20.202Z</updated>
     
     
-    <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x</summary>
     
     
     
@@ -388,7 +410,7 @@
     <updated>2020-11-11T19:57:04.566Z</updated>
     
     
-    <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.</summary>
     
     
     
@@ -407,7 +429,7 @@
     <updated>2020-11-13T02:13:53.638Z</updated>
     
     
-    <summary type="html">&lt;p&gt;使用语言C++14.&lt;/p&gt;</summary>
+    <summary type="html">&lt;p&gt;使用语言C++14.</summary>
     
     
     
@@ -415,28 +437,6 @@
     
     
     <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>世界的图书馆管理员和画到一半的阿怜</title>
-    <link href="http://yoursite.com/2020/09/08/P118/"/>
-    <id>http://yoursite.com/2020/09/08/P118/</id>
-    <published>2020-09-08T04:27:18.000Z</published>
-    <updated>2020-12-11T02:35:18.967Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/09/08/P118/P118_2.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;世界的图书馆管理员,取名为Ada.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
     
   </entry>
   
