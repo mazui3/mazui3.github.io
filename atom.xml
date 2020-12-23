@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-17T23:09:28.132Z</updated>
+  <updated>2020-12-23T05:17:12.274Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于颜色的笔记</title>
+    <link href="http://yoursite.com/2020/12/18/P154/"/>
+    <id>http://yoursite.com/2020/12/18/P154/</id>
+    <published>2020-12-19T03:59:34.000Z</published>
+    <updated>2020-12-23T05:17:12.274Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;真是打了个大胆的tag…&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    
+  </entry>
   
   <entry>
     <title>关于(我所理解的)加密学入门的笔记</title>
@@ -171,7 +190,7 @@
     <link href="http://yoursite.com/2020/11/28/P140/"/>
     <id>http://yoursite.com/2020/11/28/P140/</id>
     <published>2020-11-29T01:56:27.000Z</published>
-    <updated>2020-12-21T03:02:18.567Z</updated>
+    <updated>2020-12-21T04:19:02.995Z</updated>
     
     
     <summary type="html">&lt;p&gt;那就开始吧(吧).&lt;br&gt;</summary>
@@ -414,25 +433,6 @@
     
     
     <summary type="html">&lt;p&gt;中文维基翻译是流密码,是一种对称加密算法.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>(补)抽奖用小代码</title>
-    <link href="http://yoursite.com/2020/09/21/P119/"/>
-    <id>http://yoursite.com/2020/09/21/P119/</id>
-    <published>2020-09-22T00:33:22.000Z</published>
-    <updated>2020-12-17T21:44:35.985Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;使用语言C++14.&lt;br&gt;</summary>
     
     
     
