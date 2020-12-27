@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-24T06:03:29.485Z</updated>
+  <updated>2020-12-27T01:30:21.418Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于stat的笔记</title>
+    <link href="http://yoursite.com/2020/12/26/P150/"/>
+    <id>http://yoursite.com/2020/12/26/P150/</id>
+    <published>2020-12-26T19:14:46.000Z</published>
+    <updated>2020-12-27T01:30:21.418Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为stat230和stat231的部分复习.加上点(老人握拳.jpg)网课.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+  </entry>
   
   <entry>
     <title>赛博圣诞🎄</title>
@@ -420,27 +441,6 @@
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>宾果和老兔和乱七八糟的万圣节快乐</title>
-    <link href="http://yoursite.com/2020/10/31/P122/"/>
-    <id>http://yoursite.com/2020/10/31/P122/</id>
-    <published>2020-10-31T17:50:31.000Z</published>
-    <updated>2020-12-17T21:44:26.724Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;虽然错过了时间但用时间魔法师的力量强行再过一次万圣节x&lt;br&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
     
   </entry>
   
