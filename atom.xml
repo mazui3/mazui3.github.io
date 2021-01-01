@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2020-12-30T03:11:28.880Z</updated>
+  <updated>2021-01-01T15:49:15.303Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,27 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>写真</title>
+    <link href="http://yoursite.com/2021/01/01/P156/"/>
+    <id>http://yoursite.com/2021/01/01/P156/</id>
+    <published>2021-01-01T15:00:00.000Z</published>
+    <updated>2021-01-01T15:49:15.303Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/01/01/P156/P156_1.png&quot; class=&quot;&quot;&gt;
+&lt;img src=&quot;/2021/01/01/P156/P156_2.png&quot; class=&quot;&quot;&gt;
+&lt;p&gt;&lt;strong&gt;193f2917fb45eceb3721c025fbf8f410929376eff3459924755d7a615cda53dd&lt;/strong&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
   
   <entry>
     <title>2020的年终总结</title>
@@ -422,26 +443,7 @@
     <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
     
     
-    <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
-    
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>sore家的obake和sore给我的</title>
-    <link href="http://yoursite.com/2020/11/10/P125/"/>
-    <id>http://yoursite.com/2020/11/10/P125/</id>
-    <published>2020-11-11T03:33:10.000Z</published>
-    <updated>2020-12-17T21:44:20.641Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/11/10/P125/P125.png&quot; class=&quot;&quot;&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
     
     <category term="给朋友的画" scheme="http://yoursite.com/tags/%E7%BB%99%E6%9C%8B%E5%8F%8B%E7%9A%84%E7%94%BB/"/>
     
