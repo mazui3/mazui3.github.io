@@ -44,7 +44,7 @@
     <link href="http://yoursite.com/2021/01/01/P156/"/>
     <id>http://yoursite.com/2021/01/01/P156/</id>
     <published>2021-01-01T15:00:00.000Z</published>
-    <updated>2021-01-02T06:39:36.558Z</updated>
+    <updated>2021-01-03T21:42:16.678Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/01/01/P156/P156_1.png&quot; class=&quot;&quot;&gt;
@@ -57,6 +57,8 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
     
   </entry>
   
@@ -86,7 +88,7 @@
     <link href="http://yoursite.com/2020/12/26/P150/"/>
     <id>http://yoursite.com/2020/12/26/P150/</id>
     <published>2020-12-26T19:14:46.000Z</published>
-    <updated>2021-01-02T16:18:55.410Z</updated>
+    <updated>2021-01-04T16:19:48.728Z</updated>
     
     
     <summary type="html">&lt;script async
@@ -156,7 +158,7 @@
     <link href="http://yoursite.com/2020/12/18/P154/"/>
     <id>http://yoursite.com/2020/12/18/P154/</id>
     <published>2020-12-19T03:59:34.000Z</published>
-    <updated>2020-12-23T05:17:12.274Z</updated>
+    <updated>2021-01-04T17:18:19.136Z</updated>
     
     
     <summary type="html">&lt;p&gt;真是打了个大胆的tag…&lt;br&gt;</summary>
