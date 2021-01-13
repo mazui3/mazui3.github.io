@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-13T19:27:14.638Z</updated>
+  <updated>2021-01-13T19:46:27.118Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,17 +17,17 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>宝箱里的可爱 - 续</title>
-    <link href="http://yoursite.com/2021/01/16/P162/"/>
-    <id>http://yoursite.com/2021/01/16/P162/</id>
-    <published>2021-01-16T19:16:19.000Z</published>
-    <updated>2021-01-13T19:27:14.638Z</updated>
+    <title>与你</title>
+    <link href="http://yoursite.com/2021/01/13/P160/"/>
+    <id>http://yoursite.com/2021/01/13/P160/</id>
+    <published>2021-01-14T01:00:59.000Z</published>
+    <updated>2021-01-13T19:46:27.118Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;/2021/01/16/P162/P162_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;谢谢线线画给我的Ada羊羊!!!超适合超喜欢………………&lt;br&gt;线线画小动物好厉害啊!!&lt;/p&gt;
+    <summary type="html">&lt;img src=&quot;/2021/01/13/P160/P160_1.jpeg&quot; class=&quot;&quot;&gt;
+&lt;p&gt;感谢离若画给我的小情侣♥&lt;/p&gt;
 &lt;blockquote&gt;
-&lt;p&gt;二线&lt;a href=&quot;https://twitter.com/shany1x&quot;&gt;twi&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;离若&lt;a href=&quot;https://weibo.com/u/6348610869?topnav=1&amp;amp;wvr=6&amp;amp;topsug=1&amp;amp;ssl_rnd=1610168204.5878&amp;amp;is_all=1#_rnd1610168217973&quot;&gt;weibo&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://twitter.com/quanshanlizi&quot;&gt;twi&lt;/a&gt;&lt;/p&gt;
 &lt;/blockquote&gt;</summary>
     
     
@@ -40,25 +40,25 @@
   </entry>
   
   <entry>
-    <title>与你</title>
-    <link href="http://yoursite.com/2021/01/15/P160/"/>
-    <id>http://yoursite.com/2021/01/15/P160/</id>
-    <published>2021-01-16T01:00:59.000Z</published>
-    <updated>2021-01-11T04:15:08.179Z</updated>
+    <title>关于R语言的笔记</title>
+    <link href="http://yoursite.com/2021/01/13/P164/"/>
+    <id>http://yoursite.com/2021/01/13/P164/</id>
+    <published>2021-01-13T21:46:18.000Z</published>
+    <updated>2021-01-13T21:46:18.799Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;/2021/01/15/P160/P160_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;感谢离若画给我的小情侣♥&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;离若&lt;a href=&quot;https://weibo.com/u/6348610869?topnav=1&amp;amp;wvr=6&amp;amp;topsug=1&amp;amp;ssl_rnd=1610168204.5878&amp;amp;is_all=1#_rnd1610168217973&quot;&gt;weibo&lt;/a&gt; &amp;amp; &lt;a href=&quot;https://twitter.com/quanshanlizi&quot;&gt;twi&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
+    <summary type="html">&lt;p&gt;先感谢stat341老师提供的R语言从入门到入土教材.&lt;br&gt;这里比较屑,把tutorial的笔记直接复制上来.&lt;br&gt;之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.&lt;br&gt;</summary>
     
     
     
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="R" scheme="http://yoursite.com/tags/R/"/>
     
   </entry>
   
@@ -204,7 +204,7 @@
     <link href="http://yoursite.com/2020/12/23/P151/"/>
     <id>http://yoursite.com/2020/12/23/P151/</id>
     <published>2020-12-23T21:34:44.000Z</published>
-    <updated>2020-12-24T06:06:13.302Z</updated>
+    <updated>2021-01-13T20:13:31.759Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2020/12/23/P151/P151_6.jpeg&quot; class=&quot;&quot;&gt;
