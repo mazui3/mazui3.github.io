@@ -1,0 +1,523 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="再次感谢stat341老师的手把手R入门教材,这次是R markdown的部分.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于R语言的笔记 - R markdown">
+<meta property="og:url" content="http://yoursite.com/2021/01/18/P163/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="再次感谢stat341老师的手把手R入门教材,这次是R markdown的部分.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-18T17:40:19.000Z">
+<meta property="article:modified_time" content="2021-01-18T17:40:19.608Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="R">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/01/18/P163/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于R语言的笔记 - R markdown | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/18/P163/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_3.gif">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="最近都没法好好更新,可能到四月,可能到十月.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于R语言的笔记 - R markdown
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-18 12:40:19" itemprop="dateCreated datePublished" datetime="2021-01-18T12:40:19-05:00">2021-01-18</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>42k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>38 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>再次感谢stat341老师的手把手R入门教材,这次是R markdown的部分.<br><a id="more"></a><br>毕竟名字也叫markdown,跟markdown语言有类似,但不同也不少(废话).<br><br><br><br><br><br></p>
+<p>用kint可以导出html/pdf/word.老师还自带了cheatsheet,感动北半球.</p>
+<h2 id="Jan-18-Tutorial-2"><a href="#Jan-18-Tutorial-2" class="headerlink" title="Jan-18 Tutorial 2"></a>Jan-18 Tutorial 2</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#39;STAT 341: Tutorial 2 -- Part 1: Intro to Markdown&#39;</span><br><span class="line">output:</span><br><span class="line">  pdf_document: default</span><br><span class="line">  html_document:</span><br><span class="line">    df_print: paged</span><br><span class="line">urlcolor: blue</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;setup, include &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;knitr::opts_chunk$set(echo &#x3D; TRUE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;include &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;library(knitr)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;opts_chunk$set(tidy.opts&#x3D;list(width.cutoff&#x3D;70),tidy&#x3D;TRUE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line">最上面两行是format.</span><br><span class="line"></span><br><span class="line">This is an R Markdown document. Markdown is a simple formatting syntax for authoring HTML, PDF, and MS Word documents. R Markdown is an easy and seamless way to integrate text with R code and output. The end result is a clean, professional, and easy-to-read document. Herein I will illustrate some common tips and functionalities that you should be familiar with. For more details on using R Markdown consult [this cheat sheet](https:&#x2F;&#x2F;www.rstudio.com&#x2F;wp-content&#x2F;uploads&#x2F;2015&#x2F;02&#x2F;rmarkdown-cheatsheet.pdf), and for general details on Markdown formatting (not specific to R) consult this [cheat sheet](http:&#x2F;&#x2F;assemble.io&#x2F;docs&#x2F;Cheatsheet-Markdown.html).</span><br><span class="line"></span><br><span class="line">When you create a new R Markdown Document, you are prompted to select a particular output format: .html, .pdf or .doc. Here I&#39;m using the .pdf option. I recommend you also do this (it is required for your assignments). When you click the **Knit** button a document (of the pre-specified type) will be generated that includes both written content as well as the output of any embedded R code chunks within the document.</span><br><span class="line"></span><br><span class="line">## R Code Chunks</span><br><span class="line"></span><br><span class="line">You can embed an R code chunk like this:</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;summary(ChickWeight) # code&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Note that both the code and the output are generated in the resulting document. If you wish to display the output but hide the code, use the &#96;echo &#x3D; FALSE&#96; command.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;summary(ChickWeight) # echo会藏起code,只有output.&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">The output shown above is the same as the output that would have been displayed in the R console in a traditional workflow. The nice thing about R Markdown is that you can embed _any_ type of output, including plots. Let&#39;s embed a plot of &#96;weight&#96; vs. &#96;time&#96; from the &#96;ChickWeight&#96; data.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(x &#x3D; ChickWeight$Time, y &#x3D; ChickWeight$weight, xlab &#x3D; &quot;Time (days)&quot;, ylab &#x3D; &quot;Weight (grams)&quot;, main &#x3D; &quot;Scatter plot of weight versus time&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">This plot was rather large. By default, plots generated by code chunks are 7 inches wide. We can adjust the size of the embedded figure with the &#96;fig.width&#96; and &#96;fig.height&#96; commands. Let&#39;s make it 5 inches wide instead.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(x &#x3D; ChickWeight$Time, y &#x3D; ChickWeight$weight, xlab &#x3D; &quot;Time (days)&quot;, ylab &#x3D; &quot;Weight (grams)&quot;, main &#x3D; &quot;Scatter plot of weight versus time&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">That size is more appealing, but it&#39;s no longer centered. Let&#39;s center(居中) it using the &#96;fig.align&#96; command.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(x &#x3D; ChickWeight$Time, y &#x3D; ChickWeight$weight, xlab &#x3D; &quot;Time (days)&quot;, ylab &#x3D; &quot;Weight (grams)&quot;, main &#x3D; &quot;Scatter plot of weight versus time&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Sometimes you may also want to embed code, but not the output(不要output). This can be done with the &#96;eval &#x3D; FALSE&#96; command.</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;eval &lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;summary(ChickWeight)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(x &#x3D; ChickWeight$Time, y &#x3D; ChickWeight$weight, xlab &#x3D; &quot;Time (days)&quot;, ylab &#x3D; &quot;Weight (grams)&quot;, main &#x3D; &quot;Scatter plot of weight versus time&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Sometimes you may want to include analysis in-line seamlessly in text. For instance you may wish to report that the mean chick weight is &#96;r mean(ChickWeight$weight)&#96; without having to hard-code it.</span><br><span class="line"></span><br><span class="line">## Formatting</span><br><span class="line"></span><br><span class="line">The previous section discussed how to interact with R within the Markdown Document. Markdowns are actually much more general, and learning how to format text in an .md file is a useful skill.</span><br><span class="line"></span><br><span class="line">First, a bulleted list can be created using the asterisk as follows. Note that the empty line between this text and the bulleted list is crucial.这里跟markdown一样,在用bullet时一定要空一行.</span><br><span class="line"></span><br><span class="line">* Bullet 1</span><br><span class="line">* Bullet 2</span><br><span class="line">* Bullet 3</span><br><span class="line"></span><br><span class="line">Second, a bulleted list with sub-items. Note that the double-tabbed indentation is crucial here.</span><br><span class="line"></span><br><span class="line">* Bullet 1</span><br><span class="line">    + sub-item 1</span><br><span class="line">    + sub-item 2</span><br><span class="line">* Bullet 2</span><br><span class="line">* Bullet 3</span><br><span class="line"></span><br><span class="line">A numbered list can simply be created using numbers. Again, the empty line is crucial here.</span><br><span class="line"></span><br><span class="line">1. List item one</span><br><span class="line">2. List item two</span><br><span class="line">3. List item three</span><br><span class="line"></span><br><span class="line">We can also create headings of various sizes using the pound (hashtag) symbol. Fewer hashtags create larger headings:</span><br><span class="line"></span><br><span class="line"># Heading 1</span><br><span class="line">## Heading 2</span><br><span class="line">### Heading 3</span><br><span class="line">#### Heading 4</span><br><span class="line">...</span><br><span class="line"></span><br><span class="line">We can also bold, italicize and strikethrough text by prepending and appending asterisks, underscores, and tildes to your text:</span><br><span class="line"></span><br><span class="line">* **This text is bold.**</span><br><span class="line">* _This text is italicized_</span><br><span class="line">* ~~This text has been stricken through~~</span><br><span class="line">* __This text is underlined__</span><br><span class="line"></span><br><span class="line">We can similarly turn text into code snippets by prepending and appending back ticks. &#96;See, this looks like I typed it with a typewriter.&#96;</span><br><span class="line"></span><br><span class="line">A URL can be embedded into a Markdown document in one of two ways. We can display the URL directly: &lt;http:&#x2F;&#x2F;guessthecorrelation.com&#x2F;&gt;, or we can hyperlink it through [some text](http:&#x2F;&#x2F;guessthecorrelation.com&#x2F;).</span><br><span class="line"></span><br><span class="line">You may also find it useful to insert page breaks so that certain content is displayed on separate pages. For instance, different parts of a question on an assignment. You can do this by typing the &quot;newpage&quot; command.</span><br><span class="line"></span><br><span class="line">\newpage</span><br><span class="line"></span><br><span class="line">## LaTeX</span><br><span class="line"></span><br><span class="line">Especially on assignments it will be useful to embed equations and formulas into your Markdown document. This can be done using LaTeX commands directly in the .rmd file. For instance, we&#39;ll talk in a lot of detail about population attributes like the mean: $$a(\mathcal&#123;P&#125;) &#x3D; \bar&#123;y&#125; &#x3D; \frac&#123;1&#125;&#123;N&#125;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;&#123;y_u&#125;$$ and the median: $$a(\mathcal&#123;P&#125;) &#x3D; Q_2 &#x3D; \operatorname*&#123;median&#125;_&#123;u \in \mathcal&#123;P&#125;&#125;&#123;y_u&#125;.$$</span><br><span class="line"></span><br><span class="line">For multi-line equations, you can use the &#96;align&#96; environment (or the &#96;align*&#96; environment, if you don&#39;t want each line to be numbered).</span><br><span class="line"></span><br><span class="line">* Numbered:</span><br><span class="line"></span><br><span class="line">\begin&#123;align&#125;</span><br><span class="line">  a(\mathcal&#123;P&#125;) &amp;&#x3D; \bar&#123;y&#125; \\</span><br><span class="line">                 &amp;&#x3D; \frac&#123;1&#125;&#123;N&#125;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;&#123;y_u&#125;</span><br><span class="line">\end&#123;align&#125;</span><br><span class="line"></span><br><span class="line">* Non-numbered:</span><br><span class="line"></span><br><span class="line">\begin&#123;align*&#125;</span><br><span class="line">  a(\mathcal&#123;P&#125;) &amp;&#x3D; \bar&#123;y&#125; \\</span><br><span class="line">                 &amp;&#x3D; \frac&#123;1&#125;&#123;N&#125;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;&#123;y_u&#125;</span><br><span class="line">\end&#123;align*&#125;</span><br><span class="line"></span><br><span class="line">We can also combine in-line R code with LaTeX commands. For example, imagine in the &#96;ChickWeight&#96; dataset we regarded the chicks under study as a population and &#96;weight&#96; as the variate $y$. The population average weight and population median weight would then be respectively given by $\bar&#123;y&#125;&#x3D;$ &#96;r mean(ChickWeight$weight)&#96; and $Q_2&#x3D;$ &#96;r median(ChickWeight$weight)&#96;. For a comprehensive overview of various LaTeX commands, [see this cheat sheet](http:&#x2F;&#x2F;webhome.auburn.edu&#x2F;~tamtiny&#x2F;Symbols.pdf).</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br><br><br></p>
+<h2 id="Jan-18-Tutorial-2-continue"><a href="#Jan-18-Tutorial-2-continue" class="headerlink" title="Jan-18 Tutorial 2-continue"></a>Jan-18 Tutorial 2-continue</h2><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br></pre></td><td class="code"><pre><span class="line">---</span><br><span class="line">title: &#39;STAT 341: Tutorial 2 -- Part 2: Pokémon Analysis&#39;</span><br><span class="line">output:</span><br><span class="line">  pdf_document: default</span><br><span class="line">  html_document:</span><br><span class="line">    df_print: paged</span><br><span class="line">urlcolor: blue</span><br><span class="line">---</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;setup, include&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;knitr::opts_chunk$set(echo &#x3D; TRUE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">In this document we begin to take a look at the &#96;pokemon.csv&#96; dataset introduced in the first lecture. This exercise is intended to provide additional exposure to R and Markdown.</span><br><span class="line"></span><br><span class="line">**Load in the data and summarize it**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;setwd(&quot;&#x2F;Users&#x2F;nstevens&#x2F;Dropbox&#x2F;Teaching&#x2F;STAT_341&#x2F;Winter_2021&#x2F;Tutorials&#x2F;Tutorial 2&#x2F;&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke &lt;- read.csv(file &#x3D; &quot;pokemon.csv&quot;, header &#x3D; TRUE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Now that we&#39;ve loaded the data, let&#39;s look at a summary of it:</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;summary(poke)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">For purposes of the tutorial, let&#39;s examine the &#96;base_happiness&#96;, &#96;speed&#96;, &#96;height_m&#96; and &#96;weight_kg&#96; variates more closely. Here are the values of these variates for the first 15 Pokémon:</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;head(x &#x3D; poke[,c(4, 8, 9, 10)], n &#x3D; 15)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Let&#39;s construct a $4 \times 4$ matrix of plots that visually summarize these:</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke_df_for_plot &lt;- poke[,c(4, 8, 9, 10)]&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;header &lt;- names(poke_df_for_plot)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;par(mfrow &#x3D; c(4,4))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;for(i in 1:4)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  for(j in 1:4)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    if(i &#x3D;&#x3D; j)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;      hist(poke_df_for_plot[,i], main &#x3D; &quot;&quot;, xlab &#x3D; header[i], col &#x3D; &quot;dodgerblue3&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &amp;#125;else&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;      plot(x &#x3D; poke_df_for_plot[,i], y &#x3D; poke_df_for_plot[,j],&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;           xlab &#x3D; header[i], ylab &#x3D; header[j],&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;           pch &#x3D; 16, col &#x3D; adjustcolor(col &#x3D; &quot;dodgerblue4&quot;, alpha.f &#x3D; 0.3))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Since &#96;base_happiness&#96; takes on just a handful of integer values, let&#39;s _jitter_ this variate to try and make the plots more informative.</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke_df_for_plot$base_happiness &lt;- jitter(poke_df_for_plot$base_happiness, factor &#x3D; 3)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;par(mfrow &#x3D; c(4,4))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;for(i in 1:4)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  for(j in 1:4)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    if(i &#x3D;&#x3D; j)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;      hist(poke_df_for_plot[,i], main &#x3D; &quot;&quot;, xlab &#x3D; header[i], col &#x3D; &quot;dodgerblue3&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &amp;#125;else&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;      plot(x &#x3D; poke_df_for_plot[,i], y &#x3D; poke_df_for_plot[,j],&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;           xlab &#x3D; header[i], ylab &#x3D; header[j],&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;           pch &#x3D; 16, col &#x3D; adjustcolor(col &#x3D; &quot;dodgerblue4&quot;, alpha.f &#x3D; 0.3))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;    &amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  &amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Let&#39;s also calculate the correlations between these variables:</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;echo&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;cor(poke[,c(4, 8, 9, 10)])&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**Questions:**</span><br><span class="line"></span><br><span class="line">1. Do faster Pokémon tend to be happier?</span><br><span class="line">2. Do taller Pokémon tend to be happier?</span><br><span class="line">3. Do heavier Pokémon tend to be happier?</span><br><span class="line"></span><br><span class="line">**Answers:**</span><br><span class="line"></span><br><span class="line">1. No</span><br><span class="line">2. No</span><br><span class="line">3. No</span><br><span class="line"></span><br><span class="line">**Who is the tallest Pokémon?**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# this is the maximum height:&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;max(poke$height_m)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# this is the row in the dataset in which the maximum height is found: &lt;--建议用这个.&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;which(poke$height_m &#x3D;&#x3D; max(poke$height_m))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# this is the corresponding Pokémon:&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke$name[which(poke$height_m &#x3D;&#x3D; max(poke$height_m))]&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Note that in the code above, rather than the call</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;eval&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;which(poke$height_m &#x3D;&#x3D; max(poke$height_m))&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">we could have equivalently used</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;eval&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;which.max(poke$height_m)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line">注意which max如果tie也只output一个结果.</span><br><span class="line"></span><br><span class="line">**Which are the 10 heaviest Pokémon?**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# these are the weights sorted from largest to smallest&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;sort(x &#x3D; poke$weight_kg, decreasing &#x3D; TRUE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# these are the 10 largest recorded weights&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;sort(x &#x3D; poke$weight_kg, decreasing &#x3D; TRUE)[1:10]&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# these are the rows containing the 10 largest recorded weights&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;which(poke$weight_kg &gt;&#x3D; sort(x &#x3D; poke$weight_kg, decreasing &#x3D; TRUE)[10])&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;# these are the corresponding Pokémon&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke$name[which(poke$weight_kg &gt;&#x3D; sort(x &#x3D; poke$weight_kg, decreasing &#x3D; TRUE)[10])]&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**Construct a histogram of &#96;hp&#96; with the mean identified**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;hist(x &#x3D; poke$hp, col &#x3D; &quot;mistyrose&quot;, main &#x3D; &quot;Histogram of HP&quot;, xlab &#x3D; &quot;HP&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;abline(v &#x3D; mean(poke$hp), col &#x3D; &quot;navyblue&quot;, lwd &#x3D; 2)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;text(x &#x3D; 70, y &#x3D; 200, labels &#x3D; paste(&quot;Mean &#x3D; &quot;, round(mean(poke$hp), 2)),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     col &#x3D; &quot;navyblue&quot;, pos &#x3D; 4)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">用paste来链接string和function.</span><br><span class="line">**Plot the influence ($\Delta$) of each Pokémon on the average &#96;hp&#96;**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;y &lt;- poke$hp&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;delta &lt;- (y-mean(y))&#x2F;(length(y)-1)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;par(mfrow &#x3D; c(1,2))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(delta,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     main &#x3D; &quot;Influence for Average HP&quot;, ylab &#x3D; bquote(Delta),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     pch &#x3D; 16, col &#x3D; adjustcolor(&quot;mediumvioletred&quot;, 0.3))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(y, delta,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     main &#x3D; &quot;Influence vs. HP&quot;, ylab &#x3D; bquote(Delta), xlab &#x3D; &quot;HP&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     pch &#x3D; 16, col &#x3D; adjustcolor(&quot;mediumvioletred&quot;, 0.3))&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**Which two Pokémon have the largest influence?**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke$name[which(delta &gt; 0.2)]&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**Which two Pokémon have the highest HP?**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;poke$name[order(poke$hp, decreasing &#x3D; TRUE)][1:2]&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**What are the unique types of Pokémon?**</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;unique(poke$type1)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**How many Pokémon of each &#96;type1&#96; are their?**</span><br><span class="line">table还能自带count每种.</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;table(poke$type1)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">\newpage</span><br><span class="line"></span><br><span class="line">**Calculate the average happiness for each &#96;type1&#96; of Pokémon**</span><br><span class="line">用by来分类,用function算每个分类.</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;aggregate(x &#x3D; poke$base_happiness,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;          by &#x3D; list(Type &#x3D; poke$type1),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;          FUN &#x3D; mean)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">**Unrelated to Pokémon:**</span><br><span class="line"></span><br><span class="line">Create an empty plot with $x$ and $y$ limits both $[0,10]$, but with no axes, no axis labels, and no title.</span><br><span class="line">NA &lt;--empty.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(NA, main &#x3D; &quot;&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     xlim &#x3D; c(0,10), xlab &#x3D; &quot;&quot;, xaxt &#x3D; &quot;n&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     ylim &#x3D; c(0,10), ylab &#x3D; &quot;&quot;, yaxt &#x3D; &quot;n&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Use the &#96;axis&#96; function to add 1,2,...,9 along the $y$-axis and &quot;Cat&quot;, &quot;Dog&quot;, and &quot;Mouse&quot; at positions 3, 6, and 9 along the $x$-axis. Use the &#96;title&#96; function to add a $y$-axis label called &quot;Numbers&quot; and an $x$-axis label called &quot;Animals&quot;.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(NA, main &#x3D; &quot;&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     xlim &#x3D; c(0,10), xlab &#x3D; &quot;&quot;, xaxt &#x3D; &quot;n&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     ylim &#x3D; c(0,10), ylab &#x3D; &quot;&quot;, yaxt &#x3D; &quot;n&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 2, at &#x3D; 1:9, labels &#x3D; 1:9)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 1, at &#x3D; c(3,6,9), labels &#x3D; c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Mouse&quot;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;title(ylab &#x3D; &quot;Numbers&quot;, xlab &#x3D; &quot;Animals&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">Use the &#96;polygon&#96; function to create a &#96;darkgreen&#96; rectangle with width from &quot;Cat&quot; to &quot;Dog&quot; and height from 4 to 7.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(NA, main &#x3D; &quot;&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     xlim &#x3D; c(0,10), xlab &#x3D; &quot;&quot;, xaxt &#x3D; &quot;n&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     ylim &#x3D; c(0,10), ylab &#x3D; &quot;&quot;, yaxt &#x3D; &quot;n&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 2, at &#x3D; 1:9, labels &#x3D; 1:9)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 1, at &#x3D; c(3,6,9), labels &#x3D; c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Mouse&quot;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;title(ylab &#x3D; &quot;Numbers&quot;, xlab &#x3D; &quot;Animals&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;polygon(x &#x3D; c(3,3,6,6),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        y &#x3D; c(4,7,7,4),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        col &#x3D; &quot;darkgreen&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        border &#x3D; FALSE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line">注意这里的polygon我们plot了四个点,by clockwise, (3,4)(3,7)(6,7)(6,4).</span><br><span class="line"></span><br><span class="line">Add the text &quot;Green Rectangle&quot; to the plot, just above the green rectangle.</span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(NA, main &#x3D; &quot;&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     xlim &#x3D; c(0,10), xlab &#x3D; &quot;&quot;, xaxt &#x3D; &quot;n&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     ylim &#x3D; c(0,10), ylab &#x3D; &quot;&quot;, yaxt &#x3D; &quot;n&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 2, at &#x3D; 1:9, labels &#x3D; 1:9)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 1, at &#x3D; c(3,6,9), labels &#x3D; c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Mouse&quot;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;title(ylab &#x3D; &quot;Numbers&quot;, xlab &#x3D; &quot;Animals&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;polygon(x &#x3D; c(3,3,6,6),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        y &#x3D; c(4,7,7,4),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        col &#x3D; &quot;darkgreen&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        border &#x3D; FALSE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;text(x &#x3D; 4.5, y &#x3D; 7.5, labels &#x3D; &quot;Green Rectangle&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">Add 9 points to this plot at $x&#x3D;$&quot;Mouse&quot; and $y&#x3D;1,2,...,9$ whose colour range incrementally from &#96;lightblue&#96; to &#96;navyblue&#96;.</span><br><span class="line"></span><br><span class="line">&lt;figure class&#x3D;&quot;highlight plain&quot;&gt;&lt;figcaption&gt;&lt;span&gt;fig.align&lt;&#x2F;span&gt;&lt;&#x2F;figcaption&gt;&lt;table&gt;&lt;tr&gt;&lt;td class&#x3D;&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;1&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;2&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;3&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;4&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;5&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;6&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;7&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;8&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;9&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;10&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;11&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;12&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;13&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;14&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;15&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;16&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;17&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;td class&#x3D;&quot;code&quot;&gt;&lt;pre&gt;&lt;span class&#x3D;&quot;line&quot;&gt;plot(NA, main &#x3D; &quot;&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     xlim &#x3D; c(0,10), xlab &#x3D; &quot;&quot;, xaxt &#x3D; &quot;n&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;     ylim &#x3D; c(0,10), ylab &#x3D; &quot;&quot;, yaxt &#x3D; &quot;n&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 2, at &#x3D; 1:9, labels &#x3D; 1:9)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;axis(side &#x3D; 1, at &#x3D; c(3,6,9), labels &#x3D; c(&quot;Cat&quot;, &quot;Dog&quot;, &quot;Mouse&quot;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;title(ylab &#x3D; &quot;Numbers&quot;, xlab &#x3D; &quot;Animals&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;polygon(x &#x3D; c(3,3,6,6),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        y &#x3D; c(4,7,7,4),&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        col &#x3D; &quot;darkgreen&quot;,&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;        border &#x3D; FALSE)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;text(x &#x3D; 4.5, y &#x3D; 7.5, labels &#x3D; &quot;Green Rectangle&quot;)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;colour_fun &lt;- colorRampPalette(colors &#x3D; c(&quot;lightblue&quot;, &quot;navyblue&quot;))&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;colour_grad &lt;- colour_fun(n &#x3D; 9)&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;for(i in 1:9)&amp;#123;&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;  points(x &#x3D; 9, y &#x3D; i, pch &#x3D; 16, col &#x3D; colour_grad[i])&lt;&#x2F;span&gt;&lt;br&gt;&lt;span class&#x3D;&quot;line&quot;&gt;&amp;#125;&lt;&#x2F;span&gt;&lt;br&gt;&lt;&#x2F;pre&gt;&lt;&#x2F;td&gt;&lt;&#x2F;tr&gt;&lt;&#x2F;table&gt;&lt;&#x2F;figure&gt;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/tags/data/" rel="tag"># data</a>
+              <a href="/tags/R/" rel="tag"># R</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/16/P162/" rel="next" title="宝箱里的可爱 - 续">
+      宝箱里的可爱 - 续 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jan-18-Tutorial-2"><span class="nav-number">1.</span> <span class="nav-text">Jan-18 Tutorial 2</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Jan-18-Tutorial-2-continue"><span class="nav-number">2.</span> <span class="nav-text">Jan-18 Tutorial 2-continue</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_3.gif">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">最近都没法好好更新,可能到四月,可能到十月.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">166</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">5</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">22</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">251k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:48</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有125k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>

@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-16T15:52:30.275Z</updated>
+  <updated>2021-01-18T17:40:19.608Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,29 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于R语言的笔记 - R markdown</title>
+    <link href="http://yoursite.com/2021/01/18/P163/"/>
+    <id>http://yoursite.com/2021/01/18/P163/</id>
+    <published>2021-01-18T17:40:19.000Z</published>
+    <updated>2021-01-18T17:40:19.608Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;再次感谢stat341老师的手把手R入门教材,这次是R markdown的部分.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>宝箱里的可爱 - 续</title>
@@ -431,27 +454,6 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于SQL的笔记</title>
-    <link href="http://yoursite.com/2020/11/24/P134/"/>
-    <id>http://yoursite.com/2020/11/24/P134/</id>
-    <published>2020-11-24T20:07:13.000Z</published>
-    <updated>2021-01-17T02:23:24.931Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;个人用笔记,写的很杂(再放送).&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
   </entry>
   
