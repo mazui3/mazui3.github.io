@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-21T20:15:46.733Z</updated>
+  <updated>2021-01-20T05:42:03.625Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,28 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>临时抽样调查(何)</title>
-    <link href="http://yoursite.com/2021/01/21/temp/"/>
-    <id>http://yoursite.com/2021/01/21/temp/</id>
-    <published>2021-01-21T20:08:22.000Z</published>
-    <updated>2021-01-21T20:15:46.733Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;想知道这个博客的阅览情况.&lt;br&gt;因为你看,我最近腾不出东西来更新,只能放放别人给的委托和自己的学习笔记,所以在思考最近的安排.&lt;br&gt;对,就算这条都是把mailbox的功能又复制黏贴一下.&lt;br&gt;所以募集关于这个博客过去,近期或者将来的任何想法…&lt;/p&gt;
-&lt;p&gt;以上!!&lt;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>放学后</title>
@@ -453,6 +431,29 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于data的笔记 - Week2</title>
+    <link href="http://yoursite.com/2020/11/28/P141/"/>
+    <id>http://yoursite.com/2020/11/28/P141/</id>
+    <published>2020-11-29T04:03:36.000Z</published>
+    <updated>2021-01-01T18:52:43.499Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
