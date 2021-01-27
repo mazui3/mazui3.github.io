@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-01-20T05:42:03.625Z</updated>
+  <updated>2021-01-27T06:29:00.640Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>夹克</title>
+    <link href="http://yoursite.com/2021/01/27/P161/"/>
+    <id>http://yoursite.com/2021/01/27/P161/</id>
+    <published>2021-01-27T06:29:00.000Z</published>
+    <updated>2021-01-27T06:29:00.640Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/01/27/P161/P161_1.jpeg&quot; class=&quot;&quot;&gt;
+&lt;p&gt;网站管理人在死线蹦迪,默默掏出一张委托更❤️…&lt;br&gt;感谢酉野さん画给我家兄妹!!&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;酉野&lt;a href=&quot;https://twitter.com/TORI_NO_s&quot;&gt;twi&lt;/a&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
   
   <entry>
     <title>放学后</title>
@@ -431,29 +453,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于data的笔记 - Week2</title>
-    <link href="http://yoursite.com/2020/11/28/P141/"/>
-    <id>http://yoursite.com/2020/11/28/P141/</id>
-    <published>2020-11-29T04:03:36.000Z</published>
-    <updated>2021-01-01T18:52:43.499Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-    <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
