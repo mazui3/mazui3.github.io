@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-01-17T02:23:24.931Z">
+<meta property="article:modified_time" content="2021-01-31T17:12:52.887Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-16 21:23:24" itemprop="dateModified" datetime="2021-01-16T21:23:24-05:00">2021-01-16</time>
+                <time title="Modified: 2021-01-31 12:12:52" itemprop="dateModified" datetime="2021-01-31T12:12:52-05:00">2021-01-31</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -261,13 +261,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>10 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -359,17 +359,42 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;StRiNg&#x27;</span> = <span class="string">&#x27;string&#x27;</span>;//this returns false,大小写matters</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LOWER</span>(<span class="string">&#x27;StRiNg&#x27;</span>) = <span class="keyword">LOWER</span>(<span class="string">&#x27;string&#x27;</span>);//return true</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">UPPER</span>(<span class="string">&#x27;StRiNg&#x27;</span>) = <span class="keyword">UPPER</span>(<span class="string">&#x27;string&#x27;</span>);//return true</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">UPPER</span>(<span class="keyword">Name</span>) <span class="keyword">FROM</span> City <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">LOWER</span>(<span class="keyword">Name</span>) <span class="keyword">FROM</span> City <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;</span><br></pre></td></tr></table></figure>
 <h2 id="SQL-number"><a href="#SQL-number" class="headerlink" title="SQL number"></a>SQL number</h2><p>again:每个system都不一样<br>fundamental numeric types: real &amp; integer<br>integer types:<br><img src="/2020/11/24/P134/P134_2.png" class=""><br><img src="/2020/11/24/P134/P134_3.png" class=""><br>real number sacrifice accuracy for scale.</p>
 <h3 id="TYPEOF"><a href="#TYPEOF" class="headerlink" title="TYPEOF"></a>TYPEOF</h3><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TYPEOF( <span class="number">1</span> + <span class="number">1</span> );//integer</span><br><span class="line"><span class="keyword">SELECT</span> TYPEOF( <span class="number">1</span> + <span class="number">1.0</span> );//real</span><br><span class="line"><span class="keyword">SELECT</span> TYPEOF(<span class="string">&#x27;panda&#x27;</span>);//text</span><br><span class="line">SELECT TYPEOF(&#x27;panda&#x27; + &#x27;koala&#x27;);//integer -&gt; 注意这里每个system都可能不一样,在这个情况下先string convert to integer再加在一起</span><br></pre></td></tr></table></figure>
-<h3 id="CAST"><a href="#CAST" class="headerlink" title="CAST"></a>CAST</h3><p>//integer的result always be integer<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span> / <span class="number">2</span>;//result is 0</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">1.0</span> / <span class="number">2</span>;//result 0.5</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">1</span> <span class="keyword">AS</span> <span class="built_in">REAL</span>) / <span class="number">2</span>;//result 0.5</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> / <span class="number">5</span>;//result 3</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> / <span class="number">5</span>, <span class="number">17</span> % <span class="number">5</span>;//result 3 <span class="keyword">with</span> <span class="keyword">remainder</span> <span class="keyword">of</span> <span class="number">2</span></span><br></pre></td></tr></table></figure></p>
-<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">2.55555</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>);//result is 3</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">3</span>);//2.556, second is 位数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">0</span>);//default</span><br></pre></td></tr></table></figure>
+<h3 id="CAST"><a href="#CAST" class="headerlink" title="CAST"></a>CAST</h3><p>cast用于转换数据类型.cast(express as datatype)<br>//integer的result always be integer<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span> / <span class="number">2</span>;//result is 0</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">1.0</span> / <span class="number">2</span>;//result 0.5</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">CAST</span>(<span class="number">1</span> <span class="keyword">AS</span> <span class="built_in">REAL</span>) / <span class="number">2</span>;//result 0.5</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> / <span class="number">5</span>;//result 3</span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> / <span class="number">5</span>, <span class="number">17</span> % <span class="number">5</span>;//result 3 <span class="keyword">with</span> <span class="keyword">remainder</span> <span class="keyword">of</span> <span class="number">2</span></span><br></pre></td></tr></table></figure><br>cast可以用来拼接字符串.先把数字转换成char,在用｜｜拼接.可以拼成百分号的数字.<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cast(round((high-low)/(open+close) * 2,2) * 100 as varchar) || &#x27;%&#x27; as vol(别名)</span><br></pre></td></tr></table></figure></p>
+<h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>四舍五入函数.<br>round(expression, precision精度)<br>精度可以是负数,保留到百位.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">2.55555</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>);//result is 3</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">3</span>);//2.556, second is 位数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">0</span>);//default,也就是到整数位</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br><br><br></p>
 <h2 id="SQL-date-and-time"><a href="#SQL-date-and-time" class="headerlink" title="SQL date and time"></a>SQL date and time</h2><p>SQL store date and time in UTC</p>
-<p>//for SQLite<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATETIME(&#x27;now&#x27;);//in UTC -&gt; ‘2020-11-24 15:07:13’</span><br><span class="line">SELECT DATE(&#x27;now&#x27;);//-&gt; ‘2020-11-24&#x27;</span><br><span class="line">SELECT TIME(&#x27;now&#x27;);//-&gt;&#x27;15:07:13&#x27;</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 day&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 days&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;-1 month&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 year&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 hours&#x27;</span>, <span class="string">&#x27;+27 minutes&#x27;</span>, <span class="string">&#x27;-1 day&#x27;</span>, <span class="string">&#x27;+3 years&#x27;</span>);</span><br></pre></td></tr></table></figure></p>
+<p>//for SQLite<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATETIME(&#x27;now&#x27;);//in UTC -&gt; ‘2020-11-24 15:07:13’</span><br><span class="line">SELECT DATE(&#x27;now&#x27;);//-&gt; ‘2020-11-24&#x27;</span><br><span class="line">SELECT TIME(&#x27;now&#x27;);//-&gt;&#x27;15:07:13&#x27;</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 day&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 days&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;-1 month&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 year&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 hours&#x27;</span>, <span class="string">&#x27;+27 minutes&#x27;</span>, <span class="string">&#x27;-1 day&#x27;</span>, <span class="string">&#x27;+3 years&#x27;</span>);</span><br></pre></td></tr></table></figure><br>关于sql还有一个截取时间的办法.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strftime(format, timestring[,modifiers])</span><br></pre></td></tr></table></figure><br>| format  | explanation  |<br>|—-|—-|<br>| %Y  | year with century(yyyy)  |<br>| %m  | month(01-12)  |<br>| %d  | day of the month(1-31)  |<br>| %H  | hour on 24-hour clock(00-23)  |<br>| %M  | minute(00-59)  |<br>| %S  | second(00-59)  |</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>timestring</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>now</td>
+<td>now is a literal used to return the current date</td>
+</tr>
+<tr>
+<td>YYYY-MM-DD</td>
+<td>date value formatted as ‘YYYY-MM-DD’</td>
+</tr>
+<tr>
+<td>HH:MM:SS.SSS</td>
+<td>HH:MM:SS.SSS</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><br><br><br><br><br></p>
 <h2 id="Aggregate-聚合函数"><a href="#Aggregate-聚合函数" class="headerlink" title="Aggregate(聚合函数)"></a>Aggregate(聚合函数)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//here we count all countries</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> Country;</span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--here we count all countries in different region</span></span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> <span class="keyword">Count</span></span><br><span class="line">  <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Count</span> <span class="keyword">DESC</span>, Region</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 <p>GROUP BY:用于分组.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1,column2,columnN,</span><br><span class="line">  <span class="keyword">COUNT</span>(*) <span class="keyword">as</span> rec_per_group  <span class="comment">--一般会用COUNT(*),因为返回不会为0.</span></span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1,column2,columnN;</span><br></pre></td></tr></table></figure></p>
 <h3 id="HAVING-and-WHERE"><a href="#HAVING-and-WHERE" class="headerlink" title="HAVING and WHERE"></a>HAVING and WHERE</h3><p>对分组进行筛选.会需要先group by再用having筛选.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> Album, <span class="keyword">COUNT</span>(t.track_number) <span class="keyword">as</span> Tracks</span><br><span class="line">  <span class="keyword">FROM</span> track <span class="keyword">AS</span> t</span><br><span class="line">  <span class="keyword">JOIN</span> album <span class="keyword">AS</span> a</span><br><span class="line">    <span class="keyword">ON</span> a.id = t.album_id</span><br><span class="line">  <span class="keyword">WHERE</span> a.artist = <span class="string">&#x27;The Beatles&#x27;</span></span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> a.id</span><br><span class="line">  <span class="keyword">HAVING</span> Tracks &gt;= <span class="number">10</span> <span class="comment">--using having clause similar to where</span></span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Tracks <span class="keyword">DESC</span>, Album</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
 <h3 id="AVG-and-MIN-MAX-and-SUM"><a href="#AVG-and-MIN-MAX-and-SUM" class="headerlink" title="AVG and MIN, MAX and SUM"></a>AVG and MIN, MAX and SUM</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">MIN</span>(Population), <span class="keyword">MAX</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">SUM</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br></pre></td></tr></table></figure>
+<p>注,sum一定要写在最外面,sum多项时是sum(A,B,C).</p>
 <p>注,语法顺序:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, columnN, <span class="keyword">sum</span>(columnX)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> [ condition ]</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line"><span class="keyword">HAVING</span> [ condition ]</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line">;</span><br></pre></td></tr></table></figure><br>所以group by后面接having,where不能用在group by后面.<br>where:在原表中筛选;having是筛完了后再筛.</p>
 <p><br><br><br><br><br></p>
 
@@ -472,7 +497,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">169</span>
+          <span class="site-state-item-count">170</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -539,7 +564,7 @@
     </span>
 
 
-    <span title="Symbols count total">209k</span>
+    <span title="Symbols count total">214k</span>
   -->
 
   <!--
@@ -547,7 +572,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:10</span>
+    <span title="Reading time total">3:15</span>
 
   -->
   
@@ -557,7 +582,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有116.3k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有117.3k的老兔正在打瞌睡</span>
 </div>
 
         
