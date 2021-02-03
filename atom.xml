@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-02T06:40:58.969Z</updated>
+  <updated>2021-02-03T02:35:56.270Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于R语言的笔记 - 续</title>
+    <link href="http://yoursite.com/2021/02/02/P165/"/>
+    <id>http://yoursite.com/2021/02/02/P165/</id>
+    <published>2021-02-03T01:15:02.000Z</published>
+    <updated>2021-02-03T02:35:56.270Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;script async
+  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;&lt;br&gt;接着&lt;a href=&quot;https://mazui3.github.io/2021/01/13/P164/&quot;&gt;上一回&lt;/a&gt;的笔记.&lt;br&gt;上次收录了些基础语法,这次是case study.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
   
   <entry>
     <title>关于SQL的笔记 - 续</title>
@@ -414,29 +439,6 @@
     
     
     <summary type="html">&lt;p&gt;两周的笔记一起摸,不愧是我.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-    <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于data的笔记 - Week1</title>
-    <link href="http://yoursite.com/2020/11/28/P140/"/>
-    <id>http://yoursite.com/2020/11/28/P140/</id>
-    <published>2020-11-29T01:56:27.000Z</published>
-    <updated>2021-01-01T18:52:51.814Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;那就开始吧(吧).&lt;br&gt;</summary>
     
     
     
