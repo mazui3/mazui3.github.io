@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-11T22:54:55.603Z</updated>
+  <updated>2021-02-13T21:43:18.450Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于颜色的笔记</title>
+    <link href="http://yoursite.com/2021/02/13/P165-1/"/>
+    <id>http://yoursite.com/2021/02/13/P165-1/</id>
+    <published>2021-02-13T21:43:18.000Z</published>
+    <updated>2021-02-13T21:43:18.450Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;接上次的进度(15/100).&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    
+  </entry>
   
   <entry>
     <title>隧道</title>
@@ -423,27 +442,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>菌给我的oc们</title>
-    <link href="http://yoursite.com/2020/12/02/P148/"/>
-    <id>http://yoursite.com/2020/12/02/P148/</id>
-    <published>2020-12-03T02:29:48.000Z</published>
-    <updated>2020-12-17T21:38:39.438Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;《这个博主考期末的时候拼命摸于是找来朋友们给的oc填博客还有没救》&lt;br&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   
