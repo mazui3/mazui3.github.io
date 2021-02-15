@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-01-31T17:12:52.887Z">
+<meta property="article:modified_time" content="2021-02-14T17:49:15.377Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-31 12:12:52" itemprop="dateModified" datetime="2021-01-31T12:12:52-05:00">2021-01-31</time>
+                <time title="Modified: 2021-02-14 12:49:15" itemprop="dateModified" datetime="2021-02-14T12:49:15-05:00">2021-02-14</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -396,6 +396,9 @@
 <h3 id="AVG-and-MIN-MAX-and-SUM"><a href="#AVG-and-MIN-MAX-and-SUM" class="headerlink" title="AVG and MIN, MAX and SUM"></a>AVG and MIN, MAX and SUM</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">MIN</span>(Population), <span class="keyword">MAX</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">SUM</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br></pre></td></tr></table></figure>
 <p>注,sum一定要写在最外面,sum多项时是sum(A,B,C).</p>
 <p>注,语法顺序:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, columnN, <span class="keyword">sum</span>(columnX)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> [ condition ]</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line"><span class="keyword">HAVING</span> [ condition ]</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line">;</span><br></pre></td></tr></table></figure><br>所以group by后面接having,where不能用在group by后面.<br>where:在原表中筛选;having是筛完了后再筛.</p>
+<blockquote>
+<p>执行顺序<br>SELECT 6<br>FROM 1<br>WHERE 2<br>GROUP BY 3<br>HAVING 4<br>ORDER BY 5</p>
+</blockquote>
 <p><br><br><br><br><br></p>
 
     </div>
@@ -564,7 +567,7 @@
     </span>
 
 
-    <span title="Symbols count total">228k</span>
+    <span title="Symbols count total">229k</span>
   -->
 
   <!--
@@ -572,7 +575,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:27</span>
+    <span title="Reading time total">3:28</span>
 
   -->
   
@@ -582,7 +585,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有121.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有121.5k的老兔正在打瞌睡</span>
 </div>
 
         
