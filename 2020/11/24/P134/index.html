@@ -32,7 +32,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="http://yoursite.com/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-02-14T17:49:15.377Z">
+<meta property="article:modified_time" content="2021-02-18T20:08:57.208Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-02-14 12:49:15" itemprop="dateModified" datetime="2021-02-14T12:49:15-05:00">2021-02-14</time>
+                <time title="Modified: 2021-02-18 15:08:57" itemprop="dateModified" datetime="2021-02-18T15:08:57-05:00">2021-02-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -391,7 +391,7 @@
 <p><br><br><br><br><br></p>
 <h2 id="Aggregate-聚合函数"><a href="#Aggregate-聚合函数" class="headerlink" title="Aggregate(聚合函数)"></a>Aggregate(聚合函数)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">//here we count all countries</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> Country;</span><br></pre></td></tr></table></figure>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--here we count all countries in different region</span></span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">COUNT</span>(*) <span class="keyword">AS</span> <span class="keyword">Count</span></span><br><span class="line">  <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Count</span> <span class="keyword">DESC</span>, Region</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<p>GROUP BY:用于分组.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1,column2,columnN,</span><br><span class="line">  <span class="keyword">COUNT</span>(*) <span class="keyword">as</span> rec_per_group  <span class="comment">--一般会用COUNT(*),因为返回不会为0.</span></span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1,column2,columnN;</span><br></pre></td></tr></table></figure></p>
+<p>GROUP BY:用于分组.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1,column2,columnN,</span><br><span class="line">  <span class="keyword">COUNT</span>(*) <span class="keyword">as</span> rec_per_group  <span class="comment">--一般会用COUNT(*),因为返回不会为0.</span></span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1,column2,columnN;</span><br></pre></td></tr></table></figure><br>Note:如果用group by搜寻max,每一组只会返回一个数据,在同时出现两个max的情况下,我们可以先找出每组的最高,再用这个数据去搜索拥有最高的人.</p>
 <h3 id="HAVING-and-WHERE"><a href="#HAVING-and-WHERE" class="headerlink" title="HAVING and WHERE"></a>HAVING and WHERE</h3><p>对分组进行筛选.会需要先group by再用having筛选.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> Album, <span class="keyword">COUNT</span>(t.track_number) <span class="keyword">as</span> Tracks</span><br><span class="line">  <span class="keyword">FROM</span> track <span class="keyword">AS</span> t</span><br><span class="line">  <span class="keyword">JOIN</span> album <span class="keyword">AS</span> a</span><br><span class="line">    <span class="keyword">ON</span> a.id = t.album_id</span><br><span class="line">  <span class="keyword">WHERE</span> a.artist = <span class="string">&#x27;The Beatles&#x27;</span></span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> a.id</span><br><span class="line">  <span class="keyword">HAVING</span> Tracks &gt;= <span class="number">10</span> <span class="comment">--using having clause similar to where</span></span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Tracks <span class="keyword">DESC</span>, Album</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
 <h3 id="AVG-and-MIN-MAX-and-SUM"><a href="#AVG-and-MIN-MAX-and-SUM" class="headerlink" title="AVG and MIN, MAX and SUM"></a>AVG and MIN, MAX and SUM</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">MIN</span>(Population), <span class="keyword">MAX</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">SUM</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br></pre></td></tr></table></figure>
 <p>注,sum一定要写在最外面,sum多项时是sum(A,B,C).</p>
@@ -567,7 +567,7 @@
     </span>
 
 
-    <span title="Symbols count total">229k</span>
+    <span title="Symbols count total">230k</span>
   -->
 
   <!--
@@ -575,7 +575,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:28</span>
+    <span title="Reading time total">3:29</span>
 
   -->
   
@@ -585,7 +585,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有121.5k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有121.6k的老兔正在打瞌睡</span>
 </div>
 
         
