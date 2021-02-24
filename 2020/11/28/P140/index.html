@@ -29,7 +29,7 @@
 <meta property="og:description" content="那就开始吧(吧).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
-<meta property="article:modified_time" content="2021-01-01T18:52:51.814Z">
+<meta property="article:modified_time" content="2021-02-20T15:29:55.938Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -241,7 +241,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-01 13:52:51" itemprop="dateModified" datetime="2021-01-01T13:52:51-05:00">2021-01-01</time>
+                <time title="Modified: 2021-02-20 10:29:55" itemprop="dateModified" datetime="2021-02-20T10:29:55-05:00">2021-02-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -378,9 +378,11 @@
 <p>“count    6497.000000\n”,<br>“mean        3.218501\n”,<br>“std         0.160787\n”,<br>“min         2.720000\n”,<br>“25%         3.110000\n”,<br>“50%         3.210000\n”,<br>“75%         3.320000\n”,<br>“max         4.010000\n”,<br>“Name: pH, dtype: float64”</p>
 </blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Bin edges that will be used to \&quot;cut\&quot; the data into groups</span></span><br><span class="line">bin_edges = [<span class="number">2.72</span>, <span class="number">3.11</span>, <span class="number">3.21</span>, <span class="number">3.32</span>, <span class="number">4.01</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Labels for the four acidity level groups</span></span><br><span class="line">bin_names = [<span class="string">&#x27;high&#x27;</span>, <span class="string">&#x27;mod_high&#x27;</span>, <span class="string">&#x27;medium&#x27;</span>, <span class="string">&#x27;low&#x27;</span>] <span class="comment"># Name each acidity level category</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Creates acidity_levels column</span></span><br><span class="line">df[<span class="string">&#x27;acidity_levels&#x27;</span>] = pd.cut(df[<span class="string">&#x27;pH&#x27;</span>], bin_edges, labels=bin_names)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Checks for successful creation of this column</span></span><br><span class="line">df.head()</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br><br><br></p>
 <h3 id="query"><a href="#query" class="headerlink" title="query"></a>query</h3><p>from pandas<br><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.query.html">doc</a><br>query是用于筛选符合条件的columns的.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># selecting malignant records in cancer data</span></span><br><span class="line">df_m = df[df[<span class="string">&#x27;diagnosis&#x27;</span>] == <span class="string">&#x27;M&#x27;</span>]</span><br><span class="line">df_m = df.query(<span class="string">&#x27;diagnosis == &quot;M&quot;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># selecting records of people making over $50K</span></span><br><span class="line">df_a = df[df[<span class="string">&#x27;income&#x27;</span>] == <span class="string">&#x27; &gt;50K&#x27;</span>]</span><br><span class="line">df_a = df.query(<span class="string">&#x27;income == &quot; &gt;50K&quot;&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># for examples filtered columns containing strings</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># selecting records in cancer data with radius greater than the median</span></span><br><span class="line">df_h = df[df[<span class="string">&#x27;radius&#x27;</span>] &gt; <span class="number">13.375</span>]</span><br><span class="line">df_h = df.query(<span class="string">&#x27;radius &gt; 13.375&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select samples with alcohol content less than the median</span></span><br><span class="line">low_alcohol = df.query(<span class="string">&#x27;alcohol &lt; 10.3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># select samples with alcohol content greater than or equal to the median</span></span><br><span class="line">high_alcohol = df.query(<span class="string">&#x27;alcohol &gt;= 10.3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ensure these queries included each sample exactly once</span></span><br><span class="line">num_samples = df.shape[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line">num_samples == low_alcohol[<span class="string">&#x27;quality&#x27;</span>].count() + high_alcohol[<span class="string">&#x27;quality&#x27;</span>].count() <span class="comment"># should be True</span></span><br></pre></td></tr></table></figure>
 <p>用query加上count也可以有sum的效果.</p>
+<p><br><br><br><br><br></p>
 <h3 id="Merge"><a href="#Merge" class="headerlink" title="Merge"></a>Merge</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/merging.html">pandas</a><br>四种不同的合并:</p>
 <ul>
 <li>Inner Join - Use intersection of keys from both frames.</li>
@@ -490,7 +492,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">169</span>
+          <span class="site-state-item-count">171</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -557,7 +559,7 @@
     </span>
 
 
-    <span title="Symbols count total">230k</span>
+    <span title="Symbols count total">231k</span>
   -->
 
   <!--
@@ -565,7 +567,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:29</span>
+    <span title="Reading time total">3:30</span>
 
   -->
   
@@ -575,7 +577,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有121.6k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有122.8k的老兔正在打瞌睡</span>
 </div>
 
         
