@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-02-27T03:21:02.509Z</updated>
+  <updated>2021-03-14T05:08:35.508Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,78 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>草莓</title>
+    <link href="http://yoursite.com/2021/03/14/P177/"/>
+    <id>http://yoursite.com/2021/03/14/P177/</id>
+    <published>2021-03-14T05:04:58.000Z</published>
+    <updated>2021-03-14T05:08:35.508Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/03/14/P177/P177_1.jpg&quot; class=&quot;&quot;&gt;
+&lt;img src=&quot;/2021/03/14/P177/P177_2.jpg&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于bash的笔记 - 简陋版</title>
+    <link href="http://yoursite.com/2021/03/14/P176/"/>
+    <id>http://yoursite.com/2021/03/14/P176/</id>
+    <published>2021-03-14T05:02:10.000Z</published>
+    <updated>2021-03-14T05:02:10.970Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;真的很简陋.用于唤醒遗忘的记忆.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于data的笔记 - Week3</title>
+    <link href="http://yoursite.com/2021/03/14/P170/"/>
+    <id>http://yoursite.com/2021/03/14/P170/</id>
+    <published>2021-03-14T05:01:54.000Z</published>
+    <updated>2021-03-14T05:06:11.637Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;接&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P140/&quot;&gt;第一回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P141/&quot;&gt;第二回.&lt;/a&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
+    
+  </entry>
   
   <entry>
     <title>好作品补全计划 - 银之匙</title>
@@ -64,7 +136,7 @@
     <link href="http://yoursite.com/2021/02/22/P172/"/>
     <id>http://yoursite.com/2021/02/22/P172/</id>
     <published>2021-02-22T18:53:29.000Z</published>
-    <updated>2021-02-24T01:13:34.127Z</updated>
+    <updated>2021-03-11T17:26:17.884Z</updated>
     
     
       
@@ -81,6 +153,8 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   
@@ -213,7 +287,7 @@
     <link href="http://yoursite.com/2021/01/13/P160/"/>
     <id>http://yoursite.com/2021/01/13/P160/</id>
     <published>2021-01-14T01:00:59.000Z</published>
-    <updated>2021-01-13T19:46:27.118Z</updated>
+    <updated>2021-03-11T17:26:06.225Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/01/13/P160/P160_1.jpeg&quot; class=&quot;&quot;&gt;
@@ -228,6 +302,8 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   
@@ -382,68 +458,6 @@
     
     
     <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于颜色的笔记</title>
-    <link href="http://yoursite.com/2020/12/18/P154/"/>
-    <id>http://yoursite.com/2020/12/18/P154/</id>
-    <published>2020-12-19T03:59:34.000Z</published>
-    <updated>2021-01-11T04:17:44.183Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;真是打了个大胆的tag…&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于(我所理解的)加密学入门的笔记</title>
-    <link href="http://yoursite.com/2020/12/14/P153/"/>
-    <id>http://yoursite.com/2020/12/14/P153/</id>
-    <published>2020-12-14T14:20:43.000Z</published>
-    <updated>2020-12-17T23:09:28.132Z</updated>
-    
-    
-    <summary type="html">&lt;script async
-  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;
-
-&lt;p&gt;复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.  &lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的&lt;a href=&quot;https://math.meta.stackexchange.com/questions/5020/mathjax-basic-tutorial-and-quick-reference&quot;&gt;tips&lt;/a&gt;.&lt;br&gt;感谢&lt;a href=&quot;https://yihui.org/en/2018/07/latex-math-markdown/&quot;&gt;yihui&lt;/a&gt;大佬提供的hexo与mathjax不兼容的解决方式.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>空气演奏</title>
-    <link href="http://yoursite.com/2020/12/11/P149/"/>
-    <id>http://yoursite.com/2020/12/11/P149/</id>
-    <published>2020-12-11T14:56:27.000Z</published>
-    <updated>2020-12-17T21:38:36.762Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2020/12/11/P149/P149_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;《真的是期末季最后一次拿别人的图来混更》&lt;br&gt;</summary>
-    
-    
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
