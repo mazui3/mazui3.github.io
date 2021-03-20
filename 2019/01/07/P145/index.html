@@ -31,7 +31,7 @@
 <meta property="og:image" content="http://yoursite.com/2019/01/07/P145/P145_2.jpg">
 <meta property="og:image" content="http://yoursite.com/2019/01/07/P145/P145_4.JPG">
 <meta property="article:published_time" content="2019-01-07T05:21:58.000Z">
-<meta property="article:modified_time" content="2020-12-17T21:38:49.536Z">
+<meta property="article:modified_time" content="2021-03-19T02:44:54.011Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="oc">
 <meta property="article:tag" content="狼与兔">
@@ -206,6 +206,7 @@
   </div>
 
 
+
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -248,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2020-12-17 16:38:49" itemprop="dateModified" datetime="2020-12-17T16:38:49-05:00">2020-12-17</time>
+                <time title="Modified: 2021-03-18 22:44:54" itemprop="dateModified" datetime="2021-03-18T22:44:54-04:00">2021-03-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,10 +288,9 @@
 <a id="more"></a>
 <p><br><br><br><br><br></p>
 <p>虽然一张是我画的但只是想备份一下Uu画给我的…</p>
-<p>第二张是Uu在19年生日送给我的…真的很喜欢很喜欢!!备份在一起了…!!</p>
-<p><img src="P145_3.jpg" style="width:30%;height:30%;"><br><img src="P145_2.jpg" style="width:60%;height:60%;"></p>
+<p>第二张是Uu在19年生日送给我的…真的很喜欢很喜欢!!备份在一起了…!!<br><img src="/2019/01/07/P145/P145_3.jpg" class="" width="200" height="200"><br><img src="/2019/01/07/P145/P145_2.jpg" class="" width="400" height="365"></p>
 <p><br><br><br><br><br></p>
-<p>最后备份一下U画给我的oc问卷(😢)<br><img src="P145_4.JPG" style="width:60%;height:60%;"></p>
+<p>最后备份一下U画给我的oc问卷(😢)<br><img src="/2019/01/07/P145/P145_4.JPG" class="" width="400" height="1150"></p>
 <blockquote>
 <p>U -&gt; <a target="_blank" rel="noopener" href="https://tototofoo.github.io/">blog</a></p>
 </blockquote>
@@ -441,13 +441,93 @@
 
   <!--网易云插件-->
 <iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=592699&auto=1&height=66"></iframe>
+
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
 
 
       </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
     </main>
+
 
     <footer class="footer">
       <div class="footer-inner">
@@ -489,7 +569,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有128.7k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有128.9k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -629,6 +709,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
   }, window.Gitalk);
 });
 </script>
+
 
     </div>
   <script type="text/javascript" src="/js/my_js/firework.js"></script>
