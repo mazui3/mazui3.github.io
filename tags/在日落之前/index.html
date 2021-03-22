@@ -221,6 +221,49 @@
 
       
     <div class="collection-year">
+      <span class="collection-header">2021</span>
+    </div>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-02-11T17:54:55-05:00"
+              content="2021-02-11">
+          02-11
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/02/11/P169/" itemprop="url">
+            <span itemprop="name">隧道</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2021-01-16T14:16:19-05:00"
+              content="2021-01-16">
+          01-16
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2021/01/16/P162/" itemprop="url">
+            <span itemprop="name">宝箱里的可爱 - 续</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+    <div class="collection-year">
       <span class="collection-header">2020</span>
     </div>
 
@@ -238,6 +281,26 @@
       <div class="post-title">
           <a class="post-title-link" href="/2020/09/08/P118/" itemprop="url">
             <span itemprop="name">世界的图书馆管理员和画到一半的阿怜</span>
+          </a>
+      </div>
+
+    </header>
+  </article>
+
+  <article itemscope itemtype="http://schema.org/Article">
+    <header class="post-header">
+
+      <div class="post-meta">
+        <time itemprop="dateCreated"
+              datetime="2020-01-18T00:37:55-05:00"
+              content="2020-01-18">
+          01-18
+        </time>
+      </div>
+
+      <div class="post-title">
+          <a class="post-title-link" href="/2020/01/18/P146/" itemprop="url">
+            <span itemprop="name">处于坐标原点的你</span>
           </a>
       </div>
 
@@ -444,7 +507,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -619,7 +682,6 @@ password();
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
@@ -634,65 +696,6 @@ password();
 
 
 <script src="/js/next-boot.js"></script>
-
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
 
 
 
@@ -717,14 +720,11 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
   
 
   
 
 
-
-    </div>
   <script type="text/javascript" src="/js/my_js/firework.js"></script>
 
 </body>

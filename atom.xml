@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-03-20T16:49:39.065Z</updated>
+  <updated>2021-03-22T21:46:43.211Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2021/03/18/P179/"/>
     <id>http://yoursite.com/2021/03/18/P179/</id>
     <published>2021-03-18T13:59:56.000Z</published>
-    <updated>2021-03-20T16:49:39.065Z</updated>
+    <updated>2021-03-22T21:46:43.211Z</updated>
     
     
     <summary type="html">&lt;p&gt;感谢灰酱给我画的ddl!!嘿嘿(?)&lt;br&gt;&lt;img src=&quot;/2021/03/18/P179/P179_1.png&quot; class=&quot;&quot;&gt;&lt;br&gt;</summary>
@@ -35,6 +35,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="DDL" scheme="http://yoursite.com/tags/DDL/"/>
+    
   </entry>
   
   <entry>
@@ -42,7 +44,7 @@
     <link href="http://yoursite.com/2021/03/14/P178/"/>
     <id>http://yoursite.com/2021/03/14/P178/</id>
     <published>2021-03-14T19:01:18.000Z</published>
-    <updated>2021-03-15T02:54:59.424Z</updated>
+    <updated>2021-03-22T21:45:04.100Z</updated>
     
     
       
@@ -59,6 +61,8 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="民以食为天" scheme="http://yoursite.com/tags/%E6%B0%91%E4%BB%A5%E9%A3%9F%E4%B8%BA%E5%A4%A9/"/>
     
@@ -97,7 +101,7 @@
     <link href="http://yoursite.com/2021/03/14/P176/"/>
     <id>http://yoursite.com/2021/03/14/P176/</id>
     <published>2021-03-14T05:02:10.000Z</published>
-    <updated>2021-03-14T05:02:10.970Z</updated>
+    <updated>2021-03-22T21:52:48.063Z</updated>
     
     
     <summary type="html">&lt;p&gt;真的很简陋.用于唤醒遗忘的记忆.&lt;br&gt;</summary>
@@ -106,6 +110,10 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
@@ -118,7 +126,7 @@
     <link href="http://yoursite.com/2021/03/14/P170/"/>
     <id>http://yoursite.com/2021/03/14/P170/</id>
     <published>2021-03-14T05:01:54.000Z</published>
-    <updated>2021-03-14T05:17:00.938Z</updated>
+    <updated>2021-03-22T21:53:01.718Z</updated>
     
     
     <summary type="html">&lt;p&gt;接&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P140/&quot;&gt;第一回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P141/&quot;&gt;第二回.&lt;/a&gt;&lt;br&gt;</summary>
@@ -127,6 +135,8 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
@@ -164,7 +174,7 @@
     <link href="http://yoursite.com/2021/02/23/P171/"/>
     <id>http://yoursite.com/2021/02/23/P171/</id>
     <published>2021-02-23T16:53:28.000Z</published>
-    <updated>2021-02-24T01:27:40.958Z</updated>
+    <updated>2021-03-22T21:49:36.359Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/02/23/P171/P171.jpg&quot; class=&quot;&quot;&gt;
@@ -230,7 +240,7 @@
     <link href="http://yoursite.com/2021/02/11/P169/"/>
     <id>http://yoursite.com/2021/02/11/P169/</id>
     <published>2021-02-11T22:54:55.000Z</published>
-    <updated>2021-02-24T01:14:06.489Z</updated>
+    <updated>2021-03-22T21:46:26.556Z</updated>
     
     
     <summary type="html">&lt;p&gt;杂谈.&lt;br&gt;</summary>
@@ -240,6 +250,8 @@
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
+    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
+    
   </entry>
   
   <entry>
@@ -247,7 +259,7 @@
     <link href="http://yoursite.com/2021/02/02/P165/"/>
     <id>http://yoursite.com/2021/02/02/P165/</id>
     <published>2021-02-03T01:15:02.000Z</published>
-    <updated>2021-02-03T02:35:56.270Z</updated>
+    <updated>2021-03-22T21:53:10.534Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;script async
@@ -258,6 +270,10 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
@@ -272,7 +288,7 @@
     <link href="http://yoursite.com/2021/01/31/P167/"/>
     <id>http://yoursite.com/2021/01/31/P167/</id>
     <published>2021-01-31T19:30:10.000Z</published>
-    <updated>2021-02-27T19:49:48.094Z</updated>
+    <updated>2021-03-22T21:52:38.131Z</updated>
     
     
     <summary type="html">&lt;p&gt;个人用笔记,因为太长了所以分成了两份.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/2020/11/24/P134/&quot;&gt;上一回&lt;/a&gt;.&lt;br&gt;</summary>
@@ -282,9 +298,13 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="SQL" scheme="http://yoursite.com/tags/SQL/"/>
     
   </entry>
   
@@ -293,7 +313,7 @@
     <link href="http://yoursite.com/2021/01/18/P163/"/>
     <id>http://yoursite.com/2021/01/18/P163/</id>
     <published>2021-01-18T17:40:19.000Z</published>
-    <updated>2021-01-18T22:12:49.959Z</updated>
+    <updated>2021-03-22T21:53:18.552Z</updated>
     
     
     <summary type="html">&lt;p&gt;再次感谢stat341老师的手把手R入门教材,这次是R markdown的部分.&lt;br&gt;</summary>
@@ -302,6 +322,10 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
@@ -316,7 +340,7 @@
     <link href="http://yoursite.com/2021/01/16/P162/"/>
     <id>http://yoursite.com/2021/01/16/P162/</id>
     <published>2021-01-16T19:16:19.000Z</published>
-    <updated>2021-02-11T22:28:43.058Z</updated>
+    <updated>2021-03-22T21:47:06.731Z</updated>
     
     
     <summary type="html">&lt;p&gt;因为一些原因将委托合并在了一起.都放在这个合集里啦.&lt;br&gt;</summary>
@@ -327,6 +351,10 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
+    
+    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   
@@ -360,7 +388,7 @@
     <link href="http://yoursite.com/2021/01/13/P164/"/>
     <id>http://yoursite.com/2021/01/13/P164/</id>
     <published>2021-01-13T21:46:18.000Z</published>
-    <updated>2021-01-13T22:28:28.373Z</updated>
+    <updated>2021-03-22T21:53:14.575Z</updated>
     
     
     <summary type="html">&lt;p&gt;先感谢stat341老师提供的R语言从入门到入土的教材.&lt;br&gt;这里比较屑,把tutorial的笔记直接复制上来.&lt;br&gt;之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.&lt;br&gt;</summary>
@@ -369,6 +397,10 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
@@ -429,7 +461,7 @@
     <link href="http://yoursite.com/2020/12/28/P152/"/>
     <id>http://yoursite.com/2020/12/28/P152/</id>
     <published>2020-12-29T04:50:44.000Z</published>
-    <updated>2021-01-05T06:18:54.906Z</updated>
+    <updated>2021-03-22T21:49:53.690Z</updated>
     
     
     <summary type="html">&lt;p&gt;还是想保留这个良好传统.朋友们,又到写年终总结这个神圣时刻了.&lt;br&gt;因为博客搬家,博文整理,这次是(除了15年闲谈)真正的第五篇.年底反省人生也到第五次了.&lt;br&gt;</summary>
@@ -443,6 +475,8 @@
     
     <category term="年终总结" scheme="http://yoursite.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
     
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
   </entry>
   
   <entry>
@@ -450,7 +484,7 @@
     <link href="http://yoursite.com/2020/12/26/P150/"/>
     <id>http://yoursite.com/2020/12/26/P150/</id>
     <published>2020-12-26T19:14:46.000Z</published>
-    <updated>2021-01-09T00:21:22.138Z</updated>
+    <updated>2021-03-22T21:50:20.221Z</updated>
     
     
     <summary type="html">&lt;script async
@@ -463,6 +497,8 @@
     
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
     
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     

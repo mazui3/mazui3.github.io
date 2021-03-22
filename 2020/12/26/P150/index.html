@@ -33,8 +33,9 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/26/P150/P150_3.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/26/P150/t-table.jpg">
 <meta property="article:published_time" content="2020-12-26T19:14:46.000Z">
-<meta property="article:modified_time" content="2021-01-09T00:21:22.138Z">
+<meta property="article:modified_time" content="2021-03-22T21:50:20.221Z">
 <meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="python">
@@ -252,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-01-08 19:21:22" itemprop="dateModified" datetime="2021-01-08T19:21:22-05:00">2021-01-08</time>
+                <time title="Modified: 2021-03-22 17:50:20" itemprop="dateModified" datetime="2021-03-22T17:50:20-04:00">2021-03-22</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -584,9 +585,24 @@
     
     
     
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+    </li>
+  </ul>
+
 
       <footer class="post-footer">
           <div class="post-tags">
+              <a href="/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
               <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
               <a href="/tags/data/" rel="tag"># data</a>
               <a href="/tags/python/" rel="tag"># python</a>
@@ -698,7 +714,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/tags/">
           
-        <span class="site-state-item-count">25</span>
+        <span class="site-state-item-count">30</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -873,7 +889,6 @@ password();
 
   
   <script src="/lib/anime.min.js"></script>
-  <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-pjax@0/pjax.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
   <script src="/lib/velocity/velocity.min.js"></script>
@@ -888,65 +903,6 @@ password();
 
 
 <script src="/js/next-boot.js"></script>
-
-  <script>
-var pjax = new Pjax({
-  selectors: [
-    'head title',
-    '#page-configurations',
-    '.content-wrap',
-    '.post-toc-wrap',
-    '.languages',
-    '#pjax'
-  ],
-  switches: {
-    '.post-toc-wrap': Pjax.switches.innerHTML
-  },
-  analytics: false,
-  cacheBust: false,
-  scrollTo : !CONFIG.bookmark.enable
-});
-
-window.addEventListener('pjax:success', () => {
-  document.querySelectorAll('script[data-pjax], script#page-configurations, #pjax script').forEach(element => {
-    var code = element.text || element.textContent || element.innerHTML || '';
-    var parent = element.parentNode;
-    parent.removeChild(element);
-    var script = document.createElement('script');
-    if (element.id) {
-      script.id = element.id;
-    }
-    if (element.className) {
-      script.className = element.className;
-    }
-    if (element.type) {
-      script.type = element.type;
-    }
-    if (element.src) {
-      script.src = element.src;
-      // Force synchronous loading of peripheral JS.
-      script.async = false;
-    }
-    if (element.dataset.pjax !== undefined) {
-      script.dataset.pjax = '';
-    }
-    if (code !== '') {
-      script.appendChild(document.createTextNode(code));
-    }
-    parent.appendChild(script);
-  });
-  NexT.boot.refresh();
-  // Define Motion Sequence & Bootstrap Motion.
-  if (CONFIG.motion.enable) {
-    NexT.motion.integrator
-      .init()
-      .add(NexT.motion.middleWares.subMenu)
-      .add(NexT.motion.middleWares.postList)
-      .bootstrap();
-  }
-  NexT.utils.updateSidebarPosition();
-});
-</script>
 
 
 
@@ -971,7 +927,6 @@ window.addEventListener('pjax:success', () => {
 
 
 
-    <div id="pjax">
   
 
   
@@ -996,8 +951,6 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
 });
 </script>
 
-
-    </div>
   <script type="text/javascript" src="/js/my_js/firework.js"></script>
 
 </body>
