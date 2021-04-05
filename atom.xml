@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-02T19:55:00.392Z</updated>
+  <updated>2021-04-05T06:02:10.665Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>电脑角落的涂鸦与oc tag翻新</title>
+    <link href="http://yoursite.com/2021/04/05/P181/"/>
+    <id>http://yoursite.com/2021/04/05/P181/</id>
+    <published>2021-04-05T06:02:10.000Z</published>
+    <updated>2021-04-05T06:02:10.665Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/04/05/P181/P181_1.png&quot; class=&quot;&quot; title=&quot;蕃与约翰&quot;&gt;
+&lt;p&gt;图片较乱,翻出了去年的小涂鸦来唠一唠oc相关.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
+    
+    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
+    <category term="0421record" scheme="http://yoursite.com/tags/0421record/"/>
+    
+  </entry>
   
   <entry>
     <title>在春假踏上的寻找自我的旅途 - 伤物语</title>
@@ -362,7 +388,7 @@
     <link href="http://yoursite.com/2021/01/16/P162/"/>
     <id>http://yoursite.com/2021/01/16/P162/</id>
     <published>2021-01-16T19:16:19.000Z</published>
-    <updated>2021-03-22T21:47:06.731Z</updated>
+    <updated>2021-04-05T05:58:07.507Z</updated>
     
     
     <summary type="html">&lt;p&gt;因为一些原因将委托合并在了一起.都放在这个合集里啦.&lt;br&gt;</summary>
@@ -377,6 +403,8 @@
     <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
+    
+    <category term="废弃工厂" scheme="http://yoursite.com/tags/%E5%BA%9F%E5%BC%83%E5%B7%A5%E5%8E%82/"/>
     
   </entry>
   
@@ -475,29 +503,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2020的年终总结</title>
-    <link href="http://yoursite.com/2020/12/28/P152/"/>
-    <id>http://yoursite.com/2020/12/28/P152/</id>
-    <published>2020-12-29T04:50:44.000Z</published>
-    <updated>2021-03-22T21:49:53.690Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;还是想保留这个良好传统.朋友们,又到写年终总结这个神圣时刻了.&lt;br&gt;因为博客搬家,博文整理,这次是(除了15年闲谈)真正的第五篇.年底反省人生也到第五次了.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-    <category term="年终总结" scheme="http://yoursite.com/tags/%E5%B9%B4%E7%BB%88%E6%80%BB%E7%BB%93/"/>
-    
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
     
   </entry>
   
