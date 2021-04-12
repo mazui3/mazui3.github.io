@@ -29,7 +29,7 @@
 <meta property="og:description" content="为stat332的复习.附上没有过多关联的前情提要.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-04-11T01:25:13.000Z">
-<meta property="article:modified_time" content="2021-04-12T04:05:48.585Z">
+<meta property="article:modified_time" content="2021-04-12T21:12:30.123Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -221,7 +221,7 @@
     <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/10/P180/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/logo_5.jpeg">
+      <meta itemprop="image" content="/images/logo_4.jpg">
       <meta itemprop="name" content="Mazui">
       <meta itemprop="description" content="与孤独和平共处.">
     </span>
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-04-12 00:05:48" itemprop="dateModified" datetime="2021-04-12T00:05:48-04:00">2021-04-12</time>
+                <time title="Modified: 2021-04-12 17:12:30" itemprop="dateModified" datetime="2021-04-12T17:12:30-04:00">2021-04-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -265,13 +265,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>7.2k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>7 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -339,7 +339,7 @@
 <h2 id="models"><a href="#models" class="headerlink" title="models"></a>models</h2><p>Side:</p>
 <ul>
 <li><script type="math/tex">Y_j</script>是response of unit j.是random quantity.</li>
-<li><script type="math/tex">\mu</script>是study parameter,not random but unknown.一般<script type="math/tex">\mu</script>指平均值,<script type="math/tex">\pi</script>是propotion比例.</li>
+<li><script type="math/tex">\mu</script>是study parameter,not random but unknown.一般<script type="math/tex">\mu</script>指平均值,<script type="math/tex">\pi</script>是proportion比例.</li>
 <li><script type="math/tex">R_j</script>是error term. Gives distribution of responses about <script type="math/tex">\mu</script>. Always independent.</li>
 </ul>
 <p><strong>Gauss’s theorem:</strong><br>Any linear combination of normal random variable is normal.<br><strong>Central limit theorem:</strong><br>Let <script type="math/tex">Y_1,...,Y_n</script> be a sequence of ramdom variable, <script type="math/tex">E(Y_i)</script> = <script type="math/tex">\mu</script> for any i, <script type="math/tex">V(Y_i)</script> = <script type="math/tex">\sigma^2</script> and is not infinity for any i. All <script type="math/tex">Y_i</script> are independent,<br>Then we have <script type="math/tex">\bar{Y} \sim N(\mu, \frac{\sigma^2}{n})</script>.</p>
@@ -358,6 +358,7 @@
 <p><script type="math/tex">S = \sum \frac{(y_i - \bar{y})^2}{n - 1}</script>也就是standard diviation.</p>
 </blockquote>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model2A"><a href="#Model2A" class="headerlink" title="Model2A:"></a><strong>Model2A:</strong></h3><blockquote>
 <p>Independent groups which have same variance.</p>
 <p><script type="math/tex">Y_{ij}</script>是response of unit j in group i.</p>
@@ -367,6 +368,7 @@
 <p>with confidence interval: <script type="math/tex">\mu_1: \hat{\mu_1} \pm \frac{c*S_1}{\sqrt{n_1}}</script><br>degree: <script type="math/tex">n_1 - 1</script><br><strong>OR</strong><br>with confidence interval: <script type="math/tex">\mu_1 - \mu_2: \hat{\mu_1} - \hat{\mu_2} \pm c*\hat{\sigma}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}</script><br>degree: <script type="math/tex">n_1 + n_2 - 2</script></p>
 <p>discrepancy: <script type="math/tex">d = \frac{\hat{\mu_1} - \hat{\mu_2} - \mu_0}{\hat{\sigma}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_1 + n_2 - 2}</script></p>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model2B"><a href="#Model2B" class="headerlink" title="Model2B:"></a><strong>Model2B:</strong></h3><blockquote>
 <p>Independent groups which have different variance.</p>
 <p><script type="math/tex">Y_{ij}</script>是response of unit j in group i.<br>因为variance不一样,<script type="math/tex">\sigma_i^2</script>指每组的variance.</p>
@@ -376,6 +378,7 @@
 <p>with confidence interval: <script type="math/tex">\mu_1: \hat{\mu_1} \pm \frac{c*S_1}{\sqrt{n_1}}</script><br>degree: <script type="math/tex">n_1 - 1</script><br><strong>OR</strong><br>with confidence interval: <script type="math/tex">\mu_1 - \mu_2: \hat{\mu_1} - \hat{\mu_2} \pm c*\sqrt{\frac{\hat{\sigma_1^2}}{n_1} + \frac{\hat{\sigma_2^2}}{n_2}}</script><br>degree: <script type="math/tex">n_1 + n_2 - 2</script></p>
 <p>discrepancy: <script type="math/tex">d = \frac{\hat{\mu_1} - \hat{\mu_2} - \mu_0}{\sqrt{\frac{\hat{\sigma_1^2}}{n_1} + \frac{\hat{\sigma_2^2}}{n_2}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_1 + n_2 - 2}</script></p>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model3"><a href="#Model3" class="headerlink" title="Model3:"></a><strong>Model3:</strong></h3><blockquote>
 <p>model3测试的是一组两数据之间的difference(缩写为d).</p>
 </blockquote>
@@ -384,6 +387,7 @@
 <p>with confidence interval: <script type="math/tex">\mu_d: \bar{y_d} \pm \frac{c*S_d}{\sqrt{n_d}}</script><br>degree: <script type="math/tex">n_d - 1</script>.</p>
 <p>discrepancy: <script type="math/tex">d = \frac{\bar{\mu_d} - \mu_0}{\frac{\hat{\sigma_d}}{\sqrt{n_d}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_d-1}</script></p>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model4"><a href="#Model4" class="headerlink" title="Model4:"></a><strong>Model4:</strong></h3><blockquote>
 <p>where we have n outcome, and each outcome is binary.</p>
 </blockquote>
@@ -400,6 +404,7 @@
 </ul>
 <p>从<script type="math/tex">\hat{\theta}</script>到<script type="math/tex">\tilde{\theta}</script>是从<script type="math/tex">y_1,...,y_n</script>到<script type="math/tex">Y_1,...,Y_n</script>.<br>例子:<br>在model2A中,<script type="math/tex">\hat{\mu_1}</script> = <script type="math/tex">\bar{y_{1+}}</script>(statistic)所以<script type="math/tex">\tilde{\mu_1}</script> = <script type="math/tex">\bar{Y_{1+}}</script>(estimator).</p>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model5"><a href="#Model5" class="headerlink" title="Model5:"></a><strong>Model5:</strong></h3><blockquote>
 <p>completely randomized design.</p>
 </blockquote>
@@ -428,6 +433,7 @@
 <p>p-value:<script type="math/tex">H_0 : \tau_1 = \tau_2</script>, <script type="math/tex">H_a: \tau_1 \neq \tau_2</script>.<br>discrepancy:</p>
 <script type="math/tex; mode=display">d = \frac{est - H_{0value}}{s.e.}</script><p>we have<script type="math/tex">d = \frac{\tau_1 - \tau_2 - \tau_0}{\frac{\sigma}{\sqrt{2}}}</script>.</p>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model6"><a href="#Model6" class="headerlink" title="Model6:"></a><strong>Model6:</strong></h3><blockquote>
 <p>unbalanced CRD.每组的数据量不一样.</p>
 </blockquote>
@@ -438,6 +444,7 @@
 </blockquote>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">grp1 =  c(<span class="number">50</span>,<span class="number">53</span>,<span class="number">52</span>,<span class="number">58</span>)</span><br><span class="line">grp2 =  c(<span class="number">62</span>,<span class="number">55</span>,<span class="number">58</span>)</span><br><span class="line">Y = c(grp1,grp2)</span><br><span class="line">x = as.factor(c(rep(<span class="string">&#x27;1&#x27;</span>,<span class="number">4</span>),rep(<span class="string">&#x27;2&#x27;</span>,<span class="number">3</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Group Averages</span></span><br><span class="line">grp_av = tapply(Y,x,mean,na.rm = <span class="literal">T</span>)</span><br><span class="line">mu = mean(Y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Treatment Effects</span></span><br><span class="line">tao1 = (grp_av - mean(Y))[<span class="number">1</span>]</span><br><span class="line">tao2 = (grp_av – mean(Y))[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Estimated Sigma</span></span><br><span class="line">sigma = summary(lm(Y~x))$sigma</span><br><span class="line"></span><br><span class="line"><span class="comment">#Values</span></span><br><span class="line">sigma; tao1; tao2; mu</span><br><span class="line"><span class="comment">#3.447221, -2.178571, 2.904762, 55.42857</span></span><br><span class="line"></span><br><span class="line">anova(lm(Y~x))</span><br></pre></td></tr></table></figure>
 <p><br><br><br></p>
+<hr>
 <h3 id="Model7"><a href="#Model7" class="headerlink" title="Model7:"></a><strong>Model7:</strong></h3><blockquote>
 <p>randomized block design.<br>block这里指的是每组,比如说model3中compare difference的每两个数据就是一个block.</p>
 </blockquote>
@@ -448,7 +455,95 @@
 </blockquote>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Data=read.table(<span class="string">&quot;blocked.csv&quot;</span>,sep=<span class="string">&quot;,&quot;</span>,header=<span class="literal">T</span>)</span><br><span class="line"></span><br><span class="line">options(contrasts = c(<span class="string">&#x27;contr.sum&#x27;</span>,<span class="string">&#x27;contr.poly&#x27;</span>))</span><br><span class="line"><span class="keyword">attach</span>(Data) <span class="comment"># 用了attach之后,column里面的名字可以直接当作varible使用.</span></span><br><span class="line"><span class="comment"># 比如说应该是Data$Treatment,可以用Treatment.</span></span><br><span class="line"><span class="comment"># 这里Treatment,Block,Value都是column的名字.</span></span><br><span class="line">Treatment = as.factor(Treatment)</span><br><span class="line">Block = as.factor(Block)</span><br><span class="line">Model = lm(Value~Treatment+Block)</span><br><span class="line"></span><br><span class="line"><span class="comment">#To look at the output, we type:</span></span><br><span class="line">summary(Model)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 <p><br><br><br></p>
+<hr>
+<h3 id="Model8"><a href="#Model8" class="headerlink" title="Model8:"></a><strong>Model8:</strong></h3><blockquote>
+<p>factorial design.<br>例:radiation有1/4的效果,chemo也有1/4的效果,两个一起使用可以有5/6的效果.<br>用于寻找两个变量是否有这种关系(interaction).</p>
+</blockquote>
+<script type="math/tex; mode=display">Y_{ijk} = \mu_i + \tau_i + R_{ijk}</script><p>where <script type="math/tex">R_{ijk} \sim N(0,\sigma^2)</script><br>and <script type="math/tex">i = 1,2,...,l_1</script> (# of levels of factor 1), <script type="math/tex">j = 1,2,...,l_2</script> (# of levels of factor 2),<script type="math/tex">k = 1,2,...,r</script>.</p>
+<p>by least square:<script type="math/tex">W = \sum_{ijk} r_{ijk}^2 + \lambda(\sum_{ij}\tau_{ij})</script><br>we get <script type="math/tex">\hat{\mu} = \bar(y_{+++})</script> , <script type="math/tex">\hat{\tau_{ij}} = \bar{y_{ij+}} - \bar{y_{+++}}</script>, <script type="math/tex">\hat{\sigma^2} = \frac{W}{rl_1l_2 - l_1l_2 - 1 + 1}</script>.</p>
+<p><br><br><br></p>
+<hr>
+<h3 id="Model9"><a href="#Model9" class="headerlink" title="Model9:"></a><strong>Model9:</strong></h3><blockquote>
+<p>factorial randomized block design.</p>
+</blockquote>
+<script type="math/tex; mode=display">Y_{ijk} = \mu + \tau_{ij} + \beta_k + R_{ijk}</script><blockquote>
+<p><script type="math/tex">beta_k</script> is block effect.<br>Constraints: <script type="math/tex">\sum_{ij} \tau_{ij}  = 0</script>. <script type="math/tex">\sum_{k} \beta_k  = 0</script>.</p>
+</blockquote>
+<p>where <script type="math/tex">R_{ijk} \sim N(0,\sigma^2)</script><br>and <script type="math/tex">i = 1,2,...,l_1</script> (# of levels of factor 1), <script type="math/tex">j = 1,2,...,l_2</script> (# of levels of factor 2),<script type="math/tex">k = 1,2,...,r</script>.</p>
+<p>by least square:<script type="math/tex">W = \sum_{ijk} r_{ijk}^2 + \lambda_1(\sum_{ij}\tau_{ij}) + \lambda_2(\sum_{k}\beta_{k})</script><br>we get <script type="math/tex">\hat{\mu} = \bar(y_{+++})</script> , <script type="math/tex">\hat{\tau_{ij}} = \bar{y_{ij+}} - \bar{y_{+++}}</script>, <script type="math/tex">\hat{\beta} = \bar{y_{++k}} - \bar{y_{+++}}</script>, <script type="math/tex">\hat{\sigma^2} = \frac{W}{rl_1l_2 - l_1l_2 - r - 1 + 2}</script>.</p>
+<p><br><br><br></p>
+<hr>
 <h2 id="anova"><a href="#anova" class="headerlink" title="anova"></a>anova</h2><script type="math/tex; mode=display">SS_{TOT} = SS_{TRT} + SS_{RES}</script><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anova(model)</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<hr>
+<h2 id="sampling"><a href="#sampling" class="headerlink" title="sampling"></a>sampling</h2><blockquote>
+<p>SRS<br>我们无法取population中所有的数据,所以取样(sample).</p>
+</blockquote>
+<p>最大的区别是在公式中有finite population correction.<br>n为sample size,N为population size.</p>
+<hr>
+<p>Example:model 1</p>
+<p>confidence interval: <script type="math/tex">\mu: \bar{y} \pm \frac{c*S}{\sqrt{n}}</script><br>We have error <script type="math/tex">E = \frac{c*\sigma^2}{\sqrt{n}}</script>, solve for n.</p>
+<p>Using SRS:<br>confidence interval: <script type="math/tex">\mu: \bar{y} \pm \sqrt{1 - \frac{n}{N}} \frac{c*\hat{\sigma}}{\sqrt{n}}</script><br>We have error <script type="math/tex">E = \sqrt{1 - \frac{n}{N}} \frac{c*\hat{\sigma}}{\sqrt{n}}</script>, solve for n.</p>
+<hr>
+<p>Example:model 4</p>
+<p>with confidence interval: <script type="math/tex">\pi: \hat{\pi} \pm c*\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}</script></p>
+<p>Using SRS:<br>confidence interval: <script type="math/tex">\pi: \hat{\pi} \pm c*\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}\sqrt{1 - \frac{n}{N}}</script></p>
+<p>We have error <script type="math/tex">\sqrt{1 - \frac{n}{N}} \frac{c*\hat{\sigma}}{\sqrt{n}}</script>, solve for n.<br>注:<script type="math/tex">\hat{\sigma^2} = \hat{\pi}(1-\hat{\pi})</script><br>often we replace <script type="math/tex">\hat{\sigma^2}</script> by 1/4(the worst scenario is <script type="math/tex">\pi = 1/2</script>).</p>
+<hr>
+<p>如何取sample size:</p>
+<ol>
+<li>Take a small sample, estimate <script type="math/tex">\sigma</script>.</li>
+<li>Find n using formula.</li>
+<li>Perform a large study with n units.</li>
+</ol>
+<p><br><br><br></p>
+<hr>
+<h2 id="regression"><a href="#regression" class="headerlink" title="regression"></a>regression</h2><blockquote>
+<p>regression sampling<br>require linear relationship between x and y.</p>
+</blockquote>
+<script type="math/tex; mode=display">Y_i = \alpha + \beta(x_i - \bar(x)) + R_i</script><p>where <script type="math/tex">R_{j} \sim N(0,\sigma^2)</script></p>
+<p>by least square:<script type="math/tex">W = \sum_{i} r_{i}^2 = \sum_{i} (y_i - \alpha \beta(x_i - \bar{x}))^2</script><br>we get <script type="math/tex">\hat{\alpha} = \bar{y}</script>, <script type="math/tex">\hat{\beta} = \frac{S_{xy}}{S_{xx}} = \frac{s_{xy}}{\hat{s_{xx}}}</script>, <script type="math/tex">\hat{\sigma_r}^2 = \frac{W}{n - 1}</script>.<br>where <script type="math/tex">S_{xy} = \sum_i (y_i - \hat{y})(x_i = \bar{x})</script>, <script type="math/tex">s_{xy} = \frac{S_{xy}}{n - 1}</script>, <script type="math/tex">S_{xx}= \sum_i (x_i = \bar{x})^2</script>,<script type="math/tex">s_{xx} = \frac{S_{xx}}{n - 1}</script>.</p>
+<blockquote>
+<p>estimators: <script type="math/tex">\alpha, \beta, \mu_x, \mu_y</script> are all unbiased.<script type="math/tex">\tilde{\mu_{reg}}</script> is biased estimator for <script type="math/tex">\mu_y</script>.</p>
+</blockquote>
+<p>confidence interval: <script type="math/tex">EST \pm c SE = \hat{\mu_{reg}} \pm c \sqrt{1 - n/N} \frac{\hat{\sigma_r}}{\sqrt{n}}</script></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">attach</span>(women)</span><br><span class="line"><span class="comment"># assume we want to know the mean height</span></span><br><span class="line"><span class="comment"># assume we know the mean weight</span></span><br><span class="line">mean(height) <span class="comment"># unknown</span></span><br><span class="line">mean(weight) <span class="comment"># we known</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># using SRSWOR, we take a sample of size 5 and use this as our estimate for the height:  </span></span><br><span class="line">set.seed(<span class="number">1</span>)</span><br><span class="line">sample_heights = sample(height,<span class="number">5</span>) <span class="comment"># n = 5</span></span><br><span class="line">mean(sample_heights)</span><br><span class="line"><span class="comment"># [1] 63.4, this is \hat&#123;\mu_&#123;h&#125;&#125;</span></span><br><span class="line">sd(sample_heights)</span><br><span class="line"><span class="comment"># [1] 3.209361, this is \hat&#123;\sigma_&#123;SRS&#125;&#125;</span></span><br></pre></td></tr></table></figure>
+<p>we can build SRS CI: <script type="math/tex">\hat{\mu_{h}} \pm c \sqrt{1 - \frac{n}{N}} \frac{\hat{\sigma_{SRS}}}{\sqrt{n}}</script></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">sample_weights = c(<span class="number">123</span>,<span class="number">129</span>,<span class="number">135</span>,<span class="number">146</span>,<span class="number">120</span>)</span><br><span class="line">mean(sample_weights)</span><br><span class="line"><span class="comment"># [1] 130.6</span></span><br><span class="line"><span class="comment"># We note that there is a linear relationship between height and weight.</span></span><br><span class="line">plot(weight,height)</span><br><span class="line"></span><br><span class="line">sample_weights = sample_weights-mean(sample_weights)</span><br><span class="line">summary(lm(sample_heights~sample_weights))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p> The regression estimate is given by:</p>
+<script type="math/tex; mode=display">\hat{\mu_{height}} = \hat{\alpha} + \beta(x_i - \hat{x}) = \mu_{height}(\mu_{weight}) = 63.4 + 0.31(136.7333 - 130.6) = 65.3</script><p>build regression CI: <script type="math/tex">\hat{\mu_{reg}} \pm c\sqrt{1 - \frac{n}{N}}\frac{\hat{\sigma_{r}}}{\sqrt{n}}</script></p>
+<p>regression比SRS更接近.</p>
+<p><br><br><br></p>
+<hr>
+<h2 id="ratio"><a href="#ratio" class="headerlink" title="ratio"></a>ratio</h2><blockquote>
+<p>ratio estimation<br>require linear relationship between x and y.<br>require an intercept of zero.</p>
+</blockquote>
+<script type="math/tex; mode=display">Y_i = \beta x_i + R_i</script><p>where <script type="math/tex">R_{i} \sim N(0,x_i \sigma^2)</script></p>
+<blockquote>
+<p>注,variance中乘了x_i,我们在计算的时候会计算<script type="math/tex">\frac{x_i}{\sqrt{x_i}}和\frac{y_i}{\sqrt{x_i}}</script>.</p>
+</blockquote>
+<p>by least square we have <script type="math/tex">\hat{\beta} = \frac{\bar{y}}{\bar{x}}</script> and <script type="math/tex">\hat{\sigma_{ratio}}^2 = \frac{W}{n - 1}</script>.<script type="math/tex">\hat{\mu_{ratio}} = \frac{\bar{y}}{\bar{x}}\mu_x</script>.</p>
+<p>with confidence interval: <script type="math/tex">\hat{\mu_{ratio}} \pm c \sqrt{1 - \frac{n}{N}} \frac{\hat{\sigma_{ratio}}}{\sqrt{n}}</script></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">attach</span>(women) <span class="comment"># same data set</span></span><br><span class="line"></span><br><span class="line">set.seed(<span class="number">1</span>)</span><br><span class="line">sample_heights = sample(height,<span class="number">5</span>)</span><br><span class="line">mean(sample_heights)</span><br><span class="line"><span class="comment">#[1] 63.4 # SRS estimate for \mu_y</span></span><br><span class="line">sd(sample_heights)</span><br><span class="line"><span class="comment">#[1] 3.209361</span></span><br><span class="line">sample_weights = c(<span class="number">123</span>,<span class="number">129</span>,<span class="number">135</span>,<span class="number">146</span>,<span class="number">120</span>)</span><br><span class="line">mean(sample_weights)</span><br><span class="line"><span class="comment">#[1] 130.6</span></span><br><span class="line"></span><br><span class="line">plot(weight,height) <span class="comment"># linear</span></span><br><span class="line"></span><br><span class="line">Sqrt_weights = sqrt(sample_weights) <span class="comment"># \sqrt&#123;x_i&#125;</span></span><br><span class="line">sample_weights = sample_weights/Sqrt_weights <span class="comment"># \frac&#123;x_i&#125;&#123;sqrt&#123;x_i&#125;&#125;</span></span><br><span class="line"></span><br><span class="line">sample_heights = sample_heights/Sqrt_weights <span class="comment"># \frac&#123;y_i&#125;&#123;\sqrt&#123;x_i&#125;&#125;</span></span><br><span class="line">summary(lm(sample_heights~sample_weights-<span class="number">1</span>))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>The ratio estimate is given by:<script type="math/tex">\hat{\mu_{height}} = \hat{\beta}*x_i = \frac{\bar{y}}{\bar{x}}*x_i = \frac{63.4}{130.6}x_i</script>.</p>
+<p>= 0.48545x_i.带入= 0.48545(136.7333) = 66.4</p>
+<p>build regression CI: <script type="math/tex">\hat{\mu_{ratio}} \pm c \sqrt{1 - \frac{n}{N}} \frac{\hat{\sigma_{ratio}}}{\sqrt{n}}</script></p>
+<p>ratio比SRS更接近.ratio是biased的.</p>
+<hr>
+<p>proportion的情况下:</p>
+<p>build regression CI:<script type="math/tex">\hat{\theta} \pm \frac{1}{\hat{\pi}}\sqrt{1 - \frac{n}{N}}\frac{\hat{\sigma_{ratio}}}{\sqrt{n}}</script> where <script type="math/tex">\hat{\sigma_{ratio}} = \sum\frac{(y_i - \hat{\theta_{zi}})^2}{n - 1}</script>.</p>
+<blockquote>
+<p><script type="math/tex">\hat{\theta}</script>我们想要算的gourp of interest(占总人群的比例).</p>
+</blockquote>
+<p><br><br><br></p>
+<hr>
+<h2 id="stratified"><a href="#stratified" class="headerlink" title="stratified"></a>stratified</h2><blockquote>
+<p>计算subpopulation,每个subpopulation independent.</p>
+</blockquote>
+<script type="math/tex; mode=display">\mu = \frac{N_1\mu_1+ N_2\mu_2 + ... + N_H\mu_H}{N} = \sum_{i = 1}^{H}w_i\mu_i</script><p>这里的w是weight,也是占总人群的比例.</p>
+<p>confidence interval: <script type="math/tex">\hat{\mu} \pm c \sqrt{ \sum_{i=1}^H w_i^2\frac{\sigma_i^2}{n_i}(1 - \frac{n_i}{N_i}) }</script><br>where <script type="math/tex">C \sim N(0,1)</script>.</p>
+<script type="math/tex; mode=display">\pi = \sum_{i = 1}^{H}w_i\pi_i</script><p>这里的w是weight,也是占总人群的比例.</p>
+<p>confidence interval: <script type="math/tex">\hat{\pi} \pm c \sqrt{ \sum_{i=1}^H w_i^2\frac{\sigma_i^2}{n_i}(1 - \frac{n_i}{N_i}) }</script><br>where <script type="math/tex">C \sim N(0,1)</script>, <script type="math/tex">\sigma_i^2 = \pi_i(1 - \pi_i)</script>.</p>
 
     </div>
 
@@ -462,10 +557,10 @@
       <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2020/12/26/P150/" rel="bookmark">关于stat的笔记</a></div>
@@ -556,7 +651,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#models"><span class="nav-number">2.</span> <span class="nav-text">models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model1"><span class="nav-number">2.1.</span> <span class="nav-text">Model1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2A"><span class="nav-number">2.2.</span> <span class="nav-text">Model2A:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2B"><span class="nav-number">2.3.</span> <span class="nav-text">Model2B:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model3"><span class="nav-number">2.4.</span> <span class="nav-text">Model3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model4"><span class="nav-number">2.5.</span> <span class="nav-text">Model4:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model5"><span class="nav-number">2.6.</span> <span class="nav-text">Model5:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model6"><span class="nav-number">2.7.</span> <span class="nav-text">Model6:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model7"><span class="nav-number">2.8.</span> <span class="nav-text">Model7:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#anova"><span class="nav-number">3.</span> <span class="nav-text">anova</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#models"><span class="nav-number">2.</span> <span class="nav-text">models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model1"><span class="nav-number">2.1.</span> <span class="nav-text">Model1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2A"><span class="nav-number">2.2.</span> <span class="nav-text">Model2A:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2B"><span class="nav-number">2.3.</span> <span class="nav-text">Model2B:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model3"><span class="nav-number">2.4.</span> <span class="nav-text">Model3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model4"><span class="nav-number">2.5.</span> <span class="nav-text">Model4:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model5"><span class="nav-number">2.6.</span> <span class="nav-text">Model5:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model6"><span class="nav-number">2.7.</span> <span class="nav-text">Model6:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model7"><span class="nav-number">2.8.</span> <span class="nav-text">Model7:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model8"><span class="nav-number">2.9.</span> <span class="nav-text">Model8:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model9"><span class="nav-number">2.10.</span> <span class="nav-text">Model9:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#anova"><span class="nav-number">3.</span> <span class="nav-text">anova</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">4.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#regression"><span class="nav-number">5.</span> <span class="nav-text">regression</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ratio"><span class="nav-number">6.</span> <span class="nav-text">ratio</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#stratified"><span class="nav-number">7.</span> <span class="nav-text">stratified</span></a></li></ol></div>
 
 
       </div>
@@ -565,7 +660,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/images/logo_5.jpeg">
+      src="/images/logo_4.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description">与孤独和平共处.</div>
 </div>
@@ -726,7 +821,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">260k</span>
+    <span title="Symbols count total">266k</span>
   -->
 
   <!--
@@ -734,7 +829,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">3:57</span>
+    <span title="Reading time total">4:01</span>
 
   -->
   
@@ -744,7 +839,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有134.4k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有266k的老兔正在打瞌睡</span>
 </div>
 
         
