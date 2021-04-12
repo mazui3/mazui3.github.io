@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-06T06:01:18.266Z</updated>
+  <updated>2021-04-12T04:05:48.585Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,40 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>关于stat的笔记 - sampling</title>
+    <link href="http://yoursite.com/2021/04/10/P180/"/>
+    <id>http://yoursite.com/2021/04/10/P180/</id>
+    <published>2021-04-11T01:25:13.000Z</published>
+    <updated>2021-04-12T04:05:48.585Z</updated>
+    
+    
+    <summary type="html">&lt;script async
+  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;为stat332的复习.附上没有过多关联的&lt;a href=&quot;https://mazui3.github.io/2020/12/26/P150/&quot;&gt;前情提要&lt;/a&gt;.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+  </entry>
+  
+  <entry>
     <title>电脑角落的涂鸦与oc tag翻新</title>
     <link href="http://yoursite.com/2021/04/05/P181/"/>
     <id>http://yoursite.com/2021/04/05/P181/</id>
     <published>2021-04-05T06:02:10.000Z</published>
-    <updated>2021-04-06T06:01:18.266Z</updated>
+    <updated>2021-04-06T18:25:01.658Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/04/05/P181/P181_1.png&quot; class=&quot;&quot; title=&quot;蕃与约翰&quot;&gt;
@@ -281,7 +310,7 @@
     <link href="http://yoursite.com/2021/02/11/P169/"/>
     <id>http://yoursite.com/2021/02/11/P169/</id>
     <published>2021-02-11T22:54:55.000Z</published>
-    <updated>2021-04-06T06:00:56.622Z</updated>
+    <updated>2021-04-06T18:26:11.534Z</updated>
     
     
     <summary type="html">&lt;p&gt;杂谈.&lt;br&gt;</summary>
@@ -383,7 +412,7 @@
     <link href="http://yoursite.com/2021/01/16/P162/"/>
     <id>http://yoursite.com/2021/01/16/P162/</id>
     <published>2021-01-16T19:16:19.000Z</published>
-    <updated>2021-04-06T05:14:00.500Z</updated>
+    <updated>2021-04-06T18:27:04.423Z</updated>
     
     
     <summary type="html">&lt;p&gt;因为一些原因将委托合并在了一起.都放在这个合集里啦.&lt;br&gt;</summary>
@@ -477,31 +506,6 @@
     
     
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="TokyoTL" scheme="http://yoursite.com/tags/TokyoTL/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>写真</title>
-    <link href="http://yoursite.com/2021/01/01/P156/"/>
-    <id>http://yoursite.com/2021/01/01/P156/</id>
-    <published>2021-01-01T15:00:00.000Z</published>
-    <updated>2021-04-06T05:15:47.499Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2021/01/01/P156/P156_1.png&quot; class=&quot;&quot;&gt;
-&lt;img src=&quot;/2021/01/01/P156/P156_2.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;&lt;strong&gt;193f2917fb45eceb3721c025fbf8f410929376eff3459924755d7a615cda53dd&lt;/strong&gt;&lt;br&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="卡尔马" scheme="http://yoursite.com/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
     
     <category term="TokyoTL" scheme="http://yoursite.com/tags/TokyoTL/"/>
     

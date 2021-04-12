@@ -1,0 +1,830 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="为stat332的复习.附上没有过多关联的前情提要.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于stat的笔记 - sampling">
+<meta property="og:url" content="http://yoursite.com/2021/04/10/P180/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="为stat332的复习.附上没有过多关联的前情提要.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-04-11T01:25:13.000Z">
+<meta property="article:modified_time" content="2021-04-12T04:05:48.585Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Thank you Mr.goose">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="R">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/04/10/P180/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于stat的笔记 - sampling | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/04/10/P180/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_5.jpeg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于stat的笔记 - sampling
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-04-10 21:25:13" itemprop="dateCreated datePublished" datetime="2021-04-10T21:25:13-04:00">2021-04-10</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-04-12 00:05:48" itemprop="dateModified" datetime="2021-04-12T00:05:48-04:00">2021-04-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>7.2k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>为stat332的复习.附上没有过多关联的<a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/12/26/P150/">前情提要</a>.<br><a id="more"></a><br>332的精华在于推导每个model,再按需求套数据…所以整理的是各个model.<br>Model的定义: Relates a parameter to a response.<br>老师讲的不细,所以笔记有一半是我的归纳总结,不是证明出来的,估计会有错.</p>
+<h2 id="basic"><a href="#basic" class="headerlink" title="basic"></a>basic</h2><p>基本判定方式有p-value与confidence interval.</p>
+<hr>
+<p><strong>CI</strong>:<br>assume estimator is <script type="math/tex">\tilde{\theta} \sim N(\theta, V(\tilde{\theta}))</script>.</p>
+<script type="math/tex; mode=display">est \pm c*(s.e.)</script><p>等于<script type="math/tex">\hat{\theta} \pm c* \sqrt{V(\tilde{\theta})}</script>.<br>如果不知道<script type="math/tex">\sigma</script>就取<script type="math/tex">\hat{\theta} \pm c* \sqrt{\hat{V(\tilde{\theta})}}</script>.<br>(<script type="math/tex">\sigma</script>是知道的standard deviation,知道时取<script type="math/tex">C \sim N(0,1)</script>.<br>S是不知道的,估算的standard deviation.不知道时取t distribution.)</p>
+<blockquote>
+<p>est指的是estimate的值.<br>c指的是百分比confidence系数的对应值.<br>SE指的是standard error.在sampling中是standard deviation乘sampling error.<br>基础的是s.e. = <script type="math/tex">\frac{\sigma}{\sqrt{n}}</script>.</p>
+</blockquote>
+<p><strong>具体要参考model公式.</strong></p>
+<hr>
+<p><strong>p-value</strong>:</p>
+<script type="math/tex; mode=display">d = \frac{est - H_{0value}}{s.e.} = \frac{\hat{\theta} - \theta_0}{\sqrt{V(\tilde{\theta})}}</script><p>given estimator is <script type="math/tex">\tilde{\theta} \sim N(\theta, V(\tilde{\theta}))</script>.<br>同样<script type="math/tex">D \sim N(0,1)</script> when <script type="math/tex">\sigma</script> known, or <script type="math/tex">D \sim t_{n-1+c}</script> when <script type="math/tex">\sigma</script> is unknown.</p>
+<blockquote>
+<p>H0指的是假设的值.</p>
+</blockquote>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th><script type="math/tex">H_0</script></th>
+<th><script type="math/tex">H_a</script></th>
+<th>P value</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">\theta = \theta_0</script></td>
+<td><script type="math/tex">\theta \neq \theta_0</script></td>
+<td><script type="math/tex">2Pr(D > abs(d))</script></td>
+</tr>
+<tr>
+<td><script type="math/tex">\theta \geq \theta_0</script></td>
+<td><script type="math/tex">\theta     < \theta_0</script></td>
+<td><script type="math/tex">Pr(D < d)</script></td>
+</tr>
+<tr>
+<td><script type="math/tex">\theta \leq \theta_0</script></td>
+<td><script type="math/tex">\theta  > \theta_0</script></td>
+<td><script type="math/tex">Pr(D > d)</script></td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果没有significance level默认:<br>p &gt; 0.1 : No evidence to reject <script type="math/tex">H_0</script>.<br>0.1 &gt; p &gt; 0.05 : There is evidence to reject <script type="math/tex">H_0</script>.<br>0.05 &gt; p &gt; 0.01 : There is some evidence to reject <script type="math/tex">H_0</script>.<br>p &lt; 0.01 : There is tons evidence to reject <script type="math/tex">H_0</script>.</p>
+<p><strong>具体要参考model公式.</strong></p>
+<p>Side:两组数值时的variance(standard deviation的平方),aka pool variance,</p>
+<script type="math/tex; mode=display">s_p^2 = \frac{(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2}{n_1+n_2-2}</script><p>这里<script type="math/tex">s_1^2</script>是第一组的variance,<script type="math/tex">n_1</script>是size.<br>这里可以参考<a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/12/26/P150/">前情提要</a>的表格.</p>
+<hr>
+<p><br><br><br><br><br></p>
+<h2 id="models"><a href="#models" class="headerlink" title="models"></a>models</h2><p>Side:</p>
+<ul>
+<li><script type="math/tex">Y_j</script>是response of unit j.是random quantity.</li>
+<li><script type="math/tex">\mu</script>是study parameter,not random but unknown.一般<script type="math/tex">\mu</script>指平均值,<script type="math/tex">\pi</script>是propotion比例.</li>
+<li><script type="math/tex">R_j</script>是error term. Gives distribution of responses about <script type="math/tex">\mu</script>. Always independent.</li>
+</ul>
+<p><strong>Gauss’s theorem:</strong><br>Any linear combination of normal random variable is normal.<br><strong>Central limit theorem:</strong><br>Let <script type="math/tex">Y_1,...,Y_n</script> be a sequence of ramdom variable, <script type="math/tex">E(Y_i)</script> = <script type="math/tex">\mu</script> for any i, <script type="math/tex">V(Y_i)</script> = <script type="math/tex">\sigma^2</script> and is not infinity for any i. All <script type="math/tex">Y_i</script> are independent,<br>Then we have <script type="math/tex">\bar{Y} \sim N(\mu, \frac{\sigma^2}{n})</script>.</p>
+<hr>
+<h3 id="Model1"><a href="#Model1" class="headerlink" title="Model1:"></a><strong>Model1:</strong></h3><blockquote>
+<p>因为<script type="math/tex">R_j</script>normal, <script type="math/tex">Y_i</script>也normal.</p>
+</blockquote>
+<script type="math/tex; mode=display">Y_i = \mu + R_i</script><p>where <script type="math/tex">R_{j} \sim N(0,\sigma^2)</script></p>
+<blockquote>
+<p>也可以写成<script type="math/tex">Y_i \sim N(\mu , \sigma^2)</script>.</p>
+</blockquote>
+<p><br></p>
+<p>with confidence interval: <script type="math/tex">\mu: \bar{y} \pm \frac{c*S}{\sqrt{n}}</script><br>degree: <script type="math/tex">n - 1</script>(t distribution)</p>
+<p>discrepancy: <script type="math/tex">d = \frac{\bar{y} - \mu_0}{\frac{s}{\sqrt{n}}}</script><br>distribution: <script type="math/tex">D \sim t_{n-1}</script></p>
+<blockquote>
+<p><script type="math/tex">S = \sum \frac{(y_i - \bar{y})^2}{n - 1}</script>也就是standard diviation.</p>
+</blockquote>
+<p><br><br><br></p>
+<h3 id="Model2A"><a href="#Model2A" class="headerlink" title="Model2A:"></a><strong>Model2A:</strong></h3><blockquote>
+<p>Independent groups which have same variance.</p>
+<p><script type="math/tex">Y_{ij}</script>是response of unit j in group i.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{ij} = \mu_i + R_{ij}</script><p>where <script type="math/tex">R_{ij} \sim N(0,\sigma^2)</script></p>
+<p>with confidence interval: <script type="math/tex">\mu_1: \hat{\mu_1} \pm \frac{c*S_1}{\sqrt{n_1}}</script><br>degree: <script type="math/tex">n_1 - 1</script><br><strong>OR</strong><br>with confidence interval: <script type="math/tex">\mu_1 - \mu_2: \hat{\mu_1} - \hat{\mu_2} \pm c*\hat{\sigma}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}</script><br>degree: <script type="math/tex">n_1 + n_2 - 2</script></p>
+<p>discrepancy: <script type="math/tex">d = \frac{\hat{\mu_1} - \hat{\mu_2} - \mu_0}{\hat{\sigma}\sqrt{\frac{1}{n_1} + \frac{1}{n_2}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_1 + n_2 - 2}</script></p>
+<p><br><br><br></p>
+<h3 id="Model2B"><a href="#Model2B" class="headerlink" title="Model2B:"></a><strong>Model2B:</strong></h3><blockquote>
+<p>Independent groups which have different variance.</p>
+<p><script type="math/tex">Y_{ij}</script>是response of unit j in group i.<br>因为variance不一样,<script type="math/tex">\sigma_i^2</script>指每组的variance.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{ij} = \mu_i + R_{ij}</script><p>where <script type="math/tex">R_{ij} \sim N(0,\sigma_i^2)</script></p>
+<p>with confidence interval: <script type="math/tex">\mu_1: \hat{\mu_1} \pm \frac{c*S_1}{\sqrt{n_1}}</script><br>degree: <script type="math/tex">n_1 - 1</script><br><strong>OR</strong><br>with confidence interval: <script type="math/tex">\mu_1 - \mu_2: \hat{\mu_1} - \hat{\mu_2} \pm c*\sqrt{\frac{\hat{\sigma_1^2}}{n_1} + \frac{\hat{\sigma_2^2}}{n_2}}</script><br>degree: <script type="math/tex">n_1 + n_2 - 2</script></p>
+<p>discrepancy: <script type="math/tex">d = \frac{\hat{\mu_1} - \hat{\mu_2} - \mu_0}{\sqrt{\frac{\hat{\sigma_1^2}}{n_1} + \frac{\hat{\sigma_2^2}}{n_2}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_1 + n_2 - 2}</script></p>
+<p><br><br><br></p>
+<h3 id="Model3"><a href="#Model3" class="headerlink" title="Model3:"></a><strong>Model3:</strong></h3><blockquote>
+<p>model3测试的是一组两数据之间的difference(缩写为d).</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{di} = \mu_d + R_{di}</script><p>where <script type="math/tex">R_{dj} \sim N(0,\sigma_d^2)</script></p>
+<p>with confidence interval: <script type="math/tex">\mu_d: \bar{y_d} \pm \frac{c*S_d}{\sqrt{n_d}}</script><br>degree: <script type="math/tex">n_d - 1</script>.</p>
+<p>discrepancy: <script type="math/tex">d = \frac{\bar{\mu_d} - \mu_0}{\frac{\hat{\sigma_d}}{\sqrt{n_d}}}</script><br>distribution: <script type="math/tex">D \sim t_{n_d-1}</script></p>
+<p><br><br><br></p>
+<h3 id="Model4"><a href="#Model4" class="headerlink" title="Model4:"></a><strong>Model4:</strong></h3><blockquote>
+<p>where we have n outcome, and each outcome is binary.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">\frac{Y}{n} \sim N(\pi,\frac{\pi(1-\pi)}{n})</script><p>with confidence interval: <script type="math/tex">\pi: \hat{\pi} \pm c*\sqrt{\frac{\hat{\pi}(1-\hat{\pi})}{n}}</script><br>degree: <script type="math/tex">C \sim N(0,1)</script></p>
+<p>discrepancy: <script type="math/tex">d = \frac{\hat{\pi} - \pi_0}{\sqrt{\frac{\hat{\pi_0}(1-\hat{\pi_0})}{n}}}</script><br>distribution: <script type="math/tex">C \sim N(0,1)</script></p>
+<hr>
+<p>Side:</p>
+<ul>
+<li><script type="math/tex">y_1,...,y_n</script>是sample data,non-random,我们收集到的data.</li>
+<li><script type="math/tex">Y_1,...,Y_n</script>是realization of random variable.</li>
+<li><strong>Statistic</strong> is a function of the sample data, <script type="math/tex">\hat{\theta}</script>. 当sample data changes,<script type="math/tex">\hat{\theta}</script>也会changes.</li>
+<li>我们可以把<script type="math/tex">\hat{\theta}</script>当作realibation of ramdom variable <script type="math/tex">\tilde{\theta}</script>,<script type="math/tex">\tilde{\theta}</script>叫做estimator.</li>
+</ul>
+<p>从<script type="math/tex">\hat{\theta}</script>到<script type="math/tex">\tilde{\theta}</script>是从<script type="math/tex">y_1,...,y_n</script>到<script type="math/tex">Y_1,...,Y_n</script>.<br>例子:<br>在model2A中,<script type="math/tex">\hat{\mu_1}</script> = <script type="math/tex">\bar{y_{1+}}</script>(statistic)所以<script type="math/tex">\tilde{\mu_1}</script> = <script type="math/tex">\bar{Y_{1+}}</script>(estimator).</p>
+<p><br><br><br></p>
+<h3 id="Model5"><a href="#Model5" class="headerlink" title="Model5:"></a><strong>Model5:</strong></h3><blockquote>
+<p>completely randomized design.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{ij} = \mu_i + \tau_i + R_{ij}</script><p>where <script type="math/tex">R_{ij} \sim N(0,\sigma^2)</script><br>and <script type="math/tex">i = 1,2,...,t</script> (# of treatments), <script type="math/tex">j = 1,2,...,r</script> (# of replicates for treatments).</p>
+<blockquote>
+<p>the # of units are i*j.<br>overall mean: <script type="math/tex">\mu</script>. group average: <script type="math/tex">\mu + \tau_i</script> for group i. treatment effect: <script type="math/tex">\tau_i</script> for group i.</p>
+<p><script type="math/tex">R_{ij}</script> is the distribution of values about the deterministic part of the model.<br>Constraints: <script type="math/tex">\tau_1 + \tau_2 ... + \tau_t = 0</script>.</p>
+<p>举例:group 1的ave是65,group 2 ave是75.<br>group1与group2数据在一起的ave是70.<script type="math/tex">\mu</script>+<script type="math/tex">\tau_1</script>是65,<script type="math/tex">\mu</script>+<script type="math/tex">\tau_2</script>是75.所以<script type="math/tex">\hat{\tau_1}</script>是-5,<script type="math/tex">\hat{\tau_2}</script>是5.</p>
+</blockquote>
+<p>当i只为2的情况:</p>
+<script type="math/tex; mode=display">Y_{ij} \sim N(\mu,\frac{\sigma^2}{2r})</script><p>with confidence interval: <script type="math/tex">\tau_1: \hat{\tau_1} \pm c*\sqrt{\frac{\sigma^2}{2r}}</script><br>degree: <script type="math/tex">n - q + c</script>(t distribution)</p>
+<p>with confidence interval: <script type="math/tex">\mu: \hat{\mu} \pm c*\sqrt{\frac{\sigma^2}{2r}}</script><br>degree: <script type="math/tex">n - q + c</script>(t distribution)</p>
+<blockquote>
+<p>关于为什么是2r的原因:</p>
+<script type="math/tex; mode=display">V(\tau_1) = V(\bar{Y_{1+}} - \bar{Y_{++}})</script><p>= <script type="math/tex">V(\bar{Y_{1+}} - (\bar{Y_{1+}} + \bar{Y_{2+}})/2 )</script><br>= <script type="math/tex">V(1/2\bar{Y_{1+}} - 1/2\bar{Y_{2+}})</script><br>= 1/4<script type="math/tex">V(\bar{Y_{1+}})</script> - 1/4<script type="math/tex">V(\bar{Y_{2+}})</script><br>= 1/4<script type="math/tex">\frac{\sigma^2}{r}</script> + 1/4<script type="math/tex">\frac{\sigma^2}{r}</script><br>=<script type="math/tex">\frac{\sigma^2}{2r}</script></p>
+</blockquote>
+<p>当i不为2的时候,variance也会更改,请注意.</p>
+<blockquote>
+<p>注:<script type="math/tex">V(\bar{Y_{1+}}) = \tau^2 /</script> # of samples in group <script type="math/tex">\bar{Y_{1+}}</script>.</p>
+</blockquote>
+<p>discrepancy:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">grp1 =  c(<span class="number">50</span>,<span class="number">53</span>,<span class="number">52</span>,<span class="number">58</span>)</span><br><span class="line">grp2 = c(<span class="number">62</span>,<span class="number">55</span>,<span class="number">58</span>,<span class="number">60</span>)</span><br><span class="line"></span><br><span class="line">options(contrasts = c(<span class="string">&#x27;contr.sum&#x27;</span>,<span class="string">&#x27;contr.poly&#x27;</span>))</span><br><span class="line">Y = c(grp1,grp2)</span><br><span class="line">x = as.factor(c(rep(<span class="string">&#x27;1&#x27;</span>,<span class="number">4</span>),rep(<span class="string">&#x27;2&#x27;</span>,<span class="number">4</span>))) <span class="comment"># makes a discrete variable</span></span><br><span class="line">model = lm(Y~x) <span class="comment"># builds the model</span></span><br><span class="line">summary(model)</span><br></pre></td></tr></table></figure><br>estimate:<br>intercept: <script type="math/tex">\hat{\mu}</script>.<br>x: <script type="math/tex">\hat{\tau_1}</script>.</p>
+<p>residual standard error: <script type="math/tex">\hat{\sigma}</script>.<br>p-value: assume <script type="math/tex">H_0:\mu = 0</script>,<script type="math/tex">H_0:\mu \neq 0</script>.<br>assume <script type="math/tex">H_0:\tau_1 = 0</script>,<script type="math/tex">H_0:\tau_1 \neq 0</script>.</p>
+<p>if we want to estimate difference between two treatment:</p>
+<script type="math/tex; mode=display">\theta : \hat{\theta \pm c*SE}</script><p>s.e. = <script type="math/tex">\frac{\sigma}{\sqrt{n}}</script>.n = 2.<br>with confidence interval: <script type="math/tex">\tau_1: \hat{\tau_1}  - \hat{\tau_2} \pm c*\sqrt{\frac{\sigma^2}{2}}</script><br>degree: <script type="math/tex">n - q + c</script>(t distribution)</p>
+<p>p-value:<script type="math/tex">H_0 : \tau_1 = \tau_2</script>, <script type="math/tex">H_a: \tau_1 \neq \tau_2</script>.<br>discrepancy:</p>
+<script type="math/tex; mode=display">d = \frac{est - H_{0value}}{s.e.}</script><p>we have<script type="math/tex">d = \frac{\tau_1 - \tau_2 - \tau_0}{\frac{\sigma}{\sqrt{2}}}</script>.</p>
+<p><br><br><br></p>
+<h3 id="Model6"><a href="#Model6" class="headerlink" title="Model6:"></a><strong>Model6:</strong></h3><blockquote>
+<p>unbalanced CRD.每组的数据量不一样.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{ij} = \mu_i + \tau_i + R_{ij}</script><p>where <script type="math/tex">R_{ij} \sim N(0,\sigma^2)</script><br>and <script type="math/tex">i = 1,2,...,t</script> (# of treatments), <script type="math/tex">j = 1,2,...,r_i</script> (# of replicates for treatments).</p>
+<blockquote>
+<p>Constraints: <script type="math/tex">\sum_{i = 1}^{t} r_i \tau_i  = 0</script>.</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">grp1 =  c(<span class="number">50</span>,<span class="number">53</span>,<span class="number">52</span>,<span class="number">58</span>)</span><br><span class="line">grp2 =  c(<span class="number">62</span>,<span class="number">55</span>,<span class="number">58</span>)</span><br><span class="line">Y = c(grp1,grp2)</span><br><span class="line">x = as.factor(c(rep(<span class="string">&#x27;1&#x27;</span>,<span class="number">4</span>),rep(<span class="string">&#x27;2&#x27;</span>,<span class="number">3</span>)))</span><br><span class="line"></span><br><span class="line"><span class="comment">#Group Averages</span></span><br><span class="line">grp_av = tapply(Y,x,mean,na.rm = <span class="literal">T</span>)</span><br><span class="line">mu = mean(Y)</span><br><span class="line"></span><br><span class="line"><span class="comment">#Treatment Effects</span></span><br><span class="line">tao1 = (grp_av - mean(Y))[<span class="number">1</span>]</span><br><span class="line">tao2 = (grp_av – mean(Y))[<span class="number">2</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment">#Estimated Sigma</span></span><br><span class="line">sigma = summary(lm(Y~x))$sigma</span><br><span class="line"></span><br><span class="line"><span class="comment">#Values</span></span><br><span class="line">sigma; tao1; tao2; mu</span><br><span class="line"><span class="comment">#3.447221, -2.178571, 2.904762, 55.42857</span></span><br><span class="line"></span><br><span class="line">anova(lm(Y~x))</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h3 id="Model7"><a href="#Model7" class="headerlink" title="Model7:"></a><strong>Model7:</strong></h3><blockquote>
+<p>randomized block design.<br>block这里指的是每组,比如说model3中compare difference的每两个数据就是一个block.</p>
+</blockquote>
+<p><br></p>
+<script type="math/tex; mode=display">Y_{ij} = \mu_i + \tau_i + \beta_j + R_{ij}</script><p>where <script type="math/tex">R_{ij} \sim N(0,\sigma^2)</script><br>and <script type="math/tex">i = 1,2,...,t</script> (# of treatments), <script type="math/tex">j = 1,2,...,r</script> (# of replicates for treatments).</p>
+<blockquote>
+<p><script type="math/tex">\beta_j</script> is the <script type="math/tex">j^{th}</script> block effect.<br>Constraints: <script type="math/tex">\sum_{i = 1}^{t} \tau_i  = 0</script>. <script type="math/tex">\sum_{j = 1}^{r} \beta_j  = 0</script>.<br>By least square: <script type="math/tex">\hat{\beta_j} = \bar{y_{+j}} - \bar{y_{++}}</script>.</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">Data=read.table(<span class="string">&quot;blocked.csv&quot;</span>,sep=<span class="string">&quot;,&quot;</span>,header=<span class="literal">T</span>)</span><br><span class="line"></span><br><span class="line">options(contrasts = c(<span class="string">&#x27;contr.sum&#x27;</span>,<span class="string">&#x27;contr.poly&#x27;</span>))</span><br><span class="line"><span class="keyword">attach</span>(Data) <span class="comment"># 用了attach之后,column里面的名字可以直接当作varible使用.</span></span><br><span class="line"><span class="comment"># 比如说应该是Data$Treatment,可以用Treatment.</span></span><br><span class="line"><span class="comment"># 这里Treatment,Block,Value都是column的名字.</span></span><br><span class="line">Treatment = as.factor(Treatment)</span><br><span class="line">Block = as.factor(Block)</span><br><span class="line">Model = lm(Value~Treatment+Block)</span><br><span class="line"></span><br><span class="line"><span class="comment">#To look at the output, we type:</span></span><br><span class="line">summary(Model)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h2 id="anova"><a href="#anova" class="headerlink" title="anova"></a>anova</h2><script type="math/tex; mode=display">SS_{TOT} = SS_{TRT} + SS_{RES}</script><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">anova(model)</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/12/26/P150/" rel="bookmark">关于stat的笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
+              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/tags/data/" rel="tag"># data</a>
+              <a href="/tags/R/" rel="tag"># R</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/04/05/P181/" rel="next" title="电脑角落的涂鸦与oc tag翻新">
+      电脑角落的涂鸦与oc tag翻新 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#basic"><span class="nav-number">1.</span> <span class="nav-text">basic</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#models"><span class="nav-number">2.</span> <span class="nav-text">models</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Model1"><span class="nav-number">2.1.</span> <span class="nav-text">Model1:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2A"><span class="nav-number">2.2.</span> <span class="nav-text">Model2A:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model2B"><span class="nav-number">2.3.</span> <span class="nav-text">Model2B:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model3"><span class="nav-number">2.4.</span> <span class="nav-text">Model3:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model4"><span class="nav-number">2.5.</span> <span class="nav-text">Model4:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model5"><span class="nav-number">2.6.</span> <span class="nav-text">Model5:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model6"><span class="nav-number">2.7.</span> <span class="nav-text">Model6:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model7"><span class="nav-number">2.8.</span> <span class="nav-text">Model7:</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#anova"><span class="nav-number">3.</span> <span class="nav-text">anova</span></a></li></ol></div>
+
+
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_5.jpeg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">180</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">39</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=592699&auto=1&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">260k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">3:57</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有134.4k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2e39777bbf0f9f598629',
+      clientSecret: '6d5262a0465d894852bbea8f866021d0b3feb168',
+      repo        : 'comment',
+      owner       : 'mazui3',
+      admin       : ['mazui3'],
+      id          : '2fe1386edc16bd13e21fcb956df0cfec',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>
