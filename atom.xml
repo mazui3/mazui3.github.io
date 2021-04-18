@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-12T21:12:30.123Z</updated>
+  <updated>2021-04-17T23:48:34.397Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>少女</title>
+    <link href="http://yoursite.com/2021/04/17/P182/"/>
+    <id>http://yoursite.com/2021/04/17/P182/</id>
+    <published>2021-04-17T23:48:34.000Z</published>
+    <updated>2021-04-17T23:48:34.397Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/04/17/P182/P182_1.jpg&quot; class=&quot;&quot;&gt;
+&lt;p&gt;谢谢灰!!谢谢灰!!!我又嫖灰桑给我画的oc了!!!(靠)一定要发到博客给大家看(…)!!!&lt;br&gt;</summary>
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="怪异专家与助手" scheme="http://yoursite.com/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于stat的笔记 - sampling</title>
     <link href="http://yoursite.com/2021/04/10/P180/"/>
     <id>http://yoursite.com/2021/04/10/P180/</id>
     <published>2021-04-11T01:25:13.000Z</published>
-    <updated>2021-04-12T21:12:30.123Z</updated>
+    <updated>2021-04-14T14:41:16.068Z</updated>
     
     
     <summary type="html">&lt;script async
@@ -483,31 +505,6 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="R" scheme="http://yoursite.com/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>小狗贴贴</title>
-    <link href="http://yoursite.com/2021/01/01/P157/"/>
-    <id>http://yoursite.com/2021/01/01/P157/</id>
-    <published>2021-01-01T22:20:35.000Z</published>
-    <updated>2021-04-06T05:15:06.878Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2021/01/01/P157/P157.png&quot; class=&quot;&quot;&gt;
-&lt;blockquote&gt;
-&lt;p&gt;brutal -&amp;gt; &lt;a href=&quot;https://twitter.com/Brutal588&quot;&gt;twi&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;没想到会收到brutal桑给的兄妹生贺…!!!!感谢!!!!啊!!!!我来放博客里给大家看(???)&lt;br&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="TokyoTL" scheme="http://yoursite.com/tags/TokyoTL/"/>
     
   </entry>
   
