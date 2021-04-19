@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-17T23:48:34.397Z</updated>
+  <updated>2021-04-19T14:04:22.977Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,34 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>搭档</title>
+    <link href="http://yoursite.com/2021/04/19/P183/"/>
+    <id>http://yoursite.com/2021/04/19/P183/</id>
+    <published>2021-04-19T14:04:22.000Z</published>
+    <updated>2021-04-19T14:04:22.977Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/04/19/P183/P183.jpeg&quot; class=&quot;&quot;&gt;
+&lt;p&gt;收录一下委托游老师的新衣服…!!真的!!太喜欢了!!&lt;br&gt;特别是雨未,是理想中的雨未!!!(爆哭)&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="怪异专家与助手" scheme="http://yoursite.com/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>少女</title>
@@ -478,33 +506,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于R语言的笔记</title>
-    <link href="http://yoursite.com/2021/01/13/P164/"/>
-    <id>http://yoursite.com/2021/01/13/P164/</id>
-    <published>2021-01-13T21:46:18.000Z</published>
-    <updated>2021-03-22T21:53:14.575Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;先感谢stat341老师提供的R语言从入门到入土的教材.&lt;br&gt;这里比较屑,把tutorial的笔记直接复制上来.&lt;br&gt;之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-    <category term="R" scheme="http://yoursite.com/tags/R/"/>
     
   </entry>
   
