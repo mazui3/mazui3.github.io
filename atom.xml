@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-20T05:30:30.848Z</updated>
+  <updated>2021-04-21T04:17:26.604Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于stat的笔记 - distribution</title>
+    <link href="http://yoursite.com/2021/04/20/P185/"/>
+    <id>http://yoursite.com/2021/04/20/P185/</id>
+    <published>2021-04-20T12:14:44.000Z</published>
+    <updated>2021-04-21T04:17:26.604Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;script async
+  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;&lt;br&gt;为stat330附录的distribution公式.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+  </entry>
   
   <entry>
     <title>关于颜色的笔记 - 四季</title>
@@ -473,33 +498,6 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="R" scheme="http://yoursite.com/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>宝箱里的可爱 - 续</title>
-    <link href="http://yoursite.com/2021/01/16/P162/"/>
-    <id>http://yoursite.com/2021/01/16/P162/</id>
-    <published>2021-01-16T19:16:19.000Z</published>
-    <updated>2021-04-06T18:27:04.423Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;因为一些原因将委托合并在了一起.都放在这个合集里啦.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
-    
-    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
-    
-    <category term="有猫的书店" scheme="http://yoursite.com/tags/%E6%9C%89%E7%8C%AB%E7%9A%84%E4%B9%A6%E5%BA%97/"/>
-    
-    <category term="废弃工厂" scheme="http://yoursite.com/tags/%E5%BA%9F%E5%BC%83%E5%B7%A5%E5%8E%82/"/>
     
   </entry>
   
