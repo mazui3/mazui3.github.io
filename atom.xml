@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-24T05:35:51.522Z</updated>
+  <updated>2021-04-26T14:35:56.212Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>因为很可爱所以画了</title>
+    <link href="http://yoursite.com/2021/04/26/P188/"/>
+    <id>http://yoursite.com/2021/04/26/P188/</id>
+    <published>2021-04-26T14:35:56.000Z</published>
+    <updated>2021-04-26T14:35:56.212Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/04/26/P188/P188.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
+    
+    <category term="ハガレン" scheme="http://yoursite.com/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
+    
+  </entry>
   
   <entry>
     <title>好作品补全计划 - 小息</title>
@@ -219,9 +246,9 @@
     <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="DDL" scheme="http://yoursite.com/tags/DDL/"/>
     
@@ -463,31 +490,6 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="R" scheme="http://yoursite.com/tags/R/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于SQL的笔记 - 续</title>
-    <link href="http://yoursite.com/2021/01/31/P167/"/>
-    <id>http://yoursite.com/2021/01/31/P167/</id>
-    <published>2021-01-31T19:30:10.000Z</published>
-    <updated>2021-03-22T21:52:38.131Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;个人用笔记,因为太长了所以分成了两份.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/2020/11/24/P134/&quot;&gt;上一回&lt;/a&gt;.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-    <category term="SQL" scheme="http://yoursite.com/tags/SQL/"/>
     
   </entry>
   
