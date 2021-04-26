@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-26T14:35:56.212Z</updated>
+  <updated>2021-04-26T20:57:22.302Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,18 +17,38 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>病员服</title>
+    <link href="http://yoursite.com/2021/04/26/P187/"/>
+    <id>http://yoursite.com/2021/04/26/P187/</id>
+    <published>2021-04-26T20:57:22.000Z</published>
+    <updated>2021-04-26T20:57:22.302Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/04/26/P187/P187_1.jpeg&quot; class=&quot;&quot;&gt;
+&lt;p&gt;收录一下brutal桑画的fune酱,实在是太可爱了!!&lt;br&gt;&lt;em&gt;这个人怎么薅到这么多可爱的图,实则有罪(没在反省).&lt;/em&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>因为很可爱所以画了</title>
     <link href="http://yoursite.com/2021/04/26/P188/"/>
     <id>http://yoursite.com/2021/04/26/P188/</id>
     <published>2021-04-26T14:35:56.000Z</published>
-    <updated>2021-04-26T14:35:56.212Z</updated>
+    <updated>2021-04-26T20:54:30.153Z</updated>
     
     
       
       
         
         
-    <summary type="html">&lt;img src=&quot;/2021/04/26/P188/P188.png&quot;</summary>
+    <summary type="html">&lt;img src=&quot;/2021/04/26/P188/P188.png&quot; class=&quot;&quot;</summary>
         
       
     
@@ -246,9 +266,9 @@
     <category term="日记" scheme="http://yoursite.com/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="DDL" scheme="http://yoursite.com/tags/DDL/"/>
     
@@ -461,35 +481,6 @@
     <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
     
     <category term="信使组" scheme="http://yoursite.com/tags/%E4%BF%A1%E4%BD%BF%E7%BB%84/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于R语言的笔记 - 续</title>
-    <link href="http://yoursite.com/2021/02/02/P165/"/>
-    <id>http://yoursite.com/2021/02/02/P165/</id>
-    <published>2021-02-03T01:15:02.000Z</published>
-    <updated>2021-03-22T21:53:10.534Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;script async
-  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;&lt;br&gt;接着&lt;a href=&quot;https://mazui3.github.io/2021/01/13/P164/&quot;&gt;上一回&lt;/a&gt;的笔记.&lt;br&gt;上次收录了些基础语法,这次是case study.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="http://yoursite.com/tags/data/"/>
-    
-    <category term="R" scheme="http://yoursite.com/tags/R/"/>
     
   </entry>
   
