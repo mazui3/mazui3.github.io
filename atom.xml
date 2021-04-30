@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-26T20:57:22.302Z</updated>
+  <updated>2021-04-30T19:03:53.963Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,15 +17,59 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>病员服</title>
+    <title>关于颜色的笔记 - 便签贴</title>
+    <link href="http://yoursite.com/2021/04/30/P190/"/>
+    <id>http://yoursite.com/2021/04/30/P190/</id>
+    <published>2021-04-30T17:42:58.000Z</published>
+    <updated>2021-04-30T19:03:53.963Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;这次记载下自己画的时候的过程与思考.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>制作记录_UnderlakeLibrary</title>
+    <link href="http://yoursite.com/2021/04/30/P189/"/>
+    <id>http://yoursite.com/2021/04/30/P189/</id>
+    <published>2021-04-30T16:51:21.000Z</published>
+    <updated>2021-04-30T18:35:30.894Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;为oc小网站制作过程的记录.&lt;br&gt;图书馆本体&lt;a href=&quot;www.mazui3.net&quot;&gt;🌟&lt;/a&gt;.&lt;/p&gt;
+&lt;img src=&quot;/2021/04/30/P189/P189_1.png&quot; class=&quot;&quot; title=&quot;我宣布用十来个图层画叶子成为不会轻易使出的杀手锏&quot;&gt;</summary>
+    
+    
+    
+    <category term="项目记录" scheme="http://yoursite.com/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>病院服</title>
     <link href="http://yoursite.com/2021/04/26/P187/"/>
     <id>http://yoursite.com/2021/04/26/P187/</id>
     <published>2021-04-26T20:57:22.000Z</published>
-    <updated>2021-04-26T20:57:22.302Z</updated>
+    <updated>2021-04-27T14:45:57.402Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/2021/04/26/P187/P187_1.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;收录一下brutal桑画的fune酱,实在是太可爱了!!&lt;br&gt;&lt;em&gt;这个人怎么薅到这么多可爱的图,实则有罪(没在反省).&lt;/em&gt;&lt;br&gt;</summary>
+&lt;p&gt;收录一下brutal桑画的fune酱,实在是太可爱了!!&lt;br&gt;&lt;em&gt;这个人薅到这么多可爱的图,实则有罪(没有反省).&lt;/em&gt;&lt;/p&gt;
+&lt;blockquote&gt;
+&lt;p&gt;brutal桑的个站 -&amp;gt; &lt;a href=&quot;https://brutal588.github.io&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
+&lt;/blockquote&gt;</summary>
     
     
     
@@ -441,46 +485,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于颜色的笔记 - 其二</title>
-    <link href="http://yoursite.com/2021/02/13/P123/"/>
-    <id>http://yoursite.com/2021/02/13/P123/</id>
-    <published>2021-02-13T21:43:18.000Z</published>
-    <updated>2021-03-22T23:32:05.611Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;接上次的进度(15/100).&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>隧道</title>
-    <link href="http://yoursite.com/2021/02/11/P169/"/>
-    <id>http://yoursite.com/2021/02/11/P169/</id>
-    <published>2021-02-11T22:54:55.000Z</published>
-    <updated>2021-04-06T18:26:11.534Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;杂谈.&lt;br&gt;</summary>
-    
-    
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="在日落之前" scheme="http://yoursite.com/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
-    
-    <category term="信使组" scheme="http://yoursite.com/tags/%E4%BF%A1%E4%BD%BF%E7%BB%84/"/>
     
   </entry>
   
