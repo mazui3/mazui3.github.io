@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-04-30T19:22:31.663Z</updated>
+  <updated>2021-05-04T01:04:10.770Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>Never give up</title>
+    <link href="http://yoursite.com/2021/05/03/P192/"/>
+    <id>http://yoursite.com/2021/05/03/P192/</id>
+    <published>2021-05-04T01:04:10.000Z</published>
+    <updated>2021-05-04T01:04:10.770Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/2021/05/03/P192/P192.png&quot; class=&quot;&quot; title=&quot;老兔在零下十度的水里为你打气&quot;&gt;
+&lt;p&gt;&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
+    
+    <category term="家庭组" scheme="http://yoursite.com/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于颜色的笔记 - 便签贴</title>
     <link href="http://yoursite.com/2021/04/30/P190/"/>
     <id>http://yoursite.com/2021/04/30/P190/</id>
     <published>2021-04-30T17:42:58.000Z</published>
-    <updated>2021-04-30T19:22:31.663Z</updated>
+    <updated>2021-05-03T16:32:35.816Z</updated>
     
     
     <summary type="html">&lt;p&gt;记载下自己画图时的过程与思考.&lt;br&gt;</summary>
@@ -397,7 +425,7 @@
     <link href="http://yoursite.com/2021/03/14/P170/"/>
     <id>http://yoursite.com/2021/03/14/P170/</id>
     <published>2021-03-14T05:01:54.000Z</published>
-    <updated>2021-05-03T15:13:48.261Z</updated>
+    <updated>2021-05-03T16:49:36.377Z</updated>
     
     
     <summary type="html">&lt;p&gt;接&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P140/&quot;&gt;第一回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P141/&quot;&gt;第二回.&lt;/a&gt;&lt;br&gt;</summary>
@@ -457,28 +485,6 @@
     
     
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>情绪与风</title>
-    <link href="http://yoursite.com/2021/02/22/P172/"/>
-    <id>http://yoursite.com/2021/02/22/P172/</id>
-    <published>2021-02-22T18:53:29.000Z</published>
-    <updated>2021-04-06T05:11:20.499Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2021/02/22/P172/P172.jpg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;谢谢灰桑赐予我的宝贝…太喜欢灰的水彩了……&lt;br&gt;包含着温柔的感情……的感觉!!!&lt;br&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   

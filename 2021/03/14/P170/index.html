@@ -29,7 +29,7 @@
 <meta property="og:description" content="接第一回与第二回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-14T05:01:54.000Z">
-<meta property="article:modified_time" content="2021-05-03T15:13:48.261Z">
+<meta property="article:modified_time" content="2021-05-03T16:49:36.377Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-03 11:13:48" itemprop="dateModified" datetime="2021-05-03T11:13:48-04:00">2021-05-03</time>
+                <time title="Modified: 2021-05-03 12:49:36" itemprop="dateModified" datetime="2021-05-03T12:49:36-04:00">2021-05-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,7 +339,7 @@
 <p>用rename更改column名字.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df_clean.rename(columns=&#123;<span class="string">&#x27;oldName1&#x27;</span>: <span class="string">&#x27;newName1&#x27;</span>,</span><br><span class="line">                                    <span class="string">&#x27;oldName2&#x27;</span>: <span class="string">&#x27;newName2&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure></p>
 <p>使用value_counts快速了解column内的数值分布.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columnName.value_counts()</span><br></pre></td></tr></table></figure></p>
 <p>更改column内的数值:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list = [<span class="string">&#x27;valueWannaReplace&#x27;</span>,<span class="string">&#x27;valueWannaReplace&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    df_clean.StartDate.replace( value ,<span class="string">&#x27;newValue&#x27;</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>附<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/21608228/conditional-replace-pandas">stackoverflow</a>里的例子.</p>
-<p>选中多列并更改的情况.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df[<span class="string">&#x27;A&#x27;</span>].isin([<span class="number">3</span>, <span class="number">6</span>])]</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12096252/use-a-list-of-values-to-select-rows-from-a-pandas-dataframe">stackoverflow</a>.</p>
+<p>选中多列并更改的情况.<br>(isin是用value判定的)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df[<span class="string">&#x27;A&#x27;</span>].isin([<span class="number">3</span>, <span class="number">6</span>])] <span class="comment"># 选中A column里有3和6的row</span></span><br></pre></td></tr></table></figure><br>使用index.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_1[df_1.index.isin([<span class="number">231</span>,<span class="number">837</span>,<span class="number">885</span>,<span class="number">1480</span>])] <span class="comment"># 把df[&#x27;columnName&#x27;]改成index</span></span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12096252/use-a-list-of-values-to-select-rows-from-a-pandas-dataframe">stackoverflow</a>.</p>
 <p>用assert来test条件.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    <span class="keyword">assert</span> value <span class="keyword">not</span> <span class="keyword">in</span> df_clean.StartDate.values</span><br></pre></td></tr></table></figure></p>
 <p>merge.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">treatments_clean = pd.merge(treatments_clean, adverse_reactions_clean,</span><br><span class="line">                            on=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>], how=<span class="string">&#x27;left&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mapping from full state name to abbreviation</span></span><br><span class="line">state_abbrev = &#123;<span class="string">&#x27;California&#x27;</span>: <span class="string">&#x27;CA&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;New York&#x27;</span>: <span class="string">&#x27;NY&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Illinois&#x27;</span>: <span class="string">&#x27;IL&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Florida&#x27;</span>: <span class="string">&#x27;FL&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Nebraska&#x27;</span>: <span class="string">&#x27;NE&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to apply</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abbreviate_state</span>(<span class="params">patient</span>):</span></span><br><span class="line">    <span class="keyword">if</span> patient[<span class="string">&#x27;state&#x27;</span>] <span class="keyword">in</span> state_abbrev.keys():</span><br><span class="line">        abbrev = state_abbrev[patient[<span class="string">&#x27;state&#x27;</span>]]</span><br><span class="line">        <span class="keyword">return</span> abbrev</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> patient[<span class="string">&#x27;state&#x27;</span>]</span><br><span class="line"></span><br><span class="line">patients_clean[<span class="string">&#x27;state&#x27;</span>] = patients_clean.apply(abbreviate_state, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
@@ -376,13 +376,13 @@
       <div class="popular-posts-title"><a href="/2020/11/28/P140/" rel="bookmark">关于data的笔记 - Week1</a></div>
     </li>
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
   </ul>
 
@@ -488,7 +488,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/archives/">
         
-          <span class="site-state-item-count">189</span>
+          <span class="site-state-item-count">190</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -658,7 +658,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有137.6k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有137.7k的老兔正在打瞌睡</span>
 </div>
 
         
