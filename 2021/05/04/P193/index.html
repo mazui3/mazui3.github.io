@@ -1,0 +1,940 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":false,"show_result":false,"style":null},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="接第一回与第二回与第三回.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于data的笔记 - Week4">
+<meta property="og:url" content="http://yoursite.com/2021/05/04/P193/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="接第一回与第二回与第三回.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/002.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/003.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/004.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/005.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/006.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/025.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/026.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/007.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/008.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/009.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/010.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/011.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/012.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/013.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/014.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/015.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/016.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/017.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/018.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/019.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/020.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/021.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/022.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/023.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/024.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/027.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/028.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/029.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/030.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/031.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/032.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/033.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/034.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/035.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/036.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/037.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/038.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/039.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/041.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/040.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/042.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/043.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/044.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/045.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/046.png">
+<meta property="og:image" content="http://yoursite.com/2021/05/04/P193/047.png">
+<meta property="article:published_time" content="2021-05-05T03:42:56.000Z">
+<meta property="article:modified_time" content="2021-05-06T20:00:30.783Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="python">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2021/05/04/P193/002.png">
+
+<link rel="canonical" href="http://yoursite.com/2021/05/04/P193/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于data的笔记 - Week4 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-library">
+
+    <a href="https://mazui3.net/" rel="noopener" target="_blank"><i class="fas fa-star fa-fw"></i>Library</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/05/04/P193/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_4.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于data的笔记 - Week4
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-05-04 23:42:56" itemprop="dateCreated datePublished" datetime="2021-05-04T23:42:56-04:00">2021-05-04</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-06 16:00:30" itemprop="dateModified" datetime="2021-05-06T16:00:30-04:00">2021-05-06</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>40k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>36 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p><script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script><br>接<a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/11/28/P140/">第一回</a>与<a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/11/28/P141/">第二回</a>与<a target="_blank" rel="noopener" href="https://mazui3.github.io/2021/03/14/P170/">第三回.</a><br><a id="more"></a></p>
+<p>笔记有少许重复,这次是data visualization.</p>
+<p><br><br><br><br><br></p>
+<p>就算data的mean,sd相同,每组的图形可能也十分不同.所以在查看data时,除了查看他们的属性,还有看他们的分布.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe’s quartet.</a></p>
+<p>analysis分为两种.探索与说明.</p>
+<blockquote>
+<p>Exploratory analysis is done when you are searching for insights. These visualizations don’t need to be perfect. You are using plots to find insights, but they don’t need to be aesthetically appealing. You are the consumer of these plots, and you need to be able to find the answer to your questions from these plots.</p>
+<p>Explanatory analysis is done when you are providing your results for others. These visualizations need to provide you the emphasis necessary to convey your message. They should be accurate, insightful, and visually appealing.</p>
+</blockquote>
+<p>process分为五部.</p>
+<ul>
+<li>Extract - Obtain the data from a spreadsheet, SQL, the web, etc.</li>
+<li>Clean - Here we could use exploratory visuals.</li>
+<li>Explore - Here we use exploratory visuals.</li>
+<li>Analyze - Here we might use either exploratory or explanatory visuals.</li>
+<li>Share - Here is where explanatory visuals live.</li>
+</ul>
+<p><br><br><br><br><br></p>
+<h2 id="viualization"><a href="#viualization" class="headerlink" title="viualization"></a>viualization</h2><ul>
+<li>design: <strong>colour</strong>(less colour) &amp; <strong>area</strong> &amp; <strong>shape</strong> &amp; <strong>size</strong>.</li>
+<li><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Chartjunk">chart jurk</a>: whether to display or not on the chart.注重每个ink使用比例都要高效.</li>
+<li>accurate: lie factor(misleading or not).</li>
+</ul>
+<script type="math/tex; mode=display">\text{lie factor} =\frac{\Delta \text{visual}/\text{visual}_\text{start}}{\Delta \text{data} \text{data}_\text{start}}</script><p> ​<br> ​</p>
+<blockquote>
+<p>Aside: To be sensitive to those with colorblindness, you should use color palettes that <strong>do not move from red to green</strong> without using another element to distinguish this change like shape, position, or lightness. Both of these colors appear in a yellow tint to individuals with the most common types of colorblindness. Instead, use colors on a <strong>blue to orange palette</strong>.</p>
+<p>Aside:Extra: Code<br>Some of the plots in this presentation were created using the programming language R, and a very popular library known as <strong>ggplot2</strong>. Though this is beyond the scope of this course, the code used to create these visualizations is provided below:</p>
+</blockquote>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">install.packages(<span class="string">&#x27;ggplot2&#x27;</span>)</span><br><span class="line"><span class="keyword">library</span>(ggplot2)</span><br><span class="line"></span><br><span class="line">df = read.csv(file.choose()) <span class="comment">#select your dataset</span></span><br><span class="line">df2 = head(df, <span class="number">30</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">qplot(df2$Math.SAT, df2$Verbal.SAT, xlab = <span class="string">&#x27;Math SAT Score&#x27;</span>,</span><br><span class="line">      ylab = <span class="string">&#x27;Verbal SAT Score&#x27;</span>, main = <span class="string">&#x27;Average SAT Scores By College&#x27;</span>)</span><br><span class="line"></span><br><span class="line">qplot(df2$Math.SAT, df2$Verbal.SAT, xlab = <span class="string">&#x27;Math SAT Score&#x27;</span>,</span><br><span class="line">      ylab = <span class="string">&#x27;Verbal SAT Score&#x27;</span>, main = <span class="string">&#x27;Average SAT Scores By College&#x27;</span>,</span><br><span class="line">      color = as.factor(df2$Public..1...Private..2.))</span><br><span class="line"></span><br><span class="line">qplot(df2$Math.SAT, df2$Verbal.SAT, xlab = <span class="string">&#x27;Math SAT Score&#x27;</span>,</span><br><span class="line">      ylab = <span class="string">&#x27;Verbal SAT Score&#x27;</span>, main = <span class="string">&#x27;Average SAT Scores By College&#x27;</span>,</span><br><span class="line">      shape = as.factor(df2$Public..1...Private..2.), color = df2$stud..fac..ratio)</span><br><span class="line"></span><br><span class="line">ggplot(df2, aes(x=Math.SAT, y=Verbal.SAT, group=stud..fac..ratio)) +</span><br><span class="line">  geom_point(aes(shape=stud..fac..ratio, color=as.factor(df2$Public..1...Private..2.))</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br><br><br></p>
+<h1 id="exploratory-analysis"><a href="#exploratory-analysis" class="headerlink" title="exploratory analysis"></a>exploratory analysis</h1><h2 id="chart"><a href="#chart" class="headerlink" title="chart"></a>chart</h2><h3 id="bar-charts"><a href="#bar-charts" class="headerlink" title="bar charts"></a>bar charts</h3><p>for qualitative variables.</p>
+<p>using <a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.countplot.html">Seaborn</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seaborn.countplot(* , x=<span class="literal">None</span>, y=<span class="literal">None</span>, data=<span class="literal">None</span>, order=<span class="literal">None</span>, orient=<span class="literal">None</span>, color=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Necessary imports</span></span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sb</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read the csv file, and check its top 10 rows</span></span><br><span class="line">pokemon = pd.read_csv(<span class="string">&#x27;pokemon.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># A semicolon (;) at the end of the statement will supress printing the plotting information</span></span><br><span class="line">sb.countplot(data=pokemon, x=<span class="string">&#x27;generation_id&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>更改颜色.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The `color_palette()` returns the the current / default palette as a list of RGB tuples.</span></span><br><span class="line"><span class="comment"># Each tuple consists of three digits specifying the red, green, and blue channel values to specify a color.</span></span><br><span class="line"><span class="comment"># Choose the first tuple of RGB colors</span></span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>] <span class="comment"># color_palette里有很多的颜色</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the `color` argument</span></span><br><span class="line">sb.countplot(data=pokemon, x=<span class="string">&#x27;generation_id&#x27;</span>, color=base_color);</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Return the Series having unique values</span></span><br><span class="line">x = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].unique()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return the Series having frequency count of each unique value</span></span><br><span class="line">y = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].value_counts(sort=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">plt.bar(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Labeling the axes</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;generation_id&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;count&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dsiplay the plot</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>用matplotlib.</p>
+<p>Bar chart by <a target="_blank" rel="noopener" href="https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.bar.html">matplotlib</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.bar(x, y, width=<span class="number">0.8</span>, bottom=<span class="literal">None</span>, * , align=<span class="string">&#x27;center&#x27;</span>, data=<span class="literal">None</span>)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Return the Series having unique values</span></span><br><span class="line">x = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].unique()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return the Series having frequency count of each unique value</span></span><br><span class="line">y = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].value_counts(sort=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">plt.bar(x, y)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Labeling the axes</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;generation_id&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;count&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dsiplay the plot</span></span><br><span class="line">plt.show()</span><br></pre></td></tr></table></figure>
+<p>更改顺序.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Static-ordering the bars</span></span><br><span class="line">sb.countplot(data=pokemon, x=<span class="string">&#x27;generation_id&#x27;</span>, color=base_color, order=[<span class="number">5</span>,<span class="number">1</span>,<span class="number">3</span>,<span class="number">4</span>,<span class="number">2</span>,<span class="number">7</span>,<span class="number">6</span>]); <span class="comment"># 可以手动输入index_order</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Dynamic-ordering the bars</span></span><br><span class="line"><span class="comment"># The order of the display of the bars can be computed with the following logic.</span></span><br><span class="line"><span class="comment"># Count the frequency of each unique value in the &#x27;generation_id&#x27; column, and sort it in descending order</span></span><br><span class="line"><span class="comment"># Returns a Series</span></span><br><span class="line">freq = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].value_counts() <span class="comment"># 也可以用value_counts找到顺序后带入</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the indexes of the Series</span></span><br><span class="line">gen_order = freq.index</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the bar chart in the decreasing order of the frequency of the `generation_id`</span></span><br><span class="line">sb.countplot(data=pokemon, x=<span class="string">&#x27;generation_id&#x27;</span>, color=base_color, order=gen_order);</span><br></pre></td></tr></table></figure></p>
+<p>Rotate the category labels (not axes)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot the Pokemon type on a Vertical bar chart</span></span><br><span class="line">sb.countplot(data=pokemon, x=<span class="string">&#x27;type_1&#x27;</span>, color=base_color);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use xticks to rotate the category labels (not axes) counter-clockwise</span></span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Rotate the axes clockwise<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Plot the Pokemon type on a Horizontal bar chart</span></span><br><span class="line">type_order = pokemon[<span class="string">&#x27;type_1&#x27;</span>].value_counts().index</span><br><span class="line">sb.countplot(data=pokemon, y=<span class="string">&#x27;type_1&#x27;</span>, color=base_color, order=type_order);</span><br></pre></td></tr></table></figure></p>
+<p>absolute(数值多少本身) vs relative(proportion也就是按category只显示占比) frequency.<br>seaborn countplot默认absolute.</p>
+<p>Data Wrangling Step<br>We will use the <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.melt.html">pandas.DataFrame.melt()</a> method to unpivot a DataFrame from wide to long format, optionally leaving identifiers set. The syntax is:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DataFrame.melt(id_vars, value_vars, var_name, value_name, col_level, ignore_index)</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li>id_vars - It is a tuple representing the column(s) to use as identifier variables.</li>
+<li>value_vars - It is tuple representing the column(s) to unpivot (remove, out of place).</li>
+<li>var_name - It is a name of the new column.</li>
+<li>value_name - It is a name to use for the ‘value’ of the columns that are unpivoted.</li>
+</ul>
+<p>Data wrangling to reshape the pokemon dataframe,加入category.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"> pkmn_types = pokemon.melt(id_vars=[<span class="string">&#x27;id&#x27;</span>, <span class="string">&#x27;species&#x27;</span>],</span><br><span class="line">                          value_vars=[<span class="string">&#x27;type_1&#x27;</span>, <span class="string">&#x27;type_2&#x27;</span>],</span><br><span class="line">                          var_name=<span class="string">&#x27;type_level&#x27;</span>,</span><br><span class="line">                          value_name=<span class="string">&#x27;type&#x27;</span>)</span><br><span class="line">pkmn_types.head(<span class="number">10</span>)</span><br><span class="line"><span class="comment">#pkmn_types.shape</span></span><br></pre></td></tr></table></figure></p>
+<p>Find the frequency of unique values in the type column,也就是我们之后用于做relative frequency的数据.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Count the frequency of unique values in the `type` column of pkmn_types dataframe.</span></span><br><span class="line"><span class="comment"># By default, returns the decreasing order of the frequency.</span></span><br><span class="line">type_counts = pkmn_types[<span class="string">&#x27;type&#x27;</span>].value_counts()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the unique values of the `type` column, in the decreasing order of the frequency.</span></span><br><span class="line">type_order = type_counts.index</span><br></pre></td></tr></table></figure>
+<p>Plot the horizontal bar charts</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">sb.countplot(data=pkmn_types, y=<span class="string">&#x27;type&#x27;</span>, color=base_color, order=type_order);</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/002.png" class="">
+<p>Plot a bar chart having the proportions, instead of the actual count, on one of the axes.<br>Find the maximum proportion of bar</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Returns the sum of all not-null values in `type` column</span></span><br><span class="line">n_pokemon = pkmn_types[<span class="string">&#x27;type&#x27;</span>].value_counts().sum()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return the highest frequency in the `type` column</span></span><br><span class="line">max_type_count = type_counts[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Return the maximum proportion, or in other words,</span></span><br><span class="line"><span class="comment"># compute the length of the longest bar in terms of the proportion</span></span><br><span class="line">max_prop = max_type_count / n_pokemon</span><br><span class="line">print(max_prop)</span><br></pre></td></tr></table></figure>
+<p>Create an array of evenly spaced proportioned values</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use numpy.arange() function to produce a set of evenly spaced proportioned values</span></span><br><span class="line"><span class="comment"># between 0 and max_prop, with a step size 2\%</span></span><br><span class="line">tick_props = np.arange(<span class="number">0</span>, max_prop, <span class="number">0.02</span>)</span><br></pre></td></tr></table></figure>
+<p>We need x-tick labels that must be evenly spaced on the x-axis. For this purpose, we must have a list of labels ready with us, before using it with plt.xticks() function.</p>
+<p>Create a list of String values that can be used as tick labels.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use a list comprehension to create tick_names that we will apply to the tick labels.</span></span><br><span class="line"><span class="comment"># Pick each element `v` from the `tick_props`, and convert it into a formatted string.</span></span><br><span class="line"><span class="comment"># `&#123;:0.2f&#125;` denotes that before formatting, we 2 digits of precision and `f` is used to represent floating point number.</span></span><br><span class="line"><span class="comment"># Refer [here](https://docs.python.org/2/library/string.html#format-string-syntax) for more details</span></span><br><span class="line">tick_names = [<span class="string">&#x27;&#123;:0.2f&#125;&#x27;</span>.format(v) <span class="keyword">for</span> v <span class="keyword">in</span> tick_props]</span><br><span class="line">tick_names</span><br></pre></td></tr></table></figure></p>
+<p>The xticks and yticks functions aren’t only about rotating the tick labels. You can also get and set their locations and labels as well. The first argument takes the tick locations: in this case, the tick proportions multiplied back to be on the scale of counts. The second argument takes the tick names: in this case, the tick proportions formatted as strings to two decimal places.</p>
+<p>I’ve also added a ylabel call to make it clear that we’re no longer working with straight counts.</p>
+<p>Plot the bar chart, with new x-tick labels<br>(计算每个数值按proportion所需要的长度,并plot)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sb.countplot(data=pkmn_types, y=<span class="string">&#x27;type&#x27;</span>, color=base_color, order=type_order);</span><br><span class="line"><span class="comment"># Change the tick locations and labels</span></span><br><span class="line">plt.xticks(tick_props * n_pokemon, tick_names)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;proportion&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/003.png" class="">
+<hr>
+<p>Print the text (proportion) on the bars of a horizontal plot.加上text标注.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Considering the same chart from the Example 1 above, print the text (proportion) on the bars</span></span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">sb.countplot(data=pkmn_types, y=<span class="string">&#x27;type&#x27;</span>, color=base_color, order=type_order);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Logic to print the proportion text on the bars</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (type_counts.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="comment"># Remember, type_counts contains the frequency of unique values in the `type` column in decreasing order.</span></span><br><span class="line">    count = type_counts[i]</span><br><span class="line">    <span class="comment"># Convert count into a percentage, and then into string</span></span><br><span class="line">    pct_string = <span class="string">&#x27;&#123;:0.1f&#125;&#x27;</span>.format(<span class="number">100</span>*count/n_pokemon)</span><br><span class="line">    <span class="comment"># Print the string value on the bar.</span></span><br><span class="line">    <span class="comment"># Read more about the arguments of text() function [here](https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.text.html)</span></span><br><span class="line">    plt.text(count+<span class="number">1</span>, i, pct_string, va=<span class="string">&#x27;center&#x27;</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/004.png" class="">
+<p>Print the text (proportion) below the bars of a Vertical plot.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .get_text() method to obtain the category name.</span></span><br><span class="line"><span class="comment"># text function to print each percentage, with the x-position, y-position, and string as the three main parameters to the function.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Considering the same chart from the Example 1 above, print the text (proportion) BELOW the bars</span></span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">sb.countplot(data=pkmn_types, x=<span class="string">&#x27;type&#x27;</span>, color=base_color, order=type_order);</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Recalculating the type_counts just to have clarity.</span></span><br><span class="line">type_counts = pkmn_types[<span class="string">&#x27;type&#x27;</span>].value_counts()</span><br><span class="line"></span><br><span class="line"><span class="comment"># get the current tick locations and labels</span></span><br><span class="line">locs, labels = plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># loop through each pair of locations and labels</span></span><br><span class="line"><span class="keyword">for</span> loc, label <span class="keyword">in</span> zip(locs, labels):</span><br><span class="line"></span><br><span class="line">    <span class="comment"># get the text property for the label to get the correct count</span></span><br><span class="line">    count = type_counts[label.get_text()]</span><br><span class="line">    pct_string = <span class="string">&#x27;&#123;:0.1f&#125;%&#x27;</span>.format(<span class="number">100</span>*count/n_pokemon)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># print the annotation just below the top of the bar</span></span><br><span class="line">    plt.text(loc, count+<span class="number">2</span>, pct_string, ha = <span class="string">&#x27;center&#x27;</span>, color = <span class="string">&#x27;black&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/005.png" class=""></p>
+<p>用matplotlib的场合.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> matplotlib <span class="keyword">import</span> rcParams</span><br><span class="line"><span class="comment"># Specify the figure size in inches, for both X, and Y axes</span></span><br><span class="line">rcParams[<span class="string">&#x27;figure.figsize&#x27;</span>] = <span class="number">12</span>,<span class="number">4</span></span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/006.png" class="">
+<hr>
+<p>Adapted Bar Charts<br>using <a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.barplot.html">barplot</a> function, plot a numeric variable against a categorical variable by adapting a bar chart so that its bar heights indicate the mean of the numeric variable.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">sb.barplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Avg. Combined Fuel Efficiency (mpg)&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try these additional arguments</span></span><br><span class="line">sb.barplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color, errwidth=<span class="number">0</span>)</span><br><span class="line">sb.barplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color, ci=<span class="string">&#x27;sd&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>using <a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.pointplot.html">pointplot</a>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sb.pointplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color, ci=<span class="string">&#x27;sd&#x27;</span>, linestyles=<span class="string">&quot;&quot;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Avg. Combined Fuel Efficiency (mpg)&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/025.png" class="">
+<p>last example.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize = [<span class="number">20</span>, <span class="number">5</span>])</span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># left plot: violin plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line">sb.violinplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, inner = <span class="literal">None</span>,</span><br><span class="line">              color = base_color)</span><br><span class="line">plt.xticks(rotation = <span class="number">45</span>); <span class="comment"># include label rotation due to small subplot size</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># center plot: box plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">sb.boxplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color = base_color)</span><br><span class="line">plt.xticks(rotation = <span class="number">45</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># right plot: adapted bar chart</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">sb.barplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color = base_color)</span><br><span class="line">plt.xticks(rotation = <span class="number">45</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/026.png" class=""></p>
+<p><br><br><br><br><br></p>
+<p>Aside:在第三回的时候也提过的check null.<a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isna.html">isna</a>&amp;<a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.isnull.html#pandas.DataFrame.isnull">isnull</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sales_data.isnull()</span><br><span class="line">sales_data.isna().sum()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Let&#x27;s drop the column that do not have any NaN/None values</span></span><br><span class="line">na_counts = sales_data.drop([<span class="string">&#x27;Date&#x27;</span>, <span class="string">&#x27;Temperature&#x27;</span>, <span class="string">&#x27;Fuel_Price&#x27;</span>], axis=<span class="number">1</span>).isna().sum()</span><br></pre></td></tr></table></figure>
+<p>Plot the bar chart from the NaN tabular data, and also print values on each bar<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The first argument to the function below contains the x-values (column names), the second argument the y-values (our counts).</span></span><br><span class="line"><span class="comment"># Refer to the syntax and more example here - https://seaborn.pydata.org/generated/seaborn.barplot.html</span></span><br><span class="line">sb.barplot(na_counts.index.values, na_counts)</span><br><span class="line"></span><br><span class="line"><span class="comment"># get the current tick locations and labels</span></span><br><span class="line">plt.xticks(rotation=<span class="number">90</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Logic to print value on each bar</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range (na_counts.shape[<span class="number">0</span>]):</span><br><span class="line">    count = na_counts[i]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Refer here for details of the text() - https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.text.html</span></span><br><span class="line">    plt.text(i, count+<span class="number">300</span>, count, ha = <span class="string">&#x27;center&#x27;</span>, va=<span class="string">&#x27;top&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/007.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="pie-charts"><a href="#pie-charts" class="headerlink" title="pie charts"></a>pie charts</h3><p> A pie chart is a common univariate plot type that is used to depict <strong>relative frequencies</strong> for levels of a <strong>categorical</strong> variable. A pie chart is preferably used when the <strong>number of categories is less</strong>, and you’d like to see the proportion of each category.</p>
+<p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.pie.html">matplotlib</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">matplotlib.pyplot.pie(x_data, labels, colors, startangle, counterclock, wedgeprops)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use the same pokemon dataset</span></span><br><span class="line">sorted_counts = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].value_counts()</span><br><span class="line"></span><br><span class="line">plt.pie(sorted_counts, labels = sorted_counts.index, startangle = <span class="number">90</span>, counterclock = <span class="literal">False</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># We have the used option `Square`.</span></span><br><span class="line"><span class="comment"># Though, you can use either one specified here - https://matplotlib.org/api/_as_gen/matplotlib.pyplot.axis.html?highlight=pyplot%20axis#matplotlib-pyplot-axis</span></span><br><span class="line">plt.axis(<span class="string">&#x27;square&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>donut charts<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">sorted_counts = pokemon[<span class="string">&#x27;generation_id&#x27;</span>].value_counts()</span><br><span class="line"></span><br><span class="line">plt.pie(sorted_counts, labels = sorted_counts.index, startangle = <span class="number">90</span>,</span><br><span class="line">        counterclock = <span class="literal">False</span>, wedgeprops = &#123;<span class="string">&#x27;width&#x27;</span> : <span class="number">0.4</span>&#125;);</span><br><span class="line">plt.axis(<span class="string">&#x27;square&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
+<h3 id="histograms"><a href="#histograms" class="headerlink" title="histograms"></a>histograms</h3><p>for <strong>quantitative</strong> variables.<br>plot the distribution of a <strong>numeric</strong> variable.</p>
+<p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist.html">matplotlib</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line"><span class="keyword">import</span> seaborn <span class="keyword">as</span> sb</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">pokemon = pd.read_csv(<span class="string">&#x27;pokemon.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># We have intentionally not put a semicolon at the end of the statement below to see the bar-width</span></span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create bins with step-size 5</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;speed&#x27;</span>].max()+<span class="number">5</span>, <span class="number">5</span>)</span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = bins)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/008.png" class=""></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.distplot.html">seaborn</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">seaborn.distplot(Series, bins, kde, hist_kws)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sb.distplot(pokemon[<span class="string">&#x27;speed&#x27;</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the argument `kde=False` to remove the estimate-line representing the Gaussian kernel density estimate.</span></span><br><span class="line">sb.distplot(pokemon[<span class="string">&#x27;speed&#x27;</span>], kde=<span class="literal">False</span>)</span><br><span class="line"></span><br><span class="line">bin_edges = np.arange(<span class="number">0</span>, df[<span class="string">&#x27;num_var&#x27;</span>].max()+<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line">sb.distplot(df[<span class="string">&#x27;num_var&#x27;</span>], bins = bin_edges, kde = <span class="literal">False</span>,</span><br><span class="line">            hist_kws = &#123;<span class="string">&#x27;alpha&#x27;</span> : <span class="number">1</span>&#125;)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Plot two histograms side-by-side</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Resize the chart, and have two plots side-by-side</span></span><br><span class="line"><span class="comment"># Set a larger figure size for subplots</span></span><br><span class="line">plt.figure(figsize = [<span class="number">20</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># histogram on left, example of too-large bin size</span></span><br><span class="line"><span class="comment"># 1 row, 2 cols, subplot 1</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;speed&#x27;</span>].max()+<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># histogram on right, example of too-small bin size</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>) <span class="comment"># 1 row, 2 cols, subplot 2</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;speed&#x27;</span>].max()+<span class="number">1</span>/<span class="number">4</span>, <span class="number">1</span>/<span class="number">4</span>)</span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = bins);</span><br></pre></td></tr></table></figure>
+<p><br><br><br><br><br></p>
+<h2 id="helper"><a href="#helper" class="headerlink" title="helper"></a>helper</h2><h3 id="subplots"><a href="#subplots" class="headerlink" title="subplots"></a>subplots</h3><p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.subplot.html">subplots</a>.<br><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html">figures</a>.用于先创造一个canvas(figure),再在上添加axes与图表.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Create a new figure</span></span><br><span class="line">fig = plt.figure()</span><br><span class="line"></span><br><span class="line"><span class="comment"># The argument of add_axes represents the dimensions [left, bottom, width, height] of the new axes.</span></span><br><span class="line"><span class="comment"># All quantities are in fractions of figure width and height.</span></span><br><span class="line">ax = fig.add_axes([<span class="number">.125</span>, <span class="number">.125</span>, <span class="number">.775</span>, <span class="number">.755</span>])</span><br><span class="line">ax.hist(data=pokemon, x=<span class="string">&#x27;speed&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">fig = plt.figure()</span><br><span class="line">ax = fig.add_axes([<span class="number">.125</span>, <span class="number">.125</span>, <span class="number">.775</span>, <span class="number">.755</span>])</span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">sb.countplot(data = pokemon, x = <span class="string">&#x27;generation_id&#x27;</span>, color = base_color, ax = ax)</span><br></pre></td></tr></table></figure>
+<p>一个figure上两张图表.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Resize the chart, and have two plots side-by-side</span></span><br><span class="line"><span class="comment"># set a larger figure size for subplots</span></span><br><span class="line">plt.figure(figsize = [<span class="number">20</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># histogram on left, example of too-large bin size</span></span><br><span class="line"><span class="comment"># 1 row, 2 cols, subplot 1</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;speed&#x27;</span>].max()+<span class="number">4</span>, <span class="number">4</span>)</span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># histogram on right, example of too-small bin size</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>) <span class="comment"># 1 row, 2 cols, subplot 2</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;speed&#x27;</span>].max()+<span class="number">1</span>/<span class="number">4</span>, <span class="number">1</span>/<span class="number">4</span>)</span><br><span class="line">plt.hist(data = pokemon, x = <span class="string">&#x27;speed&#x27;</span>, bins = bins);</span><br></pre></td></tr></table></figure></p>
+<p>Demonstrate pyplot.sca() and pyplot.text() to generate a grid of subplots<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">fig, axes = plt.subplots(<span class="number">3</span>, <span class="number">4</span>) <span class="comment"># grid of 3x4 subplots</span></span><br><span class="line">axes = axes.flatten() <span class="comment"># reshape from 3x4 array into 12-element vector</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(<span class="number">12</span>):</span><br><span class="line">    plt.sca(axes[i]) <span class="comment"># set the current Axes</span></span><br><span class="line">    plt.text(<span class="number">0.5</span>, <span class="number">0.5</span>, i+<span class="number">1</span>) <span class="comment"># print conventional subplot index number to middle of Axes</span></span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/009.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="limit"><a href="#limit" class="headerlink" title="limit"></a>limit</h3><p>zoom in某部分图表(去除outlier的影响).用axis limit.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get the ticks for bins between [0-15], at an interval of 0.5</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;height&#x27;</span>].max()+<span class="number">0.5</span>, <span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the histogram for the height column</span></span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;height&#x27;</span>, bins=bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the ticks for bins between [0-15], at an interval of 0.5</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;height&#x27;</span>].max()+<span class="number">0.2</span>, <span class="number">0.2</span>)</span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;height&#x27;</span>, bins=bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Set the upper and lower bounds of the bins that are displayed in the plot</span></span><br><span class="line"><span class="comment"># Refer here for more information - https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.xlim.html</span></span><br><span class="line"><span class="comment"># The argument represent a tuple of the new x-axis limits.</span></span><br><span class="line">plt.xlim((<span class="number">0</span>,<span class="number">6</span>));</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
+<h3 id="transformation"><a href="#transformation" class="headerlink" title="transformation"></a>transformation</h3><p>Scale the x-axis to log-type<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize = [<span class="number">20</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># HISTOGRAM ON LEFT: full data without scaling</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;weight&#x27;</span>);</span><br><span class="line"><span class="comment"># Display a label on the x-axis</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;Initial plot with original data&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># HISTOGRAM ON RIGHT</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Get the ticks for bins between [0 - maximum weight]</span></span><br><span class="line">bins = np.arange(<span class="number">0</span>, pokemon[<span class="string">&#x27;weight&#x27;</span>].max()+<span class="number">40</span>, <span class="number">40</span>)</span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;weight&#x27;</span>, bins=bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># The argument in the xscale() represents the axis scale type to apply.</span></span><br><span class="line"><span class="comment"># The possible values are: &#123;&quot;linear&quot;, &quot;log&quot;, &quot;symlog&quot;, &quot;logit&quot;, ...&#125;</span></span><br><span class="line"><span class="comment"># Refer - https://matplotlib.org/3.1.1/api/_as_gen/matplotlib.pyplot.xscale.html</span></span><br><span class="line">plt.xscale(<span class="string">&#x27;log&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;The x-axis limits NOT are changed. They are only scaled to log-type&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/010.png" class=""></p>
+<blockquote>
+<p>Even though the data is on a log scale, the bins are still linearly spaced. This means that they change size from wide on the left to thin on the right, as the values increase multiplicative. Matplotlib’s xscale function includes a few built-in transformations: we have used the ‘log’ scale here.<br>Secondly, the default label (x-axis ticks) settings are still somewhat tricky to interpret and are sparse as well.</p>
+</blockquote>
+<hr>
+<p>Scale the x-axis to log-type, and change the axis limit.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Transform the describe() to a scale of log10</span></span><br><span class="line"><span class="comment"># Documentation: [numpy `log10`](https://docs.scipy.org/doc/numpy/reference/generated/numpy.log10.html)</span></span><br><span class="line">np.log10(pokemon[<span class="string">&#x27;weight&#x27;</span>].describe())</span><br><span class="line"></span><br><span class="line"><span class="comment"># Axis transformation</span></span><br><span class="line"><span class="comment"># Bin size</span></span><br><span class="line">bins = <span class="number">10</span> ** np.arange(<span class="number">-1</span>, <span class="number">3</span>+<span class="number">0.1</span>, <span class="number">0.1</span>)</span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;weight&#x27;</span>, bins=bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># The argument in the xscale() represents the axis scale type to apply.</span></span><br><span class="line"><span class="comment"># The possible values are: &#123;&quot;linear&quot;, &quot;log&quot;, &quot;symlog&quot;, &quot;logit&quot;, ...&#125;</span></span><br><span class="line">plt.xscale(<span class="string">&#x27;log&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply x-axis label</span></span><br><span class="line"><span class="comment"># Documentatin: [matplotlib `xlabel`](https://matplotlib.org/api/_as_gen/matplotlib.pyplot.xlabel.html))</span></span><br><span class="line">plt.xlabel(<span class="string">&#x27;x-axis limits are changed, and scaled to log-type&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/011.png" class=""></p>
+<hr>
+<p>Scale the x-axis to log-type, change the axis limits, and increase the x-ticks<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment"># Get the ticks for bins between [0 - maximum weight]</span></span><br><span class="line">bins = <span class="number">10</span> ** np.arange(<span class="number">-1</span>, <span class="number">3</span>+<span class="number">0.1</span>, <span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Generate the x-ticks you want to apply</span></span><br><span class="line">ticks = [<span class="number">0.1</span>, <span class="number">0.3</span>, <span class="number">1</span>, <span class="number">3</span>, <span class="number">10</span>, <span class="number">30</span>, <span class="number">100</span>, <span class="number">300</span>, <span class="number">1000</span>]</span><br><span class="line"><span class="comment"># Convert ticks into string values, to be displaye dlong the x-axis</span></span><br><span class="line">labels = [<span class="string">&#x27;&#123;&#125;&#x27;</span>.format(v) <span class="keyword">for</span> v <span class="keyword">in</span> ticks]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the histogram</span></span><br><span class="line">plt.hist(data=pokemon, x=<span class="string">&#x27;weight&#x27;</span>, bins=bins);</span><br><span class="line"></span><br><span class="line"><span class="comment"># The argument in the xscale() represents the axis scale type to apply.</span></span><br><span class="line"><span class="comment"># The possible values are: &#123;&quot;linear&quot;, &quot;log&quot;, &quot;symlog&quot;, &quot;logit&quot;, ...&#125;</span></span><br><span class="line">plt.xscale(<span class="string">&#x27;log&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply x-ticks</span></span><br><span class="line">plt.xticks(ticks, labels);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/012.png" class=""></p>
+<hr>
+<p>Custom scaling the given data Series, instead of using the built-in log scale<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">sqrt_trans</span>(<span class="params">x, inverse = False</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; transformation helper function &quot;&quot;&quot;</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> inverse:</span><br><span class="line">        <span class="keyword">return</span> np.sqrt(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> x ** <span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Bin resizing, to transform the x-axis    </span></span><br><span class="line">bin_edges = np.arange(<span class="number">0</span>, sqrt_trans(pokemon[<span class="string">&#x27;weight&#x27;</span>].max())+<span class="number">1</span>, <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the scaled data</span></span><br><span class="line">plt.hist(pokemon[<span class="string">&#x27;weight&#x27;</span>].apply(sqrt_trans), bins = bin_edges)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Identify the tick-locations</span></span><br><span class="line">tick_locs = np.arange(<span class="number">0</span>, sqrt_trans(pokemon[<span class="string">&#x27;weight&#x27;</span>].max())+<span class="number">10</span>, <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Apply x-ticks</span></span><br><span class="line">plt.xticks(tick_locs, sqrt_trans(tick_locs, inverse = <span class="literal">True</span>).astype(int));</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/013.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h2 id="bivariate-chart"><a href="#bivariate-chart" class="headerlink" title="bivariate chart"></a>bivariate chart</h2><h3 id="scattorplot"><a href="#scattorplot" class="headerlink" title="scattorplot"></a>scattorplot</h3><p>scattorplot: quatitative vs quatitative</p>
+<p>Scatter plot showing negative correlation between two variables<br><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.scatter.html">matplotlib</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># TO DO: Necessary import</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Read the CSV file</span></span><br><span class="line">fuel_econ = pd.read_csv(<span class="string">&#x27;fuel_econ.csv&#x27;</span>)</span><br><span class="line">fuel_econ.head(<span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scatter plot</span></span><br><span class="line">plt.scatter(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>);</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<p><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.regplot.html">seaborn</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">sb.regplot(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>);</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<p>Plot the regression line on the transformed data<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">log_trans</span>(<span class="params">x, inverse = False</span>):</span></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> inverse:</span><br><span class="line">        <span class="keyword">return</span> np.log10(x)</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> np.power(<span class="number">10</span>, x)</span><br><span class="line"></span><br><span class="line">sb.regplot(fuel_econ[<span class="string">&#x27;displ&#x27;</span>], fuel_econ[<span class="string">&#x27;comb&#x27;</span>].apply(log_trans))</span><br><span class="line">tick_locs = [<span class="number">10</span>, <span class="number">20</span>, <span class="number">50</span>, <span class="number">100</span>]</span><br><span class="line">plt.yticks(log_trans(tick_locs), tick_locs);</span><br></pre></td></tr></table></figure></p>
+<p>当数字时discrete时,用jitter错开.<br>Jitter - Randomly add/subtract a small value to each data point<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">##########################################</span></span><br><span class="line"><span class="comment"># Resize figure to accommodate two plots</span></span><br><span class="line">plt.figure(figsize = [<span class="number">20</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># PLOT ON LEFT - SIMPLE SCATTER</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">sb.regplot(data = fuel_econ, x = <span class="string">&#x27;year&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, truncate=<span class="literal">False</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">##########################################</span></span><br><span class="line"><span class="comment"># PLOT ON RIGHT - SCATTER PLOT WITH JITTER</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># In the sb.regplot() function below, the `truncate` argument accepts a boolean.</span></span><br><span class="line"><span class="comment"># If truncate=True, the regression line is bounded by the data limits.</span></span><br><span class="line"><span class="comment"># Else if truncate=False, it extends to the x axis limits.</span></span><br><span class="line"><span class="comment"># The x_jitter will make each x value will be adjusted randomly by +/-0.3</span></span><br><span class="line">sb.regplot(data = fuel_econ, x = <span class="string">&#x27;year&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, truncate=<span class="literal">False</span>, x_jitter=<span class="number">0.3</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/014.png" class=""></p>
+<p>当很多的数字叠在一起时,用Transparency看浓度了解distribution.<br>Plot with both Jitter and Transparency<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># The scatter_kws helps specifying the opaqueness of the data points.</span></span><br><span class="line"><span class="comment"># The alpha take a value between [0-1], where 0 represents transparent, and 1 is opaque.</span></span><br><span class="line">sb.regplot(data = fuel_econ, x = <span class="string">&#x27;year&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, truncate=<span class="literal">False</span>, x_jitter=<span class="number">0.3</span>, scatter_kws=&#123;<span class="string">&#x27;alpha&#x27;</span>:<span class="number">1</span>/<span class="number">20</span>&#125;);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Alternative way to plot with the transparency.</span></span><br><span class="line"><span class="comment"># The scatter() function below does NOT have any argument to specify the Jitter</span></span><br><span class="line">plt.scatter(data = fuel_econ, x = <span class="string">&#x27;year&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, alpha=<span class="number">1</span>/<span class="number">20</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/015.png" class=""></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.hist2d.html">heatmap</a>.histogram的2D版本.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize = [<span class="number">18</span>, <span class="number">6</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># PLOT ON LEFT</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">sb.regplot(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, x_jitter=<span class="number">0.04</span>, scatter_kws=&#123;<span class="string">&#x27;alpha&#x27;</span>:<span class="number">1</span>/<span class="number">10</span>&#125;, fit_reg=<span class="literal">False</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># PLOT ON RIGHT</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">plt.hist2d(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>)</span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/016.png" class=""></p>
+<p>Set a minimum bound on counts and a reverse color map<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use cmin to set a minimum bound of counts</span></span><br><span class="line"><span class="comment"># Use cmap to reverse the color map.</span></span><br><span class="line">plt.hist2d(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, cmin=<span class="number">0.5</span>, cmap=<span class="string">&#x27;viridis_r&#x27;</span>)</span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/017.png" class=""></p>
+<p>Heat plot - Specify bin edges<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Specify bin edges</span></span><br><span class="line">bins_x = np.arange(<span class="number">0.6</span>, <span class="number">7</span>+<span class="number">0.3</span>, <span class="number">0.3</span>)</span><br><span class="line">bins_y = np.arange(<span class="number">12</span>, <span class="number">58</span>+<span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line">plt.hist2d(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, cmin=<span class="number">0.5</span>, cmap=<span class="string">&#x27;viridis_r&#x27;</span>, bins = [bins_x, bins_y])</span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Notice the areas of high frequency in the middle of the negative trend in the plot.</span></span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/018.png" class=""></p>
+<p>Add text annotation on each cell using pyplot.text() function<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Specify bin edges</span></span><br><span class="line">bins_x = np.arange(<span class="number">0.6</span>, <span class="number">7</span>+<span class="number">0.7</span>, <span class="number">0.7</span>)</span><br><span class="line">bins_y = np.arange(<span class="number">12</span>, <span class="number">58</span>+<span class="number">7</span>, <span class="number">7</span>)</span><br><span class="line"><span class="comment"># Use cmin to set a minimum bound of counts</span></span><br><span class="line"><span class="comment"># Use cmap to reverse the color map.</span></span><br><span class="line">h2d = plt.hist2d(data = fuel_econ, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, cmin=<span class="number">0.5</span>, cmap=<span class="string">&#x27;viridis_r&#x27;</span>, bins = [bins_x, bins_y])</span><br><span class="line"></span><br><span class="line">plt.colorbar()</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (1)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Select the bi-dimensional histogram, a 2D array of samples x and y.</span></span><br><span class="line"><span class="comment"># Values in x are histogrammed along the first dimension and</span></span><br><span class="line"><span class="comment"># values in y are histogrammed along the second dimension.</span></span><br><span class="line">counts = h2d[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add text annotation on each cell</span></span><br><span class="line"><span class="comment"># Loop through the cell counts and add text annotations for each</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(counts.shape[<span class="number">0</span>]):</span><br><span class="line">    <span class="keyword">for</span> j <span class="keyword">in</span> range(counts.shape[<span class="number">1</span>]):</span><br><span class="line">        c = counts[i,j]</span><br><span class="line">        <span class="keyword">if</span> c &gt;= <span class="number">100</span>: <span class="comment"># increase visibility on darker cells</span></span><br><span class="line">            plt.text(bins_x[i]+<span class="number">0.5</span>, bins_y[j]+<span class="number">0.5</span>, int(c),</span><br><span class="line">                     ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;center&#x27;</span>, color = <span class="string">&#x27;white&#x27;</span>)</span><br><span class="line">        <span class="keyword">elif</span> c &gt; <span class="number">0</span>:</span><br><span class="line">            plt.text(bins_x[i]+<span class="number">0.5</span>, bins_y[j]+<span class="number">0.5</span>, int(c),</span><br><span class="line">                     ha = <span class="string">&#x27;center&#x27;</span>, va = <span class="string">&#x27;center&#x27;</span>, color = <span class="string">&#x27;black&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/019.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h2 id="violinplot"><a href="#violinplot" class="headerlink" title="violinplot"></a>violinplot</h2><p>violinplot: quatitative vs qualitative<br><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.violinplot.html">seaborn</a>.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Types of sedan cars</span></span><br><span class="line">sedan_classes = [<span class="string">&#x27;Minicompact Cars&#x27;</span>, <span class="string">&#x27;Subcompact Cars&#x27;</span>, <span class="string">&#x27;Compact Cars&#x27;</span>, <span class="string">&#x27;Midsize Cars&#x27;</span>, <span class="string">&#x27;Large Cars&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns the types for sedan_classes with the categories and orderedness</span></span><br><span class="line"><span class="comment"># Refer - https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.api.types.CategoricalDtype.html</span></span><br><span class="line">vclasses = pd.api.types.CategoricalDtype(ordered=<span class="literal">True</span>, categories=sedan_classes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use pandas.astype() to convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line">fuel_econ[<span class="string">&#x27;VClass&#x27;</span>] = fuel_econ[<span class="string">&#x27;VClass&#x27;</span>].astype(vclasses);</span><br><span class="line"></span><br><span class="line">sb.violinplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/020.png" class="">
+<p>Violin plot without datapoints in the violin interior<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># The &quot;inner&quot; argument represents the datapoints in the violin interior.</span></span><br><span class="line"><span class="comment"># It can take any value from &#123;“box”, “quartile”, “point”, “stick”, None&#125;</span></span><br><span class="line"><span class="comment"># If &quot;box&quot;, it draws a miniature boxplot.</span></span><br><span class="line">sb.violinplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color, innner=<span class="literal">None</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/021.png" class=""></p>
+<p>类似的还有<a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.boxplot.html">boxplot</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Step 1. Import packages</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 2. Load data</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 3. Convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line"><span class="comment"># Types of sedan cars</span></span><br><span class="line">sedan_classes = [<span class="string">&#x27;Minicompact Cars&#x27;</span>, <span class="string">&#x27;Subcompact Cars&#x27;</span>, <span class="string">&#x27;Compact Cars&#x27;</span>, <span class="string">&#x27;Midsize Cars&#x27;</span>, <span class="string">&#x27;Large Cars&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns the types for sedan_classes with the categories and orderedness</span></span><br><span class="line"><span class="comment"># Refer - https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.api.types.CategoricalDtype.html</span></span><br><span class="line">vclasses = pd.api.types.CategoricalDtype(ordered=<span class="literal">True</span>, categories=sedan_classes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use pandas.astype() to convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line">fuel_econ[<span class="string">&#x27;VClass&#x27;</span>] = fuel_econ[<span class="string">&#x27;VClass&#x27;</span>].astype(vclasses);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Step 4.  TWO PLOTS IN ONE FIGURE</span></span><br><span class="line">plt.figure(figsize = [<span class="number">16</span>, <span class="number">5</span>])</span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># LEFT plot: violin plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line"><span class="comment">#Let&#x27;s return the axes object</span></span><br><span class="line">ax1 = sb.violinplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color, innner=<span class="string">&#x27;quartile&#x27;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment"># RIGHT plot: box plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line">sb.boxplot(data=fuel_econ, x=<span class="string">&#x27;VClass&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>, color=base_color)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line">plt.ylim(ax1.get_ylim()) <span class="comment"># set y-axis limits to be same as left plot</span></span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/022.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="clusterbar"><a href="#clusterbar" class="headerlink" title="clusterbar"></a>clusterbar</h3><p>clusterbar: qualitative vs qualitative</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Types of sedan cars</span></span><br><span class="line">sedan_classes = [<span class="string">&#x27;Minicompact Cars&#x27;</span>, <span class="string">&#x27;Subcompact Cars&#x27;</span>, <span class="string">&#x27;Compact Cars&#x27;</span>, <span class="string">&#x27;Midsize Cars&#x27;</span>, <span class="string">&#x27;Large Cars&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Returns the types for sedan_classes with the categories and orderedness</span></span><br><span class="line"><span class="comment"># Refer - https://pandas.pydata.org/pandas-docs/version/0.23.4/generated/pandas.api.types.CategoricalDtype.html</span></span><br><span class="line">vclasses = pd.api.types.CategoricalDtype(ordered=<span class="literal">True</span>, categories=sedan_classes)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use pandas.astype() to convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line">fuel_econ[<span class="string">&#x27;VClass&#x27;</span>] = fuel_econ[<span class="string">&#x27;VClass&#x27;</span>].astype(vclasses);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add a new column for transmission type - Automatic or Manual</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The existing `trans` column has multiple sub-types of Automatic and Manual.</span></span><br><span class="line"><span class="comment"># But, we need plain two types, either Automatic or Manual. Therefore, add a new column.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The Series.apply() method invokes the `lambda` function on each value of `trans` column.</span></span><br><span class="line"><span class="comment"># In python, a `lambda` function is an anonymous function that can have only one expression.</span></span><br><span class="line">fuel_econ[<span class="string">&#x27;trans_type&#x27;</span>] = fuel_econ[<span class="string">&#x27;trans&#x27;</span>].apply(<span class="keyword">lambda</span> x:x.split()[<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">sb.countplot(data = fuel_econ, x = <span class="string">&#x27;VClass&#x27;</span>, hue = <span class="string">&#x27;trans_type&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/023.png" class="">
+<p>或者用heatmap.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Use group_by() and size() to get the number of cars and each combination of the two variable levels as a pandas Series</span></span><br><span class="line">ct_counts = fuel_econ.groupby([<span class="string">&#x27;VClass&#x27;</span>, <span class="string">&#x27;trans_type&#x27;</span>]).size()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use Series.reset_index() to convert a series into a dataframe object</span></span><br><span class="line">ct_counts = ct_counts.reset_index(name=<span class="string">&#x27;count&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use DataFrame.pivot() to rearrange the data, to have vehicle class on rows</span></span><br><span class="line">ct_counts = ct_counts.pivot(index = <span class="string">&#x27;VClass&#x27;</span>, columns = <span class="string">&#x27;trans_type&#x27;</span>, values = <span class="string">&#x27;count&#x27;</span>)</span><br><span class="line"></span><br><span class="line">sb.heatmap(ct_counts)</span><br><span class="line"></span><br><span class="line"><span class="comment">## 或者</span></span><br><span class="line">sb.heatmap(ct_counts, annot = <span class="literal">True</span>, fmt = <span class="string">&#x27;d&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/024.png" class=""></p>
+<p>clusterbar类似bar chart的faceting.<br>faceting, the data is divided into disjoint subsets, most often by different levels of a categorical variable.<br>用map function.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Preparatory Step</span></span><br><span class="line">fuel_econ = pd.read_csv(<span class="string">&#x27;fuel_econ.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Convert the &quot;VClass&quot; column from a plain object type into an ordered categorical type</span></span><br><span class="line">sedan_classes = [<span class="string">&#x27;Minicompact Cars&#x27;</span>, <span class="string">&#x27;Subcompact Cars&#x27;</span>, <span class="string">&#x27;Compact Cars&#x27;</span>, <span class="string">&#x27;Midsize Cars&#x27;</span>, <span class="string">&#x27;Large Cars&#x27;</span>]</span><br><span class="line">vclasses = pd.api.types.CategoricalDtype(ordered=<span class="literal">True</span>, categories=sedan_classes)</span><br><span class="line">fuel_econ[<span class="string">&#x27;VClass&#x27;</span>] = fuel_econ[<span class="string">&#x27;VClass&#x27;</span>].astype(vclasses);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the Seaborn&#x27;s FacetGrid</span></span><br><span class="line">g = sb.FacetGrid(data = fuel_econ, col = <span class="string">&#x27;VClass&#x27;</span>)</span><br><span class="line">g.map(plt.hist, <span class="string">&quot;comb&quot;</span>)</span><br><span class="line"></span><br><span class="line">bin_edges = np.arange(<span class="number">12</span>, <span class="number">58</span>+<span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Try experimenting with dynamic bin edges</span></span><br><span class="line"><span class="comment"># bin_edges = np.arange(-3, fuel_econ[&#x27;comb&#x27;].max()+1/3, 1/3)</span></span><br><span class="line"></span><br><span class="line">g = sb.FacetGrid(data = fuel_econ, col = <span class="string">&#x27;VClass&#x27;</span>, col_wrap=<span class="number">3</span>, sharey=<span class="literal">False</span>)</span><br><span class="line">g.map(plt.hist, <span class="string">&#x27;comb&#x27;</span>, bins = bin_edges);</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the order in which you want to display the Facets</span></span><br><span class="line"><span class="comment"># For each transmission type, find the combined fuel efficiency</span></span><br><span class="line">group_means = fuel_econ[[<span class="string">&#x27;trans&#x27;</span>, <span class="string">&#x27;comb&#x27;</span>]].groupby([<span class="string">&#x27;trans&#x27;</span>]).mean()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Select only the list of transmission type in the decreasing order of combined fuel efficiency</span></span><br><span class="line">group_order = group_means.sort_values([<span class="string">&#x27;comb&#x27;</span>], ascending = <span class="literal">False</span>).index</span><br><span class="line"></span><br><span class="line"><span class="comment"># Use the argument col_order to display the FacetGrid in the desirable group_order</span></span><br><span class="line">g = sb.FacetGrid(data = fuel_econ, col = <span class="string">&#x27;trans&#x27;</span>, col_wrap = <span class="number">7</span>, col_order = group_order)</span><br><span class="line">g.map(plt.hist, <span class="string">&#x27;comb&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
+<h3 id="line"><a href="#line" class="headerlink" title="line"></a>line</h3><p>比对两个variable的关系(one numeric variable against values of a second variable).注重关系与x-value.</p>
+<p><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.errorbar.html">errorbar</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.errorbar(data=fuel_econ, x=<span class="string">&#x27;displ&#x27;</span>, y=<span class="string">&#x27;comb&#x27;</span>)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Avg. Combined Fuel Efficiency (mpg)&#x27;</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/027.png" class=""><br>我们需要先summarize再plot.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Set a number of bins into which the data will be grouped.</span></span><br><span class="line"><span class="comment"># Set bin edges, and compute center of each bin</span></span><br><span class="line">bin_edges = np.arange(<span class="number">0.6</span>, <span class="number">7</span>+<span class="number">0.2</span>, <span class="number">0.2</span>)</span><br><span class="line">bin_centers = xbin_edges[:<span class="number">-1</span>] + <span class="number">0.1</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Cut the bin values into discrete intervals. Returns a Series object.</span></span><br><span class="line">displ_binned = pd.cut(fuel_econ[<span class="string">&#x27;displ&#x27;</span>], bin_edges, include_lowest = <span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># For the points in each bin, we compute the mean and standard error of the mean.</span></span><br><span class="line">comb_mean = fuel_econ[<span class="string">&#x27;comb&#x27;</span>].groupby(displ_binned).mean()</span><br><span class="line">comb_std = fuel_econ[<span class="string">&#x27;comb&#x27;</span>].groupby(displ_binned).std()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Plot the summarized data</span></span><br><span class="line">plt.errorbar(x=bin_centers, y=comb_mean, yerr=comb_std)</span><br><span class="line">plt.xticks(rotation=<span class="number">15</span>);</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Avg. Combined Fuel Efficiency (mpg)&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/028.png" class="">
+<p>We <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.sort_values.html">sort_values</a> to put the x-values in ascending order first. Then use <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.rolling.html">rolling</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># compute statistics in a rolling window</span></span><br><span class="line">df_window = df.sort_values(<span class="string">&#x27;num_var1&#x27;</span>).rolling(<span class="number">15</span>)</span><br><span class="line">x_winmean = df_window.mean()[<span class="string">&#x27;num_var1&#x27;</span>]</span><br><span class="line">y_median = df_window.median()[<span class="string">&#x27;num_var2&#x27;</span>]</span><br><span class="line">y_q1 = df_window.quantile(<span class="number">.25</span>)[<span class="string">&#x27;num_var2&#x27;</span>]</span><br><span class="line">y_q3 = df_window.quantile(<span class="number">.75</span>)[<span class="string">&#x27;num_var2&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot the summarized data</span></span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">line_color = sb.color_palette(<span class="string">&#x27;dark&#x27;</span>)[<span class="number">0</span>]</span><br><span class="line">plt.scatter(data = df, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>)</span><br><span class="line">plt.errorbar(x = x_winmean, y = y_median, c = line_color)</span><br><span class="line">plt.errorbar(x = x_winmean, y = y_q1, c = line_color, linestyle = <span class="string">&#x27;--&#x27;</span>)</span><br><span class="line">plt.errorbar(x = x_winmean, y = y_q3, c = line_color, linestyle = <span class="string">&#x27;--&#x27;</span>)</span><br><span class="line"></span><br><span class="line">plt.xlabel(<span class="string">&#x27;num_var1&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;num_var2&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/029.png" class=""></p>
+<p>hist中也有line的选项.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">bin_edges = np.arange(<span class="number">-3</span>, df[<span class="string">&#x27;num_var&#x27;</span>].max()+<span class="number">1</span>/<span class="number">3</span>, <span class="number">1</span>/<span class="number">3</span>)</span><br><span class="line">g = sb.FacetGrid(data = df, hue = <span class="string">&#x27;cat_var&#x27;</span>, size = <span class="number">5</span>)</span><br><span class="line">g.map(plt.hist, <span class="string">&quot;num_var&quot;</span>, bins = bin_edges, histtype = <span class="string">&#x27;step&#x27;</span>)</span><br><span class="line">g.add_legend()</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/030.png" class=""></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">freq_poly</span>(<span class="params">x, bins = <span class="number">10</span>, ** kwargs</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; Custom frequency polygon / line plot code. &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># set bin edges if none or int specified</span></span><br><span class="line">    <span class="keyword">if</span> type(bins) == int:</span><br><span class="line">        bins = np.linspace(x.min(), x.max(), bins+<span class="number">1</span>)</span><br><span class="line">    bin_centers = (bin_edges[<span class="number">1</span>:] + bin_edges[:<span class="number">-1</span>]) / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># compute counts</span></span><br><span class="line">    data_bins = pd.cut(x, bins, right = <span class="literal">False</span>,</span><br><span class="line">                       include_lowest = <span class="literal">True</span>)</span><br><span class="line">    counts = x.groupby(data_bins).count()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># create plot</span></span><br><span class="line">    plt.errorbar(x = bin_centers, y = counts, ** kwargs)</span><br><span class="line"></span><br><span class="line">bin_edges = np.arange(<span class="number">-3</span>, df[<span class="string">&#x27;num_var&#x27;</span>].max()+<span class="number">1</span>/<span class="number">3</span>, <span class="number">1</span>/<span class="number">3</span>)</span><br><span class="line">g = sb.FacetGrid(data = df, hue = <span class="string">&#x27;cat_var&#x27;</span>, size = <span class="number">5</span>)</span><br><span class="line">g.map(freq_poly, <span class="string">&quot;num_var&quot;</span>, bins = bin_edges)</span><br><span class="line">g.add_legend()</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/031.png" class="">
+<p><br><br><br><br><br></p>
+<h3 id="Q-Q-plot"><a href="#Q-Q-plot" class="headerlink" title="Q-Q plot"></a>Q-Q plot</h3><p>quantile-quantile plot.</p>
+<p><a target="_blank" rel="noopener" href="https://docs.scipy.org/doc/numpy-1.15.0/reference/generated/numpy.linspace.html">linspace</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">expected_scores = norm.ppf(qs)</span><br><span class="line">data_scores = (df[<span class="string">&#x27;num_var&#x27;</span>].sort_values() - samp_mean) / samp_sd</span><br><span class="line"></span><br><span class="line">plt.scatter(expected_scores, data_scores)</span><br><span class="line">plt.plot([<span class="number">-2.5</span>,<span class="number">3</span>],[<span class="number">-2.5</span>,<span class="number">3</span>],<span class="string">&#x27;--&#x27;</span>, color = <span class="string">&#x27;black&#x27;</span>)</span><br><span class="line">plt.axis(<span class="string">&#x27;equal&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Expected Standard Scores&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Observed Standard Scores&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/032.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="swarmplot"><a href="#swarmplot" class="headerlink" title="swarmplot"></a>swarmplot</h3><p><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.swarmplot.html">swarmplot</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">plt.figure(figsize = [<span class="number">12</span>, <span class="number">5</span>])</span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># left plot: violin plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">1</span>)</span><br><span class="line">ax1 = sb.violinplot(data = df, x = <span class="string">&#x27;cat_var&#x27;</span>, y = <span class="string">&#x27;num_var&#x27;</span>, color = base_color)</span><br><span class="line"></span><br><span class="line"><span class="comment"># center plot: box plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">2</span>)</span><br><span class="line">sb.boxplot(data = df, x = <span class="string">&#x27;cat_var&#x27;</span>, y = <span class="string">&#x27;num_var&#x27;</span>, color = base_color)</span><br><span class="line">plt.ylim(ax1.get_ylim()) <span class="comment"># set y-axis limits to be same as left plot</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># right plot: swarm plot</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">3</span>, <span class="number">3</span>)</span><br><span class="line">sb.swarmplot(data = df, x = <span class="string">&#x27;cat_var&#x27;</span>, y = <span class="string">&#x27;num_var&#x27;</span>, color = base_color)</span><br><span class="line">plt.ylim(ax1.get_ylim()) <span class="comment"># set y-axis limits to be same as left plot</span></span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/033.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="rug-and-strip-plots"><a href="#rug-and-strip-plots" class="headerlink" title="rug and strip plots"></a>rug and strip plots</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = sb.JointGrid(data = df, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>)</span><br><span class="line">g.plot_joint(plt.scatter)</span><br><span class="line">g.plot_marginals(sb.rugplot, height = <span class="number">0.25</span>)</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/034.png" class="">
+<p><br><br><br><br><br></p>
+<h3 id="stacked-plots"><a href="#stacked-plots" class="headerlink" title="stacked plots"></a>stacked plots</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">cat1_order = [<span class="string">&#x27;East&#x27;</span>, <span class="string">&#x27;South&#x27;</span>, <span class="string">&#x27;West&#x27;</span>, <span class="string">&#x27;North&#x27;</span>]</span><br><span class="line">cat2_order = [<span class="string">&#x27;Type X&#x27;</span>, <span class="string">&#x27;Type Y&#x27;</span>, <span class="string">&#x27;Type Z&#x27;</span>, <span class="string">&#x27;Type O&#x27;</span>]</span><br><span class="line"></span><br><span class="line">plt.figure(figsize = [<span class="number">12</span>, <span class="number">5</span>])</span><br><span class="line"></span><br><span class="line"><span class="comment"># left plot: clustered bar chart, absolute counts</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">1</span>)</span><br><span class="line">sb.countplot(data = df, x = <span class="string">&#x27;cat_var1&#x27;</span>, hue = <span class="string">&#x27;cat_var2&#x27;</span>,</span><br><span class="line">             order = cat1_order, hue_order = cat2_order)</span><br><span class="line">plt.legend()</span><br><span class="line"></span><br><span class="line"><span class="comment"># right plot: stacked bar chart, absolute counts</span></span><br><span class="line">plt.subplot(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line">baselines = np.zeros(len(cat1_order))</span><br><span class="line"><span class="comment"># for each second-variable category:</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> range(len(cat2_order)):</span><br><span class="line">    <span class="comment"># isolate the counts of the first category,</span></span><br><span class="line">    cat2 = cat2_order[i]</span><br><span class="line">    inner_counts = df[df[<span class="string">&#x27;cat_var2&#x27;</span>] == cat2][<span class="string">&#x27;cat_var1&#x27;</span>].value_counts()</span><br><span class="line">    <span class="comment"># then plot those counts on top of the accumulated baseline</span></span><br><span class="line">    plt.bar(x = np.arange(len(cat1_order)), height = inner_counts[cat1_order],</span><br><span class="line">            bottom = baselines)</span><br><span class="line">    baselines += inner_counts[cat1_order]</span><br><span class="line"></span><br><span class="line">plt.xticks(np.arange(len(cat1_order)), cat1_order)</span><br><span class="line">plt.legend(cat2_order)</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/035.png" class="">
+<p><br><br><br><br><br></p>
+<h2 id="multivariate"><a href="#multivariate" class="headerlink" title="multivariate"></a>multivariate</h2><p>要表示第三个variate,我们需要借助colour与shape.</p>
+<h3 id="shape"><a href="#shape" class="headerlink" title="shape"></a>shape</h3><p>先确认每种的形状.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">cat_markers = [[<span class="string">&#x27;A&#x27;</span>, <span class="string">&#x27;o&#x27;</span>],</span><br><span class="line">               [<span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;s&#x27;</span>]]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> cat, marker <span class="keyword">in</span> cat_markers:</span><br><span class="line">    df_cat = df[df[<span class="string">&#x27;cat_var1&#x27;</span>] == cat]</span><br><span class="line">    plt.scatter(data = df_cat, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, marker = marker)</span><br><span class="line">plt.legend([<span class="string">&#x27;A&#x27;</span>,<span class="string">&#x27;B&#x27;</span>])</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/036.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="size"><a href="#size" class="headerlink" title="size"></a>size</h3><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(data = df, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, s = <span class="string">&#x27;num_var3&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># dummy series for adding legend</span></span><br><span class="line">sizes = [<span class="number">20</span>, <span class="number">35</span>, <span class="number">50</span>]</span><br><span class="line">base_color = sb.color_palette()[<span class="number">0</span>]</span><br><span class="line">legend_obj = []</span><br><span class="line"><span class="keyword">for</span> s <span class="keyword">in</span> sizes:</span><br><span class="line">    legend_obj.append(plt.scatter([], [], s = s, color = base_color))</span><br><span class="line">plt.legend(legend_obj, sizes)</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/037.png" class="">
+<p><br><br><br><br><br></p>
+<h3 id="colour"><a href="#colour" class="headerlink" title="colour"></a>colour</h3><p><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.FacetGrid.html">FacetGrid</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = sb.FacetGrid(data = df, hue = <span class="string">&#x27;cat_var1&#x27;</span>, size = <span class="number">5</span>)</span><br><span class="line">g.map(plt.scatter, <span class="string">&#x27;num_var1&#x27;</span>, <span class="string">&#x27;num_var2&#x27;</span>)</span><br><span class="line">g.add_legend()</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/038.png" class=""></p>
+<p>选择合适的colour palettes.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">plt.scatter(data = df, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, c = <span class="string">&#x27;num_var3&#x27;</span>,</span><br><span class="line">            cmap = <span class="string">&#x27;mako_r&#x27;</span>)</span><br><span class="line">plt.colorbar()</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/039.png" class=""></p>
+<hr>
+<p>heatmap.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line">xbin_edges = np.arange(<span class="number">0.25</span>, df[<span class="string">&#x27;num_var1&#x27;</span>].max()+<span class="number">0.5</span>, <span class="number">0.5</span>)</span><br><span class="line">ybin_edges = np.arange(<span class="number">7</span>,    df[<span class="string">&#x27;num_var2&#x27;</span>].max()+<span class="number">0.5</span>, <span class="number">0.5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># count number of points in each bin</span></span><br><span class="line">xbin_idxs = pd.cut(df[<span class="string">&#x27;num_var1&#x27;</span>], xbin_edges, right = <span class="literal">False</span>,</span><br><span class="line">                    include_lowest = <span class="literal">True</span>, labels = <span class="literal">False</span>).astype(int)</span><br><span class="line">ybin_idxs = pd.cut(df[<span class="string">&#x27;num_var2&#x27;</span>], ybin_edges, right = <span class="literal">False</span>,</span><br><span class="line">                    include_lowest = <span class="literal">True</span>, labels = <span class="literal">False</span>).astype(int)</span><br><span class="line"></span><br><span class="line">pts_per_bin = df.groupby([xbin_idxs, ybin_idxs]).size()</span><br><span class="line">pts_per_bin = pts_per_bin.reset_index()</span><br><span class="line">pts_per_bin = pts_per_bin.pivot(index = <span class="string">&#x27;num_var1&#x27;</span>, columns = <span class="string">&#x27;num_var2&#x27;</span>).values</span><br><span class="line"></span><br><span class="line">z_wts = df[<span class="string">&#x27;num_var3&#x27;</span>] / pts_per_bin[xbin_idxs, ybin_idxs]</span><br><span class="line"></span><br><span class="line"><span class="comment"># plot the data using the calculated weights</span></span><br><span class="line">plt.hist2d(data = df, x = <span class="string">&#x27;num_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, weights = z_wts,</span><br><span class="line">           bins = [xbin_edges, ybin_edges], cmap = <span class="string">&#x27;viridis_r&#x27;</span>, cmin = <span class="number">0.5</span>);</span><br><span class="line">plt.xlabel(<span class="string">&#x27;num_var1&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;num_var2&#x27;</span>);</span><br><span class="line">plt.colorbar(label = <span class="string">&#x27;mean(num_var3)&#x27;</span>);</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/041.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="faceting"><a href="#faceting" class="headerlink" title="faceting"></a>faceting</h3><p>用map.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = sb.FacetGrid(data = df, col = <span class="string">&#x27;cat_var2&#x27;</span>, row = <span class="string">&#x27;cat_var1&#x27;</span>, size = <span class="number">2.5</span>,</span><br><span class="line">                margin_titles = <span class="literal">True</span>)</span><br><span class="line">g.map(plt.scatter, <span class="string">&#x27;num_var1&#x27;</span>, <span class="string">&#x27;num_var2&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/040.png" class=""></p>
+<p>bar chart.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ax = sb.barplot(data = df, x = <span class="string">&#x27;cat_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, hue = <span class="string">&#x27;cat_var2&#x27;</span>)</span><br><span class="line">ax.legend(loc = <span class="number">8</span>, ncol = <span class="number">3</span>, framealpha = <span class="number">1</span>, title = <span class="string">&#x27;cat_var2&#x27;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/042.png" class=""></p>
+<p>pointplot.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ax = sb.pointplot(data = df, x = <span class="string">&#x27;cat_var1&#x27;</span>, y = <span class="string">&#x27;num_var2&#x27;</span>, hue = <span class="string">&#x27;cat_var2&#x27;</span>,</span><br><span class="line">                  dodge = <span class="number">0.3</span>, linestyles = <span class="string">&quot;&quot;</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/043.png" class=""></p>
+<p>line plot.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">mean_poly</span>(<span class="params">x, y, bins = <span class="number">10</span>, ** kwargs</span>):</span></span><br><span class="line">    <span class="string">&quot;&quot;&quot; Custom adapted line plot code. &quot;&quot;&quot;</span></span><br><span class="line">    <span class="comment"># set bin edges if none or int specified</span></span><br><span class="line">    <span class="keyword">if</span> type(bins) == int:</span><br><span class="line">        bins = np.linspace(x.min(), x.max(), bins+<span class="number">1</span>)</span><br><span class="line">    bin_centers = (bin_edges[<span class="number">1</span>:] + bin_edges[:<span class="number">-1</span>]) / <span class="number">2</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># compute counts</span></span><br><span class="line">    data_bins = pd.cut(x, bins, right = <span class="literal">False</span>,</span><br><span class="line">                       include_lowest = <span class="literal">True</span>)</span><br><span class="line">    means = y.groupby(data_bins).mean()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># create plot</span></span><br><span class="line">    plt.errorbar(x = bin_centers, y = means, ** kwargs)</span><br><span class="line"></span><br><span class="line">bin_edges = np.arange(<span class="number">0.25</span>, df[<span class="string">&#x27;num_var1&#x27;</span>].max()+<span class="number">0.5</span>, <span class="number">0.5</span>)</span><br><span class="line">g = sb.FacetGrid(data = df, hue = <span class="string">&#x27;cat_var2&#x27;</span>, size = <span class="number">5</span>)</span><br><span class="line">g.map(mean_poly, <span class="string">&quot;num_var1&quot;</span>, <span class="string">&quot;num_var2&quot;</span>, bins = bin_edges)</span><br><span class="line">g.set_ylabels(<span class="string">&#x27;mean(num_var2)&#x27;</span>)</span><br><span class="line">g.add_legend()</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/044.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="plot-matrices"><a href="#plot-matrices" class="headerlink" title="plot matrices"></a>plot matrices</h3><p><a target="_blank" rel="noopener" href="https://seaborn.pydata.org/generated/seaborn.PairGrid.html">PairGrid</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">g = sb.PairGrid(data = df, vars = [<span class="string">&#x27;num_var1&#x27;</span>, <span class="string">&#x27;num_var2&#x27;</span>, <span class="string">&#x27;num_var3&#x27;</span>])</span><br><span class="line">g.map_diag(plt.hist)</span><br><span class="line">g.map_offdiag(plt.scatter)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/045.png" class=""></p>
+<hr>
+<p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.corr.html">corr</a>.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sb.heatmap(df.corr(), annot = <span class="literal">True</span>, fmt = <span class="string">&#x27;.2f&#x27;</span>, cmap = <span class="string">&#x27;vlag_r&#x27;</span>, center = <span class="number">0</span>)</span><br></pre></td></tr></table></figure><br><img src="/2021/05/04/P193/046.png" class=""></p>
+<p><br><br><br><br><br></p>
+<h3 id="side-note"><a href="#side-note" class="headerlink" title="side note"></a>side note</h3><p>当比较多个variable的时候,有时我们可以增加feature,比较的variable,比如rate.</p>
+<p><br><br><br><br><br></p>
+<h1 id="explanatory-analysis"><a href="#explanatory-analysis" class="headerlink" title="explanatory analysis"></a>explanatory analysis</h1><ul>
+<li>Start with a Question</li>
+<li>Repetition is a Good Thing</li>
+<li>Highlight the Answer</li>
+<li>Call Your Audience To Action</li>
+</ul>
+<hr>
+<p>checklist:</p>
+<ul>
+<li>appropriate plot</li>
+<li>appropriate encodings</li>
+<li>attention to design integrity</li>
+<li>label axes and choose appropriate tick marks</li>
+<li>provide legends for non-positional variables</li>
+<li>title and include descriptive comments</li>
+</ul>
+<hr>
+<p>function:</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.figure.html">figure</a>: initialize a new figure.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xlabel.html">xlabel</a> and <a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.ylabel.html">ylabel</a>: setting axis labels.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.xticks.html">xticks</a> and <a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.yticks.html">yticks</a>: setting tick marks.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.legend.html">legend</a>: create and customize a legend. One key parameter to use is “title”, which allows you to label what feature is being depicted in the legend. You might also need to make use of the “loc” and “ncol” parameters to move and shape the legend if it gets placed in an awkward location by default.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.colorbar.html">colorbar</a>: add a colorbar. Use the “label” parameter to set the label on a colorbar.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.title.html">title</a>.</li>
+<li><a target="_blank" rel="noopener" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.suptitle.html">suptitle</a>: setting figure titles. The main difference between suptitle and title is that the former sets a title for the Figure as a whole, and the latter for only a single Axes. This is an important distinction: if you’re using faceting or subplotting, you’ll want to use suptitle to set a title for the figure as a whole.</li>
+</ul>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># loading in the data, sampling to reduce points plotted</span></span><br><span class="line">fuel_econ = pd.read_csv(<span class="string">&#x27;./data/fuel_econ.csv&#x27;</span>)</span><br><span class="line"></span><br><span class="line">np.random.seed(<span class="number">2018</span>)</span><br><span class="line">sample = np.random.choice(fuel_econ.shape[<span class="number">0</span>], <span class="number">200</span>, replace = <span class="literal">False</span>)</span><br><span class="line">fuel_econ_subset = fuel_econ.loc[sample]</span><br><span class="line"></span><br><span class="line"><span class="comment"># plotting the data</span></span><br><span class="line">plt.figure(figsize = [<span class="number">7</span>,<span class="number">4</span>])</span><br><span class="line">plt.scatter(data = fuel_econ_subset, x = <span class="string">&#x27;displ&#x27;</span>, y = <span class="string">&#x27;comb&#x27;</span>, c = <span class="string">&#x27;co2&#x27;</span>,</span><br><span class="line">            cmap = <span class="string">&#x27;viridis_r&#x27;</span>)</span><br><span class="line">plt.title(<span class="string">&#x27;Fuel Efficiency and CO2 Output by Engine Size&#x27;</span>)</span><br><span class="line">plt.xlabel(<span class="string">&#x27;Displacement (l)&#x27;</span>)</span><br><span class="line">plt.ylabel(<span class="string">&#x27;Combined Fuel Eff. (mpg)&#x27;</span>)</span><br><span class="line">plt.colorbar(label = <span class="string">&#x27;CO2 (g/mi)&#x27;</span>);</span><br></pre></td></tr></table></figure>
+<img src="/2021/05/04/P193/047.png" class="">
+<p><br><br><br><br><br></p>
+<p>side note:jupyter notebook可以直接render slideshow.</p>
+<blockquote>
+<p>view &gt; cell toolbar &gt; slide show</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert presentation.ipynb --to slides</span><br></pre></td></tr></table></figure>
+<p>加上附录的toggle文件可以隐藏代码.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert presentation.ipynb --to slides --template output-toggle.tpl</span><br><span class="line">--post serve</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2020/11/28/P140/" rel="bookmark">关于data的笔记 - Week1</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/P170/" rel="bookmark">关于data的笔记 - Week3</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
+              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/tags/data/" rel="tag"># data</a>
+              <a href="/tags/python/" rel="tag"># python</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/2021/05/03/P192/" rel="next" title="Never give up">
+      Never give up <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#viualization"><span class="nav-number">1.</span> <span class="nav-text">viualization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#exploratory-analysis"><span class="nav-number"></span> <span class="nav-text">exploratory analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#chart"><span class="nav-number">1.</span> <span class="nav-text">chart</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#bar-charts"><span class="nav-number">1.1.</span> <span class="nav-text">bar charts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#pie-charts"><span class="nav-number">1.2.</span> <span class="nav-text">pie charts</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#histograms"><span class="nav-number">1.3.</span> <span class="nav-text">histograms</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#helper"><span class="nav-number">2.</span> <span class="nav-text">helper</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#subplots"><span class="nav-number">2.1.</span> <span class="nav-text">subplots</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#limit"><span class="nav-number">2.2.</span> <span class="nav-text">limit</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#transformation"><span class="nav-number">2.3.</span> <span class="nav-text">transformation</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#bivariate-chart"><span class="nav-number">3.</span> <span class="nav-text">bivariate chart</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#scattorplot"><span class="nav-number">3.1.</span> <span class="nav-text">scattorplot</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#violinplot"><span class="nav-number">4.</span> <span class="nav-text">violinplot</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#clusterbar"><span class="nav-number">4.1.</span> <span class="nav-text">clusterbar</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#line"><span class="nav-number">4.2.</span> <span class="nav-text">line</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Q-Q-plot"><span class="nav-number">4.3.</span> <span class="nav-text">Q-Q plot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#swarmplot"><span class="nav-number">4.4.</span> <span class="nav-text">swarmplot</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#rug-and-strip-plots"><span class="nav-number">4.5.</span> <span class="nav-text">rug and strip plots</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#stacked-plots"><span class="nav-number">4.6.</span> <span class="nav-text">stacked plots</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#multivariate"><span class="nav-number">5.</span> <span class="nav-text">multivariate</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#shape"><span class="nav-number">5.1.</span> <span class="nav-text">shape</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#size"><span class="nav-number">5.2.</span> <span class="nav-text">size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#colour"><span class="nav-number">5.3.</span> <span class="nav-text">colour</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#faceting"><span class="nav-number">5.4.</span> <span class="nav-text">faceting</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#plot-matrices"><span class="nav-number">5.5.</span> <span class="nav-text">plot matrices</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#side-note"><span class="nav-number">5.6.</span> <span class="nav-text">side note</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#explanatory-analysis"><span class="nav-number"></span> <span class="nav-text">explanatory analysis</span></a></div>
+
+
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_4.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">191</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">40</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=592699&auto=1&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">309k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">4:41</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有144.8k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2e39777bbf0f9f598629',
+      clientSecret: '6d5262a0465d894852bbea8f866021d0b3feb168',
+      repo        : 'comment',
+      owner       : 'mazui3',
+      admin       : ['mazui3'],
+      id          : 'f1eed4b8bf92fb4f4f8593ee29b2d2ec',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>
