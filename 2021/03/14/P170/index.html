@@ -29,7 +29,7 @@
 <meta property="og:description" content="接第一回与第二回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-14T05:01:54.000Z">
-<meta property="article:modified_time" content="2021-05-05T01:41:25.321Z">
+<meta property="article:modified_time" content="2021-05-09T00:52:49.692Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-04 21:41:25" itemprop="dateModified" datetime="2021-05-04T21:41:25-04:00">2021-05-04</time>
+                <time title="Modified: 2021-05-08 20:52:49" itemprop="dateModified" datetime="2021-05-08T20:52:49-04:00">2021-05-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -270,13 +270,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>11k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>10 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -321,11 +321,14 @@
 <p>先用terminal access到想要保存文件的directory.<br>再run:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>在界面里可以直接new创建文件.<br>Note:用shift tab可以读取function的格式备注.</p>
 <p>zip file,<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zipfile.html#zipfile-objects">doc</a>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="comment"># Extract all contents from zip file</span></span><br><span class="line"><span class="keyword">with</span> zipfile.ZipFile(<span class="string">&#x27;archive.zip&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> myzip:</span><br><span class="line">    myzip.extractall()</span><br></pre></td></tr></table></figure></p>
 <p>将文件保存好后可以存放到file中或database.<br>(file:比如说csv,database:比如说可以用sql读的.)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.to_csv(<span class="string">&#x27;dataset.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure><br>我们可以在python中连上sql.<a target="_blank" rel="noopener" href="https://www.sqlalchemy.org/">link.</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="comment"># Create SQLAlchemy Engine and empty bestofrt database</span></span><br><span class="line"><span class="comment"># bestofrt.db will not show up in the Jupyter Notebook dashboard yet</span></span><br><span class="line">engine = create_engine(<span class="string">&#x27;sqlite:///bestofrt.db&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Store cleaned master DataFrame (&#x27;df&#x27;) in a table called master in bestofrt.db</span></span><br><span class="line"><span class="comment"># bestofrt.db will be visible now in the Jupyter Notebook dashboard</span></span><br><span class="line">df.to_sql(<span class="string">&#x27;master&#x27;</span>, engine, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></p>
-<h3 id="assess"><a href="#assess" class="headerlink" title="assess"></a>assess</h3><p>Focus on quality and tidiness.</p>
+<h3 id="assess"><a href="#assess" class="headerlink" title="assess"></a>assess</h3><p>Focus on quality and tidiness.目的是了解和寻找差错.</p>
 <p>Dirty: 数据本身有问题.完整性(缺失),重复,精准,出错(数据单位不一致),一致性等.<br>Messy: 有structure的问题.</p>
 <p>用isnull check空缺.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(df.columnName.isnull())</span><br></pre></td></tr></table></figure></p>
 <p>在这一步记载数据的问题方便后面更改.</p>
 <p>普通的读取用index某一rows的数据.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">second_row = df.loc[[<span class="number">1</span>]]</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://www.kite.com/python/answers/how-to-print-a-row-of-a-pandas-dataframe-in-python">link</a></p>
+<p>check uniqueness.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_1.nunique()</span><br><span class="line">df_1.shape</span><br></pre></td></tr></table></figure></p>
+<p>check duplicate.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duplicateRowsDF = df_1[df_1.duplicated([<span class="string">&#x27;tweet_id&#x27;</span>])]</span><br><span class="line">print(duplicateRowsDF)</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_2.describe()</span><br></pre></td></tr></table></figure>
 <p><br><br><br><br><br></p>
 <h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><p>第一件事是make a copy.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df.copy()</span><br></pre></td></tr></table></figure></p>
 <h4 id="define"><a href="#define" class="headerlink" title="define"></a>define</h4><p>在这一步记载哪些是要clean的问题.用动词写出要做的步骤.</p>
@@ -659,7 +662,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有144.8k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有144.9k的老兔正在打瞌睡</span>
 </div>
 
         
