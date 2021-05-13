@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-08T21:21:57.039Z</updated>
+  <updated>2021-05-13T01:29:59.952Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于stat的笔记 - estimation</title>
+    <link href="http://yoursite.com/2021/05/12/P194/"/>
+    <id>http://yoursite.com/2021/05/12/P194/</id>
+    <published>2021-05-13T01:23:28.000Z</published>
+    <updated>2021-05-13T01:29:59.952Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;&lt;script async
+  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
+&lt;/script&gt;&lt;br&gt;为stat331附录的estimation相关代码.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+  </entry>
   
   <entry>
     <title>关于data的笔记 - Week4</title>
@@ -469,29 +494,6 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="python" scheme="http://yoursite.com/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好作品补全计划 - 银之匙</title>
-    <link href="http://yoursite.com/2021/02/26/P173/"/>
-    <id>http://yoursite.com/2021/02/26/P173/</id>
-    <published>2021-02-27T01:56:24.000Z</published>
-    <updated>2021-02-27T03:21:02.509Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;前言:&lt;br&gt;去年的年底的想法.&lt;/p&gt;
-&lt;p&gt;之前一直以”因为要把时间都用在学业和私活上”,而不敢尝试会花时间成本的娱乐.&lt;br&gt;放弃了打游戏和动画,只有画图的时候会搜游戏实况来看.&lt;br&gt;结果画图都不怎么画了,却一直用手机上的短小娱乐而逃避真正要干的事情.&lt;br&gt;所以干脆把手机删了基本所有的娱乐app,在饭后翻出经典的番来看.&lt;br&gt;目标是久仰大名的动画,娱乐就好好娱乐,然后去干活.&lt;/p&gt;
-&lt;p&gt;以前高中的时候以”不管什么书都拿来练习英语吧”的目的写过读后感.&lt;br&gt;就再续这个tag.&lt;br&gt;目的是“不管什么作品都好好的去享受,去体会,然后写感悟吧”.&lt;/p&gt;
-&lt;p&gt;当然感悟会非常的私人,也会因为见识很窄而片面.&lt;br&gt;所以把tag命名为好作品补全,对好作品的定义是:&lt;br&gt;&lt;strong&gt;有觉得好的部分,有享受到了的部分&lt;/strong&gt; 的作品,并不是指全部肯定的一部作品才能作为好作品.&lt;/p&gt;
-&lt;p&gt;第一部就从跟朋友聊到的《银之匙》开始吧.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="读后感" scheme="http://yoursite.com/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-    <category term="好作品补全计划" scheme="http://yoursite.com/tags/%E5%A5%BD%E4%BD%9C%E5%93%81%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
