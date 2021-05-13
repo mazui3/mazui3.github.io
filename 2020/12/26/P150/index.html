@@ -33,7 +33,7 @@
 <meta property="og:image" content="http://yoursite.com/2020/12/26/P150/P150_3.png">
 <meta property="og:image" content="http://yoursite.com/2020/12/26/P150/t-table.jpg">
 <meta property="article:published_time" content="2020-12-26T19:14:46.000Z">
-<meta property="article:modified_time" content="2021-05-13T18:04:51.606Z">
+<meta property="article:modified_time" content="2021-05-13T21:10:51.225Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -259,7 +259,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-05-13 14:04:51" itemprop="dateModified" datetime="2021-05-13T14:04:51-04:00">2021-05-13</time>
+                <time title="Modified: 2021-05-13 17:10:51" itemprop="dateModified" datetime="2021-05-13T17:10:51-04:00">2021-05-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,13 +276,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>16k</span>
+              <span>7k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>14 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -380,7 +380,9 @@
 <p><br><br><br><br><br></p>
 </li>
 </ul>
-<h3 id="Confidence-interval"><a href="#Confidence-interval" class="headerlink" title="Confidence interval"></a>Confidence interval</h3><p>在数据里抽random sample.这里也可以用replace.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coffee_full = pd.read_csv(<span class="string">&#x27;coffee.csv&#x27;</span>)</span><br><span class="line">coffee_red = coffee_full.sample(<span class="number">200</span>)</span><br></pre></td></tr></table></figure><br>再抽一次新的.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bootsamp = coffee_red.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>依旧我们可以通过抽取来做sampling distribution.这里使用bootstrapping.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">boot_means = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">    bootsamp = coffee_red.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br><span class="line">    boot_mean = bootsamp[bootsamp[<span class="string">&#x27;drinks_coffee&#x27;</span>] == <span class="literal">False</span>][<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    boot_means.append(boot_mean)</span><br><span class="line"></span><br><span class="line">plt.hist(boot_means); <span class="comment"># Looks pretty normal</span></span><br></pre></td></tr></table></figure><br>用percentile获得confidence interval.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.percentile(boot_means, <span class="number">2.5</span>), np.percentile(boot_means, <span class="number">97.5</span>)</span><br></pre></td></tr></table></figure><br>如果我们要比较喝咖啡的人和不喝咖啡的人是否有身高上的差距,我们可以对他们的身高做distribution.<br>如果他们的confidence interval不包括0,那么的确是有差距的.<br>如果要比较多个条件下的数据,我们可以使用query.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">diffs_coff_under21 = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">    bootsamp = sample_data.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br><span class="line">    under21_coff_mean = bootsamp.query(<span class="string">&quot;age == &#x27;&lt;21&#x27; and drinks_coffee == True&quot;</span>)[<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    under21_nocoff_mean = bootsamp.query(<span class="string">&quot;age == &#x27;&lt;21&#x27; and drinks_coffee == False&quot;</span>)[<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    diffs_coff_under21.append(under21_nocoff_mean - under21_coff_mean)</span><br><span class="line"></span><br><span class="line">np.percentile(diffs_coff_under21, <span class="number">2.5</span>), np.percentile(diffs_coff_under21, <span class="number">97.5</span>)</span><br><span class="line"><span class="comment"># For the under21 group, we have evidence that the non-coffee drinkers are on average taller</span></span><br></pre></td></tr></table></figure><br>我们还可以给两头的tail画线.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">low, upper = np.percentile(diffs_coff_under21, <span class="number">2.5</span>), np.percentile(diffs_coff_under21, <span class="number">97.5</span>)</span><br><span class="line">plt.hist(diffs_coff_under21);</span><br><span class="line">plt.axvline(x=low, color=<span class="string">&#x27;r&#x27;</span>, linewidth=<span class="number">2</span>);</span><br><span class="line">plt.axvline(x=upper, color=<span class="string">&#x27;r&#x27;</span>, linewidth=<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
+<h3 id="Confidence-interval"><a href="#Confidence-interval" class="headerlink" title="Confidence interval"></a>Confidence interval</h3><p>在不同的model中,confidence interval有不同的算法,具体参考<a target="_blank" rel="noopener" href="https://mazui3.github.io/2021/04/10/P180/">sampling</a>.</p>
+<script type="math/tex; mode=display">est \pm c*(s.e.)</script><p><a target="_blank" rel="noopener" href="https://www.omnicalculator.com/statistics/confidence-interval">z score calculator</a>.</p>
+<p>例子:<br>在数据里抽random sample.这里也可以用replace.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">coffee_full = pd.read_csv(<span class="string">&#x27;coffee.csv&#x27;</span>)</span><br><span class="line">coffee_red = coffee_full.sample(<span class="number">200</span>)</span><br></pre></td></tr></table></figure><br>再抽一次新的.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bootsamp = coffee_red.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>依旧我们可以通过抽取来做sampling distribution.这里使用bootstrapping.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">boot_means = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">    bootsamp = coffee_red.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br><span class="line">    boot_mean = bootsamp[bootsamp[<span class="string">&#x27;drinks_coffee&#x27;</span>] == <span class="literal">False</span>][<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    boot_means.append(boot_mean)</span><br><span class="line"></span><br><span class="line">plt.hist(boot_means); <span class="comment"># Looks pretty normal</span></span><br></pre></td></tr></table></figure><br>用percentile获得confidence interval.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.percentile(boot_means, <span class="number">2.5</span>), np.percentile(boot_means, <span class="number">97.5</span>)</span><br></pre></td></tr></table></figure><br>如果我们要比较喝咖啡的人和不喝咖啡的人是否有身高上的差距,我们可以对他们的身高做distribution.<br>如果他们的confidence interval不包括0,那么的确是有差距的.<br>如果要比较多个条件下的数据,我们可以使用query.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">diffs_coff_under21 = []</span><br><span class="line"><span class="keyword">for</span> _ <span class="keyword">in</span> range(<span class="number">10000</span>):</span><br><span class="line">    bootsamp = sample_data.sample(<span class="number">200</span>, replace = <span class="literal">True</span>)</span><br><span class="line">    under21_coff_mean = bootsamp.query(<span class="string">&quot;age == &#x27;&lt;21&#x27; and drinks_coffee == True&quot;</span>)[<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    under21_nocoff_mean = bootsamp.query(<span class="string">&quot;age == &#x27;&lt;21&#x27; and drinks_coffee == False&quot;</span>)[<span class="string">&#x27;height&#x27;</span>].mean()</span><br><span class="line">    diffs_coff_under21.append(under21_nocoff_mean - under21_coff_mean)</span><br><span class="line"></span><br><span class="line">np.percentile(diffs_coff_under21, <span class="number">2.5</span>), np.percentile(diffs_coff_under21, <span class="number">97.5</span>)</span><br><span class="line"><span class="comment"># For the under21 group, we have evidence that the non-coffee drinkers are on average taller</span></span><br></pre></td></tr></table></figure><br>我们还可以给两头的tail画线.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">low, upper = np.percentile(diffs_coff_under21, <span class="number">2.5</span>), np.percentile(diffs_coff_under21, <span class="number">97.5</span>)</span><br><span class="line">plt.hist(diffs_coff_under21);</span><br><span class="line">plt.axvline(x=low, color=<span class="string">&#x27;r&#x27;</span>, linewidth=<span class="number">2</span>);</span><br><span class="line">plt.axvline(x=upper, color=<span class="string">&#x27;r&#x27;</span>, linewidth=<span class="number">2</span>);</span><br></pre></td></tr></table></figure></p>
 <p>Aside: (term)<br><strong>Margin of error</strong> is half the confidence interval width, and the value that you add and subtract from your sample estimate to achieve your confidence interval final results.</p>
 <p><br><br><br><br><br></p>
 <h2 id="Simpson’s-paradox"><a href="#Simpson’s-paradox" class="headerlink" title="Simpson’s paradox"></a>Simpson’s paradox</h2><p>辛普森悖论(<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA">wiki</a>),一个有名的分组讨论时会出错的悖论.</p>
@@ -389,85 +391,87 @@
 <blockquote>
 <p><script type="math/tex">P(A \mid B)</script> is a conditional probability: the likelihood of event  <script type="math/tex">A</script> occurring given that <script type="math/tex">B</script> is true.</p>
 </blockquote>
-<p><script type="math/tex">P(A, B) = P(A \mid B) P(B)</script> 也就是A和B同时发生的概率.</p>
-<p><br><br><br><br><br></p>
-<p>​</p>
-<h2 id="Normal-distribution"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</h2><p>我觉得wiki说的挺好的,详细程度堪比cheatsheet,<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Normal_distribution">wiki</a>.</p>
-<p>Variable: mean <script type="math/tex">\mu</script>, variance <script type="math/tex">\sigma^2</script>.</p>
-<p>Formula: <script type="math/tex">f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}</script>.</p>
-<p><br><br><br><br><br></p>
-<p>Aside: 在normal和sampling distribution中常用的:<br><strong>Central limit theorem(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Central_limit_theorem">wiki</a>)</strong><br>When independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.<br><br><br><strong>Law of Large Numbers(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Law_of_large_numbers">wiki</a>)</strong><br>According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.<br>也就是larger sample size,更靠近原本的mean.小的时候可能比原本的mean大也可能小.</p>
-<p>等会儿得去复习一下的…<br>Maximum likelihood estimation(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">wiki</a>)<br>Method of moments(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Method_of_moments_(statistics">wiki</a>))<br>Bayes estimator(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bayes_estimator">wiki</a>)</p>
-<p><br><br><br><br><br></p>
-<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><div class="table-container">
-<table>
-<thead>
-<tr>
-<th>Parameter</th>
-<th style="text-align:center">Statistic</th>
-<th style="text-align:right">Description</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td><script type="math/tex">μ</script></td>
-<td style="text-align:center"><script type="math/tex">\bar x</script></td>
-<td style="text-align:right">mean of a dataset</td>
-</tr>
-<tr>
-<td><script type="math/tex">π</script></td>
-<td style="text-align:center"><script type="math/tex">p</script></td>
-<td style="text-align:right">mean of a dataset with only 0 and 1 values - a proportion</td>
-</tr>
-<tr>
-<td><script type="math/tex">μ_1 - μ_2</script></td>
-<td style="text-align:center"><script type="math/tex">\bar x_1 - \bar x_2</script></td>
-<td style="text-align:right">difference in means</td>
-</tr>
-<tr>
-<td><script type="math/tex">π_1 - π_2</script></td>
-<td style="text-align:center"><script type="math/tex">p_1 - p_2</script></td>
-<td style="text-align:right">difference in proportions</td>
-</tr>
-<tr>
-<td><script type="math/tex">β</script></td>
-<td style="text-align:center"><script type="math/tex">b</script></td>
-<td style="text-align:right">A regression coefficient - frequently used with subscripts</td>
-</tr>
-<tr>
-<td><script type="math/tex">σ</script></td>
-<td style="text-align:center"><script type="math/tex">s</script></td>
-<td style="text-align:right">standard deviation</td>
-</tr>
-<tr>
-<td><script type="math/tex">σ^2</script></td>
-<td style="text-align:center"><script type="math/tex">s^2</script></td>
-<td style="text-align:right">variance</td>
-</tr>
-<tr>
-<td><script type="math/tex">ρ</script></td>
-<td style="text-align:center"><script type="math/tex">r</script></td>
-<td style="text-align:right">correlation coefficient</td>
-</tr>
-</tbody>
-</table>
-</div>
-<p><br><br><br><br><br></p>
-<h2 id="Practical-vs-Statistic-significance"><a href="#Practical-vs-Statistic-significance" class="headerlink" title="Practical vs Statistic significance"></a>Practical vs Statistic significance</h2><p>Statistic significance: Evidence from hypothesis tests and confidence interval that H1 is true.</p>
-<p>Practical(实用) significance: Takes into consideration other factors of your situation that might not be considered directly in the results of your hypothesis test or confidence interval. Constraints like space, time, or money are important in business decisions. However, they might not be accounted for directly in a statistical test.</p>
-<p><br><br><br><br><br></p>
-<h2 id="Hypothesis-testing"><a href="#Hypothesis-testing" class="headerlink" title="Hypothesis testing"></a>Hypothesis testing</h2><p>将问题分为两种可能,一种是null(H0),一种是alternative(H1),再用数据来证明H0或者rejectH0.<br>Aside: Hypothesis tests and confidence interval tells info about parameters not statistics.</p>
-<ul>
-<li>H0 is true before you collect any data.</li>
-<li>H0 usually states there is no effect or that two groups are equal.</li>
-<li>H0 and H1 are competing, non-overlapping hypotheses.</li>
-<li>H1 is what we would like to prove to be true.</li>
-<li>H0 contains an equal sign of some kind - either =, <script type="math/tex">\leq≤</script>, or <script type="math/tex">\geq≥</script>.</li>
-<li><p>H1 contains the opposition of the null - either <script type="math/tex">\neq≠</script>, &gt;&gt;, or &lt;&lt;.</p>
-<p><br><br><br><br><br></p>
-</li>
-</ul>
-<p>Example(我觉得有点有趣的…):<br>“Innocent until proven guilty” where H0 == Innocent and H1 == guilty.</p>
+<script type="math/tex; mode=display">P(A, B) = P(A \mid B) P(B) $$ 也就是A和B同时发生的概率.
+
+<br>
+<br>
+<br>
+
+​
+## Normal distribution
+
+我觉得wiki说的挺好的,详细程度堪比cheatsheet,[wiki](https://en.wikipedia.org/wiki/Normal_distribution).
+
+Variable: mean $$\mu$$, variance $$\sigma^2$$.
+
+Formula: $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$$.
+
+<br>
+<br>
+<br>
+
+Aside: 在normal和sampling distribution中常用的:
+**Central limit theorem([wiki](https://en.wikipedia.org/wiki/Central_limit_theorem))**
+When independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.
+<br>
+**Law of Large Numbers([wiki](https://en.wikipedia.org/wiki/Law_of_large_numbers))**
+According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.
+也就是larger sample size,更靠近原本的mean.小的时候可能比原本的mean大也可能小.
+
+等会儿得去复习一下的…
+Maximum likelihood estimation([wiki](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation))
+Method of moments([wiki](https://en.wikipedia.org/wiki/Method_of_moments_(statistics)))
+Bayes estimator([wiki](https://en.wikipedia.org/wiki/Bayes_estimator))
+
+<br>
+<br>
+<br>
+
+## Parameters
+
+| Parameter  |   Statistic   | Description |
+|----------|:-------------:|------:|
+| $$ μ $$ |  $$ \bar x $$ |  mean of a dataset |
+| $$ π $$ | $$ p $$ |  mean of a dataset with only 0 and 1 values - a proportion |
+| $$ μ_1 - μ_2 $$ |  $$ \bar x_1 - \bar x_2 $$ | difference in means |
+| $$ π_1 - π_2 $$ |  $$ p_1 - p_2 $$ | difference in proportions |
+| $$ β $$ | $$ b $$ | A regression coefficient - frequently used with subscripts |
+| $$ σ $$ | $$ s $$ | standard deviation |
+| $$ σ^2 $$ | $$ s^2 $$ | variance |
+| $$ ρ $$ | $$ r $$ | correlation coefficient |
+
+<br>
+<br>
+<br>
+
+## Practical vs Statistic significance
+
+Statistic significance: Evidence from hypothesis tests and confidence interval that H1 is true.
+
+Practical(实用) significance: Takes into consideration other factors of your situation that might not be considered directly in the results of your hypothesis test or confidence interval. Constraints like space, time, or money are important in business decisions. However, they might not be accounted for directly in a statistical test.
+
+<br>
+<br>
+<br>
+
+## Hypothesis testing
+
+将问题分为两种可能,一种是null(H0),一种是alternative(H1),再用数据来证明H0或者rejectH0.
+Aside: Hypothesis tests and confidence interval tells info about parameters not statistics.
+
+ - H0 is true before you collect any data.
+ - H0 usually states there is no effect or that two groups are equal.
+ - H0 and H1 are competing, non-overlapping hypotheses.
+ - H1 is what we would like to prove to be true.
+ - H0 contains an equal sign of some kind - either =, $$ \leq≤ $$, or $$\geq≥$$.
+ - H1 contains the opposition of the null - either $$ \neq≠ $$, >>, or <<.
+
+ <br>
+ <br>
+ <br>
+
+俗称用p value判定.
+$$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的…):<br>“Innocent until proven guilty” where H0 == Innocent and H1 == guilty.</p>
 <p>Two types of error:</p>
 <ul>
 <li>False positive(type 1, notation: alpha)<br>Deciding the alternative H1 is true, when actually H0 is true.</li>
@@ -525,7 +529,7 @@
 <p>area coef is the slope we want(between area and price).</p>
 <p>R-square: is the square of the correlation coefficient.<br>P-value: associated with each term in our model, is testing whether the population slope is equal to zero or not.</p>
 <p><br><br><br><br><br></p>
-<p>跟多个元素比较.<br>原理跟使用matrix, Find the optimal <script type="math/tex">\beta$ `estimates by calculating `$(X'X)^{-1}X'y</script>,一样.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;intercept&#x27;</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">lm = sm.OLS(df[<span class="string">&#x27;price&#x27;</span>], df[[<span class="string">&#x27;intercept&#x27;</span>, <span class="string">&#x27;area&#x27;</span>, <span class="string">&#x27;bathrooms&#x27;</span>, <span class="string">&#x27;bedrooms&#x27;</span>]])</span><br><span class="line">results = lm.fit()</span><br><span class="line">results.summary()</span><br></pre></td></tr></table></figure></p>
+<p>跟多个元素比较.<br>原理跟使用matrix, Find the optimal <script type="math/tex">\beta</script> estimates by calculating <script type="math/tex">(X'X)^{-1}X'y</script>,一样.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;intercept&#x27;</span>] = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">lm = sm.OLS(df[<span class="string">&#x27;price&#x27;</span>], df[[<span class="string">&#x27;intercept&#x27;</span>, <span class="string">&#x27;area&#x27;</span>, <span class="string">&#x27;bathrooms&#x27;</span>, <span class="string">&#x27;bedrooms&#x27;</span>]])</span><br><span class="line">results = lm.fit()</span><br><span class="line">results.summary()</span><br></pre></td></tr></table></figure></p>
 <p>如果我们要加入categorical 的parameter,我们使用dummy variable.<br>这个地方有点co250的技能了.<br>如果我们有ABC三种,那给3-1个dummy varibale.(因为x_A+x_B+x_C = 1,我们可以drop x_C)<br>We will need to drop one of the dummy columns in order to make your matrices <a target="_blank" rel="noopener" href="https://www.cds.caltech.edu/~murray/amwiki/index.php/FAQ:_What_does_it_mean_for_a_non-square_matrix_to_be_full_rank%3F">full rank</a>.<br>Drop掉的category就是跟保存的category数据做比较.</p>
 <p>我们可以使用pandas里的<a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.get_dummies.html">get_dummies</a> function.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> statsmodels.api <span class="keyword">as</span> sm;</span><br><span class="line"><span class="keyword">import</span> matplotlib.pyplot <span class="keyword">as</span> plt</span><br><span class="line">%matplotlib inline</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;./house_prices.csv&#x27;</span>)</span><br><span class="line">df.head()</span><br><span class="line"></span><br><span class="line">neighborhood_dummies = pd.get_dummies(df[<span class="string">&#x27;neighborhood&#x27;</span>])</span><br><span class="line">df_new = df.join(neighborhood_dummies)</span><br><span class="line">df_new.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 注意这里我们drop了A</span></span><br><span class="line">lm2 = sm.OLS(df_new[<span class="string">&#x27;price&#x27;</span>], df_new[[<span class="string">&#x27;intercept&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>]])</span><br><span class="line">results2 = lm2.fit()</span><br><span class="line">results2.summary()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 我们除了P-value以外还可以通过看confidence interval的重合度来比较</span></span><br><span class="line">plt.hist(df_new.query(<span class="string">&quot;C == 1&quot;</span>)[<span class="string">&#x27;price&#x27;</span>], alpha = <span class="number">0.3</span>, label = <span class="string">&#x27;C&#x27;</span>);</span><br><span class="line">plt.hist(df_new.query(<span class="string">&quot;A == 1&quot;</span>)[<span class="string">&#x27;price&#x27;</span>], alpha = <span class="number">0.3</span>, label = <span class="string">&#x27;A&#x27;</span>);</span><br><span class="line"></span><br><span class="line">plt.legend();</span><br><span class="line"></span><br><span class="line"><span class="comment"># 再加新的dummy直接加在后面就好…</span></span><br><span class="line">type_dummies = pd.get_dummies(df[<span class="string">&#x27;style&#x27;</span>])</span><br><span class="line">df_new = df_new.join(type_dummies)</span><br><span class="line">df_new.head()</span><br><span class="line"></span><br><span class="line">lm3 = sm.OLS(df_new[<span class="string">&#x27;price&#x27;</span>], df_new[[<span class="string">&#x27;intercept&#x27;</span>, <span class="string">&#x27;B&#x27;</span>, <span class="string">&#x27;C&#x27;</span>, <span class="string">&#x27;lodge&#x27;</span>, <span class="string">&#x27;victorian&#x27;</span>, <span class="string">&#x27;bedrooms&#x27;</span>, <span class="string">&#x27;bathrooms&#x27;</span>]])</span><br><span class="line">results3 = lm3.fit()</span><br><span class="line">results3.summary()</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
 <p><br><br><br><br><br></p>
@@ -598,6 +602,9 @@
       <div class="popular-posts-title"><a href="/2021/04/20/P185/" rel="bookmark">关于stat的笔记 - distribution</a></div>
     </li>
     <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/05/12/P194/" rel="bookmark">关于stat的笔记 - estimation</a></div>
+    </li>
+    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2021/04/10/P180/" rel="bookmark">关于stat的笔记 - sampling</a></div>
     </li>
     <li class="popular-posts-item">
@@ -605,9 +612,6 @@
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -696,7 +700,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Descriptive-Statistics"><span class="nav-number">1.</span> <span class="nav-text">Descriptive Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyzing-Quantitative-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Analyzing Quantitative Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inferential-Statistics"><span class="nav-number">2.</span> <span class="nav-text">Inferential Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling-distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Sampling distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrapping"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence-interval"><span class="nav-number">2.3.</span> <span class="nav-text">Confidence interval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simpson%E2%80%99s-paradox"><span class="nav-number">3.</span> <span class="nav-text">Simpson’s paradox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayer%E2%80%99s-theorem"><span class="nav-number">4.</span> <span class="nav-text">Bayer’s theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Normal-distribution"><span class="nav-number">5.</span> <span class="nav-text">Normal distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">6.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practical-vs-Statistic-significance"><span class="nav-number">7.</span> <span class="nav-text">Practical vs Statistic significance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypothesis-testing"><span class="nav-number">8.</span> <span class="nav-text">Hypothesis testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P-value"><span class="nav-number">8.1.</span> <span class="nav-text">P-value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonferroni-correction"><span class="nav-number">8.2.</span> <span class="nav-text">Bonferroni correction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-testing"><span class="nav-number">9.</span> <span class="nav-text">A&#x2F;B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression"><span class="nav-number">10.</span> <span class="nav-text">Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">10.1.</span> <span class="nav-text">Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E5%9B%BE%E7%9A%84%E6%97%B6%E5%80%99"><span class="nav-number">10.2.</span> <span class="nav-text">作图的时候:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">10.3.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fitting-a-regression-line"><span class="nav-number">10.4.</span> <span class="nav-text">Fitting a regression line:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confusion-matrix"><span class="nav-number">10.5.</span> <span class="nav-text">Confusion matrix</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Descriptive-Statistics"><span class="nav-number">1.</span> <span class="nav-text">Descriptive Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyzing-Quantitative-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Analyzing Quantitative Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inferential-Statistics"><span class="nav-number">2.</span> <span class="nav-text">Inferential Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling-distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Sampling distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrapping"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence-interval"><span class="nav-number">2.3.</span> <span class="nav-text">Confidence interval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simpson%E2%80%99s-paradox"><span class="nav-number">3.</span> <span class="nav-text">Simpson’s paradox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayer%E2%80%99s-theorem"><span class="nav-number">4.</span> <span class="nav-text">Bayer’s theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P-value"><span class="nav-number">4.1.</span> <span class="nav-text">P-value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonferroni-correction"><span class="nav-number">4.2.</span> <span class="nav-text">Bonferroni correction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-testing"><span class="nav-number">5.</span> <span class="nav-text">A&#x2F;B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression"><span class="nav-number">6.</span> <span class="nav-text">Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">6.1.</span> <span class="nav-text">Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E5%9B%BE%E7%9A%84%E6%97%B6%E5%80%99"><span class="nav-number">6.2.</span> <span class="nav-text">作图的时候:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">6.3.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fitting-a-regression-line"><span class="nav-number">6.4.</span> <span class="nav-text">Fitting a regression line:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confusion-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Confusion matrix</span></a></li></ol></li></ol></div>
 
 
       </div>
@@ -866,7 +870,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">314k</span>
+    <span title="Symbols count total">305k</span>
   -->
 
   <!--
@@ -874,7 +878,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">4:45</span>
+    <span title="Reading time total">4:38</span>
 
   -->
   
@@ -884,7 +888,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有146.3k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有144.4k的老兔正在打瞌睡</span>
 </div>
 
         

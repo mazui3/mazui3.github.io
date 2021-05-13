@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-13T19:39:42.309Z</updated>
+  <updated>2021-05-13T21:11:38.993Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://yoursite.com/2021/05/13/P195/"/>
     <id>http://yoursite.com/2021/05/13/P195/</id>
     <published>2021-05-13T19:02:46.000Z</published>
-    <updated>2021-05-13T19:39:42.309Z</updated>
+    <updated>2021-05-13T21:11:38.993Z</updated>
     
     
     <summary type="html">&lt;p&gt;补一个博客制作笔记.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/2020/08/13/P111/&quot;&gt;乔迁&lt;/a&gt;公告还是去年八月,和管理员的生日是同一个月w.&lt;br&gt;原因是修修改改的东西,自己都忘掉了才发现没有备份.&lt;br&gt;&lt;del&gt;已经忘了的就没法备份了.&lt;/del&gt;&lt;/p&gt;</summary>
@@ -30,8 +30,6 @@
     
     <category term="项目记录" scheme="http://yoursite.com/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
-    
-    <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
@@ -42,7 +40,7 @@
     <link href="http://yoursite.com/2021/05/12/P194/"/>
     <id>http://yoursite.com/2021/05/12/P194/</id>
     <published>2021-05-13T01:23:28.000Z</published>
-    <updated>2021-05-13T19:36:06.306Z</updated>
+    <updated>2021-05-13T19:48:10.500Z</updated>
     
     
     <summary type="html">&lt;p&gt;&lt;script async
@@ -63,6 +61,8 @@
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
     <category term="R" scheme="http://yoursite.com/tags/R/"/>
+    
+    <category term="statistics" scheme="http://yoursite.com/tags/statistics/"/>
     
   </entry>
   
@@ -324,7 +324,7 @@
     <link href="http://yoursite.com/2021/04/10/P180/"/>
     <id>http://yoursite.com/2021/04/10/P180/</id>
     <published>2021-04-11T01:25:13.000Z</published>
-    <updated>2021-05-13T19:01:14.557Z</updated>
+    <updated>2021-05-13T21:02:05.452Z</updated>
     
     
     <summary type="html">&lt;script async
