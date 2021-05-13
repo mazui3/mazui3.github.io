@@ -1203,7 +1203,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #0661f9;
+  background: #6eff53;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2333,7 +2333,7 @@ ul.breadcrumb li + li:last-child {
 }
 .header-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 16px;
   box-shadow: initial;
   overflow: hidden;
   padding: 0;
@@ -2366,7 +2366,7 @@ ul.breadcrumb li + li:last-child {
 }
 .content-wrap {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 16px;
   box-shadow: initial;
   box-sizing: border-box;
   padding: 40px;
@@ -2397,6 +2397,12 @@ ul.breadcrumb li + li:last-child {
     padding-right: 0;
     width: auto;
   }
+}
+.gallery-list {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: flex-start;
 }
 .site-brand-container {
   background: #222;
@@ -2524,7 +2530,7 @@ ul.breadcrumb li + li:last-child {
 }
 .sidebar-inner {
   background: var(--content-bg-color);
-  border-radius: initial;
+  border-radius: 16px;
   box-shadow: initial;
   box-sizing: border-box;
   color: var(--text-color);
