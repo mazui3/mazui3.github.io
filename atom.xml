@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-05-14T18:23:47.763Z</updated>
+  <updated>2021-05-14T00:42:30.757Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,27 +15,6 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
-  
-  <entry>
-    <title>笑顔</title>
-    <link href="http://yoursite.com/2021/05/14/P196/"/>
-    <id>http://yoursite.com/2021/05/14/P196/</id>
-    <published>2021-05-14T18:19:51.000Z</published>
-    <updated>2021-05-14T18:23:47.763Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;img src=&quot;/2021/05/14/P196/psc.jpeg&quot; class=&quot;&quot; width=&quot;400&quot;</summary>
-        
-      
-    
-    
-    
-    
-  </entry>
   
   <entry>
     <title>制作记录_UnderlakeReadingRoom</title>
@@ -292,33 +271,6 @@
   </entry>
   
   <entry>
-    <title>搭档</title>
-    <link href="http://yoursite.com/2021/04/19/P183/"/>
-    <id>http://yoursite.com/2021/04/19/P183/</id>
-    <published>2021-04-19T14:04:22.000Z</published>
-    <updated>2021-04-19T16:38:53.407Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2021/04/19/P183/P183.jpeg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;收录一下委托游老师的新衣服…!!真的!!太喜欢了!!&lt;br&gt;特别是雨未,是理想中的雨未!!!(爆哭)&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;&lt;a href=&quot;https://twitter.com/stdio_nameraka&quot;&gt;twi&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-&lt;p&gt;4月份的计划没有完成,这次结课后想catchup一下下.&lt;br&gt;为表达死线没滑上垒的歉意,决定在完成前每周健身环物理谢罪,飞哥负责监督,在此先土下座.&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;飞哥:你的道歉方式真健康啊.&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="怪异专家与助手" scheme="http://yoursite.com/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
-    
-  </entry>
-  
-  <entry>
     <title>少女</title>
     <link href="http://yoursite.com/2021/04/17/P182/"/>
     <id>http://yoursite.com/2021/04/17/P182/</id>
@@ -494,6 +446,56 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于bash的笔记 - 简陋版</title>
+    <link href="http://yoursite.com/2021/03/14/P176/"/>
+    <id>http://yoursite.com/2021/03/14/P176/</id>
+    <published>2021-03-14T05:02:10.000Z</published>
+    <updated>2021-03-22T21:52:48.063Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;真的很简陋.用于唤醒遗忘的记忆.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于data的笔记 - Week3</title>
+    <link href="http://yoursite.com/2021/03/14/P170/"/>
+    <id>http://yoursite.com/2021/03/14/P170/</id>
+    <published>2021-03-14T05:01:54.000Z</published>
+    <updated>2021-05-09T00:52:49.692Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;接&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P140/&quot;&gt;第一回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/2020/11/28/P141/&quot;&gt;第二回.&lt;/a&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="http://yoursite.com/tags/data/"/>
+    
+    <category term="python" scheme="http://yoursite.com/tags/python/"/>
     
   </entry>
   
