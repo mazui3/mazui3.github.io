@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-11T18:00:55.351Z</updated>
+  <updated>2021-06-13T00:17:21.970Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -15,6 +15,25 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>制作记录_MathsocComic</title>
+    <link href="http://yoursite.com/2021/06/12/P200/"/>
+    <id>http://yoursite.com/2021/06/12/P200/</id>
+    <published>2021-06-13T00:10:25.000Z</published>
+    <updated>2021-06-13T00:17:21.970Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;关于第一次认真画漫画是给学校打工这件事.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="项目记录" scheme="http://yoursite.com/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
+    
+  </entry>
   
   <entry>
     <title>夏</title>
@@ -80,11 +99,11 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
+    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
     <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
     
     <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
@@ -111,9 +130,9 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
@@ -268,9 +287,9 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
-    
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
@@ -339,9 +358,9 @@
     <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
-    
     <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
     
     <category term="data" scheme="http://yoursite.com/tags/data/"/>
     
@@ -474,31 +493,6 @@
     <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
     
     <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于bash的笔记 - 简陋版</title>
-    <link href="http://yoursite.com/2021/03/14/P176/"/>
-    <id>http://yoursite.com/2021/03/14/P176/</id>
-    <published>2021-03-14T05:02:10.000Z</published>
-    <updated>2021-03-22T21:52:48.063Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;真的很简陋.用于唤醒遗忘的记忆.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="http://yoursite.com/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="编码" scheme="http://yoursite.com/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="bash" scheme="http://yoursite.com/tags/bash/"/>
     
   </entry>
   
