@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/"/>
-  <updated>2021-06-13T00:17:21.970Z</updated>
+  <updated>2021-06-17T05:37:56.743Z</updated>
   <id>http://yoursite.com/</id>
   
   <author>
@@ -17,11 +17,33 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>制作记录_MathsocComic</title>
+    <title>半年画一次的同人</title>
+    <link href="http://yoursite.com/2021/06/17/P191/"/>
+    <id>http://yoursite.com/2021/06/17/P191/</id>
+    <published>2021-06-17T05:37:56.000Z</published>
+    <updated>2021-06-17T05:37:56.743Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/2021/06/17/P191/P191_4.png&quot; class=&quot;&quot; title=&quot;模写03最后一集的名微笑&quot;&gt;
+&lt;p&gt;在晚上失去(入)意识(睡)前的临摹与涂鸦与吐槽合集.&lt;br&gt;内容以看过所有的剧情为前提,所以还请注意剧透!&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="http://yoursite.com/categories/%E7%94%BB/"/>
+    
+    
+    <category term="同人" scheme="http://yoursite.com/tags/%E5%90%8C%E4%BA%BA/"/>
+    
+    <category term="ハガレン" scheme="http://yoursite.com/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>制作记录_MathsocCartnoons</title>
     <link href="http://yoursite.com/2021/06/12/P200/"/>
     <id>http://yoursite.com/2021/06/12/P200/</id>
     <published>2021-06-13T00:10:25.000Z</published>
-    <updated>2021-06-13T00:17:21.970Z</updated>
+    <updated>2021-06-16T01:28:06.010Z</updated>
     
     
     <summary type="html">&lt;p&gt;关于第一次认真画漫画是给学校打工这件事.&lt;br&gt;</summary>
@@ -68,7 +90,7 @@
     <link href="http://yoursite.com/2021/05/13/P195/"/>
     <id>http://yoursite.com/2021/05/13/P195/</id>
     <published>2021-05-13T19:02:46.000Z</published>
-    <updated>2021-06-03T00:10:47.873Z</updated>
+    <updated>2021-06-16T01:29:09.985Z</updated>
     
     
     <summary type="html">&lt;p&gt;补一个博客制作记录.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/2020/08/13/P111/&quot;&gt;乔迁公告&lt;/a&gt;还是去年八月,和管理员的生日是同一个月w.&lt;br&gt;原因是修修改改的东西,自己都忘掉了才发现没有备份.&lt;br&gt;&lt;del&gt;已经忘了的就没法备份了.&lt;/del&gt;&lt;/p&gt;</summary>
@@ -467,32 +489,6 @@
     <category term="杂谈" scheme="http://yoursite.com/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="民以食为天" scheme="http://yoursite.com/tags/%E6%B0%91%E4%BB%A5%E9%A3%9F%E4%B8%BA%E5%A4%A9/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>草莓</title>
-    <link href="http://yoursite.com/2021/03/14/P177/"/>
-    <id>http://yoursite.com/2021/03/14/P177/</id>
-    <published>2021-03-14T05:04:58.000Z</published>
-    <updated>2021-04-06T05:11:33.000Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/2021/03/14/P177/P177_1.jpg&quot; class=&quot;&quot;&gt;
-&lt;img src=&quot;/2021/03/14/P177/P177_2.jpg&quot; class=&quot;&quot;&gt;
-&lt;p&gt;是brutal桑给我画的小情侣!!!真的真的很喜欢…好少女好可爱…&lt;br&gt;真的非常感谢brutal桑给我画的图(语言贫乏)…!!兄妹那张也好喜欢好喜欢的…&lt;/p&gt;
-&lt;blockquote&gt;
-&lt;p&gt;brutal桑的个站 -&amp;gt; &lt;a href=&quot;https://brutal588.github.io&quot;&gt;link&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;</summary>
-    
-    
-    
-    <category term="朋友给的画" scheme="http://yoursite.com/categories/%E6%9C%8B%E5%8F%8B%E7%BB%99%E7%9A%84%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/tags/oc/"/>
-    
-    <category term="狼与兔" scheme="http://yoursite.com/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
   </entry>
   
