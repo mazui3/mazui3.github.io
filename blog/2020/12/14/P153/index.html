@@ -5,52 +5,52 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
 <meta name="generator" content="Hexo 5.0.2">
-  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
-  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
-  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
-  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
 
-<link rel="stylesheet" href="/css/main.css">
+<link rel="stylesheet" href="/blog/css/main.css">
 
 <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
-<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.    Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的tips.感谢yihui大佬提供的hexo与mathjax不兼容的解决方式.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于(我所理解的)加密学入门的笔记">
-<meta property="og:url" content="http://yoursite.com/2020/12/14/P153/index.html">
+<meta property="og:url" content="http://yoursite.com/blog/2020/12/14/P153/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="复习co487的时候想着也写个自个用笔记.没有记载具体,草草概括一下.    Aside:使用了mathjax,可以更好得写数学公式,关于mathjax的tips.感谢yihui大佬提供的hexo与mathjax不兼容的解决方式.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_1.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_2.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_3.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_4.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_5.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_6.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_7.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_8.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_10.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_11.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_9.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_12.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_13.png">
-<meta property="og:image" content="http://yoursite.com/2020/12/14/P153/P153_14.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_1.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_2.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_3.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_4.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_5.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_6.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_7.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_8.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_10.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_11.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_9.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_12.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_13.png">
+<meta property="og:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_14.png">
 <meta property="article:published_time" content="2020-12-14T14:20:43.000Z">
-<meta property="article:modified_time" content="2021-03-22T21:49:00.684Z">
+<meta property="article:modified_time" content="2021-08-08T12:02:21.107Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="http://yoursite.com/2020/12/14/P153/P153_1.png">
+<meta name="twitter:image" content="http://yoursite.com/blog/2020/12/14/P153/P153_1.png">
 
-<link rel="canonical" href="http://yoursite.com/2020/12/14/P153/">
+<link rel="canonical" href="http://yoursite.com/blog/2020/12/14/P153/">
 
 
 <script id="page-configurations">
@@ -96,7 +96,7 @@
 
   <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
 
-<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -115,12 +115,12 @@
 
   <div class="site-meta">
 
-    <a href="/" class="brand" rel="start">
+    <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
-      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
   </div>
 
   <div class="site-nav-right">
@@ -137,42 +137,37 @@
   <ul id="menu" class="main-menu menu">
         <li class="menu-item menu-item-home">
 
-    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
 
   </li>
         <li class="menu-item menu-item-readme">
 
-    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
 
   </li>
         <li class="menu-item menu-item-tags">
 
-    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
 
   </li>
         <li class="menu-item menu-item-categories">
 
-    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
 
   </li>
         <li class="menu-item menu-item-archives">
 
-    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
         <li class="menu-item menu-item-schedule">
 
-    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-mailbox">
-
-    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
 
   </li>
         <li class="menu-item menu-item-friendlink">
 
-    <a href="/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+    <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
 
   </li>
         <li class="menu-item menu-item-library">
@@ -236,10 +231,10 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/12/14/P153/">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/blog/2020/12/14/P153/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/images/logo_4.jpg">
+      <meta itemprop="image" content="/blog/images/logo_4.jpg">
       <meta itemprop="name" content="Mazui">
       <meta itemprop="description" content="与孤独和平共处.">
     </span>
@@ -266,7 +261,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-03-22 17:49:00" itemprop="dateModified" datetime="2021-03-22T17:49:00-04:00">2021-03-22</time>
+                <time title="Modified: 2021-08-08 08:02:21" itemprop="dateModified" datetime="2021-08-08T08:02:21-04:00">2021-08-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -274,7 +269,7 @@
               </span>
               <span class="post-meta-item-text">In</span>
                 <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                  <a href="/blog/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
                 </span>
             </span>
 
@@ -312,7 +307,7 @@
 <p>加密,是不同的算法.将想要的信息按照算法和自己的密匙加密,再也通过算法和密匙解密.<br>破解,是在已知算法的前提下,试图找算法的破绽,也用大量的尝试不同密匙来暴力破解.  </p>
 <p>不过加密方式是实时更新的.这门课我上了两次,隔了半年教材也少许有更改.<br>所以如果阅读这篇文章的时候距离创造时间够久了,实用意义就会减少.比如如果量子计算机使用起来,现在的加密方法肯定也得重新考虑安全性了.  </p>
 <p><br><br><br></p>
-<h2 id="Symmetric-key-encryption-scheme-SKES"><a href="#Symmetric-key-encryption-scheme-SKES" class="headerlink" title="Symmetric-key encryption scheme (SKES)"></a>Symmetric-key encryption scheme (SKES)</h2><p><a target="_blank" rel="noopener" href="https://mazui3.github.io/2020/09/22/P120/">流密码</a> 上次有简单记述.<br>借着上次的三种传统加密方法以外,这里是一些经常在stream cipher中出现的辅助定义.  </p>
+<h2 id="Symmetric-key-encryption-scheme-SKES"><a href="#Symmetric-key-encryption-scheme-SKES" class="headerlink" title="Symmetric-key encryption scheme (SKES)"></a>Symmetric-key encryption scheme (SKES)</h2><p><a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/09/22/P120/">流密码</a> 上次有简单记述.<br>借着上次的三种传统加密方法以外,这里是一些经常在stream cipher中出现的辅助定义.  </p>
 <p><br></p>
 <h3 id="A-pseudorandom-bit-generator-PRBG"><a href="#A-pseudorandom-bit-generator-PRBG" class="headerlink" title="A pseudorandom bit generator (PRBG)"></a>A pseudorandom bit generator (PRBG)</h3><blockquote>
 <p>Definition<br>A pseudorandom bit generator (PRBG) is a deterministic algorithm that takes as input a (random) seed, and outputs a longer “pseudorandom” sequence called the keystream.  </p>
@@ -334,8 +329,8 @@
 <blockquote>
 <p>Definition:<br>Any infinite periodic sequence (st) can be defined via a recurrence relation: <script type="math/tex">{ s_{t+n} = c_{n−1}s_{t+n−1} ⊕ c_{n−2}s_{t+n−2} . . . c_1s_{t+1} ⊕ c_0s_t  }</script><br>where ci are binary constants.<br>The vector ( <script type="math/tex">{ s_0, s_1, . . . , s_{n−1} }</script>) is called the initial state vector.  </p>
 </blockquote>
-<img src="/2020/12/14/P153/P153_1.png" class="">
-<img src="/2020/12/14/P153/P153_2.png" class="">
+<img src="/blog/2020/12/14/P153/P153_1.png" class="">
+<img src="/blog/2020/12/14/P153/P153_2.png" class="">
 <blockquote>
 <p>Definition:<br>The period of a binary sequences(t) is said to be p if <script type="math/tex">{S_{t+p} = S_{n}}</script> for all t, and p is the smallest such number.  </p>
 </blockquote>
@@ -382,11 +377,11 @@
 </li>
 </ul>
 <p><br></p>
-<h3 id="Data-Encryption-Standard-DES"><a href="#Data-Encryption-Standard-DES" class="headerlink" title="Data Encryption Standard (DES)"></a>Data Encryption Standard (DES)</h3><img src="/2020/12/14/P153/P153_3.png" class="">
+<h3 id="Data-Encryption-Standard-DES"><a href="#Data-Encryption-Standard-DES" class="headerlink" title="Data Encryption Standard (DES)"></a>Data Encryption Standard (DES)</h3><img src="/blog/2020/12/14/P153/P153_3.png" class="">
 <blockquote>
 <p>Note: Basically, DES is (believed to be) secure against everything except brute-force key search.  </p>
 </blockquote>
-<p>关于Feistel network:<br>用于DES.<br><img src="/2020/12/14/P153/P153_4.png" class=""></p>
+<p>关于Feistel network:<br>用于DES.<br><img src="/blog/2020/12/14/P153/P153_4.png" class=""></p>
 <blockquote>
 <p>Underlying principle: Take something “simple” and use it several times; hope that the result is “complicated”  </p>
 </blockquote>
@@ -407,8 +402,8 @@
 <script type="math/tex; mode=display">\begin{equation}\label{eq7}k = (k1, k2, k3), k1, k2, k3 ∈_R {\{0, 1\}}^{56}\end{equation}</script><script type="math/tex; mode=display">\begin{equation}\label{eq8}c = E_{k3} (E_{k2} (E_{k1} (m)))\end{equation}</script><p>Meet-in-the-middle attack takes  ≈ <script type="math/tex">2^{112}</script> steps<br>No proof that Triple-DES is more secure than DES.但是有大量运用.  </p>
 <p><br></p>
 <h3 id="The-Advanced-Encryption-Standard-AES"><a href="#The-Advanced-Encryption-Standard-AES" class="headerlink" title="The Advanced Encryption Standard (AES)"></a>The Advanced Encryption Standard (AES)</h3><p>关于Substitution-Permutation Networks:  </p>
-<img src="/2020/12/14/P153/P153_5.png" class="">
-<p>AES比DES增加了Bitwise-XOR.<br><img src="/2020/12/14/P153/P153_6.png" class=""></p>
+<img src="/blog/2020/12/14/P153/P153_5.png" class="">
+<p>AES比DES增加了Bitwise-XOR.<br><img src="/blog/2020/12/14/P153/P153_6.png" class=""></p>
 <p>关于更多的Substitution-Permutation Network加密方式:  </p>
 <ul>
 <li>Rijndael (AES)</li>
@@ -427,7 +422,7 @@
 <li>Output Feedback (OFB) mode</li>
 <li>Counter (CTR) mode</li>
 </ul>
-<img src="/2020/12/14/P153/P153_7.png" class="">
+<img src="/blog/2020/12/14/P153/P153_7.png" class="">
 <p><br><br><br></p>
 <h2 id="Padding"><a href="#Padding" class="headerlink" title="Padding"></a>Padding</h2><blockquote>
 <p>Some modes, namely ECB and CBC, require the plaintext to consist of one or more complete blocks.<br>The padding bits can be removed unambiguously, if the receiver knows that this padding method is used.  </p>
@@ -443,7 +438,7 @@
 <blockquote>
 <p>A hash function is a checksum designed to be safe from malicious tampering.<br>Note: The description of a hash function is public. There are no secret keys.  </p>
 </blockquote>
-<img src="/2020/12/14/P153/P153_8.png" class="">
+<img src="/blog/2020/12/14/P153/P153_8.png" class="">
 <ul>
 <li>Preimage resistance: Hard to invert given just an output.</li>
 <li>2nd preimage resistance: Hard to find a second input that has the same hash value<br>as a given first input.</li>
@@ -472,7 +467,7 @@
 </ol>
 <p>原理-&gt;<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Pollard%27s_rho_algorithm">Pollard’s rho algorithm</a> &amp; <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cycle_detection#Floyd.27s_Tortoise_and_Hare">Floyd’s cycle-finding algorithm</a>.<br>除了单线计算等待重复的search,也可以parallel(VW Parallel Collision Search).  </p>
 <h3 id="Password-hashing"><a href="#Password-hashing" class="headerlink" title="Password hashing"></a>Password hashing</h3><p>不过常见的词被hash后有收录,所以有些可以知道hash前的内容 -&gt; <a target="_blank" rel="noopener" href="https://crackstation.net/">data branch</a>  </p>
-<p>进阶版寻找hash的方法: Rainbow table<br>Rainbow tables are an example of a time-space tradeoff using hash chains.<br><img src="/2020/12/14/P153/P153_10.png" class=""><br><img src="/2020/12/14/P153/P153_11.png" class=""></p>
+<p>进阶版寻找hash的方法: Rainbow table<br>Rainbow tables are an example of a time-space tradeoff using hash chains.<br><img src="/blog/2020/12/14/P153/P153_10.png" class=""><br><img src="/blog/2020/12/14/P153/P153_11.png" class=""></p>
 <p>阻碍rainbow table的是加salt(每次运算hash加入无意义的杂数).</p>
 <p><br><br><br></p>
 <h2 id="Message-authentication-code-MAC"><a href="#Message-authentication-code-MAC" class="headerlink" title="Message authentication code (MAC)"></a>Message authentication code (MAC)</h2><p>用来验证信息是否被更改或被攻击.</p>
@@ -502,7 +497,7 @@
 <script type="math/tex; mode=display">{M(k, m) = H(K∥m∥K)}</script><blockquote>
 <p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then Envelope MAC with m padded to a multiple of the block length of H is a secure MAC algorithm.  </p>
 </blockquote>
-<p>HMAC(“Hash-based” MAC):<br><img src="/2020/12/14/P153/P153_9.png" class=""></p>
+<p>HMAC(“Hash-based” MAC):<br><img src="/blog/2020/12/14/P153/P153_9.png" class=""></p>
 <script type="math/tex; mode=display">{M(k, m) = H (K⊕opad)∥H (K⊕ipad)∥m }</script><blockquote>
 <p>Suppose that the compression function used in H is a secure MAC with fixed length messages and a secret IV as the key. Then HMAC is a secure MAC algorithm.  </p>
 </blockquote>
@@ -540,15 +535,15 @@
 <h2 id="Public-Key-Cryptography"><a href="#Public-Key-Cryptography" class="headerlink" title="Public-Key Cryptography"></a>Public-Key Cryptography</h2><p>这个是我觉得加密学比较罗曼的一个部分(…).解密方式都是公开的,因为公开,所以可以被大量验证安全性.<br>(自己做的更容易被解答出来,不如说所有加密的内容都会有被解答的可能,只是那是否infeasible是判定安全性的标准.)<br>在公开的解密方式下,保证安全性的是加密方和解密方的密匙(key).其中的问题是,密匙的安全性.  </p>
 <p>Public key如字面意思,不需要私下的密匙,所有的东西都是可公开,在此前提下也能做到只有加密方和解密方能明白传递信息.<br>这不就是罗曼!  </p>
 <p>所做到的方式是创造大量的puzzle.<br>解密方只需要解答其中一个puzzle就能得到解码方式,而其他人要解码得在所有的puzzle中寻找解出那个有解码方式的puzzle.通过puzzle的数量来达到infeasible的标准.  </p>
-<img src="/2020/12/14/P153/P153_12.png" class="">
-<h3 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h3><p>类似的思路出现在Digital Signatures里.<br><img src="/2020/12/14/P153/P153_13.png" class=""></p>
+<img src="/blog/2020/12/14/P153/P153_12.png" class="">
+<h3 id="Digital-Signatures"><a href="#Digital-Signatures" class="headerlink" title="Digital Signatures"></a>Digital Signatures</h3><p>类似的思路出现在Digital Signatures里.<br><img src="/blog/2020/12/14/P153/P153_13.png" class=""></p>
 <h3 id="RSA"><a href="#RSA" class="headerlink" title="RSA"></a>RSA</h3><p>RSA也是可以用在Digital Signatures里的.</p>
 <p><strong><script type="math/tex">{ (n, e) }</script> is the public key</strong> and <strong><script type="math/tex">{ (n, d) }</script> is the private key</strong>.<br>where<br>1.random primes <script type="math/tex">{ p }</script> and <script type="math/tex">{ q }</script> with <script type="math/tex">{ \log_2 p ≈ \log_2 q ≈ l/2}</script><br>2.<script type="math/tex">{ n = pq }</script><br>3.<script type="math/tex">{ φ(n) = (p−1)(q−1) }</script><br>4.integer <script type="math/tex">{ e }</script> with <script type="math/tex">{ 1 < e < φ(n) }</script> and <script type="math/tex">{ gcd(e, φ(n)) = 1 }</script><br>5.<script type="math/tex">{ d = e−1 }</script> in <script type="math/tex">{ \Bbb Z_φ(n) }</script><br>Note: <script type="math/tex">{ de ≡ 1 (mod φ(n)) }</script> by definition of <script type="math/tex">{ e^{−1} }</script>  </p>
 <p>Encryption: <script type="math/tex">{ E((n, e), m) = m^e mod n }</script>.<br>Decryption: <script type="math/tex">{ D((n, d), c) = c^d mod n }</script>.  </p>
 <p><br><br><br></p>
 <h3 id="Diffie–Hellman-key-exchange"><a href="#Diffie–Hellman-key-exchange" class="headerlink" title="Diffie–Hellman key exchange"></a>Diffie–Hellman key exchange</h3><p>1.<script type="math/tex">{ p }</script> is a prime<br>2.<script type="math/tex">{ \Bbb Z^{∗}_{p} }</script> is the set <script type="math/tex">{ \{1,2,...,p−1 \} }</script><br>3.<script type="math/tex">{ g ∈ \Bbb Z^{∗}_{p} }</script> is an element of <script type="math/tex">{ \Bbb Z^{∗}_{p} }</script> of large prime order <script type="math/tex">{ q }</script></p>
 <p>Note:<script type="math/tex">{ \Bbb Z^{∗}_{n} }</script> = <script type="math/tex">{ \{ x∈ \Bbb Z_{n} :gcd(x,n)=1 \} }</script><br>The <strong>order</strong> of an element <script type="math/tex">{ x∈ \Bbb Z^{∗}_{n} }</script> is defined to be the smallest positive integer <script type="math/tex">{ t }</script> such that <script type="math/tex">{ x^t =1 }</script> in <script type="math/tex">{ \Bbb Z^{∗}_{n} }</script>.<br>An element of <script type="math/tex">{ \Bbb Z^{∗}_{n} }</script> is defined to be a <strong>generator</strong> if it has the maximum possible order.  </p>
-<p>The exchange:<br><img src="/2020/12/14/P153/P153_14.png" class="" title="有一说一我们老师的插图真的太灵魂了">  </p>
+<p>The exchange:<br><img src="/blog/2020/12/14/P153/P153_14.png" class="" title="有一说一我们老师的插图真的太灵魂了">  </p>
 <p>Diffie–Hellman assumption(DH):<br>Let <script type="math/tex">{ a, b ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g, g^a , g^b }</script> , it is computationally infeasible to determine <script type="math/tex">{ g^{ab} }</script> .<br>Discrete logarithm assumption(DLOG):<br>Let <script type="math/tex">{ a ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g }</script> and <script type="math/tex">{ g^a }</script> , it is computationally infeasible to determine <script type="math/tex">{ a }</script>.<br>Decisional Diffie-Hellman assumption(DDH):<br>Let <script type="math/tex">{ x, y, z ∈ \Bbb Z_{q} }</script>. Given <script type="math/tex">{ g, g^x , g^y }</script>, and either <script type="math/tex">{ g^{xy} }</script> or <script type="math/tex">{ g^z }</script>, it is computationally infeasible to determine whether you were given the real <script type="math/tex">{ g^{xy} }</script> or the random <script type="math/tex">{ g^z }</script> .<br><br><br><br></p>
 
     </div>
@@ -560,27 +555,27 @@
   <div class="popular-posts-header">相关博文</div>
   <ul class="popular-posts">
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/2021/04/20/P185/" rel="bookmark">关于stat的笔记 - distribution</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/04/20/P185/" rel="bookmark">关于stat的笔记 - distribution</a></div>
     </li>
   </ul>
 
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
-              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
           </div>
 
         
@@ -589,11 +584,11 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/2020/12/18/P154/" rel="prev" title="关于颜色的笔记">
+    <a href="/blog/2020/12/18/P154/" rel="prev" title="关于颜色的笔记">
       <i class="fa fa-chevron-left"></i> 关于颜色的笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/2020/12/11/P149/" rel="next" title="空气演奏">
+    <a href="/blog/2020/12/11/P149/" rel="next" title="空气演奏">
       空气演奏 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
@@ -667,27 +662,27 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/images/logo_4.jpg">
+      src="/blog/images/logo_4.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description">与孤独和平共处.</div>
 </div>
 <div class="site-state-wrap motion-element">
   <nav class="site-state">
       <div class="site-state-item site-state-posts">
-          <a href="/archives/">
+          <a href="/blog/archives/">
         
           <span class="site-state-item-count">193</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
-            <a href="/categories/">
+            <a href="/blog/categories/">
           
         <span class="site-state-item-count">6</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
-            <a href="/tags/">
+            <a href="/blog/tags/">
           
         <span class="site-state-item-count">41</span>
         <span class="site-state-item-name">tags</span></a>
@@ -863,32 +858,32 @@ password();
   </div>
 
   
-  <script src="/lib/anime.min.js"></script>
+  <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
   <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
-  <script src="/lib/velocity/velocity.min.js"></script>
-  <script src="/lib/velocity/velocity.ui.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
 
-<script src="/js/utils.js"></script>
+<script src="/blog/js/utils.js"></script>
 
-<script src="/js/motion.js"></script>
-
-
-<script src="/js/schemes/pisces.js"></script>
+<script src="/blog/js/motion.js"></script>
 
 
-<script src="/js/next-boot.js"></script>
+<script src="/blog/js/schemes/pisces.js"></script>
 
 
-
-
-  
+<script src="/blog/js/next-boot.js"></script>
 
 
 
 
   
-<script src="/js/local-search.js"></script>
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
 
 
 
@@ -917,7 +912,7 @@ NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
       repo        : 'comment',
       owner       : 'mazui3',
       admin       : ['mazui3'],
-      id          : 'eabcd0283bc8400930b28a76037e371d',
+      id          : '55b600dc62c1062bbef7d222f8526c00',
         language: 'zh-CN',
       distractionFreeMode: true
     });
