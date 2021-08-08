@@ -1,0 +1,721 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="中文维基翻译是流密码,是一种对称加密算法.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="一点点stream cipher记录和数字母用小代码">
+<meta property="og:url" content="http://yoursite.com/2020/09/22/P120/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="中文维基翻译是流密码,是一种对称加密算法.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://yoursite.com/2020/09/22/P120/P120.png">
+<meta property="og:image" content="http://yoursite.com/2020/09/22/P120/P120_1.png">
+<meta property="article:published_time" content="2020-09-22T14:48:39.000Z">
+<meta property="article:modified_time" content="2021-03-22T21:52:14.546Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Thank you Mr.goose">
+<meta property="article:tag" content="编码">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://yoursite.com/2020/09/22/P120/P120.png">
+
+<link rel="canonical" href="http://yoursite.com/2020/09/22/P120/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>一点点stream cipher记录和数字母用小代码 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-library">
+
+    <a href="https://mazui3.net/" rel="noopener" target="_blank"><i class="fas fa-star fa-fw"></i>Library</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/09/22/P120/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_4.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          一点点stream cipher记录和数字母用小代码
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2020-09-22 10:48:39" itemprop="dateCreated datePublished" datetime="2020-09-22T10:48:39-04:00">2020-09-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-03-22 17:52:14" itemprop="dateModified" datetime="2021-03-22T17:52:14-04:00">2021-03-22</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>8.7k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>中文维基翻译是流密码,是一种对称加密算法.<br><a id="more"></a></p>
+<p>起因是这样,这个学期我回去重上co487,密码学.上次drop的原因是期中考撞上疫情爆发,我也没学好,手忙脚乱的炸掉两门期中,就干脆二进宫了.<br>这次的作业老师出的比上次的老师…要难些(笑),不过记录一下.<br>有答题是给了三种加密方法和三份加密后的文件,直接让我们分析并解密.</p>
+<p>三种是</p>
+<ul>
+<li>Random simple substitution cipher</li>
+<li>Vigenere cipher</li>
+<li>Transposition cipher</li>
+</ul>
+<p><br><br><br><br><br><br><br><br><br></p>
+<h2 id="Substitution-cipher"><a href="#Substitution-cipher" class="headerlink" title="Substitution cipher"></a>Substitution cipher</h2><p>维基介绍:</p>
+<blockquote><p>簡易替換加密是一種以特定方式改變字母表上字母順序，並以此順序書寫的加密方式。這樣一張改變了字母次序的字母表即為『替換表』。<br>替換表可以以偏移或逆轉（分別為凱撒密碼和阿特巴希密碼（英語：Atbash））或更複雜方式構造，此時稱之為『混合表』。傳統上會先把一個關鍵詞寫在字母表最前面，再刪去重複字母，這樣就能得到一個混合表。</p>
+<p>例子<br>使用混合表系統，關鍵字為“zebras”：</p>
+<p>明文為    ABCDEFGHIJKLMNOPQRSTUVWXYZ<br>密文為    ZEBRASCDFGHIJKLMNOPQTUVWXY<br>明文為：</p>
+<p>flee at once. we are discovered!<br>加密结果为：</p>
+<p>SIAA ZQ LKBA. VA ZOA RFPBLUAOAR!</p>
+</blockquote>
+<p><br><br><br><br><br><br><br><br><br></p>
+<h2 id="Vigenere-cipher"><a href="#Vigenere-cipher" class="headerlink" title="Vigenere cipher"></a>Vigenere cipher</h2><p>维基介绍:</p>
+<blockquote><p>在一个凱撒密碼中，字母表中的每一字母都会作一定的偏移，例如偏移量为3时，A就转换为了D、B转换为了E……而维吉尼亚密码则是由一些偏移量不同的恺撒密码组成。<br>为了生成密码，需要使用表格法。这一表格包括了26行字母表，每一行都由前一行向左偏移一位得到。具体使用哪一行字母表进行编译是基于密钥进行的，在过程中会不断地变换。</p>
+<p>例如，假设明文为：</p>
+<p>ATTACKATDAWN</p>
+<p>选择某一关键词并重复而得到密钥，如关键词为LEMON时，密钥为：</p>
+<p>LEMONLEMONLE</p>
+<p>对于明文的第一个字母A，对应密钥的第一个字母L，于是使用表格中L行字母表进行加密，得到密文第一个字母L。类似地，明文第二个字母为T，在表格中使用对应的E行进行加密，得到密文第二个字母X。以此类推，可以得到：</p>
+<p>明文：ATTACKATDAWN<br>密钥：LEMONLEMONLE<br>密文：LXFOPVEFRNHR</p>
+<p>解密的过程则与加密相反。例如：根据密钥第一个字母L所对应的L行字母表，发现密文第一个字母L位于A列，因而明文第一个字母为A。密钥第二个字母E对应E行字母表，而密文第二个字母X位于此行T列，因而明文第二个字母为T。以此类推便可得到明文。<br>用数字0-25代替字母A-Z，维吉尼亚密码的加密文法可以写成同余的形式：</p>
+<p>C_i = P_i + K_i (mod 26)</p>
+<p>解密方法则能写成：</p>
+<p>P_i = C_i - K_i (mod 26)</p>
+</blockquote>
+<p><br><br><br><br><br><br><br><br><br></p>
+<h2 id="Transposition-cipher"><a href="#Transposition-cipher" class="headerlink" title="Transposition cipher"></a>Transposition cipher</h2><p>维基…没有中文介绍!!<br>我自己概括的话是:将字母按一行n个字母分好组,然后在每组里做位置移动.</p>
+<blockquote><p>For example, suppose we use the keyword ZEBRAS and the message WE ARE DISCOVERED. FLEE AT ONCE. In a regular columnar transposition, we write this into the grid as follows:</p>
+<p>6 3 2 4 1 5<br>W E A R E D<br>I S C O V E<br>R E D F L E<br>E A T O N C<br>E Q K J E U</p>
+<p>比如说这里是第一列换到第六列的位置,第二列换到第三列的位置,以此类推.为使满足n*6的字母数,多加了5个随机的字母.</p>
+<p>providing five nulls (QKJEU), these letters can be randomly selected as they just fill out the incomplete columns and are not part of the message. The ciphertext is then read off as:</p>
+<p>EVLNE ACDTK ESEAQ ROFOJ DEECU WIREE</p>
+</blockquote>
+<p><br><br><br><br><br><br><br><br><br></p>
+<p>以上就是作业中出现的三种加密方式.<br>判断哪个是哪个的方法是分析每个字母和两个字母组合的出现频率.<br>在英文中每个字母的使用频率是不同的.<br><img src="/2020/09/22/P120/P120.png" class=""></p>
+<p>每两个字母的组合也有不同的频率.<br><img src="/2020/09/22/P120/P120_1.png" class=""></p>
+<p>在这个情况下分析三种加密方式,通过三种的加密文有/没有这两种频率倾向来猜测加密种类.<br>一开始想着写个小代码来测频率,于是翻出了(上一篇文章的)旧代码想来写个C++也练下手.结果写的又丑又长,想着时间不打够就去找online的测试网站.<br>之后跟朋友对答案发现对方用python写了码,写两页就写完所有功能了,我…我的这么长还没测两个字母的频率呢…<br>然后在这里记录一下使用的辅助工具…!!很厉害.</p>
+<p>首先是cryptool.</p>
+<p><a target="_blank" rel="noopener" href="https://www.cryptool.org/en/">https://www.cryptool.org/en/</a></p>
+<p>这是款很老很老的软件但是很厉害,它里面包括了很多常见的加密方法,可以输入key来加密/解密.<br>最厉害的是里面还附带了[分析]这个功能,能一定程度的根据加密方式在不需要key的情况下猜测原文.也就是一键还原功能.<br>虽然准确率不是特别高但是非常好玩…<br>因为准确率不大行所以也用个这个网站帮忙.</p>
+<p><a target="_blank" rel="noopener" href="https://crypto.interactive-maths.com/frequency-analysis-breaking-the-code.html">https://crypto.interactive-maths.com/frequency-analysis-breaking-the-code.html</a><br><br><br><br><br>然后是Transposition cipher的网站.</p>
+<p><a target="_blank" rel="noopener" href="https://tholman.com/other/transposition/">https://tholman.com/other/transposition/</a></p>
+<p>输入排列时每组的长度,然后直接根据拖动来调整字母位置,导出明文/密文.这个也相当好玩……<br><br><br><br><br><br><br><br><br><br></p>
+<h2 id="最后是小代码"><a href="#最后是小代码" class="headerlink" title="最后是小代码"></a>最后是小代码</h2><p>使用语言C++14.<br>现在是数字母小代码.在names.txt放入想要数的段落(数英文only,大小写通用).<br>添加了跳过功能,可以隔着输入的数字来数字母,比如[abcd]如果跳跃2就是只数[ac].<br>也加入了从哪里数功能,跳过1[abcd]可以数[bcd].</p>
+<p><br><br><br><br><br><br><br><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Instruction in case I forgot!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;include a file call names.txt to include the words wanna count&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;if you go with ./a.out -n that means add a skip space that counting char&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;by default we count one char by one char&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;for example we input 2 by count [abc], then only a and c will be counted&quot;</span>&lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;also add a space that we start to counting on&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;we suggest this num should smaller than skip(or at least smaller than your file length)&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">int</span> theArray[<span class="number">26</span>];<span class="comment">//with 26 char</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; <span class="number">26</span>; i++) &#123;</span><br><span class="line">        theArray[i] = <span class="number">0</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">int</span> skip = <span class="number">1</span>;<span class="comment">//we move 1 char to another char by default</span></span><br><span class="line">    <span class="keyword">int</span> ignore = <span class="number">0</span>;<span class="comment">//by default we start from beginning</span></span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( argc &gt; <span class="number">1</span> )&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; argc ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(argv[i][<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)&#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(argv[i][<span class="number">1</span>] == <span class="string">&#x27;n&#x27;</span>)&#123;<span class="comment">//num</span></span><br><span class="line">                  <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;add the num space you wanna skip &quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                  <span class="built_in">string</span> tempNum;</span><br><span class="line">                  <span class="built_in">cin</span> &gt;&gt; tempNum;</span><br><span class="line">                  skip = stoi(tempNum);</span><br><span class="line">                  <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;skip :&quot;</span> &lt;&lt; skip &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                  <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;add the num you wanna ignore in the front &quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                  <span class="built_in">cin</span> &gt;&gt; tempNum;</span><br><span class="line">                  ignore = stoi(tempNum);</span><br><span class="line">                  <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;ignore :&quot;</span> &lt;&lt; ignore &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;<span class="comment">//end of argc</span></span><br><span class="line">&#125;</span><br><span class="line">    ifstream file&#123;<span class="string">&quot;names.txt&quot;</span>&#125;;</span><br><span class="line">    <span class="built_in">string</span> s;</span><br><span class="line">    <span class="keyword">int</span> countRound = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">while</span>(file &gt;&gt; s)&#123;</span><br><span class="line">            <span class="built_in">string</span> tb = s;</span><br><span class="line">            <span class="keyword">int</span> tempStrLength = s.length();</span><br><span class="line">            <span class="keyword">char</span> w[tempStrLength + <span class="number">1</span>];</span><br><span class="line">            <span class="built_in">strcpy</span>(w, s.c_str());</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">            <span class="keyword">for</span> (<span class="keyword">int</span> j = <span class="number">0</span>; j &lt; tempStrLength; j = j + <span class="number">1</span>) &#123;</span><br><span class="line">              <span class="keyword">if</span> (ignore == <span class="number">0</span>)&#123;</span><br><span class="line">                <span class="keyword">if</span> (countRound == <span class="number">0</span>)&#123;</span><br><span class="line">                  <span class="keyword">switch</span>(w[j]) &#123;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;a&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">0</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;A&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">0</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;b&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">1</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;B&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">1</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;c&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">2</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;C&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">2</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;d&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">3</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;D&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">3</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;e&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">4</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;E&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">4</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;f&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">5</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;F&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">5</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;g&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">6</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;G&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">6</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;h&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">7</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;H&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">7</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;i&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">8</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;I&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">8</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;j&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">9</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;J&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">9</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;k&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">10</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;K&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">10</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;l&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">11</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;L&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">11</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;m&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">12</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;M&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">12</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;n&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">13</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;N&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">13</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;o&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">14</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;O&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">14</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;p&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">15</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;P&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">15</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;q&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">16</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;Q&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">16</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;r&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">17</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;R&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">17</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;s&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">18</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;S&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">18</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;t&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">19</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;T&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">19</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;u&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">20</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;U&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">20</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;v&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">21</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;V&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">21</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;w&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">22</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;W&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">22</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;x&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">23</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;X&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">23</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;y&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">24</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;Y&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">24</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;z&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">25</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">case</span> <span class="string">&#x27;Z&#x27;</span>:</span><br><span class="line">                          theArray[<span class="number">25</span>]++;</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                      <span class="keyword">default</span>:</span><br><span class="line">                          <span class="keyword">break</span>;</span><br><span class="line">                  &#125;</span><br><span class="line">                &#125;</span><br><span class="line">                countRound = countRound + <span class="number">1</span>;</span><br><span class="line">                <span class="keyword">if</span> (countRound == skip)&#123;</span><br><span class="line">                  countRound = countRound - skip;</span><br><span class="line">                &#125;</span><br><span class="line">              &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">                ignore = ignore - <span class="number">1</span>;</span><br><span class="line">              &#125;</span><br><span class="line">                index++;</span><br><span class="line">            &#125;</span><br><span class="line">    &#125;<span class="comment">//end of file interface</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">//we print all the content in the map</span></span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;a num: &quot;</span> &lt;&lt; theArray[<span class="number">0</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;b num: &quot;</span> &lt;&lt; theArray[<span class="number">1</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;c num: &quot;</span> &lt;&lt; theArray[<span class="number">2</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;d num: &quot;</span> &lt;&lt; theArray[<span class="number">3</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;e num: &quot;</span> &lt;&lt; theArray[<span class="number">4</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;f num: &quot;</span> &lt;&lt; theArray[<span class="number">5</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;g num: &quot;</span> &lt;&lt; theArray[<span class="number">6</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;h num: &quot;</span> &lt;&lt; theArray[<span class="number">7</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;i num: &quot;</span> &lt;&lt; theArray[<span class="number">8</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;j num: &quot;</span> &lt;&lt; theArray[<span class="number">9</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;k num: &quot;</span> &lt;&lt; theArray[<span class="number">10</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;l num: &quot;</span> &lt;&lt; theArray[<span class="number">11</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;m num: &quot;</span> &lt;&lt; theArray[<span class="number">12</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;n num: &quot;</span> &lt;&lt; theArray[<span class="number">13</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;o num: &quot;</span> &lt;&lt; theArray[<span class="number">14</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;p num: &quot;</span> &lt;&lt; theArray[<span class="number">15</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;q num: &quot;</span> &lt;&lt; theArray[<span class="number">16</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;r num: &quot;</span> &lt;&lt; theArray[<span class="number">17</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;s num: &quot;</span> &lt;&lt; theArray[<span class="number">18</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;t num: &quot;</span> &lt;&lt; theArray[<span class="number">19</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;u num: &quot;</span> &lt;&lt; theArray[<span class="number">20</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;v num: &quot;</span> &lt;&lt; theArray[<span class="number">21</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;w num: &quot;</span> &lt;&lt; theArray[<span class="number">22</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;x num: &quot;</span> &lt;&lt; theArray[<span class="number">23</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;y num: &quot;</span> &lt;&lt; theArray[<span class="number">24</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">        <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;z num: &quot;</span> &lt;&lt; theArray[<span class="number">25</span>] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">  &#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/05/12/P194/" rel="bookmark">关于stat的笔记 - estimation</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
+              <a href="/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2020/10/12/P121/" rel="prev" title="灰桑家的小林和灰桑给我的">
+      <i class="fa fa-chevron-left"></i> 灰桑家的小林和灰桑给我的
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2020/09/21/P119/" rel="next" title="(补)抽奖用小代码">
+      (补)抽奖用小代码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-cipher"><span class="nav-number">1.</span> <span class="nav-text">Substitution cipher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Vigenere-cipher"><span class="nav-number">2.</span> <span class="nav-text">Vigenere cipher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transposition-cipher"><span class="nav-number">3.</span> <span class="nav-text">Transposition cipher</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E5%90%8E%E6%98%AF%E5%B0%8F%E4%BB%A3%E7%A0%81"><span class="nav-number">4.</span> <span class="nav-text">最后是小代码</span></a></li></ol></div>
+
+
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_4.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=465530020&auto=0&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">356k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">5:24</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有160.3k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2e39777bbf0f9f598629',
+      clientSecret: '6d5262a0465d894852bbea8f866021d0b3feb168',
+      repo        : 'comment',
+      owner       : 'mazui3',
+      admin       : ['mazui3'],
+      id          : '9bc31ce4a6015dafde700bffeba1a406',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>

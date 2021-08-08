@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/star.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"yoursite.com","root":"/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="先感谢stat341老师提供的R语言从入门到入土的教材.这里比较屑,把tutorial的笔记直接复制上来.之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于R语言的笔记">
+<meta property="og:url" content="http://yoursite.com/2021/01/13/P164/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="先感谢stat341老师提供的R语言从入门到入土的教材.这里比较屑,把tutorial的笔记直接复制上来.之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-01-13T21:46:18.000Z">
+<meta property="article:modified_time" content="2021-05-10T20:33:14.179Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Thank you Mr.goose">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="R">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="http://yoursite.com/2021/01/13/P164/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于R语言的笔记 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的休息室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-mailbox">
+
+    <a href="/mailbox/" rel="section"><i class="fa fa-paper-plane fa-fw"></i>Mailbox</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-library">
+
+    <a href="https://mazui3.net/" rel="noopener" target="_blank"><i class="fas fa-star fa-fw"></i>Library</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2021/01/13/P164/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/logo_4.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于R语言的笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-01-13 16:46:18" itemprop="dateCreated datePublished" datetime="2021-01-13T16:46:18-05:00">2021-01-13</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-05-10 16:33:14" itemprop="dateModified" datetime="2021-05-10T16:33:14-04:00">2021-05-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">笔记</span></a>
+                </span>
+            </span>
+
+          
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>10 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>先感谢stat341老师提供的R语言从入门到入土的教材.<br>这里比较屑,把tutorial的笔记直接复制上来.<br>之后在其他的stat课也会写R,毕竟stat不分家.希望都能整理起来.<br><a id="more"></a><br>那么我们就开始吧.</p>
+<p><br><br><br><br><br></p>
+<h2 id="Jan-13-Tutorial-1"><a href="#Jan-13-Tutorial-1" class="headerlink" title="Jan-13 Tutorial 1"></a>Jan-13 Tutorial 1</h2><p>R的运行跟sql有点像,可以选中部分代码再run.<br>Mac 快捷键是command + return; Win 是 ctrl + enter.</p>
+<p>查看某个command,输入?command可以查看documentation.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########################################</span></span><br><span class="line"><span class="comment">### STAT 341: Tutorial 1 -- R Basics ###</span></span><br><span class="line"><span class="comment">########################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment">### R as a Calculator ###</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Addition</span></span><br><span class="line"><span class="number">2</span>+<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Subtraction</span></span><br><span class="line"><span class="number">2</span>-<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Multiplication</span></span><br><span class="line"><span class="number">2</span>*<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Division</span></span><br><span class="line"><span class="number">2</span>/<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Remainder / Modulus</span></span><br><span class="line"><span class="number">8</span> %% <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Exponents</span></span><br><span class="line"><span class="number">2</span>^<span class="number">8</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Square Root</span></span><br><span class="line">sqrt(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Absolute Value</span></span><br><span class="line">abs(-<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Exponential Function</span></span><br><span class="line">exp(<span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Natural Logarithm</span></span><br><span class="line">log(<span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Logarithm with any base</span></span><br><span class="line">log(<span class="number">8</span>, base = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Trigonometric functions</span></span><br><span class="line">sin(pi/<span class="number">2</span>)</span><br><span class="line">cos(pi)</span><br><span class="line">tan(<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># BEDMAS</span></span><br><span class="line">exp((-(<span class="number">2</span>-<span class="number">5</span>)^<span class="number">2</span>)/(<span class="number">2</span>*<span class="number">3</span>)) / sqrt(<span class="number">2</span>*pi*<span class="number">3</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###########################</span></span><br><span class="line"><span class="comment">### Variable Assignment ###</span></span><br><span class="line"><span class="comment">###########################</span></span><br><span class="line">a &lt;- <span class="number">2</span></span><br><span class="line">b &lt;- <span class="number">8</span></span><br><span class="line">a+b</span><br><span class="line"></span><br><span class="line">a = <span class="number">2</span></span><br><span class="line">b = <span class="number">8</span></span><br><span class="line">a+b</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###############</span></span><br><span class="line"><span class="comment">### Vectors ###</span></span><br><span class="line"><span class="comment">###############</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a vector of numbers</span></span><br><span class="line">v1 &lt;- c(<span class="number">1</span>, <span class="number">4</span>, <span class="number">5</span>, <span class="number">3</span>, <span class="number">9</span>, <span class="number">8</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a vector of strings</span></span><br><span class="line">v2 &lt;- c(<span class="string">&quot;STAT341&quot;</span>, <span class="string">&quot;computational statistics&quot;</span>, <span class="string">&quot;&amp;&quot;</span>, <span class="string">&quot;data analysis&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Find the length of a vector</span></span><br><span class="line">length(v1)</span><br><span class="line">length(v2)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a vector that repeats the same element n times</span></span><br><span class="line">rep(x = <span class="number">3</span>, times = <span class="number">7</span>)</span><br><span class="line">rep(x = <span class="string">&quot;cat&quot;</span>, times = <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a vector that is an integer sequence</span></span><br><span class="line"><span class="number">1</span>:<span class="number">10</span></span><br><span class="line"><span class="number">22</span>:<span class="number">27</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a vector that is an arbitrary sequence</span></span><br><span class="line"><span class="comment"># 从 from 开始到 to, by是增加的值.</span></span><br><span class="line">seq(from = <span class="number">0</span>, to = <span class="number">1</span>, by = <span class="number">0.1</span>)</span><br><span class="line">seq(from = <span class="number">0</span>, to = <span class="number">1</span>, length.out = <span class="number">15</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>关于vector,跟所熟悉的其他语言的array不一样.<br>在其他语言中array第一个数据index是0,R在1.</p>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Indexing</span></span><br><span class="line">v1[<span class="number">1</span>]</span><br><span class="line">v1[<span class="number">2</span>]</span><br><span class="line">v1[length(v1)]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding an element to a vector</span></span><br><span class="line">c(v1, <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Removing an element</span></span><br><span class="line">v1[-<span class="number">3</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sort a vector</span></span><br><span class="line">sort(v1)</span><br><span class="line">sort(v1, decreasing = <span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scalar arithmetic with a vector</span></span><br><span class="line">v1 + <span class="number">3</span></span><br><span class="line">v1 - <span class="number">3</span></span><br><span class="line">v1 * <span class="number">3</span></span><br><span class="line">v1 / <span class="number">3</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Elementwise vector arithmetic</span></span><br><span class="line">v3 &lt;- <span class="number">1</span>:<span class="number">6</span></span><br><span class="line">v1 + v3</span><br><span class="line">v1 - v3</span><br><span class="line">v1 * v3</span><br><span class="line">v1 / v3</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">####################################</span></span><br><span class="line"><span class="comment">### Numeric summaries of vectors ###</span></span><br><span class="line"><span class="comment">####################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># rnorm : random draw from normal distribution</span></span><br><span class="line">x &lt;- rnorm(n = <span class="number">100</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Mean(should be close to 0)</span></span><br><span class="line">mean(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Variance(should be close to 1)</span></span><br><span class="line">var(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Standard Deviation(should be close to 1)</span></span><br><span class="line">sd(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Minimum</span></span><br><span class="line">min(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Maximum</span></span><br><span class="line">max(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Range</span></span><br><span class="line">range(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Median</span></span><br><span class="line">median(x)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Arbitrary Quantiles</span></span><br><span class="line">quantile(x, probs = <span class="number">0.5</span>)</span><br><span class="line">quantile(x, probs = c(<span class="number">0.05</span>, <span class="number">0.25</span>, <span class="number">0.75</span>, <span class="number">0.95</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Rounding</span></span><br><span class="line">round(x, digits = <span class="number">4</span>)</span><br><span class="line">round(x, digits = <span class="number">2</span>)</span><br><span class="line">round(x, digits = <span class="number">0</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># General Summary</span></span><br><span class="line">summary(x)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>summary是一个很牛逼的function.根据输入的数据不同,output也会不同.</p>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################</span></span><br><span class="line"><span class="comment">### Matrices ###</span></span><br><span class="line"><span class="comment">################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Create a matrix</span></span><br><span class="line">M1 &lt;- matrix(data = v1, nrow = <span class="number">2</span>, ncol = <span class="number">3</span>, byrow = <span class="literal">TRUE</span>)</span><br><span class="line">M1</span><br><span class="line">M2 &lt;- matrix(data = v1, nrow = <span class="number">2</span>, ncol = <span class="number">3</span>, byrow = <span class="literal">FALSE</span>)</span><br><span class="line">M2</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这里是将v1的数据作row或者column组成matrix.Default is by column.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Transpose a matrix</span></span><br><span class="line">t(M1)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Diagonal of a matrix</span></span><br><span class="line">A &lt;- matrix(data = rpois(n = <span class="number">9</span>, lambda = <span class="number">10</span>), nrow = <span class="number">3</span>, ncol = <span class="number">3</span>)</span><br><span class="line">A</span><br><span class="line">diag(A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># rpois: random draw from poisson distribution.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Determinant of a matrix</span></span><br><span class="line">det(A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Inverse of a matrix</span></span><br><span class="line">solve(A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Matrix multiplication</span></span><br><span class="line">A %*% solve(A)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Create an identity  matrix</span></span><br><span class="line">diag(<span class="number">5</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Scalar arithmetic with a matrix</span></span><br><span class="line">A+<span class="number">2</span></span><br><span class="line">A-<span class="number">2</span></span><br><span class="line">A*<span class="number">2</span></span><br><span class="line">A/<span class="number">2</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Elementwise Matrix Arithmetic</span></span><br><span class="line">B &lt;- matrix(data = <span class="number">1</span>:<span class="number">9</span>, nrow = <span class="number">3</span>, ncol = <span class="number">3</span>)</span><br><span class="line">B</span><br><span class="line">A+B</span><br><span class="line">A-B</span><br><span class="line">A*B</span><br><span class="line">A/B</span><br><span class="line"></span><br><span class="line"><span class="comment"># Indexing</span></span><br><span class="line">A[<span class="number">3</span>,<span class="number">2</span>]</span><br><span class="line">A[c(<span class="number">1</span>,<span class="number">3</span>), c(<span class="number">1</span>,<span class="number">3</span>)] <span class="comment">### 这个可以截取 row 1&amp;3 和 column 1&amp;3.</span></span><br><span class="line">A[<span class="number">1</span>,] <span class="comment">### return first row.</span></span><br><span class="line">A[,<span class="number">2</span>] <span class="comment">### return second column.</span></span><br><span class="line"></span><br><span class="line">A_1 &lt;- rbind(a,b) <span class="comment"># bind a and b as row vectors</span></span><br><span class="line"></span><br><span class="line">A_2 &lt;- cbind(a,b) <span class="comment"># bind a and b as column vectors</span></span><br></pre></td></tr></table></figure>
+<p>%*%<br><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#######################</span></span><br><span class="line"><span class="comment">### Simple Logicals ###</span></span><br><span class="line"><span class="comment">#######################</span></span><br><span class="line"><span class="number">2</span> &gt; <span class="number">3</span></span><br><span class="line"><span class="number">2</span> &gt;= <span class="number">3</span></span><br><span class="line"><span class="number">2</span> &lt; <span class="number">3</span></span><br><span class="line"><span class="number">2</span> &lt;= <span class="number">3</span></span><br><span class="line"><span class="number">2</span> == <span class="number">3</span></span><br><span class="line"><span class="number">2</span> != <span class="number">3</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">###########################</span></span><br><span class="line"><span class="comment">### Logicals and Vectors###</span></span><br><span class="line"><span class="comment">###########################</span></span><br><span class="line">v1 &gt; <span class="number">3</span></span><br><span class="line">v1 == <span class="number">5</span></span><br><span class="line">v1 &gt; <span class="number">3</span> | v1 &lt;= <span class="number">1</span></span><br><span class="line">v1 &gt; <span class="number">3</span> &amp; v1 &lt;= <span class="number">1</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">########################</span></span><br><span class="line"><span class="comment">### Logical Indexing ###</span></span><br><span class="line"><span class="comment">########################</span></span><br><span class="line"></span><br><span class="line">which(v1 == <span class="number">5</span>)</span><br><span class="line">which(v1 == min(v1))</span><br><span class="line">which(v1 == max(v1))</span><br><span class="line">v1[which(v1 %% <span class="number">2</span> == <span class="number">0</span>)]</span><br><span class="line">v1[which(v1 %% <span class="number">2</span> != <span class="number">0</span>)]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#####################</span></span><br><span class="line"><span class="comment">### IF Statements ###</span></span><br><span class="line"><span class="comment">#####################</span></span><br><span class="line"></span><br><span class="line">a &lt;- <span class="number">6</span></span><br><span class="line"><span class="keyword">if</span>(a == <span class="number">5</span>)&#123;</span><br><span class="line">  print(<span class="string">&quot;a is equal to 5&quot;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span>&#123;</span><br><span class="line">  print(<span class="string">&quot;a does not equal 5&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">b &lt;- <span class="number">3</span></span><br><span class="line"><span class="keyword">if</span>(b == <span class="number">5</span>)&#123;</span><br><span class="line">  print(<span class="string">&quot;b is equal to 5&quot;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(b &gt; <span class="number">5</span>)&#123;</span><br><span class="line">  print(<span class="string">&quot;b is greater than 5&quot;</span>)</span><br><span class="line">&#125;<span class="keyword">else</span> <span class="keyword">if</span>(b &lt; <span class="number">5</span>)&#123;</span><br><span class="line">  print(<span class="string">&quot;b is less than 5&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#################</span></span><br><span class="line"><span class="comment">### FOR Loops ###</span></span><br><span class="line"><span class="comment">#################</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">10</span>)&#123;</span><br><span class="line">  print(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> v1)&#123;</span><br><span class="line">  print(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> v2)&#123;</span><br><span class="line">  print(i)</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">3</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">5</span>)&#123;</span><br><span class="line">    print(paste(<span class="string">&quot;(&quot;</span>, i, <span class="string">&quot;,&quot;</span>, j, <span class="string">&quot;)&quot;</span>, sep = <span class="string">&quot;&quot;</span>))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#################################</span></span><br><span class="line"><span class="comment">### Probability Distributions ###</span></span><br><span class="line"><span class="comment">#################################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The binomial distribution</span></span><br><span class="line">dbinom(x = <span class="number">5</span>, size = <span class="number">20</span>, prob = <span class="number">0.3</span>) <span class="comment">### d: pdf</span></span><br><span class="line">pbinom(q = <span class="number">5</span>, size = <span class="number">20</span>, prob = <span class="number">0.3</span>) <span class="comment">### p: cdf</span></span><br><span class="line">qbinom(p = <span class="number">0.5</span>, size = <span class="number">20</span>, prob = <span class="number">0.3</span>) <span class="comment">### q: quantile</span></span><br><span class="line">rbinom(n = <span class="number">10</span>, size = <span class="number">20</span>, prob = <span class="number">0.3</span>) <span class="comment">### r: generate random function</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># The Poisson distribution</span></span><br><span class="line">dpois(x = <span class="number">4</span>, lambda = <span class="number">10</span>)</span><br><span class="line">ppois(q = <span class="number">4</span>, lambda = <span class="number">10</span>)</span><br><span class="line">qpois(p = <span class="number">0.5</span>, lambda = <span class="number">10</span>)</span><br><span class="line">rpois(n = <span class="number">10</span>, lambda = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The normal distribution</span></span><br><span class="line">plot(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.01</span>), y = dnorm(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.01</span>), mean = <span class="number">0</span>, sd = <span class="number">1</span>), type = <span class="string">&quot;l&quot;</span>, xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;Standard Normal Distribution&quot;</span>, col = <span class="string">&quot;darkred&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">pnorm(q = <span class="number">1.96</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>)</span><br><span class="line">qnorm(p = <span class="number">0.975</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>)</span><br><span class="line">rnorm(n = <span class="number">10</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">z &lt;- rnorm(<span class="number">1</span>,<span class="number">2</span>,<span class="number">0.25</span>) <span class="comment"># generate a normally-distributed r.v. with mean 2, sd 0.25</span></span><br><span class="line"></span><br><span class="line">u &lt;- rnorm(<span class="number">200</span>,<span class="number">2</span>,<span class="number">0.25</span>) <span class="comment"># generate 200 normally-distributed r.v.s</span></span><br><span class="line">mean(u) <span class="comment"># compute the mean</span></span><br><span class="line">sd(u) <span class="comment"># compute the standard deviation</span></span><br><span class="line"></span><br><span class="line">y &lt;- rnorm(<span class="number">3</span>,c(<span class="number">1</span>,<span class="number">2</span>,<span class="number">300</span>),<span class="number">1</span>) <span class="comment"># generate 3 r.v.s with means 1,2,and 300 respectively</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># Student&#x27;s t-distribution</span></span><br><span class="line">plot(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.01</span>), y = dt(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.01</span>), df = <span class="number">25</span>), type = <span class="string">&quot;l&quot;</span>, xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;t-Distribution with 25 degrees of freedom&quot;</span>, col = <span class="string">&quot;navyblue&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">pt(q = <span class="number">0</span>, df = <span class="number">25</span>)</span><br><span class="line">qt(p = <span class="number">0.90</span>, df = <span class="number">25</span>)</span><br><span class="line">rt(n = <span class="number">10</span>, df = <span class="number">25</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The F-distribution</span></span><br><span class="line">plot(x = seq(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0.01</span>), y = df(x = seq(<span class="number">0</span>, <span class="number">10</span>, <span class="number">0.01</span>), df1 = <span class="number">25</span>, df2 = <span class="number">10</span>), type = <span class="string">&quot;l&quot;</span>, xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;F-Distribution with 25 and 10 degrees of freedom&quot;</span>, col = <span class="string">&quot;darkgreen&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">pf(q = <span class="number">2</span>, df1 = <span class="number">25</span>, df2 = <span class="number">10</span>)</span><br><span class="line">qf(p = <span class="number">0.90</span>, df1 = <span class="number">25</span>, df2 = <span class="number">10</span>)</span><br><span class="line">rf(n = <span class="number">10</span>, df1 = <span class="number">25</span>, df2 = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># The chi-squared distribution</span></span><br><span class="line">plot(x = seq(<span class="number">0</span>, <span class="number">40</span>, <span class="number">0.1</span>), y = dchisq(x = seq(<span class="number">0</span>, <span class="number">40</span>, <span class="number">0.1</span>), df = <span class="number">10</span>), type = <span class="string">&quot;l&quot;</span>, xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;Chi-Squared Distribution with 10 degrees of freedom&quot;</span>, col = <span class="string">&quot;orchid4&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">pchisq(q = <span class="number">10</span>, df = <span class="number">10</span>)</span><br><span class="line">qchisq(p = <span class="number">0.90</span>, df = <span class="number">10</span>)</span><br><span class="line">rchisq(n = <span class="number">10</span>, df = <span class="number">10</span>)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#########################</span></span><br><span class="line"><span class="comment">### Working with Data ###</span></span><br><span class="line"><span class="comment">#########################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># R contains many datasets already that you can work with simply by calling their names</span></span><br><span class="line"><span class="comment"># To see a list of all such datasets use the following command:</span></span><br><span class="line">data()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 这是一个R自带的数据库.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># We&#x27;re going to look at the &quot;ChickWeight&quot; dataset</span></span><br><span class="line">? ChickWeight</span><br><span class="line"></span><br><span class="line"><span class="comment"># But most of the time we need to load data into R from a file</span></span><br><span class="line">getwd()</span><br><span class="line">setwd(<span class="string">&quot;/Users/nstevens/Dropbox/Teaching/STAT_341/Tutorials/Tutorial 1/&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read in a .csv file</span></span><br><span class="line">df_csv &lt;- read.csv(file = <span class="string">&quot;ChickWeight.csv&quot;</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read in a .txt file</span></span><br><span class="line">df_txt &lt;- read.table(file = <span class="string">&quot;ChickWeight.txt&quot;</span>, header = <span class="literal">TRUE</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Read in a .json file</span></span><br><span class="line"><span class="keyword">library</span>(rjson)</span><br><span class="line">df_json &lt;- as.data.frame(fromJSON(file = <span class="string">&quot;ChickWeight.json&quot;</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># install.packages(&quot;rjson&quot;)</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Let&#x27;s work with the data frame read from the csv file</span></span><br><span class="line">df &lt;- df_csv</span><br><span class="line"></span><br><span class="line"><span class="comment"># View the dataset in a spreadsheet window</span></span><br><span class="line">View(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View the dataset in the console</span></span><br><span class="line">df</span><br><span class="line"></span><br><span class="line"><span class="comment"># Dimension of the data frame (rows/columns)</span></span><br><span class="line">dim(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View the top n rows of the data frame</span></span><br><span class="line">head(df, n = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># View the bottom n rows of the data frame</span></span><br><span class="line">tail(df, n = <span class="number">10</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Summary of the dataframe</span></span><br><span class="line">summary(df)</span><br><span class="line"></span><br><span class="line"><span class="comment"># &quot;Chick&quot; and &quot;Diet&quot; should be treated as categorical (not numeric) variables. In R</span></span><br><span class="line"><span class="comment"># a categorocal variable is called a &quot;factor&quot; variable. We should change this. But first</span></span><br><span class="line"><span class="comment"># let&#x27;s figure out how to access specific columns of a data frame.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Extracting columns that are named</span></span><br><span class="line">df$Chick</span><br><span class="line">df$Diet</span><br><span class="line"></span><br><span class="line"><span class="comment"># Extracting columns (in general) -- behaves like a matrix</span></span><br><span class="line">df[,<span class="number">3</span>]</span><br><span class="line">df[,<span class="number">4</span>]</span><br><span class="line"></span><br><span class="line"><span class="comment"># Confirm that the &quot;Chick&quot; and &quot;Diet&quot; variables are not treated as factors</span></span><br><span class="line">is.factor(df$Chick)</span><br><span class="line">is.factor(df$Diet)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Coerce them to become factors</span></span><br><span class="line">df$Chick &lt;- as.factor(df$Chick)</span><br><span class="line">is.factor(df$Chick)</span><br><span class="line"></span><br><span class="line">df$Diet &lt;- factor(df$Diet, levels = <span class="number">1</span>:<span class="number">4</span>, labels = c(<span class="string">&quot;Diet 1&quot;</span>, <span class="string">&quot;Diet 2&quot;</span>, <span class="string">&quot;Diet 3&quot;</span>, <span class="string">&quot;Diet 4&quot;</span>))</span><br><span class="line">is.factor(df$Diet)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Sanity Check</span></span><br><span class="line">summary(df)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>关于factor: 有些明明写成数字但却是category的类型可以用factor function来转变.</p>
+<p><br><br><br></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################</span></span><br><span class="line"><span class="comment">### Plotting ###</span></span><br><span class="line"><span class="comment">################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Univariate plots (for quantitative variables)</span></span><br><span class="line">hist(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Histogram of Weight&quot;</span>)</span><br><span class="line">boxplot(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Boxplot of Weight&quot;</span>)</span><br><span class="line"></span><br><span class="line">hist(x = df$Time, xlab = <span class="string">&quot;Time (days)&quot;</span>, main = <span class="string">&quot;Histogram of Time&quot;</span>)</span><br><span class="line">boxplot(x = df$Time, xlab = <span class="string">&quot;Time (days)&quot;</span>, main = <span class="string">&quot;Boxplot of Time&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Univariate plots (for categorical variables)</span></span><br><span class="line"><span class="comment"># First the table() function:</span></span><br><span class="line">table(df$Diet)</span><br><span class="line">barplot(table(df$Diet), main = <span class="string">&quot;Frequency Barplot of Diet&quot;</span>)</span><br><span class="line">barplot(table(df$Diet)/sum(table(df$Diet)), main = <span class="string">&quot;Relative Frequency Barplot of Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line">pie(x = table(df$Diet), main = <span class="string">&quot;Pie Chart of Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for quantitative variables)</span></span><br><span class="line">plot(x = df$Time, y = df$weight, xlab = <span class="string">&quot;Time (days)&quot;</span>, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Scatter Plot of Weight vs. Time&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for quantitative and categorical variables)</span></span><br><span class="line">boxplot(df$weight ~ df$Diet, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Weight by Diet Type&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Multiple plots in one window</span></span><br><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">3</span>))</span><br><span class="line">hist(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Histogram of Weight&quot;</span>)</span><br><span class="line">plot(x = df$Time, y = df$weight, xlab = <span class="string">&quot;Time (days)&quot;</span>, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Scatter Plot of Weight vs. Time&quot;</span>)</span><br><span class="line">boxplot(df$weight ~ df$Diet, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Weight by Diet Type&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for categorical variables)</span></span><br><span class="line"><span class="comment"># First the table() function:</span></span><br><span class="line">table(df$Diet, df$Chick)</span><br><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">mosaicplot(x = table(df$Diet, df$Chick), xlab = <span class="string">&quot;Diet&quot;</span>, ylab = <span class="string">&quot;Chick ID&quot;</span>, main = <span class="string">&quot;Chick ID by Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Look at another dataset which is a better illustration of this function</span></span><br><span class="line">? HairEyeColor</span><br><span class="line">HairEyeColor</span><br><span class="line">mosaicplot(x = HairEyeColor[,,<span class="number">1</span>], main = <span class="string">&quot;Male Hair and Eye Colour&quot;</span>)</span><br><span class="line">mosaicplot(x = HairEyeColor[,,<span class="number">2</span>], main = <span class="string">&quot;Female Hair and Eye Colour&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding lines to plots</span></span><br><span class="line">plot(x = rnorm(n = <span class="number">1000</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>), y = rnorm(n = <span class="number">1000</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>), xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;&quot;</span>, pch = <span class="number">16</span>, xlim = c(-<span class="number">3.5</span>, <span class="number">3.5</span>), ylim = c(-<span class="number">3.5</span>, <span class="number">3.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Diagonal Lines</span></span><br><span class="line">abline(a = <span class="number">0</span>, b = <span class="number">1</span>, col = <span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Lines with a specific slope/intercept</span></span><br><span class="line">abline(a = -<span class="number">1</span>, b = <span class="number">0.5</span>, col = <span class="string">&quot;green&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Horizontal and vertical lines</span></span><br><span class="line">abline(h = <span class="number">0</span>, col = <span class="string">&quot;blue&quot;</span>, lwd = <span class="number">2</span>, lty = <span class="number">2</span>)</span><br><span class="line">abline(v = -<span class="number">2</span>, col = <span class="string">&quot;purple&quot;</span>, lwd = <span class="number">2</span>, lty = <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Segments</span></span><br><span class="line">segments(x0 = -<span class="number">2</span>, y0 = -<span class="number">3</span>, x1 = -<span class="number">1</span>, y1 = -<span class="number">3</span>, col = <span class="string">&quot;magenta&quot;</span>, lwd = <span class="number">3</span>, lty = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Curves</span></span><br><span class="line">lines(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.1</span>), y = cos(<span class="number">3</span>*seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.1</span>)), col = <span class="string">&quot;orange&quot;</span>, lwd = <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding a legend</span></span><br><span class="line">legend(<span class="string">&quot;bottomright&quot;</span>, legend = c(<span class="string">&quot;Diagonal&quot;</span>, <span class="string">&quot;General Line&quot;</span>, <span class="string">&quot;Horizontal&quot;</span>, <span class="string">&quot;Vertical&quot;</span>, <span class="string">&quot;Segment&quot;</span>, <span class="string">&quot;Curve&quot;</span>),</span><br><span class="line">       col = c(<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;purple&quot;</span>, <span class="string">&quot;magenta&quot;</span>, <span class="string">&quot;orange&quot;</span>),</span><br><span class="line">       lwd = c(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>),</span><br><span class="line">       lty = c(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add more points, but with a different colour and shape</span></span><br><span class="line">points(x = rnorm(n = <span class="number">100</span>, mean = -<span class="number">3</span>, sd = <span class="number">0.2</span>), y = rnorm(n = <span class="number">100</span>, mean = <span class="number">3</span>, sd = <span class="number">0.2</span>), col = <span class="string">&quot;cyan&quot;</span>, pch = <span class="number">17</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/05/12/P194/" rel="bookmark">关于stat的笔记 - estimation</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/04/10/P180/" rel="bookmark">关于stat的笔记 - sampling</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
+              <a href="/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
+              <a href="/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/tags/data/" rel="tag"># data</a>
+              <a href="/tags/R/" rel="tag"># R</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/2021/01/18/P163/" rel="prev" title="关于R语言的笔记 - R markdown">
+      <i class="fa fa-chevron-left"></i> 关于R语言的笔记 - R markdown
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/2021/01/01/P157/" rel="next" title="小狗贴贴">
+      小狗贴贴 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    <div class="comments" id="gitalk-container"></div>
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Jan-13-Tutorial-1"><span class="nav-number">1.</span> <span class="nav-text">Jan-13 Tutorial 1</span></a></li></ol></div>
+
+
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/images/logo_4.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/archives/">
+        
+          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/categories/">
+          
+        <span class="site-state-item-count">6</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/tags/">
+          
+        <span class="site-state-item-count">41</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=465530020&auto=0&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">356k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">5:24</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有160.3k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/lib/velocity/velocity.min.js"></script>
+  <script src="/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/js/utils.js"></script>
+
+<script src="/js/motion.js"></script>
+
+
+<script src="/js/schemes/pisces.js"></script>
+
+
+<script src="/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<link rel="stylesheet" href="//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.css">
+
+<script>
+NexT.utils.loadComments(document.querySelector('#gitalk-container'), () => {
+  NexT.utils.getScript('//cdn.jsdelivr.net/npm/gitalk@1/dist/gitalk.min.js', () => {
+    var gitalk = new Gitalk({
+      clientID    : '2e39777bbf0f9f598629',
+      clientSecret: '6d5262a0465d894852bbea8f866021d0b3feb168',
+      repo        : 'comment',
+      owner       : 'mazui3',
+      admin       : ['mazui3'],
+      id          : '5b0c3d4ee17eb70fa7fd84aed30528d5',
+        language: 'zh-CN',
+      distractionFreeMode: true
+    });
+    gitalk.render('gitalk-container');
+  }, window.Gitalk);
+});
+</script>
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>
