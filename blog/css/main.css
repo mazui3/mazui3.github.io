@@ -1248,7 +1248,7 @@ pre .javascript .function {
 }
 .links-of-author a::before,
 .links-of-author span.exturl::before {
-  background: #a66e25;
+  background: #ffff4b;
   border-radius: 50%;
   content: ' ';
   display: inline-block;
@@ -2661,7 +2661,7 @@ ul.breadcrumb li + li:last-child {
   padding: 0;
 }
 body {
-  background: url("/images/U_chibi_.png");
+  background: url("/blog/images/U_chibi_.png");
   background-repeat: repeat;
   background-attachment: fixed;
   background-size: contain;
