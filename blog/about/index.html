@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"yoursite.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"gitalk":{"order":-2}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"yoursite.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="前言感谢来访!!这里是Mazui3的个人博客.    中之人笔名是Mazui,称呼是麻醉.老熟人也叫我里约.普通学生.驱动力是99%的兴趣和1%的承诺.五分钟热度.见识少,梦想是读很多很多的书.喜欢自己编原创角色(oc)和故事玩.关于角色会放在图书馆里,这里的算作关于他们的唠嗑同人.图书馆链接🌟.  某个post讲了关于博主名字的来源和两位形象的设定-&gt;麻醉和里约.      这个博客">
@@ -156,6 +156,11 @@
         <li class="menu-item menu-item-friendlink">
 
     <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="/blog/www.mazui3.com" rel="section"><i class="fas fa-carrot fa-fw"></i>Back</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -362,7 +367,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">193</span>
+          <span class="site-state-item-count">194</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -514,7 +519,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">356k</span>
+    <span title="Symbols count total">358k</span>
   -->
 
   <!--
@@ -522,7 +527,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:24</span>
+    <span title="Reading time total">5:25</span>
 
   -->
   
@@ -532,7 +537,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有160.3k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有160.4k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -592,6 +597,16 @@ password();
 
   
 
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui_3.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
 
   <script type="text/javascript" src="/js/my_js/firework.js"></script>
 

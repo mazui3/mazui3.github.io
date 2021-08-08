@@ -6,7 +6,7 @@
   <link href="http://yoursite.com/blog/atom.xml" rel="self"/>
   
   <link href="http://yoursite.com/blog/"/>
-  <updated>2021-08-08T12:05:41.298Z</updated>
+  <updated>2021-08-08T17:46:54.464Z</updated>
   <id>http://yoursite.com/blog/</id>
   
   <author>
@@ -17,11 +17,28 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oc小草稿导航页面</title>
+    <link href="http://yoursite.com/blog/2021/08/08/P199/"/>
+    <id>http://yoursite.com/blog/2021/08/08/P199/</id>
+    <published>2021-08-08T16:31:38.000Z</published>
+    <updated>2021-08-08T17:46:54.464Z</updated>
+    
+    
+    <summary type="html">这里是没有链接上的oc草稿页面整理.因为不是公开的东西所以设置了密码.</summary>
+    
+    
+    
+    
+    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    
+  </entry>
+  
+  <entry>
     <title>项目记录_Mazui&#39;s Website</title>
     <link href="http://yoursite.com/blog/2021/08/08/P204/"/>
     <id>http://yoursite.com/blog/2021/08/08/P204/</id>
     <published>2021-08-08T05:19:53.000Z</published>
-    <updated>2021-08-08T12:05:41.298Z</updated>
+    <updated>2021-08-08T18:01:05.855Z</updated>
     
     
     <summary type="html">&lt;p&gt;以及混进了杂谈.&lt;/p&gt;
@@ -32,9 +49,9 @@
     <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
-    
     <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
     
   </entry>
   
@@ -55,9 +72,9 @@
     <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
-    
     <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
     
   </entry>
   
@@ -319,9 +336,9 @@
     <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
-    
     <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
     
   </entry>
   
@@ -438,32 +455,6 @@
     <category term="R" scheme="http://yoursite.com/blog/tags/R/"/>
     
     <category term="statistics" scheme="http://yoursite.com/blog/tags/statistics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>电脑角落的涂鸦与oc tag翻新</title>
-    <link href="http://yoursite.com/blog/2021/04/05/P181/"/>
-    <id>http://yoursite.com/blog/2021/04/05/P181/</id>
-    <published>2021-04-05T06:02:10.000Z</published>
-    <updated>2021-08-08T12:04:18.036Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/blog/2021/04/05/P181/P181_1.png&quot; class=&quot;&quot; title=&quot;蕃与约翰&quot;&gt;
-&lt;p&gt;图片乱,翻出了去年的小涂鸦来唠一唠oc相关.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="http://yoursite.com/blog/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
-    
-    <category term="在日落之前" scheme="http://yoursite.com/blog/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
-    
-    <category term="卡尔马" scheme="http://yoursite.com/blog/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
-    
-    <category term="0421record" scheme="http://yoursite.com/blog/tags/0421record/"/>
     
   </entry>
   
