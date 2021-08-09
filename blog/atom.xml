@@ -3,11 +3,11 @@
   <title>Underlake Reading Room</title>
   
   <subtitle>这里是图书馆外的阅览室🌟</subtitle>
-  <link href="http://yoursite.com/blog/atom.xml" rel="self"/>
+  <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
-  <link href="http://yoursite.com/blog/"/>
+  <link href="https://mazui3.com/blog/"/>
   <updated>2021-08-09T00:48:20.838Z</updated>
-  <id>http://yoursite.com/blog/</id>
+  <id>https://mazui3.com/blog/</id>
   
   <author>
     <name>Mazui</name>
@@ -18,8 +18,8 @@
   
   <entry>
     <title>oc小草稿导航页面</title>
-    <link href="http://yoursite.com/blog/2021/08/08/P199/"/>
-    <id>http://yoursite.com/blog/2021/08/08/P199/</id>
+    <link href="https://mazui3.com/blog/2021/08/08/P199/"/>
+    <id>https://mazui3.com/blog/2021/08/08/P199/</id>
     <published>2021-08-08T16:31:38.000Z</published>
     <updated>2021-08-09T00:48:20.838Z</updated>
     
@@ -29,14 +29,14 @@
     
     
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>项目记录_Mazui&#39;s Website</title>
-    <link href="http://yoursite.com/blog/2021/08/08/P204/"/>
-    <id>http://yoursite.com/blog/2021/08/08/P204/</id>
+    <link href="https://mazui3.com/blog/2021/08/08/P204/"/>
+    <id>https://mazui3.com/blog/2021/08/08/P204/</id>
     <published>2021-08-08T05:19:53.000Z</published>
     <updated>2021-08-09T00:51:15.680Z</updated>
     
@@ -46,19 +46,19 @@
     
     
     
-    <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>发布报告_流落之所</title>
-    <link href="http://yoursite.com/blog/2021/07/16/P203/"/>
-    <id>http://yoursite.com/blog/2021/07/16/P203/</id>
+    <link href="https://mazui3.com/blog/2021/07/16/P203/"/>
+    <id>https://mazui3.com/blog/2021/07/16/P203/</id>
     <published>2021-07-17T03:43:35.000Z</published>
     <updated>2021-08-08T12:05:27.332Z</updated>
     
@@ -69,19 +69,19 @@
     
     
     
-    <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>关于法语的网页收藏</title>
-    <link href="http://yoursite.com/blog/2021/07/16/P168/"/>
-    <id>http://yoursite.com/blog/2021/07/16/P168/</id>
+    <link href="https://mazui3.com/blog/2021/07/16/P168/"/>
+    <id>https://mazui3.com/blog/2021/07/16/P168/</id>
     <published>2021-07-17T03:43:21.000Z</published>
     <updated>2021-07-20T14:44:28.973Z</updated>
     
@@ -90,17 +90,17 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
   </entry>
   
   <entry>
     <title>关于特效的笔记 - cutout &amp; trance contour</title>
-    <link href="http://yoursite.com/blog/2021/07/07/P202/"/>
-    <id>http://yoursite.com/blog/2021/07/07/P202/</id>
+    <link href="https://mazui3.com/blog/2021/07/07/P202/"/>
+    <id>https://mazui3.com/blog/2021/07/07/P202/</id>
     <published>2021-07-07T05:11:29.000Z</published>
     <updated>2021-07-07T13:23:56.063Z</updated>
     
@@ -110,17 +110,17 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    <category term="とりあえず絵を百枚描きましょう" scheme="https://mazui3.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
     
   </entry>
   
   <entry>
     <title>生存报告</title>
-    <link href="http://yoursite.com/blog/2021/07/07/P201/"/>
-    <id>http://yoursite.com/blog/2021/07/07/P201/</id>
+    <link href="https://mazui3.com/blog/2021/07/07/P201/"/>
+    <id>https://mazui3.com/blog/2021/07/07/P201/</id>
     <published>2021-07-07T05:11:24.000Z</published>
     <updated>2021-07-07T15:33:57.625Z</updated>
     
@@ -131,17 +131,17 @@
     
     
     
-    <category term="日记" scheme="http://yoursite.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
     
     
-    <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>青春疼痛悖论</title>
-    <link href="http://yoursite.com/blog/2021/07/02/P159/"/>
-    <id>http://yoursite.com/blog/2021/07/02/P159/</id>
+    <link href="https://mazui3.com/blog/2021/07/02/P159/"/>
+    <id>https://mazui3.com/blog/2021/07/02/P159/</id>
     <published>2021-07-03T01:59:58.000Z</published>
     <updated>2021-07-09T02:28:28.821Z</updated>
     
@@ -151,14 +151,14 @@
     
     
     
-    <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
   <entry>
     <title>半年画一次的同人</title>
-    <link href="http://yoursite.com/blog/2021/06/17/P191/"/>
-    <id>http://yoursite.com/blog/2021/06/17/P191/</id>
+    <link href="https://mazui3.com/blog/2021/06/17/P191/"/>
+    <id>https://mazui3.com/blog/2021/06/17/P191/</id>
     <published>2021-06-17T05:37:56.000Z</published>
     <updated>2021-06-19T19:57:06.655Z</updated>
     
@@ -168,19 +168,19 @@
     
     
     
-    <category term="画" scheme="http://yoursite.com/blog/categories/%E7%94%BB/"/>
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="http://yoursite.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="https://mazui3.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
     
-    <category term="ハガレン" scheme="http://yoursite.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
+    <category term="ハガレン" scheme="https://mazui3.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
     
   </entry>
   
   <entry>
     <title>制作记录_MathsocCartnoons</title>
-    <link href="http://yoursite.com/blog/2021/06/12/P200/"/>
-    <id>http://yoursite.com/blog/2021/06/12/P200/</id>
+    <link href="https://mazui3.com/blog/2021/06/12/P200/"/>
+    <id>https://mazui3.com/blog/2021/06/12/P200/</id>
     <published>2021-06-13T00:10:25.000Z</published>
     <updated>2021-06-16T01:28:06.010Z</updated>
     
@@ -189,17 +189,17 @@
     
     
     
-    <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/blog/tags/Thank-you-Mr-goose/"/>
+    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
     
   </entry>
   
   <entry>
     <title>制作记录_UnderlakeReadingRoom</title>
-    <link href="http://yoursite.com/blog/2021/05/13/P195/"/>
-    <id>http://yoursite.com/blog/2021/05/13/P195/</id>
+    <link href="https://mazui3.com/blog/2021/05/13/P195/"/>
+    <id>https://mazui3.com/blog/2021/05/13/P195/</id>
     <published>2021-05-13T19:02:46.000Z</published>
     <updated>2021-08-08T12:05:05.902Z</updated>
     
@@ -208,17 +208,17 @@
     
     
     
-    <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="编码" scheme="http://yoursite.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
   <entry>
     <title>关于stat的笔记 - estimation</title>
-    <link href="http://yoursite.com/blog/2021/05/12/P194/"/>
-    <id>http://yoursite.com/blog/2021/05/12/P194/</id>
+    <link href="https://mazui3.com/blog/2021/05/12/P194/"/>
+    <id>https://mazui3.com/blog/2021/05/12/P194/</id>
     <published>2021-05-13T01:23:28.000Z</published>
     <updated>2021-07-21T18:24:56.621Z</updated>
     
@@ -229,27 +229,27 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/blog/tags/Thank-you-Mr-goose/"/>
+    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
     
-    <category term="编码" scheme="http://yoursite.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="http://yoursite.com/blog/tags/data/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
-    <category term="R" scheme="http://yoursite.com/blog/tags/R/"/>
+    <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
     
-    <category term="statistics" scheme="http://yoursite.com/blog/tags/statistics/"/>
+    <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
     
   </entry>
   
   <entry>
     <title>关于data的笔记 - Week4</title>
-    <link href="http://yoursite.com/blog/2021/05/04/P193/"/>
-    <id>http://yoursite.com/blog/2021/05/04/P193/</id>
+    <link href="https://mazui3.com/blog/2021/05/04/P193/"/>
+    <id>https://mazui3.com/blog/2021/05/04/P193/</id>
     <published>2021-05-05T03:42:56.000Z</published>
     <updated>2021-08-08T12:04:51.409Z</updated>
     
@@ -260,23 +260,23 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="编码" scheme="http://yoursite.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="http://yoursite.com/blog/tags/data/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
-    <category term="python" scheme="http://yoursite.com/blog/tags/python/"/>
+    <category term="python" scheme="https://mazui3.com/blog/tags/python/"/>
     
   </entry>
   
   <entry>
     <title>Never give up</title>
-    <link href="http://yoursite.com/blog/2021/05/03/P192/"/>
-    <id>http://yoursite.com/blog/2021/05/03/P192/</id>
+    <link href="https://mazui3.com/blog/2021/05/03/P192/"/>
+    <id>https://mazui3.com/blog/2021/05/03/P192/</id>
     <published>2021-05-04T01:04:10.000Z</published>
     <updated>2021-05-04T01:04:10.770Z</updated>
     
@@ -292,19 +292,19 @@
     
     
     
-    <category term="画" scheme="http://yoursite.com/blog/categories/%E7%94%BB/"/>
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
     
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
-    <category term="家庭组" scheme="http://yoursite.com/blog/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    <category term="家庭组" scheme="https://mazui3.com/blog/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
     
   </entry>
   
   <entry>
     <title>关于颜色的笔记 - 便签贴</title>
-    <link href="http://yoursite.com/blog/2021/04/30/P190/"/>
-    <id>http://yoursite.com/blog/2021/04/30/P190/</id>
+    <link href="https://mazui3.com/blog/2021/04/30/P190/"/>
+    <id>https://mazui3.com/blog/2021/04/30/P190/</id>
     <published>2021-04-30T17:42:58.000Z</published>
     <updated>2021-08-08T12:04:34.880Z</updated>
     
@@ -313,17 +313,17 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    <category term="とりあえず絵を百枚描きましょう" scheme="https://mazui3.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
     
   </entry>
   
   <entry>
     <title>制作记录_UnderlakeLibrary</title>
-    <link href="http://yoursite.com/blog/2021/04/30/P189/"/>
-    <id>http://yoursite.com/blog/2021/04/30/P189/</id>
+    <link href="https://mazui3.com/blog/2021/04/30/P189/"/>
+    <id>https://mazui3.com/blog/2021/04/30/P189/</id>
     <published>2021-04-30T16:51:21.000Z</published>
     <updated>2021-06-02T19:43:07.880Z</updated>
     
@@ -333,19 +333,19 @@
     
     
     
-    <category term="项目记录" scheme="http://yoursite.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
+    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
     
     
-    <category term="杂谈" scheme="http://yoursite.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
-    <category term="oc" scheme="http://yoursite.com/blog/tags/oc/"/>
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
   </entry>
   
   <entry>
     <title>因为很可爱所以画了</title>
-    <link href="http://yoursite.com/blog/2021/04/26/P188/"/>
-    <id>http://yoursite.com/blog/2021/04/26/P188/</id>
+    <link href="https://mazui3.com/blog/2021/04/26/P188/"/>
+    <id>https://mazui3.com/blog/2021/04/26/P188/</id>
     <published>2021-04-26T14:35:56.000Z</published>
     <updated>2021-05-01T02:10:43.981Z</updated>
     
@@ -354,19 +354,19 @@
     
     
     
-    <category term="画" scheme="http://yoursite.com/blog/categories/%E7%94%BB/"/>
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
     
     
-    <category term="同人" scheme="http://yoursite.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
+    <category term="同人" scheme="https://mazui3.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
     
-    <category term="ハガレン" scheme="http://yoursite.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
+    <category term="ハガレン" scheme="https://mazui3.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
     
   </entry>
   
   <entry>
     <title>好作品补全计划 - 小息</title>
-    <link href="http://yoursite.com/blog/2021/04/24/P186/"/>
-    <id>http://yoursite.com/blog/2021/04/24/P186/</id>
+    <link href="https://mazui3.com/blog/2021/04/24/P186/"/>
+    <id>https://mazui3.com/blog/2021/04/24/P186/</id>
     <published>2021-04-24T05:27:17.000Z</published>
     <updated>2021-04-24T05:35:51.522Z</updated>
     
@@ -376,14 +376,14 @@
     
     
     
-    <category term="好作品补全计划" scheme="http://yoursite.com/blog/tags/%E5%A5%BD%E4%BD%9C%E5%93%81%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/"/>
+    <category term="好作品补全计划" scheme="https://mazui3.com/blog/tags/%E5%A5%BD%E4%BD%9C%E5%93%81%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
   <entry>
     <title>关于stat的笔记 - distribution</title>
-    <link href="http://yoursite.com/blog/2021/04/20/P185/"/>
-    <id>http://yoursite.com/blog/2021/04/20/P185/</id>
+    <link href="https://mazui3.com/blog/2021/04/20/P185/"/>
+    <id>https://mazui3.com/blog/2021/04/20/P185/</id>
     <published>2021-04-20T12:14:44.000Z</published>
     <updated>2021-07-07T15:32:10.341Z</updated>
     
@@ -394,23 +394,23 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/blog/tags/Thank-you-Mr-goose/"/>
+    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
     
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="http://yoursite.com/blog/tags/data/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
-    <category term="statistics" scheme="http://yoursite.com/blog/tags/statistics/"/>
+    <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
     
   </entry>
   
   <entry>
     <title>关于颜色的笔记 - 四季</title>
-    <link href="http://yoursite.com/blog/2021/04/20/P184/"/>
-    <id>http://yoursite.com/blog/2021/04/20/P184/</id>
+    <link href="https://mazui3.com/blog/2021/04/20/P184/"/>
+    <id>https://mazui3.com/blog/2021/04/20/P184/</id>
     <published>2021-04-20T05:30:30.000Z</published>
     <updated>2021-04-20T05:30:30.848Z</updated>
     
@@ -420,17 +420,17 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="とりあえず絵を百枚描きましょう" scheme="http://yoursite.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
+    <category term="とりあえず絵を百枚描きましょう" scheme="https://mazui3.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
     
   </entry>
   
   <entry>
     <title>关于stat的笔记 - sampling</title>
-    <link href="http://yoursite.com/blog/2021/04/10/P180/"/>
-    <id>http://yoursite.com/blog/2021/04/10/P180/</id>
+    <link href="https://mazui3.com/blog/2021/04/10/P180/"/>
+    <id>https://mazui3.com/blog/2021/04/10/P180/</id>
     <published>2021-04-11T01:25:13.000Z</published>
     <updated>2021-08-08T12:03:12.664Z</updated>
     
@@ -443,18 +443,18 @@
     
     
     
-    <category term="笔记" scheme="http://yoursite.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
+    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="http://yoursite.com/blog/tags/Thank-you-Mr-goose/"/>
+    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
     
-    <category term="以头抢地(诚)" scheme="http://yoursite.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="http://yoursite.com/blog/tags/data/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
-    <category term="R" scheme="http://yoursite.com/blog/tags/R/"/>
+    <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
     
-    <category term="statistics" scheme="http://yoursite.com/blog/tags/statistics/"/>
+    <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
     
   </entry>
   
