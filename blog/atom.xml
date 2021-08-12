@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-08-09T00:48:20.838Z</updated>
+  <updated>2021-08-12T04:25:35.007Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>乔迁一年记录</title>
+    <link href="https://mazui3.com/blog/2021/08/12/P205/"/>
+    <id>https://mazui3.com/blog/2021/08/12/P205/</id>
+    <published>2021-08-12T04:25:14.000Z</published>
+    <updated>2021-08-12T04:25:35.007Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/08/12/P205/P205.png&quot; class=&quot;&quot; title=&quot;丹&quot;&gt;
+&lt;p&gt;博客一周年了.恭喜恭喜.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+  </entry>
   
   <entry>
     <title>oc小草稿导航页面</title>
@@ -34,11 +56,11 @@
   </entry>
   
   <entry>
-    <title>项目记录_Mazui&#39;s Website</title>
+    <title>制作记录_Mazui&#39;s Website</title>
     <link href="https://mazui3.com/blog/2021/08/08/P204/"/>
     <id>https://mazui3.com/blog/2021/08/08/P204/</id>
     <published>2021-08-08T05:19:53.000Z</published>
-    <updated>2021-08-09T00:51:15.680Z</updated>
+    <updated>2021-08-09T05:46:16.549Z</updated>
     
     
     <summary type="html">&lt;p&gt;以及混进了杂谈.&lt;/p&gt;
@@ -83,7 +105,7 @@
     <link href="https://mazui3.com/blog/2021/07/16/P168/"/>
     <id>https://mazui3.com/blog/2021/07/16/P168/</id>
     <published>2021-07-17T03:43:21.000Z</published>
-    <updated>2021-07-20T14:44:28.973Z</updated>
+    <updated>2021-08-12T00:59:22.562Z</updated>
     
     
     <summary type="html">&lt;p&gt;除了以下备注的,我觉得doulingo作为初学者体验一门语言蛮好.&lt;br&gt;duolingo能学的东西较慢,但能cover各个方位(听说读写和语法).&lt;br&gt;我也很喜欢它的故事模式.&lt;/p&gt;</summary>
@@ -201,7 +223,7 @@
     <link href="https://mazui3.com/blog/2021/05/13/P195/"/>
     <id>https://mazui3.com/blog/2021/05/13/P195/</id>
     <published>2021-05-13T19:02:46.000Z</published>
-    <updated>2021-08-08T12:05:05.902Z</updated>
+    <updated>2021-08-09T15:07:53.805Z</updated>
     
     
     <summary type="html">&lt;p&gt;补一个博客制作记录.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/blog/2020/08/13/P111/&quot;&gt;乔迁公告&lt;/a&gt;还是去年八月,和管理员的生日是同一个月w.&lt;br&gt;原因是修修改改的东西,自己都忘掉了才发现没有备份制作方法,于是补上.&lt;br&gt;&lt;del&gt;已经忘了的就没法备份了.&lt;/del&gt;&lt;/p&gt;</summary>
@@ -424,37 +446,6 @@
     
     
     <category term="とりあえず絵を百枚描きましょう" scheme="https://mazui3.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于stat的笔记 - sampling</title>
-    <link href="https://mazui3.com/blog/2021/04/10/P180/"/>
-    <id>https://mazui3.com/blog/2021/04/10/P180/</id>
-    <published>2021-04-11T01:25:13.000Z</published>
-    <updated>2021-08-08T12:03:12.664Z</updated>
-    
-    
-    <summary type="html">&lt;script async
-  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;
-
-&lt;p&gt;为stat332的复习.附上没有过多关联的&lt;a href=&quot;https://mazui3.github.io/blog/2020/12/26/P150/&quot;&gt;前情提要&lt;/a&gt;.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="笔记" scheme="https://mazui3.com/blog/categories/%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
-    
-    <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
-    
-    <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
     
   </entry>
   
