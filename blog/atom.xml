@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-08-24T01:30:36.308Z</updated>
+  <updated>2021-08-26T05:14:33.049Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>海</title>
+    <link href="https://mazui3.com/blog/2021/08/26/P208/"/>
+    <id>https://mazui3.com/blog/2021/08/26/P208/</id>
+    <published>2021-08-26T05:14:33.000Z</published>
+    <updated>2021-08-26T05:14:33.049Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/blog/2021/08/26/P208/P208.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+    <category term="卡尔马" scheme="https://mazui3.com/blog/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
+  </entry>
   
   <entry>
     <title>家</title>
@@ -434,25 +461,6 @@
     <category term="同人" scheme="https://mazui3.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
     
     <category term="ハガレン" scheme="https://mazui3.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>好作品补全计划 - 小息</title>
-    <link href="https://mazui3.com/blog/2021/04/24/P186/"/>
-    <id>https://mazui3.com/blog/2021/04/24/P186/</id>
-    <published>2021-04-24T05:27:17.000Z</published>
-    <updated>2021-08-19T23:12:22.948Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;原本一个月前就想写的本系列第二篇(avg游戏读后感)一直卡壳.&lt;br&gt;脑内越发回响素子姐姐的名台词.在博客里记载下…&lt;br&gt;&lt;em&gt;这个系列会不会在两篇后就腰斩啊x.&lt;/em&gt;&lt;br&gt;</summary>
-    
-    
-    
-    <category term="读后感" scheme="https://mazui3.com/blog/categories/%E8%AF%BB%E5%90%8E%E6%84%9F/"/>
-    
-    
-    <category term="好作品补全计划" scheme="https://mazui3.com/blog/tags/%E5%A5%BD%E4%BD%9C%E5%93%81%E8%A1%A5%E5%85%A8%E8%AE%A1%E5%88%92/"/>
     
   </entry>
   
