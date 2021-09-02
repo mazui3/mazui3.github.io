@@ -315,10 +315,10 @@
       <div class="popular-posts-title"><a href="/blog/2015/04/28/P002/" rel="bookmark">向日葵</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2015/07/24/P007/" rel="bookmark">TAR与回礼</a></div>
+      <div class="popular-posts-title"><a href="/blog/2015/07/18/P006/" rel="bookmark">高中的新校服</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2015/07/18/P006/" rel="bookmark">高中的新校服</a></div>
+      <div class="popular-posts-title"><a href="/blog/2015/07/24/P007/" rel="bookmark">TAR与回礼</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2015/09/15/P016/" rel="bookmark">高中时做过的奇奇怪怪作业log1</a></div>
@@ -463,7 +463,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
       <br>
@@ -581,7 +584,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">374k</span>
+    <span title="Symbols count total">377k</span>
   -->
 
   <!--
@@ -589,7 +592,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:40</span>
+    <span title="Reading time total">5:42</span>
 
   -->
   
@@ -599,7 +602,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有166.4k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有167k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -658,6 +661,23 @@ password();
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 <script>
   function loadCount() {
@@ -694,3 +714,23 @@ password();
 
 </body>
 </html>
+
+
+<!-- calendar widget -->
+
+    <script src="/lib/calendar/calendar.min.js"></script>
+    <script src="/lib/calendar/languages.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+

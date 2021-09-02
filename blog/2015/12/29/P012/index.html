@@ -324,7 +324,7 @@
       <div class="popular-posts-title"><a href="/blog/2018/07/16/P034/" rel="bookmark">老兔的电话面试</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2018/12/30/P046/" rel="bookmark">麻醉老兔的新年祝福和麻醉的设定</a></div>
+      <div class="popular-posts-title"><a href="/blog/2019/07/04/P045/" rel="bookmark">老兔的T恤collection</a></div>
     </li>
   </ul>
 
@@ -467,7 +467,10 @@
   </div>
 
 
-
+<!-- CloudCalendar -->
+<div class="widget-wrap" style="width: 90%;margin-left: auto;margin-right: auto; opacity: 0.97;">
+	<div class="widget" id="CloudCalendar"></div>
+</div>
       </div>
 
       <br>
@@ -585,7 +588,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">374k</span>
+    <span title="Symbols count total">377k</span>
   -->
 
   <!--
@@ -593,7 +596,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:40</span>
+    <span title="Reading time total">5:42</span>
 
   -->
   
@@ -603,7 +606,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有166.4k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有167k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -662,6 +665,23 @@ password();
   
 
   
+<!-- calendar widget -->
+
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/calendar.min.js"></script>
+    <script src="//cdn.jsdelivr.net/gh/theme-next/theme-next-calendar/languages.min.js"></script>
+    <script>
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
 
 <script>
   function loadCount() {
@@ -698,3 +718,23 @@ password();
 
 </body>
 </html>
+
+
+<!-- calendar widget -->
+
+    <script src="/lib/calendar/calendar.min.js"></script>
+    <script src="/lib/calendar/languages.min.js"></script>
+    <script type="text/javascript">
+    $(function() {
+        $('#CloudCalendar').aCalendar('zh-CN',
+            $.extend(
+                '', {
+                    single:true,
+                    root:'/calendar/'
+                }
+            )
+        );
+    });
+    </script>
+
+
