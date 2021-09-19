@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-09-17T21:18:37.820Z</updated>
+  <updated>2021-09-19T03:13:33.768Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -17,14 +17,52 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>oc旧图log</title>
+    <link href="https://mazui3.com/blog/2021/09/18/P211/"/>
+    <id>https://mazui3.com/blog/2021/09/18/P211/</id>
+    <published>2021-09-18T23:19:00.000Z</published>
+    <updated>2021-09-19T03:13:33.768Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/09/18/P211/P211.png&quot; class=&quot;&quot; title=&quot;女主角合集中笑得最灿烂的竟然是男人&quot;&gt;
+&lt;p&gt;神秘oc旧图大合集.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+    <category term="家庭组" scheme="https://mazui3.com/blog/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
+    
+    <category term="在日落之前" scheme="https://mazui3.com/blog/tags/%E5%9C%A8%E6%97%A5%E8%90%BD%E4%B9%8B%E5%89%8D/"/>
+    
+    <category term="卡尔马" scheme="https://mazui3.com/blog/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
+    
+    <category term="冬日组" scheme="https://mazui3.com/blog/tags/%E5%86%AC%E6%97%A5%E7%BB%84/"/>
+    
+    <category term="怪异专家与助手" scheme="https://mazui3.com/blog/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
+    
+    <category term="追风者" scheme="https://mazui3.com/blog/tags/%E8%BF%BD%E9%A3%8E%E8%80%85/"/>
+    
+    <category term="狼与兔" scheme="https://mazui3.com/blog/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
+    
+    <category term="废弃工厂" scheme="https://mazui3.com/blog/tags/%E5%BA%9F%E5%BC%83%E5%B7%A5%E5%8E%82/"/>
+    
+    <category term="司空见惯的RPG大冒险" scheme="https://mazui3.com/blog/tags/%E5%8F%B8%E7%A9%BA%E8%A7%81%E6%83%AF%E7%9A%84RPG%E5%A4%A7%E5%86%92%E9%99%A9/"/>
+    
+  </entry>
+  
+  <entry>
     <title>更新报告_0.00ver以上1.00ver未满</title>
-    <link href="https://mazui3.com/blog/2021/09/02/P207/"/>
-    <id>https://mazui3.com/blog/2021/09/02/P207/</id>
-    <published>2021-09-02T15:27:22.133Z</published>
-    <updated>2021-09-17T21:18:37.820Z</updated>
+    <link href="https://mazui3.com/blog/2021/09/17/P207/"/>
+    <id>https://mazui3.com/blog/2021/09/17/P207/</id>
+    <published>2021-09-17T05:14:33.000Z</published>
+    <updated>2021-09-17T21:36:40.253Z</updated>
     
     
-    <summary type="html">&lt;img src=&quot;/blog/2021/09/02/P207/P207_5.png&quot; class=&quot;&quot; width=&quot;225&quot; height=&quot;200&quot;&gt;
+    <summary type="html">&lt;img src=&quot;/blog/2021/09/17/P207/P207_5.png&quot; class=&quot;&quot; width=&quot;225&quot; height=&quot;200&quot;&gt;
 &lt;p&gt;上篇&lt;a href=&quot;https://mazui3.com/blog/2021/08/08/P204/&quot;&gt;制作报告&lt;/a&gt;的dlc拓展版.&lt;/p&gt;</summary>
     
     
@@ -33,6 +71,8 @@
     
     
     <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+    <category term="メテオ" scheme="https://mazui3.com/blog/tags/%E3%83%A1%E3%83%86%E3%82%AA/"/>
     
   </entry>
   
@@ -351,13 +391,13 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
+    
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
     
@@ -382,11 +422,11 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="python" scheme="https://mazui3.com/blog/tags/python/"/>
     
@@ -436,28 +476,6 @@
     
     
     <category term="とりあえず絵を百枚描きましょう" scheme="https://mazui3.com/blog/tags/%E3%81%A8%E3%82%8A%E3%81%82%E3%81%88%E3%81%9A%E7%B5%B5%E3%82%92%E7%99%BE%E6%9E%9A%E6%8F%8F%E3%81%8D%E3%81%BE%E3%81%97%E3%82%87%E3%81%86/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制作记录_UnderlakeLibrary</title>
-    <link href="https://mazui3.com/blog/2021/04/30/P189/"/>
-    <id>https://mazui3.com/blog/2021/04/30/P189/</id>
-    <published>2021-04-30T16:51:21.000Z</published>
-    <updated>2021-06-02T19:43:07.880Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;为oc小网站制作过程的记录.&lt;br&gt;图书馆本体&lt;a href=&quot;www.mazui3.net&quot;&gt;🌟&lt;/a&gt;.&lt;/p&gt;
-&lt;img src=&quot;/blog/2021/04/30/P189/P189_1.png&quot; class=&quot;&quot; title=&quot;我宣布用十来个图层画叶子成为不会轻易使出的杀手锏&quot;&gt;</summary>
-    
-    
-    
-    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
-    
-    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
     
   </entry>
   
