@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-09-19T04:13:27.268Z</updated>
+  <updated>2021-09-19T12:28:07.855Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="https://mazui3.com/blog/2021/09/18/P211/"/>
     <id>https://mazui3.com/blog/2021/09/18/P211/</id>
     <published>2021-09-18T23:19:00.000Z</published>
-    <updated>2021-09-19T04:13:27.268Z</updated>
+    <updated>2021-09-19T12:28:07.855Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/blog/2021/09/18/P211/P211.png&quot; class=&quot;&quot; title=&quot;女主角合集中笑得最灿烂的竟然是男人&quot;&gt;
@@ -176,7 +176,7 @@
     <link href="https://mazui3.com/blog/2021/08/08/P199/"/>
     <id>https://mazui3.com/blog/2021/08/08/P199/</id>
     <published>2021-08-08T16:31:38.000Z</published>
-    <updated>2021-08-13T17:13:22.693Z</updated>
+    <updated>2021-09-19T12:26:44.861Z</updated>
     
     
     <summary type="html">这里是没有链接上的oc草稿页面整理.因为不是公开的东西所以设置了密码.</summary>
@@ -391,13 +391,13 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
-    
-    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
     <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
     
     <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
     <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
     
@@ -422,11 +422,11 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
     <category term="python" scheme="https://mazui3.com/blog/tags/python/"/>
     
