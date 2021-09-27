@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-09-23T06:15:48.129Z</updated>
+  <updated>2021-09-27T04:39:16.047Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -17,11 +17,54 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>毕业一个人的旅行</title>
+    <link href="https://mazui3.com/blog/2021/09/27/P142/"/>
+    <id>https://mazui3.com/blog/2021/09/27/P142/</id>
+    <published>2021-09-27T04:17:12.000Z</published>
+    <updated>2021-09-27T04:39:16.047Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/09/27/P142/P142_1.png&quot; class=&quot;&quot; width=&quot;300&quot; height=&quot;230&quot; title=&quot;传说中的可丽饼&quot;&gt;
+&lt;p&gt;去了一趟蒙特利尔.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>两位精灵的笔记</title>
+    <link href="https://mazui3.com/blog/2021/09/25/P174/"/>
+    <id>https://mazui3.com/blog/2021/09/25/P174/</id>
+    <published>2021-09-25T12:42:34.000Z</published>
+    <updated>2021-09-27T04:28:27.792Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/09/25/P174/P174_2.png&quot; class=&quot;&quot; title=&quot;菲瑞塔斯&quot;&gt;
+&lt;img src=&quot;/blog/2021/09/25/P174/P174_1.png&quot; class=&quot;&quot; title=&quot;萨贝赦&quot;&gt;
+&lt;p&gt;来源于梦的一个oc故事小草稿.&lt;br&gt;&lt;del&gt;以为这辈子不画北欧神话系角色…&lt;/del&gt;&lt;br&gt;</summary>
+    
+    
+    
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+    <category term="最后的精灵" scheme="https://mazui3.com/blog/tags/%E6%9C%80%E5%90%8E%E7%9A%84%E7%B2%BE%E7%81%B5/"/>
+    
+  </entry>
+  
+  <entry>
     <title>记梦</title>
     <link href="https://mazui3.com/blog/2021/09/23/P212/"/>
     <id>https://mazui3.com/blog/2021/09/23/P212/</id>
     <published>2021-09-23T05:30:24.000Z</published>
-    <updated>2021-09-23T06:15:48.129Z</updated>
+    <updated>2021-09-23T06:38:01.334Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/blog/2021/09/23/P212/P212.png&quot; class=&quot;&quot;&gt;</summary>
@@ -203,7 +246,7 @@
     <link href="https://mazui3.com/blog/2021/08/08/P199/"/>
     <id>https://mazui3.com/blog/2021/08/08/P199/</id>
     <published>2021-08-08T16:31:38.000Z</published>
-    <updated>2021-09-19T12:26:44.861Z</updated>
+    <updated>2021-09-26T02:52:00.267Z</updated>
     
     
     <summary type="html">这里是没有链接上的oc草稿页面整理.因为不是公开的东西所以设置了密码.</summary>
@@ -429,61 +472,6 @@
     <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
     
     <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于data的笔记 - Week4</title>
-    <link href="https://mazui3.com/blog/2021/05/04/P193/"/>
-    <id>https://mazui3.com/blog/2021/05/04/P193/</id>
-    <published>2021-05-05T03:42:56.000Z</published>
-    <updated>2021-08-19T23:11:44.747Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;script async
-  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;&lt;br&gt;接&lt;a href=&quot;https://mazui3.github.io/blog/2020/11/28/P140/&quot;&gt;第一回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/blog/2020/11/28/P141/&quot;&gt;第二回&lt;/a&gt;与&lt;a href=&quot;https://mazui3.github.io/blog/2021/03/14/P170/&quot;&gt;第三回.&lt;/a&gt;&lt;br&gt;</summary>
-    
-    
-    
-    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
-    
-    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="python" scheme="https://mazui3.com/blog/tags/python/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Never give up</title>
-    <link href="https://mazui3.com/blog/2021/05/03/P192/"/>
-    <id>https://mazui3.com/blog/2021/05/03/P192/</id>
-    <published>2021-05-04T01:04:10.000Z</published>
-    <updated>2021-05-04T01:04:10.770Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;img src=&quot;/blog/2021/05/03/P192/P192.png&quot; class=&quot;&quot; title=&quot;老兔在零下十度的水里为你打气&quot;&gt;
-&lt;p&gt;&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
-    
-    
-    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
-    
-    <category term="家庭组" scheme="https://mazui3.com/blog/tags/%E5%AE%B6%E5%BA%AD%E7%BB%84/"/>
     
   </entry>
   

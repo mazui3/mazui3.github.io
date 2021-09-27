@@ -33,7 +33,7 @@
 <meta property="og:image" content="https://mazui3.com/blog/2020/12/26/P150/P150_3.png">
 <meta property="og:image" content="https://mazui3.com/blog/2020/12/26/P150/t-table.jpg">
 <meta property="article:published_time" content="2020-12-26T19:14:46.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:15:10.473Z">
+<meta property="article:modified_time" content="2021-09-26T19:10:04.121Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -254,7 +254,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:15:10" itemprop="dateModified" datetime="2021-08-19T19:15:10-04:00">2021-08-19</time>
+                <time title="Modified: 2021-09-26 15:10:04" itemprop="dateModified" datetime="2021-09-26T15:10:04-04:00">2021-09-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -285,13 +285,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>7k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>6 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -397,90 +397,87 @@
 <h2 id="Simpson’s-paradox"><a href="#Simpson’s-paradox" class="headerlink" title="Simpson’s paradox"></a>Simpson’s paradox</h2><p>辛普森悖论(<a target="_blank" rel="noopener" href="https://zh.wikipedia.org/wiki/%E8%BE%9B%E6%99%AE%E6%A3%AE%E6%82%96%E8%AE%BA">wiki</a>),一个有名的分组讨论时会出错的悖论.</p>
 <p><br><br><br><br><br></p>
 <h2 id="Bayer’s-theorem"><a href="#Bayer’s-theorem" class="headerlink" title="Bayer’s theorem"></a>Bayer’s theorem</h2><p>Bayer’s formula: <script type="math/tex">P(A \mid B)</script> = <script type="math/tex">{P(B \mid A)P(A)}</script> / <script type="math/tex">{P(B)}</script>.</p>
-<blockquote>
-<p><script type="math/tex">P(A \mid B)</script> is a conditional probability: the likelihood of event  <script type="math/tex">A</script> occurring given that <script type="math/tex">B</script> is true.</p>
-</blockquote>
-<script type="math/tex; mode=display">P(A, B) = P(A \mid B) P(B) $$ 也就是A和B同时发生的概率.
-
-<br>
-<br>
-<br>
-
-​
-## Normal distribution
-
-我觉得wiki说的挺好的,详细程度堪比cheatsheet,[wiki](https://en.wikipedia.org/wiki/Normal_distribution).
-
-Variable: mean $$\mu$$, variance $$\sigma^2$$.
-
-Formula: $$ f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}$$.
-
-<br>
-<br>
-<br>
-
-Aside: 在normal和sampling distribution中常用的:
-**Central limit theorem([wiki](https://en.wikipedia.org/wiki/Central_limit_theorem))**
-When independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.
-<br>
-**Law of Large Numbers([wiki](https://en.wikipedia.org/wiki/Law_of_large_numbers))**
-According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.
-也就是larger sample size,更靠近原本的mean.小的时候可能比原本的mean大也可能小.
-
-等会儿得去复习一下的…
-Maximum likelihood estimation([wiki](https://en.wikipedia.org/wiki/Maximum_likelihood_estimation))
-Method of moments([wiki](https://en.wikipedia.org/wiki/Method_of_moments_(statistics)))
-Bayes estimator([wiki](https://en.wikipedia.org/wiki/Bayes_estimator))
-
-<br>
-<br>
-<br>
-
-## Parameters
-
-| Parameter  |   Statistic   | Description |
-|----------|:-------------:|------:|
-| $$ μ $$ |  $$ \bar x $$ |  mean of a dataset |
-| $$ π $$ | $$ p $$ |  mean of a dataset with only 0 and 1 values - a proportion |
-| $$ μ_1 - μ_2 $$ |  $$ \bar x_1 - \bar x_2 $$ | difference in means |
-| $$ π_1 - π_2 $$ |  $$ p_1 - p_2 $$ | difference in proportions |
-| $$ β $$ | $$ b $$ | A regression coefficient - frequently used with subscripts |
-| $$ σ $$ | $$ s $$ | standard deviation |
-| $$ σ^2 $$ | $$ s^2 $$ | variance |
-| $$ ρ $$ | $$ r $$ | correlation coefficient |
-
-<br>
-<br>
-<br>
-
-## Practical vs Statistic significance
-
-Statistic significance: Evidence from hypothesis tests and confidence interval that H1 is true.
-
-Practical(实用) significance: Takes into consideration other factors of your situation that might not be considered directly in the results of your hypothesis test or confidence interval. Constraints like space, time, or money are important in business decisions. However, they might not be accounted for directly in a statistical test.
-
-<br>
-<br>
-<br>
-
-## Hypothesis testing
-
-将问题分为两种可能,一种是null(H0),一种是alternative(H1),再用数据来证明H0或者rejectH0.
-Aside: Hypothesis tests and confidence interval tells info about parameters not statistics.
-
- - H0 is true before you collect any data.
- - H0 usually states there is no effect or that two groups are equal.
- - H0 and H1 are competing, non-overlapping hypotheses.
- - H1 is what we would like to prove to be true.
- - H0 contains an equal sign of some kind - either =, $$ \leq≤ $$, or $$\geq≥$$.
- - H1 contains the opposition of the null - either $$ \neq≠ $$, >>, or <<.
-
- <br>
- <br>
- <br>
-
-俗称用p value判定.
-$$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的…):<br>“Innocent until proven guilty” where H0 == Innocent and H1 == guilty.</p>
+<p>注:<script type="math/tex">P(A \mid B)</script>is a conditional probability: the likelihood of event<script type="math/tex">A</script>occurring given that<script type="math/tex">B</script>is true.</p>
+<p>其中<script type="math/tex">P(A, B) = P(A \mid B) P(B)</script>也是A和B同时发生的概率.</p>
+<p><br><br><br><br><br></p>
+<p>​</p>
+<h2 id="Normal-distribution"><a href="#Normal-distribution" class="headerlink" title="Normal distribution"></a>Normal distribution</h2><p>我觉得wiki说的挺好的,详细程度堪比cheatsheet,<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Normal_distribution">wiki</a>.</p>
+<p>Variable: mean <script type="math/tex">\mu</script>, variance <script type="math/tex">\sigma^2</script>.</p>
+<p>Formula: <script type="math/tex">f(x)={\frac {1}{\sigma {\sqrt {2\pi }}}}e^{-{\frac {1}{2}}\left({\frac {x-\mu }{\sigma }}\right)^{2}}</script>.</p>
+<p><br><br><br><br><br></p>
+<p>Aside: 在normal和sampling distribution中常用的:<br><strong>Central limit theorem(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Central_limit_theorem">wiki</a>)</strong><br>When independent random variables are added, their properly normalized sum tends toward a normal distribution (informally a bell curve) even if the original variables themselves are not normally distributed.<br><br><br><strong>Law of Large Numbers(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Law_of_large_numbers">wiki</a>)</strong><br>According to the law, the average of the results obtained from a large number of trials should be close to the expected value and will tend to become closer to the expected value as more trials are performed.<br>也就是larger sample size,更靠近原本的mean.小的时候可能比原本的mean大也可能小.</p>
+<p>等会儿得去复习一下的…<br>Maximum likelihood estimation(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Maximum_likelihood_estimation">wiki</a>)<br>Method of moments(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Method_of_moments_(statistics">wiki</a>))<br>Bayes estimator(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bayes_estimator">wiki</a>)</p>
+<p><br><br><br><br><br></p>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Parameter</th>
+<th style="text-align:center">Statistic</th>
+<th style="text-align:right">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><script type="math/tex">μ</script></td>
+<td style="text-align:center"><script type="math/tex">\bar x</script></td>
+<td style="text-align:right">mean of a dataset</td>
+</tr>
+<tr>
+<td><script type="math/tex">π</script></td>
+<td style="text-align:center"><script type="math/tex">p</script></td>
+<td style="text-align:right">mean of a dataset with only 0 and 1 values - a proportion</td>
+</tr>
+<tr>
+<td><script type="math/tex">μ_1 - μ_2</script></td>
+<td style="text-align:center"><script type="math/tex">\bar x_1 - \bar x_2</script></td>
+<td style="text-align:right">difference in means</td>
+</tr>
+<tr>
+<td><script type="math/tex">π_1 - π_2</script></td>
+<td style="text-align:center"><script type="math/tex">p_1 - p_2</script></td>
+<td style="text-align:right">difference in proportions</td>
+</tr>
+<tr>
+<td><script type="math/tex">β</script></td>
+<td style="text-align:center"><script type="math/tex">b</script></td>
+<td style="text-align:right">A regression coefficient - frequently used with subscripts</td>
+</tr>
+<tr>
+<td><script type="math/tex">σ</script></td>
+<td style="text-align:center"><script type="math/tex">s</script></td>
+<td style="text-align:right">standard deviation</td>
+</tr>
+<tr>
+<td><script type="math/tex">σ^2</script></td>
+<td style="text-align:center"><script type="math/tex">s^2</script></td>
+<td style="text-align:right">variance</td>
+</tr>
+<tr>
+<td><script type="math/tex">ρ</script></td>
+<td style="text-align:center"><script type="math/tex">r</script></td>
+<td style="text-align:right">correlation coefficient</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br><br><br><br><br></p>
+<h2 id="Practical-vs-Statistic-significance"><a href="#Practical-vs-Statistic-significance" class="headerlink" title="Practical vs Statistic significance"></a>Practical vs Statistic significance</h2><p>Statistic significance: Evidence from hypothesis tests and confidence interval that H1 is true.</p>
+<p>Practical(实用) significance: Takes into consideration other factors of your situation that might not be considered directly in the results of your hypothesis test or confidence interval. Constraints like space, time, or money are important in business decisions. However, they might not be accounted for directly in a statistical test.</p>
+<p><br><br><br><br><br></p>
+<h2 id="Hypothesis-testing"><a href="#Hypothesis-testing" class="headerlink" title="Hypothesis testing"></a>Hypothesis testing</h2><p>将问题分为两种可能,一种是null(H0),一种是alternative(H1),再用数据来证明H0或者rejectH0.<br>Aside: Hypothesis tests and confidence interval tells info about parameters not statistics.</p>
+<ul>
+<li>H0 is true before you collect any data.</li>
+<li>H0 usually states there is no effect or that two groups are equal.</li>
+<li>H0 and H1 are competing, non-overlapping hypotheses.</li>
+<li>H1 is what we would like to prove to be true.</li>
+<li>H0 contains an equal sign of some kind - either =, <script type="math/tex">\leq≤</script>, or <script type="math/tex">\geq≥</script>.</li>
+<li><p>H1 contains the opposition of the null - either <script type="math/tex">\neq≠</script>, &gt;&gt;, or &lt;&lt;.</p>
+<p><br><br><br><br><br></p>
+</li>
+</ul>
+<p>俗称用p value判定.</p>
+<script type="math/tex; mode=display">d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的…):<br>“Innocent until proven guilty” where H0 == Innocent and H1 == guilty.</p>
 <p>Two types of error:</p>
 <ul>
 <li>False positive(type 1, notation: alpha)<br>Deciding the alternative H1 is true, when actually H0 is true.</li>
@@ -620,7 +617,7 @@ $$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的�
       <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
   </ul>
 
@@ -715,7 +712,7 @@ $$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的�
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Descriptive-Statistics"><span class="nav-number">1.</span> <span class="nav-text">Descriptive Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyzing-Quantitative-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Analyzing Quantitative Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inferential-Statistics"><span class="nav-number">2.</span> <span class="nav-text">Inferential Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling-distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Sampling distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrapping"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence-interval"><span class="nav-number">2.3.</span> <span class="nav-text">Confidence interval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simpson%E2%80%99s-paradox"><span class="nav-number">3.</span> <span class="nav-text">Simpson’s paradox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayer%E2%80%99s-theorem"><span class="nav-number">4.</span> <span class="nav-text">Bayer’s theorem</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P-value"><span class="nav-number">4.1.</span> <span class="nav-text">P-value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonferroni-correction"><span class="nav-number">4.2.</span> <span class="nav-text">Bonferroni correction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-testing"><span class="nav-number">5.</span> <span class="nav-text">A&#x2F;B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression"><span class="nav-number">6.</span> <span class="nav-text">Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">6.1.</span> <span class="nav-text">Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E5%9B%BE%E7%9A%84%E6%97%B6%E5%80%99"><span class="nav-number">6.2.</span> <span class="nav-text">作图的时候:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">6.3.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fitting-a-regression-line"><span class="nav-number">6.4.</span> <span class="nav-text">Fitting a regression line:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confusion-matrix"><span class="nav-number">6.5.</span> <span class="nav-text">Confusion matrix</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Descriptive-Statistics"><span class="nav-number">1.</span> <span class="nav-text">Descriptive Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Analyzing-Quantitative-Data"><span class="nav-number">1.1.</span> <span class="nav-text">Analyzing Quantitative Data</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inferential-Statistics"><span class="nav-number">2.</span> <span class="nav-text">Inferential Statistics</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Sampling-distribution"><span class="nav-number">2.1.</span> <span class="nav-text">Sampling distribution</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bootstrapping"><span class="nav-number">2.2.</span> <span class="nav-text">Bootstrapping</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confidence-interval"><span class="nav-number">2.3.</span> <span class="nav-text">Confidence interval</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Simpson%E2%80%99s-paradox"><span class="nav-number">3.</span> <span class="nav-text">Simpson’s paradox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bayer%E2%80%99s-theorem"><span class="nav-number">4.</span> <span class="nav-text">Bayer’s theorem</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Normal-distribution"><span class="nav-number">5.</span> <span class="nav-text">Normal distribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">6.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Practical-vs-Statistic-significance"><span class="nav-number">7.</span> <span class="nav-text">Practical vs Statistic significance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Hypothesis-testing"><span class="nav-number">8.</span> <span class="nav-text">Hypothesis testing</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#P-value"><span class="nav-number">8.1.</span> <span class="nav-text">P-value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Bonferroni-correction"><span class="nav-number">8.2.</span> <span class="nav-text">Bonferroni correction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#A-B-testing"><span class="nav-number">9.</span> <span class="nav-text">A&#x2F;B testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Regression"><span class="nav-number">10.</span> <span class="nav-text">Regression</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Machine-Learning"><span class="nav-number">10.1.</span> <span class="nav-text">Machine Learning</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%9C%E5%9B%BE%E7%9A%84%E6%97%B6%E5%80%99"><span class="nav-number">10.2.</span> <span class="nav-text">作图的时候:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Term"><span class="nav-number">10.3.</span> <span class="nav-text">Term:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fitting-a-regression-line"><span class="nav-number">10.4.</span> <span class="nav-text">Fitting a regression line:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Confusion-matrix"><span class="nav-number">10.5.</span> <span class="nav-text">Confusion matrix</span></a></li></ol></li></ol></div>
 
 
       </div>
@@ -733,7 +730,7 @@ $$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的�
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">201</span>
+          <span class="site-state-item-count">203</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -746,7 +743,7 @@ $$d = \frac{est - H_{0value}}{s.e.}</script><p>Example(我觉得有点有趣的�
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">44</span>
+        <span class="site-state-item-count">45</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -885,7 +882,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">382k</span>
+    <span title="Symbols count total">399k</span>
   -->
 
   <!--
@@ -893,7 +890,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">5:47</span>
+    <span title="Reading time total">6:03</span>
 
   -->
   
@@ -903,7 +900,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有170.7k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有399k的老兔正在打瞌睡</span>
 </div>
 
         
