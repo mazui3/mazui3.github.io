@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-09-27T14:05:53.967Z</updated>
+  <updated>2021-10-04T03:41:19.170Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,33 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>雨未对你来说是怎样的存在?</title>
+    <link href="https://mazui3.com/blog/2021/10/03/P148/"/>
+    <id>https://mazui3.com/blog/2021/10/03/P148/</id>
+    <published>2021-10-04T03:41:19.000Z</published>
+    <updated>2021-10-04T03:41:19.170Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;img src=&quot;/blog/2021/10/03/P148/P148.png&quot;</summary>
+        
+      
+    
+    
+    
+    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
+    
+    
+    <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
+    
+    <category term="怪异专家与助手" scheme="https://mazui3.com/blog/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
+    
+  </entry>
   
   <entry>
     <title>毕业一个人的旅行</title>
@@ -441,37 +468,6 @@
     
     
     <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于stat的笔记 - estimation</title>
-    <link href="https://mazui3.com/blog/2021/05/12/P194/"/>
-    <id>https://mazui3.com/blog/2021/05/12/P194/</id>
-    <published>2021-05-13T01:23:28.000Z</published>
-    <updated>2021-08-19T23:10:51.568Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;&lt;script async
-  src=&quot;//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML&quot;&gt;
-&lt;/script&gt;&lt;br&gt;为stat331附录的estimation相关代码.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
-    
-    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
-    
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
-    
-    <category term="R" scheme="https://mazui3.com/blog/tags/R/"/>
-    
-    <category term="statistics" scheme="https://mazui3.com/blog/tags/statistics/"/>
     
   </entry>
   
