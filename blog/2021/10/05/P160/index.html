@@ -1,0 +1,911 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.0.2">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="友情链接:SAS workspace.SAS text book.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于SAS的笔记(连载中)">
+<meta property="og:url" content="https://mazui3.com/blog/2021/10/05/P160/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="友情链接:SAS workspace.SAS text book.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2021-10-05T04:43:07.000Z">
+<meta property="article:modified_time" content="2021-10-05T04:54:04.483Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="SAS">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mazui3.com/blog/2021/10/05/P160/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于SAS的笔记(连载中) | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
+
+<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-readme">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://www.mazui3.com/" rel="noopener" target="_blank"><i class="fas fa-carrot fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.com/blog/2021/10/05/P160/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_4.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于SAS的笔记(连载中)
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2021-10-05 00:43:07 / Modified: 00:54:04" itemprop="dateCreated datePublished" datetime="2021-10-05T00:43:07-04:00">2021-10-05</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数学笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2021/10/05/P160/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/10/05/P160/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="Symbols count in article">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>5.4k</span>
+            </span>
+            <span class="post-meta-item" title="Reading time">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>5 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>友情链接:<br><a target="_blank" rel="noopener" href="https://www.sas.com/en_ca/software/on-demand-for-academics.html">SAS workspace.</a><br><a target="_blank" rel="noopener" href="https://ca1lib.org/book/17389833/346ea7">SAS text book.</a></p>
+<a id="more"></a>
+<h1 id="Structure-of-SAS-program"><a href="#Structure-of-SAS-program" class="headerlink" title="Structure of SAS program"></a>Structure of SAS program</h1><ul>
+<li>step(one paragraph of code)</li>
+<li>statement(a code)</li>
+<li>option(a keyword)</li>
+<li>comment</li>
+</ul>
+<p>step:</p>
+<ul>
+<li>data step(create/update dataset)</li>
+<li>proc step(分析,处理,展示dataset)</li>
+</ul>
+<p>statement:</p>
+<ul>
+<li>data step stmt</li>
+<li>proc step stmt</li>
+<li>global stmt(setting)</li>
+</ul>
+<p>option:</p>
+<ul>
+<li>global option</li>
+<li>dataset option(concise)</li>
+<li>other</li>
+</ul>
+<p><br><br><br></p>
+<h1 id="SAS-Data"><a href="#SAS-Data" class="headerlink" title="SAS Data"></a>SAS Data</h1><ul>
+<li>SAS Data: Perm dataset(lib) + Temp dataset(work)</li>
+<li>External Data: Excel, txt, csv</li>
+</ul>
+<p>*注:一般是lib.dataset的格式,只有work可以省略lib,直接用dataset的名字.</p>
+<h2 id="Import"><a href="#Import" class="headerlink" title="Import"></a>Import</h2><p>Two methods for reading external data into SAS.</p>
+<ol>
+<li>The IMPORT procedure</li>
+</ol>
+<p>By default, the IMPORT procedure expects the variable names to appear in the first row.<br>We can modify whether SAS extracts the variable names from the first row of the data set by [GETNAMES=NO]</p>
+<p>By default, the procedure scans the first 20 rows to count the variables, and it attempts to determine the correct informat and format for each variable.<br>(for example, variable的最长长度.)<br>We can indicate how many rows SAS scans for variables to determine the type and length [GUESSINGROWS=]</p>
+<p>We can indicate at which row SAS begins to read the data [DATAROW=]</p>
+<p><br><br><br></p>
+<p>Importing an Excel File with an XLSX Extension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">proc import datafile&#x3D;&#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;boots.xlsx&#39;</span><br><span class="line">dbms&#x3D;xlsx &#x2F;*xlsx&#x2F;excel file*&#x2F;</span><br><span class="line">out&#x3D;work.bootsales &#x2F;*import to work lib bootsales dataset*&#x2F;</span><br><span class="line">replace;</span><br><span class="line">sheet&#x3D;boot; &#x2F;*worksheet called boot*&#x2F;</span><br><span class="line">getnames&#x3D;yes; &#x2F;*also by default*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>Importing a Comma-Delimited File with a CSV Extension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc import datafile&#x3D;&#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;boot.csv&#39;</span><br><span class="line">dbms&#x3D;csv &#x2F;*csv does not have multi worksheet*&#x2F;</span><br><span class="line">out&#x3D;shoes</span><br><span class="line">replace;</span><br><span class="line">getnames&#x3D;no;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>Importing a Delimited File with a TXT Extension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">proc import datafile&#x3D;&#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;delimiter.txt&#39;</span><br><span class="line">dbms&#x3D;dlm &#x2F;*delimited*&#x2F;</span><br><span class="line">out&#x3D;mydata</span><br><span class="line">replace;</span><br><span class="line">delimiter&#x3D;&#39;&amp;&#39;;</span><br><span class="line">getnames&#x3D;yes;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>Aside:<br>data looks like this:</p><blockquote><p>Region&amp;State&amp;Month&amp;Expenses&amp;Revenue<br>Southern&amp;GA&amp;JAN2001&amp;2000&amp;8000</p></blockquote><p>In this case, delimiter=’&amp;’.</p>
+          </div>
+<p>Importing a Space-Delimited File with a TXT Extension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">filename stdata &#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;state_data.txt&#39;; &#x2F;*this is equal to rename the filepath to &#39;stdata&#39;*&#x2F;</span><br><span class="line">proc import datafile&#x3D;stdata</span><br><span class="line">dbms&#x3D;dlm</span><br><span class="line">out&#x3D;states</span><br><span class="line">replace;</span><br><span class="line">delimiter&#x3D;&#39; &#39;;</span><br><span class="line">getnames&#x3D;yes;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>Importing a Tab-Delimited File with a TXT Extension<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc import datafile&#x3D;&#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;class.txt&#39;</span><br><span class="line">dbms&#x3D; dlm</span><br><span class="line">out&#x3D;class</span><br><span class="line">replace;</span><br><span class="line">delimiter&#x3D;&#39;09&#39;x; &#x2F;*tab*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>Aside:<br>如果没有replace,想要创建一个名字一样的dataset, program will not complete and will not create a new dataset.</p>
+          </div>
+<p><br><br><br></p>
+<ol>
+<li>Reading Microsoft Excel Data with the XLSX Engine<br>因为excel可能有多个sheet拥有数据,这个是简便方式.</li>
+</ol>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">libname certxl XLSX &#39;&#x2F;courses&#x2F;d4c186d5ba27fe300&#x2F;exercise.xlsx&#39;;</span><br></pre></td></tr></table></figure>
+<p>The SAS/ACCESS LIBNAME statement creates the library called Certxl, which points to the Excel workbook exercise.xlsx. The workbook contains 3 worksheets, which are now available in the new SAS library as data sets.</p>
+<p><br><br><br></p>
+<h2 id="Character-and-Numeric-variable"><a href="#Character-and-Numeric-variable" class="headerlink" title="Character and Numeric variable"></a>Character and Numeric variable</h2><ul>
+<li>Numeric数字</li>
+<li>Character字母和数字和符号</li>
+</ul>
+<p>You cannot 永久地 change the type of the variable. However, you can convert them temporarily:</p>
+<p>Where SAS expects a numeric value, character will be converted into numeric if <strong>it only contains numbers</strong> . Otherwise a data error (execution error) will be issued and missing value will be generated.</p>
+<p>Where SAS expects a character value, numeric data will be converted in to character based on best12. format. Best12. is a SAS format that allows SAS to determine the best format in 12 columns.</p>
+<div class="note ">
+            <p>Aside:</p><p>在SAS中, numeric的数据会靠右, char会靠左.</p>
+          </div>
+<p><br><br><br></p>
+<p>“Where” statement selects the observations that satisfy certain conditions. It requires <strong>compatible</strong> variables (num compare to num, char compare to char).</p>
+<p>The length of a character is by default $8 (infile cards).<br>➢ Otherwise, the length of a character is defined by the first assignment during <strong>compiling</strong> (the length of the assigning variable or the assigning string value).<br>➢ If you use a LENGTH statement to assign a length to a character variable, then it must be the first reference to the character variables in the DATA step. Therefore, the best position in the DATA step for a LENGTH statement is immediately after the DATA statement.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data work.staff;</span><br><span class="line">JobCategory &#x3D; &#39;FA&#39;;</span><br><span class="line">JobLevel &#x3D; &#39;1&#39;;</span><br><span class="line">JobCategory &#x3D; JobCategory || JobLevel;</span><br><span class="line">run; &#x2F;*output FA*&#x2F;</span><br></pre></td></tr></table></figure>
+<p><br><br><br></p>
+<h2 id="Missing-data"><a href="#Missing-data" class="headerlink" title="Missing data"></a>Missing data</h2><p>➢ Numeric missing is presented as a period (.); character missing is presented as blank<br>➢ <strong>Missing data is less than any other valid values</strong> (做where寻找时需要注意)<br>➢ SAS will treat as missing numeric value if it encounters:</p>
+<ol>
+<li>an invalid numeric data (for example, letters, see the previous example)</li>
+<li>division by zero (5/0 = missing)</li>
+<li>performing an operation on missing value (1+missing = missing)</li>
+</ol>
+<p><br><br><br></p>
+<h2 id="SAS-date"><a href="#SAS-date" class="headerlink" title="SAS date"></a>SAS date</h2><p>SAS date value is a value that represents the number of days between January 1, 1960(as numeric value 0), and a<br>specified date.</p>
+<p>“ddMMMyyyy”d<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">“02Jan1960”d &#x3D; 1</span><br></pre></td></tr></table></figure></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Function</th>
+<th>Usage</th>
+<th>Result</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>MDY</td>
+<td>MDY(2,5,2017)</td>
+<td>20855</td>
+</tr>
+<tr>
+<td></td>
+<td>MDY(‘01’,’01’,1960)</td>
+<td>0</td>
+</tr>
+<tr>
+<td>Day</td>
+<td>Day(‘05Feb2017’d)</td>
+<td>5</td>
+</tr>
+<tr>
+<td>Month</td>
+<td>Month(‘05Feb2017’d)</td>
+<td>2</td>
+</tr>
+<tr>
+<td>Year</td>
+<td>Year(20855)</td>
+<td>2017</td>
+</tr>
+<tr>
+<td>Weekday</td>
+<td>Weekday(20855)</td>
+<td>1   #Sunday</td>
+</tr>
+<tr>
+<td>Qtr</td>
+<td>Qtr(20855)</td>
+<td>1   #First</td>
+</tr>
+<tr>
+<td>Time</td>
+<td>Time()</td>
+<td>Current time</td>
+</tr>
+<tr>
+<td>Date/today</td>
+<td>Date() or Today()</td>
+<td>Current date</td>
+</tr>
+<tr>
+<td>Datetime</td>
+<td>Datetime()</td>
+<td>Current date and time</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="note ">
+            <p>Aside:</p><p>Results are all numeric, character can be used in the input, but will be converted into numeric automatically. 05FEB2017 is 20855 and Sunday</p>
+          </div>
+<div class="note ">
+            <p>Aside:</p><p>Time(): # of seconds from 00:00:00<br>Date() or today(): # of days from 1960/01/01<br>Datetime(): # of seconds from 1960/01/01 00:00:00</p>
+          </div>
+<p><br><br><br></p>
+<h2 id="SAS-format"><a href="#SAS-format" class="headerlink" title="SAS format"></a>SAS format</h2><div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Format</th>
+<th>Original</th>
+<th>FORMAT statement for data/proc steps</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>w.d</td>
+<td>12</td>
+<td>format amount 4.1;</td>
+<td>12.00</td>
+</tr>
+<tr>
+<td>DATEw.</td>
+<td>8966</td>
+<td>format birth date7.;</td>
+<td>19JUL84</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>format birth date9.;</td>
+<td>19JUL1984</td>
+</tr>
+<tr>
+<td>MMDDYYw. / DDMMYYw.</td>
+<td>8966</td>
+<td>format birth mmddyy6.;</td>
+<td>071984</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>format birth mmddyy8.;</td>
+<td>07/19/84</td>
+</tr>
+<tr>
+<td>COMMAw.d</td>
+<td>2234234.34</td>
+<td>format amount comma15.2;</td>
+<td>2,234,234.34</td>
+</tr>
+<tr>
+<td>DOLLARw.d</td>
+<td>2234234.34</td>
+<td>format dollar dollar15.2;</td>
+<td>$2,234,234.34</td>
+</tr>
+<tr>
+<td>Percentw.d</td>
+<td>0.12</td>
+<td>format num percent7.2;</td>
+<td>12.00%</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p><br><br><br></p>
+
+    </div>
+
+    
+    
+    
+      
+  <div class="popular-posts-header">相关博文</div>
+  <ul class="popular-posts">
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+    </li>
+  </ul>
+
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/data/" rel="tag"># data</a>
+              <a href="/blog/tags/SAS/" rel="tag"># SAS</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2021/10/05/P210/" rel="prev" title="关于data的笔记2.0 - Week1(连载中)">
+      <i class="fa fa-chevron-left"></i> 关于data的笔记2.0 - Week1(连载中)
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/10/03/P148/" rel="next" title="雨未对你来说是怎样的存在?">
+      雨未对你来说是怎样的存在? <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li></ol></li></ol></div>
+
+
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_4.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">206</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">46</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+      <br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=465530020&auto=0&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+      <script>
+//暂时储存文章中的内容
+var div = $('.post-body');
+//暂时储存目录的内容
+var toc=$('.post-toc-wrap')
+function password() {
+  if(''){
+  //将文章内容删除
+    div.remove();
+ //将目录删除
+    toc.remove();
+  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
+  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
+  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
+   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
+      Please enter your password and press enter to build</textarea>' +
+      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
+      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
+      'margin: 0 auto;outline: none;width:95%"/>' +
+      '</div>')
+      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
+    document.onclick = function (event) {
+      var e = event || window.event;
+      var elem = e.srcElement || e.target;
+
+      while (elem) {
+        if (elem != document) {
+          if (elem.className == "password") {
+            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
+            return;
+          }
+          elem = elem.parentNode;
+        } else {
+          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
+          return;
+        }
+      }
+    }
+    //绑定enter键按下后离开的事件
+    $(document).keyup(function(event){
+      if(event.keyCode ==13&&$('.password').length>0){
+        //console.log($('.password').val())
+        //console.log('')
+        if ($('.password').val() == '') {
+        //恢复文章内容
+          (div).appendTo($(".post-header"))
+          //恢复目录
+          toc.appendTo($(".sidebar-inner"))
+          //删除本页面的输入密码组件
+           $(".description").remove();
+          $(".qiang").remove();
+          $(".password").remove();
+
+          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
+          //图片懒加载，没有加入此功能的这个函数需要去掉
+	          $('img').lazyload({
+	             placeholder: '/images/loading.gif',
+	             effect: 'fadeIn',
+	             threshold : 100,
+	             failure_limit : 20,
+	             skip_invisible : false
+	           });
+	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
+	            $(".post-block").css({opacity:1});
+	            $(".post-header").css({opacity:1});
+	            $(".post-body").css({opacity:1});
+	            $(".pagination").css({opacity:1});
+        }else {
+          alert("Sorry, the password is wrong.")
+        }
+      }
+      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
+    });
+  }
+}
+password();
+</script>
+
+    </main>
+
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="Symbols count total">403k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="Reading time total">6:07</span>
+
+  -->
+  
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">休息室一共有180.8k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.com/blog/2021/10/05/P160/";
+    this.page.identifier = "2021/10/05/P160/";
+    this.page.title = "关于SAS的笔记(连载中)";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+  <script type="text/javascript" src="/js/my_js/firework.js"></script>
+
+</body>
+</html>
+
+
+<!-- calendar widget -->
+
+

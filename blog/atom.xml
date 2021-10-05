@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-10-04T03:41:19.170Z</updated>
+  <updated>2021-10-05T04:46:08.921Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,52 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于data的笔记2.0 - Week1(连载中)</title>
+    <link href="https://mazui3.com/blog/2021/10/05/P210/"/>
+    <id>https://mazui3.com/blog/2021/10/05/P210/</id>
+    <published>2021-10-05T04:43:36.000Z</published>
+    <updated>2021-10-05T04:46:08.921Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;跟上次使用的软件不一样.&lt;br&gt;联动&lt;a href=&quot;https://mazui3.com/blog/2020/11/24/P134/&quot;&gt;SQL笔记上&lt;/a&gt;与&lt;a href=&quot;http://localhost:4000/blog/2021/01/31/P167/&quot;&gt;下&lt;/a&gt;.&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>关于SAS的笔记(连载中)</title>
+    <link href="https://mazui3.com/blog/2021/10/05/P160/"/>
+    <id>https://mazui3.com/blog/2021/10/05/P160/</id>
+    <published>2021-10-05T04:43:07.000Z</published>
+    <updated>2021-10-05T04:54:04.483Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;友情链接:&lt;br&gt;&lt;a href=&quot;https://www.sas.com/en_ca/software/on-demand-for-academics.html&quot;&gt;SAS workspace.&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://ca1lib.org/book/17389833/346ea7&quot;&gt;SAS text book.&lt;/a&gt;&lt;/p&gt;</summary>
+    
+    
+    
+    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    
+    <category term="SAS" scheme="https://mazui3.com/blog/tags/SAS/"/>
+    
+  </entry>
   
   <entry>
     <title>雨未对你来说是怎样的存在?</title>
@@ -430,44 +476,6 @@
     <category term="同人" scheme="https://mazui3.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
     
     <category term="ハガレン" scheme="https://mazui3.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制作记录_MathsocCartnoons</title>
-    <link href="https://mazui3.com/blog/2021/06/12/P200/"/>
-    <id>https://mazui3.com/blog/2021/06/12/P200/</id>
-    <published>2021-06-13T00:10:25.000Z</published>
-    <updated>2021-06-16T01:28:06.010Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;关于第一次认真画漫画是给学校打工这件事.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="Thank you Mr.goose" scheme="https://mazui3.com/blog/tags/Thank-you-Mr-goose/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>制作记录_UnderlakeReadingRoom</title>
-    <link href="https://mazui3.com/blog/2021/05/13/P195/"/>
-    <id>https://mazui3.com/blog/2021/05/13/P195/</id>
-    <published>2021-05-13T19:02:46.000Z</published>
-    <updated>2021-09-02T18:28:56.346Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;补一个博客制作记录.&lt;br&gt;&lt;a href=&quot;https://mazui3.github.io/blog/2020/08/13/P111/&quot;&gt;乔迁公告&lt;/a&gt;还是去年八月,和管理员的生日是同一个月w.&lt;br&gt;原因是修修改改的东西,自己都忘掉了才发现没有备份制作方法,于是补上.&lt;br&gt;&lt;del&gt;已经忘了的就没法备份了.&lt;/del&gt;&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="项目记录" scheme="https://mazui3.com/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
   </entry>
   
