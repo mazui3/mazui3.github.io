@@ -29,7 +29,7 @@
 <meta property="og:description" content="跟上次使用的软件不一样.联动SQL笔记上与下.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-05T04:43:36.000Z">
-<meta property="article:modified_time" content="2021-10-05T04:46:08.921Z">
+<meta property="article:modified_time" content="2021-10-05T23:11:09.267Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -219,7 +219,7 @@
     <link itemprop="mainEntityOfPage" href="https://mazui3.com/blog/2021/10/05/P210/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/logo_4.jpg">
+      <meta itemprop="image" content="/blog/images/logo_6.png">
       <meta itemprop="name" content="Mazui">
       <meta itemprop="description" content="与孤独和平共处.">
     </span>
@@ -240,7 +240,7 @@
               <span class="post-meta-item-text">Posted on</span>
               
 
-              <time title="Created: 2021-10-05 00:43:36 / Modified: 00:46:08" itemprop="dateCreated datePublished" datetime="2021-10-05T00:43:36-04:00">2021-10-05</time>
+              <time title="Created: 2021-10-05 00:43:36 / Modified: 19:11:09" itemprop="dateCreated datePublished" datetime="2021-10-05T00:43:36-04:00">2021-10-05</time>
             </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -271,13 +271,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>1.8k</span>
+              <span>4.9k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 mins.</span>
+              <span>4 mins.</span>
             </span>
 
         </div>
@@ -358,6 +358,121 @@
 <li>Receiver Operating Characteristic</li>
 <li>Root mean square error (RMSE)(虽然学校里一直在用在听说实际不怎么用orz)</li>
 </ul>
+<p><br><br><br><br><br></p>
+<h2 id="Fraud-project"><a href="#Fraud-project" class="headerlink" title="Fraud project"></a>Fraud project</h2><p>Risk management管理的部分:</p>
+<ul>
+<li>Financial loss</li>
+<li>Reputation loss</li>
+</ul>
+<p><br><br><br></p>
+<h3 id="Fraud种类"><a href="#Fraud种类" class="headerlink" title="Fraud种类"></a>Fraud种类</h3><p>For Debit &amp; Credit Fraud(Retail)</p>
+<ol>
+<li>lost/stolen</li>
+<li>skimming做假卡</li>
+<li>CNP(card not present): data search(leak)/darkweb</li>
+<li>worthless deposit(check支票拆东墙补西墙式套现)</li>
+<li>impersonation: ATO(account take over骗账号), true name(真实信息盗用)</li>
+</ol>
+<p>For Commercial Fraud</p>
+<ol>
+<li>EFT(Electronic fund transfer)</li>
+<li>check kiting(同样check支票拆东墙补西墙式套现)</li>
+</ol>
+<div class="note ">
+            <p>Aside:<br>|             | Retail     | Commercial  |<br>| —————- | ————— | —————- |<br>| Data        | 更多        | 更少        |<br>| Fraud       | 更多        | 更少        |<br>| Amount      | 更少        | 更多        |</p>
+          </div>
+<p>第二种分类方式:</p>
+<ul>
+<li>First party fraud</li>
+<li>Third party fraud</li>
+<li>Defalcation(internal企业内部fraud)</li>
+</ul>
+<h3 id="Fraud-Analysis"><a href="#Fraud-Analysis" class="headerlink" title="Fraud Analysis"></a>Fraud Analysis</h3><p>Fraud (Supervised Learning + Analytics)</p>
+<ul>
+<li>First Party (Supervised Learning: Client Profile)</li>
+<li>Third Party (Analytics: Abnormal Activity看数据分布)</li>
+</ul>
+<div class="note ">
+            <p>Aside:</p><p>Fraud tread: third party的诈骗手段经常更变,behaviour不稳定.</p>
+          </div>
+<ul>
+<li>AML/Anti Money Laundering (Unsupervised Learning)</li>
+</ul>
+<div class="note ">
+            <p>Aside:</p><p>AML和fraud team分为analysis, strategy, operation三个部分.<br>在fraud中,operation会check case by case.<br>在AML中,因为无法check,所以会operation会上报给监管机构OSFI.<br>然而OSFI不会告知结果,所以会使用Unsupervised Learning.</p>
+          </div>
+<ul>
+<li>CNA- Client Network Analysis(Big Data/ Neural Networks)</li>
+</ul>
+<p>Goal: Utilize data analytics/modeling to minimize reputation risk/fraud loss while ensuring client experience.</p>
+<p><br><br><br></p>
+<h3 id="Rules"><a href="#Rules" class="headerlink" title="Rules"></a>Rules</h3><blockquote>
+<p>Fraud Control Systems:<br><a target="_blank" rel="noopener" href="https://www.prmia.org/">Proactive risk management</a>: a fraud control system that can have a real-time decision.</p>
+</blockquote>
+<p><strong>Rules</strong> are embedded/updated into this system</p>
+<blockquote>
+<p>Rule是[判断逻辑]那样的存在.基于某些逻辑,判定是否fraud.</p>
+</blockquote>
+<p><br><br><br></p>
+<p>Real Time and Near Real Time actions</p>
+<ul>
+<li>Real Time action: Rule based Approve/Decline/Hold</li>
+</ul>
+<ol>
+<li>Directly impact client experience</li>
+<li>Performance vs. Decline No.</li>
+</ol>
+<ul>
+<li>Near Time action: Alert- Expert judgement(不会直接拒绝交易,但是会跳出alert提醒)</li>
+</ul>
+<ol>
+<li>Indirectly impact(客户不会知道和受影响,但内部会留下记录并处理)</li>
+<li>Alert No. vs. Capacity(内部人员capacity)</li>
+</ol>
+<ul>
+<li>Rule Performance Evaluation</li>
+</ul>
+<ol>
+<li><p>Confusion Matrix/Fraud Count/Fraud Dollar</p>
+<p><br><br><br></p>
+</li>
+</ol>
+<p>Rule的流程:</p>
+<ol>
+<li>Review daily report/ communicate with debit card fraud analysis</li>
+<li>Rule creating process</li>
+<li><p>Implement</p>
+</li>
+<li><p>Pull recent transactions</p>
+</li>
+<li>Create rule to black potential fraud transactions</li>
+<li>Evaluate rule performance</li>
+</ol>
+<p><br><br><br></p>
+<p>Rule performance:<br>Alert generated / confirmed fraud =&gt; aka cost ratio(名称可能不同)</p>
+<p>Model performance:</p>
+<ul>
+<li>Error analysis(这个最重要)</li>
+<li>Receiver Operating Characteristic</li>
+<li>Root mean square error (RMSE)</li>
+</ul>
+<div class="note ">
+            <p>Error analysis</p><p>在某个stat笔记中讨论过false positive(Type I error)和false negative(Type II error)的error.<br>我们通过以下定义来测试type I error和type II error</p><p>Precision is the ratio of correctly predicted positive classes to all predicted positive classes.<br><strong>Precision (P) = TP/(TP + FP)</strong> 在测true的里面真正的target比例.</p><p>Recall(aka sensitivity) is the ratio of correctly predicted positive classes to all actual positive classes.<br><strong>Recall (R) = TP/(TP + FN)</strong> 在target里面测出来的比例.</p><p>Accuracy is the percentage of correctly predicted classes out of total predictions.<br><strong>Accuracy = (TP + TN)/(TP + FP + TN + FN)</strong> 正确率.</p><p>F1 score is the harmonic mean of precision and recall.<br><strong>F1 score = (2 <em> P </em> R )/(P + R)</strong></p><blockquote><p>F1 score is more appropriate(than accuracy) when unequal class distribution(rare event) is in the dataset and it is necessary to measure the equilibrium of precision and recall.</p></blockquote>
+          </div>
+<p>不同的情况要求的model不同.<br>比如测肺癌的model需要precision高target可以低,因为测出来的治疗成本很高.测新冠的model需要target高precision可以低,因为隔离比切掉肺的成本低.</p>
+<p>对于rare event的fraud case来说,用accuracy并不合适,可以用F1 score.</p>
+<p><br><br><br></p>
+<div class="note ">
+            <p>Receiver Operating Characteristic, <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">wiki</a>.</p>
+          </div>
+<p><br><br><br></p>
+<h3 id="Fraud-case"><a href="#Fraud-case" class="headerlink" title="Fraud case"></a>Fraud case</h3><blockquote>
+<p>Taxi skim, Lost and stolen</p>
+</blockquote>
+<div class="note ">
+            <p>SQL/SAS is used in</p><ul><li>Transaction data extraction</li><li>Data cleaning</li><li>Data manipulation (To get cumulative transactions data)</li><li>Rule Creating and Performance Review SavvyPro</li></ul>
+          </div>
+<p>在SAS中写SQL.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proc sql;</span><br><span class="line">  CREATE TABLE table_name AS</span><br><span class="line">  SELECT variables</span><br><span class="line">  FROM data_source</span><br><span class="line">  WHERE condition</span><br><span class="line">  GROUP BY variables</span><br><span class="line">  HAVING condition</span><br><span class="line">  ORDER BY variable;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure><br>在SQL中语句是按这个顺序写的.</p>
 
     </div>
 
@@ -374,13 +489,13 @@
       <div class="popular-posts-title"><a href="/blog/2021/10/05/P160/" rel="bookmark">关于SAS的笔记(连载中)</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
   </ul>
 
@@ -396,7 +511,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/10/06/P161/" rel="prev" title="蒙受好意">
+      <i class="fa fa-chevron-left"></i> 蒙受好意
+    </a></div>
       <div class="post-nav-item">
     <a href="/blog/2021/10/05/P160/" rel="next" title="关于SAS的笔记(连载中)">
       关于SAS的笔记(连载中) <i class="fa fa-chevron-right"></i>
@@ -469,7 +587,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">1.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">2.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-preparation-cleaning"><span class="nav-number">2.1.</span> <span class="nav-text">Data preparation(cleaning)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Preprocessing"><span class="nav-number">2.2.</span> <span class="nav-text">Data Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Exploration"><span class="nav-number">2.3.</span> <span class="nav-text">Data Exploration:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">2.4.</span> <span class="nav-text">Model</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Questions"><span class="nav-number">1.</span> <span class="nav-text">Questions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">2.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-preparation-cleaning"><span class="nav-number">2.1.</span> <span class="nav-text">Data preparation(cleaning)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Preprocessing"><span class="nav-number">2.2.</span> <span class="nav-text">Data Preprocessing</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-Exploration"><span class="nav-number">2.3.</span> <span class="nav-text">Data Exploration:</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Model"><span class="nav-number">2.4.</span> <span class="nav-text">Model</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fraud-project"><span class="nav-number">3.</span> <span class="nav-text">Fraud project</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraud%E7%A7%8D%E7%B1%BB"><span class="nav-number">3.1.</span> <span class="nav-text">Fraud种类</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraud-Analysis"><span class="nav-number">3.2.</span> <span class="nav-text">Fraud Analysis</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rules"><span class="nav-number">3.3.</span> <span class="nav-text">Rules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Fraud-case"><span class="nav-number">3.4.</span> <span class="nav-text">Fraud case</span></a></li></ol></li></ol></div>
 
 
       </div>
@@ -478,7 +596,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/blog/images/logo_4.jpg">
+      src="/blog/images/logo_6.png">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description">与孤独和平共处.</div>
 </div>
@@ -487,7 +605,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">206</span>
+          <span class="site-state-item-count">207</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -639,7 +757,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">403k</span>
+    <span title="Symbols count total">413k</span>
   -->
 
   <!--
@@ -647,7 +765,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">6:07</span>
+    <span title="Reading time total">6:16</span>
 
   -->
   
@@ -657,7 +775,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有180.8k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有182.7k的老兔正在打瞌睡</span>
 </div>
 
         

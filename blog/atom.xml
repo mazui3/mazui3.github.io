@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-10-05T04:46:08.921Z</updated>
+  <updated>2021-10-08T05:48:22.241Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>蒙受好意</title>
+    <link href="https://mazui3.com/blog/2021/10/06/P161/"/>
+    <id>https://mazui3.com/blog/2021/10/06/P161/</id>
+    <published>2021-10-07T03:56:01.000Z</published>
+    <updated>2021-10-08T05:48:22.241Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/10/06/P161/P161.png&quot; class=&quot;&quot; width=&quot;300&quot; height=&quot;205&quot;&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于data的笔记2.0 - Week1(连载中)</title>
     <link href="https://mazui3.com/blog/2021/10/05/P210/"/>
     <id>https://mazui3.com/blog/2021/10/05/P210/</id>
     <published>2021-10-05T04:43:36.000Z</published>
-    <updated>2021-10-05T04:46:08.921Z</updated>
+    <updated>2021-10-05T23:11:09.267Z</updated>
     
     
     <summary type="html">&lt;p&gt;跟上次使用的软件不一样.&lt;br&gt;联动&lt;a href=&quot;https://mazui3.com/blog/2020/11/24/P134/&quot;&gt;SQL笔记上&lt;/a&gt;与&lt;a href=&quot;http://localhost:4000/blog/2021/01/31/P167/&quot;&gt;下&lt;/a&gt;.&lt;/p&gt;</summary>
@@ -42,7 +61,7 @@
     <link href="https://mazui3.com/blog/2021/10/05/P160/"/>
     <id>https://mazui3.com/blog/2021/10/05/P160/</id>
     <published>2021-10-05T04:43:07.000Z</published>
-    <updated>2021-10-05T04:54:04.483Z</updated>
+    <updated>2021-10-05T18:55:26.429Z</updated>
     
     
     <summary type="html">&lt;p&gt;友情链接:&lt;br&gt;&lt;a href=&quot;https://www.sas.com/en_ca/software/on-demand-for-academics.html&quot;&gt;SAS workspace.&lt;/a&gt;&lt;br&gt;&lt;a href=&quot;https://ca1lib.org/book/17389833/346ea7&quot;&gt;SAS text book.&lt;/a&gt;&lt;/p&gt;</summary>
@@ -454,28 +473,6 @@
     
     
     <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>半年画一次的同人</title>
-    <link href="https://mazui3.com/blog/2021/06/17/P191/"/>
-    <id>https://mazui3.com/blog/2021/06/17/P191/</id>
-    <published>2021-06-17T05:37:56.000Z</published>
-    <updated>2021-06-19T19:57:06.655Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/blog/2021/06/17/P191/P191_4.png&quot; class=&quot;&quot; title=&quot;模写03最后一集的名微笑&quot;&gt;
-&lt;p&gt;在晚上失去(入)意识(睡)前的临摹与涂鸦与吐槽合集.&lt;br&gt;内容以看过所有的剧情为前提,所以还请注意剧透!&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="画" scheme="https://mazui3.com/blog/categories/%E7%94%BB/"/>
-    
-    
-    <category term="同人" scheme="https://mazui3.com/blog/tags/%E5%90%8C%E4%BA%BA/"/>
-    
-    <category term="ハガレン" scheme="https://mazui3.com/blog/tags/%E3%83%8F%E3%82%AC%E3%83%AC%E3%83%B3/"/>
     
   </entry>
   
