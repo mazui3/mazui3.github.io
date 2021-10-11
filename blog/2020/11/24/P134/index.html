@@ -21,18 +21,18 @@
     var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="个人用笔记,写的很杂(再放送).">
+  <meta name="description" content="个人用笔记,写的很杂(再放送).DLC篇.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于SQL的笔记">
 <meta property="og:url" content="https://mazui3.com/blog/2020/11/24/P134/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="个人用笔记,写的很杂(再放送).">
+<meta property="og:description" content="个人用笔记,写的很杂(再放送).DLC篇.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_1.png">
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-10-08T01:48:38.722Z">
+<meta property="article:modified_time" content="2021-10-08T14:23:30.944Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -252,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-07 21:48:38" itemprop="dateModified" datetime="2021-10-07T21:48:38-04:00">2021-10-07</time>
+                <time title="Modified: 2021-10-08 10:23:30" itemprop="dateModified" datetime="2021-10-08T10:23:30-04:00">2021-10-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -301,7 +301,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>个人用笔记,写的很杂(再放送).<br><a id="more"></a></p>
+        <p>个人用笔记,写的很杂(再放送).<br><a href="https://mazui3.com/blog/2021/01/31/P167/">DLC篇.</a><br><a id="more"></a></p>
 <p><strong>Hot key</strong></p>
 <div class="note ">
             <p>ctrl + o -&gt; open database<br>alt + e -&gt; SQL editor<br>F9 -&gt; Execute query</p>
@@ -315,12 +315,18 @@
           </div>
 <p><br><br><br><br><br></p>
 <p><strong>Side Note</strong></p>
-<ul>
-<li>SQLite是大小写不敏感的,除了用string来做search的时候.</li>
-<li>column name &lt;= 30 characters. 只能用a-z/A-Z/0-9/_/$<br><a target="_blank" rel="noopener" href="https://docs.actian.com/ingres/11.0/index.html#page/SQLRef/SQL_Naming_and_Statement_Rules.htm">doc_sql</a> &amp; <a target="_blank" rel="noopener" href="https://www.tutlane.com/tutorial/sqlite/sqlite-syntax">doc_sqlite</a></li>
-<li>一个table现在能有1000的columns.</li>
-<li>如果我们要在搜索有单引号或者双引号的内容.<br>For example we are searching Can”a’da.<br>WHERE jurisdiction = ‘Can”a’’da’<br>两个单引号search一个单引号.<br>双引号不变.<br>但如果 WHERE jurisdiction = “Can“”a’da”<br>两个双引号search一个双引号.<br>单引号不变.</li>
-</ul>
+<div class="note ">
+            <p>SQLite是大小写不敏感的,除了用string来做search的时候.</p>
+          </div>
+<div class="note ">
+            <p>column name &lt;= 30 characters. 只能用a-z/A-Z/0-9/_/$<br><a target="_blank" rel="noopener" href="https://docs.actian.com/ingres/11.0/index.html#page/SQLRef/SQL_Naming_and_Statement_Rules.htm">doc_sql</a> &amp; <a target="_blank" rel="noopener" href="https://www.tutlane.com/tutorial/sqlite/sqlite-syntax">doc_sqlite</a></p>
+          </div>
+<div class="note ">
+            <p>一个table现在能有1000的columns.</p>
+          </div>
+<div class="note ">
+            <p>如果我们要在搜索有单引号或者双引号的内容.<br>For example we are searching Can”a’da.<br>WHERE jurisdiction = ‘Can”a’’da’<br>两个单引号search一个单引号.<br>双引号不变.<br>但如果 WHERE jurisdiction = “Can“”a’da”<br>两个双引号search一个双引号.<br>单引号不变.</p>
+          </div>
 <p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
 <h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">Name</span> <span class="keyword">LIKE</span> <span class="string">&#x27;%island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//wherever there&#x27;s island in the string, %means 前面或者后面可以有其他字符</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> <span class="keyword">Name</span> <span class="keyword">LIKE</span> <span class="string">&#x27;_island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//_ 的意思是某一个字符.island%前面可以有任何一个字符</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">Name</span>, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line"> <span class="keyword">WHERE</span> Continent <span class="keyword">IN</span> ( <span class="string">&#x27;Europe&#x27;</span>, <span class="string">&#x27;Asia&#x27;</span> ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="keyword">Name</span>;//continent是europe或者asia</span><br></pre></td></tr></table></figure>
 <p>select + as可以用于取名字或改名字.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name_1 <span class="keyword">AS</span> alias_name_1, //这时就可以改名了</span><br><span class="line">    column_name_2 <span class="keyword">AS</span> alias_name_2,</span><br><span class="line">    column_name_N <span class="keyword">AS</span> alias_name_n</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure></p>
@@ -351,7 +357,7 @@
 <p>顺便一提NULL也算distinct的一种.</p>
 <p><br><br><br></p>
 <h2 id="WHEN"><a href="#WHEN" class="headerlink" title="WHEN"></a>WHEN</h2><p><strong>condition</strong>, <strong>case和end</strong>是一定要在一起用的.</p>
-<p>select + case when (像if else statment.)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure></p>
+<p>select + case when (像if else statment.)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proc sql;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> temp_2 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> *, <span class="keyword">case</span></span><br><span class="line"> <span class="keyword">when</span> cty=<span class="string">&quot;North YorkC&quot;</span> <span class="keyword">then</span> <span class="string">&quot;North York&quot;</span></span><br><span class="line"> <span class="keyword">when</span> cty=<span class="string">&quot;North YorkW&quot;</span> <span class="keyword">then</span> <span class="string">&quot;North York&quot;</span></span><br><span class="line"> <span class="keyword">when</span> cty=<span class="string">&quot;North Yrko&quot;</span> <span class="keyword">then</span> <span class="string">&quot;North York&quot;</span></span><br><span class="line"> <span class="keyword">else</span> cty <span class="keyword">end</span> <span class="keyword">as</span> city_clean</span><br><span class="line"><span class="keyword">from</span> disk.txn_data_v9</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br></p>
 <h2 id="FROM"><a href="#FROM" class="headerlink" title="FROM"></a>FROM</h2><p>FROM clause + WHERE clause(WHERE + logical expression)<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> Countries <span class="keyword">WHERE</span> Continent = <span class="string">&#x27;Europe&#x27;</span>;</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br></p>
@@ -375,7 +381,7 @@
 <p>注意其他的语法可能不一样,最好查看doc.</p>
 <p><strong>用limit在求第二大小的数:</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Limit 1, 1;</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br></p>
-<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p>count rows.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Population &gt; <span class="number">10000000</span> <span class="keyword">AND</span> Continent = <span class="string">&#x27;Europe&#x27;</span>; //算表中有多少的记录.</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Continent) <span class="keyword">FROM</span> Country; //count where continent has data</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">column</span>) <span class="keyword">FROM</span> table_name; //我们还可以这样count unique的值.</span><br></pre></td></tr></table></figure><br>注意NULL不会被count进去. Count(<em>)比select</em>快很多.</p>
+<h2 id="COUNT"><a href="#COUNT" class="headerlink" title="COUNT"></a>COUNT</h2><p>count rows.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(*) <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Population &gt; <span class="number">10000000</span> <span class="keyword">AND</span> Continent = <span class="string">&#x27;Europe&#x27;</span>; //算表中有多少的记录.</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Continent) <span class="keyword">FROM</span> Country; //count where continent has data</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(<span class="keyword">DISTINCT</span> <span class="keyword">column</span>) <span class="keyword">FROM</span> table_name; //我们还可以这样count unique的值.</span><br></pre></td></tr></table></figure><br>注意NULL不会被count进去. Count( <em> ) 比select </em> 快很多.</p>
 <p><br><br><br></p>
 <h2 id="INSERT-INTO"><a href="#INSERT-INTO" class="headerlink" title="INSERT INTO"></a>INSERT INTO</h2><p>add data<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">Table</span>(column1,...) <span class="keyword">values</span> (value1, ...)</span><br><span class="line"><span class="comment">-- or</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">Table</span> <span class="keyword">values</span> (value1, ...)</span><br></pre></td></tr></table></figure><br>当用第二种方式的时候,可以用NULL来空去没有值的column.<br>Primary key不能为空.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Customer (<span class="keyword">name</span>, city, state, zip)</span><br><span class="line">  <span class="keyword">VALUES</span> (<span class="string">&#x27;Jimi Hendrix&#x27;</span>, <span class="string">&#x27;Renton&#x27;</span>, <span class="string">&#x27;WA&#x27;</span>, <span class="string">&#x27;12398&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;This&#x27;</span>, <span class="string">&#x27;Right here!&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> ( b, c ) <span class="keyword">VALUES</span> ( <span class="string">&#x27;That&#x27;</span>, <span class="string">&#x27;Over there!&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> <span class="keyword">DEFAULT</span> <span class="keyword">VALUES</span>;</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">test</span> ( a, b, c ) <span class="keyword">SELECT</span> <span class="keyword">id</span>, <span class="keyword">name</span>, description <span class="keyword">from</span> item;</span><br></pre></td></tr></table></figure><br>我们也可以用subquery来insert.<br>不过注意,如果将一个表格复制给它本身,也就是将数据翻倍.很可能出现primary key也重复而报错的情况.<br>所以要做改动.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> bond_price</span><br><span class="line">  <span class="keyword">select</span> <span class="string">&quot;column_name&quot;</span>,column1,column2,column3</span><br><span class="line">  <span class="keyword">from</span> bond_price</span><br><span class="line">  <span class="keyword">where</span> column_name = <span class="string">&#x27;data&#x27;</span></span><br></pre></td></tr></table></figure></p>
 <p><br><br><br></p>
@@ -388,7 +394,38 @@
 <h2 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h2><p>when search for null<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span> <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="literal">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> <span class="keyword">test</span> <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>;//opposite</span><br></pre></td></tr></table></figure><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> <span class="keyword">test</span>;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">test</span> (</span><br><span class="line">  a <span class="built_in">INTEGER</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  b <span class="built_in">TEXT</span> <span class="keyword">NOT</span> <span class="literal">NULL</span>,</span><br><span class="line">  c <span class="built_in">TEXT</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br></p>
 <h2 id="NULL"><a href="#NULL" class="headerlink" title="NULL"></a>NULL</h2><p>关于null的note:<br>null在计算avg和sum时不受影响.如果全部都是null的数据,min,max也会return null.<br>null进行加减乘除,或者大小比较也是return null.<br>null == null也是return null.</p>
-<p>logic involve null(unknown)的时候:<br>|     |   |   |   |<br>|——-|—-|—-|—-|<br>| or  | unknown or true == true  | unknown or false == unknown  | unknown or unknown == unknown  |<br>| and | unknown and true == unknown | unknown and false == false | unknown and unknown == unknown |<br>| not |  not(unknown) == unknown |</p>
+<p>logic involve null(unknown)的时候:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th></th>
+<th></th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>or</td>
+<td>unknown or true == true</td>
+<td>unknown or false == unknown</td>
+<td>unknown or unknown == unknown</td>
+</tr>
+<tr>
+<td>and</td>
+<td>unknown and true == unknown</td>
+<td>unknown and false == false</td>
+<td>unknown and unknown == unknown</td>
+</tr>
+<tr>
+<td>not</td>
+<td>not(unknown) == unknown</td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
 <p><br><br><br></p>
 <h3 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h3><p>用来默认替换null的.<br>SELECT COALESCE(要查找的column_name, replace null的值);</p>
 <p><br><br><br></p>
@@ -400,7 +437,31 @@
 <h2 id="database"><a href="#database" class="headerlink" title="database"></a>database</h2><p>(aka join table)</p>
 <p>Each row of table has a unique key. The table’s unique key may or may not correspond with a column in the table.<br>Sometime unique key is hidden but the table must have one.<br>When a column is used as a unique key, it often called <strong>primary key</strong> (子table) .(用于identify)<br><img src="/blog/2020/11/24/P134/P134_1.png" class=""><br>通过key来连接各个表格.这是的连接用key被称为foreign keys(主table).<br>如果链接的一方是primary key,自己就是foreign key.</p>
 <p>种类:<br>Inner join(no null),保留两个table的共同值.<br>Outer join(may have null): LEFT/RIGHT/FULL join<br><strong>right and full outer join are not supported in sqlite right now</strong> 但是可以用left改写right.</p>
-<p>Left join:<br>| Num   | Var    |<br>| ———| ———-|<br>| 1     | A1     |<br>| 2     | A2     |<br>| 3     | A3     |</p>
+<p>Left join:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>Var</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="table-container">
 <table>
 <thead>
@@ -494,7 +555,43 @@
 <h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>四舍五入函数.<br>round(expression, precision精度)<br>精度可以是负数,保留到百位.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">2.55555</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>);//result is 3</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">3</span>);//2.556, second is 位数</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">ROUND</span>(<span class="number">2.55555</span>, <span class="number">0</span>);//default,也就是到整数位</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br><br><br></p>
 <h2 id="SQL-date-and-time"><a href="#SQL-date-and-time" class="headerlink" title="SQL date and time"></a>SQL date and time</h2><p>SQL store date and time in UTC</p>
-<p>//for SQLite<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATETIME(&#x27;now&#x27;);//in UTC -&gt; ‘2020-11-24 15:07:13’</span><br><span class="line">SELECT DATE(&#x27;now&#x27;);//-&gt; ‘2020-11-24&#x27;</span><br><span class="line">SELECT TIME(&#x27;now&#x27;);//-&gt;&#x27;15:07:13&#x27;</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 day&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 days&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;-1 month&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 year&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 hours&#x27;</span>, <span class="string">&#x27;+27 minutes&#x27;</span>, <span class="string">&#x27;-1 day&#x27;</span>, <span class="string">&#x27;+3 years&#x27;</span>);</span><br></pre></td></tr></table></figure><br>关于sql还有一个截取时间的办法.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strftime(format, timestring[,modifiers])</span><br></pre></td></tr></table></figure><br>| format  | explanation  |<br>|—-|—-|<br>| %Y  | year with century(yyyy)  |<br>| %m  | month(01-12)  |<br>| %d  | day of the month(1-31)  |<br>| %H  | hour on 24-hour clock(00-23)  |<br>| %M  | minute(00-59)  |<br>| %S  | second(00-59)  |</p>
+<p>//for SQLite<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">SELECT DATETIME(&#x27;now&#x27;);//in UTC -&gt; ‘2020-11-24 15:07:13’</span><br><span class="line">SELECT DATE(&#x27;now&#x27;);//-&gt; ‘2020-11-24&#x27;</span><br><span class="line">SELECT TIME(&#x27;now&#x27;);//-&gt;&#x27;15:07:13&#x27;</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 day&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 days&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;-1 month&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+1 year&#x27;</span>);</span><br><span class="line"><span class="keyword">SELECT</span> DATETIME(<span class="string">&#x27;now&#x27;</span>, <span class="string">&#x27;+3 hours&#x27;</span>, <span class="string">&#x27;+27 minutes&#x27;</span>, <span class="string">&#x27;-1 day&#x27;</span>, <span class="string">&#x27;+3 years&#x27;</span>);</span><br></pre></td></tr></table></figure><br>关于sql还有一个截取时间的办法.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Strftime(format, timestring[,modifiers])</span><br></pre></td></tr></table></figure></p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>format</th>
+<th>explanation</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>%Y</td>
+<td>year with century(yyyy)</td>
+</tr>
+<tr>
+<td>%m</td>
+<td>month(01-12)</td>
+</tr>
+<tr>
+<td>%d</td>
+<td>day of the month(1-31)</td>
+</tr>
+<tr>
+<td>%H</td>
+<td>hour on 24-hour clock(00-23)</td>
+</tr>
+<tr>
+<td>%M</td>
+<td>minute(00-59)</td>
+</tr>
+<tr>
+<td>%S</td>
+<td>second(00-59)</td>
+</tr>
+</tbody>
+</table>
+</div>
 <div class="table-container">
 <table>
 <thead>
@@ -528,7 +625,27 @@
 <div class="note ">
             <p>The GROUP BY clause allows you to apply the summary functions to a group of observations (the same as CLASS statement in PROC MEANS), you only need it when you apply summary functions.</p>
           </div>
-<p>如有以下的数据:<br>| gender      | height      |<br>| —————- | —————- |<br>| male        | 60          |<br>| female      | 70          |</p>
+<p>如有以下的数据:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>gender</th>
+<th>height</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>male</td>
+<td>60</td>
+</tr>
+<tr>
+<td>female</td>
+<td>70</td>
+</tr>
+</tbody>
+</table>
+</div>
 <p>我们通过group by gender来求不同gender的height mean.</p>
 <div class="note ">
             <p>If you specify a GROUP BY clause in a query that does not contain a summary<br>function, your clause is changed to an ORDER BY clause, and a message to<br>that effect is written to the SAS log.</p>
@@ -570,13 +687,13 @@
       <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/10/05/P160/" rel="bookmark">关于SAS的笔记(连载中)</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/10/05/P160/" rel="bookmark">关于SAS的笔记(连载中)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -840,7 +957,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">413k</span>
+    <span title="Symbols count total">421k</span>
   -->
 
   <!--
@@ -848,7 +965,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">6:16</span>
+    <span title="Reading time total">6:23</span>
 
   -->
   
@@ -858,7 +975,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有182.7k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有184.4k的老兔正在打瞌睡</span>
 </div>
 
         

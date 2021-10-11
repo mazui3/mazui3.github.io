@@ -29,7 +29,7 @@
 <meta property="og:description" content="个人用笔记,因为太长了所以分成了两份.上一回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-31T19:30:10.000Z">
-<meta property="article:modified_time" content="2021-10-05T04:54:11.983Z">
+<meta property="article:modified_time" content="2021-10-08T15:28:54.340Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-05 00:54:11" itemprop="dateModified" datetime="2021-10-05T00:54:11-04:00">2021-10-05</time>
+                <time title="Modified: 2021-10-08 11:28:54" itemprop="dateModified" datetime="2021-10-08T11:28:54-04:00">2021-10-08</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,13 +279,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>5.5k</span>
+              <span>6.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>5 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -298,9 +298,9 @@
 
       
         <p>个人用笔记,因为太长了所以分成了两份.<br><a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/11/24/P134/">上一回</a>.<br><a id="more"></a><br><br><br><br><br><br><br><br></p>
-<blockquote>
-<p>Note:sql的常用数据格式<br>Bigint:          -1<em> 10(18) ~ 1</em> 10(18) \(&lt;——Big Int 10^18)<br>BLOB:            Binary Large OBject 2(64) -1  \(&lt;——最大数字2^64 - 1)<br>Boolean:        True or False<br>CHAR(500) :       500 \(500个字符)<br>Date/DateTime/Time:  ‘2020-07-25 15:25:25.666’ YYYY-MM-DD HH:MM:SS.SSS<br>Decimal:          123.456<br>Double:     1<em> 10(-308) ~ 1 </em> 10(308)  / -1 <em> 10(308) ~ -1 </em> 10(-308)<br>Float:      1<em> 10(-38) ~ 1 </em> 10(38)      / -1 <em> 10(38) ~ -1 </em> 10(-38)<br>INT/Integer : 0 ~ 65535<br>String:            length &lt;= 4000<br>Text:               length&gt; 4000 \(mySql and sqlite)<br>CLOB: Char Large Object   length &gt; 4000<br>VARCHAR(500) : real length &lt;= 500 \(不管多少长度都给500)<br>Real:     approximation of a real number</p>
-</blockquote>
+<div class="note ">
+            <p>Note:sql的常用数据格式<br>Bigint:          -1<em> 10(18) ~ 1</em> 10(18) \(&lt;——Big Int 10^18)<br>BLOB:            Binary Large OBject 2(64) -1  \(&lt;——最大数字2^64 - 1)<br>Boolean:        True or False<br>CHAR(500) :       500 \(500个字符)<br>Date/DateTime/Time:  ‘2020-07-25 15:25:25.666’ YYYY-MM-DD HH:MM:SS.SSS<br>Decimal:          123.456<br>Double:     1<em> 10(-308) ~ 1 </em> 10(308)  / -1 <em> 10(308) ~ -1 </em> 10(-308)<br>Float:      1<em> 10(-38) ~ 1 </em> 10(38)      / -1 <em> 10(38) ~ -1 </em> 10(-38)<br>INT/Integer : 0 ~ 65535<br>String:            length &lt;= 4000<br>Text:               length&gt; 4000 \(mySql and sqlite)<br>CLOB: Char Large Object   length &gt; 4000<br>VARCHAR(500) : real length &lt;= 500 \(不管多少长度都给500)<br>Real:     approximation of a real number</p>
+          </div>
 <p>注:sql中首先生成table,table中是数据格式,然后在import数据到table中.<br>可以在table中用双击的方式来更改格式.</p>
 <p><br><br><br></p>
 <h2 id="printf"><a href="#printf" class="headerlink" title="printf"></a>printf</h2><p>在sqlite里面only.printf(“%X.YF”, expression),第一个%没有意义,X为整数位保留的数据,Y为小数位保留的数据,F为format.<br><strong>没有四舍五入,是硬截.</strong><br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">printf(&quot;%.2f%&quot;, (high-low)/(open+close)2100) as vol <span class="comment">--123.567 = 123.56(整数位不变,小数位取两位,f为float,最后一个%为加上的char)</span></span><br><span class="line">round(123.456, 2) = 123.46</span><br><span class="line">printf(&quot;%.2f&quot;, 123.456) = 123.45</span><br></pre></td></tr></table></figure></p>
@@ -316,8 +316,18 @@
 <p><br><br><br><br><br></p>
 <h3 id="VIEW"><a href="#VIEW" class="headerlink" title="VIEW"></a>VIEW</h3><p>view: a saved query.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">id</span>, album_id, title, track_number,</span><br><span class="line">  <span class="keyword">duration</span> / <span class="number">60</span> <span class="keyword">AS</span> m, <span class="keyword">duration</span> % <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> trackView <span class="keyword">AS</span></span><br><span class="line">  <span class="keyword">SELECT</span> <span class="keyword">id</span>, album_id, title, track_number,</span><br><span class="line">    <span class="keyword">duration</span> / <span class="number">60</span> <span class="keyword">AS</span> m, <span class="keyword">duration</span> % <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> trackView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> album, a.artist, t.track_number <span class="keyword">AS</span> seq, t.title, t.m, t.s</span><br><span class="line">  <span class="keyword">FROM</span> album <span class="keyword">AS</span> a</span><br><span class="line">  <span class="keyword">JOIN</span> trackView <span class="keyword">AS</span> t</span><br><span class="line">    <span class="keyword">ON</span> t.album_id = a.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> a.title, t.track_number</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> <span class="keyword">IF</span> <span class="keyword">EXISTS</span> trackView;</span><br></pre></td></tr></table></figure></p>
 <p><br><br><br><br><br></p>
-<h2 id="Subquery"><a href="#Subquery" class="headerlink" title="Subquery"></a>Subquery</h2><p>Subquery的结构中,整体的叫parent query,其中的子query叫nested/inner query.<br>(当作subset来理解.)</p>
-<p>这里的使用是两个select套在一起.查询两个表.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, ... ,columnN</span><br><span class="line"><span class="keyword">FROM</span> tableA</span><br><span class="line"><span class="keyword">WHERE</span> column1 <span class="keyword">IN</span> (<span class="keyword">SELECT</span> columnN</span><br><span class="line"><span class="keyword">FROM</span> tableB</span><br><span class="line"><span class="keyword">WHERE</span> ...)</span><br></pre></td></tr></table></figure></p>
+<h2 id="Subquery"><a href="#Subquery" class="headerlink" title="Subquery"></a>Subquery</h2><p>也就是Nested(嵌套)query.</p>
+<blockquote>
+<p>SQL allows you to embed a query into another query, subquery can be uncorrelated or correlated</p>
+</blockquote>
+<div class="note ">
+            <p>Subquery的结构中,整体的叫parent/main query,其中的子query叫nested/inner query.<br>(当作subset来理解.)<br>什么时候要使用nested query:无法用and和or做一次查询得出结论,得使用多次查询.(第一次的查询的结果用于第二次查询.)</p>
+          </div>
+<p>Uncorrelated subquery:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> <span class="keyword">distinct</span> card_num <span class="keyword">from</span> clean_data</span><br><span class="line"><span class="keyword">where</span> Fraud=<span class="string">&#x27;Yes&#x27;</span> <span class="keyword">and</span> MCC_desc = <span class="string">&#x27;Transportation&#x27;</span> <span class="keyword">and</span></span><br><span class="line">card_num <span class="keyword">in</span> (<span class="keyword">select</span> card_num <span class="keyword">from</span> clean_data <span class="keyword">where</span> Fraud = <span class="string">&#x27;Yes&#x27;</span> <span class="keyword">and</span> MCC_desc = <span class="string">&#x27;Grocery&#x27;</span>); <span class="comment">-- 如果没有主query副query也可以独立运行</span></span><br></pre></td></tr></table></figure></p>
+<p>Correlated Subquery:</p>
+<p>A sub-query that uses values from the outer query. In this case the inner<br>query has to be executed for every row of outer query.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> disk.multiple_financial <span class="keyword">as</span> a <span class="keyword">where</span> <span class="keyword">exists</span></span><br><span class="line">(<span class="keyword">select</span> * <span class="keyword">from</span> disk.multiple_rating <span class="keyword">as</span> b <span class="keyword">where</span> a.id=b.id <span class="keyword">and</span> a.year=b.year <span class="keyword">and</span> b.df=<span class="number">1</span>); <span class="comment">-- 不建议用correlated subquery因为run得很慢</span></span><br></pre></td></tr></table></figure></p>
+<p>Comparison的时候:<br>When a subquery might return multiple values, you must use one of the conditional operators ANY or ALL to modify a comparison operator in the WHERE or HAVING clause immediately before the subquery. For example, the following WHERE clause contains the less than (&lt;) comparison operator and the conditional operator ANY:<br><figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">where dateofbirth &lt; ANY &#123;subquery...&#125;</span><br><span class="line">where dateofbirth &lt; ALL &#123;subquery...&#125;</span><br></pre></td></tr></table></figure></p>
+<p>other example:这里的使用是两个select套在一起.查询两个表.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, ... ,columnN</span><br><span class="line"><span class="keyword">FROM</span> tableA</span><br><span class="line"><span class="keyword">WHERE</span> column1 <span class="keyword">IN</span> (<span class="keyword">SELECT</span> columnN</span><br><span class="line"><span class="keyword">FROM</span> tableB</span><br><span class="line"><span class="keyword">WHERE</span> ...)</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tmp3 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> *</span><br><span class="line"><span class="keyword">from</span> col_trans</span><br><span class="line"><span class="keyword">where</span> customer_id <span class="keyword">in</span> (</span><br><span class="line">    <span class="keyword">select</span> customer_id <span class="keyword">from</span> customer</span><br><span class="line">    <span class="keyword">where</span> jurisdiction = <span class="string">&#x27;Canada&#x27;</span></span><br><span class="line">      <span class="keyword">and</span> industry = <span class="string">&#x27;Financial&#x27;</span></span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 <p>注意这里前一个where和后一个select是对应的,不然会出现return和需求的column个数不对.<br>不一定需要内容一样,但return的column数得相同.</p>
 <p>有时可以用join代替,先join再查询.但建议使用subquery,运算速度会快(提升性能).<br>在数量对应不上的时候,我们可以用or来拆开子query.</p>
@@ -344,13 +354,13 @@
       <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/10/05/P160/" rel="bookmark">关于SAS的笔记(连载中)</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/10/05/P160/" rel="bookmark">关于SAS的笔记(连载中)</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -614,7 +624,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">413k</span>
+    <span title="Symbols count total">421k</span>
   -->
 
   <!--
@@ -622,7 +632,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">6:16</span>
+    <span title="Reading time total">6:23</span>
 
   -->
   
@@ -632,7 +642,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有182.7k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有184.4k的老兔正在打瞌睡</span>
 </div>
 
         
