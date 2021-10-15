@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-10-08T17:22:04.308Z</updated>
+  <updated>2021-10-15T13:12:49.345Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,46 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于Excel的笔记</title>
+    <link href="https://mazui3.com/blog/2021/10/15/P166/"/>
+    <id>https://mazui3.com/blog/2021/10/15/P166/</id>
+    <published>2021-10-15T13:12:02.000Z</published>
+    <updated>2021-10-15T13:12:49.345Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/10/15/P166/P166.jpg&quot; class=&quot;&quot; title=&quot;现在是简陋版…&quot;&gt;</summary>
+    
+    
+    
+    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="excel" scheme="https://mazui3.com/blog/tags/excel/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>以头抢地(本篇)</title>
+    <link href="https://mazui3.com/blog/2021/10/15/P162/"/>
+    <id>https://mazui3.com/blog/2021/10/15/P162/</id>
+    <published>2021-10-15T13:11:41.000Z</published>
+    <updated>2021-10-15T13:11:41.629Z</updated>
+    
+    
+    <summary type="html">这里是各处收集来的求职记录.为了躲避google搜索设置了密码.</summary>
+    
+    
+    
+    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+  </entry>
   
   <entry>
     <title>蒙受好意</title>
@@ -40,10 +80,10 @@
     <link href="https://mazui3.com/blog/2021/10/05/P210/"/>
     <id>https://mazui3.com/blog/2021/10/05/P210/</id>
     <published>2021-10-05T04:43:36.000Z</published>
-    <updated>2021-10-11T20:23:48.257Z</updated>
+    <updated>2021-10-13T18:02:46.590Z</updated>
     
     
-    <summary type="html">&lt;p&gt;跟上次使用的软件不一样.&lt;br&gt;联动&lt;a href=&quot;https://mazui3.com/blog/2020/11/24/P134/&quot;&gt;SQL笔记上&lt;/a&gt;与&lt;a href=&quot;http://localhost:4000/blog/2021/01/31/P167/&quot;&gt;下&lt;/a&gt;.&lt;/p&gt;</summary>
+    <summary type="html">这里是data相关学习笔记第二期.为了躲避google搜索设置了密码.</summary>
     
     
     
@@ -194,13 +234,13 @@
     
     <category term="残局象棋" scheme="https://mazui3.com/blog/tags/%E6%AE%8B%E5%B1%80%E8%B1%A1%E6%A3%8B/"/>
     
-    <category term="追风者" scheme="https://mazui3.com/blog/tags/%E8%BF%BD%E9%A3%8E%E8%80%85/"/>
-    
     <category term="卡尔马" scheme="https://mazui3.com/blog/tags/%E5%8D%A1%E5%B0%94%E9%A9%AC/"/>
     
     <category term="冬日组" scheme="https://mazui3.com/blog/tags/%E5%86%AC%E6%97%A5%E7%BB%84/"/>
     
     <category term="怪异专家与助手" scheme="https://mazui3.com/blog/tags/%E6%80%AA%E5%BC%82%E4%B8%93%E5%AE%B6%E4%B8%8E%E5%8A%A9%E6%89%8B/"/>
+    
+    <category term="追风者" scheme="https://mazui3.com/blog/tags/%E8%BF%BD%E9%A3%8E%E8%80%85/"/>
     
     <category term="狼与兔" scheme="https://mazui3.com/blog/tags/%E7%8B%BC%E4%B8%8E%E5%85%94/"/>
     
@@ -435,44 +475,6 @@
     
     <category term="绘图笔记" scheme="https://mazui3.com/blog/categories/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0/"/>
     
-    
-  </entry>
-  
-  <entry>
-    <title>生存报告</title>
-    <link href="https://mazui3.com/blog/2021/07/07/P201/"/>
-    <id>https://mazui3.com/blog/2021/07/07/P201/</id>
-    <published>2021-07-07T05:11:24.000Z</published>
-    <updated>2021-07-07T15:33:57.625Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/blog/2021/07/07/P201/P201_6.png&quot; class=&quot;&quot;&gt;
-&lt;p&gt;图书馆角色更新(大嘘).&lt;/p&gt;
-&lt;p&gt;(认真)&lt;br&gt;是疫情宅家下薅下来的生活片段.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
-    
-    
-    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>青春疼痛悖论</title>
-    <link href="https://mazui3.com/blog/2021/07/02/P159/"/>
-    <id>https://mazui3.com/blog/2021/07/02/P159/</id>
-    <published>2021-07-03T01:59:58.000Z</published>
-    <updated>2021-07-09T02:28:28.821Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;（ﾉ´д｀）&lt;br&gt;</summary>
-    
-    
-    
-    
-    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
   </entry>
   
