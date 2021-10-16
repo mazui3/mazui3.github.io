@@ -29,7 +29,7 @@
 <meta property="og:description" content="友情链接:SAS workspace.SAS text book.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-05T04:43:07.000Z">
-<meta property="article:modified_time" content="2021-10-05T18:55:26.429Z">
+<meta property="article:modified_time" content="2021-10-15T23:39:08.825Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -240,10 +240,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-05 00:43:07 / Modified: 14:55:26" itemprop="dateCreated datePublished" datetime="2021-10-05T00:43:07-04:00">2021-10-05</time>
+              <time title="Created: 2021-10-05 00:43:07" itemprop="dateCreated datePublished" datetime="2021-10-05T00:43:07-04:00">2021-10-05</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-15 19:39:08" itemprop="dateModified" datetime="2021-10-15T19:39:08-04:00">2021-10-15</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -273,13 +279,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>6.4k</span>
+              <span>10k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>6 mins.</span>
+              <span>9 mins.</span>
             </span>
 
         </div>
@@ -523,6 +529,34 @@
 </table>
 </div>
 <p><br><br><br></p>
+<h2 id="format"><a href="#format" class="headerlink" title="format"></a>format</h2><p>and和or等的表现方式跟bash有点点像.<br><div class="note ">
+            <p>+, -, <em>, /, *</em><br>&amp; and, | or, ^ not</p>
+          </div></p>
+<p>The default encoding for a dataset in SAS is “wlatin1” (or “wlatin1 Western (windows)”). wlatin1 is used in the “western world” and does not suppose Asian characters. UTF-8 is a universal encoding that can handle characters from all possible languages.</p>
+<p><br><br><br></p>
+<h2 id="PROCs"><a href="#PROCs" class="headerlink" title="PROCs"></a>PROCs</h2><p>proc contents用于查看一个table的信息,加下划线all是一个library里所有的table信息.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proc contents data&#x3D;SASHELP._all_ VARNUM;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>proc sort.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;sashelp.class out&#x3D;class; &#x2F;* work.class *&#x2F;</span><br><span class="line">by sex descending age; &#x2F;* this descending the age, if we want two descending we need to right it twice*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>➢ Out= option allows you to specify the name (class) of the sorted data set, if omitted, the original data set (SASHELP.class) will be overwritten.<br>➢ By default, SAS will sort the data set in ascending order (by sex). Option DESCENDING before the variable age asks SAS to sort in descending order (by age).<br>➢ Proc sort does not generate SAS results, but generate a new sorted data set.</p>
+          </div>
+<p>If you specify NODUP option, the duplicated records will be deleted from the sorted data set (overview2_nodup).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;cert.overview2 out&#x3D;overview2_nodup nodup; &#x2F;* de-dup *&#x2F;</span><br><span class="line">by country;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure><br>我们还可以用隔壁sql的distinct来de-dup.</p>
+<p>If you specify NODUPKEY option, only one record (the first one) with the same key variables (the variables specified in BY statement) will be kept in the sorted data set (overview2_nodupkey).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;cert.overview2 out&#x3D;overview2_nodupkey nodupkey;</span><br><span class="line">by country; &#x2F;* 如果country有一样的就删掉*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>proc means.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">proc means data&#x3D;SASHELP.CLASS std mean max maxdec&#x3D;2; &#x2F;* maxdec是小数点后最多保留两位 *&#x2F;</span><br><span class="line">var Height;</span><br><span class="line">class Sex Age; &#x2F;* 先分组,这种情况会分为四组*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>✓ Class statement asks SAS to calculate the statistics for VAR Height within each class levels (Sex, Age)<br>✓ VAR statement asks for statistics of specified numeric variables, ignoring missing values. When omitted, the statistics for all the numeric variables will be calculated with missing values ignored.<br>✓ STD, MEAN, MAX … are the statistics you can require to calculate. By default, SAS will calculate N, mean, std, min and max. “N Obs” is always given by SAS output, which counts total number of observations in each class level, including all missing values.<br>✓ MAXDEC = specifies the maximum of decimal points you would like SAS to report.<br>✓ Format, where and label statement can be applied in PROC MEANS as well</p>
+          </div>
+<p>proc print.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc print data&#x3D; class label;</span><br><span class="line">id name;</span><br><span class="line">var sex age height weight;</span><br><span class="line">label sex&#x3D;&quot;Gender: M&#x2F;F&quot;;</span><br><span class="line">format height weight 7.1;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>✓ Proc print displays the data portion of the data set. (what about proc contents?)<br>✓ VAR statement specifies which variables to print. If omitted, then SAS will by default print all the<br>variables.<br>✓ Label option in the proc print statement asks SAS to print label instead of variable name in the<br>header.<br>✓ ID statement uses NAME for the row names instead of observations (1,2,3…). For example,<br>without ID statement, the result will be like:<br>✓ You can also use BY statement to have separate reports for different BY levels, however, data<br>set must by sorted before using BY statement. Indeed, before using BY statement in any<br>data/proc step, you must sort your data.</p>
+          </div>
+<p>proc freq.用于分析数据频率.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>Two-way Tabulation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region*product;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>proc format.这是一个组合技.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">proc format;</span><br><span class="line">value score</span><br><span class="line">low - &lt;60 &#x3D; &quot;Fail&quot;</span><br><span class="line">60 - high &#x3D; &quot;Pass&quot;;</span><br><span class="line">run;</span><br><span class="line">proc format;</span><br><span class="line">value $sex &#x2F;* 修饰character value *&#x2F;</span><br><span class="line">&quot;M&quot; &#x3D; &quot;Male&quot;</span><br><span class="line">&quot;F&quot; &#x3D; &quot;Female&quot;;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">&#x2F;* define了之后再使用 *&#x2F;</span><br><span class="line">proc print data &#x3D;class;</span><br><span class="line">var score;</span><br><span class="line">format score score.;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p>The user-defined format will be stored in a SAS catalog (not SAS data set).<br>Use $ before the format name in the value statement if you want to apply it to a character variable.</p>
+<p>proc transpose: Transposing from horizontal (wide) to vertical (long) or transposing from vertical<br>to horizontal<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Proc transpose data&#x3D;[] out&#x3D;[] prefix&#x3D;[];</span><br><span class="line">By [variable list]; &#x2F;* 用于分组的variable *&#x2F;</span><br><span class="line">Var [variable list]; *transpose these variables; shortcut有RR:是所有R开头的column</span><br><span class="line">Id [variable list]; *value becomes to variable name; 纵到横才需要id</span><br><span class="line">Run;</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>ID statement is critical when you transfer vertical to horizontal!<br>If you omit the VAR statement, then the TRANSPOSE procedure transposes all numeric variables in the input data set that are not listed in another statement.<br>You must list character variables in a VAR statement if you want to transpose them.</p>
+          </div>
 
     </div>
 
@@ -639,7 +673,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li></ol></li></ol></div>
 
 
       </div>
@@ -809,7 +843,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">503k</span>
+    <span title="Symbols count total">520k</span>
   -->
 
   <!--
@@ -817,7 +851,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">7:38</span>
+    <span title="Reading time total">7:53</span>
 
   -->
   
@@ -827,7 +861,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有182.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有183k的老兔正在打瞌睡</span>
 </div>
 
         
