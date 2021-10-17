@@ -29,7 +29,7 @@
 <meta property="og:description" content="友情链接:SAS workspace.SAS text book.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-05T04:43:07.000Z">
-<meta property="article:modified_time" content="2021-10-15T23:39:08.825Z">
+<meta property="article:modified_time" content="2021-10-17T17:04:53.031Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-15 19:39:08" itemprop="dateModified" datetime="2021-10-15T19:39:08-04:00">2021-10-15</time>
+                <time title="Modified: 2021-10-17 13:04:53" itemprop="dateModified" datetime="2021-10-17T13:04:53-04:00">2021-10-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,13 +279,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>10k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -534,29 +534,353 @@
           </div></p>
 <p>The default encoding for a dataset in SAS is “wlatin1” (or “wlatin1 Western (windows)”). wlatin1 is used in the “western world” and does not suppose Asian characters. UTF-8 is a universal encoding that can handle characters from all possible languages.</p>
 <p><br><br><br></p>
-<h2 id="PROCs"><a href="#PROCs" class="headerlink" title="PROCs"></a>PROCs</h2><p>proc contents用于查看一个table的信息,加下划线all是一个library里所有的table信息.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proc contents data&#x3D;SASHELP._all_ VARNUM;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
-<p>proc sort.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;sashelp.class out&#x3D;class; &#x2F;* work.class *&#x2F;</span><br><span class="line">by sex descending age; &#x2F;* this descending the age, if we want two descending we need to right it twice*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<h2 id="PROCs"><a href="#PROCs" class="headerlink" title="PROCs"></a>PROCs</h2><p><strong>proc contents</strong>用于查看一个table的信息,加下划线all是一个library里所有的table信息.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">proc contents data&#x3D;SASHELP._all_ VARNUM;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>proc sort.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;sashelp.class out&#x3D;class; &#x2F;* work.class *&#x2F;</span><br><span class="line">by sex descending age; &#x2F;* this descending the age, if we want two descending we need to right it twice*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 <div class="note ">
             <p>➢ Out= option allows you to specify the name (class) of the sorted data set, if omitted, the original data set (SASHELP.class) will be overwritten.<br>➢ By default, SAS will sort the data set in ascending order (by sex). Option DESCENDING before the variable age asks SAS to sort in descending order (by age).<br>➢ Proc sort does not generate SAS results, but generate a new sorted data set.</p>
           </div>
 <p>If you specify NODUP option, the duplicated records will be deleted from the sorted data set (overview2_nodup).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;cert.overview2 out&#x3D;overview2_nodup nodup; &#x2F;* de-dup *&#x2F;</span><br><span class="line">by country;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure><br>我们还可以用隔壁sql的distinct来de-dup.</p>
 <p>If you specify NODUPKEY option, only one record (the first one) with the same key variables (the variables specified in BY statement) will be kept in the sorted data set (overview2_nodupkey).<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;cert.overview2 out&#x3D;overview2_nodupkey nodupkey;</span><br><span class="line">by country; &#x2F;* 如果country有一样的就删掉*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
-<p>proc means.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">proc means data&#x3D;SASHELP.CLASS std mean max maxdec&#x3D;2; &#x2F;* maxdec是小数点后最多保留两位 *&#x2F;</span><br><span class="line">var Height;</span><br><span class="line">class Sex Age; &#x2F;* 先分组,这种情况会分为四组*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>proc means.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">proc means data&#x3D;SASHELP.CLASS std mean max maxdec&#x3D;2; &#x2F;* maxdec是小数点后最多保留两位 *&#x2F;</span><br><span class="line">var Height;</span><br><span class="line">class Sex Age; &#x2F;* 先分组,这种情况会分为四组*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 <div class="note ">
             <p>✓ Class statement asks SAS to calculate the statistics for VAR Height within each class levels (Sex, Age)<br>✓ VAR statement asks for statistics of specified numeric variables, ignoring missing values. When omitted, the statistics for all the numeric variables will be calculated with missing values ignored.<br>✓ STD, MEAN, MAX … are the statistics you can require to calculate. By default, SAS will calculate N, mean, std, min and max. “N Obs” is always given by SAS output, which counts total number of observations in each class level, including all missing values.<br>✓ MAXDEC = specifies the maximum of decimal points you would like SAS to report.<br>✓ Format, where and label statement can be applied in PROC MEANS as well</p>
           </div>
-<p>proc print.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc print data&#x3D; class label;</span><br><span class="line">id name;</span><br><span class="line">var sex age height weight;</span><br><span class="line">label sex&#x3D;&quot;Gender: M&#x2F;F&quot;;</span><br><span class="line">format height weight 7.1;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>proc print.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc print data&#x3D; class label;</span><br><span class="line">id name;</span><br><span class="line">var sex age height weight;</span><br><span class="line">label sex&#x3D;&quot;Gender: M&#x2F;F&quot;;</span><br><span class="line">format height weight 7.1;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 <div class="note ">
             <p>✓ Proc print displays the data portion of the data set. (what about proc contents?)<br>✓ VAR statement specifies which variables to print. If omitted, then SAS will by default print all the<br>variables.<br>✓ Label option in the proc print statement asks SAS to print label instead of variable name in the<br>header.<br>✓ ID statement uses NAME for the row names instead of observations (1,2,3…). For example,<br>without ID statement, the result will be like:<br>✓ You can also use BY statement to have separate reports for different BY levels, however, data<br>set must by sorted before using BY statement. Indeed, before using BY statement in any<br>data/proc step, you must sort your data.</p>
           </div>
-<p>proc freq.用于分析数据频率.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
-<p>Two-way Tabulation<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region*product;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
-<p>proc format.这是一个组合技.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">proc format;</span><br><span class="line">value score</span><br><span class="line">low - &lt;60 &#x3D; &quot;Fail&quot;</span><br><span class="line">60 - high &#x3D; &quot;Pass&quot;;</span><br><span class="line">run;</span><br><span class="line">proc format;</span><br><span class="line">value $sex &#x2F;* 修饰character value *&#x2F;</span><br><span class="line">&quot;M&quot; &#x3D; &quot;Male&quot;</span><br><span class="line">&quot;F&quot; &#x3D; &quot;Female&quot;;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">&#x2F;* define了之后再使用 *&#x2F;</span><br><span class="line">proc print data &#x3D;class;</span><br><span class="line">var score;</span><br><span class="line">format score score.;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>proc freq.</strong>用于分析数据频率.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>Two-way Tabulation</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc freq data &#x3D; sashelp.shoes;</span><br><span class="line">tables region*product;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<p><strong>proc format.</strong>这是一个组合技.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">proc format;</span><br><span class="line">value score</span><br><span class="line">low - &lt;60 &#x3D; &quot;Fail&quot;</span><br><span class="line">60 - high &#x3D; &quot;Pass&quot;;</span><br><span class="line">run;</span><br><span class="line">proc format;</span><br><span class="line">value $sex &#x2F;* 修饰character value *&#x2F;</span><br><span class="line">&quot;M&quot; &#x3D; &quot;Male&quot;</span><br><span class="line">&quot;F&quot; &#x3D; &quot;Female&quot;;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">&#x2F;* define了之后再使用 *&#x2F;</span><br><span class="line">proc print data &#x3D;class;</span><br><span class="line">var score;</span><br><span class="line">format score score.;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 <p>The user-defined format will be stored in a SAS catalog (not SAS data set).<br>Use $ before the format name in the value statement if you want to apply it to a character variable.</p>
 <p>proc transpose: Transposing from horizontal (wide) to vertical (long) or transposing from vertical<br>to horizontal<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Proc transpose data&#x3D;[] out&#x3D;[] prefix&#x3D;[];</span><br><span class="line">By [variable list]; &#x2F;* 用于分组的variable *&#x2F;</span><br><span class="line">Var [variable list]; *transpose these variables; shortcut有RR:是所有R开头的column</span><br><span class="line">Id [variable list]; *value becomes to variable name; 纵到横才需要id</span><br><span class="line">Run;</span><br></pre></td></tr></table></figure></p>
 <div class="note ">
             <p>ID statement is critical when you transfer vertical to horizontal!<br>If you omit the VAR statement, then the TRANSPOSE procedure transposes all numeric variables in the input data set that are not listed in another statement.<br>You must list character variables in a VAR statement if you want to transpose them.</p>
           </div>
+<p><br><br><br><br><br></p>
+<h2 id="function"><a href="#function" class="headerlink" title="function"></a>function</h2><p><strong>Mean, min, max, sum</strong><br>All the above functions ignore missing values. For example Sum (.,1,2,3) = 6, but . + 1 +2 +3 = .</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Y&#x3D;Mean(x1,x2);</span><br><span class="line">Y&#x3D;Mean(of X1-X5); &#x2F;* of 是简略写法,这里是sum x1到x5*&#x2F;</span><br><span class="line">Y&#x3D;Mean(of X:); &#x2F;* 这里是sum 所有的x column*&#x2F;</span><br></pre></td></tr></table></figure>
+<p><strong>input和put</strong>可以用来转换格式.<br>Input(var,informat.): read variable into SAS value (normally numeric) using given informat.<br>Put(var,format.): present SAS values using given format, put function always returns a character.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">var1&#x3D;‘10Oct2021’;</span><br><span class="line"></span><br><span class="line">var2&#x3D;input(var1,date9.); &#x2F;* 这里的date9.是用于转换的格式informat*&#x2F;</span><br></pre></td></tr></table></figure>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Informat</th>
+<th>Original</th>
+<th>INput</th>
+<th>After</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>DATEw.</td>
+<td>1jan1961</td>
+<td>INPUT (Day, DATE9.)</td>
+<td>366</td>
+</tr>
+<tr>
+<td></td>
+<td>1 jan 61</td>
+<td></td>
+<td>366</td>
+</tr>
+<tr>
+<td>MMDDYYw. / DDMMYYw.</td>
+<td>01.01.61</td>
+<td>INPUT (Day, DDMMYY10.)</td>
+<td>366</td>
+</tr>
+<tr>
+<td></td>
+<td>02/01/61</td>
+<td>INPUT (Day, DDMMYY10.)</td>
+<td>367</td>
+</tr>
+<tr>
+<td>COMMAw.d</td>
+<td>$1,000,001</td>
+<td>INPUT (Income, COMMA10.)</td>
+<td>1000001</td>
+</tr>
+<tr>
+<td></td>
+<td>(1,234)</td>
+<td>INPUT (Income, COMMA10.)</td>
+<td>-1234</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>INDEX(character1, character2) returns first position of character2 string in in character1 string.从1开始数.<br>Returns 0 if string not found.</p>
+<p>FIND(character1, character2 &lt;, start position&gt; &lt;, modifier&gt;) Searches for a specific substring of characters within a character string, it is a more powerful version of INDEX function<br>Start position: from which position to search, should be numeric</p>
+<blockquote>
+<p>Modifier: is a character constant, variable, or expression that specifies one or more modifiers. The following modifiers can be in uppercase or lowercase: ‘i’: ignores character case during the search. If this modifier is not specified, FIND only searches for character substrings with the same case as the characters in substring.<br>加了I或者i都会ignore大小写.<br>start position会ignore掉前面的字母,从start position开始数.</p>
+</blockquote>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Text&#x3D;&quot;Australia, US, Denmark&quot;;</span><br><span class="line">Pos&#x3D;find(Text,”US”,”i”,5);</span><br></pre></td></tr></table></figure>
+<p>SUBSTR(character, numeric1&lt;, numeric2&gt;) extracts a substring from character of length numeric2 starting from position numeric1.</p>
+<p>LENGTH(string) Returns the length of a non-blank character string, excluding trailing blanks, and returns 1 for a blank character string.</p>
+<p>TRANWRD(source, target, replacement) Replaces all occurrences of a substring in a character string.<br>像atom里的查找并一键替换功能.</p>
+<p>TRIM(character) trims trailing blanks (blanks after the last non-blank character).</p>
+<p>SCAN(character, n&lt;,delimiters &gt;) Returns the n-th <strong>word</strong> from a character string.</p>
+<div class="note ">
+            <p>CAT(OF X1-X4)  == X1||X2||X3||X4<br>CATS(OF X1-X4) == TRIM(LEFT(X1))||TRIM(LEFT(X2))||TRIM(LEFT(X3))||TRIM(LEFT(X4))<br>CATT(OF X1-X4) == TRIM(X1)||TRIM(X2)||TRIM(X3)||TRIM(X4)<br>CATX(SP, OF X1-X4) == TRIM(LEFT(X1))||SP||TRIM(LEFT(X2))||SP||TRIM(LEFT(X3))||SP||TRIM(LEFT(X4))</p>
+          </div>
+<p><br><br><br><br><br></p>
+<h2 id="control-data-step-flow"><a href="#control-data-step-flow" class="headerlink" title="control data step flow"></a>control data step flow</h2><p><strong>subsetting if</strong><br>等于where来筛选的功能.但是where is more efficient.在dataset中,where只能出现一次,if可以出现多次.</p>
+<p><strong>if…then</strong><br>普通的if statement.<br>注意,如果要写 if A, then B and C.我们需要group B和C.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">data do_group;</span><br><span class="line">set cert.Overview;</span><br><span class="line">if country&#x3D;&quot;China&quot; then do;</span><br><span class="line">FX&#x3D;0.2;</span><br><span class="line">output;</span><br><span class="line">end;</span><br><span class="line">else if country &#x3D;&quot;Canada&quot; then do;</span><br><span class="line">FX&#x3D;1;</span><br><span class="line">output;</span><br><span class="line">end;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p><strong>loop</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&#x2F;* numeric index *&#x2F;</span><br><span class="line">do i&#x3D;1 to 20 by 1;</span><br><span class="line">&#x2F;* or *&#x2F;</span><br><span class="line">do i&#x3D;1 to 20;</span><br><span class="line">&#x2F;* Do While *&#x2F;</span><br><span class="line">do while (PD&lt;0.5);</span><br><span class="line">&#x2F;* Do Until *&#x2F;</span><br><span class="line">do until (PD&gt;&#x3D;0.5);</span><br></pre></td></tr></table></figure><br>Every DO (DO group or DO loop) must have a matching END.</p>
+<p><br><br><br><br><br></p>
+<p><strong>output</strong><br>Every time an output statement is hit the current record is saved to the output data set.</p>
+<ul>
+<li>If a data step has no OUTPUT statement then there is an implied OUTPUT at the end of the data<br>step.</li>
+<li>If the data step contains one or more OUTPUT statements then there is no longer an OUTPUT<br>implied at the end of the data step.</li>
+</ul>
+<p>ODS can Save SAS output to various destinations such as rtf (word), pdf, csv, html …<br>Sample Syntax to save the result of PROC FREQ into a html file:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ods html file&#x3D;&quot;C:\SAS\data\for lecture\output.html&quot;;</span><br><span class="line">proc freq data&#x3D;overview;</span><br><span class="line">tables country;</span><br><span class="line">run;</span><br><span class="line">ods html close;</span><br></pre></td></tr></table></figure>
+<p>Other destinations can be used by SAS:<br>RTF, CSVALL, CSV, PDF, HTML, MSOFFICE2K, EXCELXP …</p>
+<p><br><br><br><br><br></p>
+<h2 id="combine"><a href="#combine" class="headerlink" title="combine"></a>combine</h2><p>第一种combine:只combine数量一样的行,不同的drop掉.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data one_to_one;</span><br><span class="line">set a;</span><br><span class="line">set b;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p>左:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>右:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>结果:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+<th>VarB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>A1</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>A2</td>
+<td>B4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>第二种Data Concatenation: to stack two or more SAS data sets together.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">DATA new_data_set;</span><br><span class="line">SET data_set_1 ... data_set_n;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure></p>
+<p>左:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>右:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarB</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>结果:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A3</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>第二种combine带sort.All the data sets need to be sorted before using any BY statement!<br><strong>注意这时得两个table已经sort好了.这个条件限制于所有sort.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">DATA new_data_set;</span><br><span class="line">SET data_set_1 ... data_set_n;</span><br><span class="line">BY variable_list;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure></p>
+<p>左:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>右:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>2</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B4</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>结果:</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th>Num</th>
+<th>VarA(保留左边的VarA储存属性)</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>1</td>
+<td>A1</td>
+</tr>
+<tr>
+<td>2</td>
+<td>B2</td>
+</tr>
+<tr>
+<td>3</td>
+<td>A2</td>
+</tr>
+<tr>
+<td>4</td>
+<td>B4</td>
+</tr>
+<tr>
+<td>5</td>
+<td>A3</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>如果左表图是VarA右表图是VarB,则会同时保留VarA和VarB.</p>
+<p>第三种真正的merge(也叫join).<br>注:在merge前要check是否sorted,以及check keyvar name是否identical.<br>sas datastep merge不支持many to many.sql可以.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">DATA new_data_set;</span><br><span class="line">MERGE data_set_1(in&#x3D;ind_1) data_set_2(in&#x3D;ind_2);</span><br><span class="line">BY variable-list;</span><br><span class="line">if ind_1&#x3D;1; *left join;</span><br><span class="line">*if ind_2&#x3D;1; *right join;</span><br><span class="line">*if ind_1&#x3D;1 and ind_2&#x3D;1; *inner join;</span><br><span class="line">*if ind_1&#x3D;1 or ind_2&#x3D;1; *SAS default: full join;</span><br><span class="line">RUN;</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
+<h2 id="Retain-and-Sum-Statement"><a href="#Retain-and-Sum-Statement" class="headerlink" title="Retain and Sum Statement"></a>Retain and Sum Statement</h2><p>Use the RETAIN累加 statement when you want SAS to preserve a variable’s value from the previous iteration of the DATA step.<br>如果我们使用loop,sas无法累计上一轮的temp variable值.所以我们使用retain function存储 temp variable.<br>➢ The RETAIN statement can appear anywhere in the DATA step, it is more efficient than the assignment statement, because it will be executed only once (declarative).<br>➢ Retain statement syntax (if not specifying initial value, then initialize the variable list with missing):</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RETAIN variable-list;</span><br><span class="line">RETAIN variable-list initial-value;</span><br></pre></td></tr></table></figure>
+<p>➢ A sum statement also retains values from the previous iteration of the DATA step, but you use it for the special cases where you simply want to cumulatively add the value of an expression to a variable.<br>➢ Sum statement syntax<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variable + expression; &#x2F;* 要注意这跟variable&#x3D; variable + expressison 不一样,comment里的是普通的加法,无法处理missing value,而codeblock里的是retain的写法,可以处理missing value.*&#x2F;</span><br></pre></td></tr></table></figure></p>
+<p>This is equivalent to:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RETAIN variable 0;</span><br><span class="line">variable &#x3D; SUM(variable, expression);</span><br></pre></td></tr></table></figure></p>
+<p>➢ The sum statement will ignore missing values, because it is equivalent to sum function not + operator.</p>
 
     </div>
 
@@ -576,10 +900,10 @@
       <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -673,7 +997,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">2.8.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-data-step-flow"><span class="nav-number">2.9.</span> <span class="nav-text">control data step flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#combine"><span class="nav-number">2.10.</span> <span class="nav-text">combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retain-and-Sum-Statement"><span class="nav-number">2.11.</span> <span class="nav-text">Retain and Sum Statement</span></a></li></ol></li></ol></div>
 
 
       </div>
@@ -843,7 +1167,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">520k</span>
+    <span title="Symbols count total">525k</span>
   -->
 
   <!--
@@ -851,7 +1175,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">7:53</span>
+    <span title="Reading time total">7:58</span>
 
   -->
   
@@ -861,7 +1185,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有183k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有184.3k的老兔正在打瞌睡</span>
 </div>
 
         
