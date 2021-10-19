@@ -29,7 +29,7 @@
 <meta property="og:description" content="友情链接:SAS workspace.SAS text book.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-10-05T04:43:07.000Z">
-<meta property="article:modified_time" content="2021-10-17T17:04:53.031Z">
+<meta property="article:modified_time" content="2021-10-19T03:12:31.334Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-17 13:04:53" itemprop="dateModified" datetime="2021-10-17T13:04:53-04:00">2021-10-17</time>
+                <time title="Modified: 2021-10-18 23:12:31" itemprop="dateModified" datetime="2021-10-18T23:12:31-04:00">2021-10-18</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,13 +279,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>16k</span>
+              <span>18k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>14 mins.</span>
+              <span>16 mins.</span>
             </span>
 
         </div>
@@ -881,6 +881,22 @@
 <p>➢ A sum statement also retains values from the previous iteration of the DATA step, but you use it for the special cases where you simply want to cumulatively add the value of an expression to a variable.<br>➢ Sum statement syntax<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">variable + expression; &#x2F;* 要注意这跟variable&#x3D; variable + expressison 不一样,comment里的是普通的加法,无法处理missing value,而codeblock里的是retain的写法,可以处理missing value.*&#x2F;</span><br></pre></td></tr></table></figure></p>
 <p>This is equivalent to:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">RETAIN variable 0;</span><br><span class="line">variable &#x3D; SUM(variable, expression);</span><br></pre></td></tr></table></figure></p>
 <p>➢ The sum statement will ignore missing values, because it is equivalent to sum function not + operator.</p>
+<p><br><br><br><br><br></p>
+<h2 id="SAS-Automatic-Variables"><a href="#SAS-Automatic-Variables" class="headerlink" title="SAS Automatic Variables"></a>SAS Automatic Variables</h2><p>Those SAS Automatic variables will be automatically dropped from the data step, and <strong>can be only used with IF statement, but not where statement</strong>.</p>
+<p><strong>FIRST.by</strong> and <strong>LAST.by</strong><br>The FIRST.by and LAST.by automatic variables are available when you are using a BY statement in a DATA step.<br>The FIRST.by will have a value of 1 when SAS is processing an observation with the first occurrence of a new value for that variable and a value of 0 for the other observations.<br>The LAST.by will have a value of 1 for an observation with the last occurrence of a value for that variable and the value 0 for the other observations.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">proc sort data&#x3D;class;</span><br><span class="line">by class descending name; &#x2F;* 因为要使用first.class last.class所以先排序好 *&#x2F;</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">data sum_class;</span><br><span class="line">set class;</span><br><span class="line">by class descending name;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p>可以用于分组累加.注意一定要按by的feature排序好.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data WORK.TOTAL;</span><br><span class="line">set WORK.SALARY;</span><br><span class="line">by Department Gender;</span><br><span class="line">if First.&lt;_insert_code_&gt; then Payroll&#x3D;0; &#x2F;* 这三行是个combo *&#x2F;</span><br><span class="line">Payroll+Wagerate;</span><br><span class="line">if Last.&lt;_insert_code_&gt;;&#x2F;* 算什么的accumulate subtotals for each feature 就把insert_code改成那个feature*&#x2F;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure><br>Inserted code will accumulate subtotals for each Gender within Department.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data WORK.TOTAL;</span><br><span class="line">set WORK.SALARY(keep&#x3D;Department MonthlyWageRate);</span><br><span class="line">by Department;</span><br><span class="line">if First.Department&#x3D;1 then Payroll&#x3D;0;</span><br><span class="line">Payroll+(MonthlyWageRate*12); &#x2F;* 累加的是MonthlyWageRate*12,存到payroll里 *&#x2F;</span><br><span class="line">if Last.Department&#x3D;1;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p>The values of the variable Payroll represent the annual total for each department in the WORK.SALARY data set.</p>
+<p><br><br><br><br><br></p>
+<h1 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h1><p>三种macro variable的建立:</p>
+<ul>
+<li>%let<br>Straightforward and easy to understand. Use period to separate out the macro variable you would like to resolve</li>
+<li>Call symput: With CALL SYMPUT, you can create macro variables that contain the values of variables from SAS data sets. You cannot resolve them in the same data step.</li>
+<li>SQL Method: Create macro variables in PROC SQL</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%let data&#x3D;work.overview; *to define a macro variable;</span><br><span class="line">proc print data&#x3D;&amp;data; *use &amp; to resolve(使用&#x2F;替换) it;</span><br><span class="line">*double quotes &quot;&quot; - resolve macro variable;</span><br><span class="line">title &quot;A listing of the &amp;data SAS data set&quot;;</span><br><span class="line">*single quotes &#39;&#39; - not resolve macro variable;</span><br><span class="line">title2 &#39;A listing of the &amp;data SAS data set&#39;;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p>加separator的点.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%let i&#x3D;10; *what if I want resolve &quot;i&quot; in &quot;ith&quot;;</span><br><span class="line">proc print data&#x3D;work.overview(firstobs&#x3D;&amp;i obs&#x3D;&amp;i);</span><br><span class="line">title &quot;&amp;i.th Record in work.overview&quot;; *resolved as 10th;</span><br><span class="line">title2 &quot;&amp;ith Record in work.overview&quot;; *can not resolve, since ith is</span><br><span class="line">not a macro variable;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 
     </div>
 
@@ -900,10 +916,10 @@
       <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -997,7 +1013,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">2.8.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-data-step-flow"><span class="nav-number">2.9.</span> <span class="nav-text">control data step flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#combine"><span class="nav-number">2.10.</span> <span class="nav-text">combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retain-and-Sum-Statement"><span class="nav-number">2.11.</span> <span class="nav-text">Retain and Sum Statement</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">2.8.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-data-step-flow"><span class="nav-number">2.9.</span> <span class="nav-text">control data step flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#combine"><span class="nav-number">2.10.</span> <span class="nav-text">combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retain-and-Sum-Statement"><span class="nav-number">2.11.</span> <span class="nav-text">Retain and Sum Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-Automatic-Variables"><span class="nav-number">2.12.</span> <span class="nav-text">SAS Automatic Variables</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Macro"><span class="nav-number">3.</span> <span class="nav-text">Macro</span></a></li></ol></div>
 
 
       </div>
@@ -1167,7 +1183,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">525k</span>
+    <span title="Symbols count total">528k</span>
   -->
 
   <!--
@@ -1175,7 +1191,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">7:58</span>
+    <span title="Reading time total">8:01</span>
 
   -->
   
@@ -1185,7 +1201,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有184.3k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有184.8k的老兔正在打瞌睡</span>
 </div>
 
         
