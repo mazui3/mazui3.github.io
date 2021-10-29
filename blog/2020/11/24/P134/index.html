@@ -32,11 +32,11 @@
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-10-08T14:23:30.944Z">
+<meta property="article:modified_time" content="2021-10-29T05:05:48.273Z">
 <meta property="article:author" content="Mazui">
-<meta property="article:tag" content="编码">
-<meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="编码">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mazui3.com/blog/2020/11/24/P134/P134_1.png">
@@ -252,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-08 10:23:30" itemprop="dateModified" datetime="2021-10-08T10:23:30-04:00">2021-10-08</time>
+                <time title="Modified: 2021-10-29 01:05:48" itemprop="dateModified" datetime="2021-10-29T01:05:48-04:00">2021-10-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,7 +289,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>13 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -335,6 +335,7 @@
 <p>select + *, 全选.</p>
 <p>select + calculated, calculated的作用是使用临时计算的值(在原table中没有).<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc sql outobs=10;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="built_in">date</span>, destination,</span><br><span class="line">boarded + transferred + nonrevenue <span class="keyword">as</span> Total</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights</span><br><span class="line"><span class="keyword">where</span> calculated total &lt; <span class="number">100</span>;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc sql outobs=10;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="built_in">date</span>, destination,</span><br><span class="line">boarded + transferred + nonrevenue <span class="keyword">as</span> Total,</span><br><span class="line">calculated total/<span class="number">2</span> <span class="keyword">as</span> Half</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights;</span><br></pre></td></tr></table></figure>
+<p>where去掉missing(在sas中):<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where Salary is not missing</span><br></pre></td></tr></table></figure><br>在sql中可以写:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">where Salary ne .</span><br></pre></td></tr></table></figure><br><strong>要注意细节</strong></p>
 <div class="note ">
             <p>关于select.<br>我们可以使用NOT, AND, OR 来更加的区别,但注意这几个关键词有优先级.</p><blockquote><p>NOT &gt; AND &gt; OR</p></blockquote><p>所以使用NOT的时候记得用括号.(有 not in (‘A’,’B’)的语法.)</p>
           </div>
@@ -661,11 +662,12 @@
 <p><br><br><br></p>
 <h3 id="HAVING-and-WHERE"><a href="#HAVING-and-WHERE" class="headerlink" title="HAVING and WHERE"></a>HAVING and WHERE</h3><p>对分组进行筛选.会需要先group by再用having筛选.<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> Album, <span class="keyword">COUNT</span>(t.track_number) <span class="keyword">as</span> Tracks</span><br><span class="line">  <span class="keyword">FROM</span> track <span class="keyword">AS</span> t</span><br><span class="line">  <span class="keyword">JOIN</span> album <span class="keyword">AS</span> a</span><br><span class="line">    <span class="keyword">ON</span> a.id = t.album_id</span><br><span class="line">  <span class="keyword">WHERE</span> a.artist = <span class="string">&#x27;The Beatles&#x27;</span></span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> a.id</span><br><span class="line">  <span class="keyword">HAVING</span> Tracks &gt;= <span class="number">10</span> <span class="comment">--using having clause similar to where</span></span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Tracks <span class="keyword">DESC</span>, Album</span><br><span class="line">;</span><br></pre></td></tr></table></figure></p>
 <div class="note ">
-            <p>where和having的区别.<br>where用于选行,having用于选组.<br>where比having先run.<br>where不可以但having可以加summary function.</p>
+            <p>where和having的区别.<br>where用于选行,having用于选组.<br>where比having先run.<br>where不可以但having可以加summary function.(where后不可以加单个variable的summary function)</p>
           </div>
 <p><br><br><br></p>
 <h3 id="AVG-and-MIN-MAX-and-SUM"><a href="#AVG-and-MIN-MAX-and-SUM" class="headerlink" title="AVG and MIN, MAX and SUM"></a>AVG and MIN, MAX and SUM</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">COUNT</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">AVG</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">MIN</span>(Population), <span class="keyword">MAX</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="keyword">SUM</span>(Population) <span class="keyword">FROM</span> Country <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region;</span><br></pre></td></tr></table></figure>
 <p>注,sum一定要写在最外面,sum多项时是sum(A,B,C).</p>
+<p>sum(A)会从上到下sum A中的所有值.<br>sum(A,B)会从左到右从上到下sum A B中所有值.</p>
 <p>注,语法顺序:<br><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column1, column2, columnN, <span class="keyword">sum</span>(columnX)</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> [ condition ]</span><br><span class="line"><span class="keyword">GROUP</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line"><span class="keyword">HAVING</span> [ condition ]</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> column1, column2, columnN</span><br><span class="line">;</span><br></pre></td></tr></table></figure><br>所以group by后面接having,where不能用在group by后面.<br>where:在原表中筛选;having是筛完了后再筛.</p>
 <div class="note ">
             <p>SELECT 6<br>FROM 1<br>WHERE 2<br>GROUP BY 3<br>HAVING 4<br>ORDER BY 5</p>
@@ -687,10 +689,10 @@
       <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
@@ -700,9 +702,9 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
-              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
               <a href="/blog/tags/data/" rel="tag"># data</a>
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
               <a href="/blog/tags/SQL/" rel="tag"># SQL</a>
           </div>
 
@@ -957,7 +959,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">528k</span>
+    <span title="Symbols count total">531k</span>
   -->
 
   <!--
@@ -965,7 +967,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">8:01</span>
+    <span title="Reading time total">8:03</span>
 
   -->
   
@@ -975,7 +977,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有184.8k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有185.1k的老兔正在打瞌睡</span>
 </div>
 
         
