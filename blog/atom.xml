@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-10-15T22:18:18.240Z</updated>
+  <updated>2021-11-01T06:58:48.905Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -17,11 +17,30 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>十月三十一号</title>
+    <link href="https://mazui3.com/blog/2021/11/01/P183/"/>
+    <id>https://mazui3.com/blog/2021/11/01/P183/</id>
+    <published>2021-11-01T06:00:41.000Z</published>
+    <updated>2021-11-01T06:58:48.905Z</updated>
+    
+    
+    <summary type="html">&lt;img src=&quot;/blog/2021/11/01/P183/P183_1.png&quot; class=&quot;&quot; title=&quot;メくん的拉面&quot;&gt;</summary>
+    
+    
+    
+    <category term="日记" scheme="https://mazui3.com/blog/categories/%E6%97%A5%E8%AE%B0/"/>
+    
+    
+    <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title>关于Excel的笔记</title>
     <link href="https://mazui3.com/blog/2021/10/15/P166/"/>
     <id>https://mazui3.com/blog/2021/10/15/P166/</id>
     <published>2021-10-15T13:12:02.000Z</published>
-    <updated>2021-10-15T22:18:18.240Z</updated>
+    <updated>2021-10-31T02:32:41.210Z</updated>
     
     
     <summary type="html">&lt;img src=&quot;/blog/2021/10/15/P166/P166.jpg&quot; class=&quot;&quot; width=&quot;250&quot; height=&quot;250&quot; title=&quot;简陋版…&quot;&gt;</summary>
@@ -42,7 +61,7 @@
     <link href="https://mazui3.com/blog/2021/10/15/P162/"/>
     <id>https://mazui3.com/blog/2021/10/15/P162/</id>
     <published>2021-10-15T13:11:41.000Z</published>
-    <updated>2021-10-29T14:47:01.674Z</updated>
+    <updated>2021-11-01T05:52:44.500Z</updated>
     
     
     <summary type="html">这里是各处收集来的求职记录.为躲避google搜索设置了密码.</summary>
@@ -457,24 +476,6 @@
     
     
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于奇怪技巧的笔记 - cutout &amp; trance contour</title>
-    <link href="https://mazui3.com/blog/2021/07/07/P202/"/>
-    <id>https://mazui3.com/blog/2021/07/07/P202/</id>
-    <published>2021-07-07T05:11:29.000Z</published>
-    <updated>2021-09-19T19:19:48.043Z</updated>
-    
-    
-    <summary type="html">&lt;img src=&quot;/blog/2021/07/07/P202/P202_1.png&quot; class=&quot;&quot; title=&quot;图倒是画好了&quot;&gt;
-&lt;p&gt;这要说回我又一次没能赶上的老兔生贺.&lt;br&gt;</summary>
-    
-    
-    
-    <category term="绘图笔记" scheme="https://mazui3.com/blog/categories/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0/"/>
-    
     
   </entry>
   

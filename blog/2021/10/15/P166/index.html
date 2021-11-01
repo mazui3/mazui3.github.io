@@ -32,7 +32,7 @@
 <meta property="og:image" content="https://mazui3.com/blog/2021/10/15/P166/P166_3.png">
 <meta property="og:image" content="https://mazui3.com/blog/2021/10/15/P166/P166_4.png">
 <meta property="article:published_time" content="2021-10-15T13:12:02.000Z">
-<meta property="article:modified_time" content="2021-10-15T22:18:18.240Z">
+<meta property="article:modified_time" content="2021-10-31T02:32:41.210Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="excel">
@@ -242,10 +242,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2021-10-15 09:12:02 / Modified: 18:18:18" itemprop="dateCreated datePublished" datetime="2021-10-15T09:12:02-04:00">2021-10-15</time>
+              <time title="Created: 2021-10-15 09:12:02" itemprop="dateCreated datePublished" datetime="2021-10-15T09:12:02-04:00">2021-10-15</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2021-10-30 22:32:41" itemprop="dateModified" datetime="2021-10-30T22:32:41-04:00">2021-10-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,7 +281,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>996</span>
+              <span>1.5k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
@@ -340,12 +346,15 @@
 <div class="note ">
             <p>小tip之group sheet.如果一个excel文件中有多个同排版的sheet,可以group后一起处理(比如字体格式变更).</p>
           </div>
+<div class="note ">
+            <p>整理数据时也可以用filter看表格中的数据一共有的类型.</p>
+          </div>
 <p><br><br><br><br><br></p>
 <h1 id="function"><a href="#function" class="headerlink" title="function"></a>function</h1><div class="note ">
             <p>autofill, 比较牛逼的一种自动检测sum, short cut是 <strong>alt + =</strong></p>
           </div>
 <div class="note ">
-            <p>xlookup或者vlookup,hlookup可以通过id查询另一个column里的对应值.<br>单纯的寻找我们可以使用find and select选项.</p>
+            <p>xlookup或者vlookup,hlookup可以通过id查询另一个column里的对应值.<br>单纯的寻找我们可以使用find and select选项.<br>(可以把vlookup当作left join)</p><p>在使用vlookup的时候,要注意锁住(用$ sign)查找对应用的range.</p>
           </div>
 <div class="note ">
             <p>sort in excel.<br>ctrl + A, 全选(会通过旁边是否有null的column来判断全表的内容)<br>ctrl + .(period) move the active cell around the corner of the range.<br>home tap有sort and filter, data tap里也有.</p>
@@ -353,7 +362,15 @@
 <div class="note ">
             <p>chart里没有null的数据.<br>insert -&gt; pivot table</p>
           </div>
-<p>关于pivot table.</p>
+<p><br><br><br><br><br></p>
+<h1 id="pivot-table"><a href="#pivot-table" class="headerlink" title="pivot table"></a>pivot table</h1><p>关于pivot table.<br>可以快速计算table中的各个数据属性.<br>Row和Column是用来分析的数据属性,value是值.<br>比如我想知道countryside和city中的商品数据.<br>则按coutryside和city的location作为column,商品种类作为rows.<br>value可以选很多种,可以选任何一个column再选择count则是商品的贩卖数量,选总贩卖金额则是sum等.<br>最后加filters,用某个category的column来筛选数据.</p>
+<p>注:可以在上方工具栏的design上选择subtotal选项.pivot table会默认给一个total,可以去掉.</p>
+<div class="note ">
+            <p>ctrl + ⬆️ -&gt; 最上的一行<br>ctrl + ⬇️ -&gt; 最下的一行</p><p>要implement一整列的数据这样的快捷键很方便.</p>
+          </div>
+<div class="note ">
+            <p>比较数字大小,可以增加filter,用sort排序来看大小.</p>
+          </div>
 
     </div>
 
@@ -367,13 +384,13 @@
       <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
+    </li>
+    <li class="popular-posts-item">
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
@@ -392,7 +409,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/11/01/P183/" rel="prev" title="十月三十一号">
+      <i class="fa fa-chevron-left"></i> 十月三十一号
+    </a></div>
       <div class="post-nav-item">
     <a href="/blog/2021/10/15/P162/" rel="next" title="以头抢地(本篇)">
       以头抢地(本篇) <i class="fa fa-chevron-right"></i>
@@ -465,7 +485,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tips"><span class="nav-number">1.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function"><span class="nav-number">2.</span> <span class="nav-text">function</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#tips"><span class="nav-number">1.</span> <span class="nav-text">tips</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#function"><span class="nav-number">2.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#pivot-table"><span class="nav-number">3.</span> <span class="nav-text">pivot table</span></a></li></ol></div>
 
 
       </div>
@@ -483,7 +503,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">209</span>
+          <span class="site-state-item-count">210</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -635,7 +655,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">531k</span>
+    <span title="Symbols count total">538k</span>
   -->
 
   <!--
@@ -643,7 +663,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">8:03</span>
+    <span title="Reading time total">8:09</span>
 
   -->
   
@@ -653,7 +673,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有185.1k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有186.5k的老兔正在打瞌睡</span>
 </div>
 
         
