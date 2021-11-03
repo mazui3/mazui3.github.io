@@ -28,14 +28,26 @@
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="友情链接:SAS workspace.SAS text book.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_1.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_2.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_3.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_4.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_5.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_6.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_7.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_8.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_9.png">
+<meta property="og:image" content="https://mazui3.com/blog/2021/10/05/P160/P160.png">
 <meta property="article:published_time" content="2021-10-05T04:43:07.000Z">
-<meta property="article:modified_time" content="2021-10-29T05:11:17.813Z">
+<meta property="article:modified_time" content="2021-11-03T20:19:15.624Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="SAS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.com/blog/2021/10/05/P160/P160_.png">
 
 <link rel="canonical" href="https://mazui3.com/blog/2021/10/05/P160/">
 
@@ -248,7 +260,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-10-29 01:11:17" itemprop="dateModified" datetime="2021-10-29T01:11:17-04:00">2021-10-29</time>
+                <time title="Modified: 2021-11-03 16:19:15" itemprop="dateModified" datetime="2021-11-03T16:19:15-04:00">2021-11-03</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -279,13 +291,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>19k</span>
+              <span>24k</span>
             </span>
             <span class="post-meta-item" title="Reading time">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>17 mins.</span>
+              <span>22 mins.</span>
             </span>
 
         </div>
@@ -297,7 +309,8 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>友情链接:<br><a target="_blank" rel="noopener" href="https://www.sas.com/en_ca/software/on-demand-for-academics.html">SAS workspace.</a><br><a target="_blank" rel="noopener" href="https://ca1lib.org/book/17389833/346ea7">SAS text book.</a></p>
+        <img src="/blog/2021/10/05/P160/P160_.png" class="">
+<p>友情链接:<br><a target="_blank" rel="noopener" href="https://www.sas.com/en_ca/software/on-demand-for-academics.html">SAS workspace.</a><br><a target="_blank" rel="noopener" href="https://ca1lib.org/book/17389833/346ea7">SAS text book.</a></p>
 <a id="more"></a>
 <h1 id="Structure-of-SAS-program"><a href="#Structure-of-SAS-program" class="headerlink" title="Structure of SAS program"></a>Structure of SAS program</h1><ul>
 <li>step(one paragraph of code)</li>
@@ -889,14 +902,92 @@
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data WORK.TOTAL;</span><br><span class="line">set WORK.SALARY(keep&#x3D;Department MonthlyWageRate);</span><br><span class="line">by Department;</span><br><span class="line">if First.Department&#x3D;1 then Payroll&#x3D;0;</span><br><span class="line">Payroll+(MonthlyWageRate*12); &#x2F;* 累加的是MonthlyWageRate*12,存到payroll里 *&#x2F;</span><br><span class="line">if Last.Department&#x3D;1;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
 <p>The values of the variable Payroll represent the annual total for each department in the WORK.SALARY data set.</p>
 <p><br><br><br><br><br></p>
-<h1 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h1><p>三种macro variable的建立:</p>
+<h1 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h1><p>SAS Macro三种用法: Substitue, Condition, Loop (作用:automation/efficiency)</p>
+<h2 id="Macro-variable"><a href="#Macro-variable" class="headerlink" title="Macro variable"></a>Macro variable</h2><p>三种macro variable的建立:</p>
 <ul>
 <li>%let<br>Straightforward and easy to understand. Use period to separate out the macro variable you would like to resolve</li>
-<li>Call symput: With CALL SYMPUT, you can create macro variables that contain the values of variables from SAS data sets. You cannot resolve them in the same data step.</li>
-<li>SQL Method: Create macro variables in PROC SQL</li>
 </ul>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%let data&#x3D;work.overview; *to define a macro variable;</span><br><span class="line">proc print data&#x3D;&amp;data; *use &amp; to resolve(使用&#x2F;替换) it;</span><br><span class="line">*double quotes &quot;&quot; - resolve macro variable;</span><br><span class="line">title &quot;A listing of the &amp;data SAS data set&quot;;</span><br><span class="line">*single quotes &#39;&#39; - not resolve macro variable;</span><br><span class="line">title2 &#39;A listing of the &amp;data SAS data set&#39;;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<p><strong>双引号可以resolve但单引号不可以.</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%let data&#x3D;work.overview; *to define a macro variable;</span><br><span class="line">proc print data&#x3D;&amp;data; *use &amp; to resolve(使用&#x2F;替换) it;</span><br><span class="line">*double quotes &quot;&quot; - resolve macro variable;</span><br><span class="line">title &quot;A listing of the &amp;data SAS data set&quot;;</span><br><span class="line">*single quotes &#39;&#39; - not resolve macro variable;</span><br><span class="line">title2 &#39;A listing of the &amp;data SAS data set&#39;;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
 <p>加separator的点.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%let i&#x3D;10; *what if I want resolve &quot;i&quot; in &quot;ith&quot;;</span><br><span class="line">proc print data&#x3D;work.overview(firstobs&#x3D;&amp;i obs&#x3D;&amp;i);</span><br><span class="line">title &quot;&amp;i.th Record in work.overview&quot;; *resolved as 10th;</span><br><span class="line">title2 &quot;&amp;ith Record in work.overview&quot;; *can not resolve, since ith is</span><br><span class="line">not a macro variable;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure></p>
+<img src="/blog/2021/10/05/P160/P160_1.png" class="" title="答案是C">
+<img src="/blog/2021/10/05/P160/P160_2.png" class="" title="答案是C">
+<p>如果要用where做比较,左边有右边的value type得相同.</p>
+<hr>
+<ul>
+<li>Call symput: With CALL SYMPUT, you can create macro variables that contain the values of variables from SAS data sets. You cannot resolve them in the same data step.<br>%let只能定义一个,但call symput可以多个.</li>
+</ul>
+<p>call symput(var_name,value)<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">data _null_; *这里的null是不生成新的dataset</span><br><span class="line">set overview3;</span><br><span class="line">call symput(Record_No,gdp); *Record_No是macro variable的名字,gdp作为value</span><br><span class="line">run;</span><br><span class="line"></span><br><span class="line">%put %int001 %int002 %int013; *检验用</span><br><span class="line">%put _user_;</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data _null_;</span><br><span class="line">set cert.overview3;</span><br><span class="line">if _n_ &#x3D;1 then call symput(Record_No,gdp); *_n_ &#x3D; 1中的n是sas的自动variable.意思是在处理overview的第一行的时候去执行call symput</span><br><span class="line">run;</span><br><span class="line">%put &amp;int001;</span><br></pre></td></tr></table></figure>
+<p>同理可以用什么 n in (1,3,5,7,9).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data _null_;</span><br><span class="line">set cert.overview3;</span><br><span class="line">if _n_&#x3D;1 then call symput(&quot;MV&quot;,gdp); *marco variable叫MV</span><br><span class="line">run;</span><br><span class="line">%put &amp;mv;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">data _null_;</span><br><span class="line">set cert.overview3;</span><br><span class="line">call symput(&quot;line&quot;||compress(_n_),put(gdp,dollar10.1));</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
+<hr>
+<ul>
+<li>Select into: Create macro variables in PROC SQL</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">PROC SQL;</span><br><span class="line">select count(*) into: n from work.overview; --这里count数出一共有13行,然后into等于 %let n&#x3D;13</span><br><span class="line">select distinct country into: country_list separated by &quot;,&quot;</span><br><span class="line"></span><br><span class="line">from work.overview;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
+<p>Example 22:<br>Write a SAS program that will:<br>• Perform an SQL query to create a macro variable named AverageHits from sashelp.baseball<br>• AverageHits should be the average of the CrHits columns.<br>• The program should not produce a report in the results.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">proc sql noprint;</span><br><span class="line">select mean(CrHits) into: AverageHits from sashelp.baseball;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Consecutive &amp;<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%let a&#x3D;alpha;</span><br><span class="line">%let b&#x3D;beta;</span><br><span class="line">%let abeta&#x3D;pair;</span><br><span class="line">%put &amp;a&amp;b; *resolve to alphabeta;</span><br><span class="line">%put &amp;&amp;a&amp;b; *resolve to: &amp;abeta which resolves to pair;</span><br></pre></td></tr></table></figure></p>
+<p>Method to understand how consecutive &amp; resolves<br>• Rule 1: SAS resolve left to right<br>• Rule 2: &amp;&amp;à&amp;<br>• Rule 3: In each read, SAS only resolve each &amp; once<br>• Rule 4: SAS will read again while there is &amp; unresolved</p>
+<p>Exercise:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%let attri&#x3D;name;</span><br><span class="line">%let name&#x3D;shan;</span><br><span class="line">%let shan&#x3D;chinese;</span><br><span class="line">%put &amp;name is a &amp;&amp;&amp;&amp;name; -- &amp;&amp;name -&gt; &amp;name -&gt; shan</span><br><span class="line">%put &amp;name is a &amp;&amp;&amp;&amp;&amp;name; -- &amp;&amp;shan -&gt; &amp;shan -&gt; chinese</span><br><span class="line">%put &amp;name is a &amp;&amp;&amp;&amp;&amp;&amp;name; -- &amp;&amp;&amp;name -&gt; &amp;shan -&gt; chinese</span><br></pre></td></tr></table></figure></p>
+<img src="/blog/2021/10/05/P160/P160_3.png" class="" title="B">
+<hr>
+<h2 id="Macro-Functions"><a href="#Macro-Functions" class="headerlink" title="Macro Functions"></a>Macro Functions</h2><p>(只处理macro variable):</p>
+<ul>
+<li>%eval (expression)跟运算有关的macro function: allows integer arithmetic of macro variables (decimal points are not allowed in expression).input和output只能输出整数部分.</li>
+<li>%sysevalf (expression): returns the numeric results of a mathematical expression, which contains operators and numeric constants only.可以做小数,只能包含运算符号和常数(比如开根号的两种写法0.25**0.5,sqrt(0.25)只能支持第一种).</li>
+<li>%sysfunc (data step function, <format>): allows us to use some data step functions outside of the data step.</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">%let express1&#x3D;0.25**0.5;</span><br><span class="line">%let express2&#x3D;%eval(5&#x2F;3);</span><br><span class="line">%let express3&#x3D;%sysevalf(0.25**0.5);</span><br><span class="line">%let express4&#x3D;%sysfunc(sqrt(0.25),4.1);</span><br><span class="line">%put &amp;express1; -- 还是0.25**0.5,不会计算</span><br><span class="line">%put &amp;express2 &amp;express3 &amp;express4; -- 1, 0.5, 0.5</span><br></pre></td></tr></table></figure>
+<img src="/blog/2021/10/05/P160/P160_4.png" class="" width="1">
+<img src="/blog/2021/10/05/P160/P160_5.png" class="" width="2">
+<hr>
+<p>Macro version of datastep function.</p>
+<p>%substr (string, position&lt;,length&gt;): returns the substring of a string starting from position and ending length characters later.<br>%length (string): returns length of string,<br>%upcase (string): returns upper case<br>%scan (string, n &lt;,delimiters&gt;): returns the nth word of the string where words are delineated by the specified delimiter(s)<br>%index (string, substring): Returns the position of the first occurrence of the substring found in the string. If the string is not found, then returns 0.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">%let ss&#x3D;Canadians are bad at math;</span><br><span class="line">%let ss1&#x3D;%substr(&amp;ss,11,3);</span><br><span class="line">%let ss2&#x3D;%scan(&amp;ss,4);</span><br><span class="line">%let ss3&#x3D;%index(&amp;ss,American); *no quotes are needed for American;</span><br><span class="line">%put &amp;ss1 &amp;ss2 &amp;ss3 %length(&amp;ss3); -- are, at, 0, 1</span><br></pre></td></tr></table></figure>
+<div class="note ">
+            <p>三种variable.</p><p>Num: 123 (int/float感觉的variable)<br>Char: ‘123’<br>Macro: abc (类似text的variable,不是char也不带引号)</p>
+          </div>
+<img src="/blog/2021/10/05/P160/P160_6.png" class="" title="D">
+<hr>
+<h2 id="Macros"><a href="#Macros" class="headerlink" title="Macros"></a>Macros</h2><p>A block of SAS steps that is resolved when the macro is revoked(定义一个模版一起调用).</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">--定义</span><br><span class="line">%MACRO name(positional parameters, keyword parameters&#x3D;);</span><br><span class="line">  &lt;contents of macro&gt;</span><br><span class="line">%MEND;</span><br><span class="line"></span><br><span class="line">--调用</span><br><span class="line">%name;</span><br></pre></td></tr></table></figure>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%macro print(data,var&#x3D;);</span><br><span class="line">  proc print data&#x3D;&amp;data noobs label;</span><br><span class="line">    var &amp;var;</span><br><span class="line">  run;</span><br><span class="line">%mend;</span><br><span class="line"></span><br><span class="line">%print(work.overview,var&#x3D;country year gdp)</span><br></pre></td></tr></table></figure>
+<p>要定义一个macros,我们要定义positional parameter(例子中的data)和keyward parameter(var=).</p>
+<div class="table-container">
+<table>
+<thead>
+<tr>
+<th></th>
+<th>Position</th>
+<th>Keyword</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>定义</td>
+<td>写parameter name</td>
+<td>parameter name + “=”</td>
+</tr>
+<tr>
+<td>调用</td>
+<td>直接assign value</td>
+<td>抄一遍parameter name + “=” + value</td>
+</tr>
+</tbody>
+</table>
+</div>
+<p>定义成keyword的好处是可以<strong>方便调用顺序</strong>和<strong>设置默认值default</strong>.</p>
+<img src="/blog/2021/10/05/P160/P160_7.png" class="" title="C">
+<img src="/blog/2021/10/05/P160/P160_8.png" class="" title="B">
+<img src="/blog/2021/10/05/P160/P160_9.png" class="" title="print的语法错误所以失败,默认的成功了">
+<p>Write a SAS program that will:<br>• Write a macro named test that contains one parameter, name list.<br>• Within this macro, use macro functions to create a new global macro variable named val that extracts the third value from list and stores it upper case.<br>• Call the macro test with the text Ford, Chevy, Toyota, Buick as the parameter value.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">%macro test(list&#x3D;);</span><br><span class="line">%global val;</span><br><span class="line">%let val&#x3D;%upcase(%scan(&amp;list,3,&#39;,&#39;));</span><br><span class="line">%put &amp;val;</span><br><span class="line">%mend;</span><br><span class="line"></span><br><span class="line">%test(list&#x3D;&quot;Ford,Chevy,Toyota,Buick&quot;)</span><br></pre></td></tr></table></figure>
+<hr>
+<p>Macros related Global Options(debug):</p>
+<p><strong>SYMBOLGEN:</strong> The SYMBOLGEN options shows when each macro variable reference resolution occurs; use SYMBOLGEN to help locate problems with macro variable reference resolution. To Turn it off, use <strong>NOSYMBOLGEN</strong>.<br><strong>MPRINT:</strong> The MPRINT options shows all SAS statements generated by macro code. Use MPRINT to help locate problems from errors generated by the SAS compiler. To turn it off, use NOMPRINT.<br><strong>MLOGIC:</strong> The MLOGIC option prints messages that indicate macro actions that were taken during macro execution.</p>
 <p><br><br><br><br><br></p>
 <h1 id="SQL"><a href="#SQL" class="headerlink" title="SQL"></a>SQL</h1><p>详见<a href="https://mazui3.com/blog/2021/01/31/P167/">SQL</a>相关note.这里记录SAS跟SQL会替换的写法.<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc sql;</span><br><span class="line">create table work.china_06_gdp as</span><br><span class="line">select country,year,gdp</span><br><span class="line">from cert.overview</span><br><span class="line">where country&#x3D;&quot;china&quot; and year&#x3D;2006;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure></p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">data work.china_06_gdp;</span><br><span class="line">set cert.overview;</span><br><span class="line">where country&#x3D;&quot;china&quot; and year&#x3D;2006;</span><br><span class="line">keep country year gdp;</span><br><span class="line">run;</span><br></pre></td></tr></table></figure>
@@ -910,6 +1001,11 @@
 <li>all data sets not require common BY variables(key id 不需要同样)</li>
 <li>many-to-many merge allowed</li>
 </ul>
+<hr>
+<p>Example:</p>
+<p>Write a SAS program that will:<br>• Perform an SQL query to create an output table named work.SQL09 by reading sashelp.cars and cert.CarRebates<br>• Work.SQL09 should contain:<br>1) One row for all the unique combinations of Make and Type of cars from cert.CarRebates. If a Rebate exists for that Make and Type of cars.<br>2) If there is no Rebate for the specific Make and Type, then the Rebate value should be missing in the new table.<br>3) Three columns: Make, Type, Rebate.</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">proc sql;</span><br><span class="line">create table work.sq109 as</span><br><span class="line">select distinct a.make, a.type, rebate</span><br><span class="line">from sashelp.cars as a left join cert.carrebates as b</span><br><span class="line">on a.make&#x3D;b.make and a.type&#x3D;b.type;</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
+<img src="/blog/2021/10/05/P160/P160.png" class="">
 
     </div>
 
@@ -926,10 +1022,10 @@
       <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
     </li>
     <li class="popular-posts-item">
       <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
@@ -1026,7 +1122,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">2.8.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-data-step-flow"><span class="nav-number">2.9.</span> <span class="nav-text">control data step flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#combine"><span class="nav-number">2.10.</span> <span class="nav-text">combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retain-and-Sum-Statement"><span class="nav-number">2.11.</span> <span class="nav-text">Retain and Sum Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-Automatic-Variables"><span class="nav-number">2.12.</span> <span class="nav-text">SAS Automatic Variables</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Macro"><span class="nav-number">3.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">4.</span> <span class="nav-text">SQL</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Structure-of-SAS-program"><span class="nav-number">1.</span> <span class="nav-text">Structure of SAS program</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SAS-Data"><span class="nav-number">2.</span> <span class="nav-text">SAS Data</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Import"><span class="nav-number">2.1.</span> <span class="nav-text">Import</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Character-and-Numeric-variable"><span class="nav-number">2.2.</span> <span class="nav-text">Character and Numeric variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Missing-data"><span class="nav-number">2.3.</span> <span class="nav-text">Missing data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-date"><span class="nav-number">2.4.</span> <span class="nav-text">SAS date</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-format"><span class="nav-number">2.5.</span> <span class="nav-text">SAS format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#format"><span class="nav-number">2.6.</span> <span class="nav-text">format</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PROCs"><span class="nav-number">2.7.</span> <span class="nav-text">PROCs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#function"><span class="nav-number">2.8.</span> <span class="nav-text">function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#control-data-step-flow"><span class="nav-number">2.9.</span> <span class="nav-text">control data step flow</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#combine"><span class="nav-number">2.10.</span> <span class="nav-text">combine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retain-and-Sum-Statement"><span class="nav-number">2.11.</span> <span class="nav-text">Retain and Sum Statement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SAS-Automatic-Variables"><span class="nav-number">2.12.</span> <span class="nav-text">SAS Automatic Variables</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Macro"><span class="nav-number">3.</span> <span class="nav-text">Macro</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Macro-variable"><span class="nav-number">3.1.</span> <span class="nav-text">Macro variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Macro-Functions"><span class="nav-number">3.2.</span> <span class="nav-text">Macro Functions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Macros"><span class="nav-number">3.3.</span> <span class="nav-text">Macros</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#SQL"><span class="nav-number">4.</span> <span class="nav-text">SQL</span></a></li></ol></div>
 
 
       </div>
@@ -1196,7 +1292,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">566k</span>
+    <span title="Symbols count total">572k</span>
   -->
 
   <!--
@@ -1204,7 +1300,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">8:35</span>
+    <span title="Reading time total">8:40</span>
 
   -->
   
@@ -1214,7 +1310,7 @@ password();
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有566k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有187.7k的老兔正在打瞌睡</span>
 </div>
 
         
