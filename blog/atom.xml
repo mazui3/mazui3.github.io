@@ -6,7 +6,7 @@
   <link href="https://mazui3.com/blog/atom.xml" rel="self"/>
   
   <link href="https://mazui3.com/blog/"/>
-  <updated>2021-11-01T06:58:48.905Z</updated>
+  <updated>2021-11-08T05:16:05.140Z</updated>
   <id>https://mazui3.com/blog/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于stat的笔记 - visualization</title>
+    <link href="https://mazui3.com/blog/2021/11/07/P182/"/>
+    <id>https://mazui3.com/blog/2021/11/07/P182/</id>
+    <published>2021-11-07T04:43:19.000Z</published>
+    <updated>2021-11-08T05:16:05.140Z</updated>
+    
+    
+    <summary type="html">&lt;p&gt;朋友友情赞助的stat442的笔记加一点点点tableau(坑了)的笔记.&lt;br&gt;</summary>
+    
+    
+    
+    <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    
+    <category term="r" scheme="https://mazui3.com/blog/tags/r/"/>
+    
+    <category term="tableau" scheme="https://mazui3.com/blog/tags/tableau/"/>
+    
+  </entry>
   
   <entry>
     <title>十月三十一号</title>
@@ -61,7 +86,7 @@
     <link href="https://mazui3.com/blog/2021/10/15/P162/"/>
     <id>https://mazui3.com/blog/2021/10/15/P162/</id>
     <published>2021-10-15T13:11:41.000Z</published>
-    <updated>2021-11-04T17:16:18.132Z</updated>
+    <updated>2021-11-07T04:37:07.178Z</updated>
     
     
     <summary type="html">这里是各处收集来的求职记录.为躲避google搜索设置了密码.</summary>
@@ -109,9 +134,9 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
-    
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
+    
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
   </entry>
   
@@ -130,11 +155,11 @@
     <category term="数学笔记" scheme="https://mazui3.com/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/"/>
     
     
-    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
+    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
     
     <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
-    <category term="编码" scheme="https://mazui3.com/blog/tags/%E7%BC%96%E7%A0%81/"/>
+    <category term="data" scheme="https://mazui3.com/blog/tags/data/"/>
     
     <category term="SAS" scheme="https://mazui3.com/blog/tags/SAS/"/>
     
@@ -457,25 +482,6 @@
     <category term="杂谈" scheme="https://mazui3.com/blog/tags/%E6%9D%82%E8%B0%88/"/>
     
     <category term="oc" scheme="https://mazui3.com/blog/tags/oc/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>关于法语的网页收藏</title>
-    <link href="https://mazui3.com/blog/2021/07/16/P168/"/>
-    <id>https://mazui3.com/blog/2021/07/16/P168/</id>
-    <published>2021-07-17T03:43:21.000Z</published>
-    <updated>2021-09-07T19:17:49.219Z</updated>
-    
-    
-    <summary type="html">&lt;p&gt;除了以下备注的,我觉得doulingo作为初学者体验一门语言蛮好.&lt;br&gt;duolingo能学的东西较慢,但能cover各个方位(听说读写和语法).&lt;br&gt;我也很喜欢它的故事模式.&lt;/p&gt;</summary>
-    
-    
-    
-    <category term="语言笔记" scheme="https://mazui3.com/blog/categories/%E8%AF%AD%E8%A8%80%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="以头抢地(诚)" scheme="https://mazui3.com/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/"/>
     
   </entry>
   
