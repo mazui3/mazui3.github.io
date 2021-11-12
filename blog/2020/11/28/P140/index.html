@@ -29,7 +29,7 @@
 <meta property="og:description" content="那就开始吧(吧).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:15:29.012Z">
+<meta property="article:modified_time" content="2021-11-12T19:56:30.370Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -248,7 +248,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:15:29" itemprop="dateModified" datetime="2021-08-19T19:15:29-04:00">2021-08-19</time>
+                <time title="Modified: 2021-11-12 14:56:30" itemprop="dateModified" datetime="2021-11-12T14:56:30-05:00">2021-11-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -331,6 +331,13 @@
 <li>notebook.</li>
 </ul>
 <p>For example, to convert a notebook to an HTML file, in your terminal use<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Install the package below, if not already</span></span><br><span class="line">pip install nbconvert</span><br><span class="line">jupyter nbconvert --to html mynotebook.ipynb</span><br></pre></td></tr></table></figure></p>
+<div class="note ">
+            <p>导出:</p><p>常用之一的pdf需要装插件.<a target="_blank" rel="noopener" href="https://nbconvert.readthedocs.io/en/latest/install.html#installing-tex.">documentation</a>.</p><p>常用之二的可以在View → Cell Toolbar → Slideshow设置并倒出网页版presentation.</p>
+          </div>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert presentation.ipynb --to slides</span><br></pre></td></tr></table></figure>
+<p>加上<a target="_blank" rel="noopener" href="https://drive.google.com/file/d/1J0BUVw3unSh8AW6bvIMeyvnpG5gxP7rk/view?usp=sharing">附录的toggle文件</a>可以隐藏代码.应该是放在跟ipynb同folder的地方.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter nbconvert Your_Slide_Deck_Name.ipynb --to slides --post serve --template output_toggle</span><br></pre></td></tr></table></figure></p>
+<p>顺便一提在ipynb文件里也可以执行:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!jupyter nbconvert Your_Slide_Deck_Name.ipynb --to slides --post serve --template output_toggle</span><br></pre></td></tr></table></figure></p>
+<p><br><br><br><br><br></p>
 <h2 id="用Jupyter-Notebooks和pandas读CSV"><a href="#用Jupyter-Notebooks和pandas读CSV" class="headerlink" title="用Jupyter Notebooks和pandas读CSV"></a>用Jupyter Notebooks和pandas读CSV</h2><h3 id="read"><a href="#read" class="headerlink" title="read"></a>read</h3><p>read_csv() is used to load data from csv files into a Pandas dataframe.</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line">df = pd.read_csv(<span class="string">&#x27;student_scores.csv&#x27;</span>)</span><br></pre></td></tr></table></figure>
 <p>CSV stands for comma separated values - but they can actually be separated by different characters, tabs, white space, etc.<br>当CSV的格式跟default不同,得重新定义seperator.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&#x27;student_scores.csv&#x27;</span>, sep=<span class="string">&#x27;:&#x27;</span>)</span><br><span class="line">df.head()</span><br></pre></td></tr></table></figure></p>
@@ -434,7 +441,7 @@
       <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
     </li>
     <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
+      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
     </li>
   </ul>
 
@@ -698,7 +705,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">878k</span>
+    <span title="Symbols count total">879k</span>
   -->
 
   <!--
@@ -706,7 +713,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:18</span>
+    <span title="Reading time total">13:20</span>
 
   -->
   

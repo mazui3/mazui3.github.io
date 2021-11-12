@@ -30,7 +30,6 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.com/blog/2019/09/15/P061/P062_1.png">
 <meta property="og:image" content="https://mazui3.com/blog/2019/09/15/P061/P062_2.png">
-<meta property="og:image" content="https://mazui3.com/blog/2019/09/15/P061/P062_3.png">
 <meta property="og:image" content="https://mazui3.com/blog/2019/09/15/P061/P062_4.png">
 <meta property="article:published_time" content="2019-09-15T17:09:08.000Z">
 <meta property="article:modified_time" content="2020-12-17T21:49:15.928Z">
@@ -300,7 +299,7 @@
 
       
         <p>是给一款叫做细胞神曲的rpg游戏画的同人.<br><img src="/blog/2019/09/15/P061/P062_1.png" class=""><br>早晨和工作和热乎乎的红茶<br><a id="more"></a></p>
-<p><br><br><img src="/blog/2019/09/15/P061/P062_2.png" class=""><br>第一天就职与珍珠奶茶<br><br><br><br><br><br><br><br><br><br><br><img src="/blog/2019/09/15/P061/P062_3.png" class=""><br><img src="/blog/2019/09/15/P061/P062_4.png" class=""><br>做输入法而画的小q版.<br><br><br><br><br><br><br><br><br><br><br><br><br>关于DLC最后ed出现的背景二进制数字.<br>弹幕已经有解密了,少了句话可能是被冲掉了…<br>这里记载一下解码的方法Zzz.<br>跟我熟的朋友知道我喜欢这种东西(忍不住,就是想写,原谅我).<br><br></p>
+<p><br><br><img src="/blog/2019/09/15/P061/P062_2.png" class=""><br>第一天就职与珍珠奶茶<br><br><br><br><br><br><br><br><br><br><br><br><img src="/blog/2019/09/15/P061/P062_4.png" class=""><br>做输入法而画的小q版.<br><br><br><br><br><br><br><br><br><br><br><br><br>关于DLC最后ed出现的背景二进制数字.<br>弹幕已经有解密了,少了句话可能是被冲掉了…<br>这里记载一下解码的方法Zzz.<br>跟我熟的朋友知道我喜欢这种东西(忍不住,就是想写,原谅我).<br><br></p>
 <p>思路是这样.<br>这是组非常有规则的数字,每组都是8个数字.没有遮盖,很清楚,这时候想到说不定是可以解的东西.</p>
 <p>up主桑有把”神”的解码写出来,是unicode.一般了解加密者的方法都是提示.</p>
 <p>从头开始.<br>8位的二进制.熟悉的朋友会想到是转成16进制很方便.<br>〇〇〇〇 ××××&lt;——这样的各式.前面4位对应一个数字,后面四位对应一个数字.合在一起就是16进制的数了.<br>比如说0100是4.<br>1111是f(十进制的15).<br>那么01001111就是4f(十进制的79).<br>(便捷方法是因为16是2^4,可以用计算证明).<br>第一组的8位二进制转换完是e7.<br>最初以为…每组代表了个字.所以e7对应了什么还有些犹豫…ascii最多到7f.</p>
@@ -603,7 +602,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">878k</span>
+    <span title="Symbols count total">879k</span>
   -->
 
   <!--
@@ -611,7 +610,7 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:18</span>
+    <span title="Reading time total">13:20</span>
 
   -->
   
