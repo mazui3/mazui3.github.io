@@ -18,19 +18,19 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="为stat332的复习.附上没有过多关联的前情提要.">
 <meta property="og:type" content="article">
 <meta property="og:title" content="关于stat的笔记 - sampling">
-<meta property="og:url" content="https://mazui3.com/blog/2021/04/10/P180/index.html">
+<meta property="og:url" content="https://mazui3.github.io/blog/2021/04/10/P180/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="为stat332的复习.附上没有过多关联的前情提要.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mazui3.com/blog/2021/04/10/P180/P180_2.png">
-<meta property="og:image" content="https://mazui3.com/blog/2021/04/10/P180/P180_3.png">
-<meta property="og:image" content="https://mazui3.com/blog/2021/04/10/P180/P180.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/04/10/P180/P180_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/04/10/P180/P180_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/04/10/P180/P180.png">
 <meta property="article:published_time" content="2021-04-11T01:25:13.000Z">
 <meta property="article:modified_time" content="2021-11-15T20:25:21.984Z">
 <meta property="article:author" content="Mazui">
@@ -40,9 +40,9 @@
 <meta property="article:tag" content="R">
 <meta property="article:tag" content="statistics">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mazui3.com/blog/2021/04/10/P180/P180_2.png">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/04/10/P180/P180_2.png">
 
-<link rel="canonical" href="https://mazui3.com/blog/2021/04/10/P180/">
+<link rel="canonical" href="https://mazui3.github.io/blog/2021/04/10/P180/">
 
 
 <script id="page-configurations">
@@ -156,7 +156,7 @@
   </li>
         <li class="menu-item menu-item-back">
 
-    <a href="https://www.mazui3.com/" rel="noopener" target="_blank"><i class="fas fa-carrot fa-fw"></i>Back</a>
+    <a href="https://mazui3.github.io/" rel="section"><i class="fas fa-carrot fa-fw"></i>Back</a>
 
   </li>
       <li class="menu-item menu-item-search">
@@ -214,7 +214,7 @@
   
   
   <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
-    <link itemprop="mainEntityOfPage" href="https://mazui3.com/blog/2021/04/10/P180/">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2021/04/10/P180/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
       <meta itemprop="image" content="/blog/images/logo_6.png">
@@ -297,7 +297,7 @@
   src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
 </script>
 
-<p>为stat332的复习.附上没有过多关联的<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/12/26/P150/">前情提要</a>.</p>
+<p>为stat332的复习.附上没有过多关联的<a href="https://mazui3.github.io/blog/2020/12/26/P150/">前情提要</a>.</p>
 <span id="more"></span>
 
 <p>332的精华在于推导每个model,再按需求套数据…所以整理的是各个model.<br>Model的定义: Relates a parameter to a response.<br>老师讲的不细,所以笔记有一半是我的归纳总结,不是证明出来的,估计会有错.</p>
@@ -340,7 +340,7 @@
 <p>如果没有significance level默认:<br>p &gt; 0.1 : No evidence to reject <code>$H_0$</code>.<br>0.1 &gt; p &gt; 0.05 : There is evidence to reject <code>$H_0$</code>.<br>0.05 &gt; p &gt; 0.01 : There is some evidence to reject <code>$H_0$</code>.<br>p &lt; 0.01 : There is tons evidence to reject <code>$H_0$</code>.</p>
 <p><strong>具体要参考model公式.</strong></p>
 <p>Side:两组数值时的variance(standard deviation的平方),aka pool variance,<br><code>$s_p^2 = \frac&#123;(n_1 - 1)s_1^2 + (n_2 - 1)s_2^2&#125;&#123;n_1+n_2-2&#125;$</code></p>
-<p>这里<code>$s_1^2$</code>是第一组的variance,<code>$n_1$</code>是size.<br>这里可以参考<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/12/26/P150/">前情提要</a>的表格.</p>
+<p>这里<code>$s_1^2$</code>是第一组的variance,<code>$n_1$</code>是size.<br>这里可以参考<a href="https://mazui3.github.io/blog/2020/12/26/P150/">前情提要</a>的表格.</p>
 <hr>
 <br>
 <br>
@@ -876,7 +876,7 @@ ___
 </script>
 <script>
   var disqus_config = function() {
-    this.page.url = "https://mazui3.com/blog/2021/04/10/P180/";
+    this.page.url = "https://mazui3.github.io/blog/2021/04/10/P180/";
     this.page.identifier = "2021/04/10/P180/";
     this.page.title = "关于stat的笔记 - sampling";
     };
