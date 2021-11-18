@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="接第一回与第二回.">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="接第一回与第二回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-03-14T05:01:54.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:13:15.762Z">
+<meta property="article:modified_time" content="2021-11-15T20:25:20.996Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -81,9 +81,6 @@
   </style>
 </noscript>
 
-  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
-
-<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -125,11 +122,6 @@
         <li class="menu-item menu-item-home">
 
     <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-readme">
-
-    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -205,7 +197,6 @@
   </div>
 
 
-
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -248,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:13:15" itemprop="dateModified" datetime="2021-08-19T19:13:15-04:00">2021-08-19</time>
+                <time title="Modified: 2021-11-15 15:25:20" itemprop="dateModified" datetime="2021-11-15T15:25:20-05:00">2021-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,13 +266,13 @@
   </span>
   
   
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="C">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
               <span>12k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
@@ -297,108 +288,210 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>接<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/11/28/P140/">第一回</a>与<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/11/28/P141/">第二回.</a><br><a id="more"></a><br>Note:<br>前两回大多是python和其pandas和numpy库的编码笔记.<br>第一回附加了安装jupyter notebook的过程,第二回增加了DA的过程.</p>
-<p><br><br><br><br><br><br><br></p>
+        <p>接<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/11/28/P140/">第一回</a>与<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2020/11/28/P141/">第二回.</a></p>
+<span id="more"></span>
+<p>Note:<br>前两回大多是python和其pandas和numpy库的编码笔记.<br>第一回附加了安装jupyter notebook的过程,第二回增加了DA的过程.</p>
+<br>
+<br>
+<br>
+<br>
+
 <p>笔记有少许重复,仅记载常用code,以前记录过的function也有在旧笔记中补充.</p>
 <p><strong>data wrangling</strong></p>
 <h3 id="gather"><a href="#gather" class="headerlink" title="gather"></a>gather</h3><p>举例:<br>在rottenTomatoes上下载电影评价.<a target="_blank" rel="noopener" href="https://www.rottentomatoes.com/top/bestofrt/">link</a><br>在某位影评人网站上下载评价.<a target="_blank" rel="noopener" href="https://www.rogerebert.com/">link</a><br>Word cloud 插件.<a target="_blank" rel="noopener" href="https://amueller.github.io/word_cloud/">link</a></p>
 <p>Flat File Structure.一种文件格式:Flat files contain tabular data in plain text format with one data record per line and each record or line having one or more fields. These fields are separated by delimiters, like commas, tabs, or colons.</p>
 <p>如果数据用comma分割就是csv,用tab是tsv.<br>是人能读得懂的.<br>注:excel并不是,excel的源文件是人读不懂的.</p>
-<p>也可以用read_csv来read tsv.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&quot;bestofrt.tsv&quot;</span>, sep=<span class="string">&#x27;\t&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
+<p>也可以用read_csv来read tsv.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df = pd.read_csv(<span class="string">&quot;bestofrt.tsv&quot;</span>, sep=<span class="string">&#x27;\t&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<br>
+
 <h4 id="web-scraping"><a href="#web-scraping" class="headerlink" title="web scraping"></a>web scraping</h4><p>注:我们使用了os library来读取文件和存储.读取也可以使用 glob library.</p>
 <h5 id="request"><a href="#request" class="headerlink" title="request"></a>request</h5><p>用request library make http request.<a target="_blank" rel="noopener" href="https://2.python-requests.org/en/master/">link.</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"></span><br><span class="line"><span class="comment"># Make directory if it doesn&#x27;t already exist</span></span><br><span class="line">folder_name = <span class="string">&#x27;theFolderName&#x27;</span></span><br><span class="line"><span class="keyword">if</span> <span class="keyword">not</span> os.path.exists(folder_name):</span><br><span class="line">    os.makedirs(folder_name)</span><br><span class="line"></span><br><span class="line">url = <span class="string">&#x27;the_adress&#x27;</span></span><br><span class="line">response = requests.get(url)</span><br></pre></td></tr></table></figure>
-<p>response是200就是成功的意思.<br>现在东西在response里,将其导出.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(os.path.join(folder_name,</span><br><span class="line">                        url.split(<span class="string">&#x27;/&#x27;</span>)[<span class="number">-1</span>]), mode=<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(response.content)</span><br></pre></td></tr></table></figure></p>
-<p>check content.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(folder_name)</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
+<p>response是200就是成功的意思.<br>现在东西在response里,将其导出.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(folder_name,</span><br><span class="line">                        url.split(<span class="string">&#x27;/&#x27;</span>)[-<span class="number">1</span>]), mode=<span class="string">&#x27;wb&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">    file.write(response.content)</span><br></pre></td></tr></table></figure>
+
+<p>check content.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">os.listdir(folder_name)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
 <h5 id="glob"><a href="#glob" class="headerlink" title="glob"></a>glob</h5><p>用glob读取类似txt的文件.</p>
-<p>用glob.glob读取一个文件夹下的内容.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># List of dictionaries to build file by file and later convert to a DataFrame</span></span><br><span class="line">df_list = []</span><br><span class="line"><span class="keyword">for</span> ebert_review <span class="keyword">in</span> glob.glob(<span class="string">&#x27;ebert_reviews/*.txt&#x27;</span>):</span><br><span class="line">    <span class="keyword">with</span> open(ebert_review, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file: <span class="comment"># 注意这里的encoding需要在原网页文件下查看</span></span><br><span class="line">        title = file.readline()[:<span class="number">-1</span>] <span class="comment"># readline来取一行一行的内容,最后的-1是用于减去newline character的</span></span><br><span class="line">        review_url = file.readline()[:<span class="number">-1</span>]</span><br><span class="line">        review_text = file.read()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">        df_list.append(&#123;<span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                        <span class="string">&#x27;review_url&#x27;</span>: review_url,</span><br><span class="line">                        <span class="string">&#x27;review_text&#x27;</span>: review_text&#125;)</span><br><span class="line">df = pd.DataFrame(df_list, columns = [<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;review_url&#x27;</span>, <span class="string">&#x27;review_text&#x27;</span>]) <span class="comment"># 最后转成df</span></span><br><span class="line"></span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
+<p>用glob.glob读取一个文件夹下的内容.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> glob</span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"></span><br><span class="line"><span class="comment"># List of dictionaries to build file by file and later convert to a DataFrame</span></span><br><span class="line">df_list = []</span><br><span class="line"><span class="keyword">for</span> ebert_review <span class="keyword">in</span> glob.glob(<span class="string">&#x27;ebert_reviews/*.txt&#x27;</span>):</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(ebert_review, encoding=<span class="string">&#x27;utf-8&#x27;</span>) <span class="keyword">as</span> file: <span class="comment"># 注意这里的encoding需要在原网页文件下查看</span></span><br><span class="line">        title = file.readline()[:-<span class="number">1</span>] <span class="comment"># readline来取一行一行的内容,最后的-1是用于减去newline character的</span></span><br><span class="line">        review_url = file.readline()[:-<span class="number">1</span>]</span><br><span class="line">        review_text = file.read()</span><br><span class="line"></span><br><span class="line">        <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">        df_list.append(&#123;<span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                        <span class="string">&#x27;review_url&#x27;</span>: review_url,</span><br><span class="line">                        <span class="string">&#x27;review_text&#x27;</span>: review_text&#125;)</span><br><span class="line">df = pd.DataFrame(df_list, columns = [<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;review_url&#x27;</span>, <span class="string">&#x27;review_text&#x27;</span>]) <span class="comment"># 最后转成df</span></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<br>
+
 <h5 id="beautiful-soap"><a href="#beautiful-soap" class="headerlink" title="beautiful soap"></a>beautiful soap</h5><p>首先先download一个html文件.用beautiful soap来抓data.<a target="_blank" rel="noopener" href="https://www.crummy.com/software/BeautifulSoup/">link.</a></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> open(<span class="string">&#x27;fileName.html&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">  soup = BeautifulSoup(file, <span class="string">&#x27;lxml&#x27;</span>) <span class="comment"># first we make a soup</span></span><br><span class="line">  <span class="comment"># in the soup we have everything in the html file without clean</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后用find来寻找某个我们想要的tag内的内容.</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line"><span class="comment"># return everything with tag title</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>).content[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># return第一个在title tag内的内容.</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>).content[<span class="number">0</span>][:-len(<span class="string">&#x27; the thing wanna delete&#x27;</span>)]</span><br><span class="line"><span class="comment"># 进行string的删减.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以用tag和class一起找.这个例子是在(有class的)div里的span tag.</span></span><br><span class="line">soup.find(<span class="string">&#x27;div&#x27;</span>,class_=<span class="string">&#x27;className&#x27;</span>).find(<span class="string">&#x27;span&#x27;</span>)</span><br></pre></td></tr></table></figure>
-<p>减去white space用strip.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;string&#x27;</span>.strip()</span><br></pre></td></tr></table></figure><br>用replace减去100,000中的comma.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;string&#x27;</span>.replace(<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List of dictionaries to build file by file and later convert to a DataFrame</span></span><br><span class="line">    df_list = []</span><br><span class="line">    folder = <span class="string">&#x27;rt_html&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> movie_html <span class="keyword">in</span> os.listdir(folder):</span><br><span class="line">        <span class="keyword">with</span> open(os.path.join(folder, movie_html)) <span class="keyword">as</span> file:</span><br><span class="line">            soup = BeautifulSoup(file, <span class="string">&#x27;lxml&#x27;</span>)</span><br><span class="line">            title = soup.find(<span class="string">&#x27;title&#x27;</span>).contents[<span class="number">0</span>][:-len(<span class="string">&#x27; - Rotten rottenTomatoes&#x27;</span>)]</span><br><span class="line">            audience_score = soup.find(<span class="string">&#x27;div&#x27;</span>, class_=<span class="string">&#x27;audience-score meter&#x27;</span>).find(<span class="string">&#x27;span&#x27;</span>).contents[<span class="number">0</span>][:<span class="number">-1</span>]</span><br><span class="line">            num_audience_ratings = soup.find(<span class="string">&#x27;div&#x27;</span>, class_=<span class="string">&#x27;audience-info hidden-xs superPageFontColor&#x27;</span>)</span><br><span class="line">            num_audience_ratings = num_audience_ratings.find_all(<span class="string">&#x27;div&#x27;</span>)[<span class="number">1</span>].contents[<span class="number">2</span>].strip().replace(<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">            df_list.append(&#123;<span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                            <span class="string">&#x27;audience_score&#x27;</span>: int(audience_score),</span><br><span class="line">                            <span class="string">&#x27;number_of_audience_ratings&#x27;</span>: int(num_audience_ratings)&#125;)</span><br><span class="line">    df = pd.DataFrame(df_list, columns = [<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;audience_score&#x27;</span>, <span class="string">&#x27;number_of_audience_ratings&#x27;</span>])</span><br></pre></td></tr></table></figure>
-<p><br><br><br><br><br></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> bs4 <span class="keyword">import</span> BeautifulSoup</span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;fileName.html&#x27;</span>) <span class="keyword">as</span> file:</span><br><span class="line">  soup = BeautifulSoup(file, <span class="string">&#x27;lxml&#x27;</span>) <span class="comment"># first we make a soup</span></span><br><span class="line">  <span class="comment"># in the soup we have everything in the html file without clean</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 然后用find来寻找某个我们想要的tag内的内容.</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>)</span><br><span class="line"><span class="comment"># return everything with tag title</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>).content[<span class="number">0</span>]</span><br><span class="line"><span class="comment"># return第一个在title tag内的内容.</span></span><br><span class="line">soup.find(<span class="string">&#x27;title&#x27;</span>).content[<span class="number">0</span>][:-<span class="built_in">len</span>(<span class="string">&#x27; the thing wanna delete&#x27;</span>)]</span><br><span class="line"><span class="comment"># 进行string的删减.</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># 可以用tag和class一起找.这个例子是在(有class的)div里的span tag.</span></span><br><span class="line">soup.find(<span class="string">&#x27;div&#x27;</span>,class_=<span class="string">&#x27;className&#x27;</span>).find(<span class="string">&#x27;span&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>减去white space用strip.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;string&#x27;</span>.strip()</span><br></pre></td></tr></table></figure>
+<p>用replace减去100,000中的comma.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&#x27;string&#x27;</span>.replace(<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List of dictionaries to build file by file and later convert to a DataFrame</span></span><br><span class="line">    df_list = []</span><br><span class="line">    folder = <span class="string">&#x27;rt_html&#x27;</span></span><br><span class="line">    <span class="keyword">for</span> movie_html <span class="keyword">in</span> os.listdir(folder):</span><br><span class="line">        <span class="keyword">with</span> <span class="built_in">open</span>(os.path.join(folder, movie_html)) <span class="keyword">as</span> file:</span><br><span class="line">            soup = BeautifulSoup(file, <span class="string">&#x27;lxml&#x27;</span>)</span><br><span class="line">            title = soup.find(<span class="string">&#x27;title&#x27;</span>).contents[<span class="number">0</span>][:-<span class="built_in">len</span>(<span class="string">&#x27; - Rotten rottenTomatoes&#x27;</span>)]</span><br><span class="line">            audience_score = soup.find(<span class="string">&#x27;div&#x27;</span>, class_=<span class="string">&#x27;audience-score meter&#x27;</span>).find(<span class="string">&#x27;span&#x27;</span>).contents[<span class="number">0</span>][:-<span class="number">1</span>]</span><br><span class="line">            num_audience_ratings = soup.find(<span class="string">&#x27;div&#x27;</span>, class_=<span class="string">&#x27;audience-info hidden-xs superPageFontColor&#x27;</span>)</span><br><span class="line">            num_audience_ratings = num_audience_ratings.find_all(<span class="string">&#x27;div&#x27;</span>)[<span class="number">1</span>].contents[<span class="number">2</span>].strip().replace(<span class="string">&#x27;,&#x27;</span>,<span class="string">&#x27;&#x27;</span>)</span><br><span class="line">            <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">            df_list.append(&#123;<span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                            <span class="string">&#x27;audience_score&#x27;</span>: <span class="built_in">int</span>(audience_score),</span><br><span class="line">                            <span class="string">&#x27;number_of_audience_ratings&#x27;</span>: <span class="built_in">int</span>(num_audience_ratings)&#125;)</span><br><span class="line">    df = pd.DataFrame(df_list, columns = [<span class="string">&#x27;title&#x27;</span>, <span class="string">&#x27;audience_score&#x27;</span>, <span class="string">&#x27;number_of_audience_ratings&#x27;</span>])</span><br></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<br>
+
 <h5 id="api"><a href="#api" class="headerlink" title="api"></a>api</h5><p>最方便的办法.<br>(我理解api为接口,像usb接口那样.)</p>
 <p>用mediaWiki举例.<a target="_blank" rel="noopener" href="https://www.mediawiki.org/wiki/API:Tutorial">link.</a><a target="_blank" rel="noopener" href="https://github.com/siznax/wptools">link.</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> wptools</span><br><span class="line"><span class="comment"># https://en.wikipedia.org/wiki/Mahatma_Gandhi</span></span><br><span class="line"></span><br><span class="line">page = wptools.page(<span class="string">&#x27;Mahatma_Gandhi&#x27;</span>).get()</span><br><span class="line"></span><br><span class="line"><span class="comment"># 其中page自带很多attribute,可以用其中的image来找wiki page上的image</span></span><br><span class="line">page.data[<span class="string">&#x27;image&#x27;</span>]</span><br><span class="line"></span><br></pre></td></tr></table></figure>
-<p>Note:关于数据的储存,还可能是json.Json类似python里的list.<br>比如说之前的page object中存放的就是json的格式.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">page.data[<span class="string">&#x27;image&#x27;</span>][<span class="number">0</span>] <span class="comment"># access first image</span></span><br></pre></td></tr></table></figure><br>更多关于json与python的<a target="_blank" rel="noopener" href="https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/">link.</a></p>
-<p>注:download文件时,如果是文字,要确认encode方式(eg.utf-8).<br>如果是图片要注意library的使用,有些可能会出错.<a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/">link</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">r = requests.get(url)</span><br><span class="line">i = Image.open(BytesIO(r.content))</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List of dictionaries to build and convert to a DataFrame later</span></span><br><span class="line">df_list = []</span><br><span class="line">image_errors = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> title_list: <span class="comment"># title list是自己创造好的一个list of string</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># This cell is slow so print ranking to gauge time remaining</span></span><br><span class="line">        ranking = title_list.index(title) + <span class="number">1</span></span><br><span class="line">        print(ranking)</span><br><span class="line">        page = wptools.page(title, silent=<span class="literal">True</span>)</span><br><span class="line">        images = page.get().data[<span class="string">&#x27;image&#x27;</span>]</span><br><span class="line">        <span class="comment"># First image is usually the poster</span></span><br><span class="line">        first_image_url = images[<span class="number">0</span>][<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">        r = requests.get(first_image_url)</span><br><span class="line">        <span class="comment"># Download movie poster image</span></span><br><span class="line">        i = Image.open(BytesIO(r.content))</span><br><span class="line">        image_file_format = first_image_url.split(<span class="string">&#x27;.&#x27;</span>)[<span class="number">-1</span>]</span><br><span class="line">        i.save(folder_name + <span class="string">&quot;/&quot;</span> + str(ranking) + <span class="string">&quot;_&quot;</span> + title + <span class="string">&#x27;.&#x27;</span> + image_file_format)</span><br><span class="line">        <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">        df_list.append(&#123;<span class="string">&#x27;ranking&#x27;</span>: int(ranking),</span><br><span class="line">                        <span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                        <span class="string">&#x27;poster_url&#x27;</span>: first_image_url&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Not best practice to catch all exceptions but fine for this short script</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        print(str(ranking) + <span class="string">&quot;_&quot;</span> + title + <span class="string">&quot;: &quot;</span> + str(e))</span><br><span class="line">        image_errors[str(ranking) + <span class="string">&quot;_&quot;</span> + title] = images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用try保护,最后查看出错的图片</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> image_errors.keys():</span><br><span class="line">    print(key)</span><br></pre></td></tr></table></figure>
-<p><br><br><br><br><br></p>
-<p>先用terminal access到想要保存文件的directory.<br>再run:<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure><br>在界面里可以直接new创建文件.<br>Note:用shift tab可以读取function的格式备注.</p>
-<p>zip file,<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zipfile.html#zipfile-objects">doc</a>:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="comment"># Extract all contents from zip file</span></span><br><span class="line"><span class="keyword">with</span> zipfile.ZipFile(<span class="string">&#x27;archive.zip&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> myzip:</span><br><span class="line">    myzip.extractall()</span><br></pre></td></tr></table></figure></p>
-<p>将文件保存好后可以存放到file中或database.<br>(file:比如说csv,database:比如说可以用sql读的.)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.to_csv(<span class="string">&#x27;dataset.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure><br>我们可以在python中连上sql.<a target="_blank" rel="noopener" href="https://www.sqlalchemy.org/">link.</a><br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="comment"># Create SQLAlchemy Engine and empty bestofrt database</span></span><br><span class="line"><span class="comment"># bestofrt.db will not show up in the Jupyter Notebook dashboard yet</span></span><br><span class="line">engine = create_engine(<span class="string">&#x27;sqlite:///bestofrt.db&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Store cleaned master DataFrame (&#x27;df&#x27;) in a table called master in bestofrt.db</span></span><br><span class="line"><span class="comment"># bestofrt.db will be visible now in the Jupyter Notebook dashboard</span></span><br><span class="line">df.to_sql(<span class="string">&#x27;master&#x27;</span>, engine, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure></p>
+
+<p>Note:关于数据的储存,还可能是json.Json类似python里的list.<br>比如说之前的page object中存放的就是json的格式.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">page.data[<span class="string">&#x27;image&#x27;</span>][<span class="number">0</span>] <span class="comment"># access first image</span></span><br></pre></td></tr></table></figure>
+<p>更多关于json与python的<a target="_blank" rel="noopener" href="https://stackabuse.com/reading-and-writing-json-to-a-file-in-python/">link.</a></p>
+<p>注:download文件时,如果是文字,要确认encode方式(eg.utf-8).<br>如果是图片要注意library的使用,有些可能会出错.<a target="_blank" rel="noopener" href="https://pillow.readthedocs.io/en/stable/">link</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> requests</span><br><span class="line"><span class="keyword">from</span> PIL <span class="keyword">import</span> Image</span><br><span class="line"><span class="keyword">from</span> io <span class="keyword">import</span> BytesIO</span><br><span class="line">r = requests.get(url)</span><br><span class="line">i = Image.<span class="built_in">open</span>(BytesIO(r.content))</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># List of dictionaries to build and convert to a DataFrame later</span></span><br><span class="line">df_list = []</span><br><span class="line">image_errors = &#123;&#125;</span><br><span class="line"><span class="keyword">for</span> title <span class="keyword">in</span> title_list: <span class="comment"># title list是自己创造好的一个list of string</span></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="comment"># This cell is slow so print ranking to gauge time remaining</span></span><br><span class="line">        ranking = title_list.index(title) + <span class="number">1</span></span><br><span class="line">        <span class="built_in">print</span>(ranking)</span><br><span class="line">        page = wptools.page(title, silent=<span class="literal">True</span>)</span><br><span class="line">        images = page.get().data[<span class="string">&#x27;image&#x27;</span>]</span><br><span class="line">        <span class="comment"># First image is usually the poster</span></span><br><span class="line">        first_image_url = images[<span class="number">0</span>][<span class="string">&#x27;url&#x27;</span>]</span><br><span class="line">        r = requests.get(first_image_url)</span><br><span class="line">        <span class="comment"># Download movie poster image</span></span><br><span class="line">        i = Image.<span class="built_in">open</span>(BytesIO(r.content))</span><br><span class="line">        image_file_format = first_image_url.split(<span class="string">&#x27;.&#x27;</span>)[-<span class="number">1</span>]</span><br><span class="line">        i.save(folder_name + <span class="string">&quot;/&quot;</span> + <span class="built_in">str</span>(ranking) + <span class="string">&quot;_&quot;</span> + title + <span class="string">&#x27;.&#x27;</span> + image_file_format)</span><br><span class="line">        <span class="comment"># Append to list of dictionaries</span></span><br><span class="line">        df_list.append(&#123;<span class="string">&#x27;ranking&#x27;</span>: <span class="built_in">int</span>(ranking),</span><br><span class="line">                        <span class="string">&#x27;title&#x27;</span>: title,</span><br><span class="line">                        <span class="string">&#x27;poster_url&#x27;</span>: first_image_url&#125;)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># Not best practice to catch all exceptions but fine for this short script</span></span><br><span class="line">    <span class="keyword">except</span> Exception <span class="keyword">as</span> e:</span><br><span class="line">        <span class="built_in">print</span>(<span class="built_in">str</span>(ranking) + <span class="string">&quot;_&quot;</span> + title + <span class="string">&quot;: &quot;</span> + <span class="built_in">str</span>(e))</span><br><span class="line">        image_errors[<span class="built_in">str</span>(ranking) + <span class="string">&quot;_&quot;</span> + title] = images</span><br><span class="line"></span><br><span class="line"><span class="comment"># 用try保护,最后查看出错的图片</span></span><br><span class="line"><span class="keyword">for</span> key <span class="keyword">in</span> image_errors.keys():</span><br><span class="line">    <span class="built_in">print</span>(key)</span><br></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<br>
+
+<p>先用terminal access到想要保存文件的directory.<br>再run:</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">jupyter notebook</span><br></pre></td></tr></table></figure>
+<p>在界面里可以直接new创建文件.<br>Note:用shift tab可以读取function的格式备注.</p>
+<p>zip file,<a target="_blank" rel="noopener" href="https://docs.python.org/3/library/zipfile.html#zipfile-objects">doc</a>:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> zipfile</span><br><span class="line"><span class="comment"># Extract all contents from zip file</span></span><br><span class="line"><span class="keyword">with</span> zipfile.ZipFile(<span class="string">&#x27;archive.zip&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> myzip:</span><br><span class="line">    myzip.extractall()</span><br></pre></td></tr></table></figure>
+
+
+<p>将文件保存好后可以存放到file中或database.<br>(file:比如说csv,database:比如说可以用sql读的.)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.to_csv(<span class="string">&#x27;dataset.csv&#x27;</span>, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+<p>我们可以在python中连上sql.<a target="_blank" rel="noopener" href="https://www.sqlalchemy.org/">link.</a></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">from</span> sqlalchemy <span class="keyword">import</span> create_engine</span><br><span class="line"><span class="comment"># Create SQLAlchemy Engine and empty bestofrt database</span></span><br><span class="line"><span class="comment"># bestofrt.db will not show up in the Jupyter Notebook dashboard yet</span></span><br><span class="line">engine = create_engine(<span class="string">&#x27;sqlite:///bestofrt.db&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Store cleaned master DataFrame (&#x27;df&#x27;) in a table called master in bestofrt.db</span></span><br><span class="line"><span class="comment"># bestofrt.db will be visible now in the Jupyter Notebook dashboard</span></span><br><span class="line">df.to_sql(<span class="string">&#x27;master&#x27;</span>, engine, index=<span class="literal">False</span>)</span><br></pre></td></tr></table></figure>
+
 <h3 id="assess"><a href="#assess" class="headerlink" title="assess"></a>assess</h3><p>Focus on quality and tidiness.目的是了解和寻找差错.</p>
 <p>Dirty: 数据本身有问题.完整性(缺失),重复,精准,出错(数据单位不一致),一致性等.<br>Messy: 有structure的问题.</p>
-<p>用isnull check空缺.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sum(df.columnName.isnull())</span><br></pre></td></tr></table></figure></p>
+<p>用isnull check空缺.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sum</span>(df.columnName.isnull())</span><br></pre></td></tr></table></figure>
+
 <p>在这一步记载数据的问题方便后面更改.</p>
-<p>普通的读取用index某一rows的数据.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">second_row = df.loc[[<span class="number">1</span>]]</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://www.kite.com/python/answers/how-to-print-a-row-of-a-pandas-dataframe-in-python">link</a></p>
-<p>check uniqueness.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_1.nunique()</span><br><span class="line">df_1.shape</span><br></pre></td></tr></table></figure></p>
-<p>check duplicate.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duplicateRowsDF = df_1[df_1.duplicated([<span class="string">&#x27;tweet_id&#x27;</span>])]</span><br><span class="line">print(duplicateRowsDF)</span><br></pre></td></tr></table></figure></p>
+<p>普通的读取用index某一rows的数据.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">second_row = df.loc[[<span class="number">1</span>]]</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://www.kite.com/python/answers/how-to-print-a-row-of-a-pandas-dataframe-in-python">link</a></p>
+<p>check uniqueness.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_1.nunique()</span><br><span class="line">df_1.shape</span><br></pre></td></tr></table></figure>
+
+<p>check duplicate.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">duplicateRowsDF = df_1[df_1.duplicated([<span class="string">&#x27;tweet_id&#x27;</span>])]</span><br><span class="line"><span class="built_in">print</span>(duplicateRowsDF)</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_2.describe()</span><br></pre></td></tr></table></figure>
-<p><br><br><br><br><br></p>
-<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><p>第一件事是make a copy.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df.copy()</span><br></pre></td></tr></table></figure></p>
+
+<br>
+<br>
+<br>
+
+<h3 id="clean"><a href="#clean" class="headerlink" title="clean"></a>clean</h3><p>第一件事是make a copy.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df.copy()</span><br></pre></td></tr></table></figure>
+
+
 <h4 id="define"><a href="#define" class="headerlink" title="define"></a>define</h4><p>在这一步记载哪些是要clean的问题.用动词写出要做的步骤.</p>
 <h4 id="code"><a href="#code" class="headerlink" title="code"></a>code</h4><p>code更多翻找上两回的笔记.</p>
-<p>string slicing.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;columnName&#x27;</span>].str[<span class="number">2</span>:]</span><br></pre></td></tr></table></figure></p>
-<p>string replacing.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;columnName&#x27;</span>].str.replace(<span class="string">&#x27;oldValue&#x27;</span>,<span class="string">&#x27;newValue&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
-<p>column的名字是应当记载的值.用melt.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">treatments_clean = pd.melt(treatments_clean, id_vars=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>, <span class="string">&#x27;hba1c_start&#x27;</span>, <span class="string">&#x27;hba1c_end&#x27;</span>, <span class="string">&#x27;hba1c_change&#x27;</span>],</span><br><span class="line">                           var_name=<span class="string">&#x27;treatment&#x27;</span>, value_name=<span class="string">&#x27;dose&#x27;</span>)</span><br><span class="line">treatments_clean = treatments_clean[treatments_clean.dose != <span class="string">&quot;-&quot;</span>]</span><br><span class="line">treatments_clean[<span class="string">&#x27;dose_start&#x27;</span>], treatments_clean[<span class="string">&#x27;dose_end&#x27;</span>] = treatments_clean[<span class="string">&#x27;dose&#x27;</span>].str.split(<span class="string">&#x27; - &#x27;</span>, <span class="number">1</span>).str</span><br><span class="line">treatments_clean = treatments_clean.drop(<span class="string">&#x27;dose&#x27;</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">treatments_clean = pd.merge(treatments_clean, adverse_reactions_clean,</span><br><span class="line">                            on=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>], how=<span class="string">&#x27;left&#x27;</span>)</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50607740/reverse-a-get-dummies-encoding-in-pandas">stackoverflow</a>里的例子.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;ID&#x27;</span>:&#123;<span class="number">0</span>:<span class="string">&#x27;0&#x27;</span>,<span class="number">1</span>:<span class="string">&#x27;1&#x27;</span>,<span class="number">2</span>:<span class="string">&#x27;2&#x27;</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;A&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">0</span>, <span class="number">1</span>: <span class="number">1</span>, <span class="number">2</span>: <span class="number">0</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;B&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>: <span class="number">0</span>, <span class="number">2</span>: <span class="number">0</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;C&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">0</span>, <span class="number">1</span>: <span class="number">0</span>, <span class="number">2</span>: <span class="number">1</span>&#125;&#125;)</span><br><span class="line">df = (df.melt(<span class="string">&#x27;ID&#x27;</span>, var_name=<span class="string">&#x27;Col2&#x27;</span>)</span><br><span class="line">        .query(<span class="string">&#x27;value== 1&#x27;</span>)</span><br><span class="line">        .sort_values([<span class="string">&#x27;ID&#x27;</span>, <span class="string">&#x27;Col2&#x27;</span>])</span><br><span class="line">        .drop(<span class="string">&#x27;value&#x27;</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26886653/pandas-create-new-column-based-on-values-from-other-columns-apply-a-function-o">stackoverflow</a>用lambda自定义functino的方法.</p>
+<p>string slicing.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;columnName&#x27;</span>].<span class="built_in">str</span>[<span class="number">2</span>:]</span><br></pre></td></tr></table></figure>
+
+<p>string replacing.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[<span class="string">&#x27;columnName&#x27;</span>].<span class="built_in">str</span>.replace(<span class="string">&#x27;oldValue&#x27;</span>,<span class="string">&#x27;newValue&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>column的名字是应当记载的值.用melt.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">treatments_clean = pd.melt(treatments_clean, id_vars=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>, <span class="string">&#x27;hba1c_start&#x27;</span>, <span class="string">&#x27;hba1c_end&#x27;</span>, <span class="string">&#x27;hba1c_change&#x27;</span>],</span><br><span class="line">                           var_name=<span class="string">&#x27;treatment&#x27;</span>, value_name=<span class="string">&#x27;dose&#x27;</span>)</span><br><span class="line">treatments_clean = treatments_clean[treatments_clean.dose != <span class="string">&quot;-&quot;</span>]</span><br><span class="line">treatments_clean[<span class="string">&#x27;dose_start&#x27;</span>], treatments_clean[<span class="string">&#x27;dose_end&#x27;</span>] = treatments_clean[<span class="string">&#x27;dose&#x27;</span>].<span class="built_in">str</span>.split(<span class="string">&#x27; - &#x27;</span>, <span class="number">1</span>).<span class="built_in">str</span></span><br><span class="line">treatments_clean = treatments_clean.drop(<span class="string">&#x27;dose&#x27;</span>, axis=<span class="number">1</span>)</span><br><span class="line"></span><br><span class="line">treatments_clean = pd.merge(treatments_clean, adverse_reactions_clean,</span><br><span class="line">                            on=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>], how=<span class="string">&#x27;left&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/50607740/reverse-a-get-dummies-encoding-in-pandas">stackoverflow</a>里的例子.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">df = pd.DataFrame(&#123;<span class="string">&#x27;ID&#x27;</span>:&#123;<span class="number">0</span>:<span class="string">&#x27;0&#x27;</span>,<span class="number">1</span>:<span class="string">&#x27;1&#x27;</span>,<span class="number">2</span>:<span class="string">&#x27;2&#x27;</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;A&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">0</span>, <span class="number">1</span>: <span class="number">1</span>, <span class="number">2</span>: <span class="number">0</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;B&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">1</span>, <span class="number">1</span>: <span class="number">0</span>, <span class="number">2</span>: <span class="number">0</span>&#125;,</span><br><span class="line">                   <span class="string">&#x27;C&#x27;</span>: &#123;<span class="number">0</span>: <span class="number">0</span>, <span class="number">1</span>: <span class="number">0</span>, <span class="number">2</span>: <span class="number">1</span>&#125;&#125;)</span><br><span class="line">df = (df.melt(<span class="string">&#x27;ID&#x27;</span>, var_name=<span class="string">&#x27;Col2&#x27;</span>)</span><br><span class="line">        .query(<span class="string">&#x27;value== 1&#x27;</span>)</span><br><span class="line">        .sort_values([<span class="string">&#x27;ID&#x27;</span>, <span class="string">&#x27;Col2&#x27;</span>])</span><br><span class="line">        .drop(<span class="string">&#x27;value&#x27;</span>,<span class="number">1</span>))</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26886653/pandas-create-new-column-based-on-values-from-other-columns-apply-a-function-o">stackoverflow</a>用lambda自定义functino的方法.</p>
 <p>反过来可以用get_dummies.</p>
-<p>将email和电话号码分成两个column.用extract.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">patients_clean[<span class="string">&#x27;phone_number&#x27;</span>] = patients_clean.contact.str.extract(<span class="string">&#x27;((?:\+\d&#123;1,2&#125;\s)?\(?\d&#123;3&#125;\)?[\s.-]?\d&#123;3&#125;[\s.-]?\d&#123;4&#125;)&#x27;</span>, expand=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [a-zA-Z] to signify emails in this dataset all start and end with letters</span></span><br><span class="line">patients_clean[<span class="string">&#x27;email&#x27;</span>] = patients_clean.contact.str.extract(<span class="string">&#x27;([a-zA-Z][a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+[a-zA-Z])&#x27;</span>, expand=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note: axis=1 denotes that we are referring to a column, not a row</span></span><br><span class="line">patients_clean = patients_clean.drop(<span class="string">&#x27;contact&#x27;</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure></p>
-<p>大小写转换.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columnName = df.columnName.str.lower()</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
-<p>用rename更改column名字.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df_clean.rename(columns=&#123;<span class="string">&#x27;oldName1&#x27;</span>: <span class="string">&#x27;newName1&#x27;</span>,</span><br><span class="line">                                    <span class="string">&#x27;oldName2&#x27;</span>: <span class="string">&#x27;newName2&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure></p>
-<p>使用value_counts快速了解column内的数值分布.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columnName.value_counts()</span><br></pre></td></tr></table></figure></p>
-<p>更改column内的数值:<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">list = [<span class="string">&#x27;valueWannaReplace&#x27;</span>,<span class="string">&#x27;valueWannaReplace&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    df_clean.StartDate.replace( value ,<span class="string">&#x27;newValue&#x27;</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure><br>附<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/21608228/conditional-replace-pandas">stackoverflow</a>里的例子.</p>
-<p>选中多列并更改的情况.<br>(isin是用value判定的)<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df[<span class="string">&#x27;A&#x27;</span>].isin([<span class="number">3</span>, <span class="number">6</span>])] <span class="comment"># 选中A column里有3和6的row</span></span><br></pre></td></tr></table></figure><br>使用index.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_1[df_1.index.isin([<span class="number">231</span>,<span class="number">837</span>,<span class="number">885</span>,<span class="number">1480</span>])] <span class="comment"># 把df[&#x27;columnName&#x27;]改成index</span></span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12096252/use-a-list-of-values-to-select-rows-from-a-pandas-dataframe">stackoverflow</a>.</p>
-<p>用assert来test条件.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    <span class="keyword">assert</span> value <span class="keyword">not</span> <span class="keyword">in</span> df_clean.StartDate.values</span><br></pre></td></tr></table></figure></p>
-<p>merge.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">treatments_clean = pd.merge(treatments_clean, adverse_reactions_clean,</span><br><span class="line">                            on=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>], how=<span class="string">&#x27;left&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
+<p>将email和电话号码分成两个column.用extract.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">patients_clean[<span class="string">&#x27;phone_number&#x27;</span>] = patients_clean.contact.<span class="built_in">str</span>.extract(<span class="string">&#x27;((?:\+\d&#123;1,2&#125;\s)?\(?\d&#123;3&#125;\)?[\s.-]?\d&#123;3&#125;[\s.-]?\d&#123;4&#125;)&#x27;</span>, expand=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># [a-zA-Z] to signify emails in this dataset all start and end with letters</span></span><br><span class="line">patients_clean[<span class="string">&#x27;email&#x27;</span>] = patients_clean.contact.<span class="built_in">str</span>.extract(<span class="string">&#x27;([a-zA-Z][a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+[a-zA-Z])&#x27;</span>, expand=<span class="literal">True</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Note: axis=1 denotes that we are referring to a column, not a row</span></span><br><span class="line">patients_clean = patients_clean.drop(<span class="string">&#x27;contact&#x27;</span>, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
+
+<p>大小写转换.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columnName = df.columnName.<span class="built_in">str</span>.lower()</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<p>用rename更改column名字.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">df_clean = df_clean.rename(columns=&#123;<span class="string">&#x27;oldName1&#x27;</span>: <span class="string">&#x27;newName1&#x27;</span>,</span><br><span class="line">                                    <span class="string">&#x27;oldName2&#x27;</span>: <span class="string">&#x27;newName2&#x27;</span>&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>使用value_counts快速了解column内的数值分布.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df.columnName.value_counts()</span><br></pre></td></tr></table></figure>
+
+<p>更改column内的数值:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">list</span> = [<span class="string">&#x27;valueWannaReplace&#x27;</span>,<span class="string">&#x27;valueWannaReplace&#x27;</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    df_clean.StartDate.replace( value ,<span class="string">&#x27;newValue&#x27;</span>, inplace=<span class="literal">True</span>)</span><br></pre></td></tr></table></figure>
+<p>附<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/21608228/conditional-replace-pandas">stackoverflow</a>里的例子.</p>
+<p>选中多列并更改的情况.<br>(isin是用value判定的)</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df[df[<span class="string">&#x27;A&#x27;</span>].isin([<span class="number">3</span>, <span class="number">6</span>])] <span class="comment"># 选中A column里有3和6的row</span></span><br></pre></td></tr></table></figure>
+<p>使用index.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_1[df_1.index.isin([<span class="number">231</span>,<span class="number">837</span>,<span class="number">885</span>,<span class="number">1480</span>])] <span class="comment"># 把df[&#x27;columnName&#x27;]改成index</span></span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/12096252/use-a-list-of-values-to-select-rows-from-a-pandas-dataframe">stackoverflow</a>.</p>
+<p>用assert来test条件.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> value <span class="keyword">in</span> asap_list:</span><br><span class="line">    <span class="keyword">assert</span> value <span class="keyword">not</span> <span class="keyword">in</span> df_clean.StartDate.values</span><br></pre></td></tr></table></figure>
+
+<p>merge.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">treatments_clean = pd.merge(treatments_clean, adverse_reactions_clean,</span><br><span class="line">                            on=[<span class="string">&#x27;given_name&#x27;</span>, <span class="string">&#x27;surname&#x27;</span>], how=<span class="string">&#x27;left&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Mapping from full state name to abbreviation</span></span><br><span class="line">state_abbrev = &#123;<span class="string">&#x27;California&#x27;</span>: <span class="string">&#x27;CA&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;New York&#x27;</span>: <span class="string">&#x27;NY&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Illinois&#x27;</span>: <span class="string">&#x27;IL&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Florida&#x27;</span>: <span class="string">&#x27;FL&#x27;</span>,</span><br><span class="line">                <span class="string">&#x27;Nebraska&#x27;</span>: <span class="string">&#x27;NE&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment"># Function to apply</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">abbreviate_state</span>(<span class="params">patient</span>):</span></span><br><span class="line">    <span class="keyword">if</span> patient[<span class="string">&#x27;state&#x27;</span>] <span class="keyword">in</span> state_abbrev.keys():</span><br><span class="line">        abbrev = state_abbrev[patient[<span class="string">&#x27;state&#x27;</span>]]</span><br><span class="line">        <span class="keyword">return</span> abbrev</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">        <span class="keyword">return</span> patient[<span class="string">&#x27;state&#x27;</span>]</span><br><span class="line"></span><br><span class="line">patients_clean[<span class="string">&#x27;state&#x27;</span>] = patients_clean.apply(abbreviate_state, axis=<span class="number">1</span>)</span><br></pre></td></tr></table></figure>
-<p>数据类型转变.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To category</span></span><br><span class="line">patients_clean.assigned_sex = patients_clean.assigned_sex.astype(<span class="string">&#x27;category&#x27;</span>)</span><br><span class="line">patients_clean.state = patients_clean.state.astype(<span class="string">&#x27;category&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># To datetime</span></span><br><span class="line">patients_clean.birthdate = pd.to_datetime(patients_clean.birthdate)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Strip u and to integer</span></span><br><span class="line">treatments_clean.dose_start = treatments_clean.dose_start.str.strip(<span class="string">&#x27;u&#x27;</span>).astype(int)</span><br><span class="line">treatments_clean.dose_end = treatments_clean.dose_end.str.strip(<span class="string">&#x27;u&#x27;</span>).astype(int)</span><br></pre></td></tr></table></figure></p>
-<p>使用pad填充string.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Strip all &quot; &quot;, &quot;-&quot;, &quot;(&quot;, &quot;)&quot;, and &quot;+&quot; and store each number without any formatting. Pad the phone number with a 1 if the length of the number is 10 digits (we want country code).</span></span><br><span class="line">patients_clean.phone_number = patients_clean.phone_number.str.replace(<span class="string">r&#x27;\D+&#x27;</span>, <span class="string">&#x27;&#x27;</span>).str.pad(<span class="number">11</span>, fillchar=<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure></p>
-<p>remove some data.用不等于就行.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patients_clean = patients_clean[patients_clean.surname != <span class="string">&#x27;Doe&#x27;</span>]</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
-<h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p>check重复.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Patient ID should be the only duplicate column</span></span><br><span class="line">all_columns = pd.Series(list(patients_clean) + list(treatments_clean)) <span class="comment"># patients_clean是df.</span></span><br><span class="line">all_columns[all_columns.duplicated()]</span><br></pre></td></tr></table></figure><br><a target="_blank" rel="noopener" href="https://thispointer.com/pandas-find-duplicate-rows-in-a-dataframe-based-on-all-or-selected-columns-using-dataframe-duplicated-in-python/">Link</a>.</p>
-<p>check所有有null的row.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">patients[patients[<span class="string">&#x27;address&#x27;</span>].isnull()]</span><br><span class="line">all_columns[all_columns.duplicated()]</span><br></pre></td></tr></table></figure></p>
+
+<p>数据类型转变.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># To category</span></span><br><span class="line">patients_clean.assigned_sex = patients_clean.assigned_sex.astype(<span class="string">&#x27;category&#x27;</span>)</span><br><span class="line">patients_clean.state = patients_clean.state.astype(<span class="string">&#x27;category&#x27;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># To datetime</span></span><br><span class="line">patients_clean.birthdate = pd.to_datetime(patients_clean.birthdate)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Strip u and to integer</span></span><br><span class="line">treatments_clean.dose_start = treatments_clean.dose_start.<span class="built_in">str</span>.strip(<span class="string">&#x27;u&#x27;</span>).astype(<span class="built_in">int</span>)</span><br><span class="line">treatments_clean.dose_end = treatments_clean.dose_end.<span class="built_in">str</span>.strip(<span class="string">&#x27;u&#x27;</span>).astype(<span class="built_in">int</span>)</span><br></pre></td></tr></table></figure>
+
+<p>使用pad填充string.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Strip all &quot; &quot;, &quot;-&quot;, &quot;(&quot;, &quot;)&quot;, and &quot;+&quot; and store each number without any formatting. Pad the phone number with a 1 if the length of the number is 10 digits (we want country code).</span></span><br><span class="line">patients_clean.phone_number = patients_clean.phone_number.<span class="built_in">str</span>.replace(<span class="string">r&#x27;\D+&#x27;</span>, <span class="string">&#x27;&#x27;</span>).<span class="built_in">str</span>.pad(<span class="number">11</span>, fillchar=<span class="string">&#x27;1&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>remove some data.用不等于就行.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">patients_clean = patients_clean[patients_clean.surname != <span class="string">&#x27;Doe&#x27;</span>]</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h4 id="test"><a href="#test" class="headerlink" title="test"></a>test</h4><p>check重复.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Patient ID should be the only duplicate column</span></span><br><span class="line">all_columns = pd.Series(<span class="built_in">list</span>(patients_clean) + <span class="built_in">list</span>(treatments_clean)) <span class="comment"># patients_clean是df.</span></span><br><span class="line">all_columns[all_columns.duplicated()]</span><br></pre></td></tr></table></figure>
+<p><a target="_blank" rel="noopener" href="https://thispointer.com/pandas-find-duplicate-rows-in-a-dataframe-based-on-all-or-selected-columns-using-dataframe-duplicated-in-python/">Link</a>.</p>
+<p>check所有有null的row.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">patients[patients[<span class="string">&#x27;address&#x27;</span>].isnull()]</span><br><span class="line">all_columns[all_columns.duplicated()]</span><br></pre></td></tr></table></figure>
+
 <h4 id="analysis-and-visualization"><a href="#analysis-and-visualization" class="headerlink" title="analysis and visualization"></a>analysis and visualization</h4><p>以前的笔记记载的更多.</p>
-<p>比如说用value_counts()来画pie chart.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_clean.StartDate.value_counts().plot(kind=<span class="string">&quot;pie&quot;</span>)</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
+<p>比如说用value_counts()来画pie chart.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">df_clean.StartDate.value_counts().plot(kind=<span class="string">&quot;pie&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
 <blockquote>
 <p>附录:read and write files with python</p>
 </blockquote>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里的f是一个python file,r是read only</span></span><br><span class="line">f = open(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="comment"># 这里的file_data是一个string</span></span><br><span class="line">file_data = f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># w是write.如果my_file.txt不存在,会创造一个新的</span></span><br><span class="line">f = open(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">f.write(<span class="string">&quot;Hello there!&quot;</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
-<p>with可以自带关闭file.<br><figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> open(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    file_data = f.read()</span><br></pre></td></tr></table></figure></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 这里的f是一个python file,r是read only</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>)</span><br><span class="line"><span class="comment"># 这里的file_data是一个string</span></span><br><span class="line">file_data = f.read()</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># w是write.如果my_file.txt不存在,会创造一个新的</span></span><br><span class="line">f = <span class="built_in">open</span>(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line">f.write(<span class="string">&quot;Hello there!&quot;</span>)</span><br><span class="line">f.close()</span><br></pre></td></tr></table></figure>
+
+<p>with可以自带关闭file.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(<span class="string">&#x27;my_path/my_file.txt&#x27;</span>, <span class="string">&#x27;r&#x27;</span>) <span class="keyword">as</span> f:</span><br><span class="line">    file_data = f.read()</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">f.readline() <span class="comment"># reads a single line from the file;</span></span><br></pre></td></tr></table></figure>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_cast_list</span>(<span class="params">filename</span>):</span></span><br><span class="line">    cast_list = []</span><br><span class="line">    <span class="keyword">with</span> open(filename) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            name = line.split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">            cast_list.append(name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cast_list</span><br><span class="line"></span><br><span class="line">cast_list = create_cast_list(<span class="string">&#x27;flying_circus_cast.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> actor <span class="keyword">in</span> cast_list:</span><br><span class="line">    print(actor)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_cast_list</span>(<span class="params">filename</span>):</span></span><br><span class="line">    cast_list = []</span><br><span class="line">    <span class="keyword">with</span> <span class="built_in">open</span>(filename) <span class="keyword">as</span> f:</span><br><span class="line">        <span class="keyword">for</span> line <span class="keyword">in</span> f:</span><br><span class="line">            name = line.split(<span class="string">&quot;,&quot;</span>)[<span class="number">0</span>]</span><br><span class="line">            cast_list.append(name)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> cast_list</span><br><span class="line"></span><br><span class="line">cast_list = create_cast_list(<span class="string">&#x27;flying_circus_cast.txt&#x27;</span>)</span><br><span class="line"><span class="keyword">for</span> actor <span class="keyword">in</span> cast_list:</span><br><span class="line">    <span class="built_in">print</span>(actor)</span><br></pre></td></tr></table></figure>
 
     </div>
 
     
     
     
-      
-  <div class="popular-posts-header">相关博文</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2020/11/28/P140/" rel="bookmark">关于data的笔记 - Week1</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/05/04/P193/" rel="bookmark">关于data的笔记 - Week4</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
-    </li>
-  </ul>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -475,7 +568,6 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
 
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -485,13 +577,9 @@
         </li>
       </ul>
 
-
-
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#gather"><span class="nav-number">1.</span> <span class="nav-text">gather</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#web-scraping"><span class="nav-number">1.1.</span> <span class="nav-text">web scraping</span></a><ol class="nav-child"><li class="nav-item nav-level-5"><a class="nav-link" href="#request"><span class="nav-number">1.1.1.</span> <span class="nav-text">request</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#glob"><span class="nav-number">1.1.2.</span> <span class="nav-text">glob</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#beautiful-soap"><span class="nav-number">1.1.3.</span> <span class="nav-text">beautiful soap</span></a></li><li class="nav-item nav-level-5"><a class="nav-link" href="#api"><span class="nav-number">1.1.4.</span> <span class="nav-text">api</span></a></li></ol></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#assess"><span class="nav-number">2.</span> <span class="nav-text">assess</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#clean"><span class="nav-number">3.</span> <span class="nav-text">clean</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#define"><span class="nav-number">3.1.</span> <span class="nav-text">define</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#code"><span class="nav-number">3.2.</span> <span class="nav-text">code</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#test"><span class="nav-number">3.3.</span> <span class="nav-text">test</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#analysis-and-visualization"><span class="nav-number">3.4.</span> <span class="nav-text">analysis and visualization</span></a></li></ol></li></ol></div>
-
-
       </div>
       <!--/noindex-->
 
@@ -507,7 +595,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -520,7 +608,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -544,7 +632,7 @@
 
       </div>
 
-      <br>
+<br>
       <!--new music test-->
 
   <!--网易云插件-->
@@ -556,86 +644,7 @@
 
 
       </div>
-      <script>
-//暂时储存文章中的内容
-var div = $('.post-body');
-//暂时储存目录的内容
-var toc=$('.post-toc-wrap')
-function password() {
-  if(''){
-  //将文章内容删除
-    div.remove();
- //将目录删除
-    toc.remove();
-  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
-  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
-  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
-   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
-      Please enter your password and press enter to build</textarea>' +
-      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
-      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
-      'margin: 0 auto;outline: none;width:95%"/>' +
-      '</div>')
-      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
-    document.onclick = function (event) {
-      var e = event || window.event;
-      var elem = e.srcElement || e.target;
-
-      while (elem) {
-        if (elem != document) {
-          if (elem.className == "password") {
-            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
-            return;
-          }
-          elem = elem.parentNode;
-        } else {
-          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
-          return;
-        }
-      }
-    }
-    //绑定enter键按下后离开的事件
-    $(document).keyup(function(event){
-      if(event.keyCode ==13&&$('.password').length>0){
-        //console.log($('.password').val())
-        //console.log('')
-        if ($('.password').val() == '') {
-        //恢复文章内容
-          (div).appendTo($(".post-header"))
-          //恢复目录
-          toc.appendTo($(".sidebar-inner"))
-          //删除本页面的输入密码组件
-           $(".description").remove();
-          $(".qiang").remove();
-          $(".password").remove();
-
-          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
-          //图片懒加载，没有加入此功能的这个函数需要去掉
-	          $('img').lazyload({
-	             placeholder: '/images/loading.gif',
-	             effect: 'fadeIn',
-	             threshold : 100,
-	             failure_limit : 20,
-	             skip_invisible : false
-	           });
-	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
-	            $(".post-block").css({opacity:1});
-	            $(".post-header").css({opacity:1});
-	            $(".post-body").css({opacity:1});
-	            $(".pagination").css({opacity:1});
-        }else {
-          alert("Sorry, the password is wrong.")
-        }
-      }
-      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
-    });
-  }
-}
-password();
-</script>
-
     </main>
-
 
     <footer class="footer">
       <div class="footer-inner">
@@ -659,7 +668,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">879k</span>
+    <span title="C">575k</span>
   -->
 
   <!--
@@ -667,17 +676,17 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:20</span>
+    <span title="T">8:43</span>
 
   -->
-  
+
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有195.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有575k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -768,12 +777,5 @@ password();
   });
 </script>
 
-  <script type="text/javascript" src="/js/my_js/firework.js"></script>
-
 </body>
 </html>
-
-
-<!-- calendar widget -->
-
-

@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="接着上一回的笔记.上次收录了些基础语法,这次是case study.">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="接着上一回的笔记.上次收录了些基础语法,这次是case study.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-02-03T01:15:02.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:14:36.156Z">
+<meta property="article:modified_time" content="2021-11-15T20:25:20.864Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="编码">
@@ -82,9 +82,6 @@
   </style>
 </noscript>
 
-  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
-
-<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -126,11 +123,6 @@
         <li class="menu-item menu-item-home">
 
     <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-readme">
-
-    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -206,7 +198,6 @@
   </div>
 
 
-
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -249,7 +240,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:14:36" itemprop="dateModified" datetime="2021-08-19T19:14:36-04:00">2021-08-19</time>
+                <time title="Modified: 2021-11-15 15:25:20" itemprop="dateModified" datetime="2021-11-15T15:25:20-05:00">2021-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,17 +267,17 @@
   </span>
   
   
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="C">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>12k</span>
+              <span>13k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>11 mins.</span>
+              <span>12 mins.</span>
             </span>
 
         </div>
@@ -298,18 +289,33 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p><script async
+        <script async
   src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
-</script><br>接着<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2021/01/13/P164/">上一回</a>的笔记.<br>上次收录了些基础语法,这次是case study.<br><a id="more"></a></p>
+</script>
+<p>接着<a target="_blank" rel="noopener" href="https://mazui3.github.io/blog/2021/01/13/P164/">上一回</a>的笔记.<br>上次收录了些基础语法,这次是case study.</p>
+<span id="more"></span>
+
 <p>R和python中的pandas有不少相似之处.<br><br><br><br><br><br></p>
 <h2 id="Tutorial-2-Pokemon-Analysis"><a href="#Tutorial-2-Pokemon-Analysis" class="headerlink" title="Tutorial 2: Pokémon Analysis"></a>Tutorial 2: Pokémon Analysis</h2><p>In this document we begin to take a look at the <code>pokemon.csv</code> dataset introduced in the first lecture. This exercise is intended to provide additional exposure to R and Markdown.</p>
 <p><strong>Load in the data and summarize it</strong></p>
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">setwd(<span class="string">&quot;/Users/nstevens/Dropbox/Teaching/STAT_341/Winter_2021/Tutorials/Tutorial 2/&quot;</span>)</span><br><span class="line">poke &lt;- read.csv(file = <span class="string">&quot;pokemon.csv&quot;</span>, header = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
-<p>Now that we’ve loaded the data, let’s look at a summary of it:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary(poke)</span><br></pre></td></tr></table></figure></p>
-<p>For purposes of the tutorial, let’s examine the <code>base_happiness</code>, <code>speed</code>, <code>height_m</code> and <code>weight_kg</code> variates more closely. Here are the values of these variates for the first 15 Pokémon:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head(x = poke[,c(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)], n = <span class="number">15</span>)</span><br></pre></td></tr></table></figure></p>
-<p>Let’s construct a <script type="math/tex">4 \times 4</script> matrix of plots that visually summarize these:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">poke_df_for_plot &lt;- poke[,c(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)]</span><br><span class="line">header &lt;- names(poke_df_for_plot)</span><br><span class="line">par(mfrow = c(<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == j)&#123;</span><br><span class="line">      hist(poke_df_for_plot[,i], main = <span class="string">&quot;&quot;</span>, xlab = header[i], col = <span class="string">&quot;dodgerblue3&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      plot(x = poke_df_for_plot[,i], y = poke_df_for_plot[,j],</span><br><span class="line">           xlab = header[i], ylab = header[j],</span><br><span class="line">           pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;dodgerblue4&quot;</span>, alpha.f = <span class="number">0.3</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Since <code>base_happiness</code> takes on just a handful of integer values, let’s <em>jitter</em> this variate to try and make the plots more informative.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">poke_df_for_plot$base_happiness &lt;- jitter(poke_df_for_plot$base_happiness, factor = <span class="number">3</span>)</span><br><span class="line">par(mfrow = c(<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == j)&#123;</span><br><span class="line">      hist(poke_df_for_plot[,i], main = <span class="string">&quot;&quot;</span>, xlab = header[i], col = <span class="string">&quot;dodgerblue3&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      plot(x = poke_df_for_plot[,i], y = poke_df_for_plot[,j],</span><br><span class="line">           xlab = header[i], ylab = header[j],</span><br><span class="line">           pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;dodgerblue4&quot;</span>, alpha.f = <span class="number">0.3</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Let’s also calculate the correlations between these variables:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cor(poke[,c(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)])</span><br></pre></td></tr></table></figure></p>
+
+<p>Now that we’ve loaded the data, let’s look at a summary of it:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">summary(poke)</span><br></pre></td></tr></table></figure>
+
+<p>For purposes of the tutorial, let’s examine the <code>base_happiness</code>, <code>speed</code>, <code>height_m</code> and <code>weight_kg</code> variates more closely. Here are the values of these variates for the first 15 Pokémon:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head(x = poke[,<span class="built_in">c</span>(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)], n = <span class="number">15</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Let’s construct a <code>$4 \times 4$</code> matrix of plots that visually summarize these:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">poke_df_for_plot &lt;- poke[,<span class="built_in">c</span>(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)]</span><br><span class="line">header &lt;- <span class="built_in">names</span>(poke_df_for_plot)</span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == j)&#123;</span><br><span class="line">      hist(poke_df_for_plot[,i], main = <span class="string">&quot;&quot;</span>, xlab = header[i], col = <span class="string">&quot;dodgerblue3&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      plot(x = poke_df_for_plot[,i], y = poke_df_for_plot[,j],</span><br><span class="line">           xlab = header[i], ylab = header[j],</span><br><span class="line">           pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;dodgerblue4&quot;</span>, alpha.f = <span class="number">0.3</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Since <code>base_happiness</code> takes on just a handful of integer values, let’s <em>jitter</em> this variate to try and make the plots more informative.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">poke_df_for_plot$base_happiness &lt;- jitter(poke_df_for_plot$base_happiness, factor = <span class="number">3</span>)</span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">4</span>,<span class="number">4</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="number">4</span>)&#123;</span><br><span class="line">    <span class="keyword">if</span>(i == j)&#123;</span><br><span class="line">      hist(poke_df_for_plot[,i], main = <span class="string">&quot;&quot;</span>, xlab = header[i], col = <span class="string">&quot;dodgerblue3&quot;</span>)</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      plot(x = poke_df_for_plot[,i], y = poke_df_for_plot[,j],</span><br><span class="line">           xlab = header[i], ylab = header[j],</span><br><span class="line">           pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;dodgerblue4&quot;</span>, alpha.f = <span class="number">0.3</span>))</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Let’s also calculate the correlations between these variables:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cor(poke[,<span class="built_in">c</span>(<span class="number">4</span>, <span class="number">8</span>, <span class="number">9</span>, <span class="number">10</span>)])</span><br></pre></td></tr></table></figure>
+
+
 <p><strong>Questions:</strong></p>
 <ol>
 <li>Do faster Pokémon tend to be happier?</li>
@@ -323,84 +329,120 @@
 <li>No</li>
 </ol>
 <p><strong>Who is the tallest Pokémon?</strong></p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this is the maximum height:</span></span><br><span class="line">max(poke$height_m)</span><br><span class="line"><span class="comment"># this is the row in the dataset in which the maximum height is found:</span></span><br><span class="line">which(poke$height_m == max(poke$height_m))</span><br><span class="line"><span class="comment"># this is the corresponding Pokémon:</span></span><br><span class="line">poke$name[which(poke$height_m == max(poke$height_m))]</span><br></pre></td></tr></table></figure>
-<p>Note that in the code above, rather than the call<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">which(poke$height_m == max(poke$height_m))</span><br><span class="line"><span class="comment"># we could have equivalently used</span></span><br><span class="line">which.max(poke$height_m)</span><br></pre></td></tr></table></figure></p>
-<p><strong>Which are the 10 heaviest Pokémon?</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># these are the weights sorted from largest to smallest</span></span><br><span class="line">sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)</span><br><span class="line"><span class="comment"># these are the 10 largest recorded weights</span></span><br><span class="line">sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">1</span>:<span class="number">10</span>]</span><br><span class="line"><span class="comment"># these are the rows containing the 10 largest recorded weights</span></span><br><span class="line">which(poke$weight_kg &gt;= sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">10</span>])</span><br><span class="line"><span class="comment"># these are the corresponding Pokémon</span></span><br><span class="line">poke$name[which(poke$weight_kg &gt;= sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">10</span>])]</span><br></pre></td></tr></table></figure></p>
-<p><strong>Construct a histogram of <code>hp</code> with the mean identified</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hist(x = poke$hp, col = <span class="string">&quot;mistyrose&quot;</span>, main = <span class="string">&quot;Histogram of HP&quot;</span>, xlab = <span class="string">&quot;HP&quot;</span>)</span><br><span class="line">abline(v = mean(poke$hp), col = <span class="string">&quot;navyblue&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">text(x = <span class="number">70</span>, y = <span class="number">200</span>, labels = paste(<span class="string">&quot;Mean = &quot;</span>, round(mean(poke$hp), <span class="number">2</span>)),</span><br><span class="line">     col = <span class="string">&quot;navyblue&quot;</span>, pos = <span class="number">4</span>)</span><br></pre></td></tr></table></figure></p>
-<p><strong>Plot the influence (<script type="math/tex">\Delta</script>) of each Pokémon on the average <code>hp</code></strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">y &lt;- poke$hp</span><br><span class="line">delta &lt;- (y-mean(y))/(length(y)-<span class="number">1</span>)</span><br><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">plot(delta,</span><br><span class="line">     main = <span class="string">&quot;Influence for Average HP&quot;</span>, ylab = bquote(Delta),</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(<span class="string">&quot;mediumvioletred&quot;</span>, <span class="number">0.3</span>))</span><br><span class="line">plot(y, delta,</span><br><span class="line">     main = <span class="string">&quot;Influence vs. HP&quot;</span>, ylab = bquote(Delta), xlab = <span class="string">&quot;HP&quot;</span>,</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(<span class="string">&quot;mediumvioletred&quot;</span>, <span class="number">0.3</span>))</span><br></pre></td></tr></table></figure></p>
-<p><strong>Which two Pokémon have the largest influence?</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poke$name[which(delta &gt; <span class="number">0.2</span>)]</span><br></pre></td></tr></table></figure></p>
-<p><strong>Which two Pokémon have the highest HP?</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poke$name[order(poke$hp, decreasing = <span class="literal">TRUE</span>)][<span class="number">1</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure></p>
-<p><strong>What are the unique types of Pokémon?</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unique(poke$type1)</span><br></pre></td></tr></table></figure></p>
-<p><strong>How many Pokémon of each <code>type1</code> are their?</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table(poke$type1)</span><br></pre></td></tr></table></figure></p>
-<p><strong>Calculate the average happiness for each <code>type1</code> of Pokémon</strong><br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aggregate(x = poke$base_happiness,</span><br><span class="line">          by = list(Type = poke$type1),</span><br><span class="line">          FUN = mean)</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br><br><br></p>
-<h2 id="Tutorial-3-Pokemon-Analysis-continue"><a href="#Tutorial-3-Pokemon-Analysis-continue" class="headerlink" title="Tutorial 3: Pokémon Analysis - continue"></a>Tutorial 3: Pokémon Analysis - continue</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">library</span>(knitr)</span><br><span class="line">opts_chunk$set(tidy.opts=list(width.cutoff=<span class="number">70</span>),tidy=<span class="literal">TRUE</span>)</span><br><span class="line">poke &lt;- read.csv(<span class="string">&quot;/Users/nstevens/Dropbox/Teaching/STAT_341/Winter_2021/Tutorials/Tutorial 3/pokemon.csv&quot;</span>, header = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
-<p><br><br><br></p>
-<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>Create a <script type="math/tex">1 \times 3</script> plot which includes:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># this is the maximum height:</span></span><br><span class="line"><span class="built_in">max</span>(poke$height_m)</span><br><span class="line"><span class="comment"># this is the row in the dataset in which the maximum height is found:</span></span><br><span class="line">which(poke$height_m == <span class="built_in">max</span>(poke$height_m))</span><br><span class="line"><span class="comment"># this is the corresponding Pokémon:</span></span><br><span class="line">poke$name[which(poke$height_m == <span class="built_in">max</span>(poke$height_m))]</span><br></pre></td></tr></table></figure>
+
+<p>Note that in the code above, rather than the call</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">which(poke$height_m == <span class="built_in">max</span>(poke$height_m))</span><br><span class="line"><span class="comment"># we could have equivalently used</span></span><br><span class="line">which.max(poke$height_m)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Which are the 10 heaviest Pokémon?</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># these are the weights sorted from largest to smallest</span></span><br><span class="line">sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)</span><br><span class="line"><span class="comment"># these are the 10 largest recorded weights</span></span><br><span class="line">sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">1</span>:<span class="number">10</span>]</span><br><span class="line"><span class="comment"># these are the rows containing the 10 largest recorded weights</span></span><br><span class="line">which(poke$weight_kg &gt;= sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">10</span>])</span><br><span class="line"><span class="comment"># these are the corresponding Pokémon</span></span><br><span class="line">poke$name[which(poke$weight_kg &gt;= sort(x = poke$weight_kg, decreasing = <span class="literal">TRUE</span>)[<span class="number">10</span>])]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Construct a histogram of <code>hp</code> with the mean identified</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hist(x = poke$hp, col = <span class="string">&quot;mistyrose&quot;</span>, main = <span class="string">&quot;Histogram of HP&quot;</span>, xlab = <span class="string">&quot;HP&quot;</span>)</span><br><span class="line">abline(v = mean(poke$hp), col = <span class="string">&quot;navyblue&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line">text(x = <span class="number">70</span>, y = <span class="number">200</span>, labels = paste(<span class="string">&quot;Mean = &quot;</span>, <span class="built_in">round</span>(mean(poke$hp), <span class="number">2</span>)),</span><br><span class="line">     col = <span class="string">&quot;navyblue&quot;</span>, pos = <span class="number">4</span>)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Plot the influence (<code>$\Delta$</code>) of each Pokémon on the average <code>hp</code></strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">y &lt;- poke$hp</span><br><span class="line">delta &lt;- (y-mean(y))/(<span class="built_in">length</span>(y)-<span class="number">1</span>)</span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">2</span>))</span><br><span class="line">plot(delta,</span><br><span class="line">     main = <span class="string">&quot;Influence for Average HP&quot;</span>, ylab = bquote(Delta),</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(<span class="string">&quot;mediumvioletred&quot;</span>, <span class="number">0.3</span>))</span><br><span class="line">plot(y, delta,</span><br><span class="line">     main = <span class="string">&quot;Influence vs. HP&quot;</span>, ylab = bquote(Delta), xlab = <span class="string">&quot;HP&quot;</span>,</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(<span class="string">&quot;mediumvioletred&quot;</span>, <span class="number">0.3</span>))</span><br></pre></td></tr></table></figure>
+
+<p><strong>Which two Pokémon have the largest influence?</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poke$name[which(delta &gt; <span class="number">0.2</span>)]</span><br></pre></td></tr></table></figure>
+
+<p><strong>Which two Pokémon have the highest HP?</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">poke$name[order(poke$hp, decreasing = <span class="literal">TRUE</span>)][<span class="number">1</span>:<span class="number">2</span>]</span><br></pre></td></tr></table></figure>
+
+<p><strong>What are the unique types of Pokémon?</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">unique(poke$type1)</span><br></pre></td></tr></table></figure>
+
+<p><strong>How many Pokémon of each <code>type1</code> are their?</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">table(poke$type1)</span><br></pre></td></tr></table></figure>
+
+<p><strong>Calculate the average happiness for each <code>type1</code> of Pokémon</strong></p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">aggregate(x = poke$base_happiness,</span><br><span class="line">          by = <span class="built_in">list</span>(Type = poke$type1),</span><br><span class="line">          FUN = mean)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="Tutorial-3-Pokemon-Analysis-continue"><a href="#Tutorial-3-Pokemon-Analysis-continue" class="headerlink" title="Tutorial 3: Pokémon Analysis - continue"></a>Tutorial 3: Pokémon Analysis - continue</h2><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">library(knitr)</span><br><span class="line">opts_chunk$set(tidy.opts=<span class="built_in">list</span>(width.cutoff=<span class="number">70</span>),tidy=<span class="literal">TRUE</span>)</span><br><span class="line">poke &lt;- read.csv(<span class="string">&quot;/Users/nstevens/Dropbox/Teaching/STAT_341/Winter_2021/Tutorials/Tutorial 3/pokemon.csv&quot;</span>, header = <span class="literal">TRUE</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="1"><a href="#1" class="headerlink" title="1"></a>1</h3><p>Create a <code>$1 \times 3$</code> plot which includes:</p>
 <ul>
 <li>A histogram of <code>speed</code></li>
 <li>A histogram of <code>weight_kg</code></li>
 <li>A scatterplot of <code>speed</code> vs. <code>weight_kg</code></li>
 </ul>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">3</span>))</span><br><span class="line">hist(x = poke$speed, main = <span class="string">&quot;Histogram of Speed&quot;</span>, xlab = <span class="string">&quot;Speed&quot;</span>,</span><br><span class="line">     col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">hist(x = poke$weight_kg, main = <span class="string">&quot;Histogram of Weight&quot;</span>, xlab = <span class="string">&quot;Weight (kg)&quot;</span>,</span><br><span class="line">     col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">plot(x = poke$weight_kg, y = poke$speed,</span><br><span class="line">     main = <span class="string">&quot;Scatterplot of Speed vs. Weight&quot;</span>, xlab = <span class="string">&quot;Weight (kg)&quot;</span>, ylab = <span class="string">&quot;Speed&quot;</span>,</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
-<p><br><br><br></p>
-<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>Find a range of <script type="math/tex">\alpha</script> values that would help to “symmetrize” the <code>speed</code> distribution. Plot the histogram of <script type="math/tex">T_{\alpha}(\texttt{speed})</script> using the value of <script type="math/tex">\alpha</script> that seems most appropriate.</p>
-<p>(也就是第一个作业里的Power Transformations)<br>第一张图是right-skewed, bump is towards the lower value, consider alpha value less than 1.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">powerfun &lt;- <span class="keyword">function</span>(x, alpha) &#123;</span><br><span class="line">  <span class="keyword">if</span>(sum(x &lt;= <span class="number">0</span>) &gt; <span class="number">0</span>) <span class="keyword">stop</span>(<span class="string">&quot;x must be positive&quot;</span>)</span><br><span class="line">  <span class="keyword">if</span> (alpha == <span class="number">0</span>)</span><br><span class="line">    log(x)</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (alpha &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    x^alpha</span><br><span class="line">  &#125; <span class="keyword">else</span> -x^alpha</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">9</span>), mar = c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, by = -<span class="number">0.25</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:length(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$speed, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Based on the figure above, <script type="math/tex">\alpha = 0.5</script> seems to do the best job. Here is a plot of the square-root-transformed <code>speed</code> data:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">hist(x = powerfun(x = poke$speed, alpha = <span class="number">0.5</span>),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Square-Root-Transformed Speed Data&quot;</span>,</span><br><span class="line">     xlab = expression(sqrt(Speed)), col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
-<p><br><br><br></p>
-<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>Find a range of <script type="math/tex">\alpha</script> values that would help to “symmetrize” the <code>weight</code> distribution. Plot the histogram of <script type="math/tex">T_{\alpha}(\texttt{weight})</script> using the value of <script type="math/tex">\alpha</script> that seems most appropriate.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">9</span>), mar = c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, by = -<span class="number">0.25</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:length(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$weight_kg, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Based on the figure above, <script type="math/tex">\alpha \in [0,0.25]</script> looks good. Let’s refine our search:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">6</span>), mar = c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">0.25</span>, to = <span class="number">0</span>, by = -<span class="number">0.05</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:length(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$weight_kg, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>Based on the plots above, choosing <script type="math/tex">\alpha = 0.1</script> seems like it should work well. Here is a plot of this power-transformed <code>weight</code> data:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">hist(x = powerfun(x = poke$weight_kg, alpha = <span class="number">0.1</span>),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Power-Transformed Weight Data&quot;</span>,</span><br><span class="line">     xlab = bquote(Weight^<span class="number">0.1</span>), col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br></p>
-<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>Cast the ‘optimal power transformation’ problem in the univariate setting as an implicitly defined attribute problem and determine the optimal <script type="math/tex">\alpha</script> values for both the <code>speed</code> and <code>weight</code> data. Construct histograms of these optimally-power-transformed variates.</p>
-<p>Let <script type="math/tex">\alpha</script> be the attribute of interest, and let <script type="math/tex">t_u = T_{\alpha}(y_u)</script> be the power-transformed observation for unit <script type="math/tex">u</script>. Let us also define the objective function to be minimized as the absolute value of Pearson’s moment coefficient of skewness for the transformed data: <script type="math/tex">\rho(\alpha;\mathcal{P}) = \left|\frac{\frac{1}{N}\sum_{u \in \mathcal{P}}\left(t_u-\bar{t}\right)^3}{[SD(t)]^3}\right|</script></p>
-<p>Thus the problem of finding the optimal <script type="math/tex">\alpha</script> reduces to the following optimization problem: <script type="math/tex">\widehat{\alpha} = \operatorname*{arg min}_{\alpha \in \mathbb{R}}\rho(\alpha;\mathcal{P})</script></p>
-<p>In <code>R</code> let’s define <script type="math/tex">\rho(\alpha;\mathcal{P})</script> and then use the <code>nlminb</code> function to minimize it.</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rho_skew &lt;- <span class="keyword">function</span>(theta, y)&#123;</span><br><span class="line">  t &lt;- powerfun(y, alpha = theta)</span><br><span class="line">  skew &lt;- mean((t - mean(t))^<span class="number">3</span>) / sd(t)^<span class="number">3</span></span><br><span class="line">  <span class="keyword">return</span>(abs(skew))</span><br></pre></td></tr></table></figure>
-<p>Let’s find the  optimal <script type="math/tex">\alpha</script> for the <code>speed</code> data and plot the resulting histogram:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">min1 &lt;- nlminb(start = <span class="number">1</span>, objective = rho_skew, y = poke$speed)</span><br><span class="line">print(min1)</span><br><span class="line">hist(x = powerfun(x = poke$speed, alpha = min1$par),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Optimally Power-Transformed Speed Data&quot;</span>,</span><br><span class="line">     xlab = <span class="string">&quot;T(Speed)&quot;</span>, col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span> ~ alpha == .(min1$par) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
-<p>Let’s find the  optimal <script type="math/tex">\alpha</script> for the <code>weight</code> data and plot the resulting histogram:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">min2 &lt;- nlminb(start = <span class="number">1</span>, objective = rho_skew, y = poke$weight_kg)</span><br><span class="line">print(min2)</span><br><span class="line">hist(x = powerfun(x = poke$weight_kg, alpha = min2$par),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Optimally Power-Transformed Weight Data&quot;</span>,</span><br><span class="line">     xlab = <span class="string">&quot;T(Weight)&quot;</span>, col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span>~ alpha == .(min2$par) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure></p>
-<p>Notice that in both cases the “optimal <script type="math/tex">\alpha</script>“ was not far from the values we determined using Bump Rule #1. In general, although we can always find an optimal power transformation algorithmically (like we did above), the ladder heuristc tends to work pretty well.</p>
-<p><br><br><br></p>
-<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>Find a range of <script type="math/tex">\alpha_x</script> and <script type="math/tex">\alpha_y</script> values that would help to “linearize” the relationship between <script type="math/tex">T_{\alpha_y}(\texttt{speed})</script> and <script type="math/tex">T_{\alpha_x}(\texttt{weight})</script>. Plot the scatterplot of <script type="math/tex">T_{\alpha_y}(\texttt{speed})</script> vs. <script type="math/tex">T_{\alpha_x}(\texttt{weight})</script> using the values of <script type="math/tex">\alpha_y</script> and <script type="math/tex">\alpha_x</script> that seem most appropriate.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alpha_x &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, length.out = <span class="number">5</span>)</span><br><span class="line">alpha_y &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, length.out = <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">corMat &lt;- matrix(<span class="number">0</span>, nrow = length(alpha_x), ncol = length(alpha_y))</span><br><span class="line"></span><br><span class="line">par(mfrow = c(length(alpha_x),length(alpha_y)), mar = c(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1.5</span>,<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span>  <span class="number">1</span>:length(alpha_x))&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:length(alpha_y))&#123;</span><br><span class="line">    plot(x = powerfun(poke$weight_kg, alpha = alpha_x[i]), y = powerfun(poke$speed, alpha = alpha_y[j]),</span><br><span class="line">         main = bquote(alpha[x] == .(alpha_x[i]) ~ <span class="string">&quot;, &quot;</span> ~ alpha[y] == .(alpha_y[j])),</span><br><span class="line">         xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, xaxt = <span class="string">&quot;n&quot;</span>, yaxt = <span class="string">&quot;n&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">    corMat[i,j] &lt;- cor(powerfun(poke$weight_kg, alpha = alpha_x[i]), powerfun(poke$speed, alpha = alpha_y[j]))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">print(corMat)</span><br></pre></td></tr></table></figure></p>
-<p>The plot and matrix of correlations above suggest that <script type="math/tex">\alpha_x=0</script> and <script type="math/tex">\alpha_y=0</script> provide power transformations such that the relationship between <script type="math/tex">T_{\alpha_y}(\texttt{speed})</script> and <script type="math/tex">T_{\alpha_x}(\texttt{weight})</script> is <em>most linear</em>. Further refinement of the <script type="math/tex">\alpha</script>‘s is definitely possible, but a log-transformation is nice and easy to interpret so let’s go ahead with it:<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = c(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">plot(x = powerfun(poke$weight_kg, alpha = <span class="number">0</span>), y = powerfun(poke$speed, alpha = <span class="number">0</span>),</span><br><span class="line">         main = <span class="string">&quot;Scatterplot of Log-Transformed Variates&quot;</span>,</span><br><span class="line">         xlab = <span class="string">&quot;log(Weight)&quot;</span>, ylab = <span class="string">&quot;log(Speed)&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure></p>
-<p><br><br><br></p>
-<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>Cast the ‘optimal power transformation’ problem in the bivariate setting as an implicitly defined attribute problem and determine the optimal <script type="math/tex">\boldsymbol\alpha</script> value to “straighten” the scatterplot of <code>speed</code> versus <code>weight</code>. Construct a scatterplot using the optimally-power-transformed variates.</p>
-<p>Let <script type="math/tex">\boldsymbol\alpha = (\alpha_x, \alpha_y)</script> be the attribute of interest, and let <script type="math/tex">t_u = T_{\alpha_y}(y_u)$ and $v_u = T_{\alpha_x}(x_u)</script>. Let us also define the objective function to be minimized as the negative of the absolute value of the correlation coefficient between the transformed variates (since we actually want to maximize this): <script type="math/tex">\rho(\boldsymbol\alpha;\mathcal{P}) = -\left|\frac{\sum_{u \in \mathcal{P}}(v_u-\bar{v})(t_u-\bar{t})}{\sqrt{\sum_{u \in \mathcal{P}}(v_u-\bar{v})^2}\sqrt{\sum_{u \in \mathcal{P}}(t_u-\bar{t})^2}}\right|</script></p>
-<p>Thus the problem of finding the optimal <script type="math/tex">\boldsymbol\alpha</script> reduces to the following optimization problem: <script type="math/tex">\widehat{\boldsymbol\alpha} = \operatorname*{arg min}_{\boldsymbol\alpha \in \mathbb{R}^2}\rho(\boldsymbol\alpha;\mathcal{P})</script></p>
-<p>In <code>R</code> let’s define <script type="math/tex">\rho(\boldsymbol\alpha;\mathcal{P})</script> and then use the <code>nlminb</code> function to minimize it.<br><figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rho_cor &lt;- <span class="keyword">function</span>(alpha, x, y)&#123;</span><br><span class="line">  alphax &lt;- alpha[<span class="number">1</span>]</span><br><span class="line">  alphay &lt;- alpha[<span class="number">2</span>]</span><br><span class="line">  <span class="keyword">return</span>(-abs(cor(x = powerfun(x, alpha = alphax), y = powerfun(y, alpha = alphay))))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure></p>
-<p>Let’s find the  optimal <script type="math/tex">\boldsymbol\alpha</script> for the scatterplot of <code>speed</code> versus <code>weight</code> and plot the resulting optimally transformed data:</p>
-<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">min3 &lt;- nlminb(start = c(<span class="number">1</span>,<span class="number">1</span>), objective = rho_cor, x = poke$weight_kg, y = poke$speed)</span><br><span class="line">print(min3)</span><br><span class="line">plot(x = powerfun(poke$weight_kg, alpha = min3$par[<span class="number">1</span>]), y = powerfun(poke$speed, alpha = min3$par[<span class="number">2</span>]),</span><br><span class="line">         main = <span class="string">&quot;Scatterplot of Optimally Power-Transformed Data&quot;</span>,</span><br><span class="line">         xlab = <span class="string">&quot;T(Weight)&quot;</span>, ylab = <span class="string">&quot;T(Speed)&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span> ~ alpha[x] == .(min3$par)[<span class="number">1</span>] ~ <span class="string">&quot; , &quot;</span> ~ alpha[y] == .(min3$par[<span class="number">2</span>]) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
-<p>Notice the “optimal correlation” is 0.1431949, which is not so different from the one we found (0.14163987) using Bump Rule #2<br>— and our transformations are much more easily interpreted. In general, although we can always find an optimal power transformation algorithmically (like we did above), the ladder heuristc tends to work pretty well.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">3</span>))</span><br><span class="line">hist(x = poke$speed, main = <span class="string">&quot;Histogram of Speed&quot;</span>, xlab = <span class="string">&quot;Speed&quot;</span>,</span><br><span class="line">     col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">hist(x = poke$weight_kg, main = <span class="string">&quot;Histogram of Weight&quot;</span>, xlab = <span class="string">&quot;Weight (kg)&quot;</span>,</span><br><span class="line">     col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">plot(x = poke$weight_kg, y = poke$speed,</span><br><span class="line">     main = <span class="string">&quot;Scatterplot of Speed vs. Weight&quot;</span>, xlab = <span class="string">&quot;Weight (kg)&quot;</span>, ylab = <span class="string">&quot;Speed&quot;</span>,</span><br><span class="line">     pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="2"><a href="#2" class="headerlink" title="2"></a>2</h3><p>Find a range of <code>$\alpha$</code> values that would help to “symmetrize” the <code>speed</code> distribution. Plot the histogram of <code>$T_&#123;\alpha&#125;(\texttt&#123;speed&#125;)$</code> using the value of <code>$\alpha$</code> that seems most appropriate.</p>
+<p>(也就是第一个作业里的Power Transformations)<br>第一张图是right-skewed, bump is towards the lower value, consider alpha value less than 1.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">powerfun &lt;- <span class="keyword">function</span>(x, alpha) &#123;</span><br><span class="line">  <span class="keyword">if</span>(<span class="built_in">sum</span>(x &lt;= <span class="number">0</span>) &gt; <span class="number">0</span>) stop(<span class="string">&quot;x must be positive&quot;</span>)</span><br><span class="line">  <span class="keyword">if</span> (alpha == <span class="number">0</span>)</span><br><span class="line">    <span class="built_in">log</span>(x)</span><br><span class="line">  <span class="keyword">else</span> <span class="keyword">if</span> (alpha &gt; <span class="number">0</span>) &#123;</span><br><span class="line">    x^alpha</span><br><span class="line">  &#125; <span class="keyword">else</span> -x^alpha</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">9</span>), mar = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, by = -<span class="number">0.25</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">length</span>(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$speed, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Based on the figure above, <code>$\alpha = 0.5$</code> seems to do the best job. Here is a plot of the square-root-transformed <code>speed</code> data:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">hist(x = powerfun(x = poke$speed, alpha = <span class="number">0.5</span>),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Square-Root-Transformed Speed Data&quot;</span>,</span><br><span class="line">     xlab = <span class="built_in">expression</span>(<span class="built_in">sqrt</span>(Speed)), col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="3"><a href="#3" class="headerlink" title="3"></a>3</h3><p>Find a range of <code>$\alpha$</code> values that would help to “symmetrize” the <code>weight</code> distribution. Plot the histogram of <code>$T_&#123;\alpha&#125;(\texttt&#123;weight&#125;)$</code> using the value of <code>$\alpha$</code> that seems most appropriate.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">9</span>), mar = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, by = -<span class="number">0.25</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">length</span>(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$weight_kg, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Based on the figure above, <code>$\alpha \in [0,0.25]$</code> looks good. Let’s refine our search:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">6</span>), mar = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">alpha &lt;- seq(from = <span class="number">0.25</span>, to = <span class="number">0</span>, by = -<span class="number">0.05</span>)</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">length</span>(alpha))&#123;</span><br><span class="line">  hist(x = powerfun(x = poke$weight_kg, alpha = alpha[i]),</span><br><span class="line">       main = bquote(alpha == .(alpha[i])), xlab = <span class="string">&quot;&quot;</span>,</span><br><span class="line">       col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Based on the plots above, choosing <code>$\alpha = 0.1$</code> seems like it should work well. Here is a plot of this power-transformed <code>weight</code> data:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">hist(x = powerfun(x = poke$weight_kg, alpha = <span class="number">0.1</span>),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Power-Transformed Weight Data&quot;</span>,</span><br><span class="line">     xlab = bquote(Weight^<span class="number">0.1</span>), col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="4"><a href="#4" class="headerlink" title="4"></a>4</h3><p>Cast the ‘optimal power transformation’ problem in the univariate setting as an implicitly defined attribute problem and determine the optimal <code>$\alpha$</code> values for both the <code>speed</code> and <code>weight</code> data. Construct histograms of these optimally-power-transformed variates.</p>
+<p>Let <code>$\alpha$</code> be the attribute of interest, and let <code>$t_u = T_&#123;\alpha&#125;(y_u)$</code> be the power-transformed observation for unit <code>$u$</code>. Let us also define the objective function to be minimized as the absolute value of Pearson’s moment coefficient of skewness for the transformed data: <code>$\rho(\alpha;\mathcal&#123;P&#125;) = \left|\frac&#123;\frac&#123;1&#125;&#123;N&#125;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;\left(t_u-\bar&#123;t&#125;\right)^3&#125;&#123;[SD(t)]^3&#125;\right|$</code></p>
+<p>Thus the problem of finding the optimal <code>$\alpha$</code> reduces to the following optimization problem: <code>$\widehat&#123;\alpha&#125; = \operatorname*&#123;arg min&#125;_&#123;\alpha \in \mathbb&#123;R&#125;&#125;\rho(\alpha;\mathcal&#123;P&#125;)$</code></p>
+<p>In <code>R</code> let’s define <code>$\rho(\alpha;\mathcal&#123;P&#125;)$</code> and then use the <code>nlminb</code> function to minimize it.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">rho_skew &lt;- <span class="keyword">function</span>(theta, y)&#123;</span><br><span class="line">  t &lt;- powerfun(y, alpha = theta)</span><br><span class="line">  skew &lt;- mean((t - mean(t))^<span class="number">3</span>) / sd(t)^<span class="number">3</span></span><br><span class="line">  <span class="built_in">return</span>(<span class="built_in">abs</span>(skew))</span><br></pre></td></tr></table></figure>
+
+<p>Let’s find the  optimal <code>$\alpha$</code> for the <code>speed</code> data and plot the resulting histogram:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">min1 &lt;- nlminb(start = <span class="number">1</span>, objective = rho_skew, y = poke$speed)</span><br><span class="line">print(min1)</span><br><span class="line">hist(x = powerfun(x = poke$speed, alpha = min1$par),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Optimally Power-Transformed Speed Data&quot;</span>,</span><br><span class="line">     xlab = <span class="string">&quot;T(Speed)&quot;</span>, col = adjustcolor(col = <span class="string">&quot;darkorchid&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span> ~ alpha == .(min1$par) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Let’s find the  optimal <code>$\alpha$</code> for the <code>weight</code> data and plot the resulting histogram:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">min2 &lt;- nlminb(start = <span class="number">1</span>, objective = rho_skew, y = poke$weight_kg)</span><br><span class="line">print(min2)</span><br><span class="line">hist(x = powerfun(x = poke$weight_kg, alpha = min2$par),</span><br><span class="line">     main = <span class="string">&quot;Histogram of Optimally Power-Transformed Weight Data&quot;</span>,</span><br><span class="line">     xlab = <span class="string">&quot;T(Weight)&quot;</span>, col = adjustcolor(col = <span class="string">&quot;navyblue&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span>~ alpha == .(min2$par) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Notice that in both cases the “optimal <code>$\alpha$</code>“ was not far from the values we determined using Bump Rule #1. In general, although we can always find an optimal power transformation algorithmically (like we did above), the ladder heuristc tends to work pretty well.</p>
+<br>
+<br>
+
+<h3 id="5"><a href="#5" class="headerlink" title="5"></a>5</h3><p>Find a range of <code>$\alpha_x$</code> and <code>$\alpha_y$</code> values that would help to “linearize” the relationship between <code>$T_&#123;\alpha_y&#125;(\texttt&#123;speed&#125;)$</code> and <code>$T_&#123;\alpha_x&#125;(\texttt&#123;weight&#125;)$</code>. Plot the scatterplot of <code>$T_&#123;\alpha_y&#125;(\texttt&#123;speed&#125;)$</code> vs. <code>$T_&#123;\alpha_x&#125;(\texttt&#123;weight&#125;)$</code> using the values of <code>$\alpha_y$</code> and <code>$\alpha_x$</code> that seem most appropriate.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">alpha_x &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, length.out = <span class="number">5</span>)</span><br><span class="line">alpha_y &lt;- seq(from = <span class="number">1</span>, to = -<span class="number">1</span>, length.out = <span class="number">5</span>)</span><br><span class="line"></span><br><span class="line">corMat &lt;- matrix(<span class="number">0</span>, nrow = <span class="built_in">length</span>(alpha_x), ncol = <span class="built_in">length</span>(alpha_y))</span><br><span class="line"></span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="built_in">length</span>(alpha_x),<span class="built_in">length</span>(alpha_y)), mar = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>,<span class="number">1.5</span>,<span class="number">1</span>))</span><br><span class="line"><span class="keyword">for</span>(i <span class="keyword">in</span>  <span class="number">1</span>:<span class="built_in">length</span>(alpha_x))&#123;</span><br><span class="line">  <span class="keyword">for</span>(j <span class="keyword">in</span> <span class="number">1</span>:<span class="built_in">length</span>(alpha_y))&#123;</span><br><span class="line">    plot(x = powerfun(poke$weight_kg, alpha = alpha_x[i]), y = powerfun(poke$speed, alpha = alpha_y[j]),</span><br><span class="line">         main = bquote(alpha[x] == .(alpha_x[i]) ~ <span class="string">&quot;, &quot;</span> ~ alpha[y] == .(alpha_y[j])),</span><br><span class="line">         xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, xaxt = <span class="string">&quot;n&quot;</span>, yaxt = <span class="string">&quot;n&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">    corMat[i,j] &lt;- cor(powerfun(poke$weight_kg, alpha = alpha_x[i]), powerfun(poke$speed, alpha = alpha_y[j]))</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">print(corMat)</span><br></pre></td></tr></table></figure>
+
+<p>The plot and matrix of correlations above suggest that <code>$\alpha_x=0$</code> and <code>$\alpha_y=0$</code> provide power transformations such that the relationship between <code>$T_&#123;\alpha_y&#125;(\texttt&#123;speed&#125;)$</code> and <code>$T_&#123;\alpha_x&#125;(\texttt&#123;weight&#125;)$</code> is <em>most linear</em>. Further refinement of the <code>$\alpha$</code>‘s is definitely possible, but a log-transformation is nice and easy to interpret so let’s go ahead with it:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">plot(x = powerfun(poke$weight_kg, alpha = <span class="number">0</span>), y = powerfun(poke$speed, alpha = <span class="number">0</span>),</span><br><span class="line">         main = <span class="string">&quot;Scatterplot of Log-Transformed Variates&quot;</span>,</span><br><span class="line">         xlab = <span class="string">&quot;log(Weight)&quot;</span>, ylab = <span class="string">&quot;log(Speed)&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="6"><a href="#6" class="headerlink" title="6"></a>6</h3><p>Cast the ‘optimal power transformation’ problem in the bivariate setting as an implicitly defined attribute problem and determine the optimal <code>$\boldsymbol\alpha$</code> value to “straighten” the scatterplot of <code>speed</code> versus <code>weight</code>. Construct a scatterplot using the optimally-power-transformed variates.</p>
+<p>Let <code>$\boldsymbol\alpha = (\alpha_x, \alpha_y)$</code> be the attribute of interest, and let <code>$t_u = T_&#123;\alpha_y&#125;(y_u)$ and $v_u = T_&#123;\alpha_x&#125;(x_u)$</code>. Let us also define the objective function to be minimized as the negative of the absolute value of the correlation coefficient between the transformed variates (since we actually want to maximize this): <code>$\rho(\boldsymbol\alpha;\mathcal&#123;P&#125;) = -\left|\frac&#123;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;(v_u-\bar&#123;v&#125;)(t_u-\bar&#123;t&#125;)&#125;&#123;\sqrt&#123;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;(v_u-\bar&#123;v&#125;)^2&#125;\sqrt&#123;\sum_&#123;u \in \mathcal&#123;P&#125;&#125;(t_u-\bar&#123;t&#125;)^2&#125;&#125;\right|$</code></p>
+<p>Thus the problem of finding the optimal <code>$\boldsymbol\alpha$</code> reduces to the following optimization problem: <code>$\widehat&#123;\boldsymbol\alpha&#125; = \operatorname*&#123;arg min&#125;_&#123;\boldsymbol\alpha \in \mathbb&#123;R&#125;^2&#125;\rho(\boldsymbol\alpha;\mathcal&#123;P&#125;)$</code></p>
+<p>In <code>R</code> let’s define <code>$\rho(\boldsymbol\alpha;\mathcal&#123;P&#125;)$</code> and then use the <code>nlminb</code> function to minimize it.</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">rho_cor &lt;- <span class="keyword">function</span>(alpha, x, y)&#123;</span><br><span class="line">  alphax &lt;- alpha[<span class="number">1</span>]</span><br><span class="line">  alphay &lt;- alpha[<span class="number">2</span>]</span><br><span class="line">  <span class="built_in">return</span>(-<span class="built_in">abs</span>(cor(x = powerfun(x, alpha = alphax), y = powerfun(y, alpha = alphay))))</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Let’s find the  optimal <code>$\boldsymbol\alpha$</code> for the scatterplot of <code>speed</code> versus <code>weight</code> and plot the resulting optimally transformed data:</p>
+<figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">min3 &lt;- nlminb(start = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>), objective = rho_cor, x = poke$weight_kg, y = poke$speed)</span><br><span class="line">print(min3)</span><br><span class="line">plot(x = powerfun(poke$weight_kg, alpha = min3$par[<span class="number">1</span>]), y = powerfun(poke$speed, alpha = min3$par[<span class="number">2</span>]),</span><br><span class="line">         main = <span class="string">&quot;Scatterplot of Optimally Power-Transformed Data&quot;</span>,</span><br><span class="line">         xlab = <span class="string">&quot;T(Weight)&quot;</span>, ylab = <span class="string">&quot;T(Speed)&quot;</span>,</span><br><span class="line">         pch = <span class="number">16</span>, col = adjustcolor(col = <span class="string">&quot;firebrick&quot;</span>, alpha = <span class="number">0.4</span>))</span><br><span class="line">mtext(text = bquote(<span class="string">&quot;(&quot;</span> ~ alpha[x] == .(min3$par)[<span class="number">1</span>] ~ <span class="string">&quot; , &quot;</span> ~ alpha[y] == .(min3$par[<span class="number">2</span>]) ~ <span class="string">&quot;)&quot;</span>), side = <span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Notice the “optimal correlation” is 0.1431949, which is not so different from the one we found (0.14163987) using Bump Rule #2<br>– and our transformations are much more easily interpreted. In general, although we can always find an optimal power transformation algorithmically (like we did above), the ladder heuristc tends to work pretty well.</p>
 
     </div>
 
     
     
     
-      
-  <div class="popular-posts-header">相关博文</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/05/12/P194/" rel="bookmark">关于stat的笔记 - estimation</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/04/10/P180/" rel="bookmark">关于stat的笔记 - sampling</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/03/14/P176/" rel="bookmark">关于bash的笔记 - 简陋版</a></div>
-    </li>
-  </ul>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -478,7 +520,6 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
 
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -488,13 +529,9 @@
         </li>
       </ul>
 
-
-
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
           <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorial-2-Pokemon-Analysis"><span class="nav-number">1.</span> <span class="nav-text">Tutorial 2: Pokémon Analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tutorial-3-Pokemon-Analysis-continue"><span class="nav-number">2.</span> <span class="nav-text">Tutorial 3: Pokémon Analysis - continue</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1"><span class="nav-number">2.1.</span> <span class="nav-text">1</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2"><span class="nav-number">2.2.</span> <span class="nav-text">2</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3"><span class="nav-number">2.3.</span> <span class="nav-text">3</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4"><span class="nav-number">2.4.</span> <span class="nav-text">4</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#5"><span class="nav-number">2.5.</span> <span class="nav-text">5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#6"><span class="nav-number">2.6.</span> <span class="nav-text">6</span></a></li></ol></li></ol></div>
-
-
       </div>
       <!--/noindex-->
 
@@ -510,7 +547,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -523,7 +560,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -547,7 +584,7 @@
 
       </div>
 
-      <br>
+<br>
       <!--new music test-->
 
   <!--网易云插件-->
@@ -559,86 +596,7 @@
 
 
       </div>
-      <script>
-//暂时储存文章中的内容
-var div = $('.post-body');
-//暂时储存目录的内容
-var toc=$('.post-toc-wrap')
-function password() {
-  if(''){
-  //将文章内容删除
-    div.remove();
- //将目录删除
-    toc.remove();
-  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
-  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
-  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
-   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
-      Please enter your password and press enter to build</textarea>' +
-      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
-      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
-      'margin: 0 auto;outline: none;width:95%"/>' +
-      '</div>')
-      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
-    document.onclick = function (event) {
-      var e = event || window.event;
-      var elem = e.srcElement || e.target;
-
-      while (elem) {
-        if (elem != document) {
-          if (elem.className == "password") {
-            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
-            return;
-          }
-          elem = elem.parentNode;
-        } else {
-          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
-          return;
-        }
-      }
-    }
-    //绑定enter键按下后离开的事件
-    $(document).keyup(function(event){
-      if(event.keyCode ==13&&$('.password').length>0){
-        //console.log($('.password').val())
-        //console.log('')
-        if ($('.password').val() == '') {
-        //恢复文章内容
-          (div).appendTo($(".post-header"))
-          //恢复目录
-          toc.appendTo($(".sidebar-inner"))
-          //删除本页面的输入密码组件
-           $(".description").remove();
-          $(".qiang").remove();
-          $(".password").remove();
-
-          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
-          //图片懒加载，没有加入此功能的这个函数需要去掉
-	          $('img').lazyload({
-	             placeholder: '/images/loading.gif',
-	             effect: 'fadeIn',
-	             threshold : 100,
-	             failure_limit : 20,
-	             skip_invisible : false
-	           });
-	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
-	            $(".post-block").css({opacity:1});
-	            $(".post-header").css({opacity:1});
-	            $(".post-body").css({opacity:1});
-	            $(".pagination").css({opacity:1});
-        }else {
-          alert("Sorry, the password is wrong.")
-        }
-      }
-      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
-    });
-  }
-}
-password();
-</script>
-
     </main>
-
 
     <footer class="footer">
       <div class="footer-inner">
@@ -662,7 +620,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">879k</span>
+    <span title="C">575k</span>
   -->
 
   <!--
@@ -670,17 +628,17 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:20</span>
+    <span title="T">8:43</span>
 
   -->
-  
+
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有195.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有575k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -771,12 +729,5 @@ password();
   });
 </script>
 
-  <script type="text/javascript" src="/js/my_js/firework.js"></script>
-
 </body>
 </html>
-
-
-<!-- calendar widget -->
-
-

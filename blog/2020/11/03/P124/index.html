@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较. 个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).">
@@ -30,7 +30,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.com/blog/2020/11/03/P124/P124.png">
 <meta property="article:published_time" content="2020-11-03T22:31:05.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:16:06.257Z">
+<meta property="article:modified_time" content="2021-11-15T20:25:15.650Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -81,9 +81,6 @@
   </style>
 </noscript>
 
-  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
-
-<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -125,11 +122,6 @@
         <li class="menu-item menu-item-home">
 
     <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-readme">
-
-    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -205,7 +197,6 @@
   </div>
 
 
-
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -248,7 +239,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:16:06" itemprop="dateModified" datetime="2021-08-19T19:16:06-04:00">2021-08-19</time>
+                <time title="Modified: 2021-11-15 15:25:15" itemprop="dateModified" datetime="2021-11-15T15:25:15-05:00">2021-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,13 +266,13 @@
   </span>
   
   
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="C">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
               <span>14k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
@@ -298,8 +289,12 @@
 
       
         <p>ab testing的定义,control group与group with testing feature中,分成两组,来统计人们的反馈进行测试比较.</p>
-<p>个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).<br><a id="more"></a></p>
-<p><br><br><br></p>
+<p>个人用笔记…写的很杂,我猜除我以外的人看不懂,记着记着就成英文的了(…).</p>
+<span id="more"></span>
+
+<br>
+<br>
+
 <h2 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h2><p>什么不能做ab testing:</p>
 <ul>
 <li>需要测试的事件时间过长的feature.</li>
@@ -312,35 +307,40 @@
 </ul>
 <h2 id="metric-choice"><a href="#metric-choice" class="headerlink" title="metric choice"></a>metric choice</h2><p>(a method of measuring something, or the results obtained from this)</p>
 <ul>
-<li><p>click through rate</p>
-<h1 id="of-clicks-of-page-views"><a href="#of-clicks-of-page-views" class="headerlink" title="of clicks / #of page views"></a>of clicks / #of page views</h1></li>
+<li><p>click through rate<br>#of clicks / #of page views</p>
+</li>
 <li><p>click through probabilty<br>Unique visitors who click / Unique visitors to page</p>
 </li>
 </ul>
 <p>一个是couting点击数,一个是couting访问人数.</p>
-<p><br><br><br></p>
-<h6 id="Aside-binomial-distruibution"><a href="#Aside-binomial-distruibution" class="headerlink" title="Aside:binomial distruibution"></a>Aside:binomial distruibution</h6><p><em>mean = N </em> p<em>
-</em>standard deviation = sqrt(N <em> p </em> (1-p))<em><br>standard error = sqrt(p </em> (1-p) / N)</p>
+<br>
+<br>
+
+<h6 id="Aside-binomial-distruibution"><a href="#Aside-binomial-distruibution" class="headerlink" title="Aside:binomial distruibution"></a>Aside:binomial distruibution</h6><p><em>mean = N * p</em><br><em>standard deviation = sqrt(N * p * (1-p))</em><br>standard error = sqrt(p * (1-p) / N)</p>
 <p><em>eg.</em><br>We have N = 2000, with x = 300, find confidence level = 99%</p>
-<p><em>sol.</em><br>Phat(estimated probability) = 300/2000 = 0.15<br>m(margin of error) = z-value(for 99%) <em> standard error(sqrt(p </em> (1-p) / N))<br>=&gt; 2.58 <em> sqrt(0.15 </em> 0.85 / 2000)<br>=&gt; 0.021</p>
+<p><em>sol.</em><br>Phat(estimated probability) = 300/2000 = 0.15<br>m(margin of error) = z-value(for 99%) * standard error(sqrt(p * (1-p) / N))<br>=&gt; 2.58 * sqrt(0.15 * 0.85 / 2000)<br>=&gt; 0.021</p>
 <p>=&gt; P =  0.15 +- 0.021<br><br><br><br></p>
 <h2 id="hypothesis-testing"><a href="#hypothesis-testing" class="headerlink" title="hypothesis testing"></a>hypothesis testing</h2><p>null hypothesis(baseline): (例子)假设我们的改变方案不会影响任何人们的反馈(control group和experimental group没有区别).</p>
 <p>alternative hypothesis: 我们想要的变化反馈.<br><br><br><br></p>
 <h2 id="pooled-standard-error"><a href="#pooled-standard-error" class="headerlink" title="pooled standard error"></a>pooled standard error</h2><p>将control group和experimental group结合在一起的方法.</p>
 <p><em>our data: Xcont Xexp Ncont Nexp</em></p>
 <p>P pool hat = (Xcont + Xexp) / (Ncont + Nexp)</p>
-<p>SE pool = sqrt(P pool hat <em> (1 - P pool hat) </em> (1/Ncont + 1/Nexp))</p>
+<p>SE pool = sqrt(P pool hat * (1 - P pool hat) * (1/Ncont + 1/Nexp))</p>
 <p>d hat(different) = P exp hat - P cont hat<br>(practical significance level - mim detectable effect)</p>
 <p>m(margin of error) = pool standard error * 1.96</p>
-<p>For null hypothesis: d = 0, d hat ~ N(0,SEpool)<br>If d hat &gt; 1.96 <em> SE pool or d hat &lt; -1.96 </em> SE pool, reject null</p>
-<p><br><br><br></p>
+<p>For null hypothesis: d = 0, d hat ~ N(0,SEpool)<br>If d hat &gt; 1.96 * SE pool or d hat &lt; -1.96 * SE pool, reject null</p>
+<br>
+<br>
+
 <h2 id="sampling"><a href="#sampling" class="headerlink" title="sampling"></a>sampling</h2><p>eg. how many page views do we need(in each group)</p>
 <p>a = P(reject null | null true)<br>b = P(fail to reject | null false)</p>
 <p>small sample : a low, b high</p>
 <p>sensitivity = 1 - b(in general, we want experiment to have a high level of sensitivity at the partical significance boundary, often 80%)</p>
 <p>larger sample : a same, b lower</p>
 <p><em>online calculator for sample size</em><br><a target="_blank" rel="noopener" href="https://www.evanmiller.org/ab-testing/sample-size.html">https://www.evanmiller.org/ab-testing/sample-size.html</a></p>
-<p><br><br><br></p>
+<br>
+<br>
+
 <h2 id="policy-and-ethics-for-experiment"><a href="#policy-and-ethics-for-experiment" class="headerlink" title="policy and ethics for experiment"></a>policy and ethics for experiment</h2><p>因为作为sample的基本都是人(纸上谈兵数学人很可能会忽视),所以得有实验前提和准则.</p>
 <ul>
 <li>Risk. what risk is the participant being exposed to</li>
@@ -352,26 +352,36 @@
 <p>Aside: 关于匿名.为确保匿名后的data还能互相分辨,会加入time stamps(one of HIPAA 18 identifiers).<br>  Anonymous data: data without any personally identifiable infomation.<br>  Anonymized data: identified or anonymous data that has been looked at and guaranteed in some way that the re-identification isk is now to non-existent.</p>
 </blockquote>
 <p>Note: 虽然没有写名字,但一些info(timestamp也可能行)还是能idenfity个人(AOL search data leak例子), may still have high re-identificaiton risk.</p>
-<p><br><br><br></p>
+<br>
+<br>
+
 <h2 id="metric"><a href="#metric" class="headerlink" title="metric"></a>metric</h2><ul>
-<li>sanity check metrics</li>
+<li><p>sanity check metrics</p>
+</li>
 <li><p>evaluation metrics</p>
 </li>
 <li><p>external data(data collected by ppl outside of your company)</p>
 </li>
-<li>gather own in-depth data(Retrospective, User Experience Research, focus groups and surveys)<ul>
-<li>User Experience Research: Go depth with few users. Good for brainstorming. Can use special equipment. Want to valid result.</li>
-<li>Focus group: more participants less depth. Get feedback on hypotheticals. Run the risk of group think.</li>
-<li>Surveys: Useful for metrics you cannot measure yourself. Cannot directly compare to other results.</li>
-<li>Human evaluation: pay human raters to evaluate.</li>
-</ul>
+<li><p>gather own in-depth data(Retrospective, User Experience Research, focus groups and surveys)</p>
+</li>
+<li><p>User Experience Research: Go depth with few users. Good for brainstorming. Can use special equipment. Want to valid result.</p>
+</li>
+<li><p>Focus group: more participants less depth. Get feedback on hypotheticals. Run the risk of group think.</p>
+</li>
+<li><p>Surveys: Useful for metrics you cannot measure yourself. Cannot directly compare to other results.</p>
+</li>
+<li><p>Human evaluation: pay human raters to evaluate.</p>
 </li>
 </ul>
-<p><br><br><br></p>
+<br>
+<br>
+
 <h2 id="compute-data-from-metric"><a href="#compute-data-from-metric" class="headerlink" title="compute data from metric"></a>compute data from metric</h2><ul>
-<li>1st: what data to look at when actually compute the metric.</li>
+<li><p>1st: what data to look at when actually compute the metric.</p>
+</li>
 <li><p>2rd: given those events, how to summarize metric.</p>
-<p>—&gt; building intuition about your metric.</p>
+</li>
+<li><p>-&gt; building intuition about your metric.</p>
 </li>
 </ul>
 <p>Define a metric:</p>
@@ -397,60 +407,59 @@
 <li><p>ratios<br>eg. P(revenue-generating click)/P(any click)</p>
 </li>
 </ul>
-<p><br><br><br></p>
+<br>
+<br>
+
 <h6 id="Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><a href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution" class="headerlink" title="Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)"></a>Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</h6><p>Binomial distribution:</p>
 <ul>
 <li>SE(standard error) = sqrt(β * (1 - β) / N)</li>
 <li>m(margin of error) = Z(z score confidence level) * SE</li>
 </ul>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:left">Type of metric</th>
-<th style="text-align:center">distribution</th>
-<th style="text-align:center">estimated variance</th>
+<th align="left">Type of metric</th>
+<th align="center">distribution</th>
+<th align="center">estimated variance</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">probability</td>
-<td style="text-align:center">binomial(normal)</td>
-<td style="text-align:center">(Phat * (1 - Phat) / N)</td>
+<tbody><tr>
+<td align="left">probability</td>
+<td align="center">binomial(normal)</td>
+<td align="center">(Phat * (1 - Phat) / N)</td>
 </tr>
 <tr>
-<td style="text-align:left">mean</td>
-<td style="text-align:center">normal</td>
-<td style="text-align:center">𝜎 ^ 2 / N</td>
+<td align="left">mean</td>
+<td align="center">normal</td>
+<td align="center">𝜎 ^ 2 / N</td>
 </tr>
 <tr>
-<td style="text-align:left">median/percentile</td>
-<td style="text-align:center">depends</td>
-<td style="text-align:center">depends</td>
+<td align="left">median/percentile</td>
+<td align="center">depends</td>
+<td align="center">depends</td>
 </tr>
 <tr>
-<td style="text-align:left">count/difference</td>
-<td style="text-align:center">normal(often)</td>
-<td style="text-align:center">Var(x) + Var(y)</td>
+<td align="left">count/difference</td>
+<td align="center">normal(often)</td>
+<td align="center">Var(x) + Var(y)</td>
 </tr>
 <tr>
-<td style="text-align:left">rates</td>
-<td style="text-align:center">poisson</td>
-<td style="text-align:center">mean</td>
+<td align="left">rates</td>
+<td align="center">poisson</td>
+<td align="center">mean</td>
 </tr>
 <tr>
-<td style="text-align:left">ratios</td>
-<td style="text-align:center">depends</td>
-<td style="text-align:center">depends</td>
+<td align="left">ratios</td>
+<td align="center">depends</td>
+<td align="center">depends</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <ul>
-<li><p>𝜎 -&gt; variants of sample</p>
-<p><br><br><br></p>
-</li>
+<li>𝜎 -&gt; variants of sample</li>
 </ul>
+ <br>
+ <br>
+
 <h2 id="calculating-variability-empirically"><a href="#calculating-variability-empirically" class="headerlink" title="calculating variability empirically"></a>calculating variability empirically</h2><p>Uses of A/A tests:</p>
 <ul>
 <li>Compare results to what you expect(sanity check)</li>
@@ -459,118 +468,100 @@
 </ul>
 <h6 id="Boot-strapping"><a href="#Boot-strapping" class="headerlink" title="Boot strapping"></a>Boot strapping</h6><p> Run one experiment, take random sample from each side of experiment and calculate as it were a full experimental group, use as simulated experiment. Repeat. Use the result as if run multiple experiments.</p>
 <p>confidence interval(z = 1.96) vs empirical confidence interval: empirical去掉最高和最低就是interval balance.<br>注: empirical最好有more than 40 experiments to be confident.</p>
-<p><br><br><br></p>
+<br>
+<br>
+
 <h2 id="designing-an-experiment"><a href="#designing-an-experiment" class="headerlink" title="designing an experiment"></a>designing an experiment</h2><h3 id="Unit-of-diversion"><a href="#Unit-of-diversion" class="headerlink" title="Unit of diversion"></a>Unit of diversion</h3><p>  how we define what an individual subject is in the experience.</p>
 <p>Commonly used:</p>
 <ul>
-<li><strong>User id</strong> (user name, email address, phone number)<ul>
+<li><strong>User id</strong> (user name, email address, phone number)</li>
 <li>stable, unchanging</li>
 <li>personally identifiable</li>
-</ul>
-</li>
-<li><strong>Anonymous id</strong> (cookie)<ul>
+<li><strong>Anonymous id</strong> (cookie)</li>
 <li>changes when you switch browser or device</li>
 <li>users can clear cookies(easy to change)</li>
-</ul>
-</li>
-<li><strong>Event</strong><ul>
+<li><strong>Event</strong></li>
 <li>no consistent experience(for the change that is not user visible)</li>
 <li>use only for non-user-visible changes</li>
 </ul>
-</li>
-</ul>
 <p>Less common:</p>
 <ul>
-<li><strong>Device id</strong><ul>
+<li><strong>Device id</strong></li>
 <li>only available for mobile</li>
 <li>tied to specific device</li>
 <li>unchangeable by user</li>
-</ul>
-</li>
-<li><strong>IP address</strong><ul>
+<li><strong>IP address</strong></li>
 <li>changes when location changes</li>
 </ul>
-</li>
-</ul>
 <p>Example: unit of diversion (check means assigned to a group)</p>
-<div class="table-container">
 <table>
 <thead>
 <tr>
-<th style="text-align:left"></th>
-<th style="text-align:center">(desktop) homepage</th>
-<th style="text-align:center">sign in</th>
-<th style="text-align:center">visit class</th>
-<th style="text-align:center">watch video</th>
-<th style="text-align:center">(mobile) auto sign in</th>
-<th style="text-align:center">watch video</th>
+<th align="left"></th>
+<th align="center">(desktop) homepage</th>
+<th align="center">sign in</th>
+<th align="center">visit class</th>
+<th align="center">watch video</th>
+<th align="center">(mobile) auto sign in</th>
+<th align="center">watch video</th>
 </tr>
 </thead>
-<tbody>
-<tr>
-<td style="text-align:left">user-id</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
+<tbody><tr>
+<td align="left">user-id</td>
+<td align="center">None</td>
+<td align="center">🍁</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:left">cookie</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">Note: if they did not clear their cookie</td>
-<td style="text-align:center"></td>
-<td style="text-align:center"></td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center"></td>
+<td align="left">cookie</td>
+<td align="center">🍁</td>
+<td align="center">Note: if they did not clear their cookie</td>
+<td align="center"></td>
+<td align="center"></td>
+<td align="center">🍁</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:left">event</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">🍁</td>
+<td align="left">event</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
+<td align="center">🍁</td>
 </tr>
 <tr>
-<td style="text-align:left">device id</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">None</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center"></td>
+<td align="left">device id</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">None</td>
+<td align="center">🍁</td>
+<td align="center"></td>
 </tr>
 <tr>
-<td style="text-align:left">IP address</td>
-<td style="text-align:center">🍁</td>
-<td style="text-align:center">Not clear</td>
-<td style="text-align:center">Not clear</td>
-<td style="text-align:center">Not clear</td>
-<td style="text-align:center">Not clear</td>
-<td style="text-align:center">Not clear</td>
+<td align="left">IP address</td>
+<td align="center">🍁</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
+<td align="center">Not clear</td>
 </tr>
-</tbody>
-</table>
-</div>
+</tbody></table>
 <p>How we choose:</p>
 <ul>
-<li><strong>user consistency</strong> (whether cross devices/ sign in sign off border)<ul>
+<li><strong>user consistency</strong> (whether cross devices/ sign in sign off border)</li>
 <li>event(not necessary) &gt; cookie(enough) &gt; user-id(necessary)</li>
-</ul>
-</li>
-<li><strong>ethical consideration</strong> (what data is collecting/ data is identified or not)<ul>
+<li><strong>ethical consideration</strong> (what data is collecting/ data is identified or not)</li>
 <li>security and confidentiality questions</li>
 <li>informed consent</li>
-</ul>
-</li>
-<li><strong>variability</strong><ul>
+<li><strong>variability</strong></li>
 <li>unit of analysis -&gt; whatever denominator of metric<br>(eg. page view if unit of analysis over click rough rate)</li>
 <li>unit of diversion(if is cookie or user id)<br>(eg. same metric click through rate is much higher than unit of analysis)<br>why: we consider what to be independent wrong.<br>Event: every single event is different random draw.<br>Cookie &amp; user id -&gt; we diverting groups of events.</li>
-</ul>
-</li>
 </ul>
 <h3 id="Population"><a href="#Population" class="headerlink" title="Population"></a>Population</h3><p>  experiment:<br>  <strong>intra-user experiment</strong> . Expose the same user to the feature being on and off over time, analyze their behavior.<br>  pitfall: Careful about choosing comparable time window. Frustration or learning problem.</p>
 <p>  searching ranking, preferences(rank order list): <strong>interleaved experiment</strong> . Expose same user to the A and B side at the same time. Useful for reordering list.</p>
@@ -587,13 +578,11 @@
 <li>Want to increase user activity</li>
 <li>Anything requiring user to be established<blockquote>
 <p>example:</p>
-<ul>
+</blockquote>
+</li>
 <li>Have existing course and change structure of lesson</li>
 <li>Unit of diversion: user-id(but not all users in the course)</li>
 <li>Control: need to be a comparable cohort</li>
-</ul>
-</blockquote>
-</li>
 </ul>
 <h3 id="Size"><a href="#Size" class="headerlink" title="Size"></a>Size</h3><p>based on practical significance, statistical significance.<br>To calculate size, assume SE ~ 1/sqrt(N)</p>
 <blockquote>
@@ -631,26 +620,27 @@
 <p>aside:<br>Simpson’s paradox: a trend appears in several different groups of data but disappears or reverses when these groups are combined.</p>
 </blockquote>
 <h2 id="tracking-metrics"><a href="#tracking-metrics" class="headerlink" title="tracking metrics"></a>tracking metrics</h2><ul>
-<li>single:<ul>
+<li>single:</li>
 <li>hypothesis test</li>
 <li>sign test</li>
-</ul>
-</li>
 </ul>
 <p>hypothesis test:<br>SE ~ 1/sqrt(N) -&gt;when we calculate two groups -&gt; sqrt(1/N1 + 1/N2)<br>Empirical SE/sqrt(1/sample size + 1/sample size) = SE/sqrt(1/group1 size + 1/group2 size) =&gt; then we can find SE<br>different = rate experiment - rate control<br>margin of error = SE * 1.96<br>confidence interval = different +- margin of error</p>
 <p>sign test:<br>numbers of days<br>numbers of days with positive change<br>-&gt; if no difference, 50% of positive change on each day, we do a binomial(small) or normal(big number) check</p>
 <ul>
-<li>multiple<ul>
+<li>multiple</li>
 <li>1.assume independence</li>
 <li>2.bonferroni correction</li>
-</ul>
-</li>
 </ul>
 <p>independence:<br>α overall = (1 - α individual)^n</p>
 <p>bonferroni correction:<br>α individual = α overall / # of metric</p>
 <p>from difference and SE -&gt; we get margin of error = SE * 1.96<br>if margin of error is wider than observed difference -&gt; not statistically significant</p>
 <p>control false discovery rate(FDR)<br>FDR = E[# false positives / # rejections]</p>
-<p><br><br><br><br>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉<br><br><br><br></p>
+<br>
+<br>
+🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
+<br>
+<br>
+
 <h2 id="Example-process"><a href="#Example-process" class="headerlink" title="Example process"></a>Example process</h2><h3 id="Experiment-design"><a href="#Experiment-design" class="headerlink" title="Experiment design"></a>Experiment design</h3><p><strong>1.metric choice</strong><br>choose invariant + evaluation metrics</p>
 <ul>
 <li>number of cookies</li>
@@ -668,13 +658,19 @@
 <p><strong>3.sizing</strong></p>
 <p><strong>3.1.number of samples vs. power</strong></p>
 <p><strong>3.2.duration vs. exposure</strong></p>
-<p><br></p>
+<br>
+
 <h2 id="Experiment-analysis"><a href="#Experiment-analysis" class="headerlink" title="Experiment analysis"></a>Experiment analysis</h2><p><strong>4.sanity checks</strong><br>calculate lower bound, upper bound, observed</p>
 <p><strong>5.result analysis</strong></p>
 <p><strong>5.1.effect size test</strong><br>calculate lower bound, upper bound, statistical significance, practical significance</p>
 <p><strong>5.2.sigh tests</strong><br>p-value, statistical significance</p>
 <p><strong>summary</strong><br>state whether used bonferroni correction, why and why not.<br>If there are any discrepancies between the effect size hypothesis tests and the sigh test, describe the discrepancy and why think it arose.</p>
-<p><br><br><br><br>🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉<br><br><br><br></p>
+<br>
+<br>
+🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉🎉
+<br>
+<br>
+
 <h2 id="Example-process-ver2-0"><a href="#Example-process-ver2-0" class="headerlink" title="Example process-ver2.0"></a>Example process-ver2.0</h2><p><strong>1.metric choice</strong><br>choose invariant metrics and evaluation metric</p>
 <p><strong>2.measuring standard deviation</strong><br>whether analytic estimate would be comparable to the empirical variability<br>whether expect them to be different (in which case it might be worth doing an empirical estimate if there is time)</p>
 <p><strong>3.sizing</strong></p>
@@ -687,12 +683,30 @@
 <p><strong>summary</strong></p>
 <h2 id="final-notes"><a href="#final-notes" class="headerlink" title="final notes"></a>final notes</h2><blockquote>
 <p>Aside for terms:</p>
+</blockquote>
+<blockquote>
 <p>Closed testing procedure:<br>a general method for performing more than one hypothesis test simultaneously.<br>Suppose there are k hypotheses H1,…, Hk to be tested and the overall type I error rate is α. The closed testing principle allows the rejection of any one of these elementary hypotheses, say Hi, if all possible intersection hypotheses involving Hi can be rejected by using valid local level α tests. It controls the familywise error rate for all the k hypotheses at level α in the strong sense.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Closed_testing_procedure">wiki</a></p>
-<p>Boole’s inequality<br>In probability theory, Boole’s inequality, also known as the union bound, says that for any finite or countable set of events, the probability that at least one of the events happens is no greater than the sum of the probabilities of the individual events.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boole%27s_inequality">wiki</a><br>Holm–Bonferroni method<br><img src="/blog/2020/11/03/P124/P124.png" class=""><br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">wiki</a></p>
+</blockquote>
+<blockquote>
+<p>Boole’s inequality<br>In probability theory, Boole’s inequality, also known as the union bound, says that for any finite or countable set of events, the probability that at least one of the events happens is no greater than the sum of the probabilities of the individual events.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Boole%27s_inequality">wiki</a><br>Holm–Bonferroni method</p>
+</blockquote>
+<img src="/blog/2020/11/03/P124/P124.png" class="">
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Holm%E2%80%93Bonferroni_method">wiki</a></p>
+</blockquote>
+<blockquote>
 <p>Note:<br>Type I error:<br>Erroneously rejecting the null hypothesis with a statistical analysis, then the null hypothesis is in fact true in the population.</p>
+</blockquote>
+<blockquote>
 <p>Bonferroni correction:<br>An adjustment applied to  p-values that is “supposed to be” applied, when two or more statistical analyses have been performed on the <strong>same</strong> sample of data.<br>The correction is supposed to be applied, as the familywise type I error rate is known to be larger than the per analysis error rate(eg. alpha = 0.05)<br>α individual = α overall / # of metric (eg. 0.05 / 3 metric = 0.017)<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Bonferroni_correction">wiki</a></p>
+</blockquote>
+<blockquote>
 <p>Familywise error rate:<br>The probability of committing at least one type 1 error amongst two or more statistical analyses on the <strong>same</strong> sample of data.<br>αFW = 1 - (1 - αPC)^c<br>c : number of comparisons performed<br>αPC : specified per contrast error rate(usually 0.05)</p>
+</blockquote>
+<blockquote>
 <p>Multiple comparisons problem:<br>In statistics, the multiple comparisons, multiplicity or multiple testing problem occurs when one considers a set of statistical inferences simultaneously or infers a subset of parameters selected based on the observed values. In certain fields it is known as the look-elsewhere effect.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Multiple_comparisons_problem">wiki</a></p>
+</blockquote>
+<blockquote>
 <p>False discovery rate<br>The false discovery rate (FDR) is a method of conceptualizing the rate of type I errors in null hypothesis testing when conducting multiple comparisons.<br><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/False_discovery_rate">wiki</a></p>
 </blockquote>
 
@@ -701,26 +715,6 @@
     
     
     
-      
-  <div class="popular-posts-header">相关博文</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/31/P167/" rel="bookmark">关于SQL的笔记 - 续</a></div>
-    </li>
-  </ul>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -795,7 +789,6 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
 
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -805,13 +798,9 @@
         </li>
       </ul>
 
-
-
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#of-clicks-of-page-views"><span class="nav-number"></span> <span class="nav-text">of clicks &#x2F; #of page views</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-binomial-distruibution"><span class="nav-number">0.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">1.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">2.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">3.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">4.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">5.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">6.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Segmenting-and-filtering-data"><span class="nav-number">6.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><span class="nav-number">6.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">7.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Boot-strapping"><span class="nav-number">7.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">8.</span> <span class="nav-text">designing an experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-diversion"><span class="nav-number">8.1.</span> <span class="nav-text">Unit of diversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Population"><span class="nav-number">8.2.</span> <span class="nav-text">Population</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Size"><span class="nav-number">8.3.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration"><span class="nav-number">8.4.</span> <span class="nav-text">Duration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sanity-check"><span class="nav-number">9.</span> <span class="nav-text">Sanity check</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracking-metrics"><span class="nav-number">10.</span> <span class="nav-text">tracking metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process"><span class="nav-number">11.</span> <span class="nav-text">Example process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment-design"><span class="nav-number">11.1.</span> <span class="nav-text">Experiment design</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis"><span class="nav-number">12.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process-ver2-0"><span class="nav-number">13.</span> <span class="nav-text">Example process-ver2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis-1"><span class="nav-number">14.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final-notes"><span class="nav-number">15.</span> <span class="nav-text">final notes</span></a></li></ol></div>
-
-
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric-choice"><span class="nav-number">2.</span> <span class="nav-text">metric choice</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-binomial-distruibution"><span class="nav-number">2.0.0.0.1.</span> <span class="nav-text">Aside:binomial distruibution</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothesis-testing"><span class="nav-number">3.</span> <span class="nav-text">hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#pooled-standard-error"><span class="nav-number">4.</span> <span class="nav-text">pooled standard error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#sampling"><span class="nav-number">5.</span> <span class="nav-text">sampling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#policy-and-ethics-for-experiment"><span class="nav-number">6.</span> <span class="nav-text">policy and ethics for experiment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#metric"><span class="nav-number">7.</span> <span class="nav-text">metric</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#compute-data-from-metric"><span class="nav-number">8.</span> <span class="nav-text">compute data from metric</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Segmenting-and-filtering-data"><span class="nav-number">8.0.0.0.1.</span> <span class="nav-text">Aside: Segmenting and filtering data</span></a></li><li class="nav-item nav-level-6"><a class="nav-link" href="#Aside-Calculating-variability-variance-or-standard-deviation-amp-amp-distribution"><span class="nav-number">8.0.0.0.2.</span> <span class="nav-text">Aside: Calculating variability(variance or standard deviation &amp;&amp; distribution)</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#calculating-variability-empirically"><span class="nav-number">9.</span> <span class="nav-text">calculating variability empirically</span></a><ol class="nav-child"><li class="nav-item nav-level-6"><a class="nav-link" href="#Boot-strapping"><span class="nav-number">9.0.0.0.1.</span> <span class="nav-text">Boot strapping</span></a></li></ol></li></ol></li></ol></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#designing-an-experiment"><span class="nav-number">10.</span> <span class="nav-text">designing an experiment</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Unit-of-diversion"><span class="nav-number">10.1.</span> <span class="nav-text">Unit of diversion</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Population"><span class="nav-number">10.2.</span> <span class="nav-text">Population</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Size"><span class="nav-number">10.3.</span> <span class="nav-text">Size</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Duration"><span class="nav-number">10.4.</span> <span class="nav-text">Duration</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sanity-check"><span class="nav-number">11.</span> <span class="nav-text">Sanity check</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#tracking-metrics"><span class="nav-number">12.</span> <span class="nav-text">tracking metrics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process"><span class="nav-number">13.</span> <span class="nav-text">Example process</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Experiment-design"><span class="nav-number">13.1.</span> <span class="nav-text">Experiment design</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis"><span class="nav-number">14.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Example-process-ver2-0"><span class="nav-number">15.</span> <span class="nav-text">Example process-ver2.0</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Experiment-analysis-1"><span class="nav-number">16.</span> <span class="nav-text">Experiment analysis</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#final-notes"><span class="nav-number">17.</span> <span class="nav-text">final notes</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -827,7 +816,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -840,7 +829,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -864,7 +853,7 @@
 
       </div>
 
-      <br>
+<br>
       <!--new music test-->
 
   <!--网易云插件-->
@@ -876,86 +865,7 @@
 
 
       </div>
-      <script>
-//暂时储存文章中的内容
-var div = $('.post-body');
-//暂时储存目录的内容
-var toc=$('.post-toc-wrap')
-function password() {
-  if(''){
-  //将文章内容删除
-    div.remove();
- //将目录删除
-    toc.remove();
-  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
-  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
-  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
-   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
-      Please enter your password and press enter to build</textarea>' +
-      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
-      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
-      'margin: 0 auto;outline: none;width:95%"/>' +
-      '</div>')
-      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
-    document.onclick = function (event) {
-      var e = event || window.event;
-      var elem = e.srcElement || e.target;
-
-      while (elem) {
-        if (elem != document) {
-          if (elem.className == "password") {
-            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
-            return;
-          }
-          elem = elem.parentNode;
-        } else {
-          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
-          return;
-        }
-      }
-    }
-    //绑定enter键按下后离开的事件
-    $(document).keyup(function(event){
-      if(event.keyCode ==13&&$('.password').length>0){
-        //console.log($('.password').val())
-        //console.log('')
-        if ($('.password').val() == '') {
-        //恢复文章内容
-          (div).appendTo($(".post-header"))
-          //恢复目录
-          toc.appendTo($(".sidebar-inner"))
-          //删除本页面的输入密码组件
-           $(".description").remove();
-          $(".qiang").remove();
-          $(".password").remove();
-
-          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
-          //图片懒加载，没有加入此功能的这个函数需要去掉
-	          $('img').lazyload({
-	             placeholder: '/images/loading.gif',
-	             effect: 'fadeIn',
-	             threshold : 100,
-	             failure_limit : 20,
-	             skip_invisible : false
-	           });
-	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
-	            $(".post-block").css({opacity:1});
-	            $(".post-header").css({opacity:1});
-	            $(".post-body").css({opacity:1});
-	            $(".pagination").css({opacity:1});
-        }else {
-          alert("Sorry, the password is wrong.")
-        }
-      }
-      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
-    });
-  }
-}
-password();
-</script>
-
     </main>
-
 
     <footer class="footer">
       <div class="footer-inner">
@@ -979,7 +889,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">879k</span>
+    <span title="C">575k</span>
   -->
 
   <!--
@@ -987,17 +897,17 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:20</span>
+    <span title="T">8:43</span>
 
   -->
-  
+
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有195.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有575k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -1088,12 +998,5 @@ password();
   });
 </script>
 
-  <script type="text/javascript" src="/js/my_js/firework.js"></script>
-
 </body>
 </html>
-
-
-<!-- calendar widget -->
-
-

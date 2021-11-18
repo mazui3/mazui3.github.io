@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.0.2">
+<meta name="generator" content="Hexo 5.4.0">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -18,7 +18,7 @@
 
 <script id="hexo-configurations">
     var NexT = window.NexT || {};
-    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"disqus":{"text":"Load Disqus","order":-1}}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+    var CONFIG = {"hostname":"mazui3.com","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
   <meta name="description" content="使用语言C++14.">
@@ -29,7 +29,7 @@
 <meta property="og:description" content="使用语言C++14.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-09-22T00:33:22.000Z">
-<meta property="article:modified_time" content="2021-08-19T23:16:25.796Z">
+<meta property="article:modified_time" content="2021-11-15T20:25:15.379Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta name="twitter:card" content="summary">
@@ -78,9 +78,6 @@
   </style>
 </noscript>
 
-  <!--<script type="text/javascript" src="/js/my_js/clicklove.js"></script>-->
-
-<link rel="alternate" href="/blog/atom.xml" title="Underlake Reading Room" type="application/atom+xml">
 </head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
@@ -122,11 +119,6 @@
         <li class="menu-item menu-item-home">
 
     <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
-
-  </li>
-        <li class="menu-item menu-item-readme">
-
-    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>ReadMe</a>
 
   </li>
         <li class="menu-item menu-item-tags">
@@ -202,7 +194,6 @@
   </div>
 
 
-
     <main class="main">
       <div class="main-inner">
         <div class="content-wrap">
@@ -245,7 +236,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-08-19 19:16:25" itemprop="dateModified" datetime="2021-08-19T19:16:25-04:00">2021-08-19</time>
+                <time title="Modified: 2021-11-15 15:25:15" itemprop="dateModified" datetime="2021-11-15T15:25:15-05:00">2021-11-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -272,13 +263,13 @@
   </span>
   
   
-            <span class="post-meta-item" title="Symbols count in article">
+            <span class="post-meta-item" title="C">
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
               <span>2.8k</span>
             </span>
-            <span class="post-meta-item" title="Reading time">
+            <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
@@ -294,38 +285,35 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>使用语言C++14.<br><a id="more"></a></p>
+        <p>使用语言C++14.</p>
+<span id="more"></span>
+
 <p>这个小代码里有些功能是想拓展的但没有写.<br>现在的功能是配备一份names.txt的文件.里面是每行一个@name的格式.<br>在run这个程序的时候,输入任何不是@的字符就会开始抽奖.<br>很久之前写的,也比较乱.但问题是有段日子没有写C++了…重新捡起来需要点时间.</p>
-<p><br><br><br><br><br><br><br><br><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;Instruction in case I forgot!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;if you go with ./a.out -f that means include a file call names.txt to include names to raffle&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;add -reset at front will empty your names.txt&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;otherwise, whatever you add to raffle will be automatically add to names.txt as well&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;add username with @!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;any input without @ will start the raffle!&quot;</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="built_in">std</span>::<span class="built_in">map</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt; theMap;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( argc &gt; <span class="number">1</span> )&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; argc ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(argv[i][<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)&#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(argv[i][<span class="number">1</span>] == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">//file</span></span><br><span class="line">                    <span class="comment">//find names.txt</span></span><br><span class="line">                    ifstream file&#123;<span class="string">&quot;names.txt&quot;</span>&#125;;</span><br><span class="line">                    <span class="built_in">string</span> s;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">while</span>(file &gt;&gt; s)&#123;</span><br><span class="line">                        <span class="built_in">string</span> tb = s;</span><br><span class="line">                        theMap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt;(index,tb));</span><br><span class="line">                        index++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="comment">//end of file interface</span></span><br><span class="line">                <span class="keyword">if</span>(argv[i][<span class="number">1</span>] == <span class="string">&#x27;r&#x27;</span>)&#123;<span class="comment">//reset</span></span><br><span class="line">                    <span class="comment">//find names.txt</span></span><br><span class="line">                    <span class="comment">//then clean it</span></span><br><span class="line">                    <span class="function">ofstream <span class="title">newFile</span><span class="params">(<span class="string">&quot;names.txt&quot;</span>, <span class="built_in">std</span>::ofstream::app)</span></span>;</span><br><span class="line">                    newFile &lt;&lt; <span class="string">&quot;something&quot;</span>;</span><br><span class="line">                    newFile.close();</span><br><span class="line"></span><br><span class="line">                &#125;<span class="comment">//end of reset</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//end of argc</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//mutually</span></span><br><span class="line">    <span class="built_in">string</span> w;</span><br><span class="line">    <span class="keyword">while</span>(<span class="built_in">cin</span> &gt;&gt; w)&#123;</span><br><span class="line">        <span class="keyword">if</span>(w[<span class="number">0</span>] == <span class="string">&#x27;@&#x27;</span>)&#123;</span><br><span class="line">            theMap.insert(<span class="built_in">pair</span>&lt;<span class="keyword">int</span>,<span class="built_in">string</span>&gt;(index,w));</span><br><span class="line">            index++;</span><br><span class="line">            <span class="comment">//we add it into our names.txt as well</span></span><br><span class="line">            <span class="comment">//....</span></span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//raffle here</span></span><br><span class="line">    <span class="keyword">int</span> rdmb = <span class="number">0</span>;</span><br><span class="line">    random_device rd;</span><br><span class="line">    <span class="function">mt19937 <span class="title">eng</span><span class="params">(rd())</span></span>;</span><br><span class="line">    <span class="function">uniform_int_distribution&lt;&gt; <span class="title">distr</span><span class="params">(<span class="number">0</span>,index)</span></span>;</span><br><span class="line">    rdmb = distr(eng);</span><br><span class="line">    <span class="built_in">cout</span> &lt;&lt; <span class="string">&quot;test:&quot;</span> &lt;&lt; theMap[rdmb] &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//for testing</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//we print all the content in the map</span></span><br><span class="line">    <span class="built_in">cerr</span> &lt;&lt; <span class="string">&quot;ramdom num: &quot;</span> &lt;&lt; rdmb &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = theMap.begin(); it != theMap.end(); ++it) &#123;</span><br><span class="line">        <span class="built_in">cerr</span> &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; it-&gt;first</span><br><span class="line">        &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="built_in">cerr</span> &lt;&lt; <span class="built_in">endl</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2&gt;/dev/null</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure><br><br><br><br><br><br><br><br><br>复录:Makefile.这次不需要使用.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">CXX &#x3D; g++</span><br><span class="line">CXXFLAGS &#x3D; -std&#x3D;c++14 -Wall -Werror&#x3D;vla -MMD -L&#x2F;usr&#x2F;X11&#x2F;lib</span><br><span class="line">EXEC &#x3D; nameOfTheProject</span><br><span class="line">OBJECTS &#x3D; main.o sub.o</span><br><span class="line">DEPENDS &#x3D; $&#123;OBJECTS:.o&#x3D;.d&#125;</span><br><span class="line"></span><br><span class="line">$&#123;EXEC&#125;: $&#123;OBJECTS&#125;</span><br><span class="line">        $&#123;CXX&#125; $&#123;CXXFLAGS&#125; $&#123;OBJECTS&#125; -o $&#123;EXEC&#125;  -lX11</span><br><span class="line"></span><br><span class="line">-include $&#123;DEPENDS&#125;</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">        rm $&#123;OBJECTS&#125; $&#123;EXEC&#125; $&#123;DEPENDS&#125;</span><br><span class="line">.PHONY: clean</span><br></pre></td></tr></table></figure>
-<p><br><br><br><br><br><br><br><br>再复录:compile代码,试图唤醒沉睡的记忆.</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -std&#x3D;c++14 -o a.out main.cpp</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+<br>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;fstream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;cstdlib&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;ctime&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&lt;random&gt;</span></span></span><br><span class="line"></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> std;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">(<span class="keyword">int</span> argc, <span class="keyword">const</span> <span class="keyword">char</span> * argv[])</span> </span>&#123;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;Instruction in case I forgot!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;if you go with ./a.out -f that means include a file call names.txt to include names to raffle&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;add -reset at front will empty your names.txt&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;otherwise, whatever you add to raffle will be automatically add to names.txt as well&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;add username with @!&quot;</span> &lt;&lt; endl;</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;any input without @ will start the raffle!&quot;</span> &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    std::map&lt;<span class="keyword">int</span>,string&gt; theMap;</span><br><span class="line">    <span class="keyword">int</span> index = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span>( argc &gt; <span class="number">1</span> )&#123;</span><br><span class="line">        <span class="keyword">for</span>(<span class="keyword">int</span> i = <span class="number">1</span> ; i &lt; argc ; i++)&#123;</span><br><span class="line">            <span class="keyword">if</span>(argv[i][<span class="number">0</span>] == <span class="string">&#x27;-&#x27;</span>)&#123;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span>(argv[i][<span class="number">1</span>] == <span class="string">&#x27;f&#x27;</span>)&#123;<span class="comment">//file</span></span><br><span class="line">                    <span class="comment">//find names.txt</span></span><br><span class="line">                    ifstream file&#123;<span class="string">&quot;names.txt&quot;</span>&#125;;</span><br><span class="line">                    string s;</span><br><span class="line"></span><br><span class="line">                    <span class="keyword">while</span>(file &gt;&gt; s)&#123;</span><br><span class="line">                        string tb = s;</span><br><span class="line">                        theMap.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,string&gt;(index,tb));</span><br><span class="line">                        index++;</span><br><span class="line">                    &#125;</span><br><span class="line">                &#125;<span class="comment">//end of file interface</span></span><br><span class="line">                <span class="keyword">if</span>(argv[i][<span class="number">1</span>] == <span class="string">&#x27;r&#x27;</span>)&#123;<span class="comment">//reset</span></span><br><span class="line">                    <span class="comment">//find names.txt</span></span><br><span class="line">                    <span class="comment">//then clean it</span></span><br><span class="line">                    <span class="function">ofstream <span class="title">newFile</span><span class="params">(<span class="string">&quot;names.txt&quot;</span>, std::ofstream::app)</span></span>;</span><br><span class="line">                    newFile &lt;&lt; <span class="string">&quot;something&quot;</span>;</span><br><span class="line">                    newFile.<span class="built_in">close</span>();</span><br><span class="line"></span><br><span class="line">                &#125;<span class="comment">//end of reset</span></span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;<span class="comment">//end of argc</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//mutually</span></span><br><span class="line">    string w;</span><br><span class="line">    <span class="keyword">while</span>(cin &gt;&gt; w)&#123;</span><br><span class="line">        <span class="keyword">if</span>(w[<span class="number">0</span>] == <span class="string">&#x27;@&#x27;</span>)&#123;</span><br><span class="line">            theMap.<span class="built_in">insert</span>(pair&lt;<span class="keyword">int</span>,string&gt;(index,w));</span><br><span class="line">            index++;</span><br><span class="line">            <span class="comment">//we add it into our names.txt as well</span></span><br><span class="line">            <span class="comment">//....</span></span><br><span class="line">            <span class="comment">//</span></span><br><span class="line">        &#125;<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="comment">//raffle here</span></span><br><span class="line">    <span class="keyword">int</span> rdmb = <span class="number">0</span>;</span><br><span class="line">    random_device rd;</span><br><span class="line">    <span class="function">mt19937 <span class="title">eng</span><span class="params">(rd())</span></span>;</span><br><span class="line">    uniform_int_distribution&lt;&gt; <span class="built_in">distr</span>(<span class="number">0</span>,index);</span><br><span class="line">    rdmb = <span class="built_in">distr</span>(eng);</span><br><span class="line">    cout &lt;&lt; <span class="string">&quot;test:&quot;</span> &lt;&lt; theMap[rdmb] &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//for testing</span></span><br><span class="line"></span><br><span class="line">    <span class="comment">//we print all the content in the map</span></span><br><span class="line">    cerr &lt;&lt; <span class="string">&quot;ramdom num: &quot;</span> &lt;&lt; rdmb &lt;&lt; endl;</span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">auto</span> it = theMap.<span class="built_in">begin</span>(); it != theMap.<span class="built_in">end</span>(); ++it) &#123;</span><br><span class="line">        cerr &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; it-&gt;first</span><br><span class="line">        &lt;&lt; <span class="string">&#x27;\t&#x27;</span> &lt;&lt; it-&gt;second &lt;&lt; <span class="string">&#x27;\n&#x27;</span>;</span><br><span class="line">    &#125;</span><br><span class="line">    cerr &lt;&lt; endl;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//2&gt;/dev/null</span></span><br><span class="line"></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+<br>
+复录:Makefile.这次不需要使用.
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">  </span><br><span class="line">CXX = g++</span><br><span class="line">CXXFLAGS = -std=c++14 -Wall -Werror=vla -MMD -L/usr/X11/lib</span><br><span class="line">EXEC = nameOfTheProject</span><br><span class="line">OBJECTS = main.o sub.o</span><br><span class="line">DEPENDS = $&#123;OBJECTS:.o=.d&#125;</span><br><span class="line"></span><br><span class="line">$&#123;EXEC&#125;: $&#123;OBJECTS&#125;</span><br><span class="line">        $&#123;CXX&#125; $&#123;CXXFLAGS&#125; $&#123;OBJECTS&#125; -o $&#123;EXEC&#125;  -lX11</span><br><span class="line"></span><br><span class="line">-include $&#123;DEPENDS&#125;</span><br><span class="line"></span><br><span class="line">clean:</span><br><span class="line">        rm $&#123;OBJECTS&#125; $&#123;EXEC&#125; $&#123;DEPENDS&#125;</span><br><span class="line">.PHONY: clean</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+<br>
+<br>
+再复录:compile代码,试图唤醒沉睡的记忆.
+
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">g++ -std=c++14 -o a.out main.cpp</span><br></pre></td></tr></table></figure>
 
     </div>
 
     
     
     
-      
-  <div class="popular-posts-header">相关博文</div>
-  <ul class="popular-posts">
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2020/09/22/P120/" rel="bookmark">一点点stream cipher记录和数字母用小代码</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2020/11/28/P141/" rel="bookmark">关于data的笔记 - Week2</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/18/P163/" rel="bookmark">关于R语言的笔记 - R markdown</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/02/02/P165/" rel="bookmark">关于R语言的笔记 - 续</a></div>
-    </li>
-    <li class="popular-posts-item">
-      <div class="popular-posts-title"><a href="/blog/2021/01/13/P164/" rel="bookmark">关于R语言的笔记</a></div>
-    </li>
-  </ul>
-
 
       <footer class="post-footer">
           <div class="post-tags">
@@ -399,7 +387,6 @@
   <aside class="sidebar">
     <div class="sidebar-inner">
 
-
       <ul class="sidebar-nav motion-element">
         <li class="sidebar-nav-toc">
           Table of Contents
@@ -409,12 +396,8 @@
         </li>
       </ul>
 
-
-
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-
-
       </div>
       <!--/noindex-->
 
@@ -430,7 +413,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">211</span>
+          <span class="site-state-item-count">213</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -443,7 +426,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">49</span>
+        <span class="site-state-item-count">50</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -467,7 +450,7 @@
 
       </div>
 
-      <br>
+<br>
       <!--new music test-->
 
   <!--网易云插件-->
@@ -479,86 +462,7 @@
 
 
       </div>
-      <script>
-//暂时储存文章中的内容
-var div = $('.post-body');
-//暂时储存目录的内容
-var toc=$('.post-toc-wrap')
-function password() {
-  if(''){
-  //将文章内容删除
-    div.remove();
- //将目录删除
-    toc.remove();
-  //将文章删除后，向原来文章的地方添加，应该出现的提示用户输入密码的样式
-  //下面这里的第一个用textarea是因为如果在手机端的时候只能显示一部分文字，
-  //只是拓展:input里面的字只能显示一行，不会自动换行，目前上网搜索没有发现好的办法，所以用了textarea，右下角的小三角通过resize:none 去掉。
-   $('.post-header').after('<textarea class="description" value="Please enter your password and press enter to build" style="border: none;display: block;' +'width: 60%;margin: 0 auto;text-align: center;outline: none;margin-bottom: 50px;resize:none ">
-      Please enter your password and press enter to build</textarea>' +
-      '<div class="qiang" style="height: 100px;width: 60%;margin:0 auto">' +
-      '<input class="password"  type="text" value="" style="border: none;display: block;border-bottom: 1px solid #ccc;' +
-      'margin: 0 auto;outline: none;width:95%"/>' +
-      '</div>')
-      //绑定点击事件，如果是点击的.password 这个div就改变样式，如果是document中除了div之外的其他任何元素，就变回原来的样式。
-    document.onclick = function (event) {
-      var e = event || window.event;
-      var elem = e.srcElement || e.target;
-
-      while (elem) {
-        if (elem != document) {
-          if (elem.className == "password") {
-            $(".password").animate({paddingTop:"30px",width:"100%",borderWidth:"2px"},300)
-            return;
-          }
-          elem = elem.parentNode;
-        } else {
-          $(".password").animate({paddingTop:"0px",width:"95%",borderWidth:"1px"},300)
-          return;
-        }
-      }
-    }
-    //绑定enter键按下后离开的事件
-    $(document).keyup(function(event){
-      if(event.keyCode ==13&&$('.password').length>0){
-        //console.log($('.password').val())
-        //console.log('')
-        if ($('.password').val() == '') {
-        //恢复文章内容
-          (div).appendTo($(".post-header"))
-          //恢复目录
-          toc.appendTo($(".sidebar-inner"))
-          //删除本页面的输入密码组件
-           $(".description").remove();
-          $(".qiang").remove();
-          $(".password").remove();
-
-          //重新处理pjax事件,如果没有加pjax的从下面这行起到下面的else之间的代码需要去掉。
-          //图片懒加载，没有加入此功能的这个函数需要去掉
-	          $('img').lazyload({
-	             placeholder: '/images/loading.gif',
-	             effect: 'fadeIn',
-	             threshold : 100,
-	             failure_limit : 20,
-	             skip_invisible : false
-	           });
-	           //pjax后出现文章不显示，没有pjax的下面四行需要去掉
-	            $(".post-block").css({opacity:1});
-	            $(".post-header").css({opacity:1});
-	            $(".post-body").css({opacity:1});
-	            $(".pagination").css({opacity:1});
-        }else {
-          alert("Sorry, the password is wrong.")
-        }
-      }
-      //将document的keyup移除，防止在pjax的情况下会重复绑定事件
-    });
-  }
-}
-password();
-</script>
-
     </main>
-
 
     <footer class="footer">
       <div class="footer-inner">
@@ -582,7 +486,7 @@ password();
     </span>
 
 
-    <span title="Symbols count total">879k</span>
+    <span title="C">575k</span>
   -->
 
   <!--
@@ -590,17 +494,17 @@ password();
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="Reading time total">13:20</span>
+    <span title="T">8:43</span>
 
   -->
-  
+
 </div>
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">休息室一共有195.2k的老兔正在打瞌睡</span>
+  <span class="post-count">休息室一共有575k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -691,12 +595,5 @@ password();
   });
 </script>
 
-  <script type="text/javascript" src="/js/my_js/firework.js"></script>
-
 </body>
 </html>
-
-
-<!-- calendar widget -->
-
-
