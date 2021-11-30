@@ -29,7 +29,7 @@
 <meta property="og:description" content="朋友友情赞助的stat442的笔记加一点点点tableau(坑了)的笔记.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-11-07T04:43:19.000Z">
-<meta property="article:modified_time" content="2021-11-15T20:25:22.034Z">
+<meta property="article:modified_time" content="2021-11-22T01:33:40.723Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -244,7 +244,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-15 15:25:22" itemprop="dateModified" datetime="2021-11-15T15:25:22-05:00">2021-11-15</time>
+                <time title="Modified: 2021-11-21 20:33:40" itemprop="dateModified" datetime="2021-11-21T20:33:40-05:00">2021-11-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,13 +275,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>78k</span>
+              <span>79k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1:11</span>
+              <span>1:12</span>
             </span>
 
         </div>
@@ -335,8 +335,41 @@
             <p>ctrl + shift + B -&gt; 放大workplace<br>ctrl + B -&gt; 缩小workplace</p>
           </div>
 
-<h2 id="Join"><a href="#Join" class="headerlink" title="Join"></a>Join</h2><p>Blending是特别版本的join,join只能join同类型的data,但blending可以join不同版本的,比如excel join到sql dataset.<br>Join时会说left和right table,blending中叫做primary data source和secondary data source.</p>
+<h2 id="Join和blend"><a href="#Join和blend" class="headerlink" title="Join和blend"></a>Join和blend</h2><p>Join:在data source中点击要join的sheet,看到sheet的信息后注意点击中上方表的小长方块,然后拖动要join的另一个table,中间会出现两个重合的圆,来调节join的类型.</p>
+<p>Blending是特别版本的join,join只能join同类型的data,但blending可以join不同版本的,比如excel join到sql dataset.<br>Join时会说left和right table,blending中叫做primary data source和secondary data source.</p>
 <p>当Blending时有两个相同的key.<br>Blending will result certain level of data aggregation(sum, avg, etc…)<br>default: sum相加<br>如果是无法sum的char值,会返回星号*.<br>如果Blending时没有相同的key,会返回null.</p>
+<h2 id="Scattor-plot"><a href="#Scattor-plot" class="headerlink" title="Scattor plot"></a>Scattor plot</h2><p>我们发现scattor plot需要三个值.两个负责建立坐标(columns + rows)还有一个是数值,导入marks里面.</p>
+<blockquote>
+<p>比如column:transation + rows:amount + marks:customer_id<br>customer_id作为每个customer的信息导入.</p>
+</blockquote>
+<p>关于出现的outlier:删掉或对column/row进行对数(log)转换.</p>
+<blockquote>
+<p>对数转换:使用calculate field中的sum和log function.</p>
+</blockquote>
+<p>按子类别计算更多的detail:</p>
+<blockquote>
+<p>增加calculated field:<br>{ fixed[Sub category]: avg([Amount]) }<br>并增加在mark中的size上.<br>以及因为是value的计算,tableau会自动求和,但我们不需要求整个sub category的sum,所以得改成avg.</p>
+</blockquote>
+<p>Clusters:在analytics的区域,给scattor plot分不同的群体.<br>把在marks中生成的cluster可以拖入会data里的string value区域,可以保留并用在其他的图中.</p>
+<h2 id="Bar-chart"><a href="#Bar-chart" class="headerlink" title="Bar chart"></a>Bar chart</h2><p>Bar chart需要一个分组作为rows(刚刚的cluster group),以及一个数值(amount)作为值(marks).然后点击右上方的show me中的bar chart.<br>How many ppl in a cluster group, add calculated field:<br>CountD([Customer ID])</p>
+<p>我们可以做一个两头bar chart:<br>将distinct customer ID也作为column值,做一个左右并排的bar chart.再选中其中的一个右键选取edit axis并reversed.</p>
+<div class="note ">
+            <p>在最上方的工具栏里有swap rows and columns很好用.</p>
+          </div>
+
+<h2 id="Dashboard"><a href="#Dashboard" class="headerlink" title="Dashboard"></a>Dashboard</h2><p>将chart(sheet)集合在一起的地方,还能加action,实时比较不同category下的分析数据,很牛逼.<br>例如:将某个category base的bar chart右键use as filter,那么点击某个category,其他的图标就会计算那个category下的数据.</p>
+<p>正常流程:在dashboard tool bar中添加action,选择highlight就只会high light,不会把其他的数据隐藏.<br>source sheet:用于选取的category base的sheet.</p>
+<div class="note ">
+            <p>在查看图表每个数值的时候可以修改tooltip整理每个数值的标签.<br>可以将其他想要加入的数据添加到marks的detail里,再在tooltip中的insert加入.</p>
+          </div>
+
+<div class="note ">
+            <p>Marks上面的filters可以用category类的值来选择要研究的数据.</p>
+          </div>
+
+<div class="note ">
+            <p>常用普通表格之colouring.<br>可以将measure value按住ctrl拖入color(复制一份使用colour),然后选择square,表格上就会按照数据的大小决定颜色深浅.<br>如果有多列的数据,在colour中有use separate legend可以分别辨识颜色深浅.</p>
+          </div>
 
     </div>
 
@@ -430,7 +463,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R"><span class="nav-number">1.</span> <span class="nav-text">R</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NumbersOrder"><span class="nav-number">1.1.</span> <span class="nav-text">NumbersOrder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Histograms"><span class="nav-number">1.2.</span> <span class="nav-text">Histograms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-comparisons"><span class="nav-number">1.3.</span> <span class="nav-text">visual comparisons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-hypothesis-testing"><span class="nav-number">1.4.</span> <span class="nav-text">visual hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothetical-generative"><span class="nav-number">1.5.</span> <span class="nav-text">hypothetical generative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-order"><span class="nav-number">1.6.</span> <span class="nav-text">time order</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-series-decomposition"><span class="nav-number">1.7.</span> <span class="nav-text">time series decomposition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transforming-data"><span class="nav-number">1.8.</span> <span class="nav-text">transforming data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-data-overview"><span class="nav-number">1.9.</span> <span class="nav-text">categorical data overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-data"><span class="nav-number">1.10.</span> <span class="nav-text">categorical data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-modelling"><span class="nav-number">1.11.</span> <span class="nav-text">categorical modelling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onmaps"><span class="nav-number">1.12.</span> <span class="nav-text">onmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#three-dimensions"><span class="nav-number">1.13.</span> <span class="nav-text">three dimensions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marginal-contribution"><span class="nav-number">1.14.</span> <span class="nav-text">marginal contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#noncartesian"><span class="nav-number">1.15.</span> <span class="nav-text">noncartesian</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tableau"><span class="nav-number">2.</span> <span class="nav-text">Tableau</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Join"><span class="nav-number">2.1.</span> <span class="nav-text">Join</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#R"><span class="nav-number">1.</span> <span class="nav-text">R</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#NumbersOrder"><span class="nav-number">1.1.</span> <span class="nav-text">NumbersOrder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Histograms"><span class="nav-number">1.2.</span> <span class="nav-text">Histograms</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-comparisons"><span class="nav-number">1.3.</span> <span class="nav-text">visual comparisons</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#visual-hypothesis-testing"><span class="nav-number">1.4.</span> <span class="nav-text">visual hypothesis testing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hypothetical-generative"><span class="nav-number">1.5.</span> <span class="nav-text">hypothetical generative</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-order"><span class="nav-number">1.6.</span> <span class="nav-text">time order</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#time-series-decomposition"><span class="nav-number">1.7.</span> <span class="nav-text">time series decomposition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#transforming-data"><span class="nav-number">1.8.</span> <span class="nav-text">transforming data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-data-overview"><span class="nav-number">1.9.</span> <span class="nav-text">categorical data overview</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-data"><span class="nav-number">1.10.</span> <span class="nav-text">categorical data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#categorical-modelling"><span class="nav-number">1.11.</span> <span class="nav-text">categorical modelling</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#onmaps"><span class="nav-number">1.12.</span> <span class="nav-text">onmaps</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#three-dimensions"><span class="nav-number">1.13.</span> <span class="nav-text">three dimensions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#marginal-contribution"><span class="nav-number">1.14.</span> <span class="nav-text">marginal contribution</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#noncartesian"><span class="nav-number">1.15.</span> <span class="nav-text">noncartesian</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tableau"><span class="nav-number">2.</span> <span class="nav-text">Tableau</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Join%E5%92%8Cblend"><span class="nav-number">2.1.</span> <span class="nav-text">Join和blend</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Scattor-plot"><span class="nav-number">2.2.</span> <span class="nav-text">Scattor plot</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bar-chart"><span class="nav-number">2.3.</span> <span class="nav-text">Bar chart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dashboard"><span class="nav-number">2.4.</span> <span class="nav-text">Dashboard</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -519,7 +552,7 @@
     </span>
 
 
-    <span title="C">575k</span>
+    <span title="C">592k</span>
   -->
 
   <!--
@@ -527,7 +560,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">8:43</span>
+    <span title="T">8:58</span>
 
   -->
 
@@ -537,7 +570,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有575k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有592k的老兔正在打瞌睡</span>
 </div>
 
         
