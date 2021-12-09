@@ -311,7 +311,7 @@ h6 { font-size: 16px; }
 	display: inline-block;
 	font-weight: 500;
 	font-family: "Montserrat";
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -341,7 +341,7 @@ h6 { font-size: 16px; }
 	text-decoration: none;
 	color: #787878;
 	font-weight: 500;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -354,7 +354,7 @@ h6 { font-size: 16px; }
 }
 
 /*---------------------------------------------------*/
-/*	04) TOKYO RIGHTPART 
+/*	04) TOKYO RIGHTPART
 /*---------------------------------------------------*/
 
 .tokyo_tm_all_wrap .rightpart{
@@ -478,7 +478,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_home .social ul li a{
 	text-decoration: none;
 	color: #000;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -572,7 +572,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_about .description .right > ul > li a{
 	text-decoration: none;
 	color: #787878;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -596,7 +596,7 @@ h6 { font-size: 16px; }
 	background-color: #000;
 	padding: 9px 40px 14px 40px;
 	font-style: italic;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -616,7 +616,7 @@ h6 { font-size: 16px; }
 	background-color: rgba(0,0,0,.8);
 	opacity: 0;
 	visibility: hidden;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -643,7 +643,7 @@ h6 { font-size: 16px; }
 	visibility: hidden;
 	margin-top: -20px;
 	transition-delay: .3s;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -756,7 +756,7 @@ h6 { font-size: 16px; }
 	-webkit-animation: wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Safari 4+ */
 	-moz-animation:    wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Fx 5+ */
 	animation:         wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* IE 10+ */
-	width:100%;	
+	width:100%;
 }
 
 @-webkit-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
@@ -784,7 +784,7 @@ h6 { font-size: 16px; }
 	width: 33.3333%;
 	float: left;
 	padding-left: 50px;
-} 
+}
 .tokyo_tm_modalbox_about .list_inner{
 	width: 100%;
 	height: 100%;
@@ -817,7 +817,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_modalbox_about .partners ul li{
 	margin: 0px;
 	opacity: .5;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -842,7 +842,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_title h3{
 	font-weight: 800;
 	font-family: "Montserrat";
-} 
+}
 .tokyo_tm_title span{
 	display: inline-block;
 	background-color: rgba(0,0,0,.04);
@@ -880,7 +880,7 @@ h6 { font-size: 16px; }
 	display: inline-block;
 	font-weight: 500;
 	font-family: "Montserrat";
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -939,7 +939,7 @@ h6 { font-size: 16px; }
 	background-repeat: no-repeat;
 	background-position: center;
 	background-size: cover;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -986,7 +986,7 @@ h6 { font-size: 16px; }
 	position: absolute;
 	z-index: -11;
 	display: none;
-	
+
 }
 .tokyo_tm_modalbox .details_all_wrap{
 	width: 100%;
@@ -1078,7 +1078,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_modalbox .main_details .detailbox span a{
 	text-decoration: none;
 	color: #767676;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1119,7 +1119,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_modalbox .additional_images ul li{
 	margin: 0px 0px 30px 0px;
 	float: left;
-	width: 50%;
+	width: 100%; /* was 50% */
 	padding-left: 30px;
 }
 .tokyo_tm_modalbox .additional_images ul li:nth-child(3n-2){
@@ -1151,7 +1151,7 @@ h6 { font-size: 16px; }
 }
 
 /*---------------------------------------------------*/
-/*	08) TOKYO NEWS 
+/*	08) TOKYO NEWS
 /*---------------------------------------------------*/
 
 .tokyo_tm_news{
@@ -1195,8 +1195,8 @@ h6 { font-size: 16px; }
 	right: 0px;
 	background-repeat: no-repeat;
 	background-size: cover;
-	background-position:center; 
-	
+	background-position:center;
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1211,7 +1211,7 @@ h6 { font-size: 16px; }
 	float: left;
 	padding: 30px 40px 25px 40px;
 	background-color: #fff;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1231,7 +1231,7 @@ h6 { font-size: 16px; }
 	font-size: 18px;
 	font-weight: 600;
 	display: inline-block;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1250,7 +1250,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_news ul li .details .date a{
 	text-decoration: none;
 	color: #767676;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1261,7 +1261,7 @@ h6 { font-size: 16px; }
 	color: #000;
 }
 .tokyo_tm_news ul li .details .date span{
-	position: relative;	
+	position: relative;
 }
 .tokyo_tm_news ul li .details .date span:before{
 	position: relative;
@@ -1342,7 +1342,7 @@ h6 { font-size: 16px; }
 	display: inline-block;
     position: relative;
 	background-color: #fff;
-	z-index: 1; 
+	z-index: 1;
     transition: .6s cubic-bezier(.6, .01, 0, 1);
 	transform: translateX(-110%);
 }
@@ -1445,7 +1445,7 @@ h6 { font-size: 16px; }
 	background-color: rgba(0,0,0,.8);
 	opacity: 0;
 	visibility: hidden;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1472,7 +1472,7 @@ h6 { font-size: 16px; }
 	visibility: hidden;
 	margin-top: -20px;
 	transition-delay: .3s;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1547,7 +1547,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_modalbox .date a{
 	text-decoration: none;
     color: #767676;
-	
+
     -webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1594,7 +1594,7 @@ body.modal{
 }
 .tokyo_tm_modalbox .main_content .descriptions .bigger{
 	color: #888;
-	font-size: 20px;		
+	font-size: 20px;
 	margin-bottom: 31px;
 }
 .tokyo_tm_modalbox .main_content .descriptions p{
@@ -1648,7 +1648,7 @@ body.modal{
 .tokyo_tm_modalbox .news_share ul li{
 	margin: 0px 12px 0px 0px;
 	display: inline-block;
-}  
+}
 .tokyo_tm_modalbox .news_share ul li .svg{
 	width: 15px;
 	height: 15px;
@@ -1656,7 +1656,7 @@ body.modal{
 .tokyo_tm_modalbox .news_share ul li a{
 	text-decoration: none;
 	color: #000;
-	
+
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
 	    -ms-transition: all .3s ease;
@@ -1745,7 +1745,7 @@ body.modal{
 .tokyo_tm_contact .fields .last textarea:focus{
 	outline: none;
 	border: 1px solid rgba(0,0,0,.5);
-} 
+}
 .tokyo_tm_contact .empty_notice{
 	color: #F52225;
 	margin-bottom: 7px;
@@ -1824,7 +1824,7 @@ body.modal{
 	.tokyo_tm_all_wrap .leftpart{width: 400px;}
 	.tokyo_tm_section{padding-left: 400px;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 350px;}
-	
+
 	.tokyo_tm_all_wrap .leftpart{width: 350px;padding: 0px 70px;}
 	.tokyo_tm_home .avatar{min-width: 250px;min-height: 250px;}
 	.tokyo_tm_home .details .name{font-size: 48px;margin-bottom: 10px;}
