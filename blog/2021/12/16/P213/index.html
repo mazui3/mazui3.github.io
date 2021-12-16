@@ -1,0 +1,628 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我为什么会写这个.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于python的笔记">
+<meta property="og:url" content="https://mazui3.github.io/blog/2021/12/16/P213/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="我为什么会写这个.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_1.png">
+<meta property="article:published_time" content="2021-12-16T21:32:00.000Z">
+<meta property="article:modified_time" content="2021-12-16T21:32:00.777Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="data">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_1.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2021/12/16/P213/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于python的笔记 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fas fa-carrot fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2021/12/16/P213/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_6.png">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于python的笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2021-12-16 16:32:00" itemprop="dateCreated datePublished" datetime="2021-12-16T16:32:00-05:00">2021-12-16</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数学笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2021/12/16/P213/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2021/12/16/P213/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.6k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我为什么会写这个.</p>
+<span id="more"></span>
+
+<p>翻例题答案时回想起自己也曾在python写过def main的function来仿照c语言.<br>小葱拌豆腐行为,脑子清清白白.<br>上一次写纯python还是cs230或者cs231,那时还没有博客于是没有笔记记载,有些遗憾.</p>
+<p>今日嘉宾<a target="_blank" rel="noopener" href="https://www.educative.io/blog/crack-amazon-coding-interview-questions">例题</a>.</p>
+<h2 id="1-Find-the-missing-number-in-the-array"><a href="#1-Find-the-missing-number-in-the-array" class="headerlink" title="1. Find the missing number in the array"></a>1. <a target="_blank" rel="noopener" href="https://www.educative.io/m/find-the-missing-number">Find the missing number in the array</a></h2><p>You are given an array of positive numbers from 1 to n, such that all numbers from 1 to n are present except one number x. You have to find x. The input array is not sorted.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> random <span class="comment">#random.randint() function</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_missing</span>(<span class="params"><span class="built_in">input</span></span>):</span></span><br><span class="line">  <span class="comment"># calculate sum of all elements</span></span><br><span class="line">  <span class="comment"># in input list</span></span><br><span class="line">  sum_of_elements = <span class="built_in">sum</span>(<span class="built_in">input</span>)</span><br><span class="line"></span><br><span class="line">  <span class="comment"># There is exactly 1 number missing</span></span><br><span class="line">  n = <span class="built_in">len</span>(<span class="built_in">input</span>) + <span class="number">1</span></span><br><span class="line">  actual_sum = (n * ( n + <span class="number">1</span> ) ) / <span class="number">2</span> <span class="comment"># 哇一键计算arithmetic series sum好怀念</span></span><br><span class="line">  <span class="keyword">return</span> <span class="built_in">int</span>(actual_sum - sum_of_elements) <span class="comment"># 计算的时候默认return float,这里的int()从float转变为int,注意格式</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">test</span>(<span class="params">n</span>):</span></span><br><span class="line">  missing_element = random.randint(<span class="number">1</span>, n)</span><br><span class="line">  v = []</span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, n): <span class="comment"># 这里是在造missing一个值的array</span></span><br><span class="line">    <span class="keyword">if</span> i != missing_element:</span><br><span class="line">      v.append(i)</span><br><span class="line"></span><br><span class="line">  actual_missing = find_missing(v)</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;Expected Missing = &quot;</span>, missing_element, <span class="string">&quot; Actual Missing = &quot;</span>, actual_missing)</span><br><span class="line">  <span class="keyword">assert</span> missing_element == actual_missing</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">  <span class="keyword">for</span> n <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">1</span>, <span class="number">10</span>):</span><br><span class="line">    test(<span class="number">1000000</span>)</span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<p>这道题有意思的是:<br>The difference between these i.e. ‘expected_sum - sum_of_elements’, is the missing number in the array.<br>做了一个sum和difference.</p>
+<blockquote>
+<p>Aside: <a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/5142418/what-is-the-use-of-assert-in-python">Asset</a>.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<h2 id="2-Determine-if-the-sum-of-two-integers-is-equal-to-the-given-value"><a href="#2-Determine-if-the-sum-of-two-integers-is-equal-to-the-given-value" class="headerlink" title="2. Determine if the sum of two integers is equal to the given value"></a>2. <a target="_blank" rel="noopener" href="https://www.educative.io/m/sum-of-two-values">Determine if the sum of two integers is equal to the given value</a></h2><p>Given an array of integers and a value, determine if there are any two integers in the array whose sum is equal to the given value. Return true if the sum exists and return false if it does not.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_sum_of_two</span>(<span class="params">A, val</span>):</span> <span class="comment"># A is the array</span></span><br><span class="line">  found_values = <span class="built_in">set</span>() <span class="comment"># 这里create hash set</span></span><br><span class="line">  <span class="keyword">for</span> a <span class="keyword">in</span> A:</span><br><span class="line">    <span class="keyword">if</span> val - a <span class="keyword">in</span> found_values:</span><br><span class="line">      <span class="keyword">return</span> <span class="literal">True</span></span><br><span class="line"></span><br><span class="line">    found_values.add(a)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> <span class="literal">False</span></span><br><span class="line"></span><br><span class="line">v = [<span class="number">5</span>, <span class="number">7</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">8</span>, <span class="number">4</span>, <span class="number">3</span>]</span><br><span class="line">test = [<span class="number">3</span>, <span class="number">20</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">7</span>]</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="built_in">len</span>(test)):</span><br><span class="line">  output = find_sum_of_two(v, test[i])</span><br><span class="line">  <span class="built_in">print</span>(<span class="string">&quot;find_sum_of_two(v, &quot;</span> + <span class="built_in">str</span>(test[i]) + <span class="string">&quot;) = &quot;</span> + <span class="built_in">str</span>(output))</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Aside: <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Set_(abstract_data_type)">Set</a>.<br>原来cs的set跟数学的set不一样啊!<br>set用于储存数据,好处可以guarantee search <a target="_blank" rel="noopener" href="https://wiki.python.org/moin/TimeComplexity">return O(1)</a>.<br>这里只做了一个array copy,然后比较差值是否在array中:从来看两数的sum是否在array里.</p>
+</blockquote>
+<blockquote>
+<p>In this solution, you can use the following algorithm to find a pair that add up to the target (say val).<br>Scan the whole array once and store visited elements in a hash set.<br>During scan, for every element e in the array, we check if val - e is present in the hash set i.e. val - e is already visited.<br>If val - e is found in the hash set, it means there is a pair (e, val - e) in array whose sum is equal to the given val.<br>If we have exhausted all elements in the array and didn’t find any such pair, the function will return false.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<h2 id="3-Merge-two-sorted-linked-lists"><a href="#3-Merge-two-sorted-linked-lists" class="headerlink" title="3. Merge two sorted linked lists"></a>3. <a target="_blank" rel="noopener" href="https://www.educative.io/m/merge-two-sorted-linked-lists">Merge two sorted linked lists</a></h2><p>好经典的题!</p>
+<p>Given two sorted linked lists, merge them so that the resulting linked list is also sorted. Consider two sorted linked lists and the merged list below them as an example.</p>
+<img src="/blog/2021/12/16/P213/P213_1.png" class="">
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">merge_sorted</span>(<span class="params">head1, head2</span>):</span></span><br><span class="line">  <span class="comment"># if both lists are empty then merged list is also empty</span></span><br><span class="line">  <span class="comment"># if one of the lists is empty then other is the merged list</span></span><br><span class="line">  <span class="comment"># 当头就忘记empty的情况</span></span><br><span class="line">  <span class="keyword">if</span> head1 == <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">return</span> head2</span><br><span class="line">  <span class="keyword">elif</span> head2 == <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">return</span> head1</span><br><span class="line"></span><br><span class="line">  mergedHead = <span class="literal">None</span>;</span><br><span class="line">  <span class="keyword">if</span> head1.data &lt;= head2.data:</span><br><span class="line">    mergedHead = head1</span><br><span class="line">    head1 = head1.<span class="built_in">next</span></span><br><span class="line">  <span class="keyword">else</span>:</span><br><span class="line">    mergedHead = head2</span><br><span class="line">    head2 = head2.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">  mergedTail = mergedHead</span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> head1 != <span class="literal">None</span> <span class="keyword">and</span> head2 != <span class="literal">None</span>:</span><br><span class="line">    temp = <span class="literal">None</span></span><br><span class="line">    <span class="keyword">if</span> head1.data &lt;= head2.data:</span><br><span class="line">      temp = head1</span><br><span class="line">      head1 = head1.<span class="built_in">next</span></span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      temp = head2</span><br><span class="line">      head2 = head2.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">    mergedTail.<span class="built_in">next</span> = temp</span><br><span class="line">    mergedTail = temp</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span> head1 != <span class="literal">None</span>:</span><br><span class="line">    mergedTail.<span class="built_in">next</span> = head1</span><br><span class="line">  <span class="keyword">elif</span> head2 != <span class="literal">None</span>:</span><br><span class="line">    mergedTail.<span class="built_in">next</span> = head2</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> mergedHead</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">array1 = [<span class="number">2</span>, <span class="number">3</span>, <span class="number">5</span>, <span class="number">6</span>]</span><br><span class="line">array2 = [<span class="number">1</span>, <span class="number">4</span>, <span class="number">10</span>]</span><br><span class="line">list_head1 = create_linked_list(array1)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;Original1:&quot;</span>)</span><br><span class="line">display (list_head1)</span><br><span class="line">list_head2 = create_linked_list(array2)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nOriginal2:&quot;</span>)</span><br><span class="line">display (list_head2)</span><br><span class="line">new_head = merge_sorted(list_head1, list_head2)</span><br><span class="line"></span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nMerged:&quot;</span>)</span><br><span class="line">display(new_head)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="4-Copy-linked-list-with-arbitrary-pointer"><a href="#4-Copy-linked-list-with-arbitrary-pointer" class="headerlink" title="4. Copy linked list with arbitrary pointer"></a>4. <a target="_blank" rel="noopener" href="https://www.educative.io/m/copy-linked-list-with-arbitrary-pointer">Copy linked list with arbitrary pointer</a></h2><p>You are given a linked list where the node has two pointers. The first is the regular next pointer. The second pointer is called arbitrary_pointer and it can point to any node in the linked list. Your job is to write code to make a deep copy of the given linked list. Here, deep copy means that any operations on the original list should not affect the copied list.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">deep_copy_arbitrary_pointer</span>(<span class="params">head</span>):</span></span><br><span class="line">  <span class="keyword">if</span> head == <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">None</span></span><br><span class="line"></span><br><span class="line">  current = head;</span><br><span class="line">  new_head = <span class="literal">None</span></span><br><span class="line">  new_prev = <span class="literal">None</span></span><br><span class="line">  ht = <span class="built_in">dict</span>()</span><br><span class="line"></span><br><span class="line">  <span class="comment"># create copy of the linked list, recording the corresponding</span></span><br><span class="line">  <span class="comment"># nodes in hashmap without updating arbitrary pointer</span></span><br><span class="line">  <span class="keyword">while</span> current != <span class="literal">None</span>:</span><br><span class="line">    new_node = LinkedListNode(current.data)</span><br><span class="line"></span><br><span class="line">    <span class="comment"># copy the old arbitrary pointer in the new node</span></span><br><span class="line">    new_node.arbitrary = current.arbitrary;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> new_prev != <span class="literal">None</span>:</span><br><span class="line">      new_prev.<span class="built_in">next</span> = new_node</span><br><span class="line">    <span class="keyword">else</span>:</span><br><span class="line">      new_head = new_node</span><br><span class="line"></span><br><span class="line">    ht[current] = new_node</span><br><span class="line"></span><br><span class="line">    new_prev = new_node</span><br><span class="line">    current = current.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">  new_current = new_head</span><br><span class="line"></span><br><span class="line">  <span class="comment"># updating arbitrary pointer</span></span><br><span class="line">  <span class="keyword">while</span> new_current != <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">if</span> new_current.arbitrary != <span class="literal">None</span>:</span><br><span class="line">      node = ht[new_current.arbitrary]</span><br><span class="line"></span><br><span class="line">      new_current.arbitrary = node</span><br><span class="line"></span><br><span class="line">    new_current = new_current.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> new_head</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_linked_list_with_arb_pointers</span>(<span class="params">length</span>):</span></span><br><span class="line">  head = create_random_list(length)</span><br><span class="line">  v = []</span><br><span class="line">  temp = head</span><br><span class="line">  <span class="keyword">while</span> temp != <span class="literal">None</span>:</span><br><span class="line">    v.append(temp)</span><br><span class="line">    temp = temp.<span class="built_in">next</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(<span class="number">0</span>, <span class="built_in">len</span>(v)):</span><br><span class="line">    j = random.randint(<span class="number">0</span>, <span class="built_in">len</span>(v) - <span class="number">1</span>)</span><br><span class="line">    p = random.randint(<span class="number">0</span>, <span class="number">100</span>)</span><br><span class="line">    <span class="keyword">if</span> p &lt; <span class="number">75</span>:</span><br><span class="line">      v[i].arbitrary = v[j]</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> head</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">print_with_arb_pointers</span>(<span class="params">head</span>):</span></span><br><span class="line">  <span class="keyword">while</span> head != <span class="literal">None</span>:</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>(head.data) + <span class="string">&quot; (&quot;</span>, end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="keyword">if</span> head.arbitrary != <span class="literal">None</span>:</span><br><span class="line">      <span class="built_in">print</span>(head.arbitrary.data, end =<span class="string">&quot;&quot;</span>)</span><br><span class="line">    <span class="built_in">print</span>(<span class="string">&quot;), &quot;</span>, end=<span class="string">&quot;&quot;</span>)</span><br><span class="line">    head = head.<span class="built_in">next</span>;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line"><span class="comment"># Test Program.</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">main</span>():</span></span><br><span class="line">  head = create_linked_list_with_arb_pointers(<span class="number">9</span>)</span><br><span class="line">  print_with_arb_pointers(head)</span><br><span class="line"></span><br><span class="line">  head2 = deep_copy_arbitrary_pointer(head)</span><br><span class="line">  print_with_arb_pointers(head2)</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">main()</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="5-Level-Order-Traversal-of-Binary-Tree"><a href="#5-Level-Order-Traversal-of-Binary-Tree" class="headerlink" title="5. Level Order Traversal of Binary Tree"></a>5. <a target="_blank" rel="noopener" href="https://www.educative.io/m/level-order-traversal-binary-tree">Level Order Traversal of Binary Tree</a></h2><p>Given the root of a binary tree, display the node values at each level. Node values for all levels should be displayed on separate lines. Let’s take a look at the below binary tree.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Using two queues</span></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">level_order_traversal_1</span>(<span class="params">root</span>):</span></span><br><span class="line">  <span class="keyword">if</span> root == <span class="literal">None</span>:</span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">  queues = [deque(), deque()]</span><br><span class="line"></span><br><span class="line">  current_queue = queues[<span class="number">0</span>]</span><br><span class="line">  next_queue = queues[<span class="number">1</span>]</span><br><span class="line"></span><br><span class="line">  current_queue.append(root)</span><br><span class="line">  level_number = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">while</span> current_queue:</span><br><span class="line">    temp = current_queue.popleft()</span><br><span class="line">    <span class="built_in">print</span>(<span class="built_in">str</span>(temp.data) , end = <span class="string">&quot; &quot;</span>)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> temp.left != <span class="literal">None</span>:</span><br><span class="line">      next_queue.append(temp.left)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> temp.right != <span class="literal">None</span>:</span><br><span class="line">      next_queue.append(temp.right)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> <span class="keyword">not</span> current_queue:</span><br><span class="line">      <span class="built_in">print</span>()</span><br><span class="line">      level_number += <span class="number">1</span></span><br><span class="line">      current_queue = queues[level_number % <span class="number">2</span>]</span><br><span class="line">      next_queue = queues[(level_number + <span class="number">1</span>) % <span class="number">2</span>]</span><br><span class="line">  <span class="built_in">print</span>()</span><br><span class="line"></span><br><span class="line">arr = [<span class="number">100</span>,<span class="number">50</span>,<span class="number">200</span>,<span class="number">25</span>,<span class="number">75</span>,<span class="number">350</span>]</span><br><span class="line">root = create_BST(arr)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;InOrder Traversal:&quot;</span>, end = <span class="string">&quot;&quot;</span>)</span><br><span class="line">display_inorder(root)</span><br><span class="line"><span class="built_in">print</span>(<span class="string">&quot;\nLevel Order Traversal:\n&quot;</span>, end = <span class="string">&quot;&quot;</span>)</span><br><span class="line">level_order_traversal_1(root)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Here, you are using two queues: current_queue and next_queue. You push the nodes in both queues alternately based on the current level number.<br>You’ll dequeue nodes from the current_queue, print the node’s data, and enqueue the node’s children to the next_queue. Once the current_queue becomes empty, you have processed all nodes for the current level_number. To indicate the new level, print a line break (’\n’), swap the two queues, and continue with the above-mentioned logic.<br>After printing the leaf nodes from the current_queue, swap current_queue and next_queue. Since the current_queue would be empty, you can terminate the loop.</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/data/" rel="tag"># data</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2021/12/14/P198/" rel="next" title="以头抢地(检讨书)">
+      以头抢地(检讨书) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Find-the-missing-number-in-the-array"><span class="nav-number">1.</span> <span class="nav-text">1. Find the missing number in the array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Determine-if-the-sum-of-two-integers-is-equal-to-the-given-value"><span class="nav-number">2.</span> <span class="nav-text">2. Determine if the sum of two integers is equal to the given value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Merge-two-sorted-linked-lists"><span class="nav-number">3.</span> <span class="nav-text">3. Merge two sorted linked lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-Copy-linked-list-with-arbitrary-pointer"><span class="nav-number">4.</span> <span class="nav-text">4. Copy linked list with arbitrary pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-Level-Order-Traversal-of-Binary-Tree"><span class="nav-number">5.</span> <span class="nav-text">5. Level Order Traversal of Binary Tree</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_6.png">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">216</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=465530020&auto=0&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2021</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">616k</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">9:20</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有616k的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2021/12/16/P213/";
+    this.page.identifier = "2021/12/16/P213/";
+    this.page.title = "关于python的笔记";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
