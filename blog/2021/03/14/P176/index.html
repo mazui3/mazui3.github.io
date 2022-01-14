@@ -21,21 +21,24 @@
     var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="真的很简陋.用于唤醒遗忘的记忆.">
+  <meta name="description" content="增加了cs246课堂笔记的补丁.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于bash的笔记 - 简陋版">
+<meta property="og:title" content="关于bash的笔记">
 <meta property="og:url" content="https://mazui3.github.io/blog/2021/03/14/P176/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="真的很简陋.用于唤醒遗忘的记忆.">
+<meta property="og:description" content="增加了cs246课堂笔记的补丁.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176.png">
 <meta property="article:published_time" content="2021-03-14T05:02:10.000Z">
-<meta property="article:modified_time" content="2021-11-15T20:25:21.896Z">
+<meta property="article:modified_time" content="2022-01-13T05:01:35.410Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="bash">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
 
 <link rel="canonical" href="https://mazui3.github.io/blog/2021/03/14/P176/">
 
@@ -50,7 +53,7 @@
   };
 </script>
 
-  <title>关于bash的笔记 - 简陋版 | Underlake Reading Room</title>
+  <title>关于bash的笔记 | Underlake Reading Room</title>
   
 
 
@@ -227,7 +230,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于bash的笔记 - 简陋版
+          关于bash的笔记
         </h1>
 
         <div class="post-meta">
@@ -244,7 +247,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-15 15:25:21" itemprop="dateModified" datetime="2021-11-15T15:25:21-05:00">2021-11-15</time>
+                <time title="Modified: 2022-01-13 00:01:35" itemprop="dateModified" datetime="2022-01-13T00:01:35-05:00">2022-01-13</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -275,13 +278,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>173</span>
+              <span>6.3k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>1 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -293,30 +296,584 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>真的很简陋.用于唤醒遗忘的记忆.</p>
+        <p>增加了cs246课堂笔记的补丁.</p>
 <span id="more"></span>
 
 <br>
 <br>
+
+<h1 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">input和output使用&gt;和&lt;</span><br><span class="line"></span><br><span class="line">cat &lt; in.txt &gt; out.txt</span><br><span class="line"></span><br><span class="line">从in.txt用cat读取数据,输出到out.txt中</span><br><span class="line"></span><br><span class="line">同时&gt;&gt;是append的意思</span><br><span class="line"></span><br><span class="line">cat &gt;&gt; out</span><br></pre></td></tr></table></figure>
+
+<p>Every linux process has [3 streams][<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)]">https://en.wikipedia.org/wiki/Standard_streams#Standard_error_(stderr)]</a>, std in(standard input), std err(standard error), std out(standard output).</p>
+<blockquote>
+<p>Why have a separate error stream</p>
+</blockquote>
+<ol>
+<li>separate expected output from unexpected output(error)</li>
+<li>stderr id NOT buffered</li>
+</ol>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">comd &lt; in.txt &gt; out.txt 2&gt;err.log</span><br><span class="line">comd &gt; out.txt 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line">这里 2&gt; 是std err 而&amp;1 是std out,也就是coonect steam 2 to 1.</span><br><span class="line">注意,这跟</span><br><span class="line"></span><br><span class="line">comd 2&gt;&amp;1 &gt; out.txt</span><br><span class="line"></span><br><span class="line">不一样.</span><br></pre></td></tr></table></figure>
+
+<h2 id="Pipes"><a href="#Pipes" class="headerlink" title="Pipes"></a>Pipes</h2><p>Connect the output(stdout) of one program to the input(stdin) of anothers.<br>(可以当作sql的nested querry来理解.)</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">prog1 | prog 2</span><br><span class="line"></span><br><span class="line">等于</span><br><span class="line"></span><br><span class="line">prog1 &gt; temp 和 prog2 &lt; temp</span><br></pre></td></tr></table></figure>
+
+<p>Example: Count the # of words in the first 20 lines of sample.txt.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -20 sample.txt | wc - w</span><br></pre></td></tr></table></figure>
+
+<p>Example: Suppose files words1.txt, words2.txt, etc. Contain words one per line. Print a dulicate free list if all words that occur in any of these files.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat words*.txt | sort | uniq</span><br></pre></td></tr></table></figure>
+<p>Uniq remove the duplicate that adjcent to each other.</p>
+<p>Use the output of a program as an argument to another program.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Today is <span class="subst">$(date)</span> and I am <span class="subst">$(whoami)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+<p>Use $(command) to enable commands.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Today is $(date)&#x27;</span></span><br><span class="line"></span><br><span class="line">This won<span class="string">&#x27;t work.</span></span><br></pre></td></tr></table></figure>
+<p>Single quote will suppress embedded commands.</p>
+<p>这里更多syntax可以查看Cheatsheet中的Patterns.</p>
+<br>
+<br>
 <br>
 
-<p>#copy</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cp fileName directory</span><br></pre></td></tr></table></figure>
+<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a><a target="_blank" rel="noopener" href="https://learnxinyminutes.com/docs/bash/">Script</a></h1><p>如果要写shell script必须要加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
 
-<p>#delete</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">rm fileName</span><br></pre></td></tr></table></figure>
+<p>在script中的function:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">report</span></span>()&#123;</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$1</span> -eq 31 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the 31st.&quot;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the <span class="variable">$&#123;1&#125;</span>th&quot;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
-<p>#newFolder</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir directoryName</span><br></pre></td></tr></table></figure>
 
-<p>#move</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv fileName directoryName</span><br></pre></td></tr></table></figure>
+<br>
 
-<p>还可以用mv来改名.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mv oldFilename newFilename</span><br></pre></td></tr></table></figure>
+<h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p>详情可以看cheatsheet.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;1&#125; 是这个script中第一个argument,以此类推 $&#123;2&#125; 是第二个.</span><br><span class="line">也就是说如果被赋值, $&#123;1&#125; 是最先的收到值的.</span><br></pre></td></tr></table></figure>
 
-<p>#create</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch fileName</span><br></pre></td></tr></table></figure>
+<p>定义variable的用法,<br>Rename all .cpp to .cc</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">举例:</span><br><span class="line">mv Hello.cpp Hello.cc</span><br><span class="line"></span><br><span class="line">filename=Hello.cpp</span><br><span class="line">mv $&#123;filename&#125; $&#123;filename%pp&#125;c</span><br><span class="line"></span><br><span class="line">%是drop的意思,在后面直接加上要加的内容“c”.</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><p>shell里的else if,注意,<strong>这里的空格相当重要</strong>.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ condition ]; <span class="keyword">then</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">elif</span> [ condition ]; <span class="keyword">then</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p><strong>fi</strong>是结束else if的意思.</p>
+<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]; <span class="keyword">do</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h1 id="CheatSheet"><a href="#CheatSheet" class="headerlink" title="CheatSheet"></a>CheatSheet</h1><p>感谢cs246教授赞助的linux command summary.</p>
+<h2 id="Commands"><a href="#Commands" class="headerlink" title="Commands"></a>Commands</h2><table>
+<thead>
+<tr>
+<th>Command</th>
+<th>Meaning</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>exit</td>
+<td>log out</td>
+<td></td>
+</tr>
+<tr>
+<td>passwd</td>
+<td>change your password</td>
+<td></td>
+</tr>
+<tr>
+<td>clear</td>
+<td>clear screen</td>
+<td></td>
+</tr>
+<tr>
+<td>man <em>command</em></td>
+<td>show the manual page for command</td>
+<td>man -k <em>word show a list of man pages that mention word</em></td>
+</tr>
+<tr>
+<td>history</td>
+<td>show all previously-issued commands</td>
+<td></td>
+</tr>
+<tr>
+<td>!!</td>
+<td>execute most recently-issued command</td>
+<td></td>
+</tr>
+<tr>
+<td>!c</td>
+<td>execute most recently-issued command starting with c</td>
+<td></td>
+</tr>
+<tr>
+<td>whoami</td>
+<td>display your login name</td>
+<td></td>
+</tr>
+<tr>
+<td>date</td>
+<td>display current date and time</td>
+<td></td>
+</tr>
+<tr>
+<td>pwd</td>
+<td>display current directory</td>
+<td></td>
+</tr>
+<tr>
+<td>ls</td>
+<td>list contents of current directory</td>
+<td>ls -a <em>show all files, including hidden files</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>ls -l <em>show in long format</em></td>
+</tr>
+<tr>
+<td>cp <em>file1 file2</em></td>
+<td>copy file1 to file2</td>
+<td>cp -r <em>dir1 dir2 recursively copy dir1 to dir2</em></td>
+</tr>
+<tr>
+<td>mv <em>file1 file2</em></td>
+<td>move file1 to file2 (also use to rename)</td>
+<td></td>
+</tr>
+<tr>
+<td>rm <em>file</em></td>
+<td>remove file</td>
+<td>can be used to recursively remove a directory, if -r option is used</td>
+</tr>
+<tr>
+<td>touch <em>file</em></td>
+<td>update file’s last modified time to current time</td>
+<td>can be used to create an empty file if file does not exist</td>
+</tr>
+<tr>
+<td>cd <em>dir</em></td>
+<td>change directory to dir</td>
+<td>cd - <em>return to most recently visited directory</em></td>
+</tr>
+<tr>
+<td>mkdir <em>dir</em></td>
+<td>create new directory dir in current directory</td>
+<td>can specify more than one directory at once</td>
+</tr>
+<tr>
+<td>rmdir <em>dir</em></td>
+<td>change your password</td>
+<td>only works if dir is empty; if not empty, use rm -r dir ; can specify more than directory at once</td>
+</tr>
+<tr>
+<td>echo <em>string</em></td>
+<td>display string to screen</td>
+<td></td>
+</tr>
+<tr>
+<td>chmod <em>perms file</em></td>
+<td>set permissions on file to perms</td>
+<td></td>
+</tr>
+<tr>
+<td>chfn</td>
+<td>change personal info (name, address, etc.) on Unix system</td>
+<td></td>
+</tr>
+<tr>
+<td>ps</td>
+<td>display current processes</td>
+<td>ps -a <em>show all users’ processes</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>ps -A <em>show ALL processes (incl. system processes)</em></td>
+</tr>
+<tr>
+<td>kill <em>pid</em></td>
+<td>kill process with number pid</td>
+<td>kill -9 pid more forceful kill, for stubborn processes</td>
+</tr>
+<tr>
+<td>who</td>
+<td>show who is logged into this machine</td>
+<td></td>
+</tr>
+<tr>
+<td>finger <em>username</em></td>
+<td>show personal info for username</td>
+<td></td>
+</tr>
+<tr>
+<td>time <em>command</em></td>
+<td>show amount of time taken executing command</td>
+<td></td>
+</tr>
+<tr>
+<td>fg</td>
+<td>bring background job to the foreground</td>
+<td>useful if you accidentally ran vi or emacs with an &amp;</td>
+</tr>
+<tr>
+<td>find <em>dir</em> -name “<em>pattern</em>”</td>
+<td>find all files whose names match pattern in dir and its subdirectories</td>
+<td></td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Tools"><a href="#Tools" class="headerlink" title="Tools"></a>Tools</h2><table>
+<thead>
+<tr>
+<th>Tool</th>
+<th>Purpose</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>cat <em>f1 f2</em> …</td>
+<td>display files <em>f1, f2,</em> … one after the other</td>
+<td>cat -n <em>f1 f2</em> … attaches line numbers</td>
+</tr>
+<tr>
+<td>more <em>file</em></td>
+<td>cdisplay file one screen at a time</td>
+<td></td>
+</tr>
+<tr>
+<td>diff <em>f1 f2</em></td>
+<td>compare files f1 and f2 ; outputs instructions for converting f1 to f2</td>
+<td>diff -w <em>f1 f2 ignores whitespace</em></td>
+</tr>
+<tr>
+<td>cmp <em>f1 f2</em></td>
+<td>compare files f1 and f2 ; outputs the first position where they differ</td>
+<td></td>
+</tr>
+<tr>
+<td>wc <em>file</em></td>
+<td>count the number of words, lines, and characters in file</td>
+<td>wc -c <em>file show just the number of characters</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>wc -l file show just the number of lines</td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>wc -w file show just the number of words</td>
+</tr>
+<tr>
+<td>egrep <em>pat file</em></td>
+<td>print all lines in file that contain pattern pat</td>
+<td>egrep -n <em>pat file print matching lines with line numbers</em></td>
+</tr>
+<tr>
+<td></td>
+<td></td>
+<td>egrep -v <em>pat file print lines that do not match pat</em></td>
+</tr>
+<tr>
+<td>head <em>file</em></td>
+<td>print first 10 lines of file</td>
+<td>-num <em>prints</em> num <em>lines (e.g. head -5 file)</em></td>
+</tr>
+<tr>
+<td>tail <em>file</em></td>
+<td>like head, but prints last 10 lines of file</td>
+<td></td>
+</tr>
+<tr>
+<td>sort <em>file</em></td>
+<td>sorts the lines of file</td>
+<td>sort -n <em>file sorts strings of digits in numerical order</em></td>
+</tr>
+<tr>
+<td>uniq <em>file</em></td>
+<td>removes consecutive duplicate lines from file</td>
+<td>removes all duplicates if file is sorted</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Programs"><a href="#Programs" class="headerlink" title="Programs"></a>Programs</h2><table>
+<thead>
+<tr>
+<th>Program</th>
+<th>Purpose</th>
+<th>Options</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>vi <em>file</em></td>
+<td>invoke vi text editor on file</td>
+<td></td>
+</tr>
+<tr>
+<td>emacs <em>file</em></td>
+<td>invoke emacs text editor on file</td>
+<td></td>
+</tr>
+<tr>
+<td>pico <em>file</em></td>
+<td>invoke pico text editor on file</td>
+<td></td>
+</tr>
+<tr>
+<td>pine (or alpine)</td>
+<td>read email</td>
+<td></td>
+</tr>
+<tr>
+<td>wget <em>url</em></td>
+<td>fetch file from the web at url</td>
+<td></td>
+</tr>
+<tr>
+<td>xpdf <em>file</em></td>
+<td>display pdf file</td>
+<td></td>
+</tr>
+<tr>
+<td>lpr <em>file</em></td>
+<td>print file to printer</td>
+<td>lpr -Pljp 3016 file specifies the printers in MC3016</td>
+</tr>
+<tr>
+<td>lpq</td>
+<td>checks the print queue</td>
+<td></td>
+</tr>
+<tr>
+<td>lprm <em>jobno</em></td>
+<td>removes job jobno (must belong to you!) from print queue</td>
+<td></td>
+</tr>
+<tr>
+<td>ssh <em>machine</em></td>
+<td>make SSH connection to machine; opens a secure shell on remote machine; type exit to end SSH connection</td>
+<td>ssh -Y (or -X) <em>machine enable X forwarding (must have X server running on local machine)</em></td>
+</tr>
+<tr>
+<td>scp <em>mach1 :file1 mach2 :file2</em></td>
+<td>securely copy file1 on mach1 to file2 on mach2</td>
+<td>can omit mach1 if it is the local machine; similarly for mach2</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Permissions"><a href="#Permissions" class="headerlink" title="Permissions"></a>Permissions</h2><table>
+<thead>
+<tr>
+<th>Symbol</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>u</td>
+<td>file’s owner</td>
+</tr>
+<tr>
+<td>g</td>
+<td>members of the file’s group, other than the owner</td>
+</tr>
+<tr>
+<td>o</td>
+<td>other users</td>
+</tr>
+<tr>
+<td>a</td>
+<td>all users (equivalent to ugo)</td>
+</tr>
+<tr>
+<td>+</td>
+<td>add permission bit</td>
+</tr>
+<tr>
+<td>−</td>
+<td>revoke permission bit</td>
+</tr>
+<tr>
+<td>=</td>
+<td>set permission bits exactly</td>
+</tr>
+<tr>
+<td>r</td>
+<td>read permission. for files—file’s contents can be read. for directories—directory’s contents can be listed</td>
+</tr>
+<tr>
+<td>w</td>
+<td>write permission. for files—file’s contents can be modified. for directories—files can be added/renamed/removed in the directory</td>
+</tr>
+<tr>
+<td>x</td>
+<td>execute permission. for files—file may be executed as a program or script. for directories—directory can be traversed (i.e. can cd into the directory)</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Script-Conditional-Operators"><a href="#Script-Conditional-Operators" class="headerlink" title="Script Conditional Operators"></a>Script Conditional Operators</h2><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>=</td>
+<td>string equality</td>
+</tr>
+<tr>
+<td>!=</td>
+<td>string inequality</td>
+</tr>
+<tr>
+<td>-eq</td>
+<td>integer equality</td>
+</tr>
+<tr>
+<td>-ne</td>
+<td>integer inequality</td>
+</tr>
+<tr>
+<td>-gt</td>
+<td>integer greater than</td>
+</tr>
+<tr>
+<td>-ge</td>
+<td>integer greater than or equal to</td>
+</tr>
+<tr>
+<td>-lt</td>
+<td>integer less than</td>
+</tr>
+<tr>
+<td>-le</td>
+<td>integer less than or equal to</td>
+</tr>
+<tr>
+<td>-a</td>
+<td>and</td>
+</tr>
+<tr>
+<td>-o</td>
+<td>or</td>
+</tr>
+<tr>
+<td>!</td>
+<td>not</td>
+</tr>
+<tr>
+<td>\ ( , \ )</td>
+<td>parentheses for grouping</td>
+</tr>
+<tr>
+<td>-d</td>
+<td>file exists and is a directory</td>
+</tr>
+<tr>
+<td>-e</td>
+<td>file exists</td>
+</tr>
+<tr>
+<td>-f</td>
+<td>file exists and is a regular file</td>
+</tr>
+<tr>
+<td>-r</td>
+<td>file exists and is readable</td>
+</tr>
+<tr>
+<td>-w</td>
+<td>file exists and is writable</td>
+</tr>
+<tr>
+<td>-x</td>
+<td>file exists and is executable</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Globbing-Patterns"><a href="#Globbing-Patterns" class="headerlink" title="Globbing Patterns"></a>Globbing Patterns</h2><table>
+<thead>
+<tr>
+<th>Operator</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>*</td>
+<td>matches 0 or more characters</td>
+</tr>
+<tr>
+<td>?</td>
+<td>matches one character</td>
+</tr>
+<tr>
+<td>[abxy]</td>
+<td>matches exactly one of the characters in brackets</td>
+</tr>
+<tr>
+<td>[!abxy]</td>
+<td>matches any character except the ones in the brackets</td>
+</tr>
+<tr>
+<td>[a-z]</td>
+<td>matches any character in the given range</td>
+</tr>
+<tr>
+<td>{pat1,pat2}</td>
+<td>matches either pat1 or pat2 (technically not a glob; note no spaces)</td>
+</tr>
+</tbody></table>
+<p>Regular expression</p>
+<img src="/blog/2021/03/14/P176/P176_1.png" class="">
+
+<br>
+<br>
+
+<h2 id="Directories"><a href="#Directories" class="headerlink" title="Directories"></a>Directories</h2><table>
+<thead>
+<tr>
+<th>Directory</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>.</td>
+<td>Current directory</td>
+</tr>
+<tr>
+<td>..</td>
+<td>Parent of current directory</td>
+</tr>
+<tr>
+<td>~</td>
+<td>Your home directory</td>
+</tr>
+<tr>
+<td>/</td>
+<td>Root directory</td>
+</tr>
+<tr>
+<td>Starts with / or ~</td>
+<td>Absolute path</td>
+</tr>
+<tr>
+<td>Does not start with / or ~</td>
+<td>Relative path</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><img src="/blog/2021/03/14/P176/P176.png" class="">
 
     </div>
 
@@ -410,6 +967,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash"><span class="nav-number">1.</span> <span class="nav-text">Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipes"><span class="nav-number">1.2.</span> <span class="nav-text">Pipes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Script"><span class="nav-number">2.</span> <span class="nav-text">Script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">2.1.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Condition"><span class="nav-number">2.2.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">2.3.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CheatSheet"><span class="nav-number">3.</span> <span class="nav-text">CheatSheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.2.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programs"><span class="nav-number">3.3.</span> <span class="nav-text">Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions"><span class="nav-number">3.4.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-Conditional-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Script Conditional Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Globbing-Patterns"><span class="nav-number">3.6.</span> <span class="nav-text">Globbing Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">3.7.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">3.8.</span> <span class="nav-text">Variable</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -425,20 +983,20 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">221</span>
+          <span class="site-state-item-count">222</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">9</span>
+        <span class="site-state-item-count">10</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">50</span>
+        <span class="site-state-item-count">51</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -498,7 +1056,7 @@
     </span>
 
 
-    <span title="C">659k</span>
+    <span title="C">668k</span>
   -->
 
   <!--
@@ -506,7 +1064,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">9:59</span>
+    <span title="T">10:07</span>
 
   -->
 
@@ -516,7 +1074,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有659k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有668k的老兔正在打瞌睡</span>
 </div>
 
         
@@ -590,7 +1148,7 @@
   var disqus_config = function() {
     this.page.url = "https://mazui3.github.io/blog/2021/03/14/P176/";
     this.page.identifier = "2021/03/14/P176/";
-    this.page.title = "关于bash的笔记 - 简陋版";
+    this.page.title = "关于bash的笔记";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
