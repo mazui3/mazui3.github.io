@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2021-12-30T04:24:00.517Z">
+<meta property="article:modified_time" content="2022-01-21T01:09:23.298Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="编码">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-12-29 23:24:00" itemprop="dateModified" datetime="2021-12-29T23:24:00-05:00">2021-12-29</time>
+                <time title="Modified: 2022-01-20 20:09:23" itemprop="dateModified" datetime="2022-01-20T20:09:23-05:00">2022-01-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +281,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>16k</span>
+              <span>17k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>14 mins.</span>
+              <span>15 mins.</span>
             </span>
 
         </div>
@@ -311,7 +311,7 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- comments</span></span><br><span class="line"><span class="comment">/*</span></span><br><span class="line"><span class="comment">a lot</span></span><br><span class="line"><span class="comment">a lot</span></span><br><span class="line"><span class="comment">comments</span></span><br><span class="line"><span class="comment">*/</span></span><br></pre></td></tr></table></figure>
 
 <div class="note ">
-            <p>基本小笔记:加入代码和数据库.<br>点击tool,open sql editor,在第三行的小文件load sql from file就可以加在sql的代码.<br>导入数据的时候,是先create table再在其table中导入数据.</p>
+            <p>基本小笔记:加入代码和数据库.<br>点击tool,open sql editor,在第三行的小文件load sql from file就可以加在sql的代码.<br>导入数据的时候,是先create table再在其table中利用<strong>import</strong>导入数据.</p>
           </div>
 
 <div class="note ">
@@ -487,9 +487,18 @@
 <br>
 <br>
 
-<h2 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span>,</span><br><span class="line">  b TEXT</span><br><span class="line">);<span class="operator">/</span><span class="operator">/</span><span class="keyword">column</span> name will be a <span class="keyword">and</span> b, followed <span class="keyword">by</span> type declaration</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;a&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">3</span>, <span class="string">&#x27;c&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test ( a TEXT <span class="keyword">UNIQUE</span>, b TEXT, c TEXT <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span> ); <span class="operator">/</span><span class="operator">/</span><span class="keyword">UNIQUE</span> <span class="keyword">and</span> <span class="keyword">DEFAULT</span></span><br></pre></td></tr></table></figure>
-<p>Note: we can have more NULL while using UNIQUE(depends on different system)</p>
+<h2 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h2><p>在SQLite studio中,得先建database,database-&gt;add a database,然后创造的table就在database之中了.<br>新建table后,在tools,import中选择其table和导入文件.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span>,</span><br><span class="line">  b TEXT</span><br><span class="line">); <span class="comment">-- column name will be a and b, followed by type declaration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;a&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">3</span>, <span class="string">&#x27;c&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a TEXT <span class="keyword">UNIQUE</span>,</span><br><span class="line">  b TEXT,</span><br><span class="line">  c TEXT <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span></span><br><span class="line">); <span class="comment">--UNIQUE and DEFAULT</span></span><br></pre></td></tr></table></figure>
+<p>Note: we can have more NULL while using UNIQUE(depends on different system)<br>格式是 column_name + data_type + PRIMARY KEY/ NOT NULL/ NOT NULL UNIQUE.</p>
+<blockquote>
+<p>specify the column list of the table. Each column has a name, data type, and the column constraint. SQLite supports PRIMARY KEY, UNIQUE, NOT NULL, and CHECK.<br>specify the table constraints such as PRIMARY KEY, FOREIGN KEY, UNIQUE, and CHECK constraints.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> [IF <span class="keyword">NOT</span> <span class="keyword">EXISTS</span>] [schema_name].table_name (</span><br><span class="line">	column_1 data_type <span class="keyword">PRIMARY</span> KEY,</span><br><span class="line">   	column_2 data_type <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">	column_3 data_type <span class="keyword">DEFAULT</span> <span class="number">0</span>,</span><br><span class="line">	table_constraints</span><br><span class="line">) [<span class="keyword">WITHOUT</span> ROWID];</span><br></pre></td></tr></table></figure>
+
+<p>在initial的时候需要加括号来define column.<br>中途想要把result记载下来时,</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> temp_1 <span class="keyword">as</span></span><br><span class="line">  <span class="keyword">select</span> trade_id,</span><br><span class="line">         transaction_date</span><br><span class="line">  <span class="keyword">from</span> col_trans</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<p>不需要加括号.</p>
 <br>
 <br>
 
@@ -1049,7 +1058,7 @@
     </span>
 
 
-    <span title="C">785k</span>
+    <span title="C">788k</span>
   -->
 
   <!--
@@ -1057,7 +1066,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">11:54</span>
+    <span title="T">11:57</span>
 
   -->
 
@@ -1067,7 +1076,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有785k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有788k的老兔正在打瞌睡</span>
 </div>
 
         
