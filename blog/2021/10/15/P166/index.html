@@ -35,8 +35,10 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/P166_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/P166_3.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/P166_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/mid-find.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/substring-between-parentheses.png">
 <meta property="article:published_time" content="2021-10-15T13:12:02.000Z">
-<meta property="article:modified_time" content="2021-11-26T20:20:01.948Z">
+<meta property="article:modified_time" content="2022-01-21T16:38:05.330Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="excel">
@@ -250,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-26 15:20:01" itemprop="dateModified" datetime="2021-11-26T15:20:01-05:00">2021-11-26</time>
+                <time title="Modified: 2022-01-21 11:38:05" itemprop="dateModified" datetime="2022-01-21T11:38:05-05:00">2022-01-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +283,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>2.2k</span>
+              <span>3k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>2 mins.</span>
+              <span>3 mins.</span>
             </span>
 
         </div>
@@ -316,7 +318,7 @@
           </div>
 
 <div class="note ">
-            <p>在execel中variable type是数字的会靠右,其他会靠左.<br>日期会识别成数字type.甚至可以date+100来计算100天后的日期.</p>
+            <p>在excel中variable type是数字的会靠右,其他会靠左.<br>日期会识别成数字type.甚至可以date+100来计算100天后的日期.</p>
           </div>
 
 <div class="note ">
@@ -410,26 +412,48 @@
 <li>Highlight all Numbers greater than 80. 使用<a target="_blank" rel="noopener" href="https://www.excel-easy.com/data-analysis/conditional-formatting.html">Conditional formatting.</a></li>
 </ol>
 <ol start="2">
-<li><p>Remove the “-“ from the phone numbers.<a target="_blank" rel="noopener" href="https://exceljet.net/formula/clean-and-reformat-telephone-numbers">1</a><a target="_blank" rel="noopener" href="https://www.extendoffice.com/documents/excel/4286-excel-convert-phone-number-to-digits.html">&amp;2</a>.</p>
-</li>
-<li><p><a target="_blank" rel="noopener" href="https://www.extendoffice.com/documents/excel/2412-excel-count-cells-between-two-values.html">How To Count Number Of Cells Between Two Values Or Dates In Excel?</a></p>
-</li>
+<li>Remove the “-“ from the phone numbers.<a target="_blank" rel="noopener" href="https://exceljet.net/formula/clean-and-reformat-telephone-numbers">1</a>&amp;<a target="_blank" rel="noopener" href="https://www.extendoffice.com/documents/excel/4286-excel-convert-phone-number-to-digits.html">2</a>.</li>
+</ol>
+<p>同理的题目:<br>我有“FirstName LastName”格式的string,例如“Donna West”,我要cut出First name和Last name.</p>
+<div class="note ">
+            <p>LEFT(B5,FIND(“ “, B5) - 1)</p><p>假如value在B5.用Find找出空格的位置,用LEFT可以得到从左到右的部分.同理用RIGHT就能得到Last Name.</p>
+          </div>
+
+<ol start="3">
+<li><a target="_blank" rel="noopener" href="https://www.extendoffice.com/documents/excel/2412-excel-count-cells-between-two-values.html">How To Count Number Of Cells Between Two Values Or Dates In Excel?</a></li>
 </ol>
 <ol start="4">
-<li><p><a target="_blank" rel="noopener" href="https://www.excel-easy.com/examples/substring.html">Substring.</a></p>
-</li>
+<li><a target="_blank" rel="noopener" href="https://www.excel-easy.com/examples/substring.html">Substring.</a></li>
+</ol>
+<div class="note ">
+            <p>Substring between parentheses<br>To extract a substring between parentheses (or braces, brackets, slashes, etc.), use MID and FIND in Excel.</p><ol><li>The formula below is almost perfect.</li></ol><img src="/blog/2021/10/15/P166/mid-find.png" class=""><p>Explanation: the FIND function finds the position of the opening parenthesis. Add 1 to find the start position of the substring. The formula shown above reduces to MID(A1,6+1,2). This MID function always extracts 2 characters.</p><ol start="2"><li>Replace the 2 (third argument) with a formula that returns the length of the substring.</li></ol><img src="/blog/2021/10/15/P166/substring-between-parentheses.png" class=""><p>Explanation: subtract the position of the opening parenthesis and the value 1 from the position of the closing parenthesis to find the correct length of the substring.</p>
+          </div>
+
+<ol start="5">
+<li><a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/combine-text-from-two-or-more-cells-into-one-cell-81ba0946-ce78-42ed-b3c3-21340eb164a6">Append string</a></li>
+</ol>
+<div class="note ">
+            <p>Combine data using the CONCAT function<br>Select the cell where you want to put the combined data.</p><p>Type =CONCAT(.</p><p>Select the cell you want to combine first.</p><p>Use commas to separate the cells you are combining and use quotation marks to add spaces, commas, or other text.</p><p>Close the formula with a parenthesis and press Enter. An example formula might be =CONCAT(A2, “ Family”).</p>
+          </div>
+
+<ol start="6">
 <li><p><a target="_blank" rel="noopener" href="https://www.ablebits.com/office-addins-blog/2015/09/29/using-excel-find-replace/">Change value.</a></p>
 </li>
-</ol>
-<ol start="6">
-<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=XAAes_7ondA">How to Use Excel to Match Up Two Different Columns</a></p>
+<li><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=XAAes_7ondA">How to Use Excel to Match Up Two Different Columns</a><br>Use conditional formatting: new rule -&gt; Use a formula to determine which cells to format.<br>= countif($C:$C, $A2)</p>
 </li>
-<li><p>Date<br>Excel DATE Function<br><a target="_blank" rel="noopener" href="https://exceljet.net/excel-functions/excel-date-function">https://exceljet.net/excel-functions/excel-date-function</a></p>
+<li><p>Date</p>
 </li>
 </ol>
-<p>Calculate the difference between two dates<br><a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/calculate-the-difference-between-two-dates-8235e7c9-b430-44ca-9425-46100a162f38">https://support.microsoft.com/en-us/office/calculate-the-difference-between-two-dates-8235e7c9-b430-44ca-9425-46100a162f38</a></p>
-<p>How to split text string in Excel by comma, space, character or mask<br><a target="_blank" rel="noopener" href="https://www.ablebits.com/office-addins-blog/2016/06/01/split-text-string-excel/">https://www.ablebits.com/office-addins-blog/2016/06/01/split-text-string-excel/</a></p>
-<p>date difference<br><a target="_blank" rel="noopener" href="https://exceljet.net/excel-functions/excel-datedif-function">https://exceljet.net/excel-functions/excel-datedif-function</a></p>
+<ul>
+<li><p><a target="_blank" rel="noopener" href="https://exceljet.net/excel-functions/excel-date-function">Excel DATE Function</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/calculate-the-difference-between-two-dates-8235e7c9-b430-44ca-9425-46100a162f38">Calculate the difference between two dates</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://www.ablebits.com/office-addins-blog/2016/06/01/split-text-string-excel/">How to split text string in Excel by comma, space, character or mask</a></p>
+</li>
+<li><p><a target="_blank" rel="noopener" href="https://exceljet.net/excel-functions/excel-datedif-function">Date difference</a></p>
+</li>
+</ul>
 
     </div>
 
@@ -610,7 +634,7 @@
     </span>
 
 
-    <span title="C">788k</span>
+    <span title="C">796k</span>
   -->
 
   <!--
@@ -618,7 +642,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">11:57</span>
+    <span title="T">12:04</span>
 
   -->
 
@@ -628,7 +652,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有788k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有796k的老兔正在打瞌睡</span>
 </div>
 
         

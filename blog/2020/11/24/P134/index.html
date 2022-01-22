@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2022-01-21T01:09:23.298Z">
+<meta property="article:modified_time" content="2022-01-21T06:52:58.306Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="编码">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-20 20:09:23" itemprop="dateModified" datetime="2022-01-20T20:09:23-05:00">2022-01-20</time>
+                <time title="Modified: 2022-01-21 01:52:58" itemprop="dateModified" datetime="2022-01-21T01:52:58-05:00">2022-01-21</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +281,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>17k</span>
+              <span>18k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>15 mins.</span>
+              <span>17 mins.</span>
             </span>
 
         </div>
@@ -411,7 +411,7 @@
 <h2 id="WHEN"><a href="#WHEN" class="headerlink" title="WHEN"></a>WHEN</h2><p><strong>condition</strong>, <strong>case和end</strong>是一定要在一起用的.</p>
 <p>select + case when (像if else statment.)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> temp_2 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>, <span class="keyword">case</span></span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North YorkC&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North YorkW&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North Yrko&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">else</span> cty <span class="keyword">end</span> <span class="keyword">as</span> city_clean</span><br><span class="line"><span class="keyword">from</span> disk.txn_data_v9</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
-
+<p>这里as city_clean就是新造的column,同理可以用来categories things.</p>
 <br>
 <br>
 
@@ -450,6 +450,8 @@
 
 <h2 id="WHERE"><a href="#WHERE" class="headerlink" title="WHERE"></a>WHERE</h2><p>选择部分(row)data.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Name, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent <span class="operator">=</span> <span class="string">&#x27;Europe&#x27;</span>;</span><br></pre></td></tr></table></figure>
+<p>如果要选两个,可以用in+括号.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Name, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent <span class="keyword">in</span> (<span class="string">&#x27;Europe&#x27;</span>,<span class="string">&#x27;Africa&#x27;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">-- not</span></span><br><span class="line"><span class="keyword">SELECT</span> Name, Continent, Region <span class="keyword">FROM</span> Country <span class="keyword">WHERE</span> Continent <span class="keyword">not</span> <span class="keyword">in</span> (<span class="string">&#x27;Europe&#x27;</span>,<span class="string">&#x27;Africa&#x27;</span>);</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -476,7 +478,7 @@
 <br>
 <br>
 
-<h2 id="INSERT-INTO"><a href="#INSERT-INTO" class="headerlink" title="INSERT INTO"></a>INSERT INTO</h2><p>add data</p>
+<h2 id="INSERT-INTO"><a href="#INSERT-INTO" class="headerlink" title="INSERT INTO"></a>INSERT INTO</h2><p>用code码的方式add data.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">Table</span>(column1,...) <span class="keyword">values</span> (value1, ...)</span><br><span class="line"><span class="comment">-- or</span></span><br><span class="line"><span class="keyword">insert</span> <span class="keyword">into</span> <span class="keyword">Table</span> <span class="keyword">values</span> (value1, ...)</span><br></pre></td></tr></table></figure>
 <p>当用第二种方式的时候,可以用NULL来空去没有值的column.<br><strong>Primary key不能为空(null).</strong></p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> Customer (name, city, state, zip)</span><br><span class="line">  <span class="keyword">VALUES</span> (<span class="string">&#x27;Jimi Hendrix&#x27;</span>, <span class="string">&#x27;Renton&#x27;</span>, <span class="string">&#x27;WA&#x27;</span>, <span class="string">&#x27;12398&#x27;</span>);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
@@ -489,6 +491,7 @@
 
 <h2 id="CREATE-TABLE"><a href="#CREATE-TABLE" class="headerlink" title="CREATE TABLE"></a>CREATE TABLE</h2><p>在SQLite studio中,得先建database,database-&gt;add a database,然后创造的table就在database之中了.<br>新建table后,在tools,import中选择其table和导入文件.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span>,</span><br><span class="line">  b TEXT</span><br><span class="line">); <span class="comment">-- column name will be a and b, followed by type declaration</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;a&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;b&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="number">3</span>, <span class="string">&#x27;c&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test;</span><br></pre></td></tr></table></figure>
+<p>这里的data type,有 <strong>NULL</strong>, <strong>INTEGER</strong>, <strong>REAL</strong>(像c里的float), <strong>TEXT</strong>(string value), <strong>BLOB</strong>(stored exactly as it was input).<br>SQLite没有Boolean,可以手动用0(false)和1(true).<br>(在<a href="https://mazui3.github.io/blog/2021/01/31/P167/">SQL-续</a>里有更详细的笔记).</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a TEXT <span class="keyword">UNIQUE</span>,</span><br><span class="line">  b TEXT,</span><br><span class="line">  c TEXT <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span></span><br><span class="line">); <span class="comment">--UNIQUE and DEFAULT</span></span><br></pre></td></tr></table></figure>
 <p>Note: we can have more NULL while using UNIQUE(depends on different system)<br>格式是 column_name + data_type + PRIMARY KEY/ NOT NULL/ NOT NULL UNIQUE.</p>
 <blockquote>
@@ -498,7 +501,7 @@
 
 <p>在initial的时候需要加括号来define column.<br>中途想要把result记载下来时,</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> temp_1 <span class="keyword">as</span></span><br><span class="line">  <span class="keyword">select</span> trade_id,</span><br><span class="line">         transaction_date</span><br><span class="line">  <span class="keyword">from</span> col_trans</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<p>不需要加括号.</p>
+<p>不需要加括号,注意有as.</p>
 <br>
 <br>
 
@@ -507,8 +510,9 @@
 <br>
 <br>
 
-<h2 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h2><p>when search for null</p>
+<h2 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h2><p>When search for null</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>;<span class="operator">/</span><span class="operator">/</span>opposite</span><br></pre></td></tr></table></figure>
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> test;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  b TEXT <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  c TEXT</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
 <br>
@@ -552,6 +556,12 @@
 <br>
 <br>
 
+<h2 id="MINUS"><a href="#MINUS" class="headerlink" title="MINUS"></a>MINUS</h2><p>Write an SQL query to show records from one table that another table does not have.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Worker</span><br><span class="line">MINUS</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Title;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
 <h2 id="ALTER"><a href="#ALTER" class="headerlink" title="ALTER"></a>ALTER</h2><p>add a new column</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test <span class="keyword">ADD</span> d TEXT;</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> test <span class="keyword">ADD</span> e TEXT <span class="keyword">DEFAULT</span> <span class="string">&#x27;panda&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
@@ -568,7 +578,7 @@
 <br>
 <br>
 
-<h2 id="Database"><a href="#Database" class="headerlink" title="Database"></a>Database</h2><p>(aka join table)</p>
+<h2 id="Join-table"><a href="#Join-table" class="headerlink" title="Join table"></a>Join table</h2><p>(aka join table)</p>
 <p>Each row of table has a unique key. The table’s unique key may or may not correspond with a column in the table.<br>Sometime unique key is hidden but the table must have one.<br>When a column is used as a unique key, it often called <strong>primary key</strong> (子table) .(用于identify)</p>
 <img src="/blog/2020/11/24/P134/P134_1.png" class="">
 <p>通过key来连接各个表格.这是的连接用key被称为foreign keys(主table).<br>如果链接的一方是primary key,自己就是foreign key.</p>
@@ -683,6 +693,13 @@
 <br>
 <br>
 
+<h3 id="Self-join"><a href="#Self-join" class="headerlink" title="Self join"></a>Self join</h3><p>Write an SQL query to fetch the list of employees with the same salary.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">distinct</span> W.WORKER_ID, W.FIRST_NAME, W.Salary</span><br><span class="line"><span class="keyword">from</span> Worker W, Worker W1</span><br><span class="line"><span class="keyword">where</span> W.Salary <span class="operator">=</span> W1.Salary</span><br><span class="line"><span class="keyword">and</span> W.WORKER_ID <span class="operator">!=</span> W1.WORKER_ID;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
 <h2 id="SQL-string"><a href="#SQL-string" class="headerlink" title="SQL string"></a>SQL string</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- in standard sql case</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;a literal sql string&#x27;</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;if we need a single quote in our string we do &#x27;&#x27;two single quote to represent one&#x27;</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="string">&#x27;we can also&#x27;</span> <span class="operator">||</span> <span class="string">&#x27;connect string&#x27;</span> <span class="operator">||</span> <span class="string">&#x27;like this&#x27;</span>;</span><br></pre></td></tr></table></figure>
 
 <p>每个system不大一样,记得查看documentation.<br>// in SQLite case</p>
@@ -699,7 +716,23 @@
 <br>
 <br>
 
-<h3 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM"></a>TRIM</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- 会remove all spaces</span></span><br><span class="line"><span class="keyword">SELECT</span> LTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from beginning</span></span><br><span class="line"><span class="keyword">SELECT</span> RTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from the end</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;...string...&#x27;</span>, <span class="string">&#x27;.&#x27;</span>); <span class="comment">-- second statement是要remove的character</span></span><br></pre></td></tr></table></figure>
+<h3 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM"></a>TRIM</h3><p>可以做到“remove white spaces from the right side”之类的.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- 会remove all spaces</span></span><br><span class="line"><span class="keyword">SELECT</span> LTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from beginning</span></span><br><span class="line"><span class="keyword">SELECT</span> RTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from the end</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;...string...&#x27;</span>, <span class="string">&#x27;.&#x27;</span>); <span class="comment">-- second statement是要remove的character</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="REPLACE"><a href="#REPLACE" class="headerlink" title="REPLACE"></a>REPLACE</h3><p>Example: Write an SQL query to print FIRST_NAME from Worker table after replacing ‘a’ with ‘A’.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> REPLACE(FIRST_NAME, <span class="string">&#x27;a&#x27;</span>, <span class="string">&#x27;A&#x27;</span>) <span class="keyword">from</span> Worker;</span><br></pre></td></tr></table></figure>
+<p>SQLite也能做,好强.</p>
+<br>
+<br>
+
+<h3 id="CONCAT"><a href="#CONCAT" class="headerlink" title="CONCAT"></a>CONCAT</h3><p>用于合并两个column的value,append string那样的感觉.</p>
+<p>Example: Write an SQL query to print the FIRST_NAME and LAST_NAME from Worker table into a single column COMPLETE_NAME. A space char should separate them.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> CONCAT(FIRST_NAME, <span class="string">&#x27; &#x27;</span>, LAST_NAME) <span class="keyword">AS</span> <span class="string">&#x27;COMPLETE_NAME&#x27;</span> <span class="keyword">from</span> Worker;</span><br></pre></td></tr></table></figure>
+<p>SQLite并不支持concat.<br>但是可以使用｜｜ &lt;-真是淳朴的链接方式!</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> FIRST_NAME <span class="operator">||</span>  <span class="string">&#x27; &#x27;</span> <span class="operator">||</span> LAST_NAME <span class="keyword">AS</span> <span class="string">&#x27;COMPLETE_NAME&#x27;</span> <span class="keyword">from</span> Worker;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -722,7 +755,7 @@
 <br>
 <br>
 
-<h3 id="CAST"><a href="#CAST" class="headerlink" title="CAST"></a>CAST</h3><p>cast用于转换数据类型.cast(express as datatype)<br>//integer的result always be integer</p>
+<h3 id="CAST"><a href="#CAST" class="headerlink" title="CAST"></a>CAST</h3><p>cast用于转换数据类型.cast(express as datatype)<br>string转int好助手.<br>//integer的result always be integer</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">1</span> <span class="operator">/</span> <span class="number">2</span>; <span class="comment">-- result is 0</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">1.0</span> <span class="operator">/</span> <span class="number">2</span>; <span class="comment">-- result 0.5</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">CAST</span>(<span class="number">1</span> <span class="keyword">AS</span> <span class="type">REAL</span>) <span class="operator">/</span> <span class="number">2</span>; <span class="comment">-- result 0.5</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> <span class="operator">/</span> <span class="number">5</span>; <span class="comment">-- result 3</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="number">17</span> <span class="operator">/</span> <span class="number">5</span>, <span class="number">17</span> <span class="operator">%</span> <span class="number">5</span>; <span class="comment">-- result 3 with remainder of 2</span></span><br></pre></td></tr></table></figure>
 <p>cast可以用来拼接字符串.先把数字转换成char,在用｜｜拼接.可以拼成百分号的数字.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Cast</span>(round((high<span class="operator">-</span>low)<span class="operator">/</span>(<span class="keyword">open</span><span class="operator">+</span><span class="keyword">close</span>) <span class="operator">*</span> <span class="number">2</span>,<span class="number">2</span>) <span class="operator">*</span> <span class="number">100</span> <span class="keyword">as</span> <span class="type">varchar</span>) <span class="operator">||</span> <span class="string">&#x27;%&#x27;</span> <span class="keyword">as</span> vol <span class="comment">-- (别名)</span></span><br></pre></td></tr></table></figure>
@@ -850,6 +883,13 @@
 <p>或者</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> name, <span class="built_in">MAX</span>(salary) <span class="keyword">AS</span> salary</span><br><span class="line"><span class="keyword">FROM</span> employee</span><br><span class="line"><span class="keyword">WHERE</span> salary <span class="operator">&lt;&gt;</span> (<span class="keyword">SELECT</span> <span class="built_in">MAX</span>(salary)</span><br><span class="line"><span class="keyword">FROM</span> employee);</span><br></pre></td></tr></table></figure>
 
+<p>Write an SQL query to determine the nth (say n=5) highest salary from a table.<br>Ans.</p>
+<p>The following MySQL query returns the nth highest salary:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Salary <span class="keyword">FROM</span> Worker <span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span> LIMIT n<span class="number">-1</span>,<span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<p>The following SQL Server query returns the nth highest salary:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TOP <span class="number">1</span> Salary</span><br><span class="line"><span class="keyword">FROM</span> (</span><br><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> TOP n Salary</span><br><span class="line"><span class="keyword">FROM</span> Worker</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">DESC</span></span><br><span class="line">)</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> Salary <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
+
 <br>
 <br>
 
@@ -969,7 +1009,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">6.</span> <span class="nav-text">DELETE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AS"><span class="nav-number">6.1.</span> <span class="nav-text">AS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">7.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">8.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">9.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">10.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">11.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">12.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">13.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">14.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">15.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">15.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">16.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">17.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Database"><span class="nav-number">18.</span> <span class="nav-text">Database</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">18.1.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">18.2.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">18.3.</span> <span class="nav-text">UNION</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">19.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">19.1.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">19.2.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">20.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">20.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">20.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">20.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">21.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">22.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">22.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">22.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">6.</span> <span class="nav-text">DELETE</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#AS"><span class="nav-number">6.1.</span> <span class="nav-text">AS</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">7.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">8.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">9.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">10.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">11.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">12.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">13.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">14.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">15.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">15.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MINUS"><span class="nav-number">16.</span> <span class="nav-text">MINUS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">17.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">18.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">19.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">19.1.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">19.2.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">19.3.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">19.4.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">20.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">20.1.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">20.2.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">20.3.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">20.4.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">21.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">21.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">21.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">21.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">22.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">23.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">23.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">23.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1058,7 +1098,7 @@
     </span>
 
 
-    <span title="C">788k</span>
+    <span title="C">796k</span>
   -->
 
   <!--
@@ -1066,7 +1106,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">11:57</span>
+    <span title="T">12:04</span>
 
   -->
 
@@ -1076,7 +1116,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有788k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有796k的老兔正在打瞌睡</span>
 </div>
 
         
