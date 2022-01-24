@@ -38,7 +38,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/mid-find.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/substring-between-parentheses.png">
 <meta property="article:published_time" content="2021-10-15T13:12:02.000Z">
-<meta property="article:modified_time" content="2022-01-22T21:41:22.609Z">
+<meta property="article:modified_time" content="2022-01-24T04:33:29.247Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="excel">
@@ -252,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-22 16:41:22" itemprop="dateModified" datetime="2022-01-22T16:41:22-05:00">2022-01-22</time>
+                <time title="Modified: 2022-01-23 23:33:29" itemprop="dateModified" datetime="2022-01-23T23:33:29-05:00">2022-01-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -455,12 +455,14 @@
 </li>
 </ul>
 <ol start="9">
-<li>sumifs + rolling time sum</li>
+<li>Sumifs + <a target="_blank" rel="noopener" href="https://contexturesblog.com/archives/2015/11/12/create-a-rolling-total-in-excel/">rolling time sum</a></li>
 </ol>
-<p><a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/sum-values-based-on-multiple-conditions-e610ae0f-4d27-480c-9119-eb644f1e847e">https://support.microsoft.com/en-us/office/sum-values-based-on-multiple-conditions-e610ae0f-4d27-480c-9119-eb644f1e847e</a></p>
-<p><a target="_blank" rel="noopener" href="https://contexturesblog.com/archives/2015/11/12/create-a-rolling-total-in-excel/">https://contexturesblog.com/archives/2015/11/12/create-a-rolling-total-in-excel/</a></p>
-<p><a target="_blank" rel="noopener" href="https://www.ablebits.com/office-addins-blog/2014/11/04/excel-sumif-function-formula-examples/">https://www.ablebits.com/office-addins-blog/2014/11/04/excel-sumif-function-formula-examples/</a></p>
-<p>=SUMIFS(E$2:E2, C$2:C2, “&gt;=” &amp; DATE(YEAR(C2),MONTH(C2)-5,DAY(C2)),A$2:A2,”=”&amp;A2)</p>
+<p>Sumif和<a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/sum-values-based-on-multiple-conditions-e610ae0f-4d27-480c-9119-eb644f1e847e">Sumifs</a>是两个function,parameter有少许不同!</p>
+<div class="note ">
+            <p>我所写的,check通patient ID + rolling time period计算方式.</p><p>=SUMIFS(K:K, C:C, “&gt;=” &amp; DATE(YEAR(C2),MONTH(C2),DAY(C2)-180), C:C, “&lt;” &amp; DATE(YEAR(C2),MONTH(C2),DAY(C2)),A:A,”=”&amp;A2) + SUMIFS(K:K, C:C, “=” &amp; C2,A:A,”=”&amp;A2)</p><p>*疑惑之,在sql写self-join的时候,会有两个条件.“比自己大”+“比预计时间小”,翻找的例子却没有.<br>可能是例子默认“日期顺序已经被排列好了”.我的数据并没有,所以查询的row范围也是“那一column的全部”.</p>
+          </div>
+
+<p><a target="_blank" rel="noopener" href="https://www.extendoffice.com/documents/excel/5075-excel-chart-rename-series.html">https://www.extendoffice.com/documents/excel/5075-excel-chart-rename-series.html</a></p>
 
     </div>
 
@@ -568,7 +570,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">225</span>
+          <span class="site-state-item-count">226</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -641,7 +643,7 @@
     </span>
 
 
-    <span title="C">815k</span>
+    <span title="C">827k</span>
   -->
 
   <!--
@@ -649,7 +651,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">12:21</span>
+    <span title="T">12:32</span>
 
   -->
 
@@ -659,7 +661,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有815k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有827k的老兔正在打瞌睡</span>
 </div>
 
         
