@@ -31,7 +31,7 @@
 <meta property="og:description" content="个人用笔记,因为太长了所以分成了两份.上一回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-31T19:30:10.000Z">
-<meta property="article:modified_time" content="2022-01-21T07:06:26.140Z">
+<meta property="article:modified_time" content="2022-01-28T17:29:53.192Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-21 02:06:26" itemprop="dateModified" datetime="2022-01-21T02:06:26-05:00">2022-01-21</time>
+                <time title="Modified: 2022-01-28 12:29:53" itemprop="dateModified" datetime="2022-01-28T12:29:53-05:00">2022-01-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -339,16 +339,15 @@
 <br>
 <br>
 
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>View: a saved query.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> id, album_id, title, track_number,</span><br><span class="line">  duration <span class="operator">/</span> <span class="number">60</span> <span class="keyword">AS</span> m, duration <span class="operator">%</span> <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> trackView <span class="keyword">AS</span></span><br><span class="line">  <span class="keyword">SELECT</span> id, album_id, title, track_number,</span><br><span class="line">    duration <span class="operator">/</span> <span class="number">60</span> <span class="keyword">AS</span> m, duration <span class="operator">%</span> <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> trackView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> album, a.artist, t.track_number <span class="keyword">AS</span> seq, t.title, t.m, t.s</span><br><span class="line">  <span class="keyword">FROM</span> album <span class="keyword">AS</span> a</span><br><span class="line">  <span class="keyword">JOIN</span> trackView <span class="keyword">AS</span> t</span><br><span class="line">    <span class="keyword">ON</span> t.album_id <span class="operator">=</span> a.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> a.title, t.track_number</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> IF <span class="keyword">EXISTS</span> trackView;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
 <h2 id="Subselect"><a href="#Subselect" class="headerlink" title="Subselect"></a>Subselect</h2><p>把select当作select的source.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> co.Name, ss.CCode <span class="keyword">FROM</span> (</span><br><span class="line">    <span class="keyword">SELECT</span> SUBSTR(a, <span class="number">1</span>, <span class="number">2</span>) <span class="keyword">AS</span> State, SUBSTR(a, <span class="number">3</span>) <span class="keyword">AS</span> SCode,</span><br><span class="line">      SUBSTR(b, <span class="number">1</span>, <span class="number">2</span>) <span class="keyword">AS</span> Country, SUBSTR(b, <span class="number">3</span>) <span class="keyword">AS</span> CCode <span class="keyword">FROM</span> t</span><br><span class="line">  ) <span class="keyword">AS</span> ss</span><br><span class="line">  <span class="keyword">JOIN</span> Country <span class="keyword">AS</span> co</span><br><span class="line">    <span class="keyword">ON</span> co.Code2 <span class="operator">=</span> ss.Country</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-<br>
-
-<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>View: a saved query.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> id, album_id, title, track_number,</span><br><span class="line">  duration <span class="operator">/</span> <span class="number">60</span> <span class="keyword">AS</span> m, duration <span class="operator">%</span> <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"></span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">VIEW</span> trackView <span class="keyword">AS</span></span><br><span class="line">  <span class="keyword">SELECT</span> id, album_id, title, track_number,</span><br><span class="line">    duration <span class="operator">/</span> <span class="number">60</span> <span class="keyword">AS</span> m, duration <span class="operator">%</span> <span class="number">60</span> <span class="keyword">AS</span> s <span class="keyword">FROM</span> track;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> trackView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> a.title <span class="keyword">AS</span> album, a.artist, t.track_number <span class="keyword">AS</span> seq, t.title, t.m, t.s</span><br><span class="line">  <span class="keyword">FROM</span> album <span class="keyword">AS</span> a</span><br><span class="line">  <span class="keyword">JOIN</span> trackView <span class="keyword">AS</span> t</span><br><span class="line">    <span class="keyword">ON</span> t.album_id <span class="operator">=</span> a.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> a.title, t.track_number</span><br><span class="line">;</span><br><span class="line"></span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">VIEW</span> IF <span class="keyword">EXISTS</span> trackView;</span><br></pre></td></tr></table></figure>
-
 
 <br>
 <br>
@@ -382,7 +381,6 @@
 <p>或者用union合并.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tmp10 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> col_trans</span><br><span class="line"><span class="keyword">where</span> security_id <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> security_id <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> security_id_2 <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 
-
 <br>
 <br>
 <br>
@@ -401,20 +399,21 @@
 <br>
 
 <h2 id="DLC中的DLC"><a href="#DLC中的DLC" class="headerlink" title="DLC中的DLC"></a>DLC中的DLC</h2><p>Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.</p>
-<p><u>To retrieve two minimum salaries, you can write a query as below:</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (SELECTCOUNT(<span class="keyword">DISTINCT</span> Salary)<span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&gt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-<p>To retrieve two maximum salaries, you can write a query as below:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (SELECTCOUNT(<span class="keyword">DISTINCT</span> Salary) <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&lt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+<p><u>To retrieve two <strong>minimum</strong> salaries, you can write a query as below:</u></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Salary) <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&gt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
+
+<p><u>To retrieve two <strong>maximum</strong> salaries, you can write a query as below:</u></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Salary) <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&lt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
 
 <p><u>Write a query to calculate the even and odd records from a table.</u></p>
 <p>To retrieve the even records from a table, you have to use the MOD() function as follows:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo) <span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
 
 <p>Similarly, to retrieve the odd records from a table, you can write a query as follows:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID <span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo) <span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -532,7 +531,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">1.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">3.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">4.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">5.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">6.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">7.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">8.</span> <span class="nav-text">Autoincrement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLC%E4%B8%AD%E7%9A%84DLC"><span class="nav-number">9.</span> <span class="nav-text">DLC中的DLC</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">1.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">3.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">4.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">5.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">6.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">7.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">8.</span> <span class="nav-text">Autoincrement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLC%E4%B8%AD%E7%9A%84DLC"><span class="nav-number">9.</span> <span class="nav-text">DLC中的DLC</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -621,7 +620,7 @@
     </span>
 
 
-    <span title="C">830k</span>
+    <span title="C">832k</span>
   -->
 
   <!--
@@ -629,7 +628,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">12:34</span>
+    <span title="T">12:36</span>
 
   -->
 
@@ -639,7 +638,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有830k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有832k的老兔正在打瞌睡</span>
 </div>
 
         
