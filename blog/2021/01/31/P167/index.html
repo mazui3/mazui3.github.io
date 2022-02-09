@@ -31,7 +31,7 @@
 <meta property="og:description" content="个人用笔记,因为太长了所以分成了两份.上一回.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2021-01-31T19:30:10.000Z">
-<meta property="article:modified_time" content="2022-01-28T17:29:53.192Z">
+<meta property="article:modified_time" content="2022-02-02T05:54:05.014Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-28 12:29:53" itemprop="dateModified" datetime="2022-01-28T12:29:53-05:00">2022-01-28</time>
+                <time title="Modified: 2022-02-02 00:54:05" itemprop="dateModified" datetime="2022-02-02T00:54:05-05:00">2022-02-02</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,13 +277,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>8.1k</span>
+              <span>6.6k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>7 mins.</span>
+              <span>6 mins.</span>
             </span>
 
         </div>
@@ -398,47 +398,6 @@
 <br>
 <br>
 
-<h2 id="DLC中的DLC"><a href="#DLC中的DLC" class="headerlink" title="DLC中的DLC"></a>DLC中的DLC</h2><p>Write a query to retrieve two minimum and maximum salaries from the EmployeePosition table.</p>
-<p><u>To retrieve two <strong>minimum</strong> salaries, you can write a query as below:</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Salary) <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&gt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-
-<p><u>To retrieve two <strong>maximum</strong> salaries, you can write a query as below:</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="keyword">DISTINCT</span> Salary <span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"> <span class="keyword">WHERE</span> <span class="number">2</span> <span class="operator">&gt;=</span> (<span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="keyword">DISTINCT</span> Salary) <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">  <span class="keyword">WHERE</span> E1.Salary <span class="operator">&lt;=</span> E2.Salary) <span class="keyword">ORDER</span> <span class="keyword">BY</span> E1.Salary <span class="keyword">DESC</span>;</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-
-<p><u>Write a query to calculate the even and odd records from a table.</u></p>
-<p>To retrieve the even records from a table, you have to use the MOD() function as follows:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">0</span>;</span><br></pre></td></tr></table></figure>
-
-<p>Similarly, to retrieve the odd records from a table, you can write a query as follows:</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID</span><br><span class="line"><span class="keyword">FROM</span> (<span class="keyword">SELECT</span> rowno, EmpID <span class="keyword">from</span> EmployeeInfo)</span><br><span class="line"><span class="keyword">WHERE</span> <span class="built_in">MOD</span>(rowno,<span class="number">2</span>)<span class="operator">=</span><span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-
-<p><u>Write a query to find the Nth highest salary from the table without using TOP/limit keyword.</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Salary</span><br><span class="line"><span class="keyword">FROM</span> EmployeePosition E1</span><br><span class="line"><span class="keyword">WHERE</span> N<span class="number">-1</span> <span class="operator">=</span> (</span><br><span class="line">      <span class="keyword">SELECT</span> <span class="built_in">COUNT</span>( <span class="keyword">DISTINCT</span> ( E2.Salary ) )</span><br><span class="line">      <span class="keyword">FROM</span> EmployeePosition E2</span><br><span class="line">      <span class="keyword">WHERE</span> E2.Salary <span class="operator">&gt;</span>  E1.Salary );</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-
-<p><u>Write a query to retrieve duplicate records from a table.</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID, EmpFname, Department <span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> EmployeeInfo <span class="keyword">GROUP</span> <span class="keyword">BY</span> EmpID, EmpFname, Department</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-
-<p><u>Write a query to retrieve the list of employees working in the same department.</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">DISTINCT</span> E.EmpID, E.EmpFname, E.Department</span><br><span class="line"><span class="keyword">FROM</span> EmployeeInfo E, Employee E1</span><br><span class="line"><span class="keyword">WHERE</span> E.Department <span class="operator">=</span> E1.Department <span class="keyword">AND</span> E.EmpID <span class="operator">!=</span> E1.EmpID;</span><br></pre></td></tr></table></figure>
-
-<br>
-<br>
-
-<p><u>Write a query to find the third-highest salary from the EmpPosition table.</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TOP <span class="number">1</span> salary</span><br><span class="line"><span class="keyword">FROM</span>(</span><br><span class="line"><span class="keyword">SELECT</span> TOP <span class="number">3</span> salary</span><br><span class="line"><span class="keyword">FROM</span> employee_table</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">DESC</span>) <span class="keyword">AS</span> emp</span><br><span class="line"><span class="keyword">ORDER</span> <span class="keyword">BY</span> salary <span class="keyword">ASC</span>;</span><br></pre></td></tr></table></figure>
-
     </div>
 
     
@@ -531,7 +490,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">1.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">3.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">4.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">5.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">6.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">7.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">8.</span> <span class="nav-text">Autoincrement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DLC%E4%B8%AD%E7%9A%84DLC"><span class="nav-number">9.</span> <span class="nav-text">DLC中的DLC</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">1.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">3.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">4.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">5.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">6.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">7.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">8.</span> <span class="nav-text">Autoincrement</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -547,14 +506,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">227</span>
+          <span class="site-state-item-count">228</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -620,7 +579,7 @@
     </span>
 
 
-    <span title="C">838k</span>
+    <span title="C">911k</span>
   -->
 
   <!--
@@ -628,7 +587,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">12:42</span>
+    <span title="T">13:48</span>
 
   -->
 
@@ -638,7 +597,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有838k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有911k的老兔正在打瞌睡</span>
 </div>
 
         

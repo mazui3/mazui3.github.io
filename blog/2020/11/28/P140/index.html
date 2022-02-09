@@ -31,7 +31,7 @@
 <meta property="og:description" content="那就开始吧(吧).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-29T01:56:27.000Z">
-<meta property="article:modified_time" content="2021-11-15T20:25:17.233Z">
+<meta property="article:modified_time" content="2022-02-07T05:40:29.547Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -246,7 +246,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2021-11-15 15:25:17" itemprop="dateModified" datetime="2021-11-15T15:25:17-05:00">2021-11-15</time>
+                <time title="Modified: 2022-02-07 00:40:29" itemprop="dateModified" datetime="2022-02-07T00:40:29-05:00">2022-02-07</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -277,13 +277,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>14k</span>
+              <span>15k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>13 mins.</span>
+              <span>14 mins.</span>
             </span>
 
         </div>
@@ -424,7 +424,11 @@
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># View the index number and label for each column</span></span><br><span class="line"><span class="keyword">for</span> i, v <span class="keyword">in</span> <span class="built_in">enumerate</span>(df.columns):</span><br><span class="line">    <span class="built_in">print</span>(i, v)</span><br></pre></td></tr></table></figure>
 
 
-<h3 id="loc-and-iloc"><a href="#loc-and-iloc" class="headerlink" title="loc and iloc"></a>loc and iloc</h3><p>We can select data using loc and iloc, which you can read more about <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">here</a>. loc uses labels of rows or columns to select data, while iloc uses the index numbers. We’ll use these to index the dataframe below.</p>
+<h3 id="loc-and-iloc"><a href="#loc-and-iloc" class="headerlink" title="loc and iloc"></a>loc and iloc</h3><p>We can select data using loc and iloc, which you can read more about <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html">here</a>.</p>
+<p>We can use .loc, iloc, and ix to insert the rows in the DataFrame.</p>
+<blockquote>
+<p>The loc basically works for the labels of our index. It can be understood as if we insert in loc[4], which means we are looking for that values of DataFrame that have an index labeled 4.<br>The iloc basically works for the positions in the index. It can be understood as if we insert in iloc[4], which means we are looking for the values of DataFrame that are present at index ‘4’.<br>The ix is a complex case because if the index is integer-based, we pass a label to ix. The ix[4] means that we are looking in the DataFrame for those values that have an index labeled 4. However, if the index is not only integer-based, ix will deal with the positions as iloc.</p>
+</blockquote>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># select all the columns from &#x27;id&#x27; to the last mean column</span></span><br><span class="line">df_means = df.loc[:,<span class="string">&#x27;id&#x27;</span>:<span class="string">&#x27;fractal_dimension_mean&#x27;</span>]</span><br><span class="line">df_means.head()</span><br><span class="line"></span><br><span class="line"><span class="comment"># repeat the step above using index numbers</span></span><br><span class="line">df_means = df.iloc[:,:<span class="number">12</span>]</span><br><span class="line">df_means.head()</span><br></pre></td></tr></table></figure>
 
 <p>计算某几行的sum.</p>
@@ -466,6 +470,7 @@
 <h4 id="一个column分成两个column"><a href="#一个column分成两个column" class="headerlink" title="一个column分成两个column"></a>一个column分成两个column</h4><p>在这个例子中,数据的格式是’num_1/num_2’或者‘num_1’</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># Get all the hybrids in 2008</span></span><br><span class="line">hb_08 = df_08[df_08[<span class="string">&#x27;fuel&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&#x27;/&#x27;</span>)]</span><br><span class="line"><span class="comment"># Hybrids in 2018</span></span><br><span class="line">hb_18 = df_18[df_18[<span class="string">&#x27;fuel&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&#x27;/&#x27;</span>)]</span><br><span class="line"></span><br><span class="line">df1 = hb_08.copy() <span class="comment"># data on first fuel type of each hybrid vehicle</span></span><br><span class="line">df2 = hb_08.copy() <span class="comment"># data on second fuel type of each hybrid vehicle</span></span><br></pre></td></tr></table></figure>
 <p>Then use <a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.apply.html">apply</a> function with pandas.</p>
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/python-pandas-series-str-contains/">str.contains</a></p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># columns to split by \&quot;/\&quot;</span></span><br><span class="line">split_columns = [<span class="string">&#x27;fuel&#x27;</span>, <span class="string">&#x27;air_pollution_score&#x27;</span>, <span class="string">&#x27;city_mpg&#x27;</span>, <span class="string">&#x27;hwy_mpg&#x27;</span>, <span class="string">&#x27;cmb_mpg&#x27;</span>, <span class="string">&#x27;greenhouse_gas_score&#x27;</span>]</span><br><span class="line"><span class="comment"># apply split function to each column of each dataframe copy</span></span><br><span class="line"><span class="keyword">for</span> c <span class="keyword">in</span> split_columns:</span><br><span class="line">    df1[c] = df1[c].apply(<span class="keyword">lambda</span> x: x.split(<span class="string">&quot;/&quot;</span>)[<span class="number">0</span>])</span><br><span class="line">    df2[c] = df2[c].apply(<span class="keyword">lambda</span> x: x.split(<span class="string">&quot;/&quot;</span>)[<span class="number">1</span>])</span><br><span class="line"><span class="comment"># combine dataframes to add to the original dataframe</span></span><br><span class="line">new_rows = df1.append(df2)</span><br><span class="line"><span class="comment"># drop the original hybrid rows</span></span><br><span class="line">df_08.drop(hb_08.index, inplace=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># add in our newly separated rows</span></span><br><span class="line">df_08 = df_08.append(new_rows, ignore_index=<span class="literal">True</span>)</span><br><span class="line"><span class="comment"># check that all the original hybrid rows with \&quot;/\&quot;s are gone</span></span><br><span class="line">df_08[df_08[<span class="string">&#x27;fuel&#x27;</span>].<span class="built_in">str</span>.contains(<span class="string">&#x27;/&#x27;</span>)]</span><br></pre></td></tr></table></figure>
 
 <h3 id="visualizing-data"><a href="#visualizing-data" class="headerlink" title="visualizing data"></a>visualizing data</h3><p><a target="_blank" rel="noopener" href="https://pandas.pydata.org/pandas-docs/stable/user_guide/visualization.html">documentation</a><br>using matplotlib.</p>
@@ -646,14 +651,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">227</span>
+          <span class="site-state-item-count">228</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">10</span>
+        <span class="site-state-item-count">11</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -719,7 +724,7 @@
     </span>
 
 
-    <span title="C">838k</span>
+    <span title="C">911k</span>
   -->
 
   <!--
@@ -727,7 +732,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">12:42</span>
+    <span title="T">13:48</span>
 
   -->
 
@@ -737,7 +742,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有838k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有911k的老兔正在打瞌睡</span>
 </div>
 
         
