@@ -32,8 +32,12 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/12/16/P213/P213_6.png">
 <meta property="article:published_time" content="2021-12-16T21:32:00.000Z">
-<meta property="article:modified_time" content="2022-02-10T01:19:53.025Z">
+<meta property="article:modified_time" content="2022-02-17T18:34:43.129Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -249,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-09 20:19:53" itemprop="dateModified" datetime="2022-02-09T20:19:53-05:00">2022-02-09</time>
+                <time title="Modified: 2022-02-17 13:34:43" itemprop="dateModified" datetime="2022-02-17T13:34:43-05:00">2022-02-17</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -280,13 +284,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>11k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>10 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -298,7 +302,11 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>我为什么会写这个.</p>
+        <script async
+  src="//mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML">
+</script>
+
+<p>我为什么会写这个.</p>
 <span id="more"></span>
 
 <p>收到了一份亚马逊学生测试题,跟飞哥探讨了一下,又摸了下例题,选择放弃.<br>不过还是记载了.</p>
@@ -396,6 +404,9 @@
 <p>Code workspace:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">import</span> os</span><br><span class="line"><span class="keyword">import</span> random</span><br><span class="line"><span class="keyword">import</span> re</span><br><span class="line"><span class="keyword">import</span> sys</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Complete the &#x27;performOperations&#x27; function below.</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># The function is expected to return an INTEGER_ARRAY.</span></span><br><span class="line"><span class="comment"># The function accepts following parameters:</span></span><br><span class="line"><span class="comment">#  1. INTEGER_ARRAY arr</span></span><br><span class="line"><span class="comment">#  2. 2D_INTEGER_ARRAY operations</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">performOperations</span>(<span class="params">arr, operations</span>):</span></span><br><span class="line">    <span class="comment"># Write your code here</span></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">&#x27;__main__&#x27;</span>:</span><br><span class="line">    fptr = <span class="built_in">open</span>(os.environ[<span class="string">&#x27;OUTPUT_PATH&#x27;</span>], <span class="string">&#x27;w&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    arr_count = <span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line"></span><br><span class="line">    arr = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(arr_count):</span><br><span class="line">        arr_item = <span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line">        arr.append(arr_item)</span><br><span class="line"></span><br><span class="line">    operations_rows = <span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line">    operations_columns = <span class="built_in">int</span>(<span class="built_in">input</span>().strip())</span><br><span class="line"></span><br><span class="line">    operations = []</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> _ <span class="keyword">in</span> <span class="built_in">range</span>(operations_rows):</span><br><span class="line">        operations.append(<span class="built_in">list</span>(<span class="built_in">map</span>(<span class="built_in">int</span>, <span class="built_in">input</span>().rstrip().split())))</span><br><span class="line"></span><br><span class="line">    result = performOperations(arr, operations)</span><br><span class="line"></span><br><span class="line">    fptr.write(<span class="string">&#x27;\n&#x27;</span>.join(<span class="built_in">map</span>(<span class="built_in">str</span>, result)))</span><br><span class="line">    fptr.write(<span class="string">&#x27;\n&#x27;</span>)</span><br><span class="line"></span><br><span class="line">    fptr.close()</span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
+
 <h3 id="Validating-Strings-with-RegEx"><a href="#Validating-Strings-with-RegEx" class="headerlink" title="Validating Strings with RegEx"></a>Validating Strings with RegEx</h3><p>Given a list of strings made up of the characters ‘a’ and ‘b’, create a regular expression that will match strings that begin and end with the same letter.</p>
 <p>Example:<br>‘a’, ‘aa’, and ‘bababbb’ match.<br>‘ab’ and ‘baba’ do not match.</p>
 <p>Replacing the blank (i.e., “__”) with a regular expression that matches strings as described.<br>Locked code in the editor prints True for each correct match and False for each incorrect match.</p>
@@ -424,8 +435,47 @@
 <p>Code workspace:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#!/bin/python3</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">from</span> os <span class="keyword">import</span> environ</span><br><span class="line"><span class="keyword">from</span> re <span class="keyword">import</span> <span class="built_in">compile</span></span><br><span class="line"><span class="keyword">from</span> re <span class="keyword">import</span> match</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment">#</span></span><br><span class="line"><span class="comment"># Write the regular expression in the blank space below</span></span><br><span class="line"><span class="comment">#</span></span><br><span class="line">regularExpression = <span class="string">&#x27;________&#x27;</span></span><br><span class="line">pattern = <span class="built_in">compile</span>(regularExpression)</span><br><span class="line"></span><br><span class="line">query = <span class="built_in">int</span>(<span class="built_in">input</span>())</span><br><span class="line">result = [<span class="string">&#x27;False&#x27;</span>] * query</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> <span class="built_in">range</span>(query):</span><br><span class="line">    someString = <span class="built_in">input</span>()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">if</span> pattern.match(someString):</span><br><span class="line">        result[i] = <span class="string">&#x27;True&#x27;</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">with</span> <span class="built_in">open</span>(environ[<span class="string">&#x27;OUTPUT_PATH&#x27;</span>], <span class="string">&#x27;w&#x27;</span>) <span class="keyword">as</span> fileOut:</span><br><span class="line">    fileOut.write(<span class="string">&#x27;\n&#x27;</span>.join(result))</span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
 
 <h2 id="yield"><a href="#yield" class="headerlink" title="yield"></a>yield</h2><p>Omake之遇到一个data analyst相关的面试测试,要求写python.<br>以为是pandas/numpy相关,结果一打开:卧槽纯python.<br>不过比较简单,稍微查了下,用到了没用过的<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/60748812/python-coroutines-gives-unknown-none-on-yield">yield</a>function.<br>我理解为跟C中的std:in相似.</p>
+<br>
+<br>
+
+<h2 id="Precision-and-Recall"><a href="#Precision-and-Recall" class="headerlink" title="Precision and Recall"></a>Precision and Recall</h2><p>Given a 2-D matrix P of predicted values and actual values, write a function precision_recall to calculate precision and recall metrics.</p>
+<p>Return the ordered pair (precision, recall).</p>
+<img src="/blog/2021/12/16/P213/P213_3.png" class="">
+
+<p>This problem tests your familiarity with a confusion matrix.</p>
+<p>A confusion matrix represents is a simple 2x2 array where each entry is the number of True Positive, False Positive, True Negative, and False Negative data points from any given binary experiment. The positions of each data category are shown in the example.</p>
+<p>Let’s recall the definitions of precision and recall.</p>
+<p>The formula for calculating precision is as follows:</p>
+<p>\frac{TP}{TP + FP}</p>
+<p>The precision value decreases as the number of False Positives increases. A lower FP value means our experiment was more precise.</p>
+<p>The formula for calculating recall is:</p>
+<p>\frac{TP}{TP+FN}</p>
+<p>​The recall value decreases as the number of False Negatives increases. A False Negative indicates that we rejected a data point when we shouldn’t have and thus it should be recalled.</p>
+<p>Once we are clear on the definitions of precision and recall, the problem is very easy to solve. We simply grab the relevant values from our input array P and plug them into the formulas which define precision and recall.</p>
+<p>Our final code is as follows:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">precision_recall</span>(<span class="params">P</span>):</span></span><br><span class="line"></span><br><span class="line">  precision = P[<span class="number">0</span>][<span class="number">0</span>] / (P[<span class="number">0</span>][<span class="number">0</span>] + P[<span class="number">1</span>][<span class="number">0</span>])</span><br><span class="line"></span><br><span class="line">  recall = P[<span class="number">0</span>][<span class="number">0</span>] / (P[<span class="number">0</span>][<span class="number">0</span>] + P[<span class="number">0</span>][<span class="number">1</span>])</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span>(precision,recall)</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="alternates-the-cases-of-every-alphabetic-characters"><a href="#alternates-the-cases-of-every-alphabetic-characters" class="headerlink" title="alternates the cases of every alphabetic characters"></a>alternates the cases of every alphabetic characters</h2><img src="/blog/2021/12/16/P213/P213_4.png" class="">
+<p>这道题,我使用了<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/23747284/creating-a-set-filled-with-letters-from-the-alphabet-in-python">set</a>,用loop<a target="_blank" rel="noopener" href="https://www.kite.com/python/answers/how-to-read-a-file-character-by-character-in-python">读取每个char</a>,如果是alphabet就变更.用一个bool来记录要不要upper.</p>
+<p><a target="_blank" rel="noopener" href="https://www.programiz.com/python-programming/set">创造set</a>.</p>
+<br>
+<br>
+
+<h2 id="check-duplicates"><a href="#check-duplicates" class="headerlink" title="check duplicates"></a>check duplicates</h2><img src="/blog/2021/12/16/P213/P213_5.png" class="">
+<p>这道题比较经典,在<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/9835762/how-do-i-find-the-duplicates-in-a-list-and-create-another-list-with-them">stackoverflow</a>上有找到.</p>
+<br>
+<br>
+
+<h2 id="balanced-smileys"><a href="#balanced-smileys" class="headerlink" title="balanced smileys"></a>balanced smileys</h2><img src="/blog/2021/12/16/P213/P213_6.png" class="">
+
+<p>这道题有点烦.但是<a target="_blank" rel="noopener" href="https://gist.github.com/mstepniowski/4660602">有出处</a>.</p>
 
     </div>
 
@@ -519,7 +569,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Find-the-missing-number-in-the-array"><span class="nav-number">1.</span> <span class="nav-text">Find the missing number in the array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-if-the-sum-of-two-integers-is-equal-to-the-given-value"><span class="nav-number">2.</span> <span class="nav-text">Determine if the sum of two integers is equal to the given value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-two-sorted-linked-lists"><span class="nav-number">3.</span> <span class="nav-text">Merge two sorted linked lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-linked-list-with-arbitrary-pointer"><span class="nav-number">4.</span> <span class="nav-text">Copy linked list with arbitrary pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Level-Order-Traversal-of-Binary-Tree"><span class="nav-number">5.</span> <span class="nav-text">Level Order Traversal of Binary Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E6%94%BE%E5%BC%83%E4%BA%86%E6%80%9D%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">然后放弃了思考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-array-queries"><span class="nav-number">6.1.</span> <span class="nav-text">Reverse array queries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validating-Strings-with-RegEx"><span class="nav-number">6.2.</span> <span class="nav-text">Validating Strings with RegEx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">7.</span> <span class="nav-text">yield</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Find-the-missing-number-in-the-array"><span class="nav-number">1.</span> <span class="nav-text">Find the missing number in the array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Determine-if-the-sum-of-two-integers-is-equal-to-the-given-value"><span class="nav-number">2.</span> <span class="nav-text">Determine if the sum of two integers is equal to the given value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Merge-two-sorted-linked-lists"><span class="nav-number">3.</span> <span class="nav-text">Merge two sorted linked lists</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Copy-linked-list-with-arbitrary-pointer"><span class="nav-number">4.</span> <span class="nav-text">Copy linked list with arbitrary pointer</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Level-Order-Traversal-of-Binary-Tree"><span class="nav-number">5.</span> <span class="nav-text">Level Order Traversal of Binary Tree</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%84%B6%E5%90%8E%E6%94%BE%E5%BC%83%E4%BA%86%E6%80%9D%E8%80%83"><span class="nav-number">6.</span> <span class="nav-text">然后放弃了思考</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Reverse-array-queries"><span class="nav-number">6.1.</span> <span class="nav-text">Reverse array queries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Validating-Strings-with-RegEx"><span class="nav-number">6.2.</span> <span class="nav-text">Validating Strings with RegEx</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#yield"><span class="nav-number">7.</span> <span class="nav-text">yield</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Precision-and-Recall"><span class="nav-number">8.</span> <span class="nav-text">Precision and Recall</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#alternates-the-cases-of-every-alphabetic-characters"><span class="nav-number">9.</span> <span class="nav-text">alternates the cases of every alphabetic characters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#check-duplicates"><span class="nav-number">10.</span> <span class="nav-text">check duplicates</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#balanced-smileys"><span class="nav-number">11.</span> <span class="nav-text">balanced smileys</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -608,7 +658,7 @@
     </span>
 
 
-    <span title="C">922k</span>
+    <span title="C">933k</span>
   -->
 
   <!--
@@ -616,7 +666,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">13:58</span>
+    <span title="T">14:08</span>
 
   -->
 
@@ -626,7 +676,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有922k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有933k的老兔正在打瞌睡</span>
 </div>
 
         
