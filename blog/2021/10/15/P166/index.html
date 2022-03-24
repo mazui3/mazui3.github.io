@@ -51,7 +51,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/mid-find.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/10/15/P166/substring-between-parentheses.png">
 <meta property="article:published_time" content="2021-10-15T13:12:02.000Z">
-<meta property="article:modified_time" content="2022-03-18T15:47:15.091Z">
+<meta property="article:modified_time" content="2022-03-19T21:11:15.172Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="excel">
@@ -265,7 +265,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-18 11:47:15" itemprop="dateModified" datetime="2022-03-18T11:47:15-04:00">2022-03-18</time>
+                <time title="Modified: 2022-03-19 17:11:15" itemprop="dateModified" datetime="2022-03-19T17:11:15-04:00">2022-03-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -296,13 +296,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>10k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 mins.</span>
+              <span>10 mins.</span>
             </span>
 
         </div>
@@ -447,7 +447,7 @@
 <blockquote>
 <p>Any number greater than 300 + user can over-ride with other entries:<br>Data &gt; data validation &gt; data validation &gt; setting &gt; allow whole number &gt; greater than<br>Select input message to enter your message<br>Select Error Alert &gt; style &gt; warning or information &gt; enter an error message</p>
 </blockquote>
-<p>如果要用categorical data的情况:<br>首先每种选择都得在不同的cell中.<br>然后Data &gt; data validation &gt; data validation &gt; setting &gt; list &gt; source选中刚刚准备好的cell.</p>
+<p>如果要用categorical data的情况:<br>首先每种选择都得在不同的cell中.还可以<a target="_blank" rel="noopener" href="https://trumpexcel.com/input-message-in-excel/">增加一个input message.</a><br>然后Data &gt; data validation &gt; data validation &gt; setting &gt; list &gt; source选中刚刚准备好的cell.</p>
 <br>
 
 <h2 id="Text-to-column"><a href="#Text-to-column" class="headerlink" title="Text to column"></a>Text to column</h2><p>如果遇上一个cell里有”A,B,C”可以用此功能变成三个cell分别放A,B和C.</p>
@@ -569,6 +569,7 @@
 
 <h2 id="Conditional-formatting"><a href="#Conditional-formatting" class="headerlink" title="Conditional formatting"></a>Conditional formatting</h2><img src="/blog/2021/10/15/P166/P166_14.png" class="" title="原来conditional formatting还能有多个规则,牛逼!">
 <p>在多个规则时可以调整priority.</p>
+<p><a target="_blank" rel="noopener" href="https://trumpexcel.com/highlight-rows-based-on-cell-value/">还可以让一整行highlight,牛逼.</a></p>
 <br>
 
 <h2 id="Sparklines"><a href="#Sparklines" class="headerlink" title="Sparklines"></a><a target="_blank" rel="noopener" href="https://trumpexcel.com/sparklines/">Sparklines</a></h2><p>A mini-chart in one cell that relates to a row of data.</p>
@@ -580,9 +581,10 @@
 <img src="/blog/2021/10/15/P166/P166_19.png" class="">
 <p>正确的grouping方式.</p>
 <img src="/blog/2021/10/15/P166/P166_20.png" class="">
-<p>跟filter类似的silcer功能.</p>
+<p>跟filter类似的silcer功能. Analyze -&gt; insert slicer.</p>
 <img src="/blog/2021/10/15/P166/P166_21.png" class="">
 <p>还有一看就很牛逼的timeline功能.</p>
+<p>还可以<a target="_blank" rel="noopener" href="https://support.microsoft.com/en-us/office/calculate-values-in-a-pivottable-11f41417-da80-435c-a5c6-b0185e59da77">手动添加一个column value</a>,不需要在原表格上动手脚了!</p>
 <p>Pivot chart跟普通的chart区别:因为跟pivot table链接,所以在table中filter数据,pivot chart也会变化,会方便.</p>
 <br>
 
@@ -645,16 +647,18 @@
 </tbody></table>
 <p>顺便一提只有string是(在cell中)靠左,其他value都是靠右.<br>日期会识别成数字type.甚至可以date+100来计算100天后的日期.</p>
 <h3 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h3><p>打开visual basic后,在modules中的才是co macro码的地方.<br>如果record一个macro,会默认存到module1(module2, etc)中.<br>Visual basic里的window如果不小心关了再打开是view -&gt; priority window.</p>
-<h3 id="THE-CODE"><a href="#THE-CODE" class="headerlink" title="THE CODE"></a>THE CODE</h3><p>Change value.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub IntegerData()</span><br><span class="line"></span><br><span class="line">&#x27;Example of an integer</span><br><span class="line"></span><br><span class="line">  Dim ExampleData Name As Integer</span><br><span class="line">  ExampleData = 75</span><br><span class="line">  Cells(15, 2) = ExampleData &#x27;在row15columnB中写入ExampleData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>用debug功能可以run your code one line by one line(按F8切下一行).</p>
+<h3 id="Change-value"><a href="#Change-value" class="headerlink" title="Change value"></a>Change value</h3><p>Change value.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub IntegerData()</span><br><span class="line"></span><br><span class="line">&#x27;Example of an integer</span><br><span class="line"></span><br><span class="line">Dim ExampleData Name As Integer</span><br><span class="line">ExampleData = 75</span><br><span class="line">Cells(15, 2) = ExampleData &#x27;在row15columnB中写入ExampleData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
 
-<p>Select Cell.</p>
+<h3 id="Select-cell"><a href="#Select-cell" class="headerlink" title="Select cell"></a>Select cell</h3><p>Select Cell.</p>
 <blockquote>
 <p>ActiveCell -&gt; the cell you are pointing at</p>
 </blockquote>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sub ActiveCellExample()</span><br><span class="line"></span><br><span class="line">&#x27;How to activate a cell</span><br><span class="line"></span><br><span class="line">  Range(&quot;C31&quot;).Active</span><br><span class="line">  ActiveCell.Value = &quot;Finance&quot;</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sub ActiveCellExample()</span><br><span class="line"></span><br><span class="line">&#x27;How to activate a cell</span><br><span class="line"></span><br><span class="line">Range(&quot;C31&quot;).Active</span><br><span class="line">ActiveCell.Value = &quot;Finance&quot;</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
 
-<p>用debug功能可以run your code one line by one line(按F8切下一行).</p>
+<h3 id="Message-box"><a href="#Message-box" class="headerlink" title="Message box"></a>Message box</h3><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line">Sub useMsgBox()</span><br><span class="line">MsgBox &quot;Hello world&quot;</span><br><span class="line"></span><br><span class="line">MsgBox &quot;Hello &quot; &amp; ActiveCell.Value</span><br><span class="line"></span><br><span class="line">MsgBox &quot;The Sheet name is &quot; &amp; ActiveSheet.Name</span><br><span class="line"></span><br><span class="line">MsgBox Range(&quot;b2&quot;) &amp; &quot;,  &quot; &amp; Range(&quot;C2&quot;)</span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub useNewLine()</span><br><span class="line">MsgBox &quot;Top score&quot; &amp; vbNewLine &amp; &quot;Smith: 102&quot;</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub useSpaceUnderscore()</span><br><span class="line">MsgBox &quot;this line goes on and on off the page so space and underscore &quot; _</span><br><span class="line">                     &amp; &quot; makes it easier to read &quot;</span><br><span class="line"></span><br><span class="line">Worksheets(&quot;revenue&quot;).Range(&quot;A1&quot;).CurrentRegion.Rows(1).Copy _</span><br><span class="line">                       Destination:=Range(&quot;M2&quot;)</span><br><span class="line"></span><br><span class="line">ActiveCell.Offset(0, 10).Value = _</span><br><span class="line">       &quot;Sentences which don&#x27;t fit on a line can be continued on the next line&quot;</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
 <br>
 
 <br>
@@ -810,7 +814,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hotkey"><span class="nav-number">1.</span> <span class="nav-text">Hotkey</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.1.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keys"><span class="nav-number">1.2.</span> <span class="nav-text">Keys</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pivot-table"><span class="nav-number">2.</span> <span class="nav-text">Pivot table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rough-notes"><span class="nav-number">3.</span> <span class="nav-text">Rough notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-wizard"><span class="nav-number">3.1.</span> <span class="nav-text">Function wizard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Networkdays"><span class="nav-number">3.2.</span> <span class="nav-text">Networkdays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMT"><span class="nav-number">3.3.</span> <span class="nav-text">PMT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weekday"><span class="nav-number">3.4.</span> <span class="nav-text">Weekday</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replace"><span class="nav-number">3.5.</span> <span class="nav-text">Replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-ranges"><span class="nav-number">3.6.</span> <span class="nav-text">Name ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table"><span class="nav-number">3.7.</span> <span class="nav-text">Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-validation"><span class="nav-number">3.8.</span> <span class="nav-text">Data validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-to-column"><span class="nav-number">3.9.</span> <span class="nav-text">Text to column</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort"><span class="nav-number">3.10.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proper"><span class="nav-number">3.11.</span> <span class="nav-text">Proper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ref"><span class="nav-number">3.12.</span> <span class="nav-text">Ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Count"><span class="nav-number">3.13.</span> <span class="nav-text">Count</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sumproduct"><span class="nav-number">3.14.</span> <span class="nav-text">Sumproduct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If"><span class="nav-number">3.15.</span> <span class="nav-text">If</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lookup"><span class="nav-number">3.16.</span> <span class="nav-text">Lookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cell-formatting"><span class="nav-number">3.17.</span> <span class="nav-text">Cell formatting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Round-up-and-round-down"><span class="nav-number">3.18.</span> <span class="nav-text">Round up and round down</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Concatenate"><span class="nav-number">3.19.</span> <span class="nav-text">Concatenate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chart"><span class="nav-number">3.20.</span> <span class="nav-text">Chart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-formatting"><span class="nav-number">3.21.</span> <span class="nav-text">Conditional formatting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparklines"><span class="nav-number">3.22.</span> <span class="nav-text">Sparklines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pivot-table-1"><span class="nav-number">3.23.</span> <span class="nav-text">Pivot table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-If-analysis"><span class="nav-number">3.24.</span> <span class="nav-text">What-If analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Goal-Seek"><span class="nav-number">3.24.1.</span> <span class="nav-text">Goal Seek</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solver"><span class="nav-number">3.24.2.</span> <span class="nav-text">Solver</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VBA"><span class="nav-number">3.25.</span> <span class="nav-text">VBA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Macro"><span class="nav-number">3.25.1.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-type"><span class="nav-number">3.25.2.</span> <span class="nav-text">Data type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modules"><span class="nav-number">3.25.3.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#THE-CODE"><span class="nav-number">3.25.4.</span> <span class="nav-text">THE CODE</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quiz"><span class="nav-number">4.</span> <span class="nav-text">Quiz</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Hotkey"><span class="nav-number">1.</span> <span class="nav-text">Hotkey</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Tips"><span class="nav-number">1.1.</span> <span class="nav-text">Tips</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Keys"><span class="nav-number">1.2.</span> <span class="nav-text">Keys</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pivot-table"><span class="nav-number">2.</span> <span class="nav-text">Pivot table</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Rough-notes"><span class="nav-number">3.</span> <span class="nav-text">Rough notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Function-wizard"><span class="nav-number">3.1.</span> <span class="nav-text">Function wizard</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Networkdays"><span class="nav-number">3.2.</span> <span class="nav-text">Networkdays</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#PMT"><span class="nav-number">3.3.</span> <span class="nav-text">PMT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Weekday"><span class="nav-number">3.4.</span> <span class="nav-text">Weekday</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Replace"><span class="nav-number">3.5.</span> <span class="nav-text">Replace</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Name-ranges"><span class="nav-number">3.6.</span> <span class="nav-text">Name ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Table"><span class="nav-number">3.7.</span> <span class="nav-text">Table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-validation"><span class="nav-number">3.8.</span> <span class="nav-text">Data validation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-to-column"><span class="nav-number">3.9.</span> <span class="nav-text">Text to column</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sort"><span class="nav-number">3.10.</span> <span class="nav-text">Sort</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Proper"><span class="nav-number">3.11.</span> <span class="nav-text">Proper</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Ref"><span class="nav-number">3.12.</span> <span class="nav-text">Ref</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Count"><span class="nav-number">3.13.</span> <span class="nav-text">Count</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sumproduct"><span class="nav-number">3.14.</span> <span class="nav-text">Sumproduct</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If"><span class="nav-number">3.15.</span> <span class="nav-text">If</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Lookup"><span class="nav-number">3.16.</span> <span class="nav-text">Lookup</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cell-formatting"><span class="nav-number">3.17.</span> <span class="nav-text">Cell formatting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Round-up-and-round-down"><span class="nav-number">3.18.</span> <span class="nav-text">Round up and round down</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Concatenate"><span class="nav-number">3.19.</span> <span class="nav-text">Concatenate</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Chart"><span class="nav-number">3.20.</span> <span class="nav-text">Chart</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Conditional-formatting"><span class="nav-number">3.21.</span> <span class="nav-text">Conditional formatting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sparklines"><span class="nav-number">3.22.</span> <span class="nav-text">Sparklines</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pivot-table-1"><span class="nav-number">3.23.</span> <span class="nav-text">Pivot table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#What-If-analysis"><span class="nav-number">3.24.</span> <span class="nav-text">What-If analysis</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Goal-Seek"><span class="nav-number">3.24.1.</span> <span class="nav-text">Goal Seek</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Solver"><span class="nav-number">3.24.2.</span> <span class="nav-text">Solver</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VBA"><span class="nav-number">3.25.</span> <span class="nav-text">VBA</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Macro"><span class="nav-number">3.25.1.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Data-type"><span class="nav-number">3.25.2.</span> <span class="nav-text">Data type</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Modules"><span class="nav-number">3.25.3.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Change-value"><span class="nav-number">3.25.4.</span> <span class="nav-text">Change value</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Select-cell"><span class="nav-number">3.25.5.</span> <span class="nav-text">Select cell</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Message-box"><span class="nav-number">3.25.6.</span> <span class="nav-text">Message box</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Quiz"><span class="nav-number">4.</span> <span class="nav-text">Quiz</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -899,7 +903,7 @@
     </span>
 
 
-    <span title="C">967k</span>
+    <span title="C">977k</span>
   -->
 
   <!--
@@ -907,7 +911,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">14:39</span>
+    <span title="T">14:48</span>
 
   -->
 
@@ -917,7 +921,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有967k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有977k的老兔正在打瞌睡</span>
 </div>
 
         

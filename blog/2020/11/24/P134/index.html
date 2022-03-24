@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2022-02-12T21:17:05.313Z">
+<meta property="article:modified_time" content="2022-03-24T04:28:46.439Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-02-12 16:17:05" itemprop="dateModified" datetime="2022-02-12T16:17:05-05:00">2022-02-12</time>
+                <time title="Modified: 2022-03-24 00:28:46" itemprop="dateModified" datetime="2022-03-24T00:28:46-04:00">2022-03-24</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +281,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>27k</span>
+              <span>36k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>24 mins.</span>
+              <span>33 mins.</span>
             </span>
 
         </div>
@@ -339,6 +339,14 @@
 <br>
 <br>
 <br>
+
+<div class="note ">
+            <p>Oracle命名规则(有相似又有不同):</p><ul><li>up to 30 char in length</li><li>must begin with a letter</li><li>can contain letters, number, $, _, and #</li><li>must be unique with in a schema</li><li>cannot be an orcale reserved word</li><li>case <strong>insensitive</strong></li></ul>
+          </div>
+
+<br>
+<br>
+<br>
 <br>
 <br>
 <br>
@@ -346,8 +354,30 @@
 <br>
 <br>
 
-<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> Name <span class="keyword">LIKE</span> <span class="string">&#x27;%island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- wherever there&#x27;s island in the string, %means 前面或者后面可以有其他字符</span></span><br><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> Name <span class="keyword">LIKE</span> <span class="string">&#x27;_island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- _ 的意思是某一个字符.island%前面可以有任何一个字符</span></span><br><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line"> <span class="keyword">WHERE</span> Continent <span class="keyword">IN</span> ( <span class="string">&#x27;Europe&#x27;</span>, <span class="string">&#x27;Asia&#x27;</span> ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- continent是europe或者asia</span></span><br></pre></td></tr></table></figure>
+<h1 id="code"><a href="#code" class="headerlink" title="code"></a>code</h1><h2 id="SELECT"><a href="#SELECT" class="headerlink" title="SELECT"></a>SELECT</h2><p>Like的用法(note见sql string).</p>
+<ul>
+<li>_ which denotes one char</li>
+<li>% which denotes 0 or more chars</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> Name <span class="keyword">LIKE</span> <span class="string">&#x27;%island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- wherever there&#x27;s island in the string, %means 前面或者后面可以有其他字符</span></span><br><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">WHERE</span> Name <span class="keyword">LIKE</span> <span class="string">&#x27;_island%&#x27;</span> <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- _ 的意思是某一个字符.island%前面可以有任何一个字符</span></span><br><span class="line"><span class="keyword">SELECT</span> Name, Continent, Population <span class="keyword">FROM</span> Country</span><br><span class="line"> <span class="keyword">WHERE</span> Continent <span class="keyword">IN</span> ( <span class="string">&#x27;Europe&#x27;</span>, <span class="string">&#x27;Asia&#x27;</span> ) <span class="keyword">ORDER</span> <span class="keyword">BY</span> Name; <span class="comment">-- continent是europe或者asia</span></span><br></pre></td></tr></table></figure>
 <p>在sql string tag下接string comparsion笔记.</p>
+<span style="color:#64c0f5">
+(oracle课程中)
+</span>
+Literal values.
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name_1 ,<span class="string">&#x27;Hello&#x27;</span>,<span class="number">5</span>,<span class="string">&#x27;01-Jan-15&#x27;</span></span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
+这样output时,每一行都会有,Hello,5和01-Jan-15三个value.
+强调string和date要放在single quote中.
+
+<p>Substituion variable.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name_1</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">WHERE</span> column_name_1 <span class="operator">=</span> <span class="operator">&amp;</span>theValue;</span><br></pre></td></tr></table></figure>
+<p>这是会跳出来一个框让你输入theValue的值.</p>
+<p>Use a variable name prefixed with &amp;&amp; to prompt the user only once.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name_1, <span class="operator">&amp;&amp;</span>theValue</span><br><span class="line"><span class="keyword">FROM</span> table_name</span><br><span class="line"><span class="keyword">Order</span> <span class="keyword">BY</span> <span class="operator">&amp;</span>theValue;</span><br></pre></td></tr></table></figure>
+<span style="color:#64c0f5">
+(oracle课程笔记结束)
+</span>
+
 <p>select + as可以用于取名字或改名字.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> column_name_1 <span class="keyword">AS</span> alias_name_1,  <span class="comment">-- 这时就可以改名了</span></span><br><span class="line">    column_name_2 <span class="keyword">AS</span> alias_name_2,</span><br><span class="line">    column_name_N <span class="keyword">AS</span> alias_name_n</span><br><span class="line"><span class="keyword">FROM</span> table_name;</span><br></pre></td></tr></table></figure>
 
@@ -358,7 +388,8 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> amount label <span class="operator">=</span> <span class="string">&#x27;usd&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>select + *, 全选.</p>
-<p>select + calculated, calculated的作用是使用临时计算的值(在原table中没有).</p>
+<p>select + calculated, calculated的作用是使用临时计算的值(在原table中没有</p>
+<p>  select + calculated, calculated的作用是使用临时计算的值(在原table中没有).</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span> outobs<span class="operator">=</span><span class="number">10</span>;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="type">date</span>, destination,</span><br><span class="line">boarded <span class="operator">+</span> transferred <span class="operator">+</span> nonrevenue <span class="keyword">as</span> Total</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights</span><br><span class="line"><span class="keyword">where</span> calculated total <span class="operator">&lt;</span> <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span> outobs<span class="operator">=</span><span class="number">10</span>;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="type">date</span>, destination,</span><br><span class="line">boarded <span class="operator">+</span> transferred <span class="operator">+</span> nonrevenue <span class="keyword">as</span> Total,</span><br><span class="line">calculated total<span class="operator">/</span><span class="number">2</span> <span class="keyword">as</span> Half</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights;</span><br></pre></td></tr></table></figure>
@@ -406,6 +437,12 @@
 <p>select + case when (像if else statment.)</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span>;</span><br><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> temp_2 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span>, <span class="keyword">case</span></span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North YorkC&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North YorkW&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">when</span> cty<span class="operator">=</span>&quot;North Yrko&quot; <span class="keyword">then</span> &quot;North York&quot;</span><br><span class="line"> <span class="keyword">else</span> cty <span class="keyword">end</span> <span class="keyword">as</span> city_clean</span><br><span class="line"><span class="keyword">from</span> disk.txn_data_v9</span><br><span class="line">quit;</span><br></pre></td></tr></table></figure>
 <p>这里as city_clean就是新造的column,同理可以用来categories things.</p>
+<br>
+<br>
+
+<p>Oracle中有另一种if else:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id,</span><br><span class="line">	DECODE (job_id,   <span class="string">&#x27;ASD_ASST&#x27;</span> ,  <span class="number">1.1</span> <span class="operator">*</span> salary,</span><br><span class="line">				 	 	  <span class="string">&#x27;MK_REP&#x27;</span>   ,  <span class="number">1.15</span> <span class="operator">*</span> salary,</span><br><span class="line">					 	  <span class="string">&#x27;HR_REP&#x27;</span>   ,  <span class="number">1.2</span> <span class="operator">*</span> salary,</span><br><span class="line">					 salary) <span class="keyword">AS</span> revised_salary</span><br><span class="line">	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+
 <br>
 <br>
 
@@ -523,6 +560,14 @@
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>;<span class="operator">/</span><span class="operator">/</span>opposite</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> test;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  b TEXT <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  c TEXT</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="NVL-Oracle"><a href="#NVL-Oracle" class="headerlink" title="NVL(Oracle)"></a>NVL(Oracle)</h2><p>一种查到了null替换值的function.<br>NVL(val1,val2) -&gt; if val1 null, return val2.<br>NVL2(val1,val2,val3) -&gt; if val1 null, return val2, else return val3.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, NVL(commission_pct, <span class="number">0</span>) <span class="keyword">AS</span> commission_pct</span><br><span class="line">  <span class="keyword">FROM</span> employees</span><br><span class="line">  <span class="keyword">WHERE</span> department_id <span class="keyword">IN</span>(<span class="number">60</span>, <span class="number">80</span>);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, salary, commission_pct,		NVL2(commission_pct, salary<span class="operator">+</span>salary<span class="operator">*</span>commission_pct, salary)</span><br><span class="line">												<span class="keyword">AS</span> gross_pay</span><br><span class="line">  	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -678,17 +723,67 @@
 <br>
 <br>
 
-<h3 id="Combine-two-tables-right-and-left-relationship"><a href="#Combine-two-tables-right-and-left-relationship" class="headerlink" title="Combine two tables(right and left relationship)"></a>Combine two tables(right and left relationship)</h3><p>Relational database, using JOIN clause</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">left</span> ( id <span class="type">INTEGER</span>, description TEXT );</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">right</span> ( id <span class="type">INTEGER</span>, description TEXT );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">left</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;left 01&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">left</span> <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;left 02&#x27;</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">right</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;right 06&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">right</span> <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;right 07&#x27;</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">left</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">right</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 这里拼起来(inner join, 只有id有重叠的行会join)</span></span><br><span class="line"><span class="keyword">SELECT</span> l.description <span class="keyword">AS</span> <span class="keyword">left</span>, r.description <span class="keyword">AS</span> <span class="keyword">right</span></span><br><span class="line">  <span class="keyword">FROM</span> <span class="keyword">left</span> <span class="keyword">AS</span> l</span><br><span class="line">  <span class="keyword">JOIN</span> <span class="keyword">right</span> <span class="keyword">AS</span> r <span class="keyword">ON</span> l.id <span class="operator">=</span> r.id <span class="comment">-- 用on来告诉他们用什么condition来join(intersection)</span></span><br><span class="line">  ;</span><br></pre></td></tr></table></figure>
+<h3 id="Natural-Join-Oracle"><a href="#Natural-Join-Oracle" class="headerlink" title="Natural Join(Oracle)"></a>Natural Join(Oracle)</h3><p>Oracle的笔记.</p>
+<p>Joins tables based on all columns with the same name and datatype.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> department_id, department_name, location_id, city</span><br><span class="line">	<span class="keyword">FROM</span> departments <span class="keyword">NATURAL</span> <span class="keyword">JOIN</span> locations;</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- (outer join, 全部join)</span></span><br><span class="line"><span class="keyword">SELECT</span> l.description <span class="keyword">AS</span> <span class="keyword">left</span>, r.description <span class="keyword">AS</span> <span class="keyword">right</span></span><br><span class="line">  <span class="keyword">FROM</span> <span class="keyword">left</span> <span class="keyword">AS</span> l</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> <span class="keyword">right</span> <span class="keyword">AS</span> r <span class="keyword">ON</span> l.id <span class="operator">=</span> r.id <span class="comment">-- 没有数据的地方就会生成NULL</span></span><br><span class="line">  ;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s.id <span class="keyword">AS</span> sale, s.date, i.name, i.description, s.price <span class="comment">-- 这里可以选更多的一起放到表格里来</span></span><br><span class="line">  <span class="keyword">FROM</span> sale <span class="keyword">AS</span> s</span><br><span class="line">  <span class="keyword">JOIN</span> item <span class="keyword">AS</span> i <span class="keyword">ON</span> s.item_id <span class="operator">=</span> i.id</span><br><span class="line">  ;</span><br></pre></td></tr></table></figure>
+<br>
+<br>
+
+<h3 id="Join-using-Oracle"><a href="#Join-using-Oracle" class="headerlink" title="Join using(Oracle)"></a>Join using(Oracle)</h3><p>Oracle里有两种普通join的写法.一种是用using,还有一种是跟sqlite一样用等号.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id, last_name, department_id, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees <span class="keyword">JOIN</span> departments</span><br><span class="line">	<span class="keyword">USING</span> (department_id);</span><br></pre></td></tr></table></figure>
+
+<p>用等号叫做:Equijoin.</p>
+<br>
+<br>
+
+<h3 id="Three-way-join-Oracle"><a href="#Three-way-join-Oracle" class="headerlink" title="Three way join(Oracle)"></a>Three way join(Oracle)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id, last_name, department_name, city</span><br><span class="line">	<span class="keyword">FROM</span> employees <span class="keyword">JOIN</span> departments</span><br><span class="line">	<span class="keyword">ON</span> employee.department_id <span class="operator">=</span> departments.department_id</span><br><span class="line">	<span class="keyword">JOIN</span> locations</span><br><span class="line">	<span class="keyword">ON</span> departments.location_id <span class="operator">=</span> locations.location_id;</span><br></pre></td></tr></table></figure>
+
+<p>可以在join时同时加入condition.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id, last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees e <span class="keyword">JOIN</span> departments d</span><br><span class="line">	<span class="keyword">ON</span> e.department_id <span class="operator">=</span> d.department_id</span><br><span class="line">	<span class="keyword">AND</span> e.department_id <span class="keyword">IN</span> (<span class="number">50</span>,<span class="number">60</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> employee_id, last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees e <span class="keyword">JOIN</span> departments d</span><br><span class="line">	<span class="keyword">ON</span> e.department_id <span class="operator">=</span> d.department_id</span><br><span class="line">	<span class="keyword">WHERE</span> e.department_id <span class="keyword">IN</span> (<span class="number">50</span>,<span class="number">60</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Non-equijoin-Oracle"><a href="#Non-equijoin-Oracle" class="headerlink" title="Non equijoin(Oracle)"></a>Non equijoin(Oracle)</h3><p>An operator such as BETWEEN…AND can be used to display an employee’s salary grade.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> grade_level, salary, last_name</span><br><span class="line">	<span class="keyword">FROM</span> employees e <span class="keyword">JOIN</span> sal_grades s</span><br><span class="line">	<span class="keyword">ON</span> salary <span class="keyword">BETWEEN</span> lowest_sal <span class="keyword">AND</span> highest_sal</span><br><span class="line">   <span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Non-standard-joins-Oracle"><a href="#Non-standard-joins-Oracle" class="headerlink" title="Non standard joins(Oracle)"></a>Non standard joins(Oracle)</h3><p>一种格式不大一样的Oracle only的join.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, department_name, city</span><br><span class="line"> 	<span class="keyword">FROM</span> employees e, departments d, locations l</span><br><span class="line"> 	<span class="keyword">WHERE</span> e.department_id <span class="operator">=</span> d.department_id</span><br><span class="line"> 	<span class="keyword">AND</span> d.location_id <span class="operator">=</span> l.location_id;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Combine-two-tables-right-and-left-relationship"><a href="#Combine-two-tables-right-and-left-relationship" class="headerlink" title="Combine two tables(right and left relationship)"></a>Combine two tables(right and left relationship)</h3><p>Relational database, using JOIN clause</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">left</span> ( id <span class="type">INTEGER</span>, description TEXT );</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> <span class="keyword">right</span> ( id <span class="type">INTEGER</span>, description TEXT );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">left</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;left 01&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">left</span> <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;left 02&#x27;</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">right</span> <span class="keyword">VALUES</span> ( <span class="number">1</span>, <span class="string">&#x27;right 06&#x27;</span> );</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">right</span> <span class="keyword">VALUES</span> ( <span class="number">2</span>, <span class="string">&#x27;right 07&#x27;</span> );</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">left</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> <span class="keyword">right</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- 这里拼起来(inner join, 只有id有重叠的行会join)</span></span><br><span class="line"><span class="keyword">SELECT</span> l.description <span class="keyword">AS</span> <span class="keyword">left</span>, r.description <span class="keyword">AS</span> <span class="keyword">right</span></span><br><span class="line">  <span class="keyword">FROM</span> <span class="keyword">left</span> <span class="keyword">AS</span> l</span><br><span class="line">  <span class="keyword">JOIN</span> <span class="keyword">right</span> <span class="keyword">AS</span> r <span class="keyword">ON</span> l.id <span class="operator">=</span> r.id <span class="comment">-- 用on来告诉他们用什么condition来join(intersection);</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- (outer join, 全部join)</span></span><br><span class="line"><span class="keyword">SELECT</span> l.description <span class="keyword">AS</span> <span class="keyword">left</span>, r.description <span class="keyword">AS</span> <span class="keyword">right</span></span><br><span class="line">  <span class="keyword">FROM</span> <span class="keyword">left</span> <span class="keyword">AS</span> l</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> <span class="keyword">right</span> <span class="keyword">AS</span> r <span class="keyword">ON</span> l.id <span class="operator">=</span> r.id <span class="comment">-- 没有数据的地方就会生成NULL;</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> s.id <span class="keyword">AS</span> sale, s.date, i.name, i.description, s.price <span class="comment">-- 这里可以选更多的一起放到表格里来</span></span><br><span class="line">  <span class="keyword">FROM</span> sale <span class="keyword">AS</span> s</span><br><span class="line">  <span class="keyword">JOIN</span> item <span class="keyword">AS</span> i <span class="keyword">ON</span> s.item_id <span class="operator">=</span> i.id;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Oracle中的left join算left full join:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees e [<span class="keyword">LEFT</span><span class="operator">|</span><span class="keyword">RIGHT</span><span class="operator">|</span><span class="keyword">FULL</span>] <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> departments d</span><br><span class="line">	<span class="keyword">ON</span> e.department_id <span class="operator">=</span> d.department_id;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
 
 <h3 id="Junction-table-many-to-many-relationship"><a href="#Junction-table-many-to-many-relationship" class="headerlink" title="Junction table(many to many relationship)"></a>Junction table(many to many relationship)</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> customer;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> item;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> sale;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> c.name <span class="keyword">AS</span> Cust, c.zip, i.name <span class="keyword">AS</span> Item, i.description, s.quantity <span class="keyword">AS</span> Quan, s.price <span class="keyword">AS</span> Price</span><br><span class="line">  <span class="keyword">FROM</span> sale <span class="keyword">AS</span> s</span><br><span class="line">  <span class="keyword">JOIN</span> item <span class="keyword">AS</span> i <span class="keyword">ON</span> s.item_id <span class="operator">=</span> i.id</span><br><span class="line">  <span class="keyword">JOIN</span> customer <span class="keyword">AS</span> c <span class="keyword">ON</span> s.customer_id <span class="operator">=</span> c.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Cust, Item</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> customer ( name ) <span class="keyword">VALUES</span> ( <span class="string">&#x27;Jane Smith&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> customer;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- left joins</span></span><br><span class="line"><span class="keyword">SELECT</span> c.name <span class="keyword">AS</span> Cust, c.zip, i.name <span class="keyword">AS</span> Item, i.description, s.quantity <span class="keyword">AS</span> Quan, s.price <span class="keyword">AS</span> Price</span><br><span class="line">  <span class="keyword">FROM</span> customer <span class="keyword">AS</span> c</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sale <span class="keyword">AS</span> s <span class="keyword">ON</span> s.customer_id <span class="operator">=</span> c.id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> item <span class="keyword">AS</span> i <span class="keyword">ON</span> s.item_id <span class="operator">=</span> i.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Cust, Item</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> customer ( name ) <span class="keyword">VALUES</span> ( <span class="string">&#x27;Jane Smith&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> customer;</span><br><span class="line"></span><br><span class="line"><span class="comment">-- left joins</span></span><br><span class="line"><span class="keyword">SELECT</span> c.name <span class="keyword">AS</span> Cust, c.zip, i.name <span class="keyword">AS</span> Item, i.description, s.quantity <span class="keyword">AS</span> Quan, s.price <span class="keyword">AS</span> Price</span><br><span class="line">  <span class="keyword">FROM</span> customer <span class="keyword">AS</span> c</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> sale <span class="keyword">AS</span> s <span class="keyword">ON</span> s.customer_id <span class="operator">=</span> c.id</span><br><span class="line">  <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> item <span class="keyword">AS</span> i <span class="keyword">ON</span> s.item_id <span class="operator">=</span> i.id</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Cust, Item;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>在oracle中有类似的Cross join:</p>
+<blockquote>
+<p>Generates a Cartesian Product.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> departments;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -700,10 +795,77 @@
 <p>注:<br>Union 会默认remove duplicated rows,union all不会.</p>
 <br>
 <br>
+
+<p>关于Oracle的竖着的合并:</p>
+<p>Union和Union all 一样,注意union会自带sort:</p>
+<p>Union all:</p>
+<ul>
+<li>Displays all employees and consultants including duplicated rows</li>
+<li>Result is not sorted</li>
+</ul>
+<p>Union:</p>
+<ul>
+<li>Displays all employees and consultants removing duplicated rows</li>
+<li>Performs a record sort, from left to right</li>
+</ul>
+<p>Intersect:</p>
+<ul>
+<li>Returns the rows that are common to both queries</li>
+<li>Displays names that appear in both tables, removing duplicated rows</li>
+<li>Performs a record sort</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">INTERSECT</span></span><br><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> consultants;</span><br></pre></td></tr></table></figure>
+
+<p>Minus:</p>
+<ul>
+<li>Returns the distinct rows selected by the first query not selected by the next query</li>
+<li>Displays employees who are not consultants, removing duplicated rows, if any</li>
+<li>Performs a record sort</li>
+</ul>
+<p>(也就是第二个query的数据用来减第一个query.)</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">MINUS</span><br><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> consultants;</span><br></pre></td></tr></table></figure>
+
+<p>关于这些竖着的合并:</p>
+<ul>
+<li>All column headings come from the first query, so use generic column aliases as needed</li>
+<li>The number of columns selected must match</li>
+<li>The datatype family of the columns selected must match</li>
+<li>The order by clause can appear only once, at the very end</li>
+<li>To avoid confusion, it is common practice to order by column integers</li>
+</ul>
+<p>比如把order2放在最后面:</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> consultants</span><br><span class="line">MINUS</span><br><span class="line"><span class="keyword">SELECT</span> first_name, last_name</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="number">2</span>;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> employee_id, job_id, salary</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> employee_id, job_id, <span class="number">0</span></span><br><span class="line">	<span class="keyword">FROM</span> job_history;</span><br></pre></td></tr></table></figure>
+<p>把从job_history里的数据在salary里默认为0.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> location_id, department_name, <span class="keyword">NULL</span> <span class="keyword">AS</span> city</span><br><span class="line">	<span class="keyword">FROM</span> departments</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> location_id, <span class="keyword">NULL</span>, city</span><br><span class="line">	<span class="keyword">FROM</span> locations;</span><br></pre></td></tr></table></figure>
+<p>注意第一个query中要确认名字,空出null为city给第二个query.<br>而第二个query中的departent_name就不用.</p>
+<p>(oracle笔记结束)</p>
+<br>
+<br>
 <br>
 
 <h3 id="Self-join"><a href="#Self-join" class="headerlink" title="Self join"></a>Self join</h3><p>Write an SQL query to fetch the list of employees with the same salary.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> <span class="keyword">distinct</span> W.WORKER_ID, W.FIRST_NAME, W.Salary</span><br><span class="line"><span class="keyword">from</span> Worker W, Worker W1</span><br><span class="line"><span class="keyword">where</span> W.Salary <span class="operator">=</span> W1.Salary</span><br><span class="line"><span class="keyword">and</span> W.WORKER_ID <span class="operator">!=</span> W1.WORKER_ID;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>来自Oracle的Self join笔记:<br>You may need to scan more than one row in a table to arrive at an answer.<br>例子:一个employee有id也有manager_id.要直接寻找employee的manager可以按两者的id join.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.last_name <span class="keyword">as</span> emp, m.last_name <span class="keyword">as</span> mgr</span><br><span class="line">	<span class="keyword">FROM</span> employees e <span class="keyword">JOIN</span> employees m</span><br><span class="line">	<span class="keyword">ON</span> e.manager_id <span class="operator">=</span> m.employee_id</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> emp;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="Substitution-variables-Oracle"><a href="#Substitution-variables-Oracle" class="headerlink" title="Substitution variables(Oracle)"></a>Substitution variables(Oracle)</h2><blockquote>
+<p>Use a variable name prefixed with &amp; to prompt the user</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name, last_name, salary, job_id</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> employee_id <span class="operator">=</span> <span class="operator">&amp;</span>empid;</span><br></pre></td></tr></table></figure>
+
+<p>会跳出让输入empid的窗口.</p>
+<p>Use a variable name prefixed with &amp;&amp; to prompt the user only once</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> first_name, last_name, salary, <span class="operator">&amp;&amp;</span>col4</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="operator">&amp;</span>col4;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -746,8 +908,54 @@
 <br>
 <br>
 
+<h3 id="INSTR-Oracle"><a href="#INSTR-Oracle" class="headerlink" title="INSTR(Oracle)"></a>INSTR(Oracle)</h3><p>INSTR returns the numeric position of a substring.</p>
+<blockquote>
+<p>INSTR(column, ‘string’ , beginning position , occurrence)</p>
+</blockquote>
+<ul>
+<li>0 is returned if the substring is not found</li>
+<li>The position where you want the search to start. Position 1 is the default</li>
+<li>Which occurrence you want searched for. Occurrence 1 is the default</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> street_address, INSTR(street_address, <span class="string">&#x27; &#x27;</span>)</span><br><span class="line">	<span class="keyword">FROM</span> locations;</span><br></pre></td></tr></table></figure>
+<p>用空格很实用.</p>
+<br>
+<br>
+
+<h3 id="INSTR-Oracle-1"><a href="#INSTR-Oracle-1" class="headerlink" title="INSTR(Oracle)"></a>INSTR(Oracle)</h3><blockquote>
+<p>Use LPAD and RPAD to pad a column on the left or right with specified character(s) up to a specified length<br>Pad the salary on the left with $ up to a length of 6 characters</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> LPAD(salary, <span class="number">6</span>, <span class="string">&#x27;$&#x27;</span>)</span><br><span class="line">	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<p>一共6个char,左边空出来的加$.</p>
+<br>
+<br>
+
+<h3 id="Char-data-type-Oracle"><a href="#Char-data-type-Oracle" class="headerlink" title="Char data type(Oracle)"></a>Char data type(Oracle)</h3><div class="note ">
+            <p>关于Orcale char的data type:</p><p>Varchar2</p><ul><li>used for variable-length character columns</li><li>has a maximum length of 4000 characters</li><li>most character data is of this type<blockquote><p>last_name VARCHAR2(15)</p></blockquote></li></ul><p>Char:</p><ul><li>used for fixed-length character data columns</li><li>has a maximum length of 2000 characters</li><li>useful for country codes and other fixed-length character data<blockquote><p>country_id CHAR(2)</p></blockquote></li></ul><p>My sql也有类似的varchar(没有2),和char,<a target="_blank" rel="noopener" href="https://www.w3schools.com/sql/sql_datatypes.asp">详情.</a></p>
+          </div>
+
+<div class="note ">
+            <p>Oracle:<br>Use LIKE to perform wildcard searches through character, number, date, and timestamp data<br>Search conditions will be in quotes, or ticks, and can contain</p><ul><li>Literal values</li><li>_ which denotes one character</li><li>% which denotes 0 or more characters</li></ul>
+          </div>
+
+<br>
+<br>
+
 <h3 id="TRIM"><a href="#TRIM" class="headerlink" title="TRIM"></a>TRIM</h3><p>可以做到“remove white spaces from the right side”之类的.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- 会remove all spaces</span></span><br><span class="line"><span class="keyword">SELECT</span> LTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from beginning</span></span><br><span class="line"><span class="keyword">SELECT</span> RTRIM(<span class="string">&#x27;   string   &#x27;</span>); <span class="comment">-- remove spaces from the end</span></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">TRIM</span>(<span class="string">&#x27;...string...&#x27;</span>, <span class="string">&#x27;.&#x27;</span>); <span class="comment">-- second statement是要remove的character</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="TRIM-Oracle"><a href="#TRIM-Oracle" class="headerlink" title="TRIM(Oracle)"></a>TRIM(Oracle)</h3><p>Oracle中的trim感觉很不一样…</p>
+<p>TRIM the leading S from email</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="built_in">TRIM</span>(<span class="keyword">LEADING</span> <span class="string">&#x27;S&#x27;</span> <span class="keyword">FROM</span> email) 	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;S%&#x27;</span> ;</span><br></pre></td></tr></table></figure>
+
+<p>TRIM the trailing S from email</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="built_in">TRIM</span>(<span class="keyword">TRAILING</span> <span class="string">&#x27;S&#x27;</span> <span class="keyword">FROM</span> email) 	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;%S&#x27;</span> ;</span><br></pre></td></tr></table></figure>
+
+<p>TRIM BOTH the leading and training S from email<br>Because BOTH is the default, it can be omitted</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, <span class="built_in">TRIM</span>(<span class="keyword">BOTH</span> <span class="string">&#x27;S&#x27;</span> <span class="keyword">FROM</span> email)</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> email <span class="keyword">LIKE</span> <span class="string">&#x27;S%S&#x27;</span> ;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -773,10 +981,23 @@
 <br>
 <br>
 
+<p>在oracle中还有一种格式function:</p>
+<blockquote>
+<p>Change the output character data to capitalized initials</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> email, INITCAP(email)</span><br><span class="line">	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
 <h2 id="SQL-number"><a href="#SQL-number" class="headerlink" title="SQL number"></a>SQL number</h2><p>again:每个system都不一样<br>fundamental numeric types: real &amp; integer<br>integer types:</p>
 <img src="/blog/2020/11/24/P134/P134_2.png" class="">
 <img src="/blog/2020/11/24/P134/P134_3.png" class="">
 <p>real number sacrifice accuracy for scale.</p>
+<div class="note ">
+            <p>Oracle的nuber:</p><p>Contain variable-length number data up to 38 digits long<br>Number data could be</p><ul><li>Integer data created with a Precision</li><li>Floating point data created with Precision and Scale.</li></ul><p>Precision - the total number of digits:</p><blockquote><p>employee_id NUMBER(6)</p></blockquote><p>Scale specifies how many digits are on the right of the decimal.</p><blockquote><p>gross_pay NUMBER(9,2) – 9 is Precision and 2 is scale</p></blockquote>
+          </div>
+
 <br>
 <br>
 
@@ -795,6 +1016,9 @@
 
 <h3 id="ROUND"><a href="#ROUND" class="headerlink" title="ROUND"></a>ROUND</h3><p>四舍五入函数.<br>round(expression, precision精度)<br>精度可以是负数,保留到百位.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="number">2.55555</span>;</span><br><span class="line"><span class="keyword">SELECT</span> ROUND(<span class="number">2.55555</span>); <span class="comment">-- result is 3</span></span><br><span class="line"><span class="keyword">SELECT</span> ROUND(<span class="number">2.55555</span>, <span class="number">3</span>); <span class="comment">-- 2.556, second is 位数</span></span><br><span class="line"><span class="keyword">SELECT</span> ROUND(<span class="number">2.55555</span>, <span class="number">0</span>); <span class="comment">-- default,也就是到整数位</span></span><br></pre></td></tr></table></figure>
+
+<p>Oracle:<br>Trunc: Rounds a value down to a specified decimal<br>Mod: Returns the remainder of division<br>Ceil: Returns the smallest integer greater than a number<br>Floor: Returns the largest integer less than a number</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ROUND(<span class="number">187.8575</span>,<span class="number">2</span>)</span><br><span class="line">	<span class="keyword">FROM</span> DUAL;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -870,8 +1094,136 @@
 <br>
 <br>
 
+<h2 id="SQL-date-and-time-Oracle"><a href="#SQL-date-and-time-Oracle" class="headerlink" title="SQL date and time(Oracle)"></a>SQL date and time(Oracle)</h2><h3 id="TO-CHAR"><a href="#TO-CHAR" class="headerlink" title="TO_CHAR"></a>TO_CHAR</h3><blockquote>
+<p>TO_CHAR(date, ‘format model’)</p>
+</blockquote>
+<p>Converts dates from the default DD-MON-RR format to a more readable format based on the format model you provide</p>
+<ul>
+<li>Must be enclosed in single quotes</li>
+<li>May be caSe sEnsiTive</li>
+<li>Use fm to remove extra spaces and/or leading zeros</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th align="left">Element</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">YYYY</td>
+<td align="left">Four digit year</td>
+</tr>
+<tr>
+<td align="left">YEAR</td>
+<td align="left">Year spelled out - case sensitive</td>
+</tr>
+<tr>
+<td align="left">MONTH</td>
+<td align="left">Month spelled out - case sensitive</td>
+</tr>
+<tr>
+<td align="left">MON</td>
+<td align="left">Three letter month - case sensitive</td>
+</tr>
+<tr>
+<td align="left">MM</td>
+<td align="left">Two digital month</td>
+</tr>
+<tr>
+<td align="left">DAY</td>
+<td align="left">Day of the week spelled out - case sensitive</td>
+</tr>
+<tr>
+<td align="left">DY</td>
+<td align="left">Three letter day - case sensitive</td>
+</tr>
+<tr>
+<td align="left">DD</td>
+<td align="left">Two digit day of the month - case sensitive</td>
+</tr>
+<tr>
+<td align="left">AM or PM</td>
+<td align="left">Meridian Indicator</td>
+</tr>
+<tr>
+<td align="left">A.M. or P.M.</td>
+<td align="left">Meridian Indicator with periods</td>
+</tr>
+<tr>
+<td align="left">HH or HH12 or HH24</td>
+<td align="left">Hour of day 12-11 or 12-11 or 00-23</td>
+</tr>
+<tr>
+<td align="left">MI</td>
+<td align="left">Minutes 0-59</td>
+</tr>
+<tr>
+<td align="left">SS</td>
+<td align="left">Seconds 0-59</td>
+</tr>
+<tr>
+<td align="left">SSSSS</td>
+<td align="left">Seconds since midnight 00000-86399</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TO_CHAR(start_date, ‘DD <span class="keyword">Month</span>, yyyy’) <span class="keyword">AS</span> start_date</span><br><span class="line">	<span class="keyword">FROM</span> job_history;</span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> TO_CHAR(sysdate, <span class="string">&#x27;DD Month, yyyy HH:MI:SS AM&#x27;</span>) <span class="keyword">AS</span> right_now</span><br><span class="line">  <span class="keyword">FROM</span> dual;</span><br></pre></td></tr></table></figure>
+<p><strong>dual</strong> is the dummy table.</p>
+<p>TO_CHAR can also use in number.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Element</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">9</td>
+<td align="left">Represents one digit</td>
+</tr>
+<tr>
+<td align="left">0</td>
+<td align="left">Forces a zero to be displayed</td>
+</tr>
+<tr>
+<td align="left">$</td>
+<td align="left">Displays a floating dollar sign</td>
+</tr>
+<tr>
+<td align="left">.</td>
+<td align="left">Displays a decimal point</td>
+</tr>
+<tr>
+<td align="left">,</td>
+<td align="left">Displays a comma</td>
+</tr>
+<tr>
+<td align="left">L</td>
+<td align="left">Floating local currency symbol</td>
+</tr>
+<tr>
+<td align="left">G</td>
+<td align="left">Local group separator</td>
+</tr>
+<tr>
+<td align="left">D</td>
+<td align="left">Local decimal symbol</td>
+</tr>
+</tbody></table>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> TO_CHAR(salary, <span class="string">&#x27;$999,999.99&#x27;</span>) <span class="keyword">AS</span> salary</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> department_id <span class="operator">=</span> <span class="number">20</span>;</span><br></pre></td></tr></table></figure>
+<p>会得到$13,000.00格式的数字.</p>
+<p>类似还有TO_DATE的function.</p>
+<blockquote>
+<p>Converts characters into dates using the same available format elements as TO_CHAR</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, salary, hire_date</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">WHERE</span> hire_date <span class="operator">&gt;=</span> TO_DATE(<span class="string">&#x27;December 1, 2009&#x27;</span>,<span class="string">&#x27;Month dd, yyyy&#x27;</span>);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
 <h2 id="Aggregate-聚合函数"><a href="#Aggregate-聚合函数" class="headerlink" title="Aggregate(聚合函数)"></a>Aggregate(聚合函数)</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- here we count all countries</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">SELECT</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">FROM</span> Country;</span><br></pre></td></tr></table></figure>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- here we count all countries in different region</span></span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> Count</span><br><span class="line">  <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Count <span class="keyword">DESC</span>, Region</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">-- here we count all countries in different region</span></span><br><span class="line"><span class="keyword">SELECT</span> Region, <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="keyword">AS</span> Count</span><br><span class="line">  <span class="keyword">FROM</span> Country</span><br><span class="line">  <span class="keyword">GROUP</span> <span class="keyword">BY</span> Region</span><br><span class="line">  <span class="keyword">ORDER</span> <span class="keyword">BY</span> Count <span class="keyword">DESC</span>, Region;</span><br></pre></td></tr></table></figure>
 
 <p>GROUP BY:用于分组.</p>
 <div class="note ">
@@ -1022,8 +1374,35 @@
 <p>有时可以用join代替,先join再查询.<br>但建议使用subquery,运算速度会快(提升性能).<br>在数量对应不上的时候,我们可以用or来拆开子query.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tmp9 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> col_trans</span><br><span class="line"><span class="keyword">where</span> security_id <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> security_id <span class="keyword">from</span> sec</span><br><span class="line"><span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span> <span class="number">30</span></span><br><span class="line">) <span class="keyword">or</span> security_id <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> security_id_2 <span class="keyword">from</span> sec</span><br><span class="line"><span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span> <span class="number">30</span></span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
 <p>或者用union合并.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tmp10 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> col_trans</span><br><span class="line"><span class="keyword">where</span> security_id <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> security_id <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> security_id_2 <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line">)</span><br><span class="line">;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> tmp10 <span class="keyword">as</span></span><br><span class="line"><span class="keyword">select</span> <span class="operator">*</span></span><br><span class="line"><span class="keyword">from</span> col_trans</span><br><span class="line"><span class="keyword">where</span> security_id <span class="keyword">in</span> (</span><br><span class="line"><span class="keyword">select</span> security_id <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line"><span class="keyword">union</span></span><br><span class="line"><span class="keyword">select</span> security_id_2 <span class="keyword">from</span> sec <span class="keyword">where</span> security_type <span class="operator">=</span> <span class="string">&#x27;Equity&#x27;</span> <span class="keyword">and</span> price <span class="operator">&lt;=</span><span class="number">30</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
+<br>
+
+<h2 id="Subquery-Oracle"><a href="#Subquery-Oracle" class="headerlink" title="Subquery(Oracle)"></a>Subquery(Oracle)</h2><p>Subquery学的很烂所以在oracle中又记一次.</p>
+<h3 id="Subqueries-in-the-where-clause"><a href="#Subqueries-in-the-where-clause" class="headerlink" title="Subqueries in the where clause"></a>Subqueries in the where clause</h3><ul>
+<li>The inner query executes before the main query.</li>
+<li>The result of the subquery is used to complete the outer query.</li>
+<li>The shorthand shows the basic layout of subqueries in the WHERE</li>
+</ul>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> select_list</span><br><span class="line">	<span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line">	<span class="keyword">WHERE</span> column_name operator (<span class="keyword">SELECT</span> select_list</span><br><span class="line">											<span class="keyword">FROM</span> <span class="keyword">table</span></span><br><span class="line">											<span class="keyword">WHERE</span> …);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, salary 			 		    </span><br><span class="line">	<span class="keyword">FROM</span> employees				</span><br><span class="line">	<span class="keyword">WHERE</span> salary <span class="operator">&gt;</span> (<span class="keyword">SELECT</span> salary</span><br><span class="line">								<span class="keyword">FROM</span> employees</span><br><span class="line">								<span class="keyword">WHERE</span> employee_id <span class="operator">=</span> <span class="number">145</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Single-row-subqueries"><a href="#Single-row-subqueries" class="headerlink" title="Single row subqueries"></a>Single row subqueries</h3><p>Use single-value comparison operators in the WHERE clause of the outer query</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id, salary 			 		    </span><br><span class="line">	<span class="keyword">FROM</span> employees				</span><br><span class="line">	<span class="keyword">WHERE</span> job_id <span class="operator">=</span> (<span class="keyword">SELECT</span> job_id</span><br><span class="line">								<span class="keyword">FROM</span> employees</span><br><span class="line">								<span class="keyword">WHERE</span> employee_id <span class="operator">=</span> <span class="number">152</span>)</span><br><span class="line">	<span class="keyword">AND</span> salary <span class="operator">&gt;</span> (<span class="keyword">SELECT</span> salary</span><br><span class="line">						<span class="keyword">FROM</span> employees</span><br><span class="line">						<span class="keyword">WHERE</span> employee_id <span class="operator">=</span> <span class="number">152</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Multi-row-subqueries"><a href="#Multi-row-subqueries" class="headerlink" title="Multi row subqueries"></a>Multi row subqueries</h3><p>有IN, ANY, ALL三种.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id, salary</span><br><span class="line">	<span class="keyword">FROM</span> employees				</span><br><span class="line">	<span class="keyword">WHERE</span> salary <span class="keyword">IN</span> (<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(salary)</span><br><span class="line">							<span class="keyword">FROM</span> employees</span><br><span class="line">							<span class="keyword">GROUP</span> <span class="keyword">BY</span> department_id);</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id, salary</span><br><span class="line">	<span class="keyword">FROM</span> employees				</span><br><span class="line">	<span class="keyword">WHERE</span> salary <span class="operator">&lt;</span> <span class="keyword">ANY</span> (<span class="keyword">SELECT</span> salary</span><br><span class="line">     									<span class="keyword">FROM</span> employees</span><br><span class="line">									    <span class="keyword">WHERE</span> job_id <span class="operator">=</span> ‘IT_PROG’)</span><br><span class="line">	<span class="keyword">AND</span> job_id <span class="operator">!=</span> ‘IT_PROG’;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id, salary</span><br><span class="line">	<span class="keyword">FROM</span> employees				</span><br><span class="line">	<span class="keyword">WHERE</span> salary <span class="operator">&lt;</span> <span class="keyword">ALL</span> (<span class="keyword">SELECT</span> salary</span><br><span class="line">    								  <span class="keyword">FROM</span> employees</span><br><span class="line">									    <span class="keyword">WHERE</span> job_id <span class="operator">=</span> ‘IT_PROG’);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Subqueries-in-the-having-clause"><a href="#Subqueries-in-the-having-clause" class="headerlink" title="Subqueries in the having clause"></a>Subqueries in the having clause</h3><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> department_id, <span class="built_in">MIN</span>(salary)</span><br><span class="line">	<span class="keyword">FROM</span> employees</span><br><span class="line">	<span class="keyword">GROUP</span> <span class="keyword">BY</span> department_id</span><br><span class="line">  <span class="keyword">HAVING</span> <span class="built_in">MIN</span>(salary) <span class="operator">&gt;</span> (<span class="keyword">SELECT</span> <span class="built_in">MIN</span>(salary) 													</span><br><span class="line">                              <span class="keyword">FROM</span> employees);</span><br></pre></td></tr></table></figure>
+
+<p>(orcacle笔记结束)</p>
 <br>
 <br>
 <br>
@@ -1133,7 +1512,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#notes"><span class="nav-number">1.</span> <span class="nav-text">notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.13.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.15.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.16.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.16.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MINUS"><span class="nav-number">2.17.</span> <span class="nav-text">MINUS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.18.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.19.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.20.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.20.1.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.20.2.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.20.3.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.20.4.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.21.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.21.1.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.21.2.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.21.3.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.21.4.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.22.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.22.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.22.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.22.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.23.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.24.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.24.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.24.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.25.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.26.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.27.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.28.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.29.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.30.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.31.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.32.</span> <span class="nav-text">Autoincrement</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#notes"><span class="nav-number">1.</span> <span class="nav-text">notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.13.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.15.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL-Oracle"><span class="nav-number">2.16.</span> <span class="nav-text">NVL(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.17.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.17.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MINUS"><span class="nav-number">2.18.</span> <span class="nav-text">MINUS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.19.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.20.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.21.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join-Oracle"><span class="nav-number">2.21.1.</span> <span class="nav-text">Natural Join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Join-using-Oracle"><span class="nav-number">2.21.2.</span> <span class="nav-text">Join using(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-way-join-Oracle"><span class="nav-number">2.21.3.</span> <span class="nav-text">Three way join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-equijoin-Oracle"><span class="nav-number">2.21.4.</span> <span class="nav-text">Non equijoin(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-standard-joins-Oracle"><span class="nav-number">2.21.5.</span> <span class="nav-text">Non standard joins(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.21.6.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.21.7.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.21.8.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.21.9.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-variables-Oracle"><span class="nav-number">2.22.</span> <span class="nav-text">Substitution variables(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.23.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle"><span class="nav-number">2.23.1.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle-1"><span class="nav-number">2.23.2.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Char-data-type-Oracle"><span class="nav-number">2.23.3.</span> <span class="nav-text">Char data type(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.23.4.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM-Oracle"><span class="nav-number">2.23.5.</span> <span class="nav-text">TRIM(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.23.6.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.23.7.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.23.8.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.24.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.24.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.24.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.24.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.25.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time-Oracle"><span class="nav-number">2.26.</span> <span class="nav-text">SQL date and time(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">2.26.1.</span> <span class="nav-text">TO_CHAR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.27.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.27.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.27.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.28.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.29.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.30.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.31.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.32.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.33.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery-Oracle"><span class="nav-number">2.34.</span> <span class="nav-text">Subquery(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-where-clause"><span class="nav-number">2.34.1.</span> <span class="nav-text">Subqueries in the where clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-row-subqueries"><span class="nav-number">2.34.2.</span> <span class="nav-text">Single row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-row-subqueries"><span class="nav-number">2.34.3.</span> <span class="nav-text">Multi row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-having-clause"><span class="nav-number">2.34.4.</span> <span class="nav-text">Subqueries in the having clause</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.35.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.36.</span> <span class="nav-text">Autoincrement</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1222,7 +1601,7 @@
     </span>
 
 
-    <span title="C">967k</span>
+    <span title="C">977k</span>
   -->
 
   <!--
@@ -1230,7 +1609,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">14:39</span>
+    <span title="T">14:48</span>
 
   -->
 
@@ -1240,7 +1619,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有967k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有977k的老兔正在打瞌睡</span>
 </div>
 
         
