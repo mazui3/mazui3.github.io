@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_3.png">
 <meta property="article:published_time" content="2020-11-24T20:07:13.000Z">
-<meta property="article:modified_time" content="2022-03-25T13:01:18.735Z">
+<meta property="article:modified_time" content="2022-03-28T14:14:06.880Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-03-25 09:01:18" itemprop="dateModified" datetime="2022-03-25T09:01:18-04:00">2022-03-25</time>
+                <time title="Modified: 2022-03-28 10:14:06" itemprop="dateModified" datetime="2022-03-28T10:14:06-04:00">2022-03-28</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -287,7 +287,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>38 mins.</span>
+              <span>37 mins.</span>
             </span>
 
         </div>
@@ -338,17 +338,11 @@
 <div class="note ">
             <p>一个table现在能有1000的columns.</p>
           </div>
+
 <div class="note ">
             <p>如果我们要在搜索有单引号或者双引号的内容.<br>For example we are searching Can”a’da.<br>WHERE jurisdiction = ‘Can”a’’da’<br>两个单引号search一个单引号.<br>双引号不变.<br>但如果 WHERE jurisdiction = “Can”a’da”<br>两个双引号search一个双引号.<br>单引号不变.</p>
           </div>
 
-<br>
-<br>
-<br>
-
-<div class="note ">
-            <p>Oracle命名规则(有相似又有不同):</p><ul><li>up to 30 char in length</li><li>must begin with a letter</li><li>can contain letters, number, $, _, and #</li><li>must be unique with in a schema</li><li>cannot be an orcale reserved word</li><li>case <strong>insensitive</strong></li></ul>
-          </div>
 
 <br>
 <br>
@@ -394,8 +388,7 @@ Literal values.
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> amount label <span class="operator">=</span> <span class="string">&#x27;usd&#x27;</span></span><br></pre></td></tr></table></figure>
 
 <p>select + *, 全选.</p>
-<p>select + calculated, calculated的作用是使用临时计算的值(在原table中没有</p>
-<p>  select + calculated, calculated的作用是使用临时计算的值(在原table中没有).</p>
+<p>select + calculated, calculated的作用是使用临时计算的值(在原table中没有).</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span> outobs<span class="operator">=</span><span class="number">10</span>;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="type">date</span>, destination,</span><br><span class="line">boarded <span class="operator">+</span> transferred <span class="operator">+</span> nonrevenue <span class="keyword">as</span> Total</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights</span><br><span class="line"><span class="keyword">where</span> calculated total <span class="operator">&lt;</span> <span class="number">100</span>;</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">proc <span class="keyword">sql</span> outobs<span class="operator">=</span><span class="number">10</span>;</span><br><span class="line"><span class="keyword">select</span> flightnumber, <span class="type">date</span>, destination,</span><br><span class="line">boarded <span class="operator">+</span> transferred <span class="operator">+</span> nonrevenue <span class="keyword">as</span> Total,</span><br><span class="line">calculated total<span class="operator">/</span><span class="number">2</span> <span class="keyword">as</span> Half</span><br><span class="line"><span class="keyword">from</span> sasuser.marchflights;</span><br></pre></td></tr></table></figure>
@@ -446,7 +439,9 @@ Literal values.
 <br>
 <br>
 
-<p>Oracle中有另一种if else:</p>
+<span style="color:#64c0f5">
+Oracle中有另一种if else:
+</span>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, job_id,</span><br><span class="line">	DECODE (job_id,   <span class="string">&#x27;ASD_ASST&#x27;</span> ,  <span class="number">1.1</span> <span class="operator">*</span> salary,</span><br><span class="line">				 	 	  <span class="string">&#x27;MK_REP&#x27;</span>   ,  <span class="number">1.15</span> <span class="operator">*</span> salary,</span><br><span class="line">					 	  <span class="string">&#x27;HR_REP&#x27;</span>   ,  <span class="number">1.2</span> <span class="operator">*</span> salary,</span><br><span class="line">					 salary) <span class="keyword">AS</span> revised_salary</span><br><span class="line">	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
 <br>
@@ -458,7 +453,8 @@ Literal values.
 <br>
 <br>
 
-<h2 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update <span class="keyword">table</span></span><br><span class="line">  <span class="keyword">set</span> column1<span class="operator">=</span>value1,column2<span class="operator">=</span>value2,...</span><br><span class="line">  <span class="keyword">where</span> columnX<span class="operator">=</span>valueX [<span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span>] columnY<span class="operator">=</span>valueY [<span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span>]...</span><br></pre></td></tr></table></figure>
+<h2 id="UPDATE"><a href="#UPDATE" class="headerlink" title="UPDATE"></a>UPDATE</h2><p>用于更改数据.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update <span class="keyword">table</span></span><br><span class="line">  <span class="keyword">set</span> column1<span class="operator">=</span>value1,column2<span class="operator">=</span>value2,...</span><br><span class="line">  <span class="keyword">where</span> columnX<span class="operator">=</span>valueX [<span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span>] columnY<span class="operator">=</span>valueY [<span class="keyword">and</span><span class="operator">/</span><span class="keyword">or</span>]...</span><br></pre></td></tr></table></figure>
 <p>一次只能更新一个表.<br>All databases support update with subquery.<br>Only MySQL support update with subquery and with join statement.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">UPDATE Customer</span><br><span class="line">  <span class="keyword">SET</span></span><br><span class="line">    Address <span class="operator">=</span> <span class="string">&#x27;123 music ave&#x27;</span>,</span><br><span class="line">    Zip <span class="operator">=</span> <span class="string">&#x27;98056&#x27;</span></span><br><span class="line">  <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">5</span>; <span class="comment">-- which/where row to be updated</span></span><br><span class="line"></span><br><span class="line">UPDATE Customer</span><br><span class="line">  <span class="keyword">SET</span></span><br><span class="line">    Address <span class="operator">=</span> <span class="keyword">NULL</span>, <span class="comment">-- 如果没有的话</span></span><br><span class="line">    Zip <span class="operator">=</span> <span class="keyword">NULL</span></span><br><span class="line">  <span class="keyword">WHERE</span> id <span class="operator">=</span> <span class="number">5</span>;</span><br></pre></td></tr></table></figure>
 <p>如果没有where就会把所有的都替换.</p>
@@ -589,19 +585,19 @@ Literal values.
 <li>Not null: The column cannot contain nulls</li>
 <li>Check: Specifies which values are allowed</li>
 </ul>
- <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> departments</span><br><span class="line">   ( department_id 		NUMBER(<span class="number">4</span>) <span class="keyword">CONSTRAINT</span> dept_id_pk <span class="keyword">PRIMARY</span> KEY	,</span><br><span class="line">     department_name  	VARCHAR2(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>						  	,</span><br><span class="line">     manager_id 		NUMBER(<span class="number">6</span>) 									  	,</span><br><span class="line">     location_id 			NUMBER(<span class="number">4</span>) <span class="keyword">CONSTRAINT</span> dept_loc_id_fk</span><br><span class="line">                              			<span class="keyword">REFERENCES</span> locations (location_id)</span><br><span class="line">   ) ;</span><br></pre></td></tr></table></figure>
+ <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> departments</span><br><span class="line">   ( department_id 		NUMBER(<span class="number">4</span>) <span class="keyword">CONSTRAINT</span> dept_id_pk <span class="keyword">PRIMARY</span> KEY	,</span><br><span class="line">     department_name  	VARCHAR2(<span class="number">30</span>) <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">     manager_id 		NUMBER(<span class="number">6</span>),</span><br><span class="line">     location_id 	NUMBER(<span class="number">4</span>) <span class="keyword">CONSTRAINT</span> dept_loc_id_fk</span><br><span class="line">                   <span class="keyword">REFERENCES</span> locations (location_id)</span><br><span class="line">   ) ;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
 
-<h2 id="DROP-TABLE"><a href="#DROP-TABLE" class="headerlink" title="DROP TABLE"></a>DROP TABLE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test ( a TEXT, b TEXT );<span class="operator">/</span><span class="operator">/</span>here will have a error since the <span class="keyword">table</span> <span class="keyword">is</span> already created</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> test;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> test;</span><br></pre></td></tr></table></figure>
+<h2 id="DROP-TABLE"><a href="#DROP-TABLE" class="headerlink" title="DROP TABLE"></a>DROP TABLE</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test ( a TEXT, b TEXT ); <span class="comment">--here will have a error since the table is already created</span></span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> test <span class="keyword">VALUES</span> ( <span class="string">&#x27;one&#x27;</span>, <span class="string">&#x27;two&#x27;</span> );</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> test;</span><br><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> test;</span><br></pre></td></tr></table></figure>
 
 <p>Truncate: 跟drop table类似但不同.会把table里所有的数据删掉,table保留.</p>
 <br>
 <br>
 
 <h2 id="IS-NULL"><a href="#IS-NULL" class="headerlink" title="IS NULL"></a>IS NULL</h2><p>When search for null</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>;<span class="operator">/</span><span class="operator">/</span>opposite</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NULL</span>;</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> test <span class="keyword">WHERE</span> a <span class="keyword">IS</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>; <span class="comment">--opposite</span></span><br></pre></td></tr></table></figure>
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">TABLE</span> IF <span class="keyword">EXISTS</span> test;</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> test (</span><br><span class="line">  a <span class="type">INTEGER</span> <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  b TEXT <span class="keyword">NOT</span> <span class="keyword">NULL</span>,</span><br><span class="line">  c TEXT</span><br><span class="line">);</span><br></pre></td></tr></table></figure>
 
@@ -611,7 +607,7 @@ Literal values.
 <h2 id="NVL-Oracle"><a href="#NVL-Oracle" class="headerlink" title="NVL(Oracle)"></a>NVL(Oracle)</h2><p>一种查到了null替换值的function.<br>NVL(val1,val2) -&gt; if val1 null, return val2.<br>NVL2(val1,val2,val3) -&gt; if val1 null, return val2, else return val3.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, NVL(commission_pct, <span class="number">0</span>) <span class="keyword">AS</span> commission_pct</span><br><span class="line">  <span class="keyword">FROM</span> employees</span><br><span class="line">  <span class="keyword">WHERE</span> department_id <span class="keyword">IN</span>(<span class="number">60</span>, <span class="number">80</span>);</span><br></pre></td></tr></table></figure>
 
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, salary, commission_pct,		NVL2(commission_pct, salary<span class="operator">+</span>salary<span class="operator">*</span>commission_pct, salary)</span><br><span class="line">												<span class="keyword">AS</span> gross_pay</span><br><span class="line">  	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, salary, commission_pct,		</span><br><span class="line">  NVL2(commission_pct, salary<span class="operator">+</span>salary<span class="operator">*</span>commission_pct, salary)</span><br><span class="line">			<span class="keyword">AS</span> gross_pay</span><br><span class="line">  	<span class="keyword">FROM</span> employees;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -622,9 +618,9 @@ Literal values.
 <thead>
 <tr>
 <th></th>
-<th></th>
-<th></th>
-<th></th>
+<th>True</th>
+<th>False</th>
+<th>Both</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -651,12 +647,6 @@ Literal values.
 
 <h3 id="COALESCE"><a href="#COALESCE" class="headerlink" title="COALESCE"></a>COALESCE</h3><p>用来默认替换null的.<br>SELECT COALESCE(要查找的column_name, replace null的值);</p>
 <p>Evaluates the arguments in order and returns the current value of the first expression that initially doesn’t evaluate to NULL.<br>For example, SELECT COALESCE(NULL, NULL, ‘third_value’, ‘fourth_value’); returns the third value because the third value is the first value that isn’t null.</p>
-<br>
-<br>
-
-<h2 id="MINUS"><a href="#MINUS" class="headerlink" title="MINUS"></a>MINUS</h2><p>Write an SQL query to show records from one table that another table does not have.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Worker</span><br><span class="line">MINUS</span><br><span class="line"><span class="keyword">SELECT</span> <span class="operator">*</span> <span class="keyword">FROM</span> Title;</span><br></pre></td></tr></table></figure>
-
 <br>
 <br>
 
@@ -810,7 +800,9 @@ Literal values.
 <br>
 <br>
 
-<p>Oracle中的left join算left full join:</p>
+<span style="color:#64c0f5">
+Oracle中的left join算left full join:
+</span>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees e [<span class="keyword">LEFT</span><span class="operator">|</span><span class="keyword">RIGHT</span><span class="operator">|</span><span class="keyword">FULL</span>] <span class="keyword">OUTER</span> <span class="keyword">JOIN</span> departments d</span><br><span class="line">	<span class="keyword">ON</span> e.department_id <span class="operator">=</span> d.department_id;</span><br></pre></td></tr></table></figure>
 
 <br>
@@ -823,10 +815,11 @@ Literal values.
 <br>
 <br>
 
-<p>在oracle中有类似的Cross join:</p>
-<blockquote>
-<p>Generates a Cartesian Product.</p>
-</blockquote>
+<span style="color:#64c0f5">
+在oracle中有类似的Cross join:
+</span>
+>Generates a Cartesian Product.
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> last_name, department_name</span><br><span class="line">	<span class="keyword">FROM</span> employees <span class="keyword">CROSS</span> <span class="keyword">JOIN</span> departments;</span><br></pre></td></tr></table></figure>
 
 <br>
@@ -840,16 +833,19 @@ Literal values.
 <br>
 <br>
 
-<p>关于Oracle的竖着的合并:</p>
+<span style="color:#64c0f5">
+关于Oracle的竖着的合并:
+</span>
+
 <p>Union和Union all 一样,注意union会自带sort:</p>
 <p>Union all:</p>
 <ul>
-<li>Displays all employees and consultants including duplicated rows</li>
+<li>Including duplicated rows</li>
 <li>Result is not sorted</li>
 </ul>
 <p>Union:</p>
 <ul>
-<li>Displays all employees and consultants removing duplicated rows</li>
+<li>Removing duplicated rows</li>
 <li>Performs a record sort, from left to right</li>
 </ul>
 <p>Intersect:</p>
@@ -871,7 +867,7 @@ Literal values.
 
 <p>关于这些竖着的合并:</p>
 <ul>
-<li>All column headings come from the first query, so use generic column aliases as needed</li>
+<li>All column headings come from the first query, use generic column aliases as needed</li>
 <li>The number of columns selected must match</li>
 <li>The datatype family of the columns selected must match</li>
 <li>The order by clause can appear only once, at the very end</li>
@@ -884,7 +880,11 @@ Literal values.
 <p>把从job_history里的数据在salary里默认为0.</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> location_id, department_name, <span class="keyword">NULL</span> <span class="keyword">AS</span> city</span><br><span class="line">	<span class="keyword">FROM</span> departments</span><br><span class="line"><span class="keyword">UNION</span></span><br><span class="line"><span class="keyword">SELECT</span> location_id, <span class="keyword">NULL</span>, city</span><br><span class="line">	<span class="keyword">FROM</span> locations;</span><br></pre></td></tr></table></figure>
 <p>注意第一个query中要确认名字,空出null为city给第二个query.<br>而第二个query中的departent_name就不用.</p>
-<p>(oracle笔记结束)</p>
+<span style="color:#64c0f5">
+(oracle笔记结束)
+</span>
+
+
 <br>
 <br>
 <br>
@@ -895,7 +895,12 @@ Literal values.
 <br>
 <br>
 
-<p>来自Oracle的Self join笔记:<br>You may need to scan more than one row in a table to arrive at an answer.<br>例子:一个employee有id也有manager_id.要直接寻找employee的manager可以按两者的id join.</p>
+<span style="color:#64c0f5">
+来自Oracle的Self join笔记:
+</span>
+You may need to scan more than one row in a table to arrive at an answer.
+例子:一个employee有id也有manager_id.要直接寻找employee的manager可以按两者的id join.
+
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> e.last_name <span class="keyword">as</span> emp, m.last_name <span class="keyword">as</span> mgr</span><br><span class="line">	<span class="keyword">FROM</span> employees e <span class="keyword">JOIN</span> employees m</span><br><span class="line">	<span class="keyword">ON</span> e.manager_id <span class="operator">=</span> m.employee_id</span><br><span class="line">	<span class="keyword">ORDER</span> <span class="keyword">BY</span> emp;</span><br></pre></td></tr></table></figure>
 
 <br>
@@ -1411,7 +1416,11 @@ Literal values.
 <br>
 <br>
 
-<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><p>在oracle时的解释:<br>Table: Basic storage unit composed of rows and columns.<br>View: Shows subsets of data from one or more underlying tables.</p>
+<h2 id="View"><a href="#View" class="headerlink" title="View"></a>View</h2><span style="color:#64c0f5">
+在oracle时的解释:
+</span>
+
+<p>Table: Basic storage unit composed of rows and columns.<br>View: Shows subsets of data from one or more underlying tables.</p>
 <ul>
 <li>Views control which columns and/or rows a user can see</li>
 <li>Views present a subset of table data to a user</li>
@@ -1645,7 +1654,7 @@ Literal values.
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#notes"><span class="nav-number">1.</span> <span class="nav-text">notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO-Oracle"><span class="nav-number">2.13.</span> <span class="nav-text">INSERT INTO(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inserting-nulls"><span class="nav-number">2.13.1.</span> <span class="nav-text">Inserting nulls</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE-Oracle"><span class="nav-number">2.15.</span> <span class="nav-text">CREATE TABLE(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.16.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.17.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL-Oracle"><span class="nav-number">2.18.</span> <span class="nav-text">NVL(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.19.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.19.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#MINUS"><span class="nav-number">2.20.</span> <span class="nav-text">MINUS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.21.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.22.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.23.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join-Oracle"><span class="nav-number">2.23.1.</span> <span class="nav-text">Natural Join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Join-using-Oracle"><span class="nav-number">2.23.2.</span> <span class="nav-text">Join using(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-way-join-Oracle"><span class="nav-number">2.23.3.</span> <span class="nav-text">Three way join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-equijoin-Oracle"><span class="nav-number">2.23.4.</span> <span class="nav-text">Non equijoin(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-standard-joins-Oracle"><span class="nav-number">2.23.5.</span> <span class="nav-text">Non standard joins(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.23.6.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.23.7.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.23.8.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.23.9.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-variables-Oracle"><span class="nav-number">2.24.</span> <span class="nav-text">Substitution variables(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.25.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle"><span class="nav-number">2.25.1.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle-1"><span class="nav-number">2.25.2.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Char-data-type-Oracle"><span class="nav-number">2.25.3.</span> <span class="nav-text">Char data type(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.25.4.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM-Oracle"><span class="nav-number">2.25.5.</span> <span class="nav-text">TRIM(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.25.6.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.25.7.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.25.8.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.26.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.26.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.26.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.26.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.27.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time-Oracle"><span class="nav-number">2.28.</span> <span class="nav-text">SQL date and time(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">2.28.1.</span> <span class="nav-text">TO_CHAR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.29.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.29.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.29.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.30.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.31.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.32.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exists-Oracle"><span class="nav-number">2.33.</span> <span class="nav-text">Exists(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.34.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.35.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.36.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery-Oracle"><span class="nav-number">2.37.</span> <span class="nav-text">Subquery(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-where-clause"><span class="nav-number">2.37.1.</span> <span class="nav-text">Subqueries in the where clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-row-subqueries"><span class="nav-number">2.37.2.</span> <span class="nav-text">Single row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-row-subqueries"><span class="nav-number">2.37.3.</span> <span class="nav-text">Multi row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-having-clause"><span class="nav-number">2.37.4.</span> <span class="nav-text">Subqueries in the having clause</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.38.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.39.</span> <span class="nav-text">Autoincrement</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#notes"><span class="nav-number">1.</span> <span class="nav-text">notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#code"><span class="nav-number">2.</span> <span class="nav-text">code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO-Oracle"><span class="nav-number">2.13.</span> <span class="nav-text">INSERT INTO(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inserting-nulls"><span class="nav-number">2.13.1.</span> <span class="nav-text">Inserting nulls</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE-Oracle"><span class="nav-number">2.15.</span> <span class="nav-text">CREATE TABLE(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.16.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.17.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL-Oracle"><span class="nav-number">2.18.</span> <span class="nav-text">NVL(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.19.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.19.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.20.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.21.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.22.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join-Oracle"><span class="nav-number">2.22.1.</span> <span class="nav-text">Natural Join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Join-using-Oracle"><span class="nav-number">2.22.2.</span> <span class="nav-text">Join using(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-way-join-Oracle"><span class="nav-number">2.22.3.</span> <span class="nav-text">Three way join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-equijoin-Oracle"><span class="nav-number">2.22.4.</span> <span class="nav-text">Non equijoin(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-standard-joins-Oracle"><span class="nav-number">2.22.5.</span> <span class="nav-text">Non standard joins(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.22.6.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.22.7.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.22.8.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.22.9.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-variables-Oracle"><span class="nav-number">2.23.</span> <span class="nav-text">Substitution variables(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.24.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle"><span class="nav-number">2.24.1.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle-1"><span class="nav-number">2.24.2.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Char-data-type-Oracle"><span class="nav-number">2.24.3.</span> <span class="nav-text">Char data type(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.24.4.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM-Oracle"><span class="nav-number">2.24.5.</span> <span class="nav-text">TRIM(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.24.6.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.24.7.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.24.8.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.25.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.25.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.25.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.25.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.26.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time-Oracle"><span class="nav-number">2.27.</span> <span class="nav-text">SQL date and time(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">2.27.1.</span> <span class="nav-text">TO_CHAR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.28.</span> <span class="nav-text">Aggregate(聚合函数)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.28.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.28.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.29.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.30.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.31.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exists-Oracle"><span class="nav-number">2.32.</span> <span class="nav-text">Exists(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.33.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.34.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.35.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery-Oracle"><span class="nav-number">2.36.</span> <span class="nav-text">Subquery(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-where-clause"><span class="nav-number">2.36.1.</span> <span class="nav-text">Subqueries in the where clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-row-subqueries"><span class="nav-number">2.36.2.</span> <span class="nav-text">Single row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-row-subqueries"><span class="nav-number">2.36.3.</span> <span class="nav-text">Multi row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-having-clause"><span class="nav-number">2.36.4.</span> <span class="nav-text">Subqueries in the having clause</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.37.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.38.</span> <span class="nav-text">Autoincrement</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1734,7 +1743,7 @@ Literal values.
     </span>
 
 
-    <span title="C">982k</span>
+    <span title="C">989k</span>
   -->
 
   <!--
@@ -1742,7 +1751,7 @@ Literal values.
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">14:53</span>
+    <span title="T">14:59</span>
 
   -->
 
@@ -1752,7 +1761,7 @@ Literal values.
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有982k的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有989k的老兔正在打瞌睡</span>
 </div>
 
         
