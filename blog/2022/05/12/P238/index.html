@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="我对finance的了解少到写标题时把它打成了fiancé.大多从wiki和油管摘抄过来,“从零开始”是绝对保证的.如果这篇文章里有逻辑不自洽的地方,那是我没搞懂.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="从零开始的finance旅途">
+<meta property="og:url" content="https://mazui3.github.io/blog/2022/05/12/P238/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="我对finance的了解少到写标题时把它打成了fiancé.大多从wiki和油管摘抄过来,“从零开始”是绝对保证的.如果这篇文章里有逻辑不自洽的地方,那是我没搞懂.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-05-12T21:07:50.000Z">
+<meta property="article:modified_time" content="2022-05-12T21:53:33.336Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="在起跑线平地摔的博弈">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2022/05/12/P238/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>从零开始的finance旅途 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2022/05/12/P238/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_8.png">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          从零开始的finance旅途
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-05-12 17:07:50 / Modified: 17:53:33" itemprop="dateCreated datePublished" datetime="2022-05-12T17:07:50-04:00">2022-05-12</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%81%9A%E4%B8%AA%E4%BA%BA%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">做个人笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2022/05/12/P238/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/05/12/P238/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>6.5k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>6 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>我对finance的了解少到写标题时把它打成了fiancé.<br>大多从wiki和油管摘抄过来,“从零开始”是绝对保证的.<br>如果这篇文章里有逻辑不自洽的地方,那是我没搞懂.</p>
+<span id="more"></span>
+<p>Finance, <a target="_blank" rel="noopener" href="https://www.investopedia.com/ask/answers/what-is-finance/">investopedia</a>给的定义是用各种方式进行的金钱投资活动.<br>概括来说是各种都伴随风险的经济活动.</p>
+<br>
+<br>
+<br>
+<br>
+
+<p>从简单的定义开始.</p>
+<h1 id="Money"><a href="#Money" class="headerlink" title="Money"></a>Money</h1><p>Money is a medium of exchange.是人们给予金钱价值,作为货物交换的媒介.<br><del>既然已经明白金钱,那么我们拿各种经济行为来练习一下叭!</del></p>
+<br>
+<br>
+
+<h1 id="Economic-indicator"><a href="#Economic-indicator" class="headerlink" title="Economic indicator"></a>Economic indicator</h1><h3 id="Inflation"><a href="#Inflation" class="headerlink" title="Inflation"></a>Inflation</h3><p>通货膨胀.</p>
+<div class="note ">
+            <p>今天上的课有点意思.<br>提问:通货膨胀(inflation)是好事吗.<br>答:通货膨胀本身是件好事.<br>如果市场的物品价格五年内不变,你的工资五年内也不变,那你会失去工作的动力.<br>一定的通货膨胀会让公司获利,研究新产品新技术.但过多的通货膨胀会让人买不起东西生活艰苦.<br>所以通货膨胀一般政府会想控制在2%左右.<br>稍等,那2%的工资上涨或者是2%的银行利息都是一种谎言吗.</p>
+          </div>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.investopedia.com/articles/insights/122016/9-common-effects-inflation.asp">9 Common Effects of Inflation</a>.</p>
+</blockquote>
+<p>Investopedia讲了其他的例子.<br>适量的通货膨胀会刺激消费.<br>相对膨胀得太厉害,银行升息会将钱收回,升息会刺激银行存款缓慢经济,会加大还款减少贷款消费.<br>(当然银行的利息是一种调控手段,并不是促使膨胀与否的决定因素.)</p>
+<br>
+<br>
+
+<h3 id="Deflation"><a href="#Deflation" class="headerlink" title="Deflation"></a>Deflation</h3><p>通货膨胀的反面.<br><a target="_blank" rel="noopener" href="https://www.investopedia.com/ask/answers/040815/how-does-deflation-impact-consumers.asp">Deflation creates higher rates of unemployment</a>.<br>因为价格降低,利润降低,整体经济下滑,反而会导致失业.</p>
+<br>
+<br>
+
+<h3 id="HyperInflation"><a href="#HyperInflation" class="headerlink" title="HyperInflation"></a>HyperInflation</h3><p>传说买东西得用麻袋钱为单位的超级通货膨胀.</p>
+<iframe src="https://www.youtube.com/embed/BHw4NStQsT8" allowfullscreen frameborder="0" height="480," width="640," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+<p>五年不见的crash course.<br>在视频中讲到<a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/l/liquiditytrap.asp">liquidity trap</a>,“因为期待价格会降低,于是等待价格降低,需求减少,价格真的会降低,同时工厂也会低利润而倒闭”.<br>很有意思,毕竟金钱是人类赋予的意义,有很多经济现象跟心理行为有关.</p>
+<p>视频中除了超级通货膨胀外还讲了stagflation和stagflation + inflation.</p>
+<blockquote>
+<p>stagflation: when output slows down or stops, or stagnates, at the same time that prices rise.</p>
+</blockquote>
+<p>Combination of high unemployment and economic stagnation with inflation.<br>什么地狱模式.</p>
+<br>
+<br>
+
+<h3 id="Consumer-Price-Index"><a href="#Consumer-Price-Index" class="headerlink" title="Consumer Price Index"></a>Consumer Price Index</h3><p>用来测量通货膨胀.</p>
+<iframe src="https://www.youtube.com/embed/TpNQldxlS8w" allowfullscreen frameborder="0" height="480," width="640," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+<p>简单来说是测试特定的商品和服务(<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Market_basket">market basket</a>)在不同年份的价格,来计算通货膨胀.</p>
+<h3 id="Gross-Domestic-Product"><a href="#Gross-Domestic-Product" class="headerlink" title="Gross Domestic Product"></a>Gross Domestic Product</h3><!--https://www.youtube.com/watch?v=mjJmo5mN5yA&ab_channel=MarginalRevolutionUniversity-->
+
+<p>Gross domestic product (GDP) is a monetary measure of the market value of all the <strong>final</strong> goods and services produced within a country by a year.<br>这并不绝对完全完美得展示国家的生产总值(比如有些东西很难计算价值),但是一个很好计算数值.</p>
+<p>A final goods and services is one that will not be sold again as part of some other good.<br>When a baker buys flour, eggs and butter, we do not count these sales in GDP, since they are <strong>intermediate</strong> good, for selling a cake.</p>
+<p>There are some goods that are used to <strong>make other goods</strong> but are still considered finished goods.<br>There are called capital goods.<br>比如刚刚例子的,baker所卖的蛋糕制造工具.</p>
+<p>Produced也是一个限制.是当年所生产的东西纳入GDP计算.<br>如果是旧的房子交易,是不算在GDP中的.当盖好的新房可以算入.</p>
+<p>Within a country指的是本国所生产的价值.美国卖苹果去英国,苹果的价格算在美国头上.</p>
+<br>
+<br>
+
+<h3 id="Budget-deficit-预算赤字"><a href="#Budget-deficit-预算赤字" class="headerlink" title="Budget deficit(预算赤字)"></a>Budget deficit(预算赤字)</h3><p>Within the budgetary process, deficit spending is the amount by which spending exceeds revenue over a particular period of time, also called simply deficit, or budget deficit; the opposite of budget surplus.</p>
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="Areas-of-finance"><a href="#Areas-of-finance" class="headerlink" title="Areas of finance"></a>Areas of finance</h1><ul>
+<li>Capital Markets and capital market theory</li>
+<li>Investment management</li>
+<li>Financial management</li>
+</ul>
+<h2 id="Capital-Markets"><a href="#Capital-Markets" class="headerlink" title="Capital Markets"></a><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/capitalmarkets.asp">Capital Markets</a></h2><h3 id="Financial-system"><a href="#Financial-system" class="headerlink" title="Financial system"></a>Financial system</h3><p>System的构成是由<strong>financial regulator</strong>监控,在<strong>financial markets</strong> (stock market, fund market, insurance, derivative, commodity, real estate), <strong>financial intermediaries</strong> (banks, investment firms), <strong>savers</strong>, <strong>borrowers</strong>之间进行的borrow funds and returns.</p>
+<p>Savers和borrowers可以当作在finance这个赌场里的玩家,分为households, firms and governments.</p>
+<p>在这个system里面,比如说bank.公司向bank借钱,钱从哪里来,从把钱存在bank里的人那里来:<br>像这样钱是流通的,并没有存在银行就一成不变.</p>
+<p>Financial regulator: guarantee things fair.</p>
+<br>
+<br>
+
+<ul>
+<li><strong>Financial management (corporate finance / business finance)</strong></li>
+</ul>
+<p>Bank helping business to make decisions, decisions make company grow bigger.<br>Maybe sell bonds to market place, maybe take the company public (sell shares for money), or get business loan.<br>And the bank will get fees from the company.</p>
+<ul>
+<li><strong>Investment management (portfolio / asset / wealth management)</strong></li>
+</ul>
+<p>管理投资(portfolio)的感觉.<br>我记得收到过几次cibc的,美女大姐姐,精炼大帅哥的邀请,拿出纸头对着花花绿绿的饼图说,这个投资这块是cash,这块是投股票,这块是投石油之类之类的.<br>大概做的就是这个.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Financial-markets-types"><a href="#Financial-markets-types" class="headerlink" title="Financial markets types"></a>Financial markets types</h1><p>市场交易种类.</p>
+<h2 id="Money-market-short-term-borrowing-less-than-1-year"><a href="#Money-market-short-term-borrowing-less-than-1-year" class="headerlink" title="Money market - short term borrowing less than 1 year"></a>Money market - short term borrowing less than 1 year</h2><ul>
+<li>treasury bills</li>
+<li>commercial papers</li>
+<li>certificate of deposits</li>
+<li>banker’s acceptance</li>
+</ul>
+<h2 id="Capital-market-longer-than-1-year"><a href="#Capital-market-longer-than-1-year" class="headerlink" title="Capital market - longer than 1 year"></a>Capital market - longer than 1 year</h2><ul>
+<li>debt instruments - bonds (&gt;10Y) and notes (&lt;10Y)</li>
+<li>equity instruments - also known as stocks or shares</li>
+</ul>
+<h2 id="Foreign-exchange"><a href="#Foreign-exchange" class="headerlink" title="Foreign exchange"></a>Foreign exchange</h2><p>外汇交换.</p>
+<h2 id="Commodity"><a href="#Commodity" class="headerlink" title="Commodity"></a>Commodity</h2><ul>
+<li>trade of corn, wheat, oil, gas: things</li>
+</ul>
+<h2 id="Derivatives-market"><a href="#Derivatives-market" class="headerlink" title="Derivatives market"></a>Derivatives market</h2><p>中文翻译叫金融衍生市场.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Financial-intermediaries-roles"><a href="#Financial-intermediaries-roles" class="headerlink" title="Financial intermediaries roles"></a>Financial intermediaries roles</h1><ul>
+<li>depository institutions: commercial banks</li>
+<li>regulated investment companies: <strong>mutual fund</strong> or <strong>ETF</strong> companies</li>
+<li>investment banks</li>
+<li>insurance companies</li>
+</ul>
+<h2 id="Basic-financial-statments"><a href="#Basic-financial-statments" class="headerlink" title="Basic financial statments"></a>Basic financial statments</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/b/balancesheet.asp">balance sheet</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/i/incomestatement.asp">income statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.investopedia.com/financial-edge/1012/evaluating-a-statement-of-cash-flows.aspx">statement of cash flows</a></li>
+</ul>
+<h2 id="Retail-vs-investment-bank"><a href="#Retail-vs-investment-bank" class="headerlink" title="Retail vs investment bank"></a>Retail vs investment bank</h2><p>Retail bank和investment bank是不同的,这是我两年前才知道的事.<br>虽然加拿大的银行,比如cibc retail和investment都做,但investment有专门的部门,叫做cibc world markets.<br>btw还有一个investment的retail部门叫cibc wood gundy.<br>这个细节就不明觉厉了…</p>
+<p>Retail bank的业务:</p>
+<ul>
+<li>Chequing account</li>
+<li>Saving account</li>
+<li>Loans, overdraft lines of credit and mortgages</li>
+<li>Pension (RRSP)</li>
+<li>Tax free saving account (TFSA)</li>
+<li>Collective investment products (mutual funds)</li>
+<li>Insurance - auto, home and life</li>
+<li>Stocks (equity)</li>
+<li>Bonds (fixed income) investing</li>
+</ul>
+<p>Investment bank的业务:</p>
+<ul>
+<li>Providing access to financial markets</li>
+<li>Managing high networth individuals money</li>
+<li>Assisting companies to raise money</li>
+<li>Trading / speculating with the banks own funds</li>
+<li>Providing companies with advice on mergers and acquistions</li>
+</ul>
+<br>
+<br>
+<br>
+
+<h1 id="Tax"><a href="#Tax" class="headerlink" title="Tax"></a>Tax</h1><p>至今觉得第一个发明了tax的人真是个天才.<br>income tax在加拿大每年自行上报,需要填写taxable income, deductions 和 tax credits.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Debt-instruments"><a href="#Debt-instruments" class="headerlink" title="Debt instruments"></a>Debt instruments</h1><p>money market instruments:</p>
+<ul>
+<li>T-bills</li>
+<li>Commercial papers</li>
+<li>Certificate of deposits</li>
+<li>Bankers’ acceptance</li>
+<li>Eurodollars</li>
+<li>Repo (repurchase agreement)</li>
+</ul>
+<h2 id="T-bills"><a href="#T-bills" class="headerlink" title="T-bills"></a>T-bills</h2><p>Aka treasury bills.<br>是国家政府发行的 short term “I owe you” bill,用来raise fund.<br>由政府担保(no risk)的,在 3m/6m/1y 之后还钱的bill.<br><a target="_blank" rel="noopener" href="https://www.bankofcanada.ca/markets/government-securities-auctions/#Distributors-and-Dealers">银行</a>会购买treasury bill through auction.<br>一张100元的t bill,一般会以99/98的价格成交.</p>
+<h2 id="Commercial-papers"><a href="#Commercial-papers" class="headerlink" title="Commercial papers"></a>Commercial papers</h2><p>Similar to T-bills but issued by corporations. Higher risk than tbills.</p>
+<h2 id="Certificate-of-deposits"><a href="#Certificate-of-deposits" class="headerlink" title="Certificate of deposits"></a>Certificate of deposits</h2><p>Fixed time GIC. Fixed date and fixed interest rate.</p>
+<h2 id="Bankers’-acceptance"><a href="#Bankers’-acceptance" class="headerlink" title="Bankers’ acceptance"></a><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/b/bankersacceptance.asp">Bankers’ acceptance</a></h2><p>Kind of a business loan but involved a specific business.<br>这也是很有意思的一项debt.<br>Investopedia给的定义是在帮助两方单位提供信誉(credit)完成某个交易(business)的方式.经常用在sales transaction上.<br>BA provides assurance to the seller that he will be paid for the goods he sells to a purchaser with whom he is not familiar.<br>除了not familiar的理由外,还有比如,销售方需要一部分钱银行来提前cover投资,之后才获利还款银行,这样的时间差credit.</p>
+<h2 id="Eurodollars"><a href="#Eurodollars" class="headerlink" title="Eurodollars"></a><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/e/eurodollar.asp">Eurodollars</a></h2><p>并不是真正一定要euro.<br>概念是:在A国家做生意,但人居住在B国家.所以在B国家开通放A国货币的账号.</p>
+<h2 id="Repurchase-agreement"><a href="#Repurchase-agreement" class="headerlink" title="Repurchase agreement"></a>Repurchase agreement</h2><p>字面意义的repurchase,当铺的运作方式.</p>
+<h2 id="Bonds-and-notes"><a href="#Bonds-and-notes" class="headerlink" title="Bonds and notes"></a>Bonds and notes</h2><p>Issued by governments or corporations.<br>固定每段时间发放利息,一般一年一次或一年两次.<br>时间长, bonds &gt; 10Y , notes &lt; 10Y.<br>因为时间长,虽然有给固定利息,但因为通膨会缩水不少.</p>
+<p>Bonds的好处是可以变卖.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Foreign-exchange-trading"><a href="#Foreign-exchange-trading" class="headerlink" title="Foreign exchange trading"></a>Foreign exchange trading</h1><p>It is over the counter(or “OTC”), 不需要第三平台,bank之间可以直接交易.<br>出价术语:</p>
+<ul>
+<li><strong>Bid</strong> - the highest price a buyer is willing to pay</li>
+<li><strong>Ask</strong> - the lowest price a seller is willing to accept</li>
+<li><strong>Spread</strong> - the difference between bid and asking prices</li>
+</ul>
+<p><strong>Spot transaction:</strong> the money will be settled 2 business days (open days) after the deal was struck.</p>
+<p><strong>Forward transaction:</strong> the deal is struck on a particular date at an agreed price, and this is the price paid on the agreed date, regardless of how the prices have changed in the meantime.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Commodity-markets"><a href="#Commodity-markets" class="headerlink" title="Commodity markets"></a><a target="_blank" rel="noopener" href="https://www.investopedia.com/terms/c/commodity-market.asp">Commodity markets</a></h1><p>Commodity基础物品.commodity market的特点是比如养一头猪需要五六个月,但猪仔出生时养家就可以卖出【五六个月后的猪仔】了.<br>于是在这五六个月内的时间差是有利可图.</p>
+<ul>
+<li><p>Energy (ICE - intercontinental exchange)<br>Oil, gas.</p>
+</li>
+<li><p>Hard commodities (LME - london metals exchange)<br>Metals (iron, copper, gold, silver, platinum)</p>
+</li>
+<li><p>Soft commodities (NYBOT and NYMEX)<br>Agriculture (orange juice, wheat, oats)<br>Livestock and meet (live cattle, pork bellies)</p>
+</li>
+</ul>
+<p>因为commodity的货物是基础货物,肯定(大概率)最终会有人需要.<br>一些人进入commdity市场是变卖contract,并不会真正购买货物.<br>也就是用货物mature时间赚差价.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Derivatives"><a href="#Derivatives" class="headerlink" title="Derivatives"></a>Derivatives</h1><p>我觉得最牛逼的一种“用时间赚差价”方式.</p>
+<iframe src="https://www.youtube.com/embed/m3im-iJdhv4" allowfullscreen frameborder="0" height="480," width="640," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+<p>在derivative里会bid on的事物:</p>
+<ul>
+<li>Equities</li>
+<li>Rates</li>
+<li>Indices</li>
+<li>Currencies</li>
+<li>Commodities</li>
+<li>Synthetics (something made especially for trade, eg credit default swap)</li>
+</ul>
+<h2 id="Forwards"><a href="#Forwards" class="headerlink" title="Forwards"></a>Forwards</h2><p>An <strong>OTC</strong> contract to do a specified trade at an agreed price on a fixed date in the future (obligation).</p>
+<h2 id="Future"><a href="#Future" class="headerlink" title="Future"></a>Future</h2><p>An <strong>exchange</strong> traded contract to do a specified trade at an agreed price on a fixed date in the future (obligation).</p>
+<h2 id="Options"><a href="#Options" class="headerlink" title="Options"></a>Options</h2><p>Gives the buyer right but not obligation to buy/sell specified quantity of underlying at pre-agreed (exercise) price and maturity.</p>
+<ul>
+<li><strong>Call</strong> - right to buy</li>
+<li><strong>Put</strong> - right to sell</li>
+<li><strong>Exercise</strong> - 最后的购入</li>
+</ul>
+<h2 id="Swaps"><a href="#Swaps" class="headerlink" title="Swaps"></a>Swaps</h2><p>Interest rate swap.</p>
+<iframe src="https://www.youtube.com/embed/PLjyj1FJqig" allowfullscreen frameborder="0" height="480," width="640," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+<p>Credit default swaps.</p>
+<iframe src="https://www.youtube.com/embed/uoF6c2BFAXo" allowfullscreen frameborder="0" height="480," width="640," allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"></iframe>
+
+<br>
+<br>
+<br>
+
+<p>以上是基础术语扫盲.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%9C%A8%E8%B5%B7%E8%B7%91%E7%BA%BF%E5%B9%B3%E5%9C%B0%E6%91%94%E7%9A%84%E5%8D%9A%E5%BC%88/" rel="tag"># 在起跑线平地摔的博弈</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/04/25/P235/" rel="next" title="关于颜色的笔记 - 色彩班长">
+      关于颜色的笔记 - 色彩班长 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Money"><span class="nav-number">1.</span> <span class="nav-text">Money</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Economic-indicator"><span class="nav-number">2.</span> <span class="nav-text">Economic indicator</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inflation"><span class="nav-number">2.0.1.</span> <span class="nav-text">Inflation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Deflation"><span class="nav-number">2.0.2.</span> <span class="nav-text">Deflation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HyperInflation"><span class="nav-number">2.0.3.</span> <span class="nav-text">HyperInflation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consumer-Price-Index"><span class="nav-number">2.0.4.</span> <span class="nav-text">Consumer Price Index</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Gross-Domestic-Product"><span class="nav-number">2.0.5.</span> <span class="nav-text">Gross Domestic Product</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Budget-deficit-%E9%A2%84%E7%AE%97%E8%B5%A4%E5%AD%97"><span class="nav-number">2.0.6.</span> <span class="nav-text">Budget deficit(预算赤字)</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Areas-of-finance"><span class="nav-number">3.</span> <span class="nav-text">Areas of finance</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Capital-Markets"><span class="nav-number">3.1.</span> <span class="nav-text">Capital Markets</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Financial-system"><span class="nav-number">3.1.1.</span> <span class="nav-text">Financial system</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Financial-markets-types"><span class="nav-number">4.</span> <span class="nav-text">Financial markets types</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Money-market-short-term-borrowing-less-than-1-year"><span class="nav-number">4.1.</span> <span class="nav-text">Money market - short term borrowing less than 1 year</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Capital-market-longer-than-1-year"><span class="nav-number">4.2.</span> <span class="nav-text">Capital market - longer than 1 year</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Foreign-exchange"><span class="nav-number">4.3.</span> <span class="nav-text">Foreign exchange</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commodity"><span class="nav-number">4.4.</span> <span class="nav-text">Commodity</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Derivatives-market"><span class="nav-number">4.5.</span> <span class="nav-text">Derivatives market</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Financial-intermediaries-roles"><span class="nav-number">5.</span> <span class="nav-text">Financial intermediaries roles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Basic-financial-statments"><span class="nav-number">5.1.</span> <span class="nav-text">Basic financial statments</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Retail-vs-investment-bank"><span class="nav-number">5.2.</span> <span class="nav-text">Retail vs investment bank</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Tax"><span class="nav-number">6.</span> <span class="nav-text">Tax</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debt-instruments"><span class="nav-number">7.</span> <span class="nav-text">Debt instruments</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#T-bills"><span class="nav-number">7.1.</span> <span class="nav-text">T-bills</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Commercial-papers"><span class="nav-number">7.2.</span> <span class="nav-text">Commercial papers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Certificate-of-deposits"><span class="nav-number">7.3.</span> <span class="nav-text">Certificate of deposits</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bankers%E2%80%99-acceptance"><span class="nav-number">7.4.</span> <span class="nav-text">Bankers’ acceptance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Eurodollars"><span class="nav-number">7.5.</span> <span class="nav-text">Eurodollars</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repurchase-agreement"><span class="nav-number">7.6.</span> <span class="nav-text">Repurchase agreement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bonds-and-notes"><span class="nav-number">7.7.</span> <span class="nav-text">Bonds and notes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Foreign-exchange-trading"><span class="nav-number">8.</span> <span class="nav-text">Foreign exchange trading</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Commodity-markets"><span class="nav-number">9.</span> <span class="nav-text">Commodity markets</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Derivatives"><span class="nav-number">10.</span> <span class="nav-text">Derivatives</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Forwards"><span class="nav-number">10.1.</span> <span class="nav-text">Forwards</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Future"><span class="nav-number">10.2.</span> <span class="nav-text">Future</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Options"><span class="nav-number">10.3.</span> <span class="nav-text">Options</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Swaps"><span class="nav-number">10.4.</span> <span class="nav-text">Swaps</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_8.png">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">239</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">53</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe frameborder="no" border="0" marginwidth="0" marginheight="0" width=330 height=86 src="//music.163.com/outchain/player?type=2&id=465530020&auto=0&height=66"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">15:15</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2022/05/12/P238/";
+    this.page.identifier = "2022/05/12/P238/";
+    this.page.title = "从零开始的finance旅途";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
