@@ -31,8 +31,9 @@
 <meta property="og:description" content="联动第一季.来源Linkedin learning.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/05/17/P242/P242_1.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/05/17/P242/P242_2.jpg">
 <meta property="article:published_time" content="2022-05-18T03:52:45.000Z">
-<meta property="article:modified_time" content="2022-05-18T03:54:00.620Z">
+<meta property="article:modified_time" content="2022-05-19T04:09:37.552Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -244,10 +245,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2022-05-17 23:52:45 / Modified: 23:54:00" itemprop="dateCreated datePublished" datetime="2022-05-17T23:52:45-04:00">2022-05-17</time>
+              <time title="Created: 2022-05-17 23:52:45" itemprop="dateCreated datePublished" datetime="2022-05-17T23:52:45-04:00">2022-05-17</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-05-19 00:09:37" itemprop="dateModified" datetime="2022-05-19T00:09:37-04:00">2022-05-19</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -277,13 +284,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>5.4k</span>
+              <span>7.2k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>5 mins.</span>
+              <span>7 mins.</span>
             </span>
 
         </div>
@@ -428,6 +435,54 @@
 </blockquote>
  <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># handle case when myword&#x27;s signature is not found, returning the empty set</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">find_anagram_fast</span>(<span class="params">myword</span>):</span></span><br><span class="line">    sig = signature(myword)</span><br><span class="line"></span><br><span class="line">    <span class="keyword">try</span>:</span><br><span class="line">        <span class="keyword">return</span> anagrams_by_sig[sig]</span><br><span class="line">    <span class="keyword">except</span> KeyError:</span><br><span class="line">        <span class="keyword">return</span> <span class="built_in">set</span>()</span><br></pre></td></tr></table></figure>
 
+ <br>
+ <br>
+
+<h1 id="NumPy"><a href="#NumPy" class="headerlink" title="NumPy"></a>NumPy</h1><blockquote>
+<p>Python variables are often described as labels. They are not little boxes in computer memory ready to receive a value. Rather the values are independent objects with their own space in memory and Python variables are labels or names that are attached to the values. So you can have more than one variable referring to the same object.</p>
+</blockquote>
+<p>也就是python万物pointer说.</p>
+<p>NumPy array can reserve space in memory and store all values side by side.<br>All data in an array need to have the same size.<br>也就是C里的array.</p>
+<p>NumPy数据类:</p>
+<ul>
+<li>Integers: numpy.int8, numpy.int16, numpy.int32, numpy.int64</li>
+<li>Unsigned integers: numpy.unit8 and so on</li>
+<li>Floating-point numbers: numpy.float32, numpy.float64, numpy.float128</li>
+<li>Complex: numpy.complex64 and so on</li>
+<li>Others: bool, str(fixed length), numpy.void(record arrays), and object(reference)</li>
+</ul>
+<p>NumPy array读自文件:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monalisa_bw = np.loadtxt(<span class="string">&#x27;monalisa.txt&#x27;</span>)</span><br></pre></td></tr></table></figure>
+<p>文件是一行一行带空格的数据.</p>
+<blockquote>
+<p>107 93 104 83 91 66 70 77 62 91 89 74 90 68 65 101 93 74 68 77 73 75 77 85 77 71 82 80 74 69 56 50 53 74 63 54 63 88 103 74 67 73 85 72 75 81 107 69 63 73 72 90 89 97 78 74 92 83 92 85 93 92 66 79 73 77 85 100 83 86 84 80 74 78 86 77 66 68 65 68 63 71 90 76 67 50 37 41 51 46 61 82 61 62 58 79 60 49 59 59 70 69 72 67 95 77 70 72 70 65 91 70 64 78 74 61 56 75 51 59 100 95 65 46 49 75 65 91 85 87 88 87 78 95<br> 72 96 99 93 84 85 80 84 96 95 82 85 89 94 82 65 74 90 62 85 75 88 71 77 101 83 100 59 68 73 68 80 89 84 89 82 55 82 96 88 80 93 92 76 87 83 84 70 76 76 79 96 91 125 93 94 98 104 83 86 102 70 88 95 88 110 90 94 76 85 88 74 65 85 85 85 79 90 82 101 87 89 84 98 94 91 83 67 72 86 78 73 74 73 85 82 71 76 60 78 68 68 82 61 55 60 68 78 74 91 92 87 73 78 50 85 76 73 76 67 76 73 74 83 77 77 80 94 80 64 76 68 95 73</p>
+</blockquote>
+<p>所以被分成了2D array.</p>
+<p>Check dimension.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monalisa_bw.ndim</span><br></pre></td></tr></table></figure>
+
+<p>Rows and columns.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monalisa_bw.shape</span><br></pre></td></tr></table></figure>
+
+<p>Data types.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">monalisa_bw.dtype</span><br></pre></td></tr></table></figure>
+
+ <br>
+ <br>
+
+<p>NumPy 创造array:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">zero_1d = np.zeros(<span class="number">8</span>, <span class="string">&#x27;d&#x27;</span>) <span class="comment"># d short for np.float64</span></span><br><span class="line"></span><br><span class="line">zero_2d = np.zeros((<span class="number">8</span>,<span class="number">8</span>), np.float64)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 可以做一个同样size的值为0的array</span></span><br><span class="line">np.zeros_like(monalisa_bw)</span><br><span class="line"></span><br><span class="line"><span class="comment"># 或者全空</span></span><br><span class="line">np.empty(<span class="number">24</span>, <span class="string">&#x27;d&#x27;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Save file.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">np.save(<span class="string">&#x27;random.npy&#x27;</span>, rand_2d)</span><br><span class="line"></span><br><span class="line">np.savetxt(<span class="string">&#x27;random.txt&#x27;</span>, rand_2d)</span><br></pre></td></tr></table></figure>
+
+<p>这里比较有意思的是,因为文件是monalisa的pixel info.<br>所以类似也可以用random的function打马赛克.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">np.random.randint(<span class="number">100</span>,<span class="number">255</span>,size=(<span class="number">280</span>,<span class="number">280</span>,<span class="number">3</span>))</span><br></pre></td></tr></table></figure>
+
+<h1 id="Pandas"><a href="#Pandas" class="headerlink" title="Pandas"></a>Pandas</h1><img src="/blog/2022/05/17/P242/P242_2.jpg" class="">
+
     </div>
 
     
@@ -447,7 +502,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/05/19/P243/" rel="prev" title="【转载】巧舟讲解——《逆转裁判》与《大逆转裁判》的剧本与手法的撰写方法">
+      <i class="fa fa-chevron-left"></i> 【转载】巧舟讲解——《逆转裁判》与《大逆转裁判》的剧本与手法的撰写方法
+    </a></div>
       <div class="post-nav-item">
     <a href="/blog/2022/05/15/P241/" rel="next" title="垂死病中惊坐起">
       垂死病中惊坐起 <i class="fa fa-chevron-right"></i>
@@ -517,7 +575,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tuples"><span class="nav-number">1.2.</span> <span class="nav-text">Tuples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictionary"><span class="nav-number">1.3.</span> <span class="nav-text">Dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sets"><span class="nav-number">1.4.</span> <span class="nav-text">Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comprehensions"><span class="nav-number">1.5.</span> <span class="nav-text">Comprehensions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection"><span class="nav-number">1.6.</span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anagram"><span class="nav-number">1.7.</span> <span class="nav-text">Anagram</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Python"><span class="nav-number">1.</span> <span class="nav-text">Python</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#List"><span class="nav-number">1.1.</span> <span class="nav-text">List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tuples"><span class="nav-number">1.2.</span> <span class="nav-text">Tuples</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dictionary"><span class="nav-number">1.3.</span> <span class="nav-text">Dictionary</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sets"><span class="nav-number">1.4.</span> <span class="nav-text">Sets</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comprehensions"><span class="nav-number">1.5.</span> <span class="nav-text">Comprehensions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collection"><span class="nav-number">1.6.</span> <span class="nav-text">Collection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Anagram"><span class="nav-number">1.7.</span> <span class="nav-text">Anagram</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#NumPy"><span class="nav-number">2.</span> <span class="nav-text">NumPy</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Pandas"><span class="nav-number">3.</span> <span class="nav-text">Pandas</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -533,14 +591,14 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">242</span>
+          <span class="site-state-item-count">243</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
       <div class="site-state-item site-state-categories">
             <a href="/blog/categories/">
           
-        <span class="site-state-item-count">11</span>
+        <span class="site-state-item-count">12</span>
         <span class="site-state-item-name">categories</span></a>
       </div>
       <div class="site-state-item site-state-tags">
@@ -614,7 +672,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">15:33</span>
+    <span title="T">15:41</span>
 
   -->
 
