@@ -25,7 +25,7 @@
 
   <meta name="description" content="增加了cs246课堂笔记的补丁.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于bash的笔记">
+<meta property="og:title" content="关于Unix的笔记">
 <meta property="og:url" content="https://mazui3.github.io/blog/2021/03/14/P176/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="增加了cs246课堂笔记的补丁.">
@@ -33,12 +33,12 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176.png">
 <meta property="article:published_time" content="2021-03-14T05:02:10.000Z">
-<meta property="article:modified_time" content="2022-01-27T02:53:16.046Z">
+<meta property="article:modified_time" content="2022-05-27T12:51:31.908Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
-<meta property="article:tag" content="bash">
+<meta property="article:tag" content="Unix">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
 
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>关于bash的笔记 | Underlake Reading Room</title>
+  <title>关于Unix的笔记 | Underlake Reading Room</title>
   
 
 
@@ -236,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于bash的笔记
+          关于Unix的笔记
         </h1>
 
         <div class="post-meta">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-01-26 21:53:16" itemprop="dateModified" datetime="2022-01-26T21:53:16-05:00">2022-01-26</time>
+                <time title="Modified: 2022-05-27 08:51:31" itemprop="dateModified" datetime="2022-05-27T08:51:31-04:00">2022-05-27</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,13 +284,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>6.2k</span>
+              <span>8.4k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>6 mins.</span>
+              <span>8 mins.</span>
             </span>
 
         </div>
@@ -304,6 +304,15 @@
       
         <p>增加了cs246课堂笔记的补丁.</p>
 <span id="more"></span>
+
+<p>Also known as bash.</p>
+<br>
+<br>
+
+<p>Command line shortcuts.</p>
+<div class="note ">
+            <p>up/down arrows: review previous command<br>ctrl + a: move cursor to start of line<br>ctrl + e: move cursor to end of line<br>tab: try to complete the command or filename</p>
+          </div>
 
 <br>
 <br>
@@ -319,6 +328,117 @@
 <li>stderr id NOT buffered</li>
 </ol>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">comd &lt; in.txt &gt; out.txt 2&gt;err.log</span><br><span class="line">comd &gt; out.txt 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line"><span class="comment">## 这里 2&gt; 是std err 而&amp;1 是std out,也就是coonect steam 2 to 1.</span></span><br><span class="line"><span class="comment">## 注意,这跟</span></span><br><span class="line"></span><br><span class="line">comd 2&gt;&amp;1 &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 不一样.</span></span><br></pre></td></tr></table></figure>
+
+<p>dev/null则是一个黑洞directory,可以用来skip output掉不需要的东西.</p>
+<br>
+<br>
+
+<h2 id="Text-editors"><a href="#Text-editors" class="headerlink" title="Text editors"></a>Text editors</h2><ul>
+<li>ed: edit text</li>
+<li>vi: visual editing mode</li>
+<li>vim: vi improved</li>
+<li>emacs: editor macros</li>
+<li>pico: pine composer</li>
+<li>nano: 1000 times larger than pico</li>
+</ul>
+<p>在学校里学的是vi,用vi写了很久的代码,从bash写到cpp.<br>结果被飞哥震惊:你怎么不用code editor.</p>
+<p>谢谢教我.</p>
+ <br>
+ <br>
+
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><p>cd文件.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /User/document</span><br></pre></td></tr></table></figure>
+<p>cd后面斜杠是绝对路径.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<p>Back to home.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd -</span><br></pre></td></tr></table></figure>
+<p>Last directory you were in.</p>
+<br>
+<br>
+
+<h2 id="Reading-files"><a href="#Reading-files" class="headerlink" title="Reading files"></a>Reading files</h2><ul>
+<li>cat</li>
+<li>more : can get paginated output</li>
+<li>less : less replaced more, but less is <strong>more</strong> than more! (better memory use)</li>
+</ul>
+<p>cat是学校里学过的,用来读取整个文件信息.<br>less更像是用来阅读的,可以选择部分文件,并上下移动.<br>用space or F key can read to the next page. B to the back page. H for help menu. Q for exit.</p>
+<br>
+<br>
+
+<h2 id="Overwriting"><a href="#Overwriting" class="headerlink" title="Overwriting"></a>Overwriting</h2><ul>
+<li><p>mv -f : force overwriting (default)</p>
+</li>
+<li><p>mv -n : no overwriting</p>
+</li>
+<li><p>mv -i : interactive overwriting, “ask me”</p>
+</li>
+<li><p>cp -R : recursive copy directories</p>
+</li>
+<li><p>cp -f : force overwriting (default if empty)</p>
+</li>
+<li><p>cp -n : no overwriting</p>
+</li>
+<li><p>cp -i : interactive overwriting, “ask me”</p>
+</li>
+</ul>
+<br>
+<br>
+
+<h2 id="Symlink"><a href="#Symlink" class="headerlink" title="Symlink"></a>Symlink</h2><p>一种快捷链接的意义.<br>可以把文件所在的directory存成一个快捷链接.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln theDirectory linkName</span><br></pre></td></tr></table></figure>
+
+<p>要给directory instead of file 做symlink,<a target="_blank" rel="noopener" href="https://linuxhint.com/symlink-a-directory-in-linux/">有一点点不同</a>.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s theDirectory linkName</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Kill-a-process"><a href="#Kill-a-process" class="headerlink" title="Kill a process"></a>Kill a process</h2><p>一般我会使用ctrl+c来终止一个程序,但这是属于还可以对着那个程序操作的情况.<br>由此run hexo,把窗口关掉了,就没法在对着那个在跑的hexo来终止它(找不到了嘛).</p>
+<p>可以top(所有),ps(现在在run的)来check有什么process在running.<br>同时跑的程序也有PID,process ID.</p>
+<p>知道PID后可以用kill command来终止程序.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill PID</span><br><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
+<p>有时用9有时不需要.</p>
+<br>
+<br>
+
+<h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p>bash里可以查看history command.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history</span><br></pre></td></tr></table></figure>
+
+<p>同时也有command前的id.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!commandID</span><br></pre></td></tr></table></figure>
+<p>可以跑历史里的command.</p>
+<p>还有种快捷跑history command的方法.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat</span><br></pre></td></tr></table></figure>
+<p>会跑出上一次使用cat的情况,比如cat sample.txt<br>也就是说忘记pass给cat的argument是什么也能再跑一次.</p>
+<p>还有$会store上一次的argument.</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano sample.txt</span><br><span class="line">cat !$</span><br></pre></td></tr></table></figure>
+<p>第二行的cat可以默认成cat sample.txt</p>
+<ul>
+<li>!3 : ref history cmmd #3</li>
+<li>!-2 : ref cmmd which was two cmmd back</li>
+<li>!cat : ref recent cmmd beginning with “cat”</li>
+<li>!! : ref prev cmmd</li>
+<li>!$ : ref prev cmmd arguments</li>
+</ul>
+<br>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo !!</span><br></pre></td></tr></table></figure>
+<p>Do the last command, but with sudo.</p>
+<br>
+<br>
+
+<h2 id="Unix-file-system"><a href="#Unix-file-system" class="headerlink" title="Unix file system"></a>Unix file system</h2><ul>
+<li>/bin : command/programs</li>
+<li>/etc : configurations</li>
+<li>/home : user home directories  </li>
+<li>/lib : system libraries</li>
+<li>/tmp : temporary files</li>
+<li>/usr : unix system resources</li>
+<li>/var : variable system data files</li>
+</ul>
+<br>
+<br>
 
 <h2 id="Pipes"><a href="#Pipes" class="headerlink" title="Pipes"></a>Pipes</h2><p>Connect the output(stdout) of one program to the input(stdin) of anothers.<br>(可以当作sql的nested querry来理解.)</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">prog1 | prog 2</span><br><span class="line"></span><br><span class="line"><span class="comment">## 等于</span></span><br><span class="line"></span><br><span class="line">prog1 &gt; temp 和 prog2 &lt; temp</span><br></pre></td></tr></table></figure>
@@ -339,9 +459,21 @@
 <br>
 <br>
 
-<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a><a target="_blank" rel="noopener" href="https://learnxinyminutes.com/docs/bash/">Script</a></h1><p>如果要写shell script必须要加</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
+<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a><a target="_blank" rel="noopener" href="https://learnxinyminutes.com/docs/bash/">Script</a></h1><br>
+<br>
 
+<h2 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h2><ul>
+<li>255 char maximum</li>
+<li>Use A-Z, a-z, 0-9, underscore, hyphen, period</li>
+<li>Avoid \ / * &amp; % ? | ^ ~ &gt; &lt; and other symbols</li>
+<li>Case sensitive</li>
+<li>Prefer underscores over spaces</li>
+<li>Escape spaces with \</li>
+<li>Use quotes around names with spaces</li>
+</ul>
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><p>如果要写shell script必须要加</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
+<p>这一行叫做shebang line.<br>这一行必须是第一行顶头.#!叫做bang.<br>/bin/bash是the path to executable that will run your script.</p>
 <p>在script中的function:</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">report</span></span>()&#123;</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$1</span> -eq 31 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the 31st.&quot;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the <span class="variable">$&#123;1&#125;</span>th&quot;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -352,7 +484,7 @@
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$&#123;1&#125; 是这个script中第一个argument,以此类推 $&#123;2&#125; 是第二个.</span><br><span class="line">也就是说如果被赋值, $&#123;1&#125; 是最先的收到值的.</span><br></pre></td></tr></table></figure>
 
 <p>定义variable的用法,<br>Rename all .cpp to .cc</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">举例:</span><br><span class="line">mv Hello.cpp Hello.cc</span><br><span class="line"></span><br><span class="line">filename=Hello.cpp</span><br><span class="line">mv $&#123;filename&#125; $&#123;filename%pp&#125;c</span><br><span class="line"></span><br><span class="line">%是drop的意思,在后面直接加上要加的内容“c”.</span><br></pre></td></tr></table></figure>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">举例:</span><br><span class="line">mv Hello.cpp Hello.cc</span><br><span class="line">(这里mv用来重命名)</span><br><span class="line"></span><br><span class="line">filename=Hello.cpp</span><br><span class="line">mv $&#123;filename&#125; $&#123;filename%pp&#125;c</span><br><span class="line"></span><br><span class="line">%是drop的意思,在后面直接加上要加的内容“c”.</span><br></pre></td></tr></table></figure>
 
 <br>
 
@@ -437,7 +569,7 @@
 <tr>
 <td>cp <em>file1 file2</em></td>
 <td>copy file1 to file2</td>
-<td>cp -r <em>dir1 dir2 recursively copy dir1 to dir2</em></td>
+<td>cp -R <em>dir1 dir2 recursively copy dir1 to dir2</em>(including all the files in one dir)</td>
 </tr>
 <tr>
 <td>mv <em>file1 file2</em></td>
@@ -462,7 +594,7 @@
 <tr>
 <td>mkdir <em>dir</em></td>
 <td>create new directory dir in current directory</td>
-<td>can specify more than one directory at once</td>
+<td>mkdir - p can specify more than one directory at once(including parent directory, like mkdir -p project1/project2)</td>
 </tr>
 <tr>
 <td>rmdir <em>dir</em></td>
@@ -892,7 +1024,7 @@
               <a href="/blog/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
               <a href="/blog/tags/Thank-you-Mr-goose/" rel="tag"># Thank you Mr.goose</a>
               <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
-              <a href="/blog/tags/bash/" rel="tag"># bash</a>
+              <a href="/blog/tags/Unix/" rel="tag"># Unix</a>
           </div>
 
         
@@ -973,7 +1105,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash"><span class="nav-number">1.</span> <span class="nav-text">Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipes"><span class="nav-number">1.2.</span> <span class="nav-text">Pipes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Script"><span class="nav-number">2.</span> <span class="nav-text">Script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">2.1.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Condition"><span class="nav-number">2.2.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">2.3.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CheatSheet"><span class="nav-number">3.</span> <span class="nav-text">CheatSheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.2.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programs"><span class="nav-number">3.3.</span> <span class="nav-text">Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions"><span class="nav-number">3.4.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-Conditional-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Script Conditional Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Globbing-Patterns"><span class="nav-number">3.6.</span> <span class="nav-text">Globbing Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">3.7.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">3.8.</span> <span class="nav-text">Variable</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash"><span class="nav-number">1.</span> <span class="nav-text">Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-editors"><span class="nav-number">1.2.</span> <span class="nav-text">Text editors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">1.3.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-files"><span class="nav-number">1.4.</span> <span class="nav-text">Reading files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overwriting"><span class="nav-number">1.5.</span> <span class="nav-text">Overwriting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symlink"><span class="nav-number">1.6.</span> <span class="nav-text">Symlink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kill-a-process"><span class="nav-number">1.7.</span> <span class="nav-text">Kill a process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">1.8.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-file-system"><span class="nav-number">1.9.</span> <span class="nav-text">Unix file system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipes"><span class="nav-number">1.10.</span> <span class="nav-text">Pipes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Script"><span class="nav-number">2.</span> <span class="nav-text">Script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Naming"><span class="nav-number">2.1.</span> <span class="nav-text">Naming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding"><span class="nav-number">2.2.</span> <span class="nav-text">Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">2.3.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Condition"><span class="nav-number">2.4.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">2.5.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CheatSheet"><span class="nav-number">3.</span> <span class="nav-text">CheatSheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.2.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programs"><span class="nav-number">3.3.</span> <span class="nav-text">Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions"><span class="nav-number">3.4.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-Conditional-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Script Conditional Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Globbing-Patterns"><span class="nav-number">3.6.</span> <span class="nav-text">Globbing Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">3.7.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">3.8.</span> <span class="nav-text">Variable</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1070,7 +1202,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">15:41</span>
+    <span title="T">15:46</span>
 
   -->
 
@@ -1154,7 +1286,7 @@
   var disqus_config = function() {
     this.page.url = "https://mazui3.github.io/blog/2021/03/14/P176/";
     this.page.identifier = "2021/03/14/P176/";
-    this.page.title = "关于bash的笔记";
+    this.page.title = "关于Unix的笔记";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
