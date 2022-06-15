@@ -30,17 +30,20 @@
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="增加了cs246课堂笔记的补丁.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_4.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176.png">
 <meta property="article:published_time" content="2021-03-14T05:02:10.000Z">
-<meta property="article:modified_time" content="2022-05-27T12:51:31.908Z">
+<meta property="article:modified_time" content="2022-06-15T21:54:39.105Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="Unix">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_2.png">
 
 <link rel="canonical" href="https://mazui3.github.io/blog/2021/03/14/P176/">
 
@@ -253,7 +256,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-05-27 08:51:31" itemprop="dateModified" datetime="2022-05-27T08:51:31-04:00">2022-05-27</time>
+                <time title="Modified: 2022-06-15 17:54:39" itemprop="dateModified" datetime="2022-06-15T17:54:39-04:00">2022-06-15</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,13 +287,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>8.4k</span>
+              <span>14k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>8 mins.</span>
+              <span>13 mins.</span>
             </span>
 
         </div>
@@ -317,7 +320,15 @@
 <br>
 <br>
 
-<h1 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h1><h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## input和output使用&gt;和&lt;</span></span><br><span class="line"></span><br><span class="line">cat &lt; in.txt &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从in.txt用cat读取数据,输出到out.txt中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 同时&gt;&gt;是append的意思</span></span><br><span class="line"></span><br><span class="line">cat &gt;&gt; out</span><br></pre></td></tr></table></figure>
+<h1 id="Bash"><a href="#Bash" class="headerlink" title="Bash"></a>Bash</h1><div class="note ">
+            <p>man + theCommand 可以查看command说明.</p>
+          </div>
+
+<div class="note ">
+            <p>uname用来check Unix version.</p>
+          </div>
+
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## input和output使用&gt;和&lt;</span></span><br><span class="line"></span><br><span class="line">cat &lt; in.txt &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从in.txt用cat读取数据,输出到out.txt中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 同时&gt;&gt;是append的意思</span></span><br><span class="line"></span><br><span class="line">cat &gt;&gt; out</span><br></pre></td></tr></table></figure>
 
 <p>Every linux process has <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Standard_streams">3 streams</a>, std in(standard input), std err(standard error), std out(standard output).</p>
 <blockquote>
@@ -330,9 +341,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">comd &lt; in.txt &gt; out.txt 2&gt;err.log</span><br><span class="line">comd &gt; out.txt 2&gt;&amp;1</span><br><span class="line"></span><br><span class="line"><span class="comment">## 这里 2&gt; 是std err 而&amp;1 是std out,也就是coonect steam 2 to 1.</span></span><br><span class="line"><span class="comment">## 注意,这跟</span></span><br><span class="line"></span><br><span class="line">comd 2&gt;&amp;1 &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 不一样.</span></span><br></pre></td></tr></table></figure>
 
 <p>dev/null则是一个黑洞directory,可以用来skip output掉不需要的东西.</p>
-<br>
-<br>
-
+<p>2&gt;&amp;1 redirect stderr to stdout.<br><br><br><br></p>
 <h2 id="Text-editors"><a href="#Text-editors" class="headerlink" title="Text editors"></a>Text editors</h2><ul>
 <li>ed: edit text</li>
 <li>vi: visual editing mode</li>
@@ -346,15 +355,39 @@
  <br>
  <br>
 
-<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><p>cd文件.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd /User/document</span><br></pre></td></tr></table></figure>
+<h2 id="cd"><a href="#cd" class="headerlink" title="cd"></a>cd</h2><p>cd路径.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> /User/document</span><br></pre></td></tr></table></figure>
 <p>cd后面斜杠是绝对路径.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> ~</span><br></pre></td></tr></table></figure>
 <p>Back to home.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd -</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> -</span><br></pre></td></tr></table></figure>
 <p>Last directory you were in.</p>
 <br>
 <br>
+
+<h2 id="find"><a href="#find" class="headerlink" title="find"></a>find</h2><ul>
+<li><a target="_blank" rel="noopener" href="https://tecadmin.net/delete-files-older-x-days/">Delete Files Older than 30 days</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.linuxuprising.com/2020/09/how-to-find-files-modified-in-last-n.html">Find Files Modified In The Last N Days Or Minutes</a></li>
+</ul>
+<br>
+<br>
+
+<h2 id="grep"><a href="#grep" class="headerlink" title="grep"></a>grep</h2><p>Search file content.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grep [-options] pattern filename</span><br></pre></td></tr></table></figure>
+
+<p>grep –E(egrep)</p>
+<blockquote>
+<p>search for string or pattern based on extended regular expressions</p>
+</blockquote>
+<p>grep –F(fgrep)</p>
+<blockquote>
+<p>search for string data, ignoring the special meaning of any characters</p>
+</blockquote>
+<p>Difference between egrep and grep:<br>The escape <a target="_blank" rel="noopener" href="https://www.tecmint.com/difference-between-grep-egrep-and-fgrep-in-linux/">character rules</a> are different.</p>
+<p>Grep用于查询file里面是否有同样pattern的内容.<br>如果要查file类型,用<a target="_blank" rel="noopener" href="https://serverfault.com/questions/51477/linux-command-to-find-strings-in-binary-or-non-ascii-file">string command</a>.</p>
+<br>
+<br>
+
 
 <h2 id="Reading-files"><a href="#Reading-files" class="headerlink" title="Reading files"></a>Reading files</h2><ul>
 <li>cat</li>
@@ -365,53 +398,80 @@
 <br>
 <br>
 
+
 <h2 id="Overwriting"><a href="#Overwriting" class="headerlink" title="Overwriting"></a>Overwriting</h2><ul>
-<li><p>mv -f : force overwriting (default)</p>
-</li>
-<li><p>mv -n : no overwriting</p>
-</li>
-<li><p>mv -i : interactive overwriting, “ask me”</p>
-</li>
-<li><p>cp -R : recursive copy directories</p>
-</li>
-<li><p>cp -f : force overwriting (default if empty)</p>
-</li>
-<li><p>cp -n : no overwriting</p>
-</li>
-<li><p>cp -i : interactive overwriting, “ask me”</p>
-</li>
+<li>mv -f : force overwriting (default)</li>
+<li>mv -n : no overwriting</li>
+<li>mv -i : interactive overwriting, “ask me”</li>
+<li>cp -R : recursive copy directories</li>
+<li>cp -f : force overwriting (default if empty)</li>
+<li>cp -n : no overwriting</li>
+<li>cp -i : interactive overwriting, “ask me”</li>
 </ul>
 <br>
 <br>
 
 <h2 id="Symlink"><a href="#Symlink" class="headerlink" title="Symlink"></a>Symlink</h2><p>一种快捷链接的意义.<br>可以把文件所在的directory存成一个快捷链接.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln theDirectory linkName</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln theDirectory linkName</span><br></pre></td></tr></table></figure>
 
 <p>要给directory instead of file 做symlink,<a target="_blank" rel="noopener" href="https://linuxhint.com/symlink-a-directory-in-linux/">有一点点不同</a>.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s theDirectory linkName</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s theDirectory linkName</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
 
 <h2 id="Kill-a-process"><a href="#Kill-a-process" class="headerlink" title="Kill a process"></a>Kill a process</h2><p>一般我会使用ctrl+c来终止一个程序,但这是属于还可以对着那个程序操作的情况.<br>由此run hexo,把窗口关掉了,就没法在对着那个在跑的hexo来终止它(找不到了嘛).</p>
 <p>可以top(所有),ps(现在在run的)来check有什么process在running.<br>同时跑的程序也有PID,process ID.</p>
+<blockquote>
+<p>ps –f full list of all your processes<br>jobs –l long list of background and stopped processes</p>
+</blockquote>
 <p>知道PID后可以用kill command来终止程序.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">kill PID</span><br><span class="line">kill -9 PID</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">kill</span> PID</span><br><span class="line"><span class="built_in">kill</span> -9 PID</span><br></pre></td></tr></table></figure>
 <p>有时用9有时不需要.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Header One</th>
+<th align="left">Header Two</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">kill pid</td>
+<td align="left">terminated and removed from memory</td>
+</tr>
+<tr>
+<td align="left">kill -9 pid</td>
+<td align="left">forcefully terminated</td>
+</tr>
+<tr>
+<td align="left">kill -19 pid</td>
+<td align="left">pauses, or stops a background process</td>
+</tr>
+<tr>
+<td align="left">kill -18 pid</td>
+<td align="left">restarts a stopped process into the background</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<p>ctrl + Z pauses, or stops, the foreground process.<br>nohup prevents a background process from aborting when you exit the shell.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup batchprog &gt; bpresults 2&gt; bperrors &amp;</span><br></pre></td></tr></table></figure>
+
 <br>
 <br>
 
 <h2 id="History"><a href="#History" class="headerlink" title="History"></a>History</h2><p>bash里可以查看history command.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">history</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">history</span></span><br></pre></td></tr></table></figure>
 
 <p>同时也有command前的id.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!commandID</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!commandID</span><br></pre></td></tr></table></figure>
 <p>可以跑历史里的command.</p>
 <p>还有种快捷跑history command的方法.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat</span><br></pre></td></tr></table></figure>
 <p>会跑出上一次使用cat的情况,比如cat sample.txt<br>也就是说忘记pass给cat的argument是什么也能再跑一次.</p>
 <p>还有$会store上一次的argument.</p>
-<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano sample.txt</span><br><span class="line">cat !$</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano sample.txt</span><br><span class="line">cat !$</span><br></pre></td></tr></table></figure>
 <p>第二行的cat可以默认成cat sample.txt</p>
 <ul>
 <li>!3 : ref history cmmd #3</li>
@@ -424,24 +484,23 @@
 <br>
 
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo !!</span><br></pre></td></tr></table></figure>
-<p>Do the last command, but with sudo.</p>
-<br>
-<br>
+<p>Do the last command, but with sudo.<br><br><br><br></p>
+<h2 id="Unix-file-system"><a href="#Unix-file-system" class="headerlink" title="Unix file system"></a>Unix file system</h2><img src="/blog/2021/03/14/P176/P176_2.png" class="">
 
-<h2 id="Unix-file-system"><a href="#Unix-file-system" class="headerlink" title="Unix file system"></a>Unix file system</h2><ul>
+<ul>
 <li>/bin : command/programs</li>
 <li>/etc : configurations</li>
-<li>/home : user home directories  </li>
+<li>/home : user home directories</li>
 <li>/lib : system libraries</li>
 <li>/tmp : temporary files</li>
 <li>/usr : unix system resources</li>
 <li>/var : variable system data files</li>
 </ul>
-<br>
-<br>
+ <br>
+ <br>
 
 <h2 id="Pipes"><a href="#Pipes" class="headerlink" title="Pipes"></a>Pipes</h2><p>Connect the output(stdout) of one program to the input(stdin) of anothers.<br>(可以当作sql的nested querry来理解.)</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">prog1 | prog 2</span><br><span class="line"></span><br><span class="line"><span class="comment">## 等于</span></span><br><span class="line"></span><br><span class="line">prog1 &gt; temp 和 prog2 &lt; temp</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prog1 | prog 2</span><br><span class="line"><span class="comment">## 等于</span></span><br><span class="line"></span><br><span class="line">prog1 &gt; temp 和 prog2 &lt; temp</span><br></pre></td></tr></table></figure>
 
 <p>Example: Count the # of words in the first 20 lines of sample.txt.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -20 sample.txt | wc - w</span><br></pre></td></tr></table></figure>
@@ -452,17 +511,14 @@
 <p>Use the output of a program as an argument to another program.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Today is <span class="subst">$(date)</span> and I am <span class="subst">$(whoami)</span>&quot;</span></span><br></pre></td></tr></table></figure>
 <p>Use $(command) to enable commands.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Today is $(date)&#x27;</span></span><br><span class="line"></span><br><span class="line">This won<span class="string">&#x27;t work.</span></span><br></pre></td></tr></table></figure>
-<p>Single quote will suppress embedded commands.</p>
-<p>这里更多syntax可以查看Cheatsheet中的Patterns.</p>
-<br>
-<br>
-<br>
-
-<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a><a target="_blank" rel="noopener" href="https://learnxinyminutes.com/docs/bash/">Script</a></h1><br>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&#x27;Today is $(date)&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>This won’t work.<br>Single quote will suppress embedded commands.</p>
+<p>这里更多syntax可以查看Cheatsheet中的Patterns.<br><br><br><br></p>
+<h2 id="Corn-https-en-wikipedia-org-wiki-Cron"><a href="#Corn-https-en-wikipedia-org-wiki-Cron" class="headerlink" title="Corn[https://en.wikipedia.org/wiki/Cron]"></a>Corn[<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Cron]">https://en.wikipedia.org/wiki/Cron]</a></h2><p>比较advance的 corn job command.<br>可以<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14710257/running-a-cron-job-at-230-am-everyday">设定每天运行</a>.</p>
 <br>
 
-<h2 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h2><ul>
+
+<h1 id="Script"><a href="#Script" class="headerlink" title="Script"></a><a target="_blank" rel="noopener" href="https://learnxinyminutes.com/docs/bash/">Script</a></h1><h2 id="Naming"><a href="#Naming" class="headerlink" title="Naming"></a>Naming</h2><ul>
 <li>255 char maximum</li>
 <li>Use A-Z, a-z, 0-9, underscore, hyphen, period</li>
 <li>Avoid \ / * &amp; % ? | ^ ~ &gt; &lt; and other symbols</li>
@@ -471,13 +527,185 @@
 <li>Escape spaces with \</li>
 <li>Use quotes around names with spaces</li>
 </ul>
-<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><p>如果要写shell script必须要加</p>
+<br>
+
+<h2 id="Coding"><a href="#Coding" class="headerlink" title="Coding"></a>Coding</h2><h3 id="Shebang"><a href="#Shebang" class="headerlink" title="Shebang"></a>Shebang</h3><p>如果要写shell script必须要加</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br></pre></td></tr></table></figure>
+
 <p>这一行叫做shebang line.<br>这一行必须是第一行顶头.#!叫做bang.<br>/bin/bash是the path to executable that will run your script.</p>
-<p>在script中的function:</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">report</span></span>()&#123;</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$1</span> -eq 31 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the 31st.&quot;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the <span class="variable">$&#123;1&#125;</span>th&quot;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<br>
+
+<h3 id="Run"><a href="#Run" class="headerlink" title="Run"></a>Run</h3><ol>
+<li> Assign execute permission, ensure stored in a directory within $PATH, and call it at command line:<pre><code> **listFiles**
+</code></pre>
+</li>
+<li> Execute script in the current bash shell using the dot. Not recommended if script contains the exit command.<pre><code> **. listFiles**
+</code></pre>
+</li>
+<li>Execute script in a bash sub-shell with bash command.<pre><code> **bash listFiles**
+</code></pre>
+</li>
+</ol>
+<br>
+
+<h3 id="Debug"><a href="#Debug" class="headerlink" title="Debug"></a>Debug</h3><ul>
+<li>Add echo commands to display the variable value</li>
+<li>Split code into chunks and test before moving on</li>
+<li>Run script in trace mode:<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">bash -x listFiles</span><br></pre></td></tr></table></figure></li>
+</ul>
+<br>
+
+<h3 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">name=variable</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$name</span></span><br></pre></td></tr></table></figure>
+<p>Bash里的variable在命名时不可以有空格.<br>Name cannot start with a number<br>用variable的时候要加$ sign.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">To pass an argument to the bash script, we use position parameters <span class="variable">$1</span>, <span class="variable">$2</span>, <span class="variable">$3</span>.</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Today is <span class="variable">$1</span>/<span class="variable">$2</span>/<span class="variable">$3</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th align="left">Header One</th>
+<th align="left">Header Two</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">$0</td>
+<td align="left">script name</td>
+</tr>
+<tr>
+<td align="left">$#</td>
+<td align="left"># of command line parameters</td>
+</tr>
+<tr>
+<td align="left">$*</td>
+<td align="left">all command line parameters</td>
+</tr>
+<tr>
+<td align="left">$@</td>
+<td align="left">all command line arguments</td>
+</tr>
+<tr>
+<td align="left">$?</td>
+<td align="left">exit status of the most recently executed command</td>
+</tr>
+<tr>
+<td align="left">$$</td>
+<td align="left">Process ID of the shell</td>
+</tr>
+<tr>
+<td align="left">$!</td>
+<td align="left">process ID of the most recently executed background command</td>
+</tr>
+</tbody></table>
+<br>
+
+<p>Can also use read to read input.</p>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Enter username : &quot;</span></span><br><span class="line"><span class="built_in">read</span> nameVar</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Your username is <span class="variable">$nameVar</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Bash里面还有array,牛逼.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">names[0]=<span class="string">&quot;Bob&quot;</span></span><br><span class="line">names[1]=<span class="string">&quot;Julie&quot;</span></span><br><span class="line">names[2]=<span class="string">&quot;Andrew&quot;</span></span><br><span class="line">names[3]=<span class="string">&quot;Alice&quot;</span></span><br></pre></td></tr></table></figure>
 
 
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">names=(<span class="string">&quot;Bob&quot;</span> <span class="string">&quot;Julie&quot;</span> <span class="string">&quot;Andrew&quot;</span> <span class="string">&quot;Alice&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>We can access the entire array using *.</p>
+<img src="/blog/2021/03/14/P176/P176_3.png" class="">
+
+<br>
+
+<h3 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h3><p>We can use $((mathExpression)) or $[mathExpression].</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $((<span class="number">4</span>/<span class="number">2</span>))</span><br><span class="line"><span class="built_in">echo</span> $[3+2*5]</span><br><span class="line">result=$[3*5]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">num1=7</span><br><span class="line">num2=2</span><br><span class="line">num3=4</span><br><span class="line"><span class="built_in">echo</span> $[ (<span class="variable">$num1</span>-<span class="variable">$num2</span>) * <span class="variable">$num3</span> ]</span><br><span class="line"></span><br><span class="line">expr 4 + 7</span><br></pre></td></tr></table></figure>
+
+
+<p>Bash support integer arithmetic only, but we can use bc command for support of decimal places.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">result1=$(<span class="built_in">echo</span> <span class="string">&quot;scale=3; 8/3&quot;</span> | bc)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result1</span></span><br><span class="line"></span><br><span class="line">result2=$(<span class="built_in">echo</span> <span class="string">&quot;scale=3; (8/3) ^ 3&quot;</span> | bc)</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result2</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+
+<h3 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="function"><span class="title">report</span></span>()&#123;</span><br><span class="line">  <span class="keyword">if</span> [ <span class="variable">$1</span> -eq 31 ]; <span class="keyword">then</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the 31st.&quot;</span></span><br><span class="line">  <span class="keyword">else</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="string">&quot;This month is the <span class="variable">$&#123;1&#125;</span>th&quot;</span></span><br><span class="line">  <span class="keyword">fi</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">functionName</span></span>()&#123;</span><br><span class="line">   code</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="function"><span class="title">functionName</span></span>()&#123;</span><br><span class="line">   code</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Pass arguments.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"> </span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">displayUserDetails</span></span>() &#123;</span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;Your name is <span class="variable">$1</span> .&quot;</span></span><br><span class="line">  <span class="built_in">echo</span> <span class="string">&quot;You are <span class="variable">$2</span> years old. &quot;</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">displayUserDetails Alice 25</span><br><span class="line">displayUserDetails Bob 32</span><br></pre></td></tr></table></figure>
+
+<p>Use echo to return a value from a function.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">getName</span></span>()&#123;</span><br><span class="line">   <span class="built_in">read</span> -p <span class="string">&quot;Enter your name : &quot;</span> name</span><br><span class="line">   <span class="built_in">echo</span> <span class="variable">$name</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Your name is <span class="subst">$(getName)</span>&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>By default function variables are global and available for use outside the function.<br>但是也可以单独define local的variable!</p>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">function</span> <span class="function"><span class="title">cube</span></span>() &#123;</span><br><span class="line">   x=$[ <span class="variable">$1</span> * <span class="variable">$1</span> * <span class="variable">$1</span> ]</span><br><span class="line">   <span class="built_in">local</span> y=123</span><br><span class="line">&#125;</span><br><span class="line">cube 3</span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;The cube of 3 is <span class="variable">$x</span>.&quot;</span></span><br><span class="line"><span class="built_in">echo</span> <span class="string">&quot;The value of y is : <span class="variable">$y</span>.&quot;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>The cube of 3 is 27.<br>The value of y is : .</p>
+</blockquote>
+<h3 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">command</span></span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> <span class="built_in">command</span> ; <span class="keyword">then</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>Both ok!</p>
+<p>Else if statement.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> command1</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">elif</span> command2</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">elif</span> commandN</span><br><span class="line"><span class="keyword">then</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line">   code</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+
+<p>Case statement.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> value <span class="keyword">in</span></span><br><span class="line">   pattern1)</span><br><span class="line">      code ;;</span><br><span class="line">   pattern2)</span><br><span class="line">      code ;;</span><br><span class="line">   patternN)</span><br><span class="line">      code ;;</span><br><span class="line">   *)</span><br><span class="line">      code ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat&lt;&lt;<span class="string">eof</span></span><br><span class="line"><span class="string">                ATM</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">        1. Deposit</span></span><br><span class="line"><span class="string">        2. Withdraw</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">eof</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Enter an option : &quot;</span> optVar</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$optVar</span> <span class="keyword">in</span></span><br><span class="line">   1) <span class="built_in">echo</span> <span class="string">&quot;Deposit option was selected.&quot;</span> ;;</span><br><span class="line">   2) <span class="built_in">echo</span> <span class="string">&quot;Withdraw option was selected.&quot;</span> ;;</span><br><span class="line">   *) <span class="built_in">echo</span> <span class="string">&quot;Invalid option.&quot;</span> ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ 5 –gt 3 ]</span><br><span class="line"> <span class="keyword">then</span> <span class="built_in">echo</span> $?</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
+<p>Spaces are required.</p>
+<div class="note ">
+            <p>-e name    File name exists.<br>-d name    File name is a directory.<br>-f name     File name is a regular file.<br>-h name    File name is a symbolic link.<br>-r name    File name exists and is readable.<br>-w name    File name exists and is writeable.<br>-x name    File name exists and is executable.<br>-s name    File name exists and has nonzero size.</p>
+          </div>
+
+<div class="note ">
+            <p>s1 = s2    String s1 equals string s2<br>s1 != s2    String s1 does not equal string s2<br>-z  s1    String s1 has zero length<br>-n  s1    String s1 has nonzero length</p>
+          </div>
+
+
+
+<div class="note ">
+            <p>n1 –eq n2    Integer n1 and n2 are equal<br>n1 –ne n2    Integer n1 and n2 are not equal<br>n1 –lt n2    Integer n1 is less than n2<br>n1 –le n2    Integer n1 is less than or equal to n2<br>n1 –gt n2    Integer n1 is greater than n2<br>n1 –ge n2    Integer n1 is greater than or equal to n2</p>
+          </div>
+
+
+<div class="note ">
+            <p>You can combine more than one expression by using conditional operators.</p><p>! t1        Negate operator. Negate the test</p><p>t1 II t2    OR operator. Either test t1 or test t2 are true<br>t1 –o t2    Shell syntax of OR</p><p>t1 &amp;&amp; t2    AND operator. Both test t1 and test t2 are true<br>t1 –a t2    Shell syntax of AND</p>
+          </div>
+
+
+<br>
+<br>
+
+<h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3><p>For loop.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3 4 5 6 7 8 9 10</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> ((i=1;i&lt;=10;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> $(ls)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$file</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>While loop.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> [ condition ] ; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<p>Input redirection and a while loop can also be combined to read a file line by line.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># script reads line by line the file that was passed</span></span><br><span class="line"><span class="comment"># as a command line argument</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$line</span></span><br><span class="line">    sleep 0.5</span><br><span class="line"><span class="keyword">done</span> &lt; <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
+
+
+<p>Until loop.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">until [ condition ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">until [ condition ] ; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+
+<img src="/blog/2021/03/14/P176/P176_4.png" class="">
+
+<br>
+<br>
+
+<h2 id="Exit"><a href="#Exit" class="headerlink" title="Exit"></a>Exit</h2><br>
 <br>
 
 <h2 id="Parameters"><a href="#Parameters" class="headerlink" title="Parameters"></a>Parameters</h2><p>详情可以看cheatsheet.</p>
@@ -488,10 +716,10 @@
 
 <br>
 
-<h2 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h2><p>shell里的else if,注意,<strong>这里的空格相当重要</strong>.</p>
+<h2 id="Condition-1"><a href="#Condition-1" class="headerlink" title="Condition"></a>Condition</h2><p>shell里的else if,注意,<strong>这里的空格相当重要</strong>.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> [ condition ]; <span class="keyword">then</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">elif</span> [ condition ]; <span class="keyword">then</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">else</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">fi</span></span><br></pre></td></tr></table></figure>
 <p><strong>fi</strong>是结束else if的意思.</p>
-<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]; <span class="keyword">do</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<h2 id="Loop-1"><a href="#Loop-1" class="headerlink" title="Loop"></a>Loop</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]; <span class="keyword">do</span></span><br><span class="line"> ...</span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -804,7 +1032,9 @@
 <br>
 <br>
 
-<h2 id="Permissions"><a href="#Permissions" class="headerlink" title="Permissions"></a>Permissions</h2><table>
+<h2 id="Permissions"><a href="#Permissions" class="headerlink" title="Permissions"></a>Permissions</h2><p>Permission can be changed with <strong>chmod</strong>.</p>
+<p>How to read permission:</p>
+<table>
 <thead>
 <tr>
 <th>Symbol</th>
@@ -852,6 +1082,39 @@
 <td>execute permission. for files—file may be executed as a program or script. for directories—directory can be traversed (i.e. can cd into the directory)</td>
 </tr>
 </tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x dir3/filename</span><br><span class="line">chmod o-r dir3</span><br><span class="line">chmod ug+x,o-w file1</span><br><span class="line">chmod a=rw file2</span><br></pre></td></tr></table></figure>
+
+<table>
+<thead>
+<tr>
+<th>Octal</th>
+<th>Text</th>
+<th>Meaning</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>4</td>
+<td>r</td>
+<td>Read</td>
+</tr>
+<tr>
+<td>2</td>
+<td>w</td>
+<td>Write</td>
+</tr>
+<tr>
+<td>1</td>
+<td>x</td>
+<td>Execute</td>
+</tr>
+<tr>
+<td>0</td>
+<td></td>
+<td>No permissions</td>
+</tr>
+</tbody></table>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 751 dir3/filename</span><br><span class="line">chmod 750 dir3</span><br></pre></td></tr></table></figure>
+
 <br>
 <br>
 
@@ -938,7 +1201,7 @@
 <br>
 <br>
 
-<h2 id="Globbing-Patterns"><a href="#Globbing-Patterns" class="headerlink" title="Globbing Patterns"></a>Globbing Patterns</h2><table>
+<h2 id="Globbing-Patterns-Wildcards"><a href="#Globbing-Patterns-Wildcards" class="headerlink" title="Globbing Patterns(Wildcards)"></a>Globbing Patterns(Wildcards)</h2><table>
 <thead>
 <tr>
 <th>Operator</th>
@@ -1011,7 +1274,11 @@
 <br>
 <br>
 
-<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><img src="/blog/2021/03/14/P176/P176.png" class="">
+<h2 id="Variable-1"><a href="#Variable-1" class="headerlink" title="Variable"></a>Variable</h2><img src="/blog/2021/03/14/P176/P176.png" class="">
+
+<blockquote>
+<p>The exit command terminates the script and passes an exit status to the shell.<br>By convention, scripts should return 0 for success, and 1 or any non-zero value upon failure.<br>exit command with a non-zero exit status is useful for terminating a script when normal processing cannot continue.<br>If exit command is not used, the exit status of the script will be the exit status returned by the last command in the script</p>
+</blockquote>
 
     </div>
 
@@ -1105,7 +1372,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash"><span class="nav-number">1.</span> <span class="nav-text">Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-editors"><span class="nav-number">1.2.</span> <span class="nav-text">Text editors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">1.3.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-files"><span class="nav-number">1.4.</span> <span class="nav-text">Reading files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overwriting"><span class="nav-number">1.5.</span> <span class="nav-text">Overwriting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symlink"><span class="nav-number">1.6.</span> <span class="nav-text">Symlink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kill-a-process"><span class="nav-number">1.7.</span> <span class="nav-text">Kill a process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">1.8.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-file-system"><span class="nav-number">1.9.</span> <span class="nav-text">Unix file system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipes"><span class="nav-number">1.10.</span> <span class="nav-text">Pipes</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Script"><span class="nav-number">2.</span> <span class="nav-text">Script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Naming"><span class="nav-number">2.1.</span> <span class="nav-text">Naming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding"><span class="nav-number">2.2.</span> <span class="nav-text">Coding</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">2.3.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Condition"><span class="nav-number">2.4.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">2.5.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CheatSheet"><span class="nav-number">3.</span> <span class="nav-text">CheatSheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.2.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programs"><span class="nav-number">3.3.</span> <span class="nav-text">Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions"><span class="nav-number">3.4.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-Conditional-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Script Conditional Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Globbing-Patterns"><span class="nav-number">3.6.</span> <span class="nav-text">Globbing Patterns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">3.7.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">3.8.</span> <span class="nav-text">Variable</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Bash"><span class="nav-number">1.</span> <span class="nav-text">Bash</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Input"><span class="nav-number">1.1.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Text-editors"><span class="nav-number">1.2.</span> <span class="nav-text">Text editors</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#cd"><span class="nav-number">1.3.</span> <span class="nav-text">cd</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#find"><span class="nav-number">1.4.</span> <span class="nav-text">find</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#grep"><span class="nav-number">1.5.</span> <span class="nav-text">grep</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Reading-files"><span class="nav-number">1.6.</span> <span class="nav-text">Reading files</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Overwriting"><span class="nav-number">1.7.</span> <span class="nav-text">Overwriting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Symlink"><span class="nav-number">1.8.</span> <span class="nav-text">Symlink</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Kill-a-process"><span class="nav-number">1.9.</span> <span class="nav-text">Kill a process</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#History"><span class="nav-number">1.10.</span> <span class="nav-text">History</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unix-file-system"><span class="nav-number">1.11.</span> <span class="nav-text">Unix file system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Pipes"><span class="nav-number">1.12.</span> <span class="nav-text">Pipes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Corn-https-en-wikipedia-org-wiki-Cron"><span class="nav-number">1.13.</span> <span class="nav-text">Corn[https:&#x2F;&#x2F;en.wikipedia.org&#x2F;wiki&#x2F;Cron]</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Script"><span class="nav-number">2.</span> <span class="nav-text">Script</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Naming"><span class="nav-number">2.1.</span> <span class="nav-text">Naming</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Coding"><span class="nav-number">2.2.</span> <span class="nav-text">Coding</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Shebang"><span class="nav-number">2.2.1.</span> <span class="nav-text">Shebang</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Run"><span class="nav-number">2.2.2.</span> <span class="nav-text">Run</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Debug"><span class="nav-number">2.2.3.</span> <span class="nav-text">Debug</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Variable"><span class="nav-number">2.2.4.</span> <span class="nav-text">Variable</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arithmetic"><span class="nav-number">2.2.5.</span> <span class="nav-text">Arithmetic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function"><span class="nav-number">2.2.6.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Condition"><span class="nav-number">2.2.7.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Loop"><span class="nav-number">2.2.8.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exit"><span class="nav-number">2.3.</span> <span class="nav-text">Exit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Parameters"><span class="nav-number">2.4.</span> <span class="nav-text">Parameters</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Condition-1"><span class="nav-number">2.5.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop-1"><span class="nav-number">2.6.</span> <span class="nav-text">Loop</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#CheatSheet"><span class="nav-number">3.</span> <span class="nav-text">CheatSheet</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Commands"><span class="nav-number">3.1.</span> <span class="nav-text">Commands</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Tools"><span class="nav-number">3.2.</span> <span class="nav-text">Tools</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Programs"><span class="nav-number">3.3.</span> <span class="nav-text">Programs</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Permissions"><span class="nav-number">3.4.</span> <span class="nav-text">Permissions</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Script-Conditional-Operators"><span class="nav-number">3.5.</span> <span class="nav-text">Script Conditional Operators</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Globbing-Patterns-Wildcards"><span class="nav-number">3.6.</span> <span class="nav-text">Globbing Patterns(Wildcards)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Directories"><span class="nav-number">3.7.</span> <span class="nav-text">Directories</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable-1"><span class="nav-number">3.8.</span> <span class="nav-text">Variable</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -1121,7 +1388,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">243</span>
+          <span class="site-state-item-count">245</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1202,7 +1469,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">15:46</span>
+    <span title="T">15:53</span>
 
   -->
 
