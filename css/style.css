@@ -1,9 +1,10 @@
 @charset "utf-8";
 
 /*
-/*	Copyright (c) 2021 Marketify
+/*	Copyright (c) 2021-2022 Marketify
 /*	Author: Marketify
 /*	This file is made for CURRENT TEMPLATE
+
 
 01)	TOKYO TOKYO BASE
 02) TOKYO MOBILE MENU
@@ -37,6 +38,9 @@ body{
 	background-color: #fff;
 	color: #767676;
 }
+body::-webkit-scrollbar{
+  width: 0px;
+}
 svg{
 	fill: currentcolor;
 	width: 15px;
@@ -69,7 +73,7 @@ img.svg{
 }
 
 .container{
-	max-width: 960px;
+	max-width: 968px;
 	width:100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -229,45 +233,82 @@ h6 { font-size: 16px; }
 /*	02) TOKYO MOBILE MENU
 /*---------------------------------------------------*/
 
-.tokyo_tm_mobile_menu{
+.tokyo_tm_topbar{
 	position: fixed;
 	top: 0px;
 	left: 0px;
 	right: 0px;
-	z-index: 10;
+	height: 50px;
 	background-color: #fff;
+	z-index: 14;
 	display: none;
 }
-.tokyo_tm_mobile_menu .menu_inner{
+.tokyo_tm_topbar .topbar_inner{
 	width: 100%;
-	height: auto;
+	height: 100%;
 	clear: both;
 	display: flex;
 	align-items: center;
 	justify-content: space-between;
-	padding: 20px 40px;
+	padding: 0px 20px;
 }
-.tokyo_tm_mobile_menu .logo img{
+.tokyo_tm_topbar .logo img{
 	max-width: 100px;
+	max-height: 40px;
 }
-.tokyo_tm_mobile_menu .menu ul{
+.tokyo_tm_topbar .hamburger{
+	padding: 0px;
+}
+.tokyo_tm_topbar .hamburger-inner,
+.tokyo_tm_topbar .hamburger-inner:after,
+.tokyo_tm_topbar .hamburger-inner:before{
+	width: 30px;
+	height: 2px;
+}
+.tokyo_tm_topbar .trigger{
+	position: relative;
+	top: 5px;
+}
+.tokyo_tm_topbar .hamburger-box{
+	width: 30px;
+}
+.tokyo_tm_mobile_menu{
+	position: fixed;
+	top: 50px;
+	right: -200px;
+	height: 100vh;
+	width: 200px;
+	z-index: 15;
+	background-color: #fff;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_mobile_menu.opened{
+	right: 0px;
+}
+.tokyo_tm_mobile_menu .menu_list{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	text-align: right;
+	padding: 100px 20px 0px 20px;
+}
+.tokyo_tm_mobile_menu .menu_list ul{
 	margin: 0px;
 	list-style-type: none;
 }
-.tokyo_tm_mobile_menu .menu ul li{
-	margin: 0px 10px 0px 0px;
-	display: inline-block;
+.tokyo_tm_mobile_menu .menu_list ul li{
+	margin: 0px 0px 7px 0px;
 }
-.tokyo_tm_mobile_menu .menu ul li:last-child{
-	margin-right: 0px;
-}
-.tokyo_tm_mobile_menu .menu ul li a{
+.tokyo_tm_mobile_menu .menu_list ul li a{
 	text-decoration: none;
 	color: #000;
-}
-.tokyo_tm_mobile_menu .menu ul li .svg{
-	width: 16px;
-	height: 16px;
+	font-family: "Montserrat";
 }
 
 /*---------------------------------------------------*/
@@ -280,7 +321,7 @@ h6 { font-size: 16px; }
 	position: fixed;
 	display: flex;
 	align-items: center;
-	z-index: 10;
+	z-index: 12;
 	padding: 0px 100px;
 	background-color: #fff;
 }
@@ -374,23 +415,39 @@ h6 { font-size: 16px; }
 	min-height: 100vh;
 }
 .tokyo_tm_section{
-	position: fixed;
+	position: absolute;
     top: 0px;
-    left: 0px;
-    bottom: 0px;
-    right: 0px;
-	padding-left: 450px;
-    overflow-x: hidden;
-    overflow-y: auto;
-    opacity: 0;
-    transform: translate3d(5%, 0, 0);
-    transition: transform .3s ease .3s,opacity 0s ease .3s;
-	z-index: -1;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	overflow: hidden;
+	overflow-y: scroll;
+
+	opacity: 0;
+	visibility: hidden;
+	z-index: 8;
+	transition: visibility 1s linear, opacity 0s linear;
+	-moz-transition: visibility 1s linear, opacity 0s linear;
+	-webkit-transition: visibility1s linear, opacity 0s linear;
+	-o-transition: visibility 1s linear, opacity 0s linear;
 }
-.tokyo_tm_section.active{
+.tokyo_tm_section.animated {
 	opacity: 1;
-	transform: translate3d(0, 0, 0);
-	z-index: 5;
+	visibility: visible;
+	z-index: 9;
+}
+.tokyo_tm_section.active {
+	opacity: 1;
+	visibility: visible;
+	z-index: 10;
+}
+.tokyo_tm_section.hidden {
+	opacity: 0;
+	visibility: hidden;
+	z-index: 9;
+}
+.tokyo_tm_section::-webkit-scrollbar{
+  width: 0px;
 }
 
 /*---------------------------------------------------*/
@@ -469,7 +526,7 @@ h6 { font-size: 16px; }
 	list-style-type: none;
 }
 .tokyo_tm_home .social ul li{
-	margin: 0px 12px 0px 0px;
+	margin: 0px 8px 0px 0px;
 	display: inline-block;
 }
 .tokyo_tm_home .social ul li:last-child{
@@ -478,6 +535,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_home .social ul li a{
 	text-decoration: none;
 	color: #000;
+	font-size: 20px;
 
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
@@ -487,10 +545,6 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_home .social ul li a:hover{
 	color: #000;
-}
-.tokyo_tm_home .social ul li .svg{
-	width: 17px;
-	height: 17px;
 }
 
 /*---------------------------------------------------*/
@@ -659,16 +713,33 @@ h6 { font-size: 16px; }
 	position: fixed;
 	left: 100%;
 	top: 0px;
-	margin-left: 40px;
-	z-index: 111111;
+	margin-left: 30px;
+	z-index: 10;
 }
 .tokyo_tm_modalbox_about .close a{
+	display: block;
+	width: 40px;
+	height: 40px;
 	text-decoration: none;
 	color: #fff;
+	border:2px solid #fff;
+	border-radius: 10px;
+	position: relative;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
 }
-.tokyo_tm_modalbox_about .close .svg{
-	width: 50px;
-	height: 50px;
+.tokyo_tm_modalbox_about .close a:hover{
+	border-radius: 100%;
+}
+.tokyo_tm_modalbox_about .close a i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 .tokyo_tm_modalbox_about .description_wrap{
 	position: relative;
@@ -958,7 +1029,7 @@ h6 { font-size: 16px; }
 	font-weight: 600;
 	color: #000;
 	position: fixed;
-	z-index: 6;
+	z-index: 15;
 	opacity: 0;
 	visibility: hidden;
 }
@@ -1096,7 +1167,7 @@ h6 { font-size: 16px; }
 	top: 7px;
 }
 .tokyo_tm_modalbox .main_details .detailbox .share li{
-	margin: 0px 13px 0px 0px;
+	margin: 0px 5px 0px 0px;
 	display: inline-block;
 }
 .tokyo_tm_modalbox .main_details .detailbox .share li:last-child{
@@ -1105,6 +1176,7 @@ h6 { font-size: 16px; }
 .tokyo_tm_modalbox .main_details .detailbox .share li a{
 	text-decoration: none;
 	color: #000;
+	font-size: 18px;
 }
 .tokyo_tm_modalbox .additional_images{
 	width: 100%;
@@ -1284,23 +1356,6 @@ h6 { font-size: 16px; }
 	background-color: rgba(0,0,0,.1);
 	bottom: -7px;
 }
-.tokyo_tm_news ul li .my_like a{
-	text-decoration: none;
-	color: #767676;
-	font-size: 13px;
-}
-.tokyo_tm_news ul li .my_like .svg{
-	width: 13px;
-	height: 13px;
-	position: relative;
-	top: 1px;
-	transform: rotate(2deg);
-}
-.tokyo_tm_news ul li .my_like span{
-	display: inline-block;
-	padding-left: 5px;
-	font-style: italic;
-}
 .tokyo_tm_read_more{
 	width: 100%;
 	height: auto;
@@ -1408,22 +1463,6 @@ h6 { font-size: 16px; }
     background-color: rgba(0,0,0,.1);
     bottom: -10px;
 }
-.tokyo_tm_modalbox .details .extra .my_like a{
-	text-decoration: none;
-	color: #767676;
-}
-.tokyo_tm_modalbox .details .extra .my_like .svg{
-	width: 14px;
-	height: 14px;
-	position: relative;
-	top: -2px;
-	transform: rotate(2deg);
-}
-.tokyo_tm_modalbox .details .extra .my_like span{
-	display: inline-block;
-	padding-left: 5px;
-	font-style: italic;
-}
 .tokyo_tm_modalbox .tokyo_tm_read_more{
 	display: none;
 }
@@ -1488,16 +1527,33 @@ h6 { font-size: 16px; }
 	position: fixed;
 	left: 100%;
 	top: 0px;
-	margin-left: 40px;
-	z-index: 111111;
+	margin-left: 30px;
+	z-index: 10;
 }
 .tokyo_tm_modalbox .close a{
+	display: block;
+	width: 40px;
+	height: 40px;
 	text-decoration: none;
 	color: #fff;
+	border:2px solid #fff;
+	border-radius: 10px;
+	position: relative;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
 }
-.tokyo_tm_modalbox .close .svg{
-	width: 50px;
-	height: 50px;
+.tokyo_tm_modalbox .close a:hover{
+	border-radius: 100%;
+}
+.tokyo_tm_modalbox .close a i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
 }
 .tokyo_tm_modalbox .description_wrap{
 	position: relative;
@@ -1515,7 +1571,6 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_modalbox .description_wrap .image{
 	position: relative;
-	max-height: 450px;
 	z-index: -1;
 	margin-bottom: 40px;
 }
@@ -1590,7 +1645,6 @@ body.modal{
 .tokyo_tm_modalbox .main_content .descriptions{
 	width: 100%;
 	float: left;
-	margin-bottom: 15px;
 }
 .tokyo_tm_modalbox .main_content .descriptions .bigger{
 	color: #888;
@@ -1600,6 +1654,9 @@ body.modal{
 .tokyo_tm_modalbox .main_content .descriptions p{
 	margin-bottom: 22px;
 }
+.tokyo_tm_modalbox .main_content .descriptions p:last-child{
+	margin-bottom: 0px;
+}
 .tokyo_tm_modalbox .main_content .quotebox{
 	width: 100%;
 	height: auto;
@@ -1607,8 +1664,7 @@ body.modal{
 	float: left;
 	position: relative;
 	padding-left: 70px;
-	margin-top: 10px;
-	margin-bottom: 10px;
+	margin-bottom: 24px;
 }
 .tokyo_tm_modalbox .main_content .quotebox p{
 	font-size: 20px;
@@ -1618,53 +1674,12 @@ body.modal{
 .tokyo_tm_modalbox .main_content .icon{
 	position: absolute;
 	left: 0px;
-	top: 10px;
+	top: 5px;
 }
-.tokyo_tm_modalbox .main_content .icon .svg{
-	width: 40px;
-	height: 40px;
+.tokyo_tm_modalbox .main_content .icon i{
+	font-size: 40px;
 	color: #000;
 }
-.tokyo_tm_modalbox .news_share{
-	width: 100%;
-	height: auto;
-	clear: both;
-	display: flex;
-	align-items: center;
-}
-.tokyo_tm_modalbox .news_share span{
-	font-family: "Montserrat";
-	font-weight: 600;
-	font-style: italic;
-	padding-right: 20px;
-	color: #000;
-}
-.tokyo_tm_modalbox .news_share ul{
-	margin: 0px;
-	list-style-type: none;
-	position: relative;
-	top: -2px;
-}
-.tokyo_tm_modalbox .news_share ul li{
-	margin: 0px 12px 0px 0px;
-	display: inline-block;
-}
-.tokyo_tm_modalbox .news_share ul li .svg{
-	width: 15px;
-	height: 15px;
-}
-.tokyo_tm_modalbox .news_share ul li a{
-	text-decoration: none;
-	color: #000;
-
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-
-
 .tokyo_tm_modalbox .description_wrap::-webkit-scrollbar{
   width: 11px;
 }
@@ -1820,18 +1835,15 @@ body.modal{
 /*---------------------------------------------------*/
 
 @media (max-width: 1600px) {
-	.container{max-width: 850px;}
 	.tokyo_tm_all_wrap .leftpart{width: 400px;}
-	.tokyo_tm_section{padding-left: 400px;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 350px;}
-
 	.tokyo_tm_all_wrap .leftpart{width: 350px;padding: 0px 70px;}
 	.tokyo_tm_home .avatar{min-width: 250px;min-height: 250px;}
 	.tokyo_tm_home .details .name{font-size: 48px;margin-bottom: 10px;}
 	.tokyo_tm_home .details .job{margin-bottom: 22px;}
 }
 @media (max-width: 1200px) {
-	.tokyo_tm_mobile_menu{display: block;}
+	.tokyo_tm_topbar{display: block;}
 	.tokyo_tm_section{padding-left: 0px;}
 	.tokyo_tm_all_wrap .leftpart{display: none;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 0px;}
@@ -1840,17 +1852,14 @@ body.modal{
 	.tokyo_tm_portfolio{padding-top: 170px;}
 	.tokyo_tm_contact{padding-top: 170px;}
 	.tokyo_tm_news{padding-top: 170px;}
+	.tokyo_tm_modalbox .description_wrap{padding: 40px;}
 	.tokyo_tm_modalbox .box_inner{width: 500px;}
-	.tokyo_tm_modalbox .close{margin-left: 5px;}
-	.tokyo_tm_modalbox .close .svg{width: 25px;height: 25px;}
 	.tokyo_tm_modalbox .main_details{flex-direction: column;}
 	.tokyo_tm_modalbox .main_details .textbox{padding-right: 0px;width: 100%;margin-bottom: 30px;}
 	.tokyo_tm_modalbox .main_details .detailbox{padding-left: 0px;width: 100%;}
 	.tokyo_tm_modalbox .additional_images ul{margin: 0px;}
 	.tokyo_tm_modalbox .additional_images ul li{padding-left: 0px;width: 100%;}
 	.tokyo_tm_modalbox_about .box_inner{width: 500px;}
-	.tokyo_tm_modalbox_about .close{margin-left: -20px;top: -35px;}
-	.tokyo_tm_modalbox_about .close .svg{width: 25px;height: 25px;}
 	.tokyo_tm_modalbox_about .description_wrap{padding: 40px;}
 	.tokyo_tm_modalbox_about .my_box{flex-direction: column;}
 	.tokyo_tm_modalbox_about .my_box .left{width: 100%;padding-right: 0px;margin-bottom: 50px;}
@@ -1858,7 +1867,6 @@ body.modal{
 }
 @media (max-width: 1040px) {
 	.mouse-cursor{display: none;}
-	.tokyo_tm_mobile_menu .menu_inner{padding: 20px;}
 	.tokyo_tm_home .home_content{flex-direction: column;text-align: center;}
 	.tokyo_tm_home .avatar{margin-bottom: 30px;}
 	.tokyo_tm_home .details{margin-left: 0px;}
@@ -1870,14 +1878,18 @@ body.modal{
 	.container{padding: 0px 20px;}
 }
 @media (max-width: 768px) {
-	.tokyo_tm_home .details .name{font-size: 40px;}
+	.tokyo_tm_home .details .name{font-size: 30px;}
 	.tokyo_tm_home .avatar{min-width: 200px;min-height: 200px;}
 	.tokyo_tm_portfolio .portfolio_list{margin: 0px;}
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
-	.tokyo_tm_modalbox .main_content .icon{position: relative;margin-bottom: 30px;}
+	.tokyo_tm_modalbox .main_content .icon{position: relative;margin-bottom: 25px;}
 	.tokyo_tm_modalbox .main_content .quotebox{padding-left: 0px;}
+	.tokyo_tm_modalbox_about .close a{width: 30px;height: 30px;font-size: 14px;}
+	.tokyo_tm_modalbox_about .close{left: auto;right: 0px;top: -40px;}
+	.tokyo_tm_modalbox .close a{width: 30px;height: 30px;font-size: 14px;}
+	.tokyo_tm_modalbox .close{left: auto;right: 0px;top: -40px;}
 	.tokyo_tm_modalbox_about .counter ul{margin: 0px;}
 	.tokyo_tm_modalbox_about .counter ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_modalbox .box_inner{width: 300px;}

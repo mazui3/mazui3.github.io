@@ -17,7 +17,6 @@ body.dark :-ms-input-placeholder { /* Internet Explorer 10-11 */
 body.dark ::-ms-input-placeholder { /* Microsoft Edge */
    color: #fff;
 }
-
 body.dark ::placeholder { /* Most modern browsers support this now. */
    color: #fff;
 }
@@ -59,14 +58,14 @@ body.dark .loader_line:after{
     animation-delay: 2000ms;
 }
 body.dark{
-	background-color: #000;
+	background-color: #34353a;
 	color: #bbb;
 }
 body.dark h1,body.dark h2,body.dark h3,body.dark h4,body.dark h5,body.dark h6{
 	color: #fff;
 }
 body.dark .tokyo_tm_all_wrap .leftpart{
-	background-color: #000;
+	background-color: #494b50;
 }
 body.dark .tokyo_tm_all_wrap .leftpart .menu ul li a{
 	color: #bbb;
@@ -87,12 +86,12 @@ body.dark .tokyo_tm_all_wrap .leftpart .copyright a:hover{
 	color: #fff;
 }
 body.dark .tokyo_tm_all_wrap .rightpart{
-	background-color: #111;
+	background-color: #34353a;
 }
 body.dark .tokyo_tm_all_wrap .rightpart_in{
-	border-left-color: #202020;
+	border-left: none;
 }
-body.dark .tokyo_tm_home .social ul li .svg{
+body.dark .tokyo_tm_home .social ul li a{
 	color: #fff;
 }
 body.dark .cursor-inner {
@@ -127,6 +126,25 @@ body.dark .cursor-outer {
   transition: all .08s ease-out;
 }
 body.dark .cursor-outer.cursor-hover{opacity: 0;}
+body.dark .tokyo_tm_topbar{
+	background-color: #494b50;
+}
+body.dark .hamburger-inner, 
+body.dark .hamburger-inner:after, 
+body.dark .hamburger-inner:before{
+	background-color: #fff;
+}
+body.dark .hamburger.is-active .hamburger-inner, 
+body.dark .hamburger.is-active .hamburger-inner:after, 
+body.dark .hamburger.is-active .hamburger-inner:before{
+	background-color: #fff;
+}
+body.dark .tokyo_tm_mobile_menu{
+	background-color: #494b50;
+}
+body.dark .tokyo_tm_mobile_menu .menu_list ul li a{
+	color: #fff;
+}
 body.dark .tokyo_tm_button a{
 	background-color: #fff;
 	color: #000;
@@ -140,11 +158,8 @@ body.dark .tokyo_tm_about .description .right > ul > li a:hover{
 body.dark .tokyo_tm_about .description .right>ul>li span{
 	color: #fff;
 }
-body.dark .tokyo_tm_modalbox_about .counter ul li h3{
-	color: #000;
-}
 body.dark .tokyo_tm_modalbox_about .counter ul li .name{
-	color: #767676;
+	color: #bbb;
 }
 body.dark .tokyo_tm_title span{
 	background-color: rgba(255,255,255,.04);
@@ -172,7 +187,10 @@ body.dark .tokyo_tm_modalbox_news .details .title{
 	color: #000;
 }
 body.dark .tokyo_tm_modalbox_news .main_content .descriptions p{
-	color: #767676;
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .main_content .descriptions .bigger{
+	color: #bbb;
 }
 body.dark .tokyo_tm_contact .fields ul li input{
 	border: 1px solid rgba(255,255,255,.2);
@@ -190,7 +208,7 @@ body.dark .tokyo_tm_contact .fields .last textarea:focus{
 	color: #fff;
 }
 body.dark .tokyo_tm_news ul li .details{
-	background-color: #000;
+	background-color: #494b50;
 }
 body.dark .tokyo_tm_news ul li .extra:before{
 	background-color: rgba(255,255,255,.1);
@@ -199,30 +217,86 @@ body.dark .tokyo_tm_read_more a{
 	color: #fff;
 }
 body.dark .tokyo_tm_read_more a span{
-	background-color: #000;
+	background-color: #494b50;
 }
 body.dark .tokyo_tm_read_more a:before{
 	background-color: #fff;
 }
 body.dark .tokyo_tm_news ul li .list_inner{
-	box-shadow: 0px 0px 20px rgb(255 255 255 / 7%);
+	box-shadow: none;
 }
-body.dark .tokyo_tm_modalbox .portfolio_main_title h3{
-	color: #000;
+body.dark .tokyo_tm_modalbox_about .box_inner{
+	background-color: #34353a;
 }
-body.dark .tokyo_tm_modalbox .portfolio_main_title span{
-	color: #767676;
+body.dark .tokyo_tm_modalbox_about .about_title h3{
+	color: #fff;
 }
-body.dark .tokyo_tm_modalbox .main_details .textbox p{
-	color: #767676;
+body.dark .progress_inner > span{
+	color: #bbb;
 }
-body.dark .tokyo_tm_modalbox .main_details .detailbox span:last-child{
-	color: #767676;
+body.dark .progress_inner .background{
+	background: rgba(255,255,255,.09);
 }
-
-body.dark .tokyo_tm_modalbox .details .title{
-	color: #000;
+body.dark .progress_inner .background .bar_in{
+	background: #fff;
 }
-body.dark .tokyo_tm_modalbox .main_content .descriptions p{
-	color: #767676;
+body.dark .tokyo_tm_modalbox_about .list_inner{
+	border:1px solid rgba(255,255,255,.1);
+}
+body.dark .tokyo_tm_modalbox_about .description_wrap{
+  scrollbar-width: thin;
+  scrollbar-color: #777 #34353a;
+}
+body.dark .tokyo_tm_modalbox_about .description_wrap:-webkit-scrollbar-track{
+  background: #34353a;
+}
+body.dark .tokyo_tm_modalbox_about .description_wrap::-webkit-scrollbar-thumb{
+  background-color: #777;
+  border-radius: 6px;
+  border: 3px solid #34353a;
+}
+body.dark .tokyo_tm_modalbox .description_wrap{
+  scrollbar-width: thin;
+  scrollbar-color: #777 #34353a;
+}
+body.dark .tokyo_tm_modalbox .description_wrap:-webkit-scrollbar-track{
+  background: #34353a;
+}
+body.dark .tokyo_tm_modalbox .description_wrap::-webkit-scrollbar-thumb{
+  background-color: #777;
+  border-radius: 6px;
+  border: 3px solid #34353a;
+}
+body.dark .tokyo_tm_modalbox .box_inner{
+	background-color: #34353a;
+}
+body.dark .tokyo_tm_modalbox .main_details .detailbox .first{
+	color: #fff;
+}
+body.dark .tokyo_tm_modalbox .main_details .detailbox span a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .main_details .detailbox span a:hover{
+	color: #fff;
+}
+body.dark .tokyo_tm_modalbox .main_details .detailbox .share li a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .main_details .detailbox .share li a:hover{
+	color: #fff;
+}
+body.dark .tokyo_tm_modalbox .main_content .icon i{
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .date{
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .date a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_modalbox .date a:hover{
+	color: #fff;
+}
+body.dark .tokyo_tm_modalbox .details .extra:before{
+	background-color: rgba(255,255,255,.1);
 }
