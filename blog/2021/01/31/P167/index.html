@@ -30,6 +30,7 @@
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="个人用笔记,因为太长了所以分成了两份.上一回.">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_8.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_3.png">
@@ -38,14 +39,14 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_6.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_7.png">
 <meta property="article:published_time" content="2021-01-31T19:30:10.000Z">
-<meta property="article:modified_time" content="2022-06-15T20:39:21.194Z">
+<meta property="article:modified_time" content="2022-07-26T23:57:26.253Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_1.png">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_8.png">
 
 <link rel="canonical" href="https://mazui3.github.io/blog/2021/01/31/P167/">
 
@@ -258,7 +259,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-06-15 16:39:21" itemprop="dateModified" datetime="2022-06-15T16:39:21-04:00">2022-06-15</time>
+                <time title="Modified: 2022-07-26 19:57:26" itemprop="dateModified" datetime="2022-07-26T19:57:26-04:00">2022-07-26</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -289,13 +290,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>14k</span>
+              <span>16k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>13 mins.</span>
+              <span>15 mins.</span>
             </span>
 
         </div>
@@ -362,9 +363,7 @@
 
 <h3 id="Distince"><a href="#Distince" class="headerlink" title="Distince"></a>Distince</h3><p>Consider P1(a,b) and P2(c,d) to be two points on a 2D plane.</p>
 <p> a happens to equal the minimum value in Northern Latitude (LAT_N in STATION).<br> b happens to equal the minimum value in Western Longitude (LONG_W in STATION).<br> c happens to equal the maximum value in Northern Latitude (LAT_N in STATION).<br> d happens to equal the maximum value in Western Longitude (LONG_W in STATION).<br>Query the Manhattan Distance between points P1 and P2 and round it to a scale of 4 decimal places.</p>
-<div class="note ">
-            <p>SELECT ROUND( MAX(lat_n)-MIN(lat_n) + MAX(long_w)-MIN(long_w), 4) FROM Station;</p>
-          </div>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> ROUND( <span class="built_in">MAX</span>(lat_n)<span class="operator">-</span><span class="built_in">MIN</span>(lat_n) <span class="operator">+</span> <span class="built_in">MAX</span>(long_w)<span class="operator">-</span><span class="built_in">MIN</span>(long_w), <span class="number">4</span>) <span class="keyword">FROM</span> Station;</span><br></pre></td></tr></table></figure>
 <p>这道题代码也很简单,但记得decimal的问题用round来取位数.</p>
 <br>
 <br>
@@ -396,9 +395,151 @@
 <br>
 <br>
 
-<h3 id="Retrieve-duplicate"><a href="#Retrieve-duplicate" class="headerlink" title="Retrieve duplicate"></a>Retrieve duplicate</h3><p><u>Write a query to retrieve duplicate records from a table.</u></p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID, EmpFname, Department <span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> EmployeeInfo <span class="keyword">GROUP</span> <span class="keyword">BY</span> EmpID, EmpFname, Department</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
 
+<h3 id="Rank-Scores"><a href="#Rank-Scores" class="headerlink" title="Rank Scores"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/rank-scores/">Rank Scores</a></h3><p>Write an SQL query to rank the scores. The ranking should be calculated according to the following rules:</p>
+<p>The scores should be ranked from the highest to the lowest.<br>If there is a tie between two scores, both should have the same ranking.<br>After a tie, the next ranking number should be the next consecutive integer value. In other words, there should be no holes between ranks.<br>Return the result table ordered by score in descending order.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://docs.microsoft.com/en-us/sql/t-sql/functions/dense-rank-transact-sql?view=sql-server-ver16">DENSE_RANK</a>.<br>我觉得这个function可以按两种column来排列,先PARTITION BY再ORDER BY,如果只排一种,像这道题一样按score来排,只用order by就make sense了.</p>
+</blockquote>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> score,</span><br><span class="line"><span class="built_in">DENSE_RANK</span>() <span class="keyword">over</span> (</span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> score <span class="keyword">desc</span></span><br><span class="line">) <span class="keyword">as</span> <span class="string">&#x27;rank&#x27;</span></span><br><span class="line"><span class="keyword">from</span> scores</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Employees-Earning-More-Than-Their-Managers"><a href="#Employees-Earning-More-Than-Their-Managers" class="headerlink" title="Employees Earning More Than Their Managers"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/employees-earning-more-than-their-managers/">Employees Earning More Than Their Managers</a></h3><table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">varchar</td>
+</tr>
+<tr>
+<td align="left">salary</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">managerId</td>
+<td align="left">int</td>
+</tr>
+</tbody></table>
+<p>id is the primary key column for this table.<br>Each row of this table indicates the ID of an employee, their name, salary, and the ID of their manager.</p>
+<p>Write an SQL query to find the employees who earn more than their managers.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> e.name <span class="keyword">as</span> Employee <span class="keyword">from</span> Employee <span class="keyword">as</span> e</span><br><span class="line"><span class="keyword">left</span> <span class="keyword">join</span> Employee <span class="keyword">as</span> m</span><br><span class="line"><span class="keyword">on</span> e.managerId <span class="operator">=</span> m.id <span class="keyword">where</span> e.salary <span class="operator">&gt;</span> m.salary;</span><br></pre></td></tr></table></figure>
+<p>俺写的soluntion贼慢…</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> E1.Name</span><br><span class="line"><span class="keyword">from</span> Employee <span class="keyword">as</span> E1, Employee <span class="keyword">as</span> E2</span><br><span class="line"><span class="keyword">where</span> E1.ManagerId <span class="operator">=</span> E2.Id <span class="keyword">and</span> E1.Salary <span class="operator">&gt;</span> E2.Salary</span><br></pre></td></tr></table></figure>
+<p>会快一些,left join不行啊.</p>
+<br>
+<br>
+
+<h3 id="Customers-Who-Never-Order"><a href="#Customers-Who-Never-Order" class="headerlink" title="Customers Who Never Order"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/customers-who-never-order/">Customers Who Never Order</a></h3><p>Table: Customers</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">varchar</td>
+</tr>
+</tbody></table>
+<p>id is the primary key column for this table.<br>Each row of this table indicates the ID and name of a customer.</p>
+<p>Table: Orders</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">customerId</td>
+<td align="left">int</td>
+</tr>
+</tbody></table>
+<p>id is the primary key column for this table.<br>customerId is a foreign key of the ID from the Customers table.<br>Each row of this table indicates the ID of an order and the ID of the customer who ordered it.</p>
+<p>Write an SQL query to report all customers who never order anything.</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> A.Name <span class="keyword">as</span> Customers <span class="keyword">from</span> Customers A</span><br><span class="line"><span class="keyword">WHERE</span> A.Id <span class="keyword">NOT</span> <span class="keyword">IN</span> (<span class="keyword">SELECT</span> B.CustomerId <span class="keyword">from</span> Orders B);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Department-Highest-Salary"><a href="#Department-Highest-Salary" class="headerlink" title="Department Highest Salary"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/department-highest-salary/">Department Highest Salary</a></h3><p>Table: Employee</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">varchar</td>
+</tr>
+<tr>
+<td align="left">salary</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">departmentId</td>
+<td align="left">int</td>
+</tr>
+</tbody></table>
+<p>id is the primary key column for this table.<br>departmentId is a foreign key of the ID from the Department table.<br>Each row of this table indicates the ID, name, and salary of an employee. It also contains the ID of their department.</p>
+<p>Table: Department</p>
+<table>
+<thead>
+<tr>
+<th align="left">Column Name</th>
+<th align="left">Type</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">id</td>
+<td align="left">int</td>
+</tr>
+<tr>
+<td align="left">name</td>
+<td align="left">varchar</td>
+</tr>
+</tbody></table>
+<p>id is the primary key column for this table.<br>Each row of this table indicates the ID of a department and its name.</p>
+<p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
+<img src="/blog/2021/01/31/P167/P167_8.png" class="">
+
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> D.Name <span class="keyword">as</span> Department, E.Name <span class="keyword">as</span> Employee, E.Salary</span><br><span class="line"><span class="keyword">FROM</span> Department D, Employee E, Employee E2  </span><br><span class="line"><span class="keyword">WHERE</span> D.ID <span class="operator">=</span> E.DepartmentId <span class="keyword">and</span> E.DepartmentId <span class="operator">=</span> E2.DepartmentId <span class="keyword">and</span></span><br><span class="line">E.Salary <span class="operator">&lt;=</span> E2.Salary</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> D.ID,E.Name <span class="keyword">having</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> E2.Salary) <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> D.Name <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Retrieve-duplicate"><a href="#Retrieve-duplicate" class="headerlink" title="Retrieve duplicate"></a>Retrieve duplicate</h3><p><u>Write a query to retrieve duplicate records from a table.</u></p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> EmpID, EmpFname, Department ,<span class="built_in">COUNT</span>(<span class="operator">*</span>)</span><br><span class="line"><span class="keyword">FROM</span> EmployeeInfo <span class="keyword">GROUP</span> <span class="keyword">BY</span> EmpID, EmpFname, Department</span><br><span class="line"><span class="keyword">HAVING</span> <span class="built_in">COUNT</span>(<span class="operator">*</span>) <span class="operator">&gt;</span> <span class="number">1</span>;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Consecutive-Numbers"><a href="#Consecutive-Numbers" class="headerlink" title="Consecutive Numbers"></a><a target="_blank" rel="noopener" href="https://leetcode.com/problems/consecutive-numbers/">Consecutive Numbers</a></h3><p>Write an SQL query to find all numbers that appear at least three times consecutively.<br>Return the result table in any order.</p>
 <br>
 <br>
 
@@ -614,7 +755,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">2.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pivot-the-table-in-sql"><span class="nav-number">3.1.</span> <span class="nav-text">Pivot the table in sql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Categories-triangle"><span class="nav-number">3.2.</span> <span class="nav-text">Categories triangle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distince"><span class="nav-number">3.3.</span> <span class="nav-text">Distince</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-minimum"><span class="nav-number">3.4.</span> <span class="nav-text">Two minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Odd-records"><span class="nav-number">3.5.</span> <span class="nav-text">Odd records</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nth-highest"><span class="nav-number">3.6.</span> <span class="nav-text">Nth highest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieve-duplicate"><span class="nav-number">3.7.</span> <span class="nav-text">Retrieve duplicate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Same-department"><span class="nav-number">3.8.</span> <span class="nav-text">Same department</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3rd-highest"><span class="nav-number">3.9.</span> <span class="nav-text">3rd highest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAG"><span class="nav-number">3.10.</span> <span class="nav-text">LAG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-difference-between-select-unique-and-select-distinct"><span class="nav-number">3.11.</span> <span class="nav-text">What is the difference between select unique and select distinct?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#drop-delete-and-truncate"><span class="nav-number">3.12.</span> <span class="nav-text">drop, delete and truncate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-are-count-and-count-distinct-equal"><span class="nav-number">3.13.</span> <span class="nav-text">When are count(*) and count distinct equal?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-you-dedup-rows"><span class="nav-number">3.14.</span> <span class="nav-text">How do you dedup rows?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Employee-Salaries"><span class="nav-number">3.15.</span> <span class="nav-text">Employee Salaries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ATM-Robbery"><span class="nav-number">3.16.</span> <span class="nav-text">ATM Robbery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2nd-Highest-Salary"><span class="nav-number">3.17.</span> <span class="nav-text">2nd Highest Salary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%B2%E4%BC%A4%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">悲伤的面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Find-pair"><span class="nav-number">4.1.</span> <span class="nav-text">Find pair</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range-of-address-length"><span class="nav-number">4.2.</span> <span class="nav-text">Range of address length</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Links"><span class="nav-number">2.</span> <span class="nav-text">Links</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Examples"><span class="nav-number">3.</span> <span class="nav-text">Examples</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Pivot-the-table-in-sql"><span class="nav-number">3.1.</span> <span class="nav-text">Pivot the table in sql</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Categories-triangle"><span class="nav-number">3.2.</span> <span class="nav-text">Categories triangle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Distince"><span class="nav-number">3.3.</span> <span class="nav-text">Distince</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Two-minimum"><span class="nav-number">3.4.</span> <span class="nav-text">Two minimum</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Odd-records"><span class="nav-number">3.5.</span> <span class="nav-text">Odd records</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Nth-highest"><span class="nav-number">3.6.</span> <span class="nav-text">Nth highest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Rank-Scores"><span class="nav-number">3.7.</span> <span class="nav-text">Rank Scores</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Employees-Earning-More-Than-Their-Managers"><span class="nav-number">3.8.</span> <span class="nav-text">Employees Earning More Than Their Managers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Customers-Who-Never-Order"><span class="nav-number">3.9.</span> <span class="nav-text">Customers Who Never Order</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Department-Highest-Salary"><span class="nav-number">3.10.</span> <span class="nav-text">Department Highest Salary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Retrieve-duplicate"><span class="nav-number">3.11.</span> <span class="nav-text">Retrieve duplicate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Consecutive-Numbers"><span class="nav-number">3.12.</span> <span class="nav-text">Consecutive Numbers</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Same-department"><span class="nav-number">3.13.</span> <span class="nav-text">Same department</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3rd-highest"><span class="nav-number">3.14.</span> <span class="nav-text">3rd highest</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#LAG"><span class="nav-number">3.15.</span> <span class="nav-text">LAG</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#What-is-the-difference-between-select-unique-and-select-distinct"><span class="nav-number">3.16.</span> <span class="nav-text">What is the difference between select unique and select distinct?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#drop-delete-and-truncate"><span class="nav-number">3.17.</span> <span class="nav-text">drop, delete and truncate</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#When-are-count-and-count-distinct-equal"><span class="nav-number">3.18.</span> <span class="nav-text">When are count(*) and count distinct equal?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#How-do-you-dedup-rows"><span class="nav-number">3.19.</span> <span class="nav-text">How do you dedup rows?</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Employee-Salaries"><span class="nav-number">3.20.</span> <span class="nav-text">Employee Salaries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ATM-Robbery"><span class="nav-number">3.21.</span> <span class="nav-text">ATM Robbery</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2nd-Highest-Salary"><span class="nav-number">3.22.</span> <span class="nav-text">2nd Highest Salary</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%82%B2%E4%BC%A4%E7%9A%84%E9%9D%A2%E8%AF%95%E9%A2%98"><span class="nav-number">4.</span> <span class="nav-text">悲伤的面试题</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Find-pair"><span class="nav-number">4.1.</span> <span class="nav-text">Find pair</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Range-of-address-length"><span class="nav-number">4.2.</span> <span class="nav-text">Range of address length</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -630,7 +771,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">251</span>
+          <span class="site-state-item-count">252</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -643,7 +784,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-count">54</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -711,7 +852,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">16:06</span>
+    <span title="T">16:09</span>
 
   -->
 
