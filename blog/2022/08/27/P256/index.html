@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇文章会试图(试图),把再三年写eva文中,把没有说出来的内容倒一倒.并附加了过去旧照片,用vba一周速成之,狼与羊与草一起过河小游戏的代码.  为什么内容类型如此混乱.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Sum of Flashback">
+<meta property="og:url" content="https://mazui3.github.io/blog/2022/08/27/P256/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="本篇文章会试图(试图),把再三年写eva文中,把没有说出来的内容倒一倒.并附加了过去旧照片,用vba一周速成之,狼与羊与草一起过河小游戏的代码.  为什么内容类型如此混乱.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_3.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_5.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_7.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_6.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_8.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_9.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_10.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_0.jpg">
+<meta property="article:published_time" content="2022-08-28T00:18:48.000Z">
+<meta property="article:modified_time" content="2022-08-28T02:23:32.632Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="编码">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="Excel">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2022/08/27/P256/P256_3.jpg">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2022/08/27/P256/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Sum of Flashback | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-friendlink">
+
+    <a href="/blog/link/" rel="section"><i class="fas fa-user-friends fa-fw"></i>FriendLink</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2022/08/27/P256/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_8.png">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Sum of Flashback
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2022-08-27 20:18:48 / Modified: 22:23:32" itemprop="dateCreated datePublished" datetime="2022-08-27T20:18:48-04:00">2022-08-27</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%97%A5%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">日记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2022/08/27/P256/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/08/27/P256/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>12k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>11 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="/blog/2022/08/27/P256/P256_3.jpg" class="" title="最后一次跟高中朋友出行时在南京拍的小黄鸭">
+<p>本篇文章会试图(试图),把<a href="https://mazui3.github.io/blog/2022/07/27/P245/">再三年写eva</a>文中,把没有说出来的内容倒一倒.<br>并附加了过去旧照片,用vba一周速成之,狼与羊与草一起过河小游戏的代码.</p>
+<blockquote>
+<p>为什么内容类型如此混乱.</p>
+</blockquote>
+<span id="more"></span>
+
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/0KF9n8XeYmrlonaGnL8Krd?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture" loading="lazy"></iframe>
+
+<p>这篇文章也献给我亲爱的考拉,请考拉小姐使用左侧的tag跳转,从【记录】开始读起就好.</p>
+<br>
+<br>
+<br>
+
+<h2 id="残留的"><a href="#残留的" class="headerlink" title="残留的"></a>残留的</h2><img src="/blog/2022/08/27/P256/P256_5.jpg" class="" title="在village1的夜晚自习时拍的">
+
+<p>自己读了遍【三年后写eva】,感觉驴头不对马嘴.<br>也是,当时写时删删减减,时间隔得也长,记下来的这几句话太杂碎传递不了感情.<br>于是重写.</p>
+<p>在找工作的这段时间遇到的第一个大的变化是身份的转变.<br>这个转变有那么点,自我价值崩塌的意味,不过这取决于人.<br>在我的人生里,每天给学校八小时(或八小时以上),是一种交易.<br>跟随他人的价值观,选择一个可以的,较好的学校,每天投入一定的时间,活在他人告知的,还不错的未来里.<br>没有用自己的手去建立未来,是放弃思考的惰性.</p>
+<!-- 像树哥十年前说的那样,俺想点的技能点算社会不认可的范围.
+好心伯母给我介绍过这边高中教career的老师,面容祥和的老爷爷也皱眉说搞艺术容易饿死.
+也是呢!毕竟搞oc在需求金字塔里可是可怜顶端小三角.
+>没有人期待我想做的事,一直遮遮掩掩,所以变得不擅长,变得更加懦弱. -->
+
+<p>因为活在他人给予的“未来幻影”中,把时间安心投入搞副业里.<br>求职这段时间里,会觉得我没有获得足够的能力去保护自己珍重的东西(爱好需求).<br>这里的能力指的是一来物质上的衣食住行,二来精神上没有的资格.<br>跟朋友聊天,会发觉他们已经脚踏实地.<br>在边工边学计算生计,思考读书对自己真正的意义.<br>所以以前的安心是一份幻觉,无论愿不愿意,都会重新建立自我价值.</p>
+<img src="/blog/2022/08/27/P256/P256_7.jpg" class="" title="唯一一次去内陆旅游重庆时拍的">
+
+<p>同样也许对自己的苛责也是不合逻辑的.<br>不确定给我带来的痛苦是很疼痛的.有很强烈的【不知道自己在做什么】.<br>这样的努力真的会有意义吗?这样的我也能迎来明天吗?真的来到了,明天一如既往的来临真是残忍啊.<br>一直在做自己不明白的事情,对自己的存在定义都产生了疑惑.</p>
+<p>需求金字塔,追求过于高的需求,没有构造底层.<br>为了保证底层的构建,所付出的努力,不可避免的会成为【自己的存在定义】,也就是自身的一部分.<br>每个人都得重建一遍自己的塔,这跟生来和死去一样都是个人的路.我是这么说服自己放弃的.</p>
+<br>
+<br>
+<br>
+
+<h2 id="今年的面试"><a href="#今年的面试" class="headerlink" title="今年的面试"></a>今年的面试</h2><p>三月后的面试没记载博客里.<br>有两个趁这次聊一聊.</p>
+<p>一个是一家地理偏僻的农产品公司,投简历第二天就找我面试,也许的确是够偏远的.<br>面试问要视频还是in person.<br>既然认真考虑一个工作机会,那得去见未来可能的工作环境,所以去了.</p>
+<img src="/blog/2022/08/27/P256/P256_4.png" class="" title="车程里一个小时都是田园风光">
+
+<p>那段时间emo得厉害,出了趟门看看云看看绿反而心情好多了.<br><del>虽然我垃圾,但世界自己依然美丽!真不错!</del><br>Manager带我去他办公室,他们跟我介绍了他们在用odoo搭建的网络购物平台,想要一个人去学odoo.包括odoo generate的报表,(因为我会点美术,还提了)购物网站排版设计,顺便修修打印机等硬件.<br><strong>虽然不应该</strong>但没忍住问了:你们为什么要招个大学生做这么多事啊.<br>顺便一提在面试的时候撇见了一眼,发现manager的聊天记录中有我在linkedin放的hackathon集体合照.<br>草啊!放一张活动时demo的集体照是我的小心思,那个活动码没怎么写,负责present所以demo时坐在了中间,一张超阳角大贡献的合照,竟然真的能给人印象.</p>
+<p>之后安排了远程技术面,农产品公司是找技术外包公司来开发项目的.外包公司是靠谱的技术人,从business analyst的分析需求,寻找解决方案,并从技术上解决问题.<br>技术大哥问我的第一个问题是:你会注意什么把自己的query变得更efficient.<br>卧槽,秒杀了呀.<br>之后大哥给我看了点他们的代码,问代码的作用和提意见如此让代码更好,是我做过最硬核的面试.</p>
+<br>
+<br>
+<br>
+
+<img src="/blog/2022/08/27/P256/P256_6.jpg" class="" title="三年前在上海见发小时拍的">
+
+<p>另一场面试则是我唯一,或者,最后通过的面试.<br>我在面试时因为没有实习经验,很明显能感觉出提到我的经验都是【课程】/【个人项目】时面试官脸上立马拉下的忧郁.<strong>大学实习一下很重要啊啊啊啊啊.</strong><br>所以在最近两场面试中,有时间我都会看看技术上的教程,原地做一个项目出来.<br>上次的power bi岗位,做了个游戏销量数据分析.原本只想在面试官面前提一提,结果面试官听了我有学,立马提议想看(为了这个面试做的东西,他们极大可能是真的会想看),让我慌了手脚.<br>后来反省反省,那还是真诚的面对自己的劳动.自己怎么想的怎么做的都是努力,自己满意了,让面试官来决定符不符合能力期待是最好的.<br>于是这次也一周速成了下VBA.</p>
+<p>在网络上听他人做的VBA项目时,发现挺多会做制作报表的自动化,提高多少多少效率.<br>自学很花力气,做项目更加了,特别还是估计徒劳无功的面试.<br>人生一场,还是做点开心的吧.</p>
+<img src="/blog/2022/08/27/P256/P256_1.png" class="" title="乐">
+<p>所以放弃了什么高效牛逼自动化,来搞个经典游戏.</p>
+<img src="/blog/2022/08/27/P256/P256_2.png" class="">
+
+<p>哎,写自己想做的还是开心啊,看船能动起来觉得自己又可以撬动地球了.</p>
+<p>我写的挺糙的挺乱的,在此附录,以作纪念.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br><span class="line">224</span><br><span class="line">225</span><br><span class="line">226</span><br><span class="line">227</span><br><span class="line">228</span><br><span class="line">229</span><br><span class="line">230</span><br><span class="line">231</span><br><span class="line">232</span><br><span class="line">233</span><br><span class="line">234</span><br><span class="line">235</span><br><span class="line">236</span><br><span class="line">237</span><br><span class="line">238</span><br><span class="line">239</span><br><span class="line">240</span><br><span class="line">241</span><br><span class="line">242</span><br><span class="line">243</span><br><span class="line">244</span><br><span class="line">245</span><br><span class="line">246</span><br><span class="line">247</span><br><span class="line">248</span><br><span class="line">249</span><br><span class="line">250</span><br><span class="line">251</span><br><span class="line">252</span><br><span class="line">253</span><br><span class="line">254</span><br><span class="line">255</span><br><span class="line">256</span><br><span class="line">257</span><br><span class="line">258</span><br><span class="line">259</span><br><span class="line">260</span><br><span class="line">261</span><br><span class="line">262</span><br><span class="line">263</span><br><span class="line">264</span><br><span class="line">265</span><br><span class="line">266</span><br><span class="line">267</span><br><span class="line">268</span><br><span class="line">269</span><br><span class="line">270</span><br><span class="line">271</span><br><span class="line">272</span><br><span class="line">273</span><br><span class="line">274</span><br><span class="line">275</span><br><span class="line">276</span><br><span class="line">277</span><br><span class="line">278</span><br><span class="line">279</span><br><span class="line">280</span><br><span class="line">281</span><br><span class="line">282</span><br><span class="line">283</span><br><span class="line">284</span><br><span class="line">285</span><br><span class="line">286</span><br><span class="line">287</span><br><span class="line">288</span><br><span class="line">289</span><br><span class="line">290</span><br><span class="line">291</span><br><span class="line">292</span><br><span class="line">293</span><br><span class="line">294</span><br><span class="line">295</span><br><span class="line">296</span><br><span class="line">297</span><br><span class="line">298</span><br><span class="line">299</span><br></pre></td><td class="code"><pre><span class="line">Dim waitingItem(<span class="number">3</span>) As String</span><br><span class="line">Dim receivedItem(<span class="number">3</span>) As String</span><br><span class="line">Dim onBoat As String</span><br><span class="line">Dim iCounter As Integer</span><br><span class="line">Dim boatEmpty As Boolean</span><br><span class="line">Dim boatLeft As Boolean</span><br><span class="line">Sub startGame()</span><br><span class="line">reset</span><br><span class="line">&#x27;reset message</span><br><span class="line">Range(<span class="string">&quot;F22&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line"></span><br><span class="line">boatLeft = <span class="built_in">True</span></span><br><span class="line">readWaitingItem</span><br><span class="line">readReceivedItem</span><br><span class="line">clearBoat</span><br><span class="line">boatEmpty = <span class="built_in">True</span></span><br><span class="line">End Sub</span><br><span class="line">Sub acrossRiver()</span><br><span class="line">MoveBoat</span><br><span class="line"><span class="built_in">If</span> boatLeft Then</span><br><span class="line">    checkReceivedValid</span><br><span class="line">Else</span><br><span class="line">    checkWaitingValid</span><br><span class="line">    checkWin</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub checkWin()</span><br><span class="line"><span class="built_in">If</span> receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> <span class="built_in">And</span> receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> <span class="built_in">And</span> receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">    &#x27;winning message</span><br><span class="line">    Range(<span class="string">&quot;F22&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Mission completed!&quot;</span></span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub checkWaitingValid()</span><br><span class="line"><span class="built_in">If</span> waitingItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> <span class="built_in">And</span> waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;Sheep ate the Cabbage!&quot;</span>, vbCritical, <span class="string">&quot;Cross The River&quot;</span></span><br><span class="line">    endGame</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line"><span class="built_in">If</span> waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> <span class="built_in">And</span> waitingItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;Wolf ate the Sheep!&quot;</span>, vbCritical, <span class="string">&quot;Cross The River&quot;</span></span><br><span class="line">    endGame</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub checkReceivedValid()</span><br><span class="line"><span class="built_in">If</span> receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> <span class="built_in">And</span> receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;Sheep ate the Cabbage!&quot;</span></span><br><span class="line">    endGame</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line"><span class="built_in">If</span> receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> <span class="built_in">And</span> receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;Wolf ate the Sheep!&quot;</span>, vbCritical, <span class="string">&quot;Cross The River&quot;</span></span><br><span class="line">    endGame</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub endGame()</span><br><span class="line">Range(<span class="string">&quot;F22&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Mission not complete!&quot;</span></span><br><span class="line">reset</span><br><span class="line">End Sub</span><br><span class="line">Sub reset()</span><br><span class="line">&#x27;clear waiting <span class="built_in">and</span> <span class="built_in">received</span> area</span><br><span class="line">    Range(<span class="string">&quot;D4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">    Range(<span class="string">&quot;D9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">    Range(<span class="string">&quot;D14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">    Range(<span class="string">&quot;L4&quot;</span>).ClearContents</span><br><span class="line">    Range(<span class="string">&quot;L9&quot;</span>).ClearContents</span><br><span class="line">    Range(<span class="string">&quot;L14&quot;</span>).ClearContents</span><br><span class="line">&#x27;clear boat</span><br><span class="line">    Range(<span class="string">&quot;F8&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;TheBoat&quot;</span></span><br><span class="line">    Range(<span class="string">&quot;F9&quot;</span>).ClearContents</span><br><span class="line">    Range(<span class="string">&quot;F8&quot;</span>).Interior.ColorIndex = <span class="number">44</span></span><br><span class="line">    Range(<span class="string">&quot;F9&quot;</span>).Interior.ColorIndex = <span class="number">2</span></span><br><span class="line">    Range(<span class="string">&quot;G8:I9&quot;</span>).ClearContents</span><br><span class="line">    Range(<span class="string">&quot;G8:I9&quot;</span>).Interior.ColorIndex = <span class="number">49</span></span><br><span class="line">End Sub</span><br><span class="line">Sub clearBoat()</span><br><span class="line">onBoat = <span class="string">&quot;&quot;</span></span><br><span class="line"><span class="built_in">If</span> boatLeft Then</span><br><span class="line">    Range(<span class="string">&quot;F9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">Else</span><br><span class="line">    Range(<span class="string">&quot;I9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub addCabbage()</span><br><span class="line"><span class="built_in">If</span> boatEmpty = <span class="built_in">False</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;The boat is full already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">        waitingItem(<span class="number">0</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;D4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    Else</span><br><span class="line">        receivedItem(<span class="number">0</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        waitingItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;L4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    boatEmpty = <span class="built_in">False</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub removeCabbage()</span><br><span class="line"><span class="built_in">If</span> boatEmpty Then</span><br><span class="line">    MsgBox <span class="string">&quot;boat is empty already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">            <span class="built_in">If</span> waitingItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Cabbage is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                receivedItem(<span class="number">0</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;D4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">                waitingItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    Else</span><br><span class="line">            <span class="built_in">If</span> receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Cabbage is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                waitingItem(<span class="number">0</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;L4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">                receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    onBoat = <span class="string">&quot;&quot;</span></span><br><span class="line">    boatEmpty = <span class="built_in">True</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub addSheep()</span><br><span class="line"><span class="built_in">If</span> boatEmpty = <span class="built_in">False</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;The boat is full already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">        waitingItem(<span class="number">1</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;D9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    Else</span><br><span class="line">        receivedItem(<span class="number">1</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;L9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    boatEmpty = <span class="built_in">False</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub removeSheep()</span><br><span class="line"><span class="built_in">If</span> boatEmpty Then</span><br><span class="line">    MsgBox <span class="string">&quot;boat is empty already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">            <span class="built_in">If</span> waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Sheep is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                receivedItem(<span class="number">1</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;D9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">                waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    Else</span><br><span class="line">            <span class="built_in">If</span> receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Sheep is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                waitingItem(<span class="number">1</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;L9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">                receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    onBoat = <span class="string">&quot;&quot;</span></span><br><span class="line">    boatEmpty = <span class="built_in">True</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub addWolf()</span><br><span class="line"><span class="built_in">If</span> boatEmpty = <span class="built_in">False</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;The boat is full already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">        waitingItem(<span class="number">2</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;D14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    Else</span><br><span class="line">        receivedItem(<span class="number">2</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">        waitingItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">        onBoat = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">        Range(<span class="string">&quot;L14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    boatEmpty = <span class="built_in">False</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub removeWolf()</span><br><span class="line"><span class="built_in">If</span> boatEmpty = <span class="built_in">True</span> Then</span><br><span class="line">    MsgBox <span class="string">&quot;The boat is empty already&quot;</span></span><br><span class="line">Else</span><br><span class="line">    <span class="built_in">If</span> boatLeft Then</span><br><span class="line">            <span class="built_in">If</span> waitingItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Wolf is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                receivedItem(<span class="number">2</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;D14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">                waitingItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    Else</span><br><span class="line">            <span class="built_in">If</span> receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">                MsgBox <span class="string">&quot;Wolf is removed already&quot;</span></span><br><span class="line">            Else</span><br><span class="line">                waitingItem(<span class="number">2</span>) = <span class="string">&quot;&quot;</span></span><br><span class="line">                Range(<span class="string">&quot;L14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">                receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">            End <span class="built_in">If</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    onBoat = <span class="string">&quot;&quot;</span></span><br><span class="line">    boatEmpty = <span class="built_in">True</span></span><br><span class="line">    printBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub printBoat()</span><br><span class="line"><span class="built_in">If</span> boatLeft Then</span><br><span class="line">    Range(<span class="string">&quot;F9&quot;</span>).<span class="built_in">Value</span> = onBoat</span><br><span class="line">Else</span><br><span class="line">    Range(<span class="string">&quot;I9&quot;</span>).<span class="built_in">Value</span> = onBoat</span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub readWaitingItem()</span><br><span class="line">For iCounter = <span class="number">0</span> To <span class="number">2</span></span><br><span class="line">    waitingItem(iCounter) = Cells(<span class="number">4</span> + iCounter * <span class="number">5</span>, <span class="number">4</span>).<span class="built_in">Value</span></span><br><span class="line">Next iCounter</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line">Sub readReceivedItem()</span><br><span class="line">For iCounter = <span class="number">0</span> To <span class="number">2</span></span><br><span class="line">    receivedItem(iCounter) = Cells(<span class="number">4</span> + iCounter * <span class="number">5</span>, <span class="number">12</span>).<span class="built_in">Value</span></span><br><span class="line">Next iCounter</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line">Sub MoveBoat()</span><br><span class="line"><span class="built_in">If</span> boatLeft Then</span><br><span class="line">    Range(<span class="string">&quot;F8:F9&quot;</span>).Select</span><br><span class="line">    Selection.Cut</span><br><span class="line">    Range(<span class="string">&quot;I8&quot;</span>).Select</span><br><span class="line">    ActiveSheet.Paste</span><br><span class="line">    Application.CutCopyMode = <span class="built_in">False</span></span><br><span class="line">    Range(<span class="string">&quot;F8:F9&quot;</span>).Interior.ColorIndex = <span class="number">49</span></span><br><span class="line">    boatLeft = <span class="built_in">False</span></span><br><span class="line">Else</span><br><span class="line">    Range(<span class="string">&quot;I8:I9&quot;</span>).Select</span><br><span class="line">    Selection.Cut</span><br><span class="line">    Range(<span class="string">&quot;F8&quot;</span>).Select</span><br><span class="line">    ActiveSheet.Paste</span><br><span class="line">    Application.CutCopyMode = <span class="built_in">False</span></span><br><span class="line">    Range(<span class="string">&quot;I8:I9&quot;</span>).Interior.ColorIndex = <span class="number">49</span></span><br><span class="line">    boatLeft = <span class="built_in">True</span></span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line">dropItem</span><br><span class="line">End Sub</span><br><span class="line">Sub dropItem()</span><br><span class="line">clearBoat</span><br><span class="line">boatEmpty = <span class="built_in">True</span></span><br><span class="line">printWaiting</span><br><span class="line">printReceived</span><br><span class="line">End Sub</span><br><span class="line">Sub printWaiting()</span><br><span class="line">    <span class="built_in">If</span> waitingItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;D4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    <span class="built_in">If</span> waitingItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;D9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    <span class="built_in">If</span> waitingItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;D14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">Sub printReceived()</span><br><span class="line">    <span class="built_in">If</span> receivedItem(<span class="number">0</span>) = <span class="string">&quot;Cabbage&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;L4&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Cabbage&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    <span class="built_in">If</span> receivedItem(<span class="number">1</span>) = <span class="string">&quot;Sheep&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;L9&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Sheep&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">    <span class="built_in">If</span> receivedItem(<span class="number">2</span>) = <span class="string">&quot;Wolf&quot;</span> Then</span><br><span class="line">        Range(<span class="string">&quot;L14&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;Wolf&quot;</span></span><br><span class="line">    End <span class="built_in">If</span></span><br><span class="line">End Sub</span><br><span class="line">&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;testing functions&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;&#x27;</span><br><span class="line"></span><br><span class="line">Sub testWaitingIterm()</span><br><span class="line">For iCounter = <span class="number">0</span> To <span class="number">2</span></span><br><span class="line">    MsgBox waitingItem(iCounter)</span><br><span class="line">    Next iCounter</span><br><span class="line">End Sub</span><br><span class="line">Sub testreceivedIterm()</span><br><span class="line">For iCounter = <span class="number">0</span> To <span class="number">2</span></span><br><span class="line">    MsgBox receivedItem(iCounter)</span><br><span class="line">    Next iCounter</span><br><span class="line">End Sub</span><br><span class="line">Sub testonBoatIterm()</span><br><span class="line">MsgBox onBoat</span><br><span class="line">MsgBox boatEmpty</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="记录"><a href="#记录" class="headerlink" title="记录"></a>记录</h2><p>因为我找了一年的工作(一年啊!),很菜.记录是六百封简历,三十场面试.我的经历大部分当反面的来看,小部分当正面,会make sense.</p>
+<p>在这段时间了里,开了<a href="https://mazui3.github.io/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/">以头抢地诚</a>的tag来记录求职努力.<br>面试记录写了两份,<a href="https://mazui3.github.io/blog/2021/12/14/P198/">第一份</a>从十月到十二月,<a href="https://mazui3.github.io/blog/2022/01/08/P220/">第二份</a>从一月到二月.<br>大部分是心情记录,可以用来安慰人(不是).<br>真正准备面试找人生前辈book一个mock interview是最有效的.<br>有些题目虽然练过了,但朋友跟你mock时的临场感是不一样的.<br>很不一样,而且你得观察着面试官的脸色猜测他的好球区来随机应变.</p>
+<img src="/blog/2022/08/27/P256/P256_8.jpg" class="" title="跟树哥的高中毕业旅行拍的上海外滩">
+
+<p>Interview的问题可以粗略分为两大类:technical和behaviour,顺便加一个开场白tell me about yourself.</p>
+<p>Technical我认为分为两大区,一类就是原地写码给人看,就算写过,面之前还是刷刷题手熟手熟.</p>
+<blockquote>
+<p><a href="https://mazui3.github.io/blog/2020/11/24/P134/">编辑的比较认真但杂乱的sql笔记</a>.<br><a href="https://mazui3.github.io/blog/2021/01/31/P167/">刷题记录</a>你可以看到我很屑,有些题目并没有真正的理解,只记了个答案.<br>可以尝试一下<a target="_blank" rel="noopener" href="https://leetcode.com/list/e97a9e5m/">leetcode中的一些免费sql题</a>.<br>朋友说有用的<a href="https://mazui3.github.io/blog/2021/10/15/P166/">Excel笔记</a>,真的吗.</p>
+</blockquote>
+<p>我自学一半是来源于linkedIn learning,毕业了但大学账号还可以免费提供linkedIn learning资料,谢谢滑铁卢.<br>没有的话…可能报个靠谱的班学起来会快一些…</p>
+<p><strong>有什么好资料或者我没有cover的内容欢迎在评论或者私我我来编辑笔记.</strong></p>
+<p>第二类是概括类题.</p>
+<blockquote>
+<p><a href="https://mazui3.github.io/blog/2021/10/05/P210/">关于data相关的概括类提问</a>,里面关于如何clean data的部分可以稍稍看一眼.</p>
+</blockquote>
+<p>概括类题,举例:</p>
+<ul>
+<li>What is the difference between pass by value and pass by reference?</li>
+<li>What is the difference between group by and where?</li>
+<li>What is primary key, what does it use for?</li>
+<li>What is inner join?</li>
+<li>How do you do data cleaning?</li>
+</ul>
+<p>我个人不会背答案,用自己的话来说一遍.网上一些花哨的答案我理解不了就不说…不然被追问了一点就破会社会死亡.<br>一轮时问的technical概念题不会太难,学习时有好好理解都答得出.<br>面到二轮三轮时,题目可能会从【工具技术】变成【岗位概念】.<br>比如之前防诈骗的一个岗位,我pass了原地写sql的一轮,被送去见VP,一上来VP就问我对信用卡诈骗的理解和看法.</p>
+<blockquote>
+<p>这还真得提前学的.<br>假装自己明天要去做信用卡防诈骗了,读读别人写的论文,来思考业界是怎么做的,自己能做到些什么.<br>某种意义就是摆脱学生思维吧……不是【我想来练习我的技术技能】,而是把自己放在岗位的位置上,谈自己的见解.<br>我的老师跟我讲,他曾经面试时,跟面试官说自己将来一年内能把公司业务做到什么程度,面试官第二天就签offer.<br>这等级真是不得了啊.</p>
+</blockquote>
+<img src="/blog/2022/08/27/P256/P256_9.jpg" class="" title="这张不记得,可能也是在南京拍的吧">
+
+<p>然后是behaviour question.</p>
+<p>举例:</p>
+<ul>
+<li>What do you do when you face a conflict with your co-workers?</li>
+<li>How do you manage your study during the cvoid?</li>
+<li>How do you overcome your difficulties?</li>
+<li>What’s your weakness and strength?</li>
+</ul>
+<p>在网上搜【behaviour question】都可以用来测测自己,无非是看你软实力和性格.</p>
+<p>性格题得察言观色,或者靠一些缘分.<br>第二个问题,study during cvoid,因为俺真的是喜欢跟朋友结伴互相<del>拼枪</del>监督,俺讲了跟大家视频通话,互相打卡什么的.<br>结果面试官说他们team是更加self independent的氛围,就很尴尬.</p>
+<p>软实力就得准备一下故事了,用<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Situation,_task,_action,_result">STAR method</a>过一遍.<br>俺软实力本来就很差,而且经历也少,用game jam和hackathon经历糊弄了很多次.不是好sample.</p>
+<img src="/blog/2022/08/27/P256/P256_10.jpg" class="" title="看上去很像高中学校的布景但是在南京旅行时拍的">
+
+<p>最后是tell me about yourself了.<br>俺觉得这个真的挺难的.</p>
+<p>我的简介构成是</p>
+<ul>
+<li>先答谢下谢谢面试官给的机会</li>
+<li>明白自己(对应职位)的卖点,多讲讲</li>
+<li>中间内容选择时考虑下面试官可能会追问的问题</li>
+<li>最后再表达下俺的future career路线跟这个岗位完美匹配诶!棒诶!</li>
+</ul>
+<p> 最后一场的面试感觉得出来面试官对我的future career和诚谢词一点兴趣都无,于是临时cut了.<br> 第三点是因为我的介绍组成没有怎么讲自己毕业后一年所干的事(因为在投简历啊!),所以有的面试官追问了.<br> (感觉到急迫也是因为此,只投简历一直被拒绝真的很难有大帮助,甚至写点project都被只投简历好.)</p>
+<p> 给伯母做过一点视频简介,有的面试官追问了,为什么去做跟我这个职位完全不搭界的事情.<br> 这时候解释就很重要了!!俺只是想要工作经验,俺想要学习对工作负责,时间管理,给公司提供价值之类之类的,能扯都可以算safe(因为有的面试官真的很看重面试经历!不知道什么是地雷时只能抛出去然后万一炸了就开扯救场!).</p>
+<p> 在这个失败了N多次的人体感下,面试很像相亲,真的得有点缘分.</p>
+<p> 最后再补两句我对自己的心理建设吧…</p>
+<blockquote>
+<p>面试的时候跟面前这位经历老道立派社会人也不过是萍水相逢,一百年后也会化作尘土一起在风中流浪.大家都有自己的命运,珍惜,努力享受一下这相见的十五分钟吧.</p>
+</blockquote>
+<img src="/blog/2022/08/27/P256/P256_0.jpg" class="" title="嘎">
+
+<p>俺博客里有很多各式各样的技术笔记,有些甚至这辈子不会再使用了,我是绕了些(不少?)弯路的.<br>不应该学那么多奇怪的,至少得找一个自己做得下去的方向,然后好好学.<br>有些东西不是能速成起来的,比如machine learning.我在一堆弯路后,sql和excel用的力气多一些.</p>
+<p>Goose系列中,是我们学校给的求职小活动笔记.<a href="https://mazui3.github.io/blog/2022/01/06/P222/">引可以稍稍看看</a>,简历的格式(印象)很重要.上下篇我觉得对于我这样,只求【存活】,没能在找【理想的自己】的人并不是那么实用.<br>但如果会想把人生game打到极致的话,可以看一眼<a href="https://mazui3.github.io/blog/2022/01/31/P226/">problem solver</a>,那个教授很牛逼.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E7%BC%96%E7%A0%81/" rel="tag"># 编码</a>
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/Excel/" rel="tag"># Excel</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/08/26/P252/" rel="next" title="总有结束的八月 - 更新中">
+      总有结束的八月 - 更新中 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AE%8B%E7%95%99%E7%9A%84"><span class="nav-number">1.</span> <span class="nav-text">残留的</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%8A%E5%B9%B4%E7%9A%84%E9%9D%A2%E8%AF%95"><span class="nav-number">2.</span> <span class="nav-text">今年的面试</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%AE%B0%E5%BD%95"><span class="nav-number">3.</span> <span class="nav-text">记录</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_8.png">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">257</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">12</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">55</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2022</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.1m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">16:48</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.1m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2022/08/27/P256/";
+    this.page.identifier = "2022/08/27/P256/";
+    this.page.title = "Sum of Flashback";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
