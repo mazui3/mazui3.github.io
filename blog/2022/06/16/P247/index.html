@@ -23,18 +23,18 @@
     var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="真的是最后一次.">
+  <meta name="description" content="二次订正版.">
 <meta property="og:type" content="article">
-<meta property="og:title" content="关于Java的笔记 - 超入门">
+<meta property="og:title" content="关于Java的笔记">
 <meta property="og:url" content="https://mazui3.github.io/blog/2022/06/16/P247/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="真的是最后一次.">
+<meta property="og:description" content="二次订正版.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/06/16/P247/P247.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/06/16/P247/P247_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/06/16/P247/P247_2.png">
 <meta property="article:published_time" content="2022-06-16T21:39:32.000Z">
-<meta property="article:modified_time" content="2022-09-01T15:05:51.191Z">
+<meta property="article:modified_time" content="2022-09-06T22:02:12.746Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -55,7 +55,7 @@
   };
 </script>
 
-  <title>关于Java的笔记 - 超入门 | Underlake Reading Room</title>
+  <title>关于Java的笔记 | Underlake Reading Room</title>
   
 
 
@@ -236,7 +236,7 @@
     </span>
       <header class="post-header">
         <h1 class="post-title" itemprop="name headline">
-          关于Java的笔记 - 超入门
+          关于Java的笔记
         </h1>
 
         <div class="post-meta">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-01 11:05:51" itemprop="dateModified" datetime="2022-09-01T11:05:51-04:00">2022-09-01</time>
+                <time title="Modified: 2022-09-06 18:02:12" itemprop="dateModified" datetime="2022-09-06T18:02:12-04:00">2022-09-06</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,13 +284,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>5.4k</span>
+              <span>13k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>5 mins.</span>
+              <span>12 mins.</span>
             </span>
 
         </div>
@@ -302,7 +302,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>真的是最后一次.</p>
+        <p>二次订正版.</p>
 <span id="more"></span>
 
 <br>
@@ -320,7 +320,7 @@
 
 <p>Every java program need to have a class, all java code must inside a class.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>void是不return任何东西的key value.</p>
 <p>Then save it to “HelloWorld.java”.<br>Java conventions require the <strong>file name to be the same as the class name</strong>.</p>
 <p>Java跟C一样,得先compile再run.<br>在command line里.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">javac HelloWorld.java</span><br></pre></td></tr></table></figure>
@@ -344,8 +344,20 @@
 
 <h1 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h1><p>跟python不一样(?),java必须拥有main function.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">double</span> <span class="title">salaryCalculator</span><span class="params">(<span class="keyword">double</span> hoursPerWeek,</span></span></span><br><span class="line"><span class="params"><span class="function">                                          <span class="keyword">double</span> amountPerHour,</span></span></span><br><span class="line"><span class="params"><span class="function">                                          <span class="keyword">int</span> vacationDays)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">if</span> (hoursPerWeek &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (amountPerHour &lt; <span class="number">0</span>) &#123;</span><br><span class="line">            <span class="keyword">return</span> -<span class="number">1</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">double</span> weeklyPaycheck = hoursPerWeek * amountPerHour;</span><br><span class="line">        <span class="keyword">double</span> unpaidTime = vacationDays * amountPerHour * <span class="number">8</span>;</span><br><span class="line">        <span class="keyword">return</span> (weeklyPaycheck * <span class="number">52</span>) - unpaidTime; <span class="comment">//return</span></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">double</span> salary = salaryCalculator(<span class="number">40</span>, <span class="number">15</span>, <span class="number">8</span>);</span><br><span class="line">        System.out.println(salary);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>跟c一样,pass data to function的时候要写data type.</p>
+<p>跟c一样,pass data to function as argument的时候要写data type.</p>
+<p>如果要return,需要declare return type.(void为不return)</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span> first, <span class="keyword">int</span> second)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = first + second;  </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 <br>
+<br>
+<br>
+
+<p>在java中的argument可以是不定复数(varargs):<br>这时候pass进的是一个名为values的int array.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">int</span> <span class="title">add</span><span class="params">(<span class="keyword">int</span>... values)</span></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> result = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span>(<span class="keyword">int</span> eachValue : values)&#123;</span><br><span class="line">      result += eachValue;    </span><br><span class="line">    &#125;  </span><br><span class="line">    <span class="keyword">return</span> result;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>一个小tip:当一个function是return void的时候,可以考虑改成return boolean,给一个这个method是否worked.</p>
 <br>
 <br>
 
@@ -356,7 +368,60 @@
 <br>
 <br>
 
-<p>Primitive types hold literal values(不像python全是ref), manipulated using Java operators (not methods), 比如+和-等等.</p>
+<p>Primitive types hold literal values(不像python全是ref), manipulated using Java operators (not methods), 比如+和-等等.<br>Primitive没有functionality.</p>
+<p>如果primitive需要functionality, <a target="_blank" rel="noopener" href="https://www.w3schools.com/java/java_wrapper_classes.asp">wrapper class.</a><br>Wrapper class is a designated object that contains a single primitive inside of it. All primitive have a wrapper.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Primitive Data Type</th>
+<th align="left">Wrapper Class</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">byte</td>
+<td align="left">Byte</td>
+</tr>
+<tr>
+<td align="left">short</td>
+<td align="left">Short</td>
+</tr>
+<tr>
+<td align="left">int</td>
+<td align="left">Integer</td>
+</tr>
+<tr>
+<td align="left">long</td>
+<td align="left">Long</td>
+</tr>
+<tr>
+<td align="left">float</td>
+<td align="left">Float</td>
+</tr>
+<tr>
+<td align="left">double</td>
+<td align="left">Double</td>
+</tr>
+<tr>
+<td align="left">boolean</td>
+<td align="left">Boolean</td>
+</tr>
+<tr>
+<td align="left">char</td>
+<td align="left">Character</td>
+</tr>
+</tbody></table>
+<p>在这些wrapper class里,有自带converter method,parser method.</p>
+<br>
+<br>
+
+<div class="note ">
+            <p>命名提议:</p><p>Variable in dromedary case: somethingLikeThis<br>Constants: SOMETHING_LIKE_THIS</p>
+          </div>
+
+<br>
+<br>
+<br>
+
 <h2 id="Data-type-chart"><a href="#Data-type-chart" class="headerlink" title="Data type chart:"></a><a target="_blank" rel="noopener" href="https://www.w3schools.com/java/java_data_types.asp">Data type chart</a>:</h2><table>
 <thead>
 <tr>
@@ -426,9 +491,98 @@
 
 <br>
 <br>
+
+<h2 id="Primitive-Casting"><a href="#Primitive-Casting" class="headerlink" title="Primitive Casting"></a>Primitive Casting</h2><p>If the data type on the right is smaller than the datatype ono the left, the conversion is implicit:<br>因为没有那么多type存,跟c一样.<br>Other way round there will be a explicitly cast.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> intAge = <span class="number">35</span>;</span><br><span class="line">douoble doubleAge = intAge;</span><br><span class="line">System.out.println(doubleAge); <span class="comment">//35.0</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">double</span> testAverage = <span class="number">85.4</span>;</span><br><span class="line"><span class="keyword">int</span> intAverage = (<span class="keyword">int</span>) testAverage;</span><br><span class="line">System.out.println(intAverage);  <span class="comment">//85</span></span><br></pre></td></tr></table></figure>
+
+<p>为了避免loss of data,我们可以:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> intAge = <span class="number">1</span>;</span><br><span class="line"><span class="keyword">double</span> doubleValue = <span class="number">1.234</span>;</span><br><span class="line"><span class="keyword">double</span> result = intValue + doubleValue;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
 <br>
 
 <h1 id="Input-output"><a href="#Input-output" class="headerlink" title="Input output"></a>Input output</h1><figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="comment">//in side the main function</span></span><br><span class="line">Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">studentGPA = input.nextDouble();</span><br></pre></td></tr></table></figure>
+
+
+<br>
+<br>
+<br>
+
+<h1 id="String"><a href="#String" class="headerlink" title="String"></a>String</h1><p>Strings are object types that store text, is an array of characters.</p>
+<p>Two ways of create:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String name = <span class="string">&quot;lan&quot;</span>; <span class="comment">// declare as pure string</span></span><br><span class="line">String Name = <span class="keyword">new</span> String(<span class="string">&quot;lan&quot;</span>); <span class="comment">// declare as a new instance of an object</span></span><br></pre></td></tr></table></figure>
+
+<p>Strings created using first method are stored in their own memory - the String pool, will be re-used wherever possible. String pool is a type of design pattern, known as object pool.</p>
+<blockquote>
+<p>Pool : a section or memory where allows you to use existing values. 所以当有duplicate information的时候,比如有两个string variables contains the same word, the string pool will only have 1 instance of that word, and the two variables will point at the same object in memory.</p>
+</blockquote>
+<p>Strings are immutable, when concatenation, a new string is always created.</p>
+<blockquote>
+<p>Mutable refer to whether or not something can be changed.</p>
+</blockquote>
+<br>
+
+<p>Command function.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> start)</span></span></span><br><span class="line"><span class="function">String <span class="title">substring</span><span class="params">(<span class="keyword">int</span> start, <span class="keyword">int</span> end)</span></span></span><br><span class="line"><span class="function"><span class="comment">// create a new string based on the starting index and the optional ending index</span></span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">String <span class="title">toUpperCase</span><span class="params">()</span></span></span><br><span class="line"><span class="function">String <span class="title">toLowerCase</span><span class="params">()</span></span></span><br><span class="line"><span class="function"><span class="comment">// return a new string, transforming the letters in the old string to upper/lower case</span></span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Char [] toCharArray()</span><br><span class="line"><span class="comment">// return a new array of chars from the string. Splits up the string into individual characters</span></span><br></pre></td></tr></table></figure>
+
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">String [] split(String regex)</span><br><span class="line"><span class="comment">//return a new array of strings from the string based on a regular expression passed in</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String firstString = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line">String secondString = <span class="string">&quot;Hello&quot;</span>;</span><br><span class="line"></span><br><span class="line">fristString == secondString; <span class="comment">// True</span></span><br><span class="line">firstString.equals(secondString) <span class="comment">//True;</span></span><br></pre></td></tr></table></figure>
+<p>This way will point the same place in memory.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String firstString = <span class="keyword">new</span> String(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line">String secondString = <span class="keyword">new</span> String(<span class="string">&quot;Hello&quot;</span>);</span><br><span class="line"></span><br><span class="line">fristString == secondString; <span class="comment">// False</span></span><br><span class="line">firstString.equals(secondString) <span class="comment">//True;</span></span><br></pre></td></tr></table></figure>
+<p>This will be two separate objects in memory.<br>于是发现在这里double equal compare的竟然是address instead of the value.可以compare primitive.<br>所以string comparison (或者objects)应该使用equal的method.</p>
+<p>因为running java application的时候,memory会分为两块,一块是stack,一块是heap.<br>If here is a primitive variable, the stack will contain the literal value.<br>If the variable is an object, the stack will contain a pointer, a reference to the objects real location in the heap, because the stack is not big enough to actually store a full object.</p>
+<p>Double equals(==) compares the value in the stack (就可能是pointer了). 两个不同的object 的地址是不同的所以false.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h1><p>跟c一样,array里面的variable需要same type,以及array size是immutable的.<br>Array基本没有自带function.<br>index从0开始.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span>[] numbers = <span class="keyword">new</span> <span class="keyword">int</span>[<span class="number">3</span>];</span><br><span class="line"></span><br><span class="line">numbers[<span class="number">0</span>] = <span class="number">25</span>;</span><br><span class="line">numbers[<span class="number">1</span>] = -<span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">System.out.println(numbers[<span class="number">0</span>]); <span class="comment">//25</span></span><br><span class="line">System.out.println(numbers[<span class="number">1</span>]); <span class="comment">//-1</span></span><br><span class="line">System.out.println(numbers[<span class="number">2</span>]); <span class="comment">//0</span></span><br></pre></td></tr></table></figure>
+
+<p>From a pre-defined group of values:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">double</span>[] prices = &#123;<span class="number">1.25</span>, <span class="number">2.99</span>, <span class="number">1.99</span>&#125;;</span><br></pre></td></tr></table></figure>
+
+<p>或者用生成的value.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">String sentence = “<span class="keyword">this</span> is a sentence”;</span><br><span class="line"></span><br><span class="line">String[] words = sentence.split(“ “);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>ArrayList is a <strong>collection</strong> that allows for elements to be added and removed, 像是dynamic array.比起array也有更多的function.<br>(Uses the Collections class instead of array class)<br>collection里的function比array的library还多,所以并不推荐使用array,function多会方便一些.<br>Inside the arrow heads is a class name that denotes what will be stored in the ArrayList.<br>Primitives cannot be between the arrowheads- only reference types.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;String&gt; names = <span class="keyword">new</span> ArrayList&lt;&gt;();</span><br><span class="line"></span><br><span class="line">names.add(“Scotty”);</span><br><span class="line">names.add(“Susan”);</span><br><span class="line">names.add(“Cullen”);</span><br><span class="line"></span><br><span class="line">System.out.println(numbers.get(<span class="number">0</span>));</span><br><span class="line">System.out.println(numbers.get(<span class="number">1</span>));</span><br><span class="line">System.out.println(numbers.get(<span class="number">2</span>));</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+
+<p>Common function:</p>
+<div class="note ">
+            <p>get(index i) – gets the element at the index<br>set(index i) – sets the element at the index<br>remove(index i) – removes the element at the index<br>size()  - returns the size of the array<br>toArray() – returns an array filled with the elements in the list.<br>Not a comprehensive list- check the Java ArrayList API for more</p>
+          </div>
+
+<p>因为array自带的function太少,arrays和collections是addtional library:<br>Methods in the Arrays class include things such as sort(), fill() and binarySearch(), and toString(), while Collections methods include min(), sort(), max(), frequency().</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Arrays;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">ArraysExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">int</span>[] ages = &#123; <span class="number">25</span>, <span class="number">20</span>, <span class="number">10</span>, <span class="number">25</span>, <span class="number">30</span>, <span class="number">43</span> &#125;;</span><br><span class="line">	Arrays.sort(ages);</span><br><span class="line">	System.out.println(ages); <span class="comment">// [I@7852e922</span></span><br><span class="line">	System.out.println(Arrays.toString(ages)); <span class="comment">// [10, 20, 25, 25, 30, 43]</span></span><br><span class="line"></span><br><span class="line">	System.out.println(Arrays.binarySearch(ages, <span class="number">25</span>)); <span class="comment">// 2</span></span><br><span class="line">	System.out.println(Arrays.binarySearch(ages, <span class="number">45</span>)); <span class="comment">// -7</span></span><br><span class="line">	Arrays.fill(ages, <span class="number">0</span>);</span><br><span class="line">	System.out.println(Arrays.toString(ages)); <span class="comment">// [0, 0, 0, 0, 0, 0]</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">CollectionsExample</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">ArrayList&lt;Integer&gt; ages = <span class="keyword">new</span> ArrayList&lt;Integer&gt;();</span><br><span class="line">ages.add(<span class="number">35</span>); ages.add(<span class="number">20</span>); ages.add(<span class="number">45</span>); ages.add(<span class="number">35</span>);ages.add(<span class="number">20</span>);</span><br><span class="line">System.out.println(Collections.frequency(ages, <span class="number">35</span>)); <span class="comment">// 2</span></span><br><span class="line">System.out.println(Collections.max(ages)); <span class="comment">// 45</span></span><br><span class="line">System.out.println(Collections.min(ages)); <span class="comment">// 20</span></span><br><span class="line">Collections.sort(ages);</span><br><span class="line">System.out.println(ages); <span class="comment">// [20, 20, 35, 35, 45]</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -436,9 +590,52 @@
 
 <h1 id="Condition"><a href="#Condition" class="headerlink" title="Condition"></a>Condition</h1><p>Comparison operator is same as c.不等于是**!=**.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        System.out.println(<span class="string">&quot;Pick a number between 1 and 10&quot;</span>);</span><br><span class="line">        Scanner scanner = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">int</span> inputtedNum = scanner.nextInt();</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (inputtedNum &lt; <span class="number">5</span>) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Enjoy the good luck a friend brings you&quot;</span>);</span><br><span class="line">        &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Your shoe selection will make you very happy today&quot;</span>);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
+<p>也用&amp;&amp;和||.<br>注意&amp;的结果跟&amp;&amp;一样.但是&amp;会把两个condition都跑一遍,而&amp;&amp;遇到第一个false第二个就不会跑了.</p>
 <p>注意跟c一样,(跟python不一样),if condition里面的variable是有scope的.<br>在inputtedNum &lt; 5里define的data在else里不能使用.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> java.util.Scanner;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        Scanner input = <span class="keyword">new</span> Scanner(System.in);</span><br><span class="line">        <span class="keyword">boolean</span> isOnRepeat = <span class="keyword">true</span>;</span><br><span class="line">        <span class="keyword">while</span>(isOnRepeat) &#123;</span><br><span class="line">            System.out.println(<span class="string">&quot;Playing current song&quot;</span>);</span><br><span class="line">            System.out.println(<span class="string">&quot;Would you like to take this song off of repeat? If so, answer yes&quot;</span>);</span><br><span class="line">            String userInput = input.next();</span><br><span class="line"></span><br><span class="line">            <span class="keyword">if</span>(userInput.equals(<span class="string">&quot;yes&quot;</span>)) &#123;</span><br><span class="line">                isOnRepeat = <span class="keyword">false</span>;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">        System.out.println(<span class="string">&quot;Playing next song&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">automatedPhoneService</span><span class="params">(<span class="keyword">int</span> option)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">switch</span>(option) &#123;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">1</span>:</span><br><span class="line">		  System.out.println(<span class="string">&quot;You pressed option one, your account balance is....&quot;</span>);</span><br><span class="line">		  <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">2</span>:</span><br><span class="line">		  System.out.println(<span class="string">&quot;You pressed option 2, you want to tell us about a change of name or address&quot;</span>);</span><br><span class="line">		  <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">case</span> <span class="number">3</span>:</span><br><span class="line">		  System.out.println(<span class="string">&quot;You pressed option 3, you want to report a problem with an online payment&quot;</span>);</span><br><span class="line">		  <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">default</span>:</span><br><span class="line">		  System.out.println(<span class="string">&quot;You didn&#x27;t select an option, the main options will now be repeated&quot;</span>);</span><br><span class="line">    	&#125;</span><br><span class="line"> &#125;</span><br></pre></td></tr></table></figure>
+<p>switch跟c一样,记得要break.不然会自动跑下去.</p>
+<br>
+<br>
+
+<p>Ternary.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String result = (mark &gt; <span class="number">75</span>) ? “pass” : “fail”;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h1><p>While loop:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> (condition) &#123;</span><br><span class="line">	Code to be executed;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>Do/While loop:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">do</span> &#123;</span><br><span class="line">	Code to be executed;</span><br><span class="line">&#125; <span class="keyword">while</span> (condition);</span><br></pre></td></tr></table></figure>
+
+<p>The Do/While loop <strong>will execute the code block once</strong>, before checking if the condition is true, then it will repeat the loop as long as the condition is true.</p>
+<br>
+
+<p>For Loop:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">10</span>; i &lt;= <span class="number">20</span>; i++) &#123;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+
+<p>For/Each Loop:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">String[] allFruits = &#123; <span class="string">&quot;Apple&quot;</span>, <span class="string">&quot;Orange&quot;</span>, <span class="string">&quot;Banana&quot;</span>, <span class="string">&quot;Grape&quot;</span>, <span class="string">&quot;Cherry&quot;</span> &#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span> (String fruit : allFruits) &#123;</span><br><span class="line">	System.out.println(fruit);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>An enhanced For Loop that will iterate through all the elements of a collection or array.<br>Cannot modify collection while iterating it.因为collection是可以remove&amp;add的.</p>
+<br>
+
+<p>Break &amp; Continue:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this loop will stop when the value of i is equal to 5:</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">5</span>) &#123;</span><br><span class="line">		<span class="keyword">break</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Continue stops the current iteration of a loop, and then continues with the subsequent iterations.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this loop will print all the numbers from 1 to 10 except the number 5</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">5</span>) &#123;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <br>
 <br>
@@ -555,7 +752,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Function"><span class="nav-number">1.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-type"><span class="nav-number">2.</span> <span class="nav-text">Data type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-type-chart"><span class="nav-number">2.1.</span> <span class="nav-text">Data type chart:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numeric-Literals"><span class="nav-number">2.2.</span> <span class="nav-text">Numeric Literals</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-output"><span class="nav-number">3.</span> <span class="nav-text">Input output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condition"><span class="nav-number">4.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">5.</span> <span class="nav-text">Debugging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class"><span class="nav-number">6.</span> <span class="nav-text">Class</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Function"><span class="nav-number">1.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-type"><span class="nav-number">2.</span> <span class="nav-text">Data type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-type-chart"><span class="nav-number">2.1.</span> <span class="nav-text">Data type chart:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numeric-Literals"><span class="nav-number">2.2.</span> <span class="nav-text">Numeric Literals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Casting"><span class="nav-number">2.3.</span> <span class="nav-text">Primitive Casting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-output"><span class="nav-number">3.</span> <span class="nav-text">Input output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">5.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condition"><span class="nav-number">6.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loop"><span class="nav-number">7.</span> <span class="nav-text">Loop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">8.</span> <span class="nav-text">Debugging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class"><span class="nav-number">9.</span> <span class="nav-text">Class</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -652,7 +849,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">17:04</span>
+    <span title="T">17:13</span>
 
   -->
 
@@ -736,7 +933,7 @@
   var disqus_config = function() {
     this.page.url = "https://mazui3.github.io/blog/2022/06/16/P247/";
     this.page.identifier = "2022/06/16/P247/";
-    this.page.title = "关于Java的笔记 - 超入门";
+    this.page.title = "关于Java的笔记";
     };
   NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
     if (window.DISQUS) {
