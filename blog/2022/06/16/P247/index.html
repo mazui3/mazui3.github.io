@@ -34,7 +34,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/06/16/P247/P247_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/06/16/P247/P247_2.png">
 <meta property="article:published_time" content="2022-06-16T21:39:32.000Z">
-<meta property="article:modified_time" content="2022-09-06T22:02:12.746Z">
+<meta property="article:modified_time" content="2022-09-12T19:36:33.636Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="编码">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -253,7 +253,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-09-06 18:02:12" itemprop="dateModified" datetime="2022-09-06T18:02:12-04:00">2022-09-06</time>
+                <time title="Modified: 2022-09-12 15:36:33" itemprop="dateModified" datetime="2022-09-12T15:36:33-04:00">2022-09-12</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -284,13 +284,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>13k</span>
+              <span>23k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>12 mins.</span>
+              <span>21 mins.</span>
             </span>
 
         </div>
@@ -305,10 +305,6 @@
         <p>二次订正版.</p>
 <span id="more"></span>
 
-<br>
-<br>
-<br>
-<br>
 
 <div class="note ">
             <p>In order to run java, we need to download JDK(java development kit).</p>
@@ -318,7 +314,7 @@
 <br>
 <br>
 
-<p>Every java program need to have a class, all java code must inside a class.</p>
+<h1 id="HelloWorld"><a href="#HelloWorld" class="headerlink" title="HelloWorld"></a>HelloWorld</h1><p>Every java program need to have a class, all java code must inside a class.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HelloWorld</span></span>&#123;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span></span>&#123;</span><br><span class="line">    System.out.println(<span class="string">&quot;Hello world!&quot;</span>);</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>void是不return任何东西的key value.</p>
 <p>Then save it to “HelloWorld.java”.<br>Java conventions require the <strong>file name to be the same as the class name</strong>.</p>
@@ -636,6 +632,219 @@
 <p>Continue stops the current iteration of a loop, and then continues with the subsequent iterations.</p>
 <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//this loop will print all the numbers from 1 to 10 except the number 5</span></span><br><span class="line"><span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">1</span>; i &lt;= <span class="number">10</span>; i++) &#123;</span><br><span class="line">	<span class="keyword">if</span> (i == <span class="number">5</span>) &#123;</span><br><span class="line">		<span class="keyword">continue</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	System.out.println(i);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
+<br>
+
+<h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><p>A blueprint used to create objects.<br>跟method中的scope一样,variable defined in class是local的,不是global的.<br>Java中的gobal variable并不是一开始普通存在(待续).</p>
+<p>The ‘new’ keyword is used to create an object from a class:</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Trainee trainee1 = new Trainee();</span><br></pre></td></tr></table></figure>
+<p>这里trainee1是一个指向trainee object的pointer.</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Trainee trainee1 = new Trainee();</span><br><span class="line"></span><br><span class="line">Trainee trainee1SecondRef = trainee1;</span><br></pre></td></tr></table></figure>
+<p>如果我们在assign一个variable,他们都会是trainee的pointer.</p>
+<blockquote>
+<p>Array &amp; List elements are references as well.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>class里的function又名methods.<br>class里的properties又叫做attributes.</p>
+<blockquote>
+<p>We add the keyword static if the function does not use the attributes of a class, but still relates to the overall theme or idea of the class.</p>
+</blockquote>
+<p>在同一个directory下的Main.java和StudentProfile.java文件.<br>Main的文件里并没有链接代码,好厉害…!</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        StudentProfile profileOne = <span class="keyword">new</span> StudentProfile(<span class="string">&quot;Sally&quot;</span>, <span class="string">&quot;Salmon&quot;</span>, <span class="string">&quot;Film&quot;</span>, <span class="number">3.75</span>, <span class="number">2022</span>);</span><br><span class="line">        StudentProfile profileTwo = <span class="keyword">new</span> StudentProfile(<span class="string">&quot;Max&quot;</span>, <span class="string">&quot;Tiffen&quot;</span>, <span class="string">&quot;Computer Science&quot;</span>, <span class="number">3.45</span>, <span class="number">2021</span>);</span><br><span class="line"></span><br><span class="line">        profileTwo.incrementExpectedGraduationYear();</span><br><span class="line">        System.out.println(profileTwo.expectedYearToGraduate);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>注意,StudentProfile的class成为了一种data type.</p>
+<p>Class sample:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentProfile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> String schoolName = <span class="string">&quot;Waterloo&quot;</span>;<span class="comment">//all student will have this params</span></span><br><span class="line"></span><br><span class="line">    String firstName;</span><br><span class="line">    String lastName;</span><br><span class="line">    String declaredMajor;</span><br><span class="line">    <span class="keyword">double</span> gpa;</span><br><span class="line">    <span class="keyword">int</span> expectedYearToGraduate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//跟c好像</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StudentProfile</span><span class="params">(String firstName, String lastName,</span></span></span><br><span class="line"><span class="params"><span class="function">                          String declaredMajor, <span class="keyword">double</span> gpa, <span class="keyword">int</span> expectedYearToGraduate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">        <span class="keyword">this</span>.declaredMajor = declaredMajor;</span><br><span class="line">        <span class="keyword">this</span>.gpa = gpa;</span><br><span class="line">        <span class="keyword">this</span>.expectedYearToGraduate = expectedYearToGraduate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">incrementExpectedGraduationYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.expectedYearToGraduate = <span class="keyword">this</span>.expectedYearToGraduate + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Constructor"><a href="#Constructor" class="headerlink" title="Constructor"></a>Constructor</h2><p>The default constructor(每个class都会有default constructor) takes no arguments unless we overwrite it.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">new</span> Trainee(); <span class="comment">//no argument, default</span></span><br></pre></td></tr></table></figure>
+
+<p>To overwrite it:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Trainee</span><span class="params">(String name, String stream)</span> </span>&#123;</span><br><span class="line">	<span class="keyword">this</span>.name = name;</span><br><span class="line">	<span class="keyword">this</span>.stream = stream;</span><br><span class="line">	week = <span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>A custom constructor has the same name as the class.<br>It has no return type.<br>When a custom constructor is written, the default constructor is no longer available.</p>
+<br>
+<br>
+
+<h2 id="Final"><a href="#Final" class="headerlink" title="Final"></a>Final</h2><p>是class里的类似constant的keyword,一旦被set了就不能在更改.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">final</span> <span class="keyword">int</span> CONSTANT_ATTRIBUTE;</span><br></pre></td></tr></table></figure>
+
+
+<p>设定的两种方法:可以作为class blueprint里就设定的东西,也可以用constructor设定.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Circle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">double</span> PI = <span class="number">3.1415</span>;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Trainee</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">final</span> <span class="keyword">int</span> TRAINEE_ID;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Trainee</span><span class="params">(<span class="keyword">int</span> traineeId)</span></span>&#123;</span><br><span class="line">		TRAINEE_ID = traineeId;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Dependency"><a href="#Dependency" class="headerlink" title="Dependency"></a>Dependency</h2><p>An object of one class relies on an object of another class.<br>在此之下有四种dependency:</p>
+<h3 id="Dependency-1"><a href="#Dependency-1" class="headerlink" title="Dependency"></a>Dependency</h3><p>One class uses an object of another class as <strong>a method argument or return type.</strong><br>在UML中以虚线箭头表示.</p>
+<p>比如:<br>| Trainee     |<br>| :————- |<br>|       |<br>| + takeExam(Exam exam): int      |</p>
+<p>depends on -&gt;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Exam</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- questions: ArrayList<String></td>
+</tr>
+<tr>
+<td align="left">+ getAllQuestions(): ArrayList<String></td>
+</tr>
+</tbody></table>
+<p>btw, -是private field, +是public field(详见复习UML).</p>
+<h3 id="Association"><a href="#Association" class="headerlink" title="Association"></a>Association</h3><p>One class has an object of another class as an attribute.<br>在UML中以实线箭头表示.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Classroom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- trainer: Trainer</td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>depends on -&gt;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Trainer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- name: String</td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<br>
+<br>
+<br>
+
+
+<div class="note ">
+            <p>Dependency Injection:</p><p>Will use a setter or a constructor to inject a dependency instead of defining the variable in the owing class, will set the variable afterwards. This will make code more flexible.</p>
+          </div>
+
+<p>Setter method:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Trainer trainer = <span class="keyword">new</span> Trainer();</span><br><span class="line">Classroom classroom = <span class="keyword">new</span> Classroom();</span><br><span class="line"></span><br><span class="line">classroom.setTrainer(trainer);</span><br></pre></td></tr></table></figure>
+
+<p>Or the constructor:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Trainer trainer = <span class="keyword">new</span> Trainer();</span><br><span class="line">Classroom classroom = <span class="keyword">new</span> Classroom(trainer);</span><br></pre></td></tr></table></figure>
+
+<h3 id="Aggregation"><a href="#Aggregation" class="headerlink" title="Aggregation"></a>Aggregation</h3><p>One class has multiple objects of another class as attributes.<br>(Association的ex版本)</p>
+<table>
+<thead>
+<tr>
+<th align="left">Classroom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- trainers: ArrayList<Trainer></td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>depends on -&gt;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Trainer</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- name: String</td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>在UML中以实线空心菱形表示.注意,菱形在classroom(owner)这头.</p>
+<h3 id="Composition"><a href="#Composition" class="headerlink" title="Composition"></a>Composition</h3><p>An object of one class belongs to an object of another class and can’t exist without it.<br>(Association的条件版本)</p>
+<table>
+<thead>
+<tr>
+<th align="left">Academy</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- classrooms: ArrayList<Classroom></td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>depends on -&gt;</p>
+<table>
+<thead>
+<tr>
+<th align="left">Classroom</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">- name: String</td>
+</tr>
+<tr>
+<td align="left"></td>
+</tr>
+</tbody></table>
+<p>在UML中以实线实心菱形表示.</p>
+<p>要达成这样的dependency,会使用java的scope特性:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Academy</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">private</span> List&lt;Classroom&gt; classrooms;</span><br><span class="line"></span><br><span class="line">	<span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Classroom</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Classroom only exist inside of the Academy.<br>这样的nested class并不推荐,但是make sense for abstraction.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Static"><a href="#Static" class="headerlink" title="Static"></a>Static</h2><p>The static keyword is used to denote that an attribute or method belongs to the class itself, rather than an instance of a class.<br>Methods, attributes, and even classes can be given the static keyword.<br>我们并不需要一个object of that class to use that method. 我们call it by name from the class.</p>
+<p>Methods:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">static</span> <span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Variable:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">static</span> <span class="keyword">int</span> variableName;</span><br><span class="line"></span><br><span class="line"><span class="keyword">static</span> <span class="keyword">private</span> <span class="keyword">int</span> variableName;</span><br></pre></td></tr></table></figure>
+
+<p>注意,static因为是脱离了class的,使用会break abstraction的定义,使用时要注意.</p>
+<p>Static variables and methods are accessed directly from the class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">ClassName.methodName();</span><br><span class="line"></span><br><span class="line">ClassName.getVariableName();</span><br></pre></td></tr></table></figure>
+
+<p>在UML中,static是underline.<br>Can not access a non-static method/variable from a static method.</p>
+<p>Common use: static factory method.</p>
+<blockquote>
+<p>A static method whose job is to generate instance of that class.<br>这是constructor一样的工作.但把如何跑constructor(一些限制)自己管理.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<h1 id="Interface"><a href="#Interface" class="headerlink" title="Interface"></a>Interface</h1><p>俺感觉interface跟class很接近.<br>Interface only reference functionality, does not represent data.(只有method,没有data field.)</p>
+<blockquote>
+<p>Interface不可以有variable field但是可以有constant.</p>
+</blockquote>
+<p>parent class -&gt; child class &amp; interface -&gt; class的区别在于,前者child只能有一个parent,而后者的class可以implement多数的interface.</p>
+<p>在UML中interface会自带&lt;<interface>&gt;的标题,以及所有implement 其interface的class指向interface使用的是虚线.<br>(Broken arrow with solid head indicates a ‘Realisation’)</p>
+<ul>
+<li>All methods are implicitly public(Abstract, default &amp; static)</li>
+<li>All attributes are implicitly public, final and static</li>
+<li>Don’t have constructors</li>
+</ul>
+<p>Example:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">interface</span> <span class="title">Chargeable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">void</span> <span class="title">charge</span> <span class="params">(<span class="keyword">double</span> amps)</span></span>;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">default</span> <span class="keyword">void</span> <span class="title">connectToUsb</span><span class="params">()</span> </span>&#123;</span><br><span class="line">		<span class="comment">// code to connect to usb</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">static</span> <span class="keyword">double</span> <span class="title">calculateWatts</span><span class="params">(<span class="keyword">double</span> amps, <span class="keyword">int</span> volts)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">return</span> amps * volts;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在class的情况下key word是extend,interface是implements:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Tablet</span> <span class="keyword">implements</span> <span class="title">Chargeable</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">charge</span><span class="params">(<span class="keyword">double</span> amps)</span></span>&#123;</span><br><span class="line">		<span class="comment">// code implementing the method</span></span><br><span class="line">	 &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Implements two的情况:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">PortableLamp</span> <span class="keyword">implements</span> <span class="title">Chargeable</span>, <span class="title">Lamp</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -650,16 +859,126 @@
 <br>
 <br>
 <br>
+<br>
 
-<h1 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h1><p>class里的function又名methods.<br>class里的properties又叫做attributes.</p>
+<h1 id="Casting"><a href="#Casting" class="headerlink" title="Casting"></a>Casting</h1><h2 id="Upcasting"><a href="#Upcasting" class="headerlink" title="Upcasting"></a>Upcasting</h2><p>Accessing a child object using a reference of its parent class.<br>The parent reference points to the parent object within the child object.</p>
 <blockquote>
-<p>We add the keyword static if the function does not use the attributes of a class, but still relates to the overall theme or idea of the class.</p>
+<p>Vehicle ref points to Car object 里的vehicle object.</p>
 </blockquote>
-<p>在同一个directory下的Main.java和StudentProfile.java文件.<br>Main的文件里并没有链接代码,好厉害…!</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Main</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title">main</span><span class="params">(String[] args)</span> </span>&#123;</span><br><span class="line">        StudentProfile profileOne = <span class="keyword">new</span> StudentProfile(<span class="string">&quot;Sally&quot;</span>, <span class="string">&quot;Salmon&quot;</span>, <span class="string">&quot;Film&quot;</span>, <span class="number">3.75</span>, <span class="number">2022</span>);</span><br><span class="line">        StudentProfile profileTwo = <span class="keyword">new</span> StudentProfile(<span class="string">&quot;Max&quot;</span>, <span class="string">&quot;Tiffen&quot;</span>, <span class="string">&quot;Computer Science&quot;</span>, <span class="number">3.45</span>, <span class="number">2021</span>);</span><br><span class="line"></span><br><span class="line">        profileTwo.incrementExpectedGraduationYear();</span><br><span class="line">        System.out.println(profileTwo.expectedYearToGraduate);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>StudentProfile成为了一种data type.</p>
-<p>Constructor.</p>
-<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">StudentProfile</span> </span>&#123;</span><br><span class="line">    <span class="keyword">static</span> String schoolName = <span class="string">&quot;Waterloo&quot;</span>;<span class="comment">//all student will have this params</span></span><br><span class="line"></span><br><span class="line">    String firstName;</span><br><span class="line">    String lastName;</span><br><span class="line">    String declaredMajor;</span><br><span class="line">    <span class="keyword">double</span> gpa;</span><br><span class="line">    <span class="keyword">int</span> expectedYearToGraduate;</span><br><span class="line"></span><br><span class="line">    <span class="comment">//跟c好像</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">StudentProfile</span><span class="params">(String firstName, String lastName,</span></span></span><br><span class="line"><span class="params"><span class="function">                          String declaredMajor, <span class="keyword">double</span> gpa, <span class="keyword">int</span> expectedYearToGraduate)</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.firstName = firstName;</span><br><span class="line">        <span class="keyword">this</span>.lastName = lastName;</span><br><span class="line">        <span class="keyword">this</span>.declaredMajor = declaredMajor;</span><br><span class="line">        <span class="keyword">this</span>.gpa = gpa;</span><br><span class="line">        <span class="keyword">this</span>.expectedYearToGraduate = expectedYearToGraduate;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">incrementExpectedGraduationYear</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.expectedYearToGraduate = <span class="keyword">this</span>.expectedYearToGraduate + <span class="number">1</span>;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Explicitly:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line">Vehicle vehicle = car;</span><br></pre></td></tr></table></figure>
+
+<p>Implicitly:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">ArrayList&lt;Vehicle&gt; vehicles = <span class="keyword">new</span> ArrayList&lt;Vehicle&gt;();</span><br><span class="line"></span><br><span class="line">Car car = <span class="keyword">new</span> Car();</span><br><span class="line"></span><br><span class="line">vehicles.add(car);</span><br></pre></td></tr></table></figure>
+<p>就是把这个car当作vehicle这个parent class使.</p>
+<p>这个car中methods and attributes defined in the child class will not be accessible.<br>Code overriding methods defined in the parent class will be accessible.</p>
+<h2 id="Downcasting"><a href="#Downcasting" class="headerlink" title="Downcasting"></a>Downcasting</h2><p>反过来.</p>
+<p>Downcast by specifying the correct type to downcast to:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Car car = <span class="keyword">new</span> Car();</span><br><span class="line">Vehicle vehicle = car;</span><br><span class="line"></span><br><span class="line">Car downcastCar = (Car) vehicle;</span><br></pre></td></tr></table></figure>
+
+<p>The instanceof keyword is used to determine the correct type of an object.<br>Useful when downcasting objects stored in an ArrayList of the parent type.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (vehicle <span class="keyword">instanceof</span> Car)&#123;</span><br><span class="line">	Car car = (Car) vehicle;</span><br><span class="line">	<span class="comment">// code to call car methods</span></span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (vehicle <span class="keyword">instanceof</span> Plane)&#123;</span><br><span class="line">	Plane plane = (Plane) vehicle;</span><br><span class="line">	<span class="comment">// code to call plane methods</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="OOD"><a href="#OOD" class="headerlink" title="OOD"></a>OOD</h1><div class="note ">
+            <p>The 4 Pillars of OOD:</p><p>Encapsulation<br>Abstraction<br>Inheritance<br>Polymorphism</p>
+          </div>
+
+<h2 id="Encapsulation"><a href="#Encapsulation" class="headerlink" title="Encapsulation"></a>Encapsulation</h2><p>Idea of bundling data and methods that work on that data within one unit-&gt; class<br>We use <strong>Access modifiers</strong> to determine which objects can access attributes and methods of a class.</p>
+<p>Default (no modifier) – any object of a class in the same package can access.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">int</span> variableName;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>Public – any object can access.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">methodName</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+
+<p>Private – can only be accessed by methods within its own class.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> variableName;</span><br></pre></td></tr></table></figure>
+
+<p>Protected – can be accessed by objects of classes in the same package and child classes.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">protected</span> <span class="keyword">int</span> variableName;</span><br></pre></td></tr></table></figure>
+
+<p>Encapsulation的定义包括,让这个class负责它所负责的部分,所以应该优先于建造private method.优先度private -&gt; default -&gt; protected -&gt; public.</p>
+<p>但按照encapsulation的定义,把所有都private,还是有需要access某private field的需求,所以会做getters &amp; setters function.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> <span class="keyword">int</span> week;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">int</span> <span class="title">getWeek</span><span class="params">()</span> </span>&#123;</span><br><span class="line">  <span class="keyword">return</span> week;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setWeek</span><span class="params">(<span class="keyword">int</span> week)</span> </span>&#123;</span><br><span class="line">  <span class="keyword">this</span>.week = week;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>(死去的c++记忆正在复苏…)</p>
+<p>这一些是为了不让class裸奔(指使用public field).这样也方便设定get和set的限制.</p>
+<br>
+<br>
+
+<h2 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h2><p>We don’t need to know anything about the code within a method -&gt; only knows the functionality.<br>可以理解abstraction是目的,而达成的方法是Encapsulation.</p>
+<br>
+<br>
+
+<h2 id="Inheritance"><a href="#Inheritance" class="headerlink" title="Inheritance"></a>Inheritance</h2><p>One class (the child) acquires the attributes and behaviours of another class (the parent)<br>(像之前谈过的dependency relationship)</p>
+<p>AKA ‘Is A’ relationship:</p>
+<blockquote>
+<p><strong>Child</strong> -&gt; <strong>Parent</strong><br>Hawaii Pizza <strong>IS A</strong> Pizza.</p>
+</blockquote>
+<p>The child is a more specific form of the parent.</p>
+<p>The ‘extends’ keyword defines the parent of a class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Manager</span> <span class="keyword">extends</span> <span class="title">Employee</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<blockquote>
+</blockquote>
+<ul>
+<li>A class can only have one parent but multiple children</li>
+<li>A child class inherits all attributes and behaviours of its parent</li>
+<li>Constructors are not inherited</li>
+</ul>
+<p> A child class must have a constructor which calls a constructor in its parent class:<br> <figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="title">Manager</span><span class="params">(String name, String jobTitle, <span class="keyword">int</span> salary)</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	 <span class="keyword">super</span>(name, jobTitle, salary);</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><br>super是用来call parent的constructor的.必须拥有super in child constructor还必须是first line of code.</p>
+<blockquote>
+<p>If there is no custom constructor in the parent class then the default constructor in the child class will implicitly call the default constructor in the parent class. In this case no additional code needs to be written in the child class.</p>
+</blockquote>
+<h3 id="Protected"><a href="#Protected" class="headerlink" title="Protected"></a>Protected</h3><p>在parent里的protected 可以在child 里access:<br>(protect的用处,有点半private的意思)</p>
+<blockquote>
+<p>Where a parent class attribute uses the ‘private’ access modifier, the child class will need to use getter and setter methods to access the attribute.(不能直接access)<br>If the parent class attribute uses the ‘protected’ access modifier, the child class can access it without needing to use the getter and setter methods.</p>
+</blockquote>
+<p>在UML里protected是#.</p>
+<h3 id="Final-1"><a href="#Final-1" class="headerlink" title="Final"></a>Final</h3><p>Final属性的class无法拥有child class(因为final的定义).</p>
+<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>Class中有一种是abstract,特定是并不会所有的functionality都define好,可能有placeholder,而在child中会把placeholder的部分补上.<br>因为parent是abstract的,我们无法create 一个concreate的parent.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+<p>在vehicle里我们有一个abstract的method叫accelerate.<br>Abstract methods have no body:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">public</span> <span class="keyword">abstract</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">()</span></span>;</span><br></pre></td></tr></table></figure>
+<p>在parent里只是这样decleare,没有implementation.</p>
+<p>Child must be implemented in a concrete class which extends the abstract class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// car specific code implementing the method</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;  </span><br></pre></td></tr></table></figure>
+
+<p>在UML中abstract的function是斜体(italic).</p>
+<br>
+<br>
+
+<h2 id="Polymorphism"><a href="#Polymorphism" class="headerlink" title="Polymorphism"></a>Polymorphism</h2><p>Two types of polymorphism:</p>
+<ul>
+<li>Overriding</li>
+<li>Overloading</li>
+</ul>
+<blockquote>
+<p>Overriding is related to inheritance, so if a method takes an object of type interface or abstract class, the exact child object passed into it will only become known when the code runs. Hence runtime polymorphism or late binding.<br>Overloading is related to the datatypes of the arguments passed into a method. This will be known when the code calling the method is written. Hence compile time polymorphism or early binding.</p>
+</blockquote>
+<h3 id="Overriding"><a href="#Overriding" class="headerlink" title="Overriding"></a>Overriding</h3><p>Overriding很好理解,覆盖掉默认的method,比如child class要override parent class:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// generic code to accelerate a vehicle</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="meta">@Override</span></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">()</span></span>&#123;</span><br><span class="line">		<span class="comment">// car specific code to accelerate a car</span></span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>在我们想保留parent method的情况下增加条件:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaxSpeed</span><span class="params">(<span class="keyword">int</span> maxSpeed)</span></span>&#123;</span><br><span class="line">		<span class="keyword">this</span>.maxSpeed = maxSpeed;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> <span class="keyword">extends</span> <span class="title">Vehicle</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">setMaxSpeed</span><span class="params">(<span class="keyword">int</span> maxSpeed)</span></span>&#123;</span><br><span class="line">		<span class="comment">// code to validate or manipulate argument</span></span><br><span class="line">		 <span class="keyword">super</span>.setMaxSpeed(maxSpeed);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里的super是refer parent的setMaxSpeed.<br>这样先给car的speed设定条件,满足后再使用parent的method.</p>
+<p>拒绝override可以使用final.</p>
+<h3 id="Overloading"><a href="#Overloading" class="headerlink" title="Overloading"></a>Overloading</h3><p>Overloading的意思是multiple methods with the same name but with different arguments.<br>根据不同argument的data type来决定run哪个method.</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">(<span class="keyword">int</span> speedLimit)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">accelerate</span><span class="params">(<span class="keyword">double</span> hillGradient)</span> </span>&#123;&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Widening意味一些overload的type会被混淆,比如bytes shorts interger会混淆,应当避免.</p>
+<p>Constructors can be overloaded:</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">()</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(String model)</span> </span>&#123;&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Horizontal constructor chaining, arguments can be passed to a different constructor in the same class using this().</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Car</span> </span>&#123;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(<span class="keyword">int</span> maxSpeed)</span></span>&#123;</span><br><span class="line">		<span class="comment">// code to check maxSpeed is valid number</span></span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">public</span> <span class="title">Car</span><span class="params">(<span class="keyword">int</span> maxSpeed, String model)</span> </span>&#123;</span><br><span class="line">		<span class="keyword">this</span>(maxSpeed);</span><br><span class="line">		<span class="keyword">this</span>.model = model;</span><br><span class="line">	&#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>设置两个constructor,overload的使用原本的.<br>When used, this() must be the first statement in the constructor.</p>
+<br>
+<br>
+<br>
+<br>
 
     </div>
 
@@ -752,7 +1071,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Function"><span class="nav-number">1.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-type"><span class="nav-number">2.</span> <span class="nav-text">Data type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-type-chart"><span class="nav-number">2.1.</span> <span class="nav-text">Data type chart:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numeric-Literals"><span class="nav-number">2.2.</span> <span class="nav-text">Numeric Literals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Casting"><span class="nav-number">2.3.</span> <span class="nav-text">Primitive Casting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-output"><span class="nav-number">3.</span> <span class="nav-text">Input output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">4.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">5.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condition"><span class="nav-number">6.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loop"><span class="nav-number">7.</span> <span class="nav-text">Loop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">8.</span> <span class="nav-text">Debugging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class"><span class="nav-number">9.</span> <span class="nav-text">Class</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#HelloWorld"><span class="nav-number">1.</span> <span class="nav-text">HelloWorld</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Function"><span class="nav-number">2.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-type"><span class="nav-number">3.</span> <span class="nav-text">Data type</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-type-chart"><span class="nav-number">3.1.</span> <span class="nav-text">Data type chart:</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Numeric-Literals"><span class="nav-number">3.2.</span> <span class="nav-text">Numeric Literals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Primitive-Casting"><span class="nav-number">3.3.</span> <span class="nav-text">Primitive Casting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input-output"><span class="nav-number">4.</span> <span class="nav-text">Input output</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#String"><span class="nav-number">5.</span> <span class="nav-text">String</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Array"><span class="nav-number">6.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Condition"><span class="nav-number">7.</span> <span class="nav-text">Condition</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Loop"><span class="nav-number">8.</span> <span class="nav-text">Loop</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Class"><span class="nav-number">9.</span> <span class="nav-text">Class</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Constructor"><span class="nav-number">9.1.</span> <span class="nav-text">Constructor</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Final"><span class="nav-number">9.2.</span> <span class="nav-text">Final</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Dependency"><span class="nav-number">9.3.</span> <span class="nav-text">Dependency</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Dependency-1"><span class="nav-number">9.3.1.</span> <span class="nav-text">Dependency</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Association"><span class="nav-number">9.3.2.</span> <span class="nav-text">Association</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Aggregation"><span class="nav-number">9.3.3.</span> <span class="nav-text">Aggregation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Composition"><span class="nav-number">9.3.4.</span> <span class="nav-text">Composition</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Static"><span class="nav-number">9.4.</span> <span class="nav-text">Static</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Interface"><span class="nav-number">10.</span> <span class="nav-text">Interface</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Debugging"><span class="nav-number">11.</span> <span class="nav-text">Debugging</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Casting"><span class="nav-number">12.</span> <span class="nav-text">Casting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Upcasting"><span class="nav-number">12.1.</span> <span class="nav-text">Upcasting</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Downcasting"><span class="nav-number">12.2.</span> <span class="nav-text">Downcasting</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOD"><span class="nav-number">13.</span> <span class="nav-text">OOD</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">13.1.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstraction"><span class="nav-number">13.2.</span> <span class="nav-text">Abstraction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">13.3.</span> <span class="nav-text">Inheritance</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Protected"><span class="nav-number">13.3.1.</span> <span class="nav-text">Protected</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Final-1"><span class="nav-number">13.3.2.</span> <span class="nav-text">Final</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Abstract"><span class="nav-number">13.3.3.</span> <span class="nav-text">Abstract</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">13.4.</span> <span class="nav-text">Polymorphism</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Overriding"><span class="nav-number">13.4.1.</span> <span class="nav-text">Overriding</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Overloading"><span class="nav-number">13.4.2.</span> <span class="nav-text">Overloading</span></a></li></ol></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -768,7 +1087,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">258</span>
+          <span class="site-state-item-count">260</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -841,7 +1160,7 @@
     </span>
 
 
-    <span title="C">1.1m</span>
+    <span title="C">1.2m</span>
   -->
 
   <!--
@@ -849,7 +1168,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">17:13</span>
+    <span title="T">17:42</span>
 
   -->
 
@@ -859,7 +1178,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有1.1m的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有1.2m的老兔正在打瞌睡</span>
 </div>
 
         
