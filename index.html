@@ -1387,41 +1387,38 @@
 							</div>
 
 							<div class="about_title">
-								<h3>Input box / <span>留言箱</span></h3>
-								<span>If website is still working, I should be received an email if you submit a message... but I recommend direct email instead! Btw friendlink exchange are always welcome, to whoever host personal website like me~</span>
+								<h3>Message box / <span>留言箱</span> - Thank you for your message</h3>
+								<span>☃️ ❄️ 🌧 ☔️ 🌈 </span><p>
+									<span>Email input is optional if you would like an response, but if that is the case I would just recommend direct email instead. Btw friendlink exchange are always welcome for whoever host personal website like me~</span>
 								<p>
-								<span>这里是一个留言箱但是我推荐直接发邮件…！以及友联交换一直大欢迎！</span>
+								<span>这是一个可以匿名的留言箱。如果需要回复可以留下email，但如果那样我推荐直接发邮件…！以及友联交换一直大欢迎！</span>
 							</div>
-								<!-- Get your API here https://www.embedgooglemap.net -->
-							<!-- <div class="map_wrap">
-								<div class="mapouter"><div class="gmap_canvas"><iframe width="100%" height="355" id="gmap_canvas" src="https://maps.google.com/maps?q=2880%20Broadway,%20New%20York&t=&z=13&ie=UTF8&iwloc=&output=embed" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"></iframe><a href="https://fmovies-online.net">fmovies</a><br><style>.mapouter{position:relative;text-align:right;height:355px;width:100%;}</style><a href="https://www.embedgooglemap.net">embedgooglemap.net</a><style>.gmap_canvas {overflow:hidden;background:none!important;height:355px;width:100%;}</style></div></div>
-							</div> -->
 							<div class="fields">
-								<form action="/" method="post" class="contact_form" id="contact_form" autocomplete="off">
+								<form action="https://formspree.io/f/mqkglner" method="post" class="contact_form" id="contact_form" autocomplete="off">
 									<div class="returnmessage" data-success="Message received, thanks for sending!"></div>
 									<div class="empty_notice"><span>Please Fill Required Fields</span></div>
 									<div class="first">
 										<ul>
+											<!-- <li>
+												<input id="name" type="text" name="email" placeholder="Name">
+											</li> -->
 											<li>
-												<input id="name" type="text" placeholder="Name">
-											</li>
-											<li>
-												<input id="email" type="text" placeholder="Email">
+												<input id="email" type="email" name="email" placeholder="Email">
 											</li>
 										</ul>
 									</div>
 									<div class="last">
-										<textarea id="message" placeholder="Message"></textarea>
+										<textarea id="message" name="message" placeholder="Message"></textarea>
 									</div>
-									<div class="tokyo_tm_button" data-position="left">
+									<!-- <div class="tokyo_tm_button" data-position="left">
 										<a id="send_message" href="#">
 											<span>Send Message</span>
 										</a>
-									</div>
-
-									<!-- If you want to change mail address to yours, please open modal.php and go to line 4 -->
+									</div> -->
+									<button class="my_button" type="submit">Send</button>
 
 								</form>
+
 							</div>
 						</div>
 					</div>

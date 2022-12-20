@@ -7,9 +7,9 @@
 jQuery(document).ready(function(){
 
 	"use strict";
-	
+
 	// here all ready functions
-	
+
 	tokyo_tm_modalbox();
 	tokyo_tm_page_transition();
 	tokyo_tm_trigger_menu();
@@ -23,13 +23,13 @@ jQuery(document).ready(function(){
 	tokyo_tm_imgtosvg();
 	tokyo_tm_popup();
 	tokyo_tm_data_images();
-	tokyo_tm_contact_form();
+	// tokyo_tm_contact_form();
 	tokyo_tm_owl_carousel();
-	
+
 	jQuery(window).load('body', function(){
 		tokyo_tm_my_load();
 	});
-	
+
 });
 
 // -----------------------------------------------------
@@ -42,7 +42,7 @@ jQuery(document).ready(function(){
 
 function tokyo_tm_modalbox(){
 	"use strict";
-	
+
 	jQuery('.tokyo_tm_all_wrap').prepend('<div class="tokyo_tm_modalbox"><div class="box_inner"><div class="close"><a href="#"><i class="icon-cancel"></i></a></div><div class="description_wrap"></div></div></div>');
 }
 
@@ -51,16 +51,16 @@ function tokyo_tm_modalbox(){
 // -----------------------------------------------------
 
 function tokyo_tm_page_transition(){
-	
+
 	"use strict";
-	
+
 	var section 		= jQuery('.tokyo_tm_section');
 	var allLi 			= jQuery('.transition_link li');
 	var button			= jQuery('.transition_link a');
 	var wrapper 		= jQuery('.tokyo_tm_all_wrap');
 	var enter	 		= wrapper.data('enter');
 	var exit		 	= wrapper.data('exit');
-	
+
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var href		= element.attr('href');
@@ -92,7 +92,7 @@ function tokyo_tm_page_transition(){
 // -----------------------------------------------------
 
 function tokyo_tm_trigger_menu(){
-	
+
 	"use strict";
 
 	var hamburger 		= jQuery('.tokyo_tm_topbar .trigger .hamburger');
@@ -111,7 +111,7 @@ function tokyo_tm_trigger_menu(){
 		}
 		return false;
 	});
-	
+
 	mobileMenuList.on('click',function(){
 		jQuery('.tokyo_tm_topbar .trigger .hamburger').removeClass('is-active');
 		mobileMenu.removeClass('opened');
@@ -124,13 +124,13 @@ function tokyo_tm_trigger_menu(){
 // -------------------------------------------------
 
 function tokyo_tm_service_popup(){
-	
+
 	"use strict";
-	
+
 	var modalBox		= jQuery('.tokyo_tm_modalbox');
 	var button			= jQuery('.tokyo_tm_services .tokyo_tm_full_link');
 	var closePopup		= modalBox.find('.close');
-	
+
 	button.on('click',function(){
 		var element = jQuery(this);
 		var parent	= element.closest('.tokyo_tm_services .list ul li');
@@ -156,13 +156,13 @@ function tokyo_tm_service_popup(){
 // -------------------------------------------------
 
 function tokyo_tm_modalbox_news(){
-	
+
 	"use strict";
-	
+
 	var modalBox	= jQuery('.tokyo_tm_modalbox');
 	var list 		= jQuery('.tokyo_tm_news ul li');
 	var closePopup	= modalBox.find('.close');
-	
+
 	list.each(function(){
 		var element 	= jQuery(this);
 		var details 	= element.find('.list_inner').html();
@@ -196,12 +196,12 @@ function tokyo_tm_modalbox_news(){
 // -------------------------------------------------
 
 function tokyo_tm_modalbox_portfolio(){
-	
+
 	"use strict";
-	
+
 	var modalBox	= jQuery('.tokyo_tm_modalbox');
 	var button		= jQuery('.tokyo_tm_portfolio .popup_info');
-	
+
 	button.on('click',function(){
 		var element 	= jQuery(this);
 		var parent		= element.closest('li');
@@ -210,11 +210,11 @@ function tokyo_tm_modalbox_portfolio(){
 		var title 		= parent.find('.entry').data('title');
 		var category 	= parent.find('.entry').data('category');
 		console.log(image);
-		
+
 		modalBox.addClass('opened');
 		modalBox.find('.description_wrap').html(details);
 		modalBox.find('.popup_details').prepend('<div class="top_image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
-		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title"><h3>'+title+'</h3><span>'+category+'</span><div>');	
+		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title"><h3>'+title+'</h3><span>'+category+'</span><div>');
 		tokyo_tm_data_images();
 		return false;
 	});
@@ -225,9 +225,9 @@ function tokyo_tm_modalbox_portfolio(){
 // -------------------------------------------------
 
 function tokyo_tm_projects() {
-	
+
 	"use strict";
-	
+
 	jQuery('.tokyo_tm_portfolio_animation_wrap').each(function() {
 		jQuery(this).on('mouseenter', function() {
 			if (jQuery(this).data('title')) {
@@ -247,7 +247,7 @@ function tokyo_tm_projects() {
 	});
 }
 
-// filterable 
+// filterable
 
 function tokyo_tm_portfolio(){
 
@@ -260,10 +260,10 @@ function tokyo_tm_portfolio(){
 		var filter		 = jQuery('.tokyo_tm_portfolio .portfolio_filter ul');
 
 		if(filter.length){
-			// Isotope Filter 
+			// Isotope Filter
 			filter.find('a').on('click', function(){
 				var selector = jQuery(this).attr('data-filter');
-				list.isotope({ 
+				list.isotope({
 					filter				: selector,
 					animationOptions	: {
 						duration			: 750,
@@ -272,14 +272,14 @@ function tokyo_tm_portfolio(){
 					}
 				});
 				return false;
-			});	
+			});
 
 			// Change active element class
 			filter.find('a').on('click', function() {
 				filter.find('a').removeClass('current');
 				jQuery(this).addClass('current');
 				return false;
-			});	
+			});
 		}
 	}
 }
@@ -290,7 +290,7 @@ function tokyo_tm_portfolio(){
 
 function tokyo_tm_my_progress(){
 	"use strict";
-	
+
 	var list = jQuery('.tokyo_progress .progress_inner');
 	list.each(function(){
 		var element = jQuery(this);
@@ -298,7 +298,7 @@ function tokyo_tm_my_progress(){
 		var number	= element.data('value');
 		bar.css({width:number+'%'});
 	});
-	
+
 }
 
 // -----------------------------------------------------
@@ -306,12 +306,12 @@ function tokyo_tm_my_progress(){
 // -----------------------------------------------------
 
 function tokyo_tm_preloader(){
-	
+
 	"use strict";
-	
+
 	var isMobile = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i.test(navigator.userAgent) ? true : false;
 	var preloader = $('#preloader');
-	
+
 	if (!isMobile) {
 		setTimeout(function() {
 			preloader.addClass('preloaded');
@@ -330,9 +330,9 @@ function tokyo_tm_preloader(){
 // -----------------------------------------------------
 
 function tokyo_tm_my_load(){
-	
+
 	"use strict";
-	
+
 	var speed	= 500;
 	setTimeout(function(){tokyo_tm_preloader();},speed);
 }
@@ -343,9 +343,9 @@ function tokyo_tm_my_load(){
 
 function tokyo_tm_cursor(){
     "use strict";
-	
+
 	var myCursor	= jQuery('.mouse-cursor');
-	
+
 	if(myCursor.length){
 		if ($("body")) {
         const e = document.querySelector(".cursor-inner"),
@@ -368,11 +368,11 @@ function tokyo_tm_cursor(){
 // -----------------------------------------------------
 
 function tokyo_tm_imgtosvg(){
-	
+
 	"use strict";
-	
+
 	jQuery('img.svg').each(function(){
-		
+
 		var jQueryimg 		= jQuery(this);
 		var imgClass		= jQueryimg.attr('class');
 		var imgURL			= jQueryimg.attr('src');
@@ -402,7 +402,7 @@ function tokyo_tm_imgtosvg(){
 // -----------------------------------------------------
 
 function tokyo_tm_popup(){
-	
+
 	"use strict";
 
 	jQuery('.gallery_zoom').each(function() { // the containers for all your galleries
@@ -427,11 +427,11 @@ function tokyo_tm_popup(){
 			fixedContentPos: false
 		});
 	});
-	
+
 	jQuery('.soundcloude_link').magnificPopup({
 	  type : 'image',
 	   gallery: {
-		   enabled: true, 
+		   enabled: true,
 	   },
 	});
 }
@@ -441,11 +441,11 @@ function tokyo_tm_popup(){
 // -----------------------------------------------------
 
 function tokyo_tm_data_images(){
-	
+
 	"use strict";
-	
+
 	var data			= jQuery('*[data-img-url]');
-	
+
 	data.each(function(){
 		var element			= jQuery(this);
 		var url				= element.data('img-url');
@@ -458,44 +458,44 @@ function tokyo_tm_data_images(){
 // -----------------------------------------------------
 
 function tokyo_tm_contact_form(){
-	
+
 	"use strict";
-	
+
 	jQuery(".contact_form #send_message").on('click', function(){
-		
+
 		var name 		= jQuery(".contact_form #name").val();
 		var email 		= jQuery(".contact_form #email").val();
 		var message 	= jQuery(".contact_form #message").val();
 		var subject 	= jQuery(".contact_form #subject").val();
 		var success     = jQuery(".contact_form .returnmessage").data('success');
-	
+
 		jQuery(".contact_form .returnmessage").empty(); //To empty previous error/success message.
-		//checking for blank fields	
+		//checking for blank fields
 		if(name===''||email===''||message===''){
-			
+
 			jQuery('div.empty_notice').slideDown(500).delay(2000).slideUp(500);
 		}
 		else{
 			// Returns successful data submission message when the entered information is stored in database.
 			jQuery.post("modal/contact.php",{ ajax_name: name, ajax_email: email, ajax_message:message, ajax_subject: subject}, function(data) {
-				
+
 				jQuery(".contact_form .returnmessage").append(data);//Append returned message to message paragraph
-				
-				
+
+
 				if(jQuery(".contact_form .returnmessage span.contact_error").length){
-					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);		
+					jQuery(".contact_form .returnmessage").slideDown(500).delay(2000).slideUp(500);
 				}else{
 					jQuery(".contact_form .returnmessage").append("<span class='contact_success'>"+ success +"</span>");
 					jQuery(".contact_form .returnmessage").slideDown(500).delay(4000).slideUp(500);
 				}
-				
+
 				if(data===""){
 					jQuery("#contact_form")[0].reset();//To reset form fields on success
 				}
-				
+
 			});
 		}
-		return false; 
+		return false;
 	});
 }
 
@@ -506,9 +506,9 @@ function tokyo_tm_contact_form(){
 function tokyo_tm_owl_carousel(){
 
 	"use strict";
-	
+
 	var carousel			= jQuery('.tokyo_tm_testimonials .owl-carousel');
-	
+
 	carousel.owlCarousel({
 		loop: true,
 		items: 2,
