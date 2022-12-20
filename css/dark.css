@@ -163,7 +163,7 @@ body.dark .tokyo_tm_modalbox_about .counter ul li .name{
 }
 body.dark .tokyo_tm_title span{
 	background-color: rgba(255,255,255,.04);
-	color: #777;
+	color: #959595;
 }
 body.dark .tokyo_tm_portfolio .portfolio_filter ul li a{
 	color: #bbb;
@@ -232,7 +232,7 @@ body.dark .tokyo_tm_modalbox_about .about_title h3{
 	color: #fff;
 }
 body.dark .progress_inner > span{
-	color: #bbb;
+	color: #fff;
 }
 body.dark .progress_inner .background{
 	background: rgba(255,255,255,.09);
@@ -286,7 +286,7 @@ body.dark .tokyo_tm_modalbox .main_details .detailbox .share li a:hover{
 	color: #fff;
 }
 body.dark .tokyo_tm_modalbox .main_content .icon i{
-	color: #bbb;
+	color: #fff;
 }
 body.dark .tokyo_tm_modalbox .date{
 	color: #bbb;
@@ -300,3 +300,94 @@ body.dark .tokyo_tm_modalbox .date a:hover{
 body.dark .tokyo_tm_modalbox .details .extra:before{
 	background-color: rgba(255,255,255,.1);
 }
+body.dark .tokyo_tm_about .about_title{
+	border-bottom-color: rgba(255,255,255,.1);
+}
+body.dark .tokyo_tm_about .about_text{
+	border-bottom-color: rgba(255,255,255,.1);
+}
+body.dark .tokyo_tm_short_info{
+	border-bottom-color: rgba(255,255,255,.1);
+}
+body.dark .tokyo_tm_info ul li span:first-child{
+	color: #fff;
+}
+body.dark .tokyo_tm_info ul li a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_info ul li a:hover{
+	color: #fff;
+}
+body.dark .tokyo_tm_progressbox{
+	background-color: #494b50;
+}
+body.dark .tokyo_tm_skill_list ul li .svg{
+	color: #fff;
+}
+body.dark .tokyo_tm_resumebox{
+	background-color: #494b50;
+}
+body.dark .tokyo_tm_resume_list ul li .time span{
+	background-color: rgba(255,255,255,.05);
+	color: #fff;
+}
+body.dark .tokyo_tm_resume_list ul:before{
+	background-color: rgba(255,255,255,.07);
+}
+body.dark .tokyo_tm_resume_list ul li:before{
+	background-color: #494b50;
+	border-color: rgba(255,255,255,.2);
+}
+body.dark .tokyo_tm_testimonials .list ul li .text{
+	border-color: #56585c;
+}
+body.dark .tokyo_tm_testimonials .list ul li .text:before{
+	border-top-color: #56585c;
+}
+body.dark .tokyo_tm_testimonials .list ul li .text:after{
+	border-top-color: #34353a;
+}
+body.dark .tokyo_tm_services .list ul li .list_inner{
+	background-color: #494b50;
+	border: none;
+}
+
+body.dark .tokyo_tm_services .list ul li .number{
+	background-color: rgba(255,255,255,.03);
+	color: #fff;
+}
+body.dark .tokyo_tm_services .list ul li .list_inner:hover .number{
+	background-color: rgba(255,255,255,.08);
+}
+body.dark .tokyo_tm_services .list ul li .title{
+	color: #fff;
+}
+body.dark .tokyo_tm_modalbox .description_wrap:after{
+	background-color: #34353a;
+}
+body.dark .tokyo_tm_modalbox .description_wrap:before{
+	background-color: #34353a;
+}
+body.dark .tokyo_tm_partners{
+	background-color: #494b50;
+}
+body.dark .tokyo_tm_partners .partners_inner{
+	border-color: #56585c;
+}
+body.dark .tokyo_tm_partners ul li{
+	border-color: #56585c;
+}
+body.dark .tokyo_tm_facts .list ul li .list_inner{
+	border-color: #56585c;
+}
+body.dark .tokyo_tm_pricing{
+	background-color: #494b50;
+}
+body.dark .tokyo_tm_pricing .list > ul > li .list_inner{
+	border-color: rgba(255,255,255,.2)
+}
+body.dark .tokyo_tm_pricing .popular{
+	background-color: #fff;
+	color: #000;
+}
+

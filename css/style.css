@@ -1,7 +1,7 @@
 @charset "utf-8";
 
 /*
-/*	Copyright (c) 2021-2022 Marketify
+/*	Copyright (c) 2022 Marketify
 /*	Author: Marketify
 /*	This file is made for CURRENT TEMPLATE
 
@@ -32,7 +32,7 @@ body{
 	font-family: "Mulish";
 	font-size: 15px;
 	line-height: 30px;
-	letter-spacing: 0.5px;
+	letter-spacing: 0px;
 	word-wrap: break-word;
 	font-weight: 400;
 	background-color: #fff;
@@ -73,7 +73,7 @@ img.svg{
 }
 
 .container{
-	max-width: 968px;
+	max-width: 1070px;
 	width:100%;
 	margin-left: auto;
 	margin-right: auto;
@@ -96,6 +96,10 @@ h3 { font-size: 30px; }
 h4 { font-size: 24px; }
 h5 { font-size: 20px; }
 h6 { font-size: 16px; }
+
+a{
+	text-decoration: none;
+}
 
 .tokyo_tm_all_wrap{
 	width: 100%;
@@ -256,6 +260,17 @@ h6 { font-size: 16px; }
 	max-width: 100px;
 	max-height: 40px;
 }
+.tokyo_tm_topbar .logo h3{
+	font-weight: 900;
+	font-family: "Poppins";
+	font-size: 25px;
+	letter-spacing: 4px;
+}
+.tokyo_tm_topbar .logo[data-type="image"] img{display: inline-block;}
+.tokyo_tm_topbar .logo[data-type="image"] h3{display: none;}
+.tokyo_tm_topbar .logo[data-type="text"] img{display: none;}
+.tokyo_tm_topbar .logo[data-type="text"] h3{display: inline-block;}
+
 .tokyo_tm_topbar .hamburger{
 	padding: 0px;
 }
@@ -306,7 +321,6 @@ h6 { font-size: 16px; }
 	margin: 0px 0px 7px 0px;
 }
 .tokyo_tm_mobile_menu .menu_list ul li a{
-	text-decoration: none;
 	color: #000;
 	font-family: "Montserrat";
 }
@@ -329,11 +343,21 @@ h6 { font-size: 16px; }
 	width: 100%;
 	height: auto;
 }
-.tokyo_tm_all_wrap .leftpart img{
+.tokyo_tm_all_wrap .leftpart .logo img{
 	max-width: 150px;
 }
+.tokyo_tm_all_wrap .leftpart .logo h3{
+	font-family: "Poppins";
+	font-weight: 900;
+	font-size: 31px;
+	letter-spacing: 5px;
+}
+.tokyo_tm_all_wrap .leftpart .logo[data-type="image"] img{display: inline-block;}
+.tokyo_tm_all_wrap .leftpart .logo[data-type="image"] h3{display: none;}
+.tokyo_tm_all_wrap .leftpart .logo[data-type="text"] img{display: none;}
+.tokyo_tm_all_wrap .leftpart .logo[data-type="text"] h3{display: inline-block;}
 .tokyo_tm_all_wrap .leftpart .menu{
-	padding: 40px 0px 50px 0px;
+	padding: 50px 0px 50px 0px;
 	width: 100%;
 	float: left;
 }
@@ -347,7 +371,6 @@ h6 { font-size: 16px; }
 	float: left;
 }
 .tokyo_tm_all_wrap .leftpart .menu ul li a{
-	text-decoration: none;
 	color: #767676;
 	display: inline-block;
 	font-weight: 500;
@@ -361,11 +384,9 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_all_wrap .leftpart .menu ul li a:hover{
 	color: #000;
-	letter-spacing: 2px;
 }
 .tokyo_tm_all_wrap .leftpart .menu ul li.active a{
 	color: #000;
-	letter-spacing: 2px;
 }
 .tokyo_tm_all_wrap .leftpart .copyright{
 	width: 100%;
@@ -376,10 +397,8 @@ h6 { font-size: 16px; }
 	color: #999;
 	font-family: "Montserrat";
 	line-height: 25px;
-	font-style: italic;
 }
 .tokyo_tm_all_wrap .leftpart .copyright a{
-	text-decoration: none;
 	color: #787878;
 	font-weight: 500;
 
@@ -391,7 +410,6 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_all_wrap .leftpart .copyright a:hover{
 	color: #000;
-	letter-spacing: 2px;
 }
 
 /*---------------------------------------------------*/
@@ -473,6 +491,13 @@ h6 { font-size: 16px; }
 	position: relative;
 	border-radius: 100%;
 }
+.tokyo_tm_home .avatar[data-type="square"] .image{
+	animation: none;
+}
+.tokyo_tm_home .avatar[data-type="circle"] .image{
+	animation: none;
+	border-radius: 100%;
+}
 .tokyo_tm_home .avatar .image{
 	position: absolute;
 	top: 0px;
@@ -512,10 +537,9 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_home .details .job{
 	font-family: "Montserrat";
-	font-style: italic;
 	font-weight: 500;
 	max-width: 450px;
-	margin-bottom: 30px;
+	margin-bottom: 25px;
 }
 .tokyo_tm_home .social{
 	width: 100%;
@@ -533,7 +557,6 @@ h6 { font-size: 16px; }
 	margin-right: 0px;
 }
 .tokyo_tm_home .social ul li a{
-	text-decoration: none;
 	color: #000;
 	font-size: 20px;
 
@@ -558,85 +581,7 @@ h6 { font-size: 16px; }
 	float: left;
 	padding: 100px 0px 100px 0px;
 }
-.tokyo_tm_about .about_image{
-	position: relative;
-	margin-bottom: 48px;
-}
-.tokyo_tm_about .about_image img{
-	opacity: 0;
-	min-width: 100%;
-}
-.tokyo_tm_about .about_image .main{
-	position: absolute;
-	top: 0px;
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-.tokyo_tm_about .about_image img{
-	min-width: 100%;
-	box-shadow: 0px 0px 20px rgba(0,0,0,.12);
-}
-.tokyo_tm_about .description{
-	width: 100%;
-	height: auto;
-	clear: both;
-}
-.tokyo_tm_about .description_inner{
-	width: 100%;
-	display: flex;
-	justify-content: space-between;
-}
-.tokyo_tm_about .description .left{
-	width: 55%;
-	padding-right: 50px;
-}
-.tokyo_tm_about .description .left p{
-	margin-bottom: 35px;
-	font-style: italic;
-}
-.tokyo_tm_about .description .name{
-	font-weight: 700;
-	font-size: 22px;
-	margin-bottom: 26px;
-}
-.tokyo_tm_about .description .right{
-	width: 45%;
-	padding-left: 50px;
-}
-.tokyo_tm_about .description .right > ul{
-	margin: 0px;
-	list-style-type: none;
-}
-.tokyo_tm_about .description .right > ul > li{
-	margin: 0px;
-	width: 100%;
-	float: left;
-}
-.tokyo_tm_about .description .right > ul > li span{
-	min-width: 90px;
-	display: inline-block;
-	font-weight: 700;
-	color: #000;
-	font-style: italic;
-}
-.tokyo_tm_about .description .right > ul > li a{
-	text-decoration: none;
-	color: #787878;
 
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.tokyo_tm_about .description .right > ul > li a:hover{
-	color: #000;
-	letter-spacing: 2px;
-}
 .tokyo_tm_button{
 	width: 100%;
 	height: auto;
@@ -644,12 +589,10 @@ h6 { font-size: 16px; }
 	float: left;
 }
 .tokyo_tm_button a{
-	text-decoration: none;
 	color: #fff;
 	display: inline-block;
 	background-color: #000;
 	padding: 9px 40px 14px 40px;
-	font-style: italic;
 
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
@@ -657,136 +600,123 @@ h6 { font-size: 16px; }
 	     -o-transition: all .3s ease;
 	        transition: all .3s ease;
 }
-.tokyo_tm_button a:hover{
-	letter-spacing: 2px;
-}
-.tokyo_tm_modalbox_about{
-	position: fixed;
-	top: 0px;
-	left: 0px;
-	right: 0px;
-	height: 100vh;
-	z-index: 15;
-	background-color: rgba(0,0,0,.8);
-	opacity: 0;
-	visibility: hidden;
-
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.tokyo_tm_modalbox_about.opened{
-	opacity: 1;
-	visibility: visible;
-}
-.tokyo_tm_modalbox_about .container{
-	height: 100vh;
-}
-.tokyo_tm_modalbox_about .box_inner{
-	position: absolute;
-	top: 70px;
-	bottom: 70px;
-	width: 968px;
-	left: 50%;
-	transform: translateX(-50%);
-	background-color: #fff;
-	z-index: 1;
-	opacity: 0;
-	visibility: hidden;
-	margin-top: -20px;
-	transition-delay: .3s;
-
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.tokyo_tm_modalbox_about.opened .box_inner{
-	opacity: 1;
-	visibility: visible;
-	margin-top: 0px;
-}
-.tokyo_tm_modalbox_about .close{
-	position: fixed;
-	left: 100%;
-	top: 0px;
-	margin-left: 30px;
-	z-index: 10;
-}
-.tokyo_tm_modalbox_about .close a{
-	display: block;
-	width: 40px;
-	height: 40px;
-	text-decoration: none;
-	color: #fff;
-	border:2px solid #fff;
-	border-radius: 10px;
-	position: relative;
-
-	-webkit-transition: all .3s ease;
-	   -moz-transition: all .3s ease;
-	    -ms-transition: all .3s ease;
-	     -o-transition: all .3s ease;
-	        transition: all .3s ease;
-}
-.tokyo_tm_modalbox_about .close a:hover{
-	border-radius: 100%;
-}
-.tokyo_tm_modalbox_about .close a i{
-	position: absolute;
-	top: 50%;
-	left: 50%;
-	transform: translate(-50%,-50%);
-}
-.tokyo_tm_modalbox_about .description_wrap{
-	position: relative;
-	width: 100%;
-	height: 100%;
-	float: left;
-	overflow: hidden;
-	overflow-y: scroll;
-	padding: 90px 70px 75px 70px;
-}
-.tokyo_tm_modalbox_about .description_wrap::-webkit-scrollbar{
-  width: 11px;
-}
-.tokyo_tm_modalbox_about .description_wrap{
-  scrollbar-width: thin;
-  scrollbar-color: #999 #fff;
-}
-.tokyo_tm_modalbox_about .description_wrap:-webkit-scrollbar-track{
-  background: #fff;
-}
-.tokyo_tm_modalbox_about .description_wrap::-webkit-scrollbar-thumb{
-  background-color: #999;
-  border-radius: 6px;
-  border: 3px solid #fff;
-}
-.tokyo_tm_modalbox_about .my_box{
+.tokyo_tm_about .top_author_image{
 	width: 100%;
 	height: auto;
 	clear: both;
-	display: flex;
-	margin-bottom: 92px;
+	float: left;
+	position: relative;
+	margin-bottom: 35px;
 }
-.tokyo_tm_modalbox_about .my_box .left{
+.tokyo_tm_about .top_author_image img{
+	min-width: 100%;
+}
+.tokyo_tm_about .about_title{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	border-bottom: 1px solid #DFDFDF;
+	padding-bottom: 20px;
+	margin-bottom: 27px;
+}
+.tokyo_tm_about .about_title h3{
+    font-size: 22px;
+    font-weight: 700;
+}
+.tokyo_tm_about .about_text{
+   	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	border-bottom: 1px solid #DFDFDF;
+	padding-bottom: 31px;
+	margin-bottom: 30px;
+}
+.tokyo_tm_about .about_text p{
+   	margin-bottom: 11px;
+}
+.tokyo_tm_about .about_text p:last-child{
+   	margin-bottom: 0px;
+}
+.tokyo_tm_short_info{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+	border-bottom: 1px solid #DFDFDF;
+	padding-bottom: 30px;
+	margin-bottom: 40px;
+}
+.tokyo_tm_short_info .left{
+	width: 100%; /* 50% */
+	padding-right: 50px;
+}
+.tokyo_tm_short_info .right{
+	width: 50%;
+	padding-left: 50px;
+}
+.tokyo_tm_info{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_info ul{
+	margin: 0px;
+	list-style-type: none;
+}
+.tokyo_tm_info ul li{
+	margin: 0px;
+}
+.tokyo_tm_info ul li span:first-child{
+	min-width: 100px;
+    float: left;
+    margin-right: 10px;
+    font-weight: 700;
+	color: #000;
+}
+.tokyo_tm_info ul li a{
+	color: #767676;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_info ul li a:hover{
+	color: #000;
+}
+.tokyo_tm_progressbox{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	background-color: #fff;
+	padding: 93px 0px 100px 0px;
+}
+.tokyo_tm_progressbox .in{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+}
+.tokyo_tm_progressbox .left{
 	width: 50%;
 	padding-right: 50px;
 }
-.tokyo_tm_modalbox_about .about_title h3{
-	font-weight: 700;
-	color: #000;
-	font-size: 20px;
+.tokyo_tm_progressbox .right{
+	width: 50%;
+	padding-left: 50px;
 }
 .tokyo_progress{
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
-	padding-top: 33px;
 }
 .progress_inner{
 	width:100%;
@@ -801,7 +731,6 @@ h6 { font-size: 16px; }
 	display:block;
 	text-align:left;
 	color: #000;
-	font-style: italic;
 }
 .progress_inner span.number{
 	float: right;
@@ -814,79 +743,495 @@ h6 { font-size: 16px; }
 	height:3px;
 }
 .progress_inner .background .bar_in{
-	height:100%;
 	background:#000;
-	width:0px;
 	overflow:hidden;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+	bottom: 0px;
 }
 .progress_inner .background .bar{
-	width:0px;
-	height:100%;
-}
-.progress_inner .background .bar.open{
-	-webkit-animation: wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Safari 4+ */
-	-moz-animation:    wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* Fx 5+ */
-	animation:         wow 2s cubic-bezier(0.165, 0.840, 0.440, 1.000);  /* IE 10+ */
 	width:100%;
+	height:100%;
+	position: relative;
 }
-
-@-webkit-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
-@-moz-keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
-@keyframes wow {0%{ width:0%; } 100%{ width:100%; }}
-
-.tokyo_tm_modalbox_about .my_box .right{
+.tokyo_tm_skillbox{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding: 90px 0px 90px 0px;
+}
+.tokyo_tm_skillbox .in{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+}
+.tokyo_tm_skillbox .left{
+	width: 50%;
+	padding-right: 50px;
+}
+.tokyo_tm_skillbox .right{
 	width: 50%;
 	padding-left: 50px;
 }
-.tokyo_tm_modalbox_about .counter{
+.tokyo_section_title{
 	width: 100%;
-	float: left;
-	clear: both;
-}
-.tokyo_tm_modalbox_about .counter ul{
-	margin: 0px 0px 42px -50px;
-	list-style-type: none;
-	padding-top: 45px;
-	display: flex;
-	flex-wrap: wrap;
-}
-.tokyo_tm_modalbox_about .counter ul li{
-	margin: 0px 0px 50px 0px;
-	width: 33.3333%;
-	float: left;
-	padding-left: 50px;
-}
-.tokyo_tm_modalbox_about .list_inner{
-	width: 100%;
-	height: 100%;
+	height: auto;
 	clear: both;
 	float: left;
-	position: relative;
-	border: 1px solid rgba(0,0,0,.1);
-	text-align: center;
-	padding: 40px 20px;
+	margin-bottom: 40px;
 }
-.tokyo_tm_modalbox_about .counter ul li h3{
-	font-weight: 600;
-	font-size: 20px;
-	margin-bottom: 3px;
+.tokyo_section_title h3{
+    font-size: 20px;
+    font-weight: 700;
 }
-.tokyo_tm_modalbox_about .counter ul li .name{
-	font-style: italic;
-}
-.tokyo_tm_modalbox_about .partners{
+.tokyo_tm_skill_list{
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 }
-.tokyo_tm_modalbox_about .partners ul{
+.tokyo_tm_skill_list ul{
 	margin: 0px;
 	list-style-type: none;
-	padding-top: 15px;
 }
-.tokyo_tm_modalbox_about .partners ul li{
+.tokyo_tm_skill_list ul li{
 	margin: 0px;
+	padding-left: 25px;
+	position: relative;
+}
+.tokyo_tm_skill_list ul li .svg{
+	color: #000;
+    width: 10px;
+    height: 10px;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    transform: translateY(-50%);
+}
+.tokyo_tm_resumebox{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	background-color: #fff;
+	padding: 93px 0px;
+}
+.tokyo_tm_resumebox .in{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+}
+.tokyo_tm_resumebox .left{
+	width: 50%;
+	padding-right: 50px;
+}
+.tokyo_tm_resumebox .right{
+	width: 50%;
+	padding-left: 50px;
+}
+.tokyo_tm_resume_list{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_resume_list ul{
+	margin: 0px;
+	list-style-type: none;
+	position: relative;
+	display: inline-block;
+	padding-top: 10px;
+}
+.tokyo_tm_resume_list ul:before{
+	content: "";
+    position: absolute;
+    width: 1px;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0,0,0,.07);
+}
+.tokyo_tm_resume_list ul li{
+	margin: 0px;
+	width: 100%;
+	float: left;
+	position: relative;
+	padding-left: 20px;
+	padding-bottom: 45px;
+}
+.tokyo_tm_resume_list ul li:last-child{padding-bottom: 0px;}
+.tokyo_tm_resume_list ul li:before{
+	content: "";
+    position: absolute;
+    height: 18px;
+    width: 18px;
+    background: #fff;
+    border-radius: 100%;
+    border: solid 1px #CCC;
+    left: -9px;
+    top: 8px;
+}
+.tokyo_tm_resume_list ul li .list_inner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	display: flex;
+	position: relative;
+}
+.tokyo_tm_resume_list ul li .time{
+	width: 50%;
+	padding-right: 20px;
+}
+.tokyo_tm_resume_list ul li .time span{
+	display: inline-block;
+	padding: 5px 25px;
+	background-color: rgba(0,0,0,.05);
+	border-radius: 50px;
+	font-size: 14px;
+	white-space: nowrap;
+}
+.tokyo_tm_resume_list ul li .place{
+	width: 50%;
+	padding-left: 20px;
+}
+.tokyo_tm_resume_list ul li .place h3{
+	font-size: 16px;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.tokyo_tm_resume_list ul li .place span{
+	font-size: 14px;
+}
+.tokyo_tm_testimonials{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding: 100px 0px;
+}
+.tokyo_tm_testimonials .list{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	overflow: hidden;
+}
+.tokyo_tm_testimonials .list ul{
+	margin: 0px;
+	list-style-type: none;
+	cursor: e-resize;
+}
+.tokyo_tm_testimonials .list ul li{
+	margin: 0px;
+}
+.tokyo_tm_testimonials .list ul li .list_inner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	position: relative;
+}
+.tokyo_tm_testimonials .list ul li .text{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	position: relative;
+	border: 2px solid #E5EDF4;
+	padding: 40px;
+	margin-bottom: 30px;
+}
+.tokyo_tm_testimonials .list ul li .text:before{
+	position: absolute;
+	content: "";
+	height: 0px;
+    width: 0px;
+	top: 100%;
+    left: 50px;
+    border: solid transparent;
+    border-top-color: #E5EDF4;
+    border-width: 18px 18px 0px 0px;
+}
+.tokyo_tm_testimonials .list ul li .text:after{
+	position: absolute;
+	content: "";
+	top: 100%;
+    left: 50px;
+	height: 0px;
+    width: 0px;
+    border: solid transparent;
+    border-top-color: #f6fbff;
+    border-width: 14px 13px 0px 0px;
+    margin-left: 2px;
+}
+.tokyo_tm_testimonials .list ul li .text i{
+	position: absolute;
+	z-index: 1;
+	font-size: 30px;
+	top: -29px;
+	left: 50px;
+}
+.tokyo_tm_testimonials .details{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+	align-items: center;
+	padding-left: 20px;
+}
+.tokyo_tm_testimonials .details .image{
+	position: relative;
+	width: 60px;
+	height: 60px;
+}
+.tokyo_tm_testimonials .details .image .main{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+	border-radius: 100%;
+}
+.tokyo_tm_testimonials .details .info{
+	padding-left: 20px;
+}
+.tokyo_tm_testimonials .details .info h3{
+	font-size: 16px;
+    margin-bottom: 2px;
+    font-weight: 600;
+}
+.tokyo_tm_testimonials .details .info span{
+	font-size: 14px;
+}
+.tokyo_tm_testimonials .owl-carousel .owl-stage-outer{
+	overflow: hidden;
+}
+.tokyo_tm_testimonials .owl-carousel .owl-stage-outer{
+	overflow: visible;
+}
+.tokyo_tm_testimonials .owl-item.active{
+	opacity: 1;
+}
+.tokyo_tm_testimonials .owl-item{
+	opacity: 0;
+}
+
+/*---------------------------------------------------*/
+/*	07) TOKYO SERVICE
+/*---------------------------------------------------*/
+
+.tokyo_tm_services{
+	width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+    padding: 100px 0px 100px 0px;
+}
+.tokyo_tm_services .list{
+	width: 100%;
+    height: auto;
+    clear: both;
+    float: left;
+}
+.tokyo_tm_services .list ul{
+	margin: 0px 0px 0px -40px;
+	list-style-type: none;
+	display: flex;
+	flex-wrap: wrap;
+}
+.tokyo_tm_services .list ul li{
+	margin: 0px 0px 40px 0px;
+	width: 33.3333%;
+	padding-left: 40px;
+}
+.tokyo_tm_services .list ul li .list_inner{
+	width: 100%;
+    height: 100%;
+    clear: both;
+    float: left;
+	position: relative;
+	border: 1px solid rgba(0,0,0,.1);
+    background-color: #fff;
+    padding: 45px 30px 40px 30px;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_services .list ul li .list_inner:hover{
+	border: 1px solid rgba(0,0,0,.2);
+}
+.tokyo_tm_services .list ul li .number{
+	display: inline-block;
+    margin-bottom: 25px;
+    position: relative;
+    width: 60px;
+    height: 60px;
+    line-height: 60px;
+    text-align: center;
+    border-radius: 100%;
+    background-color: rgba(0,0,0,.03);
+    font-weight: 700;
+    color: #000;
+    font-family: "Montserrat";
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_services .list ul li .list_inner:hover .number{
+	background-color: rgba(0,0,0,.08);
+}
+.tokyo_tm_services .list ul li .title{
+	font-weight: 700;
+    color: #000;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+.tokyo_tm_services .list ul li .tokyo_tm_read_more{
+	margin-top: 7px;
+}
+.tokyo_tm_services .list ul li .list_inner:hover .tokyo_tm_read_more a:before{
+	animation: read-more-anim-2;
+	animation-fill-mode: forwards;
+	animation-duration: .4s;
+	animation-timing-function: cubic-bezier(.6,.01,0,1);
+}
+.tokyo_tm_services .list ul li .list_inner:hover .tokyo_tm_read_more a span{
+	transform: translateX(0%);
+}
+
+.tokyo_tm_services .top_author_image{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	position: relative;
+	margin-bottom: 35px;
+}
+.tokyo_tm_services .top_author_image img{
+	min-width: 100%;
+}
+
+.tokyo_tm_services .popup_service_image{
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	z-index: -111;
+}
+.tokyo_tm_services .service_hidden_details{
+	opacity: 0;
+	visibility: hidden;
+	display: none;
+	position: absolute;
+	z-index: -111;
+}
+.tokyo_tm_modalbox .service_popup_informations{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_modalbox .service_popup_informations .image{
+	width: 100%;
+	float: left;
+	position: relative;
+	margin-bottom: 37px;
+}
+.tokyo_tm_modalbox .service_popup_informations .image img{
+	position: relative;
+	min-width: 100%;
+	opacity: 0;
+}
+.tokyo_tm_modalbox .service_popup_informations .image .main{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
+}
+.tokyo_tm_modalbox .service_popup_informations .main_title{
+	width: 100%;
+	float: left;
+	margin-bottom: 23px;
+}
+.tokyo_tm_modalbox .service_popup_informations .main_title h3{
+	font-size: 23px;
+	font-weight: 600;
+}
+.tokyo_tm_modalbox .service_popup_informations .descriptions{
+	width: 100%;
+	float: left;
+}
+.tokyo_tm_modalbox .service_popup_informations .descriptions p{
+	margin-bottom: 15px;
+}
+.tokyo_tm_modalbox .service_popup_informations .descriptions p:last-child{
+	margin-bottom: 0px;
+}
+.tokyo_tm_partners{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	background-color: #fff;
+	padding: 100px 0px;
+}
+.tokyo_tm_partners .partners_inner{
+	width: 100%;
+    float: left;
+    clear: both;
+    overflow: hidden;
+    border: 2px solid #eee;
+}
+.tokyo_tm_partners ul{
+	margin: -2px -10px -2px -2px;
+    list-style-type: none;
+    padding-top: 2px;
+    float: left;
+    padding-left: 2px;
+    min-width: calc(100% + 12px);
+}
+.tokyo_tm_partners ul li{
+	margin: 0px;
+    float: left;
+    width: 25%;
+    border: 2px solid #eee;
+    text-align: center;
+    height: 145px;
+    line-height: 145px;
+    position: relative;
+    margin-top: -2px;
+    margin-left: -2px;
+    overflow: hidden;
+}
+.tokyo_tm_partners ul li img{
+	max-width: 50%;
+  max-height: 100px;
+}
+.tokyo_tm_partners ul li .list_inner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
 	opacity: .5;
 
 	-webkit-transition: all .3s ease;
@@ -895,12 +1240,157 @@ h6 { font-size: 16px; }
 	     -o-transition: all .3s ease;
 	        transition: all .3s ease;
 }
-.tokyo_tm_modalbox_about .partners ul li:hover{
+.tokyo_tm_partners ul li .list_inner:hover{
 	opacity: 1;
 }
 
+.tokyo_tm_pricing{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding: 10px 0px 60px 0px;/* padding: 100px 0px 60px 0px;  */
+	/* background-color: #fff; */
+}
+.tokyo_tm_pricing .tokyo_tm_button a{
+	padding: 6px 40px 11px 40px;
+}
+.tokyo_tm_pricing .list{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_pricing .list > ul{
+	margin: 0px 0px 0px -40px;/* margin: 0px 0px 0px -40px; */
+	list-style-type: none;
+}
+.tokyo_tm_pricing .list > ul > li{
+	margin: 0px 0px 60px 0px;/* margin: 0px 0px 40px 0px; */
+	padding-left: 20px;/* padding-left: 40px; */
+	width: 25%; /* width: 33.3333%; */
+	float: left;
+}
+.tokyo_tm_pricing .list > ul > li .list_inner{
+	width: 100%;
+  height: auto;
+  clear: both;
+  float: left;
+  position: relative;
+  border: 1px solid rgba(0,0,0,.1);
+	padding: 25px 40px 45px;	/* padding: 27px 40px 45px; */
+}
+.tokyo_tm_pricing .price{
+	width: 100%;
+	float: left;
+}
+.tokyo_tm_pricing .price h3{
+	font-size: 40px;
+  font-weight: 600;
+}
+.tokyo_tm_pricing .price span{
+	position: relative;
+  display: inline-block;
+}
+.tokyo_tm_pricing .price .currency{
+	position: absolute!important;
+    bottom: 10px;
+    right: -10px;
+    font-size: 15px;
+}
+.tokyo_tm_pricing .plan{
+	width: 100%;
+	float: left;
+}
+.tokyo_tm_pricing .plan h3{
+	font-weight: 600; /* font-weight: 600;*/
+	font-size: 17px;
+	/* border-bottom: 1px solid rgba(0,0,0,.1); */
+	margin-bottom: 10px;
+	/* padding-bottom: 10px; */
+	text-align: center;
+}
+.tokyo_tm_pricing .item{
+	margin: 0px;
+	/* font-size: 14px; */
+	text-align: center;
+	list-style-type: none;
+}
+.tokyo_tm_pricing .item li{
+	margin: 0px;
+	opacity: .5;
+}
+.tokyo_tm_pricing .item li.active{
+	opacity: 1;
+}
+
+/* .tokyo_tm_pricing .plan .image .main{
+	position: absolute;
+	top: 0px;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: left;
+	opacity: 0.2;
+ 	border-radius: 20%;
+} */
+
+.tokyo_tm_pricing .tokyo_tm_button{
+	margin-top: 30px;
+}
+.tokyo_tm_pricing .popular{
+	position: absolute;
+    display: inline-block;
+    background-color: #000;
+    color: #fff;
+    font-size: 13px;
+    padding: 0 20px 3px;
+    top: -17px;
+    right: 10px;
+}
+.tokyo_tm_facts{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding: 100px 0px 60px 0px;
+}
+.tokyo_tm_facts .list{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_facts .list ul{
+	margin: 0px 0px 0px -40px;
+	list-style-type: none;
+}
+.tokyo_tm_facts .list ul li{
+	margin: 0px 0px 40px 0px;
+	padding-left: 40px;
+	width: 33.333%;
+	float: left;
+}
+.tokyo_tm_facts .list ul li .list_inner{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	position: relative;
+	border: 1px solid rgba(0,0,0,.1);
+	text-align: center;
+    padding: 40px 20px;
+}
+.tokyo_tm_facts .list h3{
+	font-weight: 600;
+	font-size: 20px;
+	margin-bottom: 3px;
+}
+
 /*---------------------------------------------------*/
-/*	07) ARLO PORTFOLIO
+/*	07) TOKYO PORTFOLIO
 /*---------------------------------------------------*/
 
 .tokyo_tm_title{
@@ -946,7 +1436,6 @@ h6 { font-size: 16px; }
 	margin-right: 0px;
 }
 .tokyo_tm_portfolio .portfolio_filter ul li a{
-	text-decoration: none;
 	color: #767676;
 	display: inline-block;
 	font-weight: 500;
@@ -960,11 +1449,9 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_portfolio .portfolio_filter ul li a.current{
 	color: #000;
-	letter-spacing: 2px;
 }
 .tokyo_tm_portfolio .portfolio_filter ul li a:hover{
 	color: #000;
-	letter-spacing: 2px;
 }
 .tokyo_tm_portfolio .list_wrapper{
 	width: 100%;
@@ -977,17 +1464,17 @@ h6 { font-size: 16px; }
 	height: auto;
 	clear: both;
 	float: left;
-	padding: 100px 0px 50px 0px;
+	padding: 100px 0px 40px 0px;
 }
 .tokyo_tm_portfolio .portfolio_list{
-	margin: 0px 0px 0px -50px;
+	margin: 0px 0px 0px -40px;
 	list-style-type: none;
 }
 .tokyo_tm_portfolio .portfolio_list li{
-	margin: 0px 0px 50px 0px;
+	margin: 0px 0px 40px 0px;
 	float: left;
-	width: 50%;
-	padding-left: 50px;
+	width: 33.3333%;
+	padding-left: 40px;
 }
 .tokyo_tm_portfolio .portfolio_list li .inner{
 	width: 100%;
@@ -1001,7 +1488,7 @@ h6 { font-size: 16px; }
 	opacity: 0;
 	min-width: 100%;
 }
-.tokyo_tm_portfolio .portfolio_list li .inner .main_image{
+.tokyo_tm_portfolio .portfolio_list li .inner .abs_image{
 	position: absolute;
 	top: 0px;
 	bottom: 0px;
@@ -1017,7 +1504,7 @@ h6 { font-size: 16px; }
 	     -o-transition: all .3s ease;
 	        transition: all .3s ease;
 }
-.tokyo_tm_portfolio .portfolio_list li .inner:hover .main_image{
+.tokyo_tm_portfolio .portfolio_list li .inner:hover .abs_image{
 	transform: scale(1.1) translateZ(0);
 }
 .tokyo_tm_portfolio_titles {
@@ -1048,7 +1535,6 @@ h6 { font-size: 16px; }
 	padding: 5px 15px;
 	color: #767676;
 	font-size: 15px;
-	font-style: italic;
 }
 .entry{position: relative;}
 .tokyo_tm_portfolio .popup_details{
@@ -1080,9 +1566,8 @@ h6 { font-size: 16px; }
 	position: relative;
 	min-width: 100%;
 	opacity: 0;
-	margin-bottom: -50%;
 }
-.tokyo_tm_modalbox .popup_details .main_image{
+.tokyo_tm_modalbox .popup_details .top_image .main{
 	position: absolute;
 	top: 0;
 	left: 0;
@@ -1099,11 +1584,8 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_modalbox .portfolio_main_title h3{
 	font-weight: 700;
-    font-size: 22px;
+    font-size: 23px;
     margin-bottom: 5px;
-}
-.tokyo_tm_modalbox .portfolio_main_title span{
-	font-style: italic;
 }
 .tokyo_tm_modalbox .main_details{
 	width: 100%;
@@ -1118,7 +1600,6 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_modalbox .main_details .textbox p{
 	margin-bottom: 18px;
-	font-style: italic;
 }
 .tokyo_tm_modalbox .main_details .textbox p:last-child{
 	margin-bottom: 0px;
@@ -1144,10 +1625,8 @@ h6 { font-size: 16px; }
 	display: block;
 	color: #000;
 	margin-bottom: 3px;
-	font-style: italic;
 }
 .tokyo_tm_modalbox .main_details .detailbox span a{
-	text-decoration: none;
 	color: #767676;
 
 	-webkit-transition: all .3s ease;
@@ -1158,7 +1637,6 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_modalbox .main_details .detailbox span a:hover{
 	color: #000;
-	letter-spacing: 2px;
 }
 .tokyo_tm_modalbox .main_details .detailbox .share{
 	margin: 0px;
@@ -1174,7 +1652,6 @@ h6 { font-size: 16px; }
 	margin-right: 0px;
 }
 .tokyo_tm_modalbox .main_details .detailbox .share li a{
-	text-decoration: none;
 	color: #000;
 	font-size: 18px;
 }
@@ -1245,7 +1722,7 @@ h6 { font-size: 16px; }
 }
 .tokyo_tm_news ul li .list_inner{
 	width: 100%;
-	height: auto;
+	height: 100%;
 	clear: both;
 	float: left;
 	position: relative;
@@ -1298,7 +1775,6 @@ h6 { font-size: 16px; }
 	line-height: 1.4;
 }
 .tokyo_tm_news ul li .details .title a{
-	text-decoration: none;
 	color: #000;
 	font-size: 18px;
 	font-weight: 600;
@@ -1317,10 +1793,8 @@ h6 { font-size: 16px; }
 	font-family: "Montserrat";
 	font-size: 13px;
 	color: #767676;
-	font-style: italic;
 }
 .tokyo_tm_news ul li .details .date a{
-	text-decoration: none;
 	color: #767676;
 
 	-webkit-transition: all .3s ease;
@@ -1365,7 +1839,6 @@ h6 { font-size: 16px; }
 	overflow: hidden;
 }
 .tokyo_tm_read_more a{
-	text-decoration: none;
 	display: inline-block;
 	overflow: hidden;
     color: #000;
@@ -1534,7 +2007,6 @@ h6 { font-size: 16px; }
 	display: block;
 	width: 40px;
 	height: 40px;
-	text-decoration: none;
 	color: #fff;
 	border:2px solid #fff;
 	border-radius: 10px;
@@ -1561,8 +2033,28 @@ h6 { font-size: 16px; }
 	height: 100%;
 	float: left;
 	overflow: hidden;
-	padding: 70px;
+	padding: 50px;
 	overflow-y: scroll;
+}
+.tokyo_tm_modalbox .description_wrap:after{
+	position: fixed;
+	content: "";
+	right: 0px;
+	left: 0px;
+	bottom: 0px;
+	height: 50px;
+	background-color: #fff;
+	z-index: 3;
+}
+.tokyo_tm_modalbox .description_wrap:before{
+	position: fixed;
+	content: "";
+	right: 0px;
+	left: 0px;
+	top: 0px;
+	height: 50px;
+	background-color: #fff;
+	z-index: 3;
 }
 .tokyo_tm_modalbox .details{
 	width: 100%;
@@ -1597,10 +2089,8 @@ h6 { font-size: 16px; }
     font-family: "Montserrat";
     font-size: 12px;
     color: #767676;
-    font-style: italic;
 }
 .tokyo_tm_modalbox .date a{
-	text-decoration: none;
     color: #767676;
 
     -webkit-transition: all .3s ease;
@@ -1668,7 +2158,6 @@ body.modal{
 }
 .tokyo_tm_modalbox .main_content .quotebox p{
 	font-size: 20px;
-	font-style: italic;
 	margin-bottom: 23px;
 }
 .tokyo_tm_modalbox .main_content .icon{
@@ -1707,17 +2196,27 @@ body.modal{
 	float: left;
 	padding: 100px 0px 100px 0px;
 }
+
+.tokyo_tm_contact .about_title{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	border-bottom: 1px solid #DFDFDF;
+	padding-bottom: 20px;
+	margin-bottom: 27px;
+}
+.tokyo_tm_contact .about_title h3{
+    font-size: 22px;
+    font-weight: 700;
+}
+
 .tokyo_tm_contact .map_wrap{
 	width: 100%;
 	height: auto;
 	clear: both;
 	float: left;
 	margin-bottom: 50px;
-}
-.tokyo_tm_contact .map_wrap .map{
-  min-height: 400px;
-  width: 100%;
-  filter: grayscale(1);
 }
 .tokyo_tm_contact .fields{
 	width: 100%;
@@ -1742,7 +2241,6 @@ body.modal{
 	width: 100%;
 	border: 1px solid rgba(0,0,0,.2);
 	background-color: transparent;
-	font-style: italic;
 }
 .tokyo_tm_contact .fields ul li input:focus{
 	outline: none;
@@ -1755,7 +2253,6 @@ body.modal{
 	resize: none;
 	margin-bottom: 20px;
 	background-color: transparent;
-	font-style: italic;
 }
 .tokyo_tm_contact .fields .last textarea:focus{
 	outline: none;
@@ -1835,12 +2332,14 @@ body.modal{
 /*---------------------------------------------------*/
 
 @media (max-width: 1600px) {
+	.container{max-width: 968px;}
 	.tokyo_tm_all_wrap .leftpart{width: 400px;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 350px;}
 	.tokyo_tm_all_wrap .leftpart{width: 350px;padding: 0px 70px;}
 	.tokyo_tm_home .avatar{min-width: 250px;min-height: 250px;}
 	.tokyo_tm_home .details .name{font-size: 48px;margin-bottom: 10px;}
 	.tokyo_tm_home .details .job{margin-bottom: 22px;}
+	.tokyo_tm_modalbox .box_inner{width: 850px;}
 }
 @media (max-width: 1200px) {
 	.tokyo_tm_topbar{display: block;}
@@ -1848,10 +2347,11 @@ body.modal{
 	.tokyo_tm_all_wrap .leftpart{display: none;}
 	.tokyo_tm_all_wrap .rightpart{padding-left: 0px;}
 	.tokyo_tm_all_wrap .rightpart_in{border-left: none;}
-	.tokyo_tm_about{padding-top: 170px;}
-	.tokyo_tm_portfolio{padding-top: 170px;}
-	.tokyo_tm_contact{padding-top: 170px;}
-	.tokyo_tm_news{padding-top: 170px;}
+	.tokyo_tm_about{padding-top: 130px;}
+	.tokyo_tm_portfolio{padding-top: 130px;}
+	.tokyo_tm_contact{padding-top: 130px;}
+	.tokyo_tm_news{padding-top: 130px;}
+	.tokyo_tm_services{padding-top: 130px;}
 	.tokyo_tm_modalbox .description_wrap{padding: 40px;}
 	.tokyo_tm_modalbox .box_inner{width: 500px;}
 	.tokyo_tm_modalbox .main_details{flex-direction: column;}
@@ -1859,23 +2359,22 @@ body.modal{
 	.tokyo_tm_modalbox .main_details .detailbox{padding-left: 0px;width: 100%;}
 	.tokyo_tm_modalbox .additional_images ul{margin: 0px;}
 	.tokyo_tm_modalbox .additional_images ul li{padding-left: 0px;width: 100%;}
-	.tokyo_tm_modalbox_about .box_inner{width: 500px;}
-	.tokyo_tm_modalbox_about .description_wrap{padding: 40px;}
-	.tokyo_tm_modalbox_about .my_box{flex-direction: column;}
-	.tokyo_tm_modalbox_about .my_box .left{width: 100%;padding-right: 0px;margin-bottom: 50px;}
-	.tokyo_tm_modalbox_about .my_box .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_modalbox .description_wrap:after{height: 40px;}
+	.tokyo_tm_modalbox .description_wrap:before{height: 40px;}
 }
 @media (max-width: 1040px) {
 	.mouse-cursor{display: none;}
 	.tokyo_tm_home .home_content{flex-direction: column;text-align: center;}
 	.tokyo_tm_home .avatar{margin-bottom: 30px;}
 	.tokyo_tm_home .details{margin-left: 0px;}
-	.tokyo_tm_about .description_inner{flex-direction: column;}
-	.tokyo_tm_about .description .left{width: 100%;padding: 0px;margin-bottom: 50px;}
-	.tokyo_tm_about .description .right{width: 100%;padding: 0px;}
 	.tokyo_tm_title .title_flex{flex-direction: column;align-items: flex-start;}
 	.tokyo_tm_title .portfolio_filter{padding-top: 48px;}
 	.container{padding: 0px 20px;}
+	.tokyo_tm_services .list ul li{width: 50%;}
+	.tokyo_tm_partners ul li{width: 33.3333%;}
+	.tokyo_tm_modalbox .details .title{font-size: 20px;}
+	.tokyo_tm_modalbox .portfolio_main_title h3{font-size: 20px;}
+	.tokyo_tm_modalbox .service_popup_informations .main_title h3{font-size: 20px;}
 }
 @media (max-width: 768px) {
 	.tokyo_tm_home .details .name{font-size: 30px;}
@@ -1884,16 +2383,33 @@ body.modal{
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_news ul li .details{padding-left: 30px;padding-right: 30px;}
 	.tokyo_tm_modalbox .main_content .icon{position: relative;margin-bottom: 25px;}
 	.tokyo_tm_modalbox .main_content .quotebox{padding-left: 0px;}
-	.tokyo_tm_modalbox_about .close a{width: 30px;height: 30px;font-size: 14px;}
-	.tokyo_tm_modalbox_about .close{left: auto;right: 0px;top: -40px;}
 	.tokyo_tm_modalbox .close a{width: 30px;height: 30px;font-size: 14px;}
 	.tokyo_tm_modalbox .close{left: auto;right: 0px;top: -40px;}
-	.tokyo_tm_modalbox_about .counter ul{margin: 0px;}
-	.tokyo_tm_modalbox_about .counter ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_modalbox .box_inner{width: 300px;}
-	.tokyo_tm_modalbox_about .box_inner{width: 300px;}
 	.tokyo_tm_modalbox .description_wrap{padding: 20px;}
-	.tokyo_tm_about .description .name{font-size: 18px;}
+	.tokyo_tm_short_info{flex-direction: column;}
+	.tokyo_tm_short_info .left{width: 100%;padding-right: 0px;}
+	.tokyo_tm_short_info .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_progressbox .in{flex-direction: column;}
+	.tokyo_tm_progressbox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
+	.tokyo_tm_progressbox .in .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_skillbox .in{flex-direction: column;}
+	.tokyo_tm_skillbox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
+	.tokyo_tm_skillbox .in .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_resumebox .in{flex-direction: column;}
+	.tokyo_tm_resumebox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
+	.tokyo_tm_resumebox .in .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_services .list ul{margin: 0px;}
+	.tokyo_tm_services .list ul li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_partners ul li{width: 50%;}
+	.tokyo_tm_facts .list ul{margin: 0px;}
+	.tokyo_tm_facts .list ul li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_pricing .list > ul{margin: 0px;}
+	.tokyo_tm_pricing .list > ul > li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_modalbox .description_wrap:after{height: 20px;}
+	.tokyo_tm_modalbox .description_wrap:before{height: 20px;}
+	.tokyo_tm_modalbox .portfolio_main_title{margin-bottom: 20px;}
 }
