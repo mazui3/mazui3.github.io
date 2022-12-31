@@ -31,7 +31,7 @@
 <meta property="og:description" content="2021错题本.  这个系列两年后卷土重来了…最近在用ms access, access中也可以使用sql,但跟其他sql语法不大一样(低情商:简陋).于是记录access中的sql使用, 亦或是 用vba绕过sql的使用.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-20T05:19:40.000Z">
-<meta property="article:modified_time" content="2022-12-22T03:41:27.293Z">
+<meta property="article:modified_time" content="2022-12-30T14:41:21.208Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="SQL">
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-21 22:41:27" itemprop="dateModified" datetime="2022-12-21T22:41:27-05:00">2022-12-21</time>
+                <time title="Modified: 2022-12-30 09:41:21" itemprop="dateModified" datetime="2022-12-30T09:41:21-05:00">2022-12-30</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,13 +276,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>4.5k</span>
+              <span>7.3k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>4 mins.</span>
+              <span>7 mins.</span>
             </span>
 
         </div>
@@ -306,10 +306,14 @@
 <br>
 
 <h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>以下最常见在vba中的sql使用.</p>
-<h2 id="OpenRecordSet"><a href="#OpenRecordSet" class="headerlink" title="OpenRecordSet"></a>OpenRecordSet</h2><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;SELECT * FROM tableA;&quot;</span></span><br><span class="line"><span class="keyword">Set</span> rs = CurrentDb.OpenRecordSet(sSQL)</span><br></pre></td></tr></table></figure>
+<h2 id="OpenRecordSet"><a href="#OpenRecordSet" class="headerlink" title="OpenRecordSet"></a>OpenRecordSet</h2><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;SELECT First(Apple) FROM tableA;&quot;</span></span><br><span class="line"><span class="keyword">Set</span> rs = CurrentDb.OpenRecordSet(sSQL)</span><br></pre></td></tr></table></figure>
+
+<p>如果不需要select的情况可以直接开table.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> rs = CurrentDb.OpenRecordSet(<span class="string">&quot;The_Table_Name&quot;</span>, dbOpenTable)</span><br></pre></td></tr></table></figure>
 
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> Oapple As Object</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields(<span class="string">&quot;Apple&quot;</span>).Value</span><br></pre></td></tr></table></figure>
 <p>这里table的value可以有很多种,table中甚至可以store文件.</p>
+<p>OpenRecordSet之后如何使用其value: 使用了<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/recordset-getrows-method-dao">getRows</a>.</p>
 <br>
 <br>
 
@@ -324,6 +328,34 @@
 <h2 id="Listbox"><a href="#Listbox" class="headerlink" title="Listbox"></a>Listbox</h2><p>这是access form中的信息display.</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sSQL = <span class="string">&quot;SELECT fruits FROM tableA;&quot;</span></span><br><span class="line"><span class="comment">&#x27;Display is listbox</span></span><br><span class="line"><span class="keyword">Me</span>.Display.RowSource = sSQL</span><br><span class="line"><span class="keyword">Me</span>.Display.Requery</span><br><span class="line"></span><br><span class="line"><span class="comment">&#x27;at the end of the form</span></span><br><span class="line">Forms!MyFruitForm.Refresh</span><br><span class="line">Forms!MyFruitForm.Requery</span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
+
+<h2 id="vbCrLf"><a href="#vbCrLf" class="headerlink" title="vbCrLf"></a>vbCrLf</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27223228/differences-between-vblf-vbcrlf-vbcr-constants">Differences Between vbLf, vbCrLf &amp; vbCr Constants</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constant</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">vbCr</td>
+<td align="left">Chr(13)</td>
+<td align="left">Carriage return(返回到行首)</td>
+</tr>
+<tr>
+<td align="left">vbCrLf</td>
+<td align="left">Chr(13) &amp; Chr(10)</td>
+<td align="left">Carriage return–linefeed combination(类似于按回车键)</td>
+</tr>
+<tr>
+<td align="left">vbLf</td>
+<td align="left">Chr(10)</td>
+<td align="left">Line feed(转到下一行)</td>
+</tr>
+</tbody></table>
 <br>
 <br>
 
@@ -376,6 +408,20 @@
 <br>
 <br>
 
+<h2 id="Default-value"><a href="#Default-value" class="headerlink" title="Default value"></a>Default value</h2><p>(For excel as well)<br>Data is stored as number, so when setting default values for date can use number format instead of any long/short data format cuz somethings I have no idea why it’s not working(怒).</p>
+<p>Btw for excel when a sheet is hidden… and the tab is locked for unhidden sheet, use alt+F11 to go to VBA module, can find the sheet name, then go back to sheet using reference to display the value anyway(暴怒).</p>
+<br>
+<br>
+
+<h2 id="Delete-table"><a href="#Delete-table" class="headerlink" title="Delete table"></a>Delete table</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.docmd.deleteobject">DoCmd.DeleteObject method</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DoCmd.DeleteObject acTable, <span class="string">&quot;Former Employees Table&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/43833709/how-to-delete-a-table-if-it-exists">Delete if exist</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> DeleteIfExists()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> tableName As String</span><br><span class="line">    tableName = <span class="string">&quot;Table3&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">If</span> <span class="keyword">Not</span> <span class="built_in">IsNull</span>(DLookup(<span class="string">&quot;Name&quot;</span>, <span class="string">&quot;MSysObjects&quot;</span>, <span class="string">&quot;Name=&#x27;&quot;</span> &amp; tableName &amp; <span class="string">&quot;&#x27;&quot;</span>)) <span class="keyword">Then</span></span><br><span class="line">        DoCmd.SetWarnings <span class="literal">False</span></span><br><span class="line">        DoCmd.Close acTable, tableName, acSaveYes</span><br><span class="line">        DoCmd.DeleteObject acTable = acDefault, tableName</span><br><span class="line">        Debug.Print <span class="string">&quot;Table&quot;</span> &amp; tableName &amp; <span class="string">&quot;deleted...&quot;</span></span><br><span class="line">        DoCmd.SetWarnings <span class="literal">True</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
 <h2 id="Open-file"><a href="#Open-file" class="headerlink" title="Open file"></a>Open file</h2><p>根据<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.application.filedialog">Application.FileDialog property</a>.</p>
 <table>
 <thead>
@@ -410,10 +456,38 @@
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> f As Object</span><br><span class="line"><span class="keyword">Dim</span> theFolderName As String</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> f = Application.FileDia<span class="built_in">log</span>(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> f</span><br><span class="line">  .InitialFileName = theFolderName</span><br><span class="line"><span class="keyword">End</span> Withs</span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/office.filedialog">Property</a>.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14915179/ms-access-browse-for-file-and-get-file-name-and-path">Browse for file and get file name and path</a></p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&#x27;在给f路径后,用f.show来打开folder.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> theItem As Variant</span><br><span class="line"><span class="keyword">Dim</span> FileName, FolderPath As String</span><br><span class="line"></span><br><span class="line">f.AllowMultiSelect = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">If</span> f.Show <span class="keyword">Then</span></span><br><span class="line">  <span class="keyword">For</span> <span class="keyword">Each</span> theItem <span class="keyword">in</span> f.SelectedItems</span><br><span class="line">    FileName = Dir(theItem)</span><br><span class="line">    FolderPath = <span class="built_in">Left</span>(theItem, <span class="built_in">Len</span>(theItem) - <span class="built_in">Len</span>(FileName))</span><br><span class="line">  <span class="keyword">Next</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Import-excel-data"><a href="#Import-excel-data" class="headerlink" title="Import excel data"></a><a target="_blank" rel="noopener" href="https://accessexperts.com/blog/2020/10/20/connection-string-parameters-for-excel-data-sources/">Import excel data</a></h2><blockquote>
+</blockquote>
+<p>Excel 8.0: 97-2003 xls files<br>Excel 12.0: xlsb files<br>Excel 12.0 Xml: xlsx files</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Set</span> db = DBEngine.OpenDatabase(vbNullString, <span class="literal">False</span>, <span class="literal">False</span>, <span class="string">&quot;Excel 12.0 Xml;HDR=YES;IMEX=2;ACCDB=YES;DATABASE=C:\Links\Products.xlsx&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"><span class="keyword">Set</span> rs = db.OpenRecordset(<span class="string">&quot;SELECT d.[Count] FROM [Sheet1$] AS d WHERE d.[Products] = &#x27;Bananas&#x27;;&quot;</span>)</span><br><span class="line">Debug.Print rs.Fields(<span class="number">0</span>).Value</span><br></pre></td></tr></table></figure>
+
+<p>老哥的代码,其中我觉得(…)是这样的.</p>
+<p>[Excel 12.0 Xml;HDR=YES;IMEX=2;ACCDB=YES;DATABASE=C:\Links\Products.xlsx].[Sheet1$]就可以当作一个table用了.</p>
+<p>My version:</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * INTO newTable from [Excel <span class="number">12.0</span> Xml;HDR=YES;IMEX=<span class="number">2</span>;ACCDB=YES;DATABASE=C:\Links\Products.xlsx].[Sheet1$];</span><br></pre></td></tr></table></figure>
+
+<p>是一种开盲盒的select all大法.</p>
+<p><a target="_blank" rel="noopener" href="https://www.devhut.net/advanced-sql-to-connect-with-excel-workbooks/">Import when select.</a>.&lt;-傻子找到了但没有测.<br>傻子下次要import when select的时候再来补.</p>
+<br>
+<br>
+
 <h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>使用<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/with-statement">With</a>更改more than one field.<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/database-object-dao">在database中的使用</a>.</p>
 <p>类似的在recordset中的使用.</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> rstCategories As Recordset</span><br><span class="line"><span class="keyword">Set</span> rstCategories = CurrentDb.OpenRecordset(Name:=<span class="string">&quot;Categories&quot;</span>, Type:=RecordsetTypeEnum.dbOpenDynaset)</span><br><span class="line"><span class="keyword">With</span> rstCategories</span><br><span class="line">    .AddNew</span><br><span class="line">    ![Category Name] = <span class="string">&quot;Better software&quot;</span></span><br><span class="line">    !Description = <span class="string">&quot;5 star rated&quot;</span></span><br><span class="line">    .Update</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br></pre></td></tr></table></figure>
 <p>在with中更改record set.</p>
+<br>
+<br>
+
+<h2 id="How-to-List-Field’s-Name-in-table-in-Access-Using-SQL"><a href="#How-to-List-Field’s-Name-in-table-in-Access-Using-SQL" class="headerlink" title="How to List Field’s Name in table in Access Using SQL"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/11548697/how-to-list-fields-name-in-table-in-access-using-sql#:~:text=You%20can%20simply%20use%20the,the%20table%20and%20press%20OK">How to List Field’s Name in table in Access Using SQL</a></h2><p>遇到了盲盒case.<br>要import excel data到access中但import的table会是什么样完全不知道.</p>
+<p>于是依靠access自己去读column name,并且用<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/8850984/populating-vba-dynamic-arrays">resize的array来store column name</a>.</p>
+<p>根据两位老哥的代码改了一改.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ListFields()</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Dim</span> mysteryColNames() As string <span class="comment">&#x27;因为要resize所以先不decalre length</span></span><br><span class="line"><span class="keyword">Dim</span> ii as Long</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = CurrentDb</span><br><span class="line"><span class="keyword">Set</span> rs = db.OpenRecordSet(<span class="string">&quot;mysteryTable&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> rs</span><br><span class="line">  <span class="keyword">ReDim</span> <span class="keyword">Preserve</span> mysteryColNames(.Fields.Count - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">for</span> ii = <span class="number">0</span> <span class="keyword">to</span> .fields.count - <span class="number">1</span></span><br><span class="line">      mysteryColNames(ii) =  .fields(ii).name</span><br><span class="line">  <span class="keyword">Next</span></span><br><span class="line">  .Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = <span class="literal">nothing</span></span><br><span class="line"><span class="keyword">Set</span> rs = <span class="literal">nothing</span></span><br></pre></td></tr></table></figure>
 
     </div>
 
@@ -507,7 +581,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenRecordSet"><span class="nav-number">1.1.</span> <span class="nav-text">OpenRecordSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Execute"><span class="nav-number">1.2.</span> <span class="nav-text">Execute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Listbox"><span class="nav-number">1.3.</span> <span class="nav-text">Listbox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cases"><span class="nav-number">2.</span> <span class="nav-text">Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-join-against-date-ranges"><span class="nav-number">2.1.</span> <span class="nav-text">SQL join against date ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-load"><span class="nav-number">2.2.</span> <span class="nav-text">Form load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-index"><span class="nav-number">2.3.</span> <span class="nav-text">Add index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Error-Resume-Next"><span class="nav-number">2.4.</span> <span class="nav-text">On Error Resume Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Export-data"><span class="nav-number">2.5.</span> <span class="nav-text">Export data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-file"><span class="nav-number">2.6.</span> <span class="nav-text">Open file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.7.</span> <span class="nav-text">Object</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenRecordSet"><span class="nav-number">1.1.</span> <span class="nav-text">OpenRecordSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Execute"><span class="nav-number">1.2.</span> <span class="nav-text">Execute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Listbox"><span class="nav-number">1.3.</span> <span class="nav-text">Listbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vbCrLf"><span class="nav-number">1.4.</span> <span class="nav-text">vbCrLf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cases"><span class="nav-number">2.</span> <span class="nav-text">Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-join-against-date-ranges"><span class="nav-number">2.1.</span> <span class="nav-text">SQL join against date ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-load"><span class="nav-number">2.2.</span> <span class="nav-text">Form load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-index"><span class="nav-number">2.3.</span> <span class="nav-text">Add index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Error-Resume-Next"><span class="nav-number">2.4.</span> <span class="nav-text">On Error Resume Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Export-data"><span class="nav-number">2.5.</span> <span class="nav-text">Export data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-value"><span class="nav-number">2.6.</span> <span class="nav-text">Default value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-table"><span class="nav-number">2.7.</span> <span class="nav-text">Delete table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-file"><span class="nav-number">2.8.</span> <span class="nav-text">Open file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import-excel-data"><span class="nav-number">2.9.</span> <span class="nav-text">Import excel data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.10.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-List-Field%E2%80%99s-Name-in-table-in-Access-Using-SQL"><span class="nav-number">2.11.</span> <span class="nav-text">How to List Field’s Name in table in Access Using SQL</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -604,7 +678,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">19:28</span>
+    <span title="T">19:31</span>
 
   -->
 
