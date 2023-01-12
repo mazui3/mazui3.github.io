@@ -31,7 +31,7 @@
 <meta property="og:description" content="2021错题本.  这个系列两年后卷土重来了…最近在用ms access, access中也可以使用sql,但跟其他sql语法不大一样(低情商:简陋).于是记录access中的sql使用, 亦或是 用vba绕过sql的使用.">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2022-12-20T05:19:40.000Z">
-<meta property="article:modified_time" content="2022-12-30T14:41:21.208Z">
+<meta property="article:modified_time" content="2023-01-09T21:02:31.622Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="SQL">
@@ -245,7 +245,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-30 09:41:21" itemprop="dateModified" datetime="2022-12-30T09:41:21-05:00">2022-12-30</time>
+                <time title="Modified: 2023-01-09 16:02:31" itemprop="dateModified" datetime="2023-01-09T16:02:31-05:00">2023-01-09</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -276,7 +276,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>7.3k</span>
+              <span>8k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
@@ -317,6 +317,17 @@
 <br>
 <br>
 
+<p>注意,</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> theName As String</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields(theName).Value</span><br></pre></td></tr></table></figure>
+<p>可以这样用variable.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields!theName.Value</span><br></pre></td></tr></table></figure>
+<p>这时候theName必须生死rs中已有的column的名字,不可以用variable.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24924969/using-variable-on-accessing-the-form-and-controls-in-ms-access">Using Variable on accessing the Form and Controls in MS Access</a>.<br>Form中也类似.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> theFields As String</span><br><span class="line">theFields = <span class="string">&quot;myFieldName&quot;</span></span><br><span class="line"></span><br><span class="line">Forms(“theFormName”).Controls(theFields).Locked = <span class="literal">False</span></span><br><span class="line">Forms(“theFormName”).Controls(theFields).Enabled = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>这样用.</p>
+<br>
+<br>
+
 <h2 id="Execute"><a href="#Execute" class="headerlink" title="Execute"></a>Execute</h2><p>不需要store 信息时候使用db,也就是execute.<br>比如update, delete的function.</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;UPDATE tableA &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;SET fruits = &quot;&quot;None&quot;&quot;, time = Now() &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;WHERE label = &quot;&quot;apple&quot;&quot;;&quot;</span></span><br><span class="line">CurrentDb.<span class="keyword">Execute</span> sSQL</span><br></pre></td></tr></table></figure>
 
@@ -325,9 +336,15 @@
 <br>
 <br>
 
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2781689/how-to-return-a-result-from-a-vba-function">How to return a result from a VBA function</a>.</p>
+<p>VBA有两种function,一种key word 是sub,一种key word是function.</p>
+<br>
+<br>
+
 <h2 id="Listbox"><a href="#Listbox" class="headerlink" title="Listbox"></a>Listbox</h2><p>这是access form中的信息display.</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sSQL = <span class="string">&quot;SELECT fruits FROM tableA;&quot;</span></span><br><span class="line"><span class="comment">&#x27;Display is listbox</span></span><br><span class="line"><span class="keyword">Me</span>.Display.RowSource = sSQL</span><br><span class="line"><span class="keyword">Me</span>.Display.Requery</span><br><span class="line"></span><br><span class="line"><span class="comment">&#x27;at the end of the form</span></span><br><span class="line">Forms!MyFruitForm.Refresh</span><br><span class="line">Forms!MyFruitForm.Requery</span><br></pre></td></tr></table></figure>
 
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.combobox.rowsource">ComboBox.RowSource property</a>.</p>
 <br>
 <br>
 
@@ -489,6 +506,12 @@
 <p>根据两位老哥的代码改了一改.</p>
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ListFields()</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Dim</span> mysteryColNames() As string <span class="comment">&#x27;因为要resize所以先不decalre length</span></span><br><span class="line"><span class="keyword">Dim</span> ii as Long</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = CurrentDb</span><br><span class="line"><span class="keyword">Set</span> rs = db.OpenRecordSet(<span class="string">&quot;mysteryTable&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> rs</span><br><span class="line">  <span class="keyword">ReDim</span> <span class="keyword">Preserve</span> mysteryColNames(.Fields.Count - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">for</span> ii = <span class="number">0</span> <span class="keyword">to</span> .fields.count - <span class="number">1</span></span><br><span class="line">      mysteryColNames(ii) =  .fields(ii).name</span><br><span class="line">  <span class="keyword">Next</span></span><br><span class="line">  .Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = <span class="literal">nothing</span></span><br><span class="line"><span class="keyword">Set</span> rs = <span class="literal">nothing</span></span><br></pre></td></tr></table></figure>
 
+<br>
+<br>
+
+<h2 id="How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros"><a href="#How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros" class="headerlink" title="How to check if a table exists in MS Access for vb macros"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3350645/how-to-check-if-a-table-exists-in-ms-access-for-vb-macros">How to check if a table exists in MS Access for vb macros</a></h2><p>用DCount.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> ifTableExists(tblName As String) As Boolean</span><br><span class="line">    <span class="keyword">If</span> DCount(<span class="string">&quot;[Name]&quot;</span>, <span class="string">&quot;MSysObjects&quot;</span>, <span class="string">&quot;[Name] = &#x27;&quot;</span> &amp; tblName &amp; <span class="string">&quot;&#x27;&quot;</span>) = <span class="number">1</span> <span class="keyword">Then</span></span><br><span class="line">        ifTableExists = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
     </div>
 
     
@@ -581,7 +604,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenRecordSet"><span class="nav-number">1.1.</span> <span class="nav-text">OpenRecordSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Execute"><span class="nav-number">1.2.</span> <span class="nav-text">Execute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Listbox"><span class="nav-number">1.3.</span> <span class="nav-text">Listbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vbCrLf"><span class="nav-number">1.4.</span> <span class="nav-text">vbCrLf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cases"><span class="nav-number">2.</span> <span class="nav-text">Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-join-against-date-ranges"><span class="nav-number">2.1.</span> <span class="nav-text">SQL join against date ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-load"><span class="nav-number">2.2.</span> <span class="nav-text">Form load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-index"><span class="nav-number">2.3.</span> <span class="nav-text">Add index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Error-Resume-Next"><span class="nav-number">2.4.</span> <span class="nav-text">On Error Resume Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Export-data"><span class="nav-number">2.5.</span> <span class="nav-text">Export data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-value"><span class="nav-number">2.6.</span> <span class="nav-text">Default value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-table"><span class="nav-number">2.7.</span> <span class="nav-text">Delete table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-file"><span class="nav-number">2.8.</span> <span class="nav-text">Open file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import-excel-data"><span class="nav-number">2.9.</span> <span class="nav-text">Import excel data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.10.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-List-Field%E2%80%99s-Name-in-table-in-Access-Using-SQL"><span class="nav-number">2.11.</span> <span class="nav-text">How to List Field’s Name in table in Access Using SQL</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenRecordSet"><span class="nav-number">1.1.</span> <span class="nav-text">OpenRecordSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Execute"><span class="nav-number">1.2.</span> <span class="nav-text">Execute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">1.3.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Listbox"><span class="nav-number">1.4.</span> <span class="nav-text">Listbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vbCrLf"><span class="nav-number">1.5.</span> <span class="nav-text">vbCrLf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cases"><span class="nav-number">2.</span> <span class="nav-text">Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-join-against-date-ranges"><span class="nav-number">2.1.</span> <span class="nav-text">SQL join against date ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-load"><span class="nav-number">2.2.</span> <span class="nav-text">Form load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-index"><span class="nav-number">2.3.</span> <span class="nav-text">Add index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Error-Resume-Next"><span class="nav-number">2.4.</span> <span class="nav-text">On Error Resume Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Export-data"><span class="nav-number">2.5.</span> <span class="nav-text">Export data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-value"><span class="nav-number">2.6.</span> <span class="nav-text">Default value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-table"><span class="nav-number">2.7.</span> <span class="nav-text">Delete table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-file"><span class="nav-number">2.8.</span> <span class="nav-text">Open file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import-excel-data"><span class="nav-number">2.9.</span> <span class="nav-text">Import excel data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.10.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-List-Field%E2%80%99s-Name-in-table-in-Access-Using-SQL"><span class="nav-number">2.11.</span> <span class="nav-text">How to List Field’s Name in table in Access Using SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros"><span class="nav-number">2.12.</span> <span class="nav-text">How to check if a table exists in MS Access for vb macros</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -597,7 +620,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">275</span>
+          <span class="site-state-item-count">278</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -657,7 +680,7 @@
 <div class="copyright">
   
   &copy; 2015 – 
-  <span itemprop="copyrightYear">2022</span>
+  <span itemprop="copyrightYear">2023</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -678,7 +701,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">19:31</span>
+    <span title="T">19:34</span>
 
   -->
 
