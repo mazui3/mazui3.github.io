@@ -23,17 +23,17 @@
     var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="这里是捣鼓renpy时的自用代码笔记.虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,如果没标注原文链接就是忘了.">
+  <meta name="description" content="这里是捣鼓renpy时的自用代码笔记.虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,如果没标注原文链接就是忘了(对不起).">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Renpy坐牢记录">
 <meta property="og:url" content="https://mazui3.github.io/blog/2023/04/10/P282/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="这里是捣鼓renpy时的自用代码笔记.虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,如果没标注原文链接就是忘了.">
+<meta property="og:description" content="这里是捣鼓renpy时的自用代码笔记.虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,如果没标注原文链接就是忘了(对不起).">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_1.gif">
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_2.gif">
 <meta property="article:published_time" content="2023-04-10T16:50:40.000Z">
-<meta property="article:modified_time" content="2023-04-11T02:50:53.469Z">
+<meta property="article:modified_time" content="2023-04-13T12:11:00.082Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="C4ToolBox">
 <meta name="twitter:card" content="summary">
@@ -242,10 +242,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2023-04-10 12:50:40 / Modified: 22:50:53" itemprop="dateCreated datePublished" datetime="2023-04-10T12:50:40-04:00">2023-04-10</time>
+              <time title="Created: 2023-04-10 12:50:40" itemprop="dateCreated datePublished" datetime="2023-04-10T12:50:40-04:00">2023-04-10</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-13 08:11:00" itemprop="dateModified" datetime="2023-04-13T08:11:00-04:00">2023-04-13</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,7 +281,7 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>7.4k</span>
+              <span>7.7k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
@@ -295,7 +301,7 @@
       
         <img src="/blog/2023/04/10/P282/P282_1.gif" class="" width="128" height="200" title="跟大家分享一下colin老师的可爱ddl">
 
-<p>这里是捣鼓renpy时的<strong>自用</strong>代码笔记.<br>虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,<del>如果没标注原文链接就是忘了.</del></p>
+<p>这里是捣鼓renpy时的<strong>自用</strong>代码笔记.<br>虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,<del>如果没标注原文链接就是忘了(对不起).</del></p>
 <span id="more"></span>
 
 <br>
@@ -340,11 +346,18 @@
 <blockquote>
 <p>The difference is simple: Game Menu is shown when the game is in progress, i.e. right-click or Escape would take you back to playing.<br>Main Menu is shown when the gameplay has not started, or the player has exited to Main Menu. So screen main_menu and screen game_menu both include (“ use “) screen navigation .</p>
 </blockquote>
-<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346838182">GUI定制化之主菜单</a>.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/346838182">知乎章鱼大佬:GUI定制化之主菜单</a>.</p>
+</blockquote>
 <br>
 <br>
 
-<h2 id="Image-buttom"><a href="#Image-buttom" class="headerlink" title="Image buttom"></a>Image buttom</h2><p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=34373">Image scale</a>.<br><a target="_blank" rel="noopener" href="https://www.renpy.org/doc/html/screens.html">Imagebutton</a>.</p>
+<h2 id="Image-buttom"><a href="#Image-buttom" class="headerlink" title="Image buttom"></a>Image buttom</h2><p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=34373">Image scale</a>.<a target="_blank" rel="noopener" href="https://www.renpy.org/doc/html/screens.html">Imagebutton</a>.<br>图案按钮,图案的缩小方式立绘,背景可以用zoom(控制摄像机和镜头的距离),链接里讲的im.Scale function也许是直接改scale.</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">image quick button option size = im.Scale(<span class="string">&quot;images/UI/quick_option_%s.png&quot;</span>, <span class="number">50</span>,<span class="number">50</span>)</span><br></pre></td></tr></table></figure>
+
+<p>楼主还说快速的话可以直接zoom buttom:</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">init:</span><br><span class="line">    transform customzoom:</span><br><span class="line">        zoom <span class="number">0.8</span></span><br><span class="line"></span><br><span class="line">screen blah:</span><br><span class="line">    imagebutton:</span><br><span class="line">        idle <span class="string">&#x27;blah&#x27;</span></span><br><span class="line">        hover <span class="string">&#x27;blah</span></span><br><span class="line"><span class="string">        action blah</span></span><br><span class="line"><span class="string">        at customzoom # this line</span></span><br></pre></td></tr></table></figure>
+
 <br>
 <br>
 
@@ -366,6 +379,11 @@
 
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">image black = <span class="string">&quot;#000&quot;</span></span><br><span class="line">image white = <span class="string">&quot;#ffffff&quot;</span></span><br></pre></td></tr></table></figure>
 
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/55809477">知乎章鱼大佬:图像、图层以及4个常用语句</a>.</p>
+</blockquote>
+<br>
+<br>
 
 <h2 id="rollback"><a href="#rollback" class="headerlink" title="rollback"></a>rollback</h2><p>Renpy自带返回上一句台词,叫rollback.<br>在gui.py里加一句:</p>
 <figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">define config.rollback_enable = <span class="literal">False</span></span><br></pre></td></tr></table></figure>
@@ -373,7 +391,7 @@
 <br>
 <br>
 
-<h2 id="每个字符进入"><a href="#每个字符进入" class="headerlink" title="每个字符进入"></a>每个字符进入</h2><p>需要调cp(characters per second)值.<br>如果是全局的话可以在option.py的preferences_text_cps里调.</p>
+<h2 id="打字机效果-每个字符出现"><a href="#打字机效果-每个字符出现" class="headerlink" title="打字机效果(每个字符出现)"></a>打字机效果(每个字符出现)</h2><p>需要调cp(characters per second)值.<br>如果是全局的话可以在option.py的preferences_text_cps里调.</p>
 <br>
 <br>
 
@@ -466,7 +484,7 @@
 </ul>
 <p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewforum.php?f=51">Ren’Py Cookbook</a></p>
 <blockquote>
-<p>一个国外的renpy论坛?<br>救我狗命多次.</p>
+<p>一个国外的renpy论坛?<br>救我狗命.</p>
 </blockquote>
 <img src="/blog/2023/04/10/P282/P282_2.gif" class="" width="123" height="200">
 
@@ -486,10 +504,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog/2023/03/27/P289/" rel="next" title="跟亲爱的朋友煲电话粥被远程传授菜谱她好怕我饿死">
-      跟亲爱的朋友煲电话粥被远程传授菜谱她好怕我饿死 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2023/04/17/P290/" rel="prev" title="在VBA里实现的screen scripting">
+      <i class="fa fa-chevron-left"></i> 在VBA里实现的screen scripting
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/03/27/P289/" rel="next" title="考拉私厨">
+      考拉私厨 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -556,7 +577,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E8%BF%9B%E5%85%A5"><span class="nav-number">1.8.</span> <span class="nav-text">每个字符进入</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.9.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.10.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.11.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.12.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.13.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.14.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.15.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C-%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">1.8.</span> <span class="nav-text">打字机效果(每个字符出现)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.9.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.10.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.11.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.12.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.13.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.14.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.15.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -572,7 +593,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">288</span>
+          <span class="site-state-item-count">289</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -653,7 +674,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">20:42</span>
+    <span title="T">20:45</span>
 
   -->
 
