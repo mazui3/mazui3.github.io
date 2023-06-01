@@ -1,0 +1,921 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="最近时间少,这次笔记甚至是录音转文字然后编辑一点(真的屑).联动下篇.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Colour Theory for Digital Design - 上">
+<meta property="og:url" content="https://mazui3.github.io/blog/2023/01/28/P283/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="最近时间少,这次笔记甚至是录音转文字然后编辑一点(真的屑).联动下篇.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_0.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_12.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_6.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_8.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_7.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_13.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_14.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_15.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_16.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_17.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_18.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_19.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_20.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_21.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_22.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_23.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_24.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_25.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_26.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_27.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_28.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_29.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_30.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_31.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_32.png">
+<meta property="article:published_time" content="2023-01-29T01:52:34.000Z">
+<meta property="article:modified_time" content="2023-02-17T03:18:21.701Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="图书馆的大厅流淌着爵士乐">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/01/28/P283/P283_0.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2023/01/28/P283/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Colour Theory for Digital Design - 上 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2023/01/28/P283/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Colour Theory for Digital Design - 上
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-01-28 20:52:34" itemprop="dateCreated datePublished" datetime="2023-01-28T20:52:34-05:00">2023-01-28</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-02-16 22:18:21" itemprop="dateModified" datetime="2023-02-16T22:18:21-05:00">2023-02-16</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E7%BB%98%E5%9B%BE%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">绘图笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2023/01/28/P283/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/01/28/P283/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>20k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>18 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="/blog/2023/01/28/P283/P283_0.png" class="">
+
+<p>最近时间少,这次笔记甚至是录音转文字然后编辑一点(真的屑).<br><a href="https://mazui3.github.io/blog/2023/02/12/P286/">联动下篇</a>.</p>
+<span id="more"></span>
+
+<p><a target="_blank" rel="noopener" href="https://glennmcarthur.com/colour.php?color">Light line form</a>, textbook.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Week-1"><a href="#Week-1" class="headerlink" title="Week 1"></a>Week 1</h1><p><a target="_blank" rel="noopener" href="https://www.ted.com/talks/beau_lotto_optical_illusions_show_how_we_see">Beau Lotto’s Ted Talk</a>.</p>
+<br>
+<br>
+<br>
+
+<h2 id="What-is-colour"><a href="#What-is-colour" class="headerlink" title="What is colour?"></a>What is colour?</h2><blockquote>
+<p>Topics:<br>Colour physics and perception<br>Colours of light vs. colours of objects<br>The physiology of colour vision<br>Colour blindness or alternative colour vision</p>
+</blockquote>
+<img src="/blog/2023/01/28/P283/P283_1.png" class="">
+
+<p>There are three distinct ways to look at color.</p>
+<ol>
+<li>colors physical nature - the properties of the light spectrum</li>
+<li>objects do not actually have color, they only give off light that appears to have color.</li>
+<li>understand how the human eye senses color, which it turns out is somewhat different from how the human brain processes color.</li>
+</ol>
+<p>The human capacity for color vision is due to the retina having two types of light sensitive receptor cells called rods and cones.</p>
+<p>Rods are used primarily for low light conditions and by themselves would allow humans to only see in black and white.<br>It is the cones that are the most important for color vision.</p>
+<img src="/blog/2023/01/28/P283/P283_2.png" class="">
+
+<p>There are three types of cones, short, medium and long wavelength.<br>Each is responsive to the regions of the visible spectrum, known generally as blue, green and red.</p>
+<p>No matter how complex light therefore is reduced by the eye into three color components and sent to the brain through the optic nerve.</p>
+<p>It is the brain’s processing of that information as well as a number of other clues that results in the perception of colour.</p>
+<p>This highly complex process, the details of which are not fully understood and are still being researched results in the extraordinary capacity of humans to distinguish over 10.7 million different colors.</p>
+<p>The way the eye and brain perceive the color of an object is dependent on the surface characteristics of the object.</p>
+<img src="/blog/2023/01/28/P283/P283_3.png" class="" title="被吸收外的,反射出来的光形成表面的颜色">
+
+<p>The wavelengths of the illuminati and the surrounding environment objects can reflect, transmit or in some cases emit light, all of which will contribute to how their color is perceived.</p>
+<p>There are two competing theories on the physiological process of color vision, Young-Helmholtz’s trichromatic theory, Hering’s system of colour opponency.<br>The trichromatic theory based on the premise that there are three types of photo receptors in the eye, red, green and blue that each detects certain wavelengths.</p>
+<img src="/blog/2023/01/28/P283/P283_4.png" class="">
+
+<p>Hering’s theory attempted to explain why the after image for red is cyan and blue is yellow and vice versa.<br>This suggested to hearing that there were six primary colors that were detected by three pairs of opponents red + green, blue + yellow and white + black.</p>
+<p>Any receptor that was turned off by one of these colors was excited by its coupled color.</p>
+<br>
+<br>
+<br>
+
+<h2 id="The-Elements-of-Colour"><a href="#The-Elements-of-Colour" class="headerlink" title="The Elements of Colour"></a>The Elements of Colour</h2><blockquote>
+<p>Topics:<br>Hue, Saturation and Value<br>Tints, tones and shades<br>Saturation<br>Colour Systems</p>
+</blockquote>
+<p>There are three important terms used to describe physical properties saturation and value, otherwise known as HSV.</p>
+<img src="/blog/2023/01/28/P283/P283_5.png" class="">
+
+<p>The HSV model can be illustrated using a three-dimensional cone or cylinder, with sections both horizontally and vertically removed to reveal the central axis.<br>In both examples the vertical axis indicates value with the horizontal axis referring to saturation.</p>
+<br>
+<br>
+
+<h3 id="Hue"><a href="#Hue" class="headerlink" title="Hue"></a>Hue</h3><p>Hue was the generic name of the distinct colour which is determined by its dominant wavelength, for example red green or blue.</p>
+<div class="note ">
+            <p>Primary Hue definition:</p><p>primary hues as the colours that cannot be created by the combination of any other hues in the range of a given colour space, and they are the basis for creating the other colours in that system.</p>
+          </div>
+
+<blockquote>
+<p>But do these hues really exist and do they meet these definitions?<br>The first question that needs to be addressed when dealing with primary colours is which colour mixing process is being dis-cussed: additive or subtractive?<br>在下文的例图里可以看到additive和subtractive分别的colour system.</p>
+</blockquote>
+<br>
+<br>
+
+<div class="note ">
+            <p>Secondary hues:</p><p>Are formed by the mixing of primary hues.<br>The painter’s secondary hues are orange (red + yellow), violet (red + blue) and green (blue + yellow).<br>The secondary hues of the printing inks are red, (ma-genta + yellow), blue (magenta + cyan) and green (cyan + yellow).<br>The secondaries of light-emitting media are magenta (combining red + blue), yellow (combining red + green), and cyan (combining blue + green).</p>
+          </div>
+
+<br>
+<br>
+
+<div class="note ">
+            <p>Tertiary Hues:</p><p>The painter’s tertiary hues of the subtractive mixing system are formed by the combination of a primary hue and an adjacent secondary hue.</p><p>Positioned between the primary and secondary hues on the 12-part circle they are, in clockwise order starting from yellow:<br>yellow-orange, red-orange, red-violet, blue-violet, blue-green, and yellow-green.</p><p>Just as secondary hues are mixed in an equal or 50/50 proportion of primaries, the tertiary hues of the colour wheel visually consist of 75% of one primary and 25% of another.</p>
+          </div>
+
+<br>
+<br>
+
+<div class="note ">
+            <p>Cool vs. Warm Colour</p><p>The colour section of yellow through red is definitely warm, while that of green through violet is definitely cool. (The tertiary colours of yellow-green and red-violet are considered flexible in temperature.)<br>However, for those who work in photography or videography, colour temperature refers to a comparison of a light’s spectral signature with that of a set standard (that of a black-body radiator), measured in degrees Kelvin.<br>In this system, the colours with the lowest temperature are those in the yellow- red area of the spectrum, and the ones with the highest temperature are in the blue-green area of the spectrum.</p>
+          </div>
+
+<br>
+<br>
+
+<h3 id="Saturation"><a href="#Saturation" class="headerlink" title="Saturation"></a>Saturation</h3><p>Saturation refers to the dominance of Hue within the colour in other words its purity or chroma(浓度), primary and secondary colours are fully saturated.</p>
+<p>Saturation is also sometimes referred to as intensity.<br>In referring to colour saturation we may also use the terms pale or weak and pure and strong.</p>
+<p>However when describing a color is light or dark we’re referring to its value or brightness based on how close it is to white.<br>Adding white increases of colors value while mixing black with it reduces it.</p>
+<br>
+<br>
+
+<h3 id="Tints-tones-and-shades"><a href="#Tints-tones-and-shades" class="headerlink" title="Tints, tones and shades"></a>Tints, tones and shades</h3><img src="/blog/2023/01/28/P283/P283_12.png" class="">
+
+<p>A tint is a hue or colour to white has been added.<br>A tone is a color that is being mixed with either compliment or with grey, and the shade is a color or hue to which black has been added.</p>
+<br>
+<br>
+
+<h3 id="Saturation-one-more-time"><a href="#Saturation-one-more-time" class="headerlink" title="Saturation(one more time)"></a>Saturation(one more time)</h3><p>Pure, intense, strong or bright are all terms that can be used to describe the attribute of color known as saturation, another word can use for it is chroma.</p>
+<img src="/blog/2023/01/28/P283/P283_6.png" class="">
+
+<p>Saturation refers to the amount or degree of fullness of a hue within a color appears can be fully saturated or less saturated without any alteration of the Hue itself only its intensity.<br>The saturation of a hue can be changed in several ways including the addition of neutrals any intermixing of complementary Hues.</p>
+<p>Mixing a hue this compliment will neutralize it muting its intensity, adding the neutrals white grey and black results and various tints tones and shades.</p>
+<br>
+<br>
+
+<h3 id="Color-circle"><a href="#Color-circle" class="headerlink" title="Color circle"></a>Color circle</h3><img src="/blog/2023/01/28/P283/P283_8.png" class="">
+<img src="/blog/2023/01/28/P283/P283_9.png" class="">
+
+<p>A color circle or color wheel is a good way to visualize color relationships.<br>Some critics claim that the color wheel oversimplify, 因为原本的关系应该是3D而colour wheel是还原成2D.</p>
+<p>However the color circle still provides a good starting point for discussion and for students ongoing exploration of colors.<br>There are many types of color circles the additive color circle the subtractive or printers process Circle the traditional and contemporary artist Circle and so on.</p>
+<p>There are a number of reasons why artists and designers are moving away from the use of the old traditional color circle, that is primaries can not mix all of the colours as the RGB or CMYK models.<br>Red and blue could not be mixed together using other hues, also there is a limited color gamete produced by red yellow blue.</p>
+<p>And there is no scientific underpinning for the use of the RYB model other authors have noted the deficiencies of the traditional painters cricle.</p>
+<blockquote>
+<p>It is impossible to create a subtractive colour wheel where every colour combined with the colour opposite it on the wheel will mix to grey [which is claimed by the traditional painters circle].<br>This type of colour wheel, which is found in many books for artists, (1) can only be approximate; (2) applies only to complex subtractive mixture, not to colour vision; and (3) precludes understanding many other things about colour.</p>
+</blockquote>
+<br>
+<br>
+
+<h3 id="Colour-system"><a href="#Colour-system" class="headerlink" title="Colour system"></a>Colour system</h3><div class="note ">
+            <p>In mixing paints to achieve the illustrated colour wheel, a six colour palette should be considered in order to achieve the largest possible gamut range and purity of hues:</p><ul><li>  primary yellow: benzimidazolone yellow  (PY154) or hansa yellow medium (PY97)</li><li>  secondary red orange: pyrrole orange (P073)</li><li>or cadmium scarlet (PR108)</li><li>  primary magenta: quinacridone magenta  (PR122) or quinacridone rose (‘permanent rose’, PV19)</li><li>  secondary blue violet: ultramarine blue  (PB29) or cobalt blue deep (PB73)</li><li>  primary cyan: phthalocyanine blue GS (PB15) or phthalocyanine cyan (PB17)</li><li>  secondary blue green: phthalocyanine green<br>BS (PG7) or phthalocyanine green YS (PG36); the best colour match to magenta falls between these two greens (MacEvoy).</li></ul>
+          </div>
+
+<img src="/blog/2023/01/28/P283/P283_7.png" class="">
+
+<p>This type of color wheel which is found in many books for artists can only be approximate applies to complex subtractive mixture not to color vision.</p>
+<img src="/blog/2023/01/28/P283/P283_13.png" class="">
+<img src="/blog/2023/01/28/P283/P283_14.png" class="">
+
+<br>
+<br>
+
+<img src="/blog/2023/01/28/P283/P283_10.png" class="">
+
+<p>A general rule to remember when using paints and triad systems for mixing colors is that it is advisable to use colors that are fully saturated or at their brightest chroma in order to have the largest gathering possible.</p>
+<p>When shooting a color system personal experience and experimentation is advised in order to find a system that works for your artistic objectives color theory and systems of color should be considered only a starting point and not the final answer.</p>
+<br>
+<br>
+<br>
+
+<h1 id="Week-2"><a href="#Week-2" class="headerlink" title="Week 2"></a>Week 2</h1><h2 id="Chevreul’s-colour-interaction"><a href="#Chevreul’s-colour-interaction" class="headerlink" title="Chevreul’s colour interaction"></a>Chevreul’s colour interaction</h2><p>Chevreul’s definition of simultaneous contrast stated that:<br>Two adjacent colours when seen by the eye will appear as dissimilar as possible.</p>
+<p>Successive contrasts or afterimages occur when the spectator looks away from an area of colour to discover its complementary hue forming for a brief period of time.</p>
+<p>There are three different types of simultaneous contrast and they can function either individually or at the same time:</p>
+<ul>
+<li>value contrast</li>
+<li>complementary effect</li>
+<li>subtraction</li>
+</ul>
+ <br>
+ <br>
+
+<h3 id="Value-contrast"><a href="#Value-contrast" class="headerlink" title="Value contrast"></a>Value contrast</h3><img src="/blog/2023/01/28/P283/P283_15.png" class="">
+<blockquote>
+<p>The same value of grey is used in the inner circles or rectangles (top two examples)<br>But the values appear to be lighter on a dark ground and darker on a lighter ground due to the principle of light/dark contrast.<br>The Chevreul Effect, (bottom two examples) stepped values placed next to each other will appear to be scalloped on the edges rather than flat areas.</p>
+</blockquote>
+<br>
+<br>
+
+<h3 id="Complementary-effect"><a href="#Complementary-effect" class="headerlink" title="Complementary effect"></a>Complementary effect</h3><img src="/blog/2023/01/28/P283/P283_16.png" class="">
+<blockquote>
+<p>In this illustration of the value contrast principle the Inner Circle looks lighter on the black and darker on the light grey.<br>Value contrast works with colors as well in this example the green circle looks lighter on the dark green and darker on the light gray.</p>
+</blockquote>
+<p><strong>Complementary effect</strong>, when all the primary hues are present, the eye tends to be at rest.<br>However when one is missing it will seek, and if necessary, generate the missing complement.<br>Cyan on a red ground will appear more vibrant than the same cyan on a neutral grey ground.<br>Because of the highly saturated red ground, our eye intensifies the saturation of the complementary cyan.</p>
+<p>Complementary contrast can be seen whenever two colours containing even the suggestion of a complementary relationship are placed next to each other. For example, a blue-green sample placed next to red will appear more green, while placed next to orange it will appear more blue.</p>
+<br>
+<br>
+
+<h3 id="Subtraction"><a href="#Subtraction" class="headerlink" title="Subtraction"></a>Subtraction</h3><img src="/blog/2023/01/28/P283/P283_17.png" class="">
+
+<p>Subtraction is another principle of colour interaction.<br>It explains how similar hues when viewed together in a figure-ground relationship will react, with the dominant one appearing to pull or subtract its own colour from the lesser one.</p>
+<p>In the first illustration on this page the yellow-orange on an orange ground will appear less orange and more yellow than the comparison square on a neutral grey.<br>This subtraction effect will appear to change both the hue and the saturation of a colour.</p>
+<p>This gets more interesting when the complementary effect is also involved in the relationship, as is the case with green on a dominant blue ground.<br>The blue will subtract its own component from the green, which makes it appear more yellow.<br>When the roles are reversed, the green seeks its complement and shifts toward red, making it appear like a blue violet.</p>
+<img src="/blog/2023/01/28/P283/P283_18.png" class="">
+
+<p>All colour shifts are not the same.<br>As a contemporary of Chevreul’s noted, the best example of colour shift occurs when hues are of mid value and fully or nearly fully saturated.<br>Also, the further two hues are from each other on the colour wheel, the more noticeable the colour shift.<br>Less noticeable shifts will occur when viewing lighter or darker valued hues.</p>
+<br>
+<br>
+
+<h2 id="Successive-Contrast-and-Afterimage"><a href="#Successive-Contrast-and-Afterimage" class="headerlink" title="Successive Contrast and Afterimage"></a>Successive Contrast and Afterimage</h2><img src="/blog/2023/01/28/P283/P283_19.png" class="">
+
+<p>Successive contrast describe what occurs when the eye is overexposed to a colour.<br>It is manifested as an afterimage.</p>
+<p>Seeking respite from overexposure to a hue, the eye will in direct succession, generate an afterimage of its complementary colour.</p>
+<p>As explained by Hering’s opponent theory, the three primary opponent channels in the eye are: red/cyan, blue yel low, and black/white.<br>When looking at a blue image this will tire out the blue photoreceptors, and they produce a weaker signal, resulting in less blue and more of its paired primary colour, which is yellow.</p>
+<br>
+<br>
+
+<h2 id="Optical-or-Partitive-Mixing"><a href="#Optical-or-Partitive-Mixing" class="headerlink" title="Optical or Partitive Mixing"></a>Optical or Partitive Mixing</h2><img src="/blog/2023/01/28/P283/P283_20.png" class="">
+
+<p>Optical or partitive mixing takes advantage of the eyes’ tendency to blend adjoining hues so that they appear to create a different combined (or third) colour.</p>
+<p>This was another additive mixing process first noted by Chevreul, while working with fabrics, that many more colours could be created by the combination of the warp and weft of woven material than those actually present in the yarns.</p>
+<p>The effect of juxtaposing colours was further explored by the French artist Eugène Delacroix (who termed it broken colour), the Impressionists and Post-Impressionists, develop a new painting technique known as <strong>pointillism.</strong>.</p>
+<p>They found that the viewer’s eye would then optically mix the two colours into brown-and a brown that was actually more lively, or rather lighter and more saturated in sensation, than the one they could have created through physical mixing.</p>
+<p>Optical mixing underlies the way we see colour TV and computer monitors and is widely used in the four-colour offset printing process.</p>
+<br>
+<br>
+
+<h2 id="Fluttering-Heart-and-Complementary-or-Simultaneous-Vibration"><a href="#Fluttering-Heart-and-Complementary-or-Simultaneous-Vibration" class="headerlink" title="Fluttering Heart and Complementary or Simultaneous Vibration"></a>Fluttering Heart and Complementary or Simultaneous Vibration</h2><img src="/blog/2023/01/28/P283/P283_21.png" class="">
+
+<p>When two highly saturated colours are juxtaposed, the eye seems to sense a slight impression of movement.</p>
+<p>When for example, a red patch is placed on a blue ground, with both colours being highly saturated, the red seems to ‘float’ above the blue.<br>This was a phenomenon that was sometimes described in the nineteenth century as ‘fluttering hearts,’ presumably because some examples of it featured heart-shaped figures.</p>
+<br>
+<br>
+
+<h2 id="Bezold-Effect-or-Assimilation"><a href="#Bezold-Effect-or-Assimilation" class="headerlink" title="Bezold Effect or Assimilation"></a>Bezold Effect or Assimilation</h2><img src="/blog/2023/01/28/P283/P283_22.png" class="">
+
+<p>Another example of colour interaction is the Bezold effect.</p>
+<p>Bezold discovered that he could affect the appearance of all the colours in a complex design or pattern by changing just a single colour in it.<br>Such changes not only seemed to affect the colour relationships, but also the design’s visual weight and balance.</p>
+<p>Important for artists and designers to be aware of, this aspect of the Bezold effect seems to be reduced by separating the colougareas with white or black outlines.<br>Depending on line width, white rules will isolate and expand the colour, while black constrains it.</p>
+<p>Another effect associated with Bezold (some times called assimilation), is his discovery that contrary to the laws of simultaneous contrast where colours seem to switch to their complementary, some colours will actually take on the same colour as their surroundings.</p>
+<p>In these situations a colour positioned next to a light colour appears lighter, but next to a dark colour it will appear darker.<br>Although simultaneous contrast has a known physiological explanation, the science behind the assimilation effect is still unknown.</p>
+<br>
+<br>
+
+<h2 id="Transparency"><a href="#Transparency" class="headerlink" title="Transparency"></a>Transparency</h2><p>When two objects overlap each other but do not completely obscure one another, areas of transparency may be created that, depending on the object’s level of opacity, will have the combined characteristics of the two.<br>Transparency has the effect of moving the eye in and out of different layers of space.</p>
+<p>There are two different types of transparency: actual (glass, filters plastic, etc.), and simulated or illusory.<br>Layers of transparency can be created through such traditional media as watercolours, oil and acrylics, with the patient build-up of thin washes.<br>This technique works best on a whole composition or on large areas of a composition.<br>It is also possible to recreate transparent interactions by mixing in a third colour that reflects the properties of the overlapping areas, using any combination or pairing of colours.</p>
+<br>
+<br>
+
+<h1 id="Week-3"><a href="#Week-3" class="headerlink" title="Week 3"></a>Week 3</h1><h2 id="Colour-Harmonies"><a href="#Colour-Harmonies" class="headerlink" title="Colour Harmonies"></a>Colour Harmonies</h2><p>In discussing colour harmonies, the following colour schemes are meant to act as a basic guideline or framework that will assist you in the planning and development the two-dimensional composition.<br>These schemes are not meant to be a rigid set of rules but merely a jumping-off point for the exploration and development of a more personalized approach to colour.</p>
+<p>They’re based on hues from the colour circle which is used to determine the various types of <strong>colour relationships and harmonies</strong>.</p>
+<p>All of these relationships have their own personalities and characteristics that can be learned and used in order to achieve colour Harmony.</p>
+<br>
+<br>
+
+<h3 id="Achromatic-Harmony"><a href="#Achromatic-Harmony" class="headerlink" title="Achromatic Harmony"></a>Achromatic Harmony</h3><img src="/blog/2023/01/28/P283/P283_23.png" class="">
+
+<p>Achromatic schemes are created using colours that have no hue.<br>Achromatic compositions (such as those seen in some Cubist paintings) are characteristically re strained, subtle and sophisticated.</p>
+<p>A traumatic schemes the use of neutrals is easily implemented however there was a lack of emphasis in order to create and versus make use of value contrast.</p>
+<p>Pros: Neutrals are easy.<br>Cons: Lack of emphasis.<br>Tips: Use value to create emphasis and movement.</p>
+<br>
+<br>
+
+<h3 id="Monochromatic-Harmony"><a href="#Monochromatic-Harmony" class="headerlink" title="Monochromatic Harmony"></a>Monochromatic Harmony</h3><img src="/blog/2023/01/28/P283/P283_24.png" class="">
+
+<p>Monochromatic harmony in compositions is created using a single hue with variations of lightness and saturation.<br>These schemes can easily establish an overall mood that the artist/designer is trying to achieve (as in Pi. casso’s blue period works) and convey the personality and characteristics of that colour (see Unit 8 for colour symbolism).<br>The lack of hue contrast to help create focal points or emphasis in a composition can be compensated for by the use of value.</p>
+<p>Pros: Monochromatic compositions are easy to create and will appear organized, balanced and cohesive.<br>Cons: These compositions can lack a spark and are less vibrant than other colour schemes.</p>
+<p>Tips: By using value through the use of tints and shades of the chosen colour, emphasis and focal points can be created.<br>If the desired effect is not being achieved through the use of a monochromatic scheme, consider trying analogous colours, which offer the same qualities of harmony but more variety and nuances of hue.</p>
+<br>
+<br>
+
+<h3 id="Analogous-Harmony"><a href="#Analogous-Harmony" class="headerlink" title="Analogous Harmony"></a>Analogous Harmony</h3><img src="/blog/2023/01/28/P283/P283_25.png" class="">
+
+<p>Analogous schemes are created as hues that are adjacent to each other, on the color circle such as yellow orange and red.</p>
+<p>Analogous keens easily create visual unity but with greater variety and with more easily created focal points than a monochromatic schemes.<br>Their downside is that they lack you contrast and eye-popping focal points when using an analogous team arrange the composition around a dominant Hue with smaller amounts of the adjacent hues.</p>
+<br>
+<br>
+
+<h3 id="Polychromatic-Harmony"><a href="#Polychromatic-Harmony" class="headerlink" title="Polychromatic Harmony"></a>Polychromatic Harmony</h3><img src="/blog/2023/01/28/P283/P283_26.png" class="" title="救命啊这图好怪">
+
+<p>Polychromatic Harmony uses a wide range of views from any location on the colour circle that have a similar value range.<br>This is what gives the composition harmony while balance can be achieved through the consistency of non-hue features.<br>In order for the composition to be successful the hues should have a limited range of value and saturation, which will allow the artist/designer to combine a wide range of hues together without them clashing or appearing discordant.<br>Colour schemes that are targeted for children frequently use highly saturated combinations of hues.<br>Another common usage are pastels of the same light value and intensity.</p>
+<p>The positive aspects of a polychromatic scheme are that they are highly visible and eye-catching when using this technique.<br>Could be aware that it can be difficult to achieve a balanced harmonious result by using a continuous neutral background colour jarring contrasts can be reduced.</p>
+<br>
+<br>
+
+<h3 id="Complementary-or-Dad-Harmony"><a href="#Complementary-or-Dad-Harmony" class="headerlink" title="Complementary or Dad Harmony"></a>Complementary or Dad Harmony</h3><img src="/blog/2023/01/28/P283/P283_27.png" class="">
+
+<p>A complementary or dyadic scheme uses use that are directly opposite each other on the colour circle.</p>
+<p>They are high-contrast in nature and when placed next to each other they cause an effect known as complementary vibration.<br>Because of this effect, compositions that use the complementary hues at full value and saturation should be avoided unless the intention is to create a jarring relationship.</p>
+<p>The sharp contrast between these hues make it easy for the artist or designer to draw the audience’s attention to focal points when using this colour scheme.<br>It may be more difficult to achieve a balanced composition compared to other colour.</p>
+<p>Tips: More successful compositions are achieved when the colours have unequal weight. If more variety is needed, a split complementary colour scheme should be considered.</p>
+<br>
+<br>
+
+<h3 id="Split-complementary"><a href="#Split-complementary" class="headerlink" title="Split complementary"></a>Split complementary</h3><img src="/blog/2023/01/28/P283/P283_28.png" class="">
+
+<p>A split complementary scheme has the advantages of combining the harmonious effect of two analogous hues along with the strong contrast created by a complementary colour.</p>
+<p>It statues use and an opposite diet that should form a V shape formation on the colour circle.</p>
+<p>These compositions are generally balanced and have variety.<br>The adjoining hues offer nuance, while the complementary hue adds strong contrast.</p>
+<p>Difficult aspect of split complementary schemes is that they do not have the same amount of contrast as complementary schemes to create a composition with a strong focal point, use a warm hue for the accent and a range of cooler colours for the background.</p>
+<br>
+<br>
+
+<h3 id="Double-Complementary-Harmonys"><a href="#Double-Complementary-Harmonys" class="headerlink" title="Double Complementary Harmonys"></a>Double Complementary Harmonys</h3><img src="/blog/2023/01/28/P283/P283_29.png" class="">
+
+<p>Double complimentary is a rich complex colour scheme that uses for use of two adjacent complementary pairs.<br>the double complementary scheme is softer and with less contrast than a complementary scheme but is more difficult to harmonize if all hues are of equal value.</p>
+<p>Pros: This scheme is rich in variety and contrast.<br>Cons: Because of the variety of hues it is more difficult to balance your composition.<br>Tips: If all four colours are used at equal value they will appear unbalanced, so use a variety of shades and tones.</p>
+<br>
+<br>
+
+<h3 id="Triadic"><a href="#Triadic" class="headerlink" title="Triadic"></a>Triadic</h3><img src="/blog/2023/01/28/P283/P283_30.png" class="">
+
+<p>Triadic schemes use hues that are equally spaced on the colour circle.<br>Triadic schemes are considered balanced with high contrast but not as strong as contrast complementary schemes.</p>
+<p>They will create compositions that are not as contrasting as complementary schemes but rich, varied in hue and balanced.</p>
+<p>Tips: Have large areas of a composition dominated by one colour with the other colours used more sparingly.</p>
+<br>
+<br>
+
+<h3 id="Tetradic"><a href="#Tetradic" class="headerlink" title="Tetradic"></a>Tetradic</h3><img src="/blog/2023/01/28/P283/P283_31.png" class="">
+
+<p>Like the double complementary scheme the tetradic is a rich, complex combination that uses four hues.<br>This scheme offers more variety and high contrast value than other combinations.<br>Tetradic seems allow for great variety and contrast, however this game to be difficult to balance attention to the balance of cool and warm hues.<br>In the composition also let one colour dominate and avoid using fuor hues of equal value colors.</p>
+<br>
+<br>
+
+<h3 id="Discordance"><a href="#Discordance" class="headerlink" title="Discordance"></a>Discordance</h3><img src="/blog/2023/01/28/P283/P283_32.png" class="">
+
+<p>Discordance is created when colours that do not correspond with the natural order of tonal value are juxtaposed.<br>For example when orange is used in combination with a light blue, it does not follow the natural order of tonal value (orange is positioned lighter on the colour circle than blue).<br>If handled carefully however this type of colour scheme can be quite successful.</p>
+<p>Pros: Creates attention-grabbing compositions.<br>Cons: Difficult to balance and if excessive can turn your audience off.<br>Tips: Discordant colours work best when there is extreme value and hue contrast between them.<br>Restrict the number of colours used and keep the most jarring colour relationship to the focal point of the composition.</p>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%9A%84%E5%A4%A7%E5%8E%85%E6%B5%81%E6%B7%8C%E7%9D%80%E7%88%B5%E5%A3%AB%E4%B9%90/" rel="tag"># 图书馆的大厅流淌着爵士乐</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2023/01/29/P284/" rel="prev" title="给这份感情一个结束">
+      <i class="fa fa-chevron-left"></i> 给这份感情一个结束
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/01/16/P263/" rel="next" title="地铁通勤时半死不活的读书记录 - 冬">
+      地铁通勤时半死不活的读书记录 - 冬 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Week-1"><span class="nav-number">1.</span> <span class="nav-text">Week 1</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#What-is-colour"><span class="nav-number">1.1.</span> <span class="nav-text">What is colour?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Elements-of-Colour"><span class="nav-number">1.2.</span> <span class="nav-text">The Elements of Colour</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Hue"><span class="nav-number">1.2.1.</span> <span class="nav-text">Hue</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Saturation"><span class="nav-number">1.2.2.</span> <span class="nav-text">Saturation</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tints-tones-and-shades"><span class="nav-number">1.2.3.</span> <span class="nav-text">Tints, tones and shades</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Saturation-one-more-time"><span class="nav-number">1.2.4.</span> <span class="nav-text">Saturation(one more time)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Color-circle"><span class="nav-number">1.2.5.</span> <span class="nav-text">Color circle</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Colour-system"><span class="nav-number">1.2.6.</span> <span class="nav-text">Colour system</span></a></li></ol></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Week-2"><span class="nav-number">2.</span> <span class="nav-text">Week 2</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Chevreul%E2%80%99s-colour-interaction"><span class="nav-number">2.1.</span> <span class="nav-text">Chevreul’s colour interaction</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Value-contrast"><span class="nav-number">2.1.1.</span> <span class="nav-text">Value contrast</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complementary-effect"><span class="nav-number">2.1.2.</span> <span class="nav-text">Complementary effect</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subtraction"><span class="nav-number">2.1.3.</span> <span class="nav-text">Subtraction</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Successive-Contrast-and-Afterimage"><span class="nav-number">2.2.</span> <span class="nav-text">Successive Contrast and Afterimage</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Optical-or-Partitive-Mixing"><span class="nav-number">2.3.</span> <span class="nav-text">Optical or Partitive Mixing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Fluttering-Heart-and-Complementary-or-Simultaneous-Vibration"><span class="nav-number">2.4.</span> <span class="nav-text">Fluttering Heart and Complementary or Simultaneous Vibration</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Bezold-Effect-or-Assimilation"><span class="nav-number">2.5.</span> <span class="nav-text">Bezold Effect or Assimilation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transparency"><span class="nav-number">2.6.</span> <span class="nav-text">Transparency</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Week-3"><span class="nav-number">3.</span> <span class="nav-text">Week 3</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Colour-Harmonies"><span class="nav-number">3.1.</span> <span class="nav-text">Colour Harmonies</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Achromatic-Harmony"><span class="nav-number">3.1.1.</span> <span class="nav-text">Achromatic Harmony</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Monochromatic-Harmony"><span class="nav-number">3.1.2.</span> <span class="nav-text">Monochromatic Harmony</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Analogous-Harmony"><span class="nav-number">3.1.3.</span> <span class="nav-text">Analogous Harmony</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Polychromatic-Harmony"><span class="nav-number">3.1.4.</span> <span class="nav-text">Polychromatic Harmony</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Complementary-or-Dad-Harmony"><span class="nav-number">3.1.5.</span> <span class="nav-text">Complementary or Dad Harmony</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Split-complementary"><span class="nav-number">3.1.6.</span> <span class="nav-text">Split complementary</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Double-Complementary-Harmonys"><span class="nav-number">3.1.7.</span> <span class="nav-text">Double Complementary Harmonys</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Triadic"><span class="nav-number">3.1.8.</span> <span class="nav-text">Triadic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Tetradic"><span class="nav-number">3.1.9.</span> <span class="nav-text">Tetradic</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Discordance"><span class="nav-number">3.1.10.</span> <span class="nav-text">Discordance</span></a></li></ol></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">20:57</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2023/01/28/P283/";
+    this.page.identifier = "2023/01/28/P283/";
+    this.page.title = "Colour Theory for Digital Design - 上";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

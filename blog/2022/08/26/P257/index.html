@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="这是以头抢地系列结束后的第一篇数学笔记.值得在概括栏里cue一下(嗯哼).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Javascript的笔记">
+<meta property="og:url" content="https://mazui3.github.io/blog/2022/08/26/P257/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="这是以头抢地系列结束后的第一篇数学笔记.值得在概括栏里cue一下(嗯哼).">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-08-26T21:20:44.000Z">
+<meta property="article:modified_time" content="2022-11-12T20:26:37.831Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="WebDev">
+<meta property="article:tag" content="JavaScript">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2022/08/26/P257/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于Javascript的笔记 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2022/08/26/P257/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于Javascript的笔记
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-26 17:20:44" itemprop="dateCreated datePublished" datetime="2022-08-26T17:20:44-04:00">2022-08-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-12 15:26:37" itemprop="dateModified" datetime="2022-11-12T15:26:37-05:00">2022-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">写码笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2022/08/26/P257/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/08/26/P257/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>25k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>22 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>这是以头抢地系列结束后的第一篇数学笔记.值得在概括栏里cue一下(嗯哼).</p>
+<span id="more"></span>
+
+<p>Morten’s incomplete guide to navigating the JavaScript landscape:<br>(在linkedin上的Morten老师对于一篮子JavaScript类语言的理解说明)</p>
+<p>Start from the core of the <strong>JavaScript</strong> itself. Sometimes referred to as <strong>vanilla JavaScript</strong> or Vanilla JS.<br>Everything else is built on top of JavaScript itself.</p>
+<p>The browser implementation specification for JavaScript is called <strong>ECMAScript</strong>, named after the European Computer Manufacturers Association, ECMA.<br>ECMAScript is not the language itself but the official description of how the language should be interpreted by browsers.</p>
+<p>Then <strong>TypeScript</strong>, variation, dialect, or flavor of JavaScript introducing features like strong typing.</p>
+<p><strong>React, Vue, Angular</strong> are tools written in JavaScript, the JavaScript frameworks allowing us to write JavaScript-based front-end application.</p>
+<p><strong>Node.js</strong>, JavaScript server runtime used to run JavaScript everywhere; used to run npm, WebPack. Babel, and more on your computer.</p>
+<br>
+<br>
+<br>
+
+<p>LinkedIn的课推荐使用visual studio,于是就跟着下了,以及<strong>live server</strong>的插件,用于及时在浏览器上运行.<strong>ESLint</strong> 和 <strong>Prettier</strong>用来Debug,这两个需要node.js.<br>Visual studio好牛逼啊…</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Ctrl + `</span><br></pre></td></tr></table></figure>
+<p>打开terminal.在文件目录下npm install.</p>
+<blockquote>
+<p>The Node package manager goes onto the internet, finds the dependencies necessary, pulls them into my computer through the internet and installs them in our current project.<br>In the project, will have a new folder called node module that contains all of the dependencies that were installed.</p>
+</blockquote>
+<p>虽然不是很懂,大概是让eslint和prettier run起来的东西吧.</p>
+<p>最后去file &gt; preferences &gt; settings &gt; search formatsonsave.<br>Check Editor: Format On Save.<br>每次save file的时候,eslint和prettier会run.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a>Comment</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// single line comment</span></span><br><span class="line"></span><br><span class="line"><span class="comment">/* multi-line comment</span></span><br><span class="line"><span class="comment">See! this line is also commented out*/</span></span><br></pre></td></tr></table></figure>
+
+<div class="note ">
+            <p>Shortcut in VS code:<br>/** + return -&gt; add mutli-line comment<br>place cursor on the line/lines + ctrl + forward slash</p>
+          </div>
+<p>Atom也可以,markdown里的comment默认的是html的.救命,学到了.<br>再来一次ctrl + forward slash可以恢复.</p>
+<p><strong>Spacing in JS is for human readability only.</strong> Browser does not care.<br><strong>Semicolons in JS is for human readability.</strong> JS does not care.<br>胃开始疼了起来.<br><strong>Double and single quotes are for string</strong> JS does not care, but be consistent.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Link-to-html"><a href="#Link-to-html" class="headerlink" title="Link to html"></a>Link to html</h2><figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">src</span>=<span class="string">&quot;script.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>在同个directory下如此link js file.<br>注意html代码是一行一行头从到尾编译的,所以如果link上js代码中有什么body tag里的东西,但body tag在script tag之后,就会出error,多加注意.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Modules"><a href="#Modules" class="headerlink" title="Modules"></a>Modules</h2><p>跟当年写C++的时候一样,js也可以把代码放在不同的文件(Module)里.</p>
+<p>在script.js中加入.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> backpack <span class="keyword">from</span> <span class="string">&quot;./backpack.js&quot;</span>;</span><br></pre></td></tr></table></figure>
+
+<p>backpack.js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> updateBackpack = <span class="function">(<span class="params">update</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> main = <span class="built_in">document</span>.querySelector(<span class="string">&quot;main&quot;</span>);</span><br><span class="line">  main.innerHTML = markup(backpack);</span><br><span class="line">  <span class="built_in">console</span>.info(update);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> backpack = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Everyday Backpack&quot;</span>,</span><br><span class="line">  <span class="attr">volume</span>: <span class="number">30</span>,</span><br><span class="line">  <span class="attr">color</span>: <span class="string">&quot;grey&quot;</span>,</span><br><span class="line">  <span class="attr">pocketNum</span>: <span class="number">15</span>,</span><br><span class="line">  <span class="attr">strapLength</span>: &#123;</span><br><span class="line">    <span class="attr">left</span>: <span class="number">26</span>,</span><br><span class="line">    <span class="attr">right</span>: <span class="number">26</span>,</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">lidOpen</span>: <span class="literal">false</span>,</span><br><span class="line">  <span class="attr">toggleLid</span>: <span class="function"><span class="keyword">function</span> (<span class="params">lidStatus</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.lidOpen = lidStatus;</span><br><span class="line">    updateBackpack(<span class="string">`Lid status changed.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="attr">newStrapLength</span>: <span class="function"><span class="keyword">function</span> (<span class="params">lengthLeft, lengthRight</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.left = lengthLeft;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.right = lengthRight;</span><br><span class="line">    updateBackpack(<span class="string">`Strap lengths updated.`</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="keyword">export</span> <span class="keyword">default</span> backpack;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>In backpack file中我们define了一个constant叫做backpack and exported it tell browser this entity called backpack.</p>
+<p>同时在html中:</p>
+<figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;backpack.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span> <span class="attr">type</span>=<span class="string">&quot;module&quot;</span> <span class="attr">src</span>=<span class="string">&quot;script.js&quot;</span>&gt;</span><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br></pre></td></tr></table></figure>
+<p>虽然这里type叫module, script.js是main file,backpack是module.</p>
+<p>在console里call backpack会not defined. Backpack object only available in context of script.js, not to the browser.<br>All imports need to happen at the top of the main file where it’s being used.<br>把class文件作为module比较make sense.因为在top会先运行,也会先declare,还不会被consule change.</p>
+<br>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> backpack = &#123;<span class="comment">// variable holds the data</span></span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Everyday Backpack&quot;</span>, <span class="comment">// properties defined using key-value pairs</span></span><br><span class="line">  <span class="attr">toggleLid</span>: <span class="function"><span class="keyword">function</span>(<span class="params">lidStatus</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.lidOpen = lidStatus; <span class="comment">// Methods are properties containing functions</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>有趣的事情是,我们assign backpack as constant.我们不能把它改成什么,number 5因为其constant特性,但是我们可以更改其中的properties.<br>Term上来说,在object内的叫method,在object外的叫function.</p>
+<br>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(“Print backpack:<span class="string">&quot;, backpack); //用console log在print backpack object</span></span><br></pre></td></tr></table></figure>
+
+<p>除了点以外,方括号也可以access field.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(“Print backpack:<span class="string">&quot;, backpack.pocketNum);</span></span><br><span class="line"><span class="string">console.log(“Print backpack:&quot;</span>, backpack[<span class="string">&quot;pocketNum&quot;</span>]);</span><br></pre></td></tr></table></figure>
+<p>是一样的.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> theField = <span class="string">&quot;pocketNum&quot;</span></span><br><span class="line"><span class="built_in">console</span>.log(“Print backpack:<span class="string">&quot;, backpack[theField]);</span></span><br></pre></td></tr></table></figure>
+<p>这样也行.当然点的方式这样不行.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Class"><a href="#Class" class="headerlink" title="Class"></a>Class</h2><p>用来生成objects.<br>不如说JS竟然可以像上述所说先跳过class生成一个object好牛逼.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Creating classes:</span></span><br><span class="line"><span class="comment"> *</span></span><br><span class="line"><span class="comment"> * Class declaration: class Name &#123;&#125;</span></span><br><span class="line"><span class="comment"> * Class expression:  const Name = class &#123;&#125;</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Backpack</span> </span>&#123;</span><br><span class="line">  <span class="function"><span class="title">constructor</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">    <span class="comment">// Defines parameters:</span></span></span></span><br><span class="line"><span class="params"><span class="function">    name,</span></span></span><br><span class="line"><span class="params"><span class="function">    volume,</span></span></span><br><span class="line"><span class="params"><span class="function">    color,</span></span></span><br><span class="line"><span class="params"><span class="function">    pocketNum,</span></span></span><br><span class="line"><span class="params"><span class="function">    strapLengthL,</span></span></span><br><span class="line"><span class="params"><span class="function">    strapLengthR,</span></span></span><br><span class="line"><span class="params"><span class="function">    lidOpen</span></span></span><br><span class="line"><span class="params"><span class="function">  </span>)</span> &#123;</span><br><span class="line">    <span class="comment">// Define properties, constructor method:</span></span><br><span class="line">    <span class="built_in">this</span>.name = name;</span><br><span class="line">    <span class="built_in">this</span>.volume = volume;</span><br><span class="line">    <span class="built_in">this</span>.color = color;</span><br><span class="line">    <span class="built_in">this</span>.pocketNum = pocketNum;</span><br><span class="line">    <span class="built_in">this</span>.strapLength = &#123;</span><br><span class="line">      <span class="attr">left</span>: strapLengthL,</span><br><span class="line">      <span class="attr">right</span>: strapLengthR,</span><br><span class="line">    &#125;;</span><br><span class="line">    <span class="built_in">this</span>.lidOpen = lidOpen;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="comment">// Add methods like normal functions:</span></span><br><span class="line">  <span class="function"><span class="title">toggleLid</span>(<span class="params">lidStatus</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.lidOpen = lidStatus;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="title">newStrapLength</span>(<span class="params">lengthLeft, lengthRight</span>)</span> &#123;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.left = lengthLeft;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.right = lengthRight;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> everydayPack = <span class="keyword">new</span> Backpack(</span><br><span class="line">  <span class="string">&quot;Everyday Backpack&quot;</span>,</span><br><span class="line">  <span class="number">30</span>,</span><br><span class="line">  <span class="string">&quot;grey&quot;</span>,</span><br><span class="line">  <span class="number">15</span>,</span><br><span class="line">  <span class="number">26</span>,</span><br><span class="line">  <span class="number">26</span>,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>For class, we need class keyword + <strong>capitalized name</strong>.</p>
+<p>The old way of object constructor function:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">Backpack</span>(<span class="params"></span></span></span><br><span class="line"><span class="params"><span class="function">  name,</span></span></span><br><span class="line"><span class="params"><span class="function">  volume,</span></span></span><br><span class="line"><span class="params"><span class="function">  color,</span></span></span><br><span class="line"><span class="params"><span class="function">  pocketNum,</span></span></span><br><span class="line"><span class="params"><span class="function">  strapLengthL,</span></span></span><br><span class="line"><span class="params"><span class="function">  strapLengthR,</span></span></span><br><span class="line"><span class="params"><span class="function">  lidOpen</span></span></span><br><span class="line"><span class="params"><span class="function"></span>) </span>&#123;</span><br><span class="line">  <span class="built_in">this</span>.name = name;</span><br><span class="line">  <span class="built_in">this</span>.volume = volume;</span><br><span class="line">  <span class="built_in">this</span>.color = color;</span><br><span class="line">  <span class="built_in">this</span>.pocketNum = pocketNum;</span><br><span class="line">  <span class="built_in">this</span>.strapLength = &#123;</span><br><span class="line">    <span class="attr">left</span>: strapLengthL,</span><br><span class="line">    <span class="attr">right</span>: strapLengthR,</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">this</span>.lidOpen = lidOpen;</span><br><span class="line">  <span class="built_in">this</span>.toggleLid = <span class="function"><span class="keyword">function</span> (<span class="params">lidStatus</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.lidOpen = lidStatus;</span><br><span class="line">  &#125;;</span><br><span class="line">  <span class="built_in">this</span>.newStrapLength = <span class="function"><span class="keyword">function</span> (<span class="params">lengthLeft, lengthRight</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.left = lengthLeft;</span><br><span class="line">    <span class="built_in">this</span>.strapLength.right = lengthRight;</span><br><span class="line">  &#125;;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> everydayPack = <span class="keyword">new</span> Backpack(</span><br><span class="line">  <span class="string">&quot;Everyday Backpack&quot;</span>,</span><br><span class="line">  <span class="number">30</span>,</span><br><span class="line">  <span class="string">&quot;grey&quot;</span>,</span><br><span class="line">  <span class="number">15</span>,</span><br><span class="line">  <span class="number">26</span>,</span><br><span class="line">  <span class="number">26</span>,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<p>The methods live inside the main construction function like the properties do.<br>Class allows to do more inside of the constructors, recommend to use the previous one!</p>
+<br>
+<br>
+<br>
+
+<h2 id="String-output"><a href="#String-output" class="headerlink" title="String output"></a>String output</h2><p>When browser renders a document, it creates a document object model of that document. Then we can access that document object using JS.</p>
+<p>所以我们access document object.<br>在script.js中更改.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> content = <span class="string">`</span></span><br><span class="line"><span class="string">  &lt;main&gt;</span></span><br><span class="line"><span class="string">    &lt;article&gt;</span></span><br><span class="line"><span class="string">      &lt;h1&gt;<span class="subst">$&#123;everydayPack.name&#125;</span>&lt;/h1&gt;</span></span><br><span class="line"><span class="string">      &lt;ul&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Volume: <span class="subst">$&#123;everydayPack.volume&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Color: <span class="subst">$&#123;everydayPack.color&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Age: <span class="subst">$&#123;everydayPack.backpackAge()&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Number of pockets: <span class="subst">$&#123;everydayPack.pocketNum&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Left strap length: <span class="subst">$&#123;everydayPack.strapLength.left&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Right strap length: <span class="subst">$&#123;everydayPack.strapLength.right&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">        &lt;li&gt;Lid status: <span class="subst">$&#123;everydayPack.lidOpen&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;/ul&gt;</span></span><br><span class="line"><span class="string">    &lt;/article&gt;</span></span><br><span class="line"><span class="string">  &lt;/main&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = content;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>Back ticks tell the browser that anything inside here is a template literal meaning we can mix HTML and string with JS expressions to literally create templates.<br>这是一个template literal, anything you want to call in something generated by JS, we add placeholder.</p>
+<br>
+<br>
+
+<p>我觉得template literal很牛逼很方便,以下是老式method:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> content = <span class="string">&quot;&lt;h1&gt;&quot;</span> + everydayPack.name + <span class="string">&quot;&lt;/h1&gt;&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.body.innerHTML = content;</span><br></pre></td></tr></table></figure>
+<p>使用string catenation.</p>
+<br>
+<br>
+<br>
+
+<h2 id="DOM-document-object-model"><a href="#DOM-document-object-model" class="headerlink" title="DOM(document object model)"></a>DOM(document object model)</h2><h3 id="return-DOM-object"><a href="#return-DOM-object" class="headerlink" title="return DOM object"></a>return DOM object</h3><p>querySelector function will return a DOM object.是新的function.</p>
+<p>类似的老function还有getElementById() -&gt; return single element.<br>和getElementsByClassName() -&gt; return an array-like object of all the nodes or child elements matching the query. The query is string of space separated class names.<br>得iterate through the array,比较麻烦.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;main&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>选取document的main element.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.maincontent&quot;</span>);</span><br></pre></td></tr></table></figure>
+<p>选取document里一个名为”.maincontent”的class.<br>querySelector可以选择任何的css elements.</p>
+<br>
+<br>
+<br>
+
+<h3 id="modify-class"><a href="#modify-class" class="headerlink" title="modify class"></a>modify class</h3><p>Old one: className<br>It’s avaiable for all elements in the dom. Class name holds a string, listing out all the classes appended to an element.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;h1&quot;</span>).className</span><br></pre></td></tr></table></figure>
+<p>If you have an element with several classes, you can’t replace the classes with a new class, because that way you’re wiping out all the classes.<br>In React and other JS frameworks, the term class name is used in place of class in markup to avoid collisions with the JS class keyword which is used to set up classes.<br><strong>We should not using class name property in frameworks lol.</strong></p>
+<p>We will use the class list property.<br>The class list property gives us a Dom token collection of all the classes appended to an element. &lt;-就是一个array of things in that class.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;h1&quot;</span>).classList</span><br><span class="line"></span><br><span class="line"><span class="comment">//还能modify</span></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;h1&quot;</span>).classList.add(<span class="string">&quot;new class&quot;</span>)</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;h1&quot;</span>).classList.remove(<span class="string">&quot;new class&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h3 id="Attribute"><a href="#Attribute" class="headerlink" title="Attribute"></a>Attribute</h3><p>Does the attribute exist on this particular element.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;img&quot;</span>).hasAttribute(<span class="string">&quot;src&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;img&quot;</span>).getAttribute(<span class="string">&quot;src&quot;</span>)<span class="comment">//查看</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;img&quot;</span>).setAttribute(<span class="string">&quot;alt&quot;</span>,<span class="string">&quot;A drawing of the backpack&quot;</span>)</span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;img&quot;</span>).removeAttribute(<span class="string">&quot;alt&quot;</span>)</span><br></pre></td></tr></table></figure>
+<p>Everything inside the tag is considered an attribute.<br>If we target an element that has a class, the class will also show up as an attribute.</p>
+<br>
+<br>
+<br>
+
+<h3 id="Inline"><a href="#Inline" class="headerlink" title="Inline"></a>Inline</h3><p>If an element has inline styles, meaning there are CSS declarations in the element itself, that inline CSS is stored in the style property of the elements and we can access it as a regular property.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.site-title&quot;</span>).style</span><br></pre></td></tr></table></figure>
+<p>会return一个CSSStyleDeclaration array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.site-title&quot;</span>).color</span><br></pre></td></tr></table></figure>
+<p>可以access到array中的color这一项.</p>
+<p>Btw we can’t have hyphens for property names.</p>
+<h3 id="Add-DOM-element"><a href="#Add-DOM-element" class="headerlink" title="Add DOM element"></a>Add DOM element</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/**</span></span><br><span class="line"><span class="comment"> * Add a navigation section to the DOM</span></span><br><span class="line"><span class="comment"> */</span></span><br><span class="line"><span class="keyword">const</span> navContent = <span class="string">`</span></span><br><span class="line"><span class="string">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Home&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;About&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Backpacks&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Other things&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;&lt;a href=&quot;#&quot;&gt;Contact&lt;/a&gt;&lt;/li&gt;</span></span><br><span class="line"><span class="string">`</span>;</span><br><span class="line"></span><br><span class="line"><span class="comment">//create nav element</span></span><br><span class="line"><span class="keyword">const</span> mainNav = <span class="built_in">document</span>.createElement(<span class="string">&quot;nav&quot;</span>)</span><br><span class="line"><span class="comment">//add to page</span></span><br><span class="line">mainNav.classList.add(<span class="string">&quot;main-navigation&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> navList = <span class="built_in">document</span>.createElement(<span class="string">&quot;ul&quot;</span>)</span><br><span class="line">navList.innerHTML = navContent</span><br><span class="line"><span class="comment">//append ul emelent</span></span><br><span class="line">mainNav.append(navList)</span><br><span class="line"></span><br><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">&quot;.siteheader&quot;</span>).append(mainNav)</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h3 id="Event"><a href="#Event" class="headerlink" title="Event"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Events">Event</a></h3><p>Event通过event listener detect.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> container = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.container&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> button = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.cta-button&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> posX = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.posX span&quot;</span>);</span><br><span class="line"><span class="keyword">const</span> posY = <span class="built_in">document</span>.querySelector(<span class="string">&quot;.posY span&quot;</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Log when the button is clicked in the console.</span></span><br><span class="line">button.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  button.classList.toggle(<span class="string">&quot;active&quot;</span>);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;Button was clicked!&quot;</span>);</span><br><span class="line">&#125;, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Update the x and y displays to show the current mouse position.</span></span><br><span class="line"><span class="keyword">const</span> mousePosition = <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">  posX.innerText = event.pageX;</span><br><span class="line">  posY.innerText = event.pageY;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">window</span>.addEventListener(<span class="string">&quot;mousemove&quot;</span>, mousePosition, <span class="literal">false</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Change the color of the box when the mouse enters.</span></span><br><span class="line">container.addEventListener(</span><br><span class="line">  <span class="string">&quot;mouseenter&quot;</span>,</span><br><span class="line">  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    container.classList.add(<span class="string">&quot;blue&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br><span class="line"></span><br><span class="line">container.addEventListener(</span><br><span class="line">  <span class="string">&quot;mouseleave&quot;</span>,</span><br><span class="line">  <span class="function">() =&gt;</span> &#123;</span><br><span class="line">    container.classList.remove(<span class="string">&quot;blue&quot;</span>);</span><br><span class="line">  &#125;,</span><br><span class="line">  <span class="literal">false</span></span><br><span class="line">);</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Everything that happens in the browser is an event(这里的例子有click, mouseenter和mouseleave), can monitor any of those events by adding event listener. Event listeners can be appended to any element inside the window and inside the DOM, and you can trigger whatever function you want either using an anonymous function inside the event listener or by using a callback.</p>
+</blockquote>
+<p>Eventlister:</p>
+<blockquote>
+<p>target.addEventListener(target, callback [, options]);</p>
+</blockquote>
+<p>第一个target: the event target object,可以是bottom之类的.<br>第二个target: 会触发的event,比如click.<br>options基本为空.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> button = backpackArticle.querySelector(<span class="string">&quot;.lid-toggle&quot;</span>) <span class="comment">//选中button</span></span><br><span class="line"><span class="keyword">const</span> status = backpackArticle.querySelector(<span class="string">&quot;.backpack__lid span&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">//对button增加event</span></span><br><span class="line">button.addEventListener(<span class="string">&quot;click&quot;</span>, <span class="function">(<span class="params">event</span>) =&gt;</span> &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(event)</span><br><span class="line">    status.innerText === <span class="string">&quot;open&quot;</span> ? status.innerText = <span class="string">&quot;closed&quot;</span> : status.innerText = <span class="string">&quot;open&quot;</span></span><br><span class="line">  &#125;)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> backpackArticle;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="Variable"><a href="#Variable" class="headerlink" title="Variable"></a>Variable</h2><p>var为variable.是default for all variable, the default if we forget to say that we are creating a new variable.</p>
+<blockquote>
+<p>something = 7</p>
+</blockquote>
+<p>这时候something是var.</p>
+<blockquote>
+<p>var x = 4, y = 5, z =”blue”</p>
+</blockquote>
+<p>也可以打包define多个variable.<br><strong>var是globally scoped variable.</strong><br>如果要避免globally scoped,可以使用let.<br><strong>let是block scoped local variable.</strong><br>If we wanna call the locally scoped variable outside its scope, JS stops rendering at this point, and in console it will output error.</p>
+<blockquote>
+<p>For most situations, when you want to use a changeable or mutable variable, you should use <strong>let</strong>. That includes when you want to use it in global scope. When you declare a let in global scope, it will apply everywhere except where you re-declare it.<br>The var is only really useful if you want a mutable variable with global scope all the time.</p>
+</blockquote>
+<p><strong>const</strong> key word fines a <strong>block-scoped</strong> constant.<br>We cant put new stuff in the const box, but we can change status or properties or other features of what the constant holds.<br>We can change the properties inside of an object inside a const, the entries in an array inside a const, but cant reassign the whole constant to replace the object with another object or the array with another array or an object with an array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">// String:</span></span><br><span class="line"><span class="keyword">let</span> stringDemo = <span class="string">&quot;A string of text.&quot;</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;String:&quot;</span>, stringDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Numbes:</span></span><br><span class="line"><span class="keyword">let</span> integerDemo = <span class="number">4</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Integer:&quot;</span>, integerDemo);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> floatDemo = <span class="number">5.6</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Floating point number:&quot;</span>, floatDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Boolean:</span></span><br><span class="line"><span class="keyword">let</span> booleanDemo = <span class="literal">true</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Boolean value:&quot;</span>, booleanDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Null value (nothing):</span></span><br><span class="line"><span class="keyword">let</span> nullDemo = <span class="literal">null</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Null value:&quot;</span>, nullDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Undefined:</span></span><br><span class="line"><span class="keyword">let</span> undefinedDemo;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Undefined:&quot;</span>, undefinedDemo);</span><br><span class="line"></span><br><span class="line"><span class="keyword">let</span> undefinedAssignedDemo = <span class="literal">undefined</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Undefined assigned:&quot;</span>, undefinedAssignedDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Object:</span></span><br><span class="line"><span class="keyword">const</span> objectDemo = &#123;</span><br><span class="line">  <span class="attr">dance</span>: <span class="string">&quot;Mambo&quot;</span>,</span><br><span class="line">  <span class="attr">number</span>: <span class="number">5</span>,</span><br><span class="line">&#125;;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Object:&quot;</span>, objectDemo);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Array:</span></span><br><span class="line"><span class="keyword">const</span> arrayDemo = [<span class="string">&quot;tango&quot;</span>, <span class="string">&quot;foxtrot&quot;</span>, <span class="string">&quot;waltz&quot;</span>, <span class="string">&quot;rumba&quot;</span>, <span class="string">&quot;bolero&quot;</span>];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Array:&quot;</span>, arrayDemo);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+<p>因为JS的type全靠缘(不是),可以使用typeof function来判定.</p>
+<blockquote>
+<p>console.log(“Undefined:”, typeof undefinedDemo);</p>
+</blockquote>
+<br>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> a = <span class="number">5</span>;</span><br><span class="line"><span class="keyword">let</span> b = <span class="number">4</span>;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`let a: <span class="subst">$&#123;a&#125;</span> (<span class="subst">$&#123;<span class="keyword">typeof</span> a&#125;</span>)`</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">`let b: <span class="subst">$&#123;b&#125;</span> (<span class="subst">$&#123;<span class="keyword">typeof</span> b&#125;</span>)`</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (a == b) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Match! let a and let b are the same value.`</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(<span class="string">`No match: let a and let b are NOT same value.`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这里比较有意思(胃疼)的是,==是loose comparsion.如果a为5,b为“5”-&gt; string.<br>还是会match.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (a === b) &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`Match! let a and let b are the same value.`</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.error(<span class="string">`No match: let a and let b are NOT same value.`</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>但这样就会让type也比较!</p>
+<br>
+<br>
+<br>
+
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>Array跟C++见过的很像.</p>
+<ol>
+<li>Index从0开始.</li>
+<li>有各种build in function.</li>
+<li>但是是dynamic的.</li>
+</ol>
+<h3 id="Built-in-function"><a href="#Built-in-function" class="headerlink" title="Built-in function"></a>Built-in function</h3><p>有pop,return并去除最后一个item.</p>
+<p>shift,return并去除第一个item. Unshift,add item to the first one in the array.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> deskArray = [</span><br><span class="line">  <span class="string">&quot;pen&quot;</span>,</span><br><span class="line">  <span class="string">&quot;camera&quot;</span>,</span><br><span class="line">  <span class="string">&quot;phone&quot;</span>,</span><br><span class="line">  <span class="string">&quot;notebook&quot;</span>,</span><br><span class="line">  <span class="string">&quot;headphones&quot;</span>,</span><br><span class="line">  <span class="string">&quot;lightbulb&quot;</span>,</span><br><span class="line">  <span class="string">&quot;usb drive&quot;</span>,</span><br><span class="line">];</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">&quot;Original array:&quot;</span>, deskArray);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Remove the last item:</span></span><br><span class="line"><span class="comment">// @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/pop</span></span><br><span class="line"><span class="comment">// deskArray.pop();</span></span><br><span class="line"><span class="comment">// console.log(&quot;New array:&quot;, deskArray);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Add last item as the first item on the array:</span></span><br><span class="line"><span class="comment">// https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/unshift</span></span><br><span class="line"><span class="comment">// deskArray.unshift(deskArray.pop());</span></span><br><span class="line"><span class="comment">// console.log(&quot;Last item is now first:&quot;, deskArray);</span></span><br></pre></td></tr></table></figure>
+
+<p>Sort, find 和splice(这个倒是第一次见).</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Sort items by alphabetical order:</span></span><br><span class="line"><span class="comment">// @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/sort</span></span><br><span class="line"><span class="comment">// deskArray.sort();</span></span><br><span class="line"><span class="comment">// console.log(&quot;Sorted array:&quot;, deskArray);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Find &quot;notebook&quot;:</span></span><br><span class="line"><span class="comment">// @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/find</span></span><br><span class="line"><span class="comment">// const foundItem = deskArray.find((item) =&gt; item === &quot;notebook&quot;);</span></span><br><span class="line"><span class="comment">// console.log(&quot;Found item:&quot;, foundItem);</span></span><br><span class="line"></span><br><span class="line"><span class="comment">// Find and remove an item:</span></span><br><span class="line"><span class="comment">// @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/splice</span></span><br><span class="line"><span class="comment">// @link https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/indexOf</span></span><br><span class="line"><span class="comment">// let remove = &quot;notebook&quot;;</span></span><br><span class="line"><span class="comment">// deskArray.splice(deskArray.indexOf(remove), 1);</span></span><br><span class="line"><span class="comment">// console.log(`Array with &quot;$&#123;remove&#125;&quot; removed:`, deskArray);</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="但是dynamic"><a href="#但是dynamic" class="headerlink" title="但是dynamic"></a>但是dynamic</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> item = <span class="string">&quot;flashlight&quot;</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> collection = [<span class="string">&quot;Piggy&quot;</span>, item, <span class="number">5</span>, <span class="literal">true</span>];</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(collection);</span><br></pre></td></tr></table></figure>
+<p>Array跟其他JS object一样很混乱邪恶.最初define的时候并不需要(也不能)定义array的data type和length.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">collection[collection.length] = <span class="string">&quot;new item&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>可以通过直接access未并定义的index来add new item.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">collection[<span class="number">9</span>] = <span class="string">&quot;another new item&quot;</span>;</span><br></pre></td></tr></table></figure>
+<p>如果assign一个比长度长很多的slot.<br>那前面空出来的,会被自动sign to empty.</p>
+<br>
+<br>
+<br>
+
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><h3 id="Function-declaration"><a href="#Function-declaration" class="headerlink" title="Function declaration"></a>Function declaration</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Function declaration:</span></span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomeMath</span>(<span class="params">a, b</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> c = a + b;</span><br><span class="line">  <span class="keyword">return</span> c;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>Function declaration是global scope的,在local scope define也会global scope.<br>还算advanced variable,可以被re-declared.<br>Function declarations are parsed, in the order they appear in the code. If you have a function B that relies on function A, you have to make sure function A is declared before function B in the code.</p>
+<br>
+<br>
+<br>
+
+<h3 id="Function-expression"><a href="#Function-expression" class="headerlink" title="Function expression"></a>Function expression</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Function expression:</span></span><br><span class="line"><span class="keyword">const</span> doMoreMath = <span class="function"><span class="keyword">function</span> (<span class="params">a = <span class="number">3</span>, b = <span class="number">2</span></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> c = a * b;</span><br><span class="line">  <span class="keyword">return</span> c;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>In a function expression, we set up a variable, in this case a constant, we give that constant a name and value set to anonymous function.<br>因为是variable,所以这个function也会有这个variable一样的same scope,用const也不会被re-declared.<br>Function expressions are not hoisted, they exist only in the scope they were created.<br>如果没有pass value也没有default value,会return NaN.</p>
+<br>
+<br>
+<br>
+
+<h3 id="Immediately-Invoked-Function-Expression"><a href="#Immediately-Invoked-Function-Expression" class="headerlink" title="Immediately Invoked Function Expression"></a>Immediately Invoked Function Expression</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Immediately Invoked Function Expression (IIFE)</span></span><br><span class="line">(<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;</span><br><span class="line">  <span class="keyword">let</span> a = <span class="number">4</span>;</span><br><span class="line">  <span class="keyword">let</span> b = <span class="number">6</span>;</span><br><span class="line">  <span class="keyword">let</span> c = doSomeMath(a, b);</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`The sum of a and b is: <span class="subst">$&#123;c&#125;</span>`</span>);</span><br><span class="line">&#125;)();</span><br></pre></td></tr></table></figure>
+<p>In IIFE, we wrap an anonymous function or a name function inside parentheses, then we put place another set of parentheses outside.<br>The function will immediately run when browser encounters it.</p>
+<br>
+<br>
+<br>
+
+<h3 id="Arrow-function"><a href="#Arrow-function" class="headerlink" title="Arrow function"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_and_Arrow_Functions">Arrow function</a></h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">//这里的currentPack是pass in value的指代,叫啥都行</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addPack = <span class="function"><span class="keyword">function</span> (<span class="params">currentPack</span>) </span>&#123;</span><br><span class="line">  <span class="keyword">const</span> newArticle = <span class="built_in">document</span>.createElement(<span class="string">&quot;article&quot;</span>);</span><br><span class="line">  newArticle.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h1&gt;<span class="subst">$&#123;currentPack.name&#125;</span>&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Volume: <span class="subst">$&#123;currentPack.volume&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Color: <span class="subst">$&#123;currentPack.color&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Number of pockets: <span class="subst">$&#123;currentPack.pocketNum&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">  <span class="keyword">return</span> newArticle;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// versus</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> addPack = <span class="function">(<span class="params">currentPack</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> newArticle = <span class="built_in">document</span>.createElement(<span class="string">&quot;article&quot;</span>);</span><br><span class="line">  newArticle.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;h1&gt;<span class="subst">$&#123;currentPack.name&#125;</span>&lt;/h1&gt;</span></span><br><span class="line"><span class="string">    &lt;ul&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Volume: <span class="subst">$&#123;currentPack.volume&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Color: <span class="subst">$&#123;currentPack.color&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">      &lt;li&gt;Number of pockets: <span class="subst">$&#123;currentPack.pocketNum&#125;</span>&lt;/li&gt;</span></span><br><span class="line"><span class="string">    &lt;/ul&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">  <span class="keyword">return</span> newArticle;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+<p>Arrow function can only be called after they have been declared.<br>You can’t use arrow functions when declaring methods in an object.<br>In side an object you need to use proper anonymous function for declare method.</p>
+<p>Arrow function可以变得非常混沌邪恶,建议不要用简洁版本的语法!!好好写码!!!</p>
+<br>
+<br>
+<br>
+
+<h3 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">window</span>.volume = <span class="number">20</span>;</span><br><span class="line"></span><br><span class="line"><span class="keyword">const</span> greenPack = &#123;</span><br><span class="line">  <span class="attr">name</span>: <span class="string">&quot;Frog Pack&quot;</span>,</span><br><span class="line">  <span class="attr">color</span>: <span class="string">&quot;green&quot;</span>,</span><br><span class="line">  <span class="attr">volume</span>: <span class="number">8</span>,</span><br><span class="line">  <span class="attr">pocketNum</span>: <span class="number">3</span>,</span><br><span class="line">  <span class="attr">newVolume</span>: <span class="function"><span class="keyword">function</span> (<span class="params">volume</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;this.volume in the method:&quot;</span>, <span class="built_in">this</span>.volume);<span class="comment">// 这里我们使用this来refer greenPack, output 5</span></span><br><span class="line">    <span class="built_in">this</span>.volume = volume;<span class="comment">//我们assign了pass进来的5</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">&quot;this.volume after update:&quot;</span>, <span class="built_in">this</span>.volume);</span><br><span class="line">    (<span class="function"><span class="keyword">function</span> (<span class="params"></span>) </span>&#123;<span class="comment">// 如果我们running a function inside of the method</span></span><br><span class="line">       <span class="built_in">console</span>.log(<span class="string">&quot;this.volume in nested function:&quot;</span>, <span class="built_in">this</span>.volume);</span><br><span class="line">    &#125;)();<span class="comment">//但是这里会output20,因为错误读取了window这个object</span></span><br><span class="line">    (<span class="function">() =&gt;</span> &#123;<span class="comment">//但如果我们使用arrow function</span></span><br><span class="line">   <span class="built_in">console</span>.log(<span class="string">&quot;this.volume in nested function:&quot;</span>, <span class="built_in">this</span>.volume);</span><br><span class="line">   &#125;)();<span class="comment">//会output 5 again</span></span><br><span class="line">  &#125;,</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(greenPack.newVolume(<span class="number">5</span>));</span><br></pre></td></tr></table></figure>
+<p>Arrow function versus regular function.</p>
+<p>这里因为scope的不同.</p>
+<blockquote>
+<p>If you use function declaration, the function declaration is hoisted to the global scope.</p>
+</blockquote>
+<p>Arrow function does not have its own ‘this’, it does not know what ‘this’ means and it will refer to the closest available scope, which in this case is the object.<br>但是同理,我们不能用arrow function as method(function), 因为arrow function wouldn’t know what scope to use. Will refer back to global scope instead of the method scope.</p>
+<br>
+<br>
+<br>
+
+<h3 id="Callback"><a href="#Callback" class="headerlink" title="Callback"></a><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">Callback</a></h3><p>我觉得有点像lamba,把function作为一个variable pass进另一个function.<br>在function expression中已经是存储成variable的,可以这样使用.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Helper function to format currency numbers. Used by tipCalculator</span></span><br><span class="line"><span class="keyword">const</span> formatter = <span class="function">(<span class="params">locale = <span class="string">&quot;en-US&quot;</span>, currency = <span class="string">&quot;USD&quot;</span>, value</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> formattedValue = <span class="keyword">new</span> <span class="built_in">Intl</span>.NumberFormat(locale, &#123;</span><br><span class="line">    <span class="attr">style</span>: <span class="string">&quot;currency&quot;</span>,</span><br><span class="line">    <span class="attr">currency</span>: currency,</span><br><span class="line">  &#125;).format(value);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">return</span> formattedValue;</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Callback receives finalTip object, creates and outputs table on the DOM.</span></span><br><span class="line"><span class="keyword">const</span> printHTML = <span class="function">(<span class="params">finalTip</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">const</span> tipTable = <span class="built_in">document</span>.createElement(<span class="string">&quot;table&quot;</span>);</span><br><span class="line">  tipTable.innerHTML = <span class="string">`</span></span><br><span class="line"><span class="string">    &lt;tr&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;Sum before tip:&lt;/td&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;<span class="subst">$&#123;finalTip.sum&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    &lt;tr&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;Tip percentage:&lt;/td&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;<span class="subst">$&#123;finalTip.percentage&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    &lt;tr&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;Tip:&lt;/td&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;<span class="subst">$&#123;finalTip.tip&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;/tr&gt;</span></span><br><span class="line"><span class="string">    &lt;tr&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;Total:&lt;/td&gt;</span></span><br><span class="line"><span class="string">      &lt;td&gt;<span class="subst">$&#123;finalTip.total&#125;</span>&lt;/td&gt;</span></span><br><span class="line"><span class="string">    &lt;/tr&gt;</span></span><br><span class="line"><span class="string">  `</span>;</span><br><span class="line">  <span class="built_in">document</span>.querySelector(<span class="string">&quot;main&quot;</span>).append(tipTable);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Create a finalTip object with all the data. Send it to the printHTML callback.</span></span><br><span class="line"><span class="keyword">const</span> tipCalculator = <span class="function">(<span class="params">sum, percentage, locale, currency, printHTML</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> tip = sum * (percentage / <span class="number">100</span>);</span><br><span class="line">  <span class="keyword">let</span> total = sum + tip;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">const</span> finalTip = &#123;</span><br><span class="line">    <span class="attr">sum</span>: formatter(locale, currency, sum),</span><br><span class="line">    <span class="attr">percentage</span>: percentage + <span class="string">&quot;%&quot;</span>,</span><br><span class="line">    <span class="attr">tip</span>: formatter(locale, currency, tip),</span><br><span class="line">    <span class="attr">total</span>: formatter(locale, currency, total),</span><br><span class="line">  &#125;;</span><br><span class="line"></span><br><span class="line">  printHTML(finalTip);</span><br><span class="line">&#125;;</span><br><span class="line"></span><br><span class="line">tipCalculator(<span class="number">29.95</span>, <span class="number">18</span>, <span class="string">&quot;de-DE&quot;</span>, <span class="string">&quot;EUR&quot;</span>, printHTML);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="If-else"><a href="#If-else" class="headerlink" title="If else"></a>If else</h2><p>普通版.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (everydayPack.lidOpen === <span class="literal">true</span>)&#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;Lid is open!&quot;</span>);</span><br><span class="line">&#125; <span class="keyword">else</span> &#123;</span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">&quot;Lid is closed :(&quot;</span>);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>出现了,C++出现过的语法.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">everydayPack.lidOpen ? <span class="string">&quot;open&quot;</span> : <span class="string">&quot;closed&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Logical operator: &amp;&amp;是and, !=是不等于, ||是or. 跟C一样.</p>
+<p>switch.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> usedStatus = <span class="function">() =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> age = everydayPack.backpackAge();</span><br><span class="line">  age = <span class="number">1095</span></span><br><span class="line">  <span class="keyword">let</span> description;</span><br><span class="line"></span><br><span class="line">  <span class="keyword">switch</span> (<span class="literal">true</span>) &#123;</span><br><span class="line">    <span class="keyword">case</span> age &lt; <span class="number">30</span>:</span><br><span class="line">      description = <span class="string">&quot;new&quot;</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> age &gt;= <span class="number">30</span> &amp;&amp; age &lt; <span class="number">365</span>:</span><br><span class="line">      description = <span class="string">&quot;lightly used&quot;</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> age &gt;= <span class="number">365</span> &amp;&amp; age &lt; <span class="number">1095</span>:</span><br><span class="line">      description =<span class="string">&quot;used&quot;</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">case</span> age &gt;= <span class="number">1095</span>:</span><br><span class="line">      description = <span class="string">&quot;old&quot;</span></span><br><span class="line">      <span class="keyword">break</span>;</span><br><span class="line">    <span class="keyword">default</span>:</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="string">`There is no description for <span class="subst">$&#123;age&#125;</span>.`</span>)</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="built_in">console</span>.log(<span class="string">`</span></span><br><span class="line"><span class="string">  Age: <span class="subst">$&#123;age&#125;</span> days</span></span><br><span class="line"><span class="string">  Status: <span class="subst">$&#123;description&#125;</span></span></span><br><span class="line"><span class="string">  `</span>);</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">For loop.</a></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">let</span> i = <span class="number">0</span>; i &lt; stuff.length; i++) &#123;</span><br><span class="line">  <span class="keyword">let</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">  listItem.innerHTML = stuff[i];</span><br><span class="line">  stuffList.append(listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">For…of loop and arrays</a>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> stuff) &#123; <span class="comment">//这里的item跟上面的i一样,是我们创造的variable的名字</span></span><br><span class="line">  <span class="keyword">let</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">  listItem.innerHTML = item;</span><br><span class="line">  stuffList.append(listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">Foreach array method</a>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> item <span class="keyword">of</span> stuff) &#123;</span><br><span class="line">  <span class="keyword">let</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">  listItem.innerHTML = item;</span><br><span class="line">  stuffList.append(listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">For…in loop and objects</a>.</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> (<span class="keyword">const</span> singleObject <span class="keyword">in</span> nestedObjects) &#123;</span><br><span class="line">  <span class="keyword">let</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">  listItem.innerHTML = <span class="string">`Name: <span class="subst">$&#123;nestedObjects[singleObject].name&#125;</span>`</span>;</span><br><span class="line">  stuffList.append(listItem);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+<br>
+
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// map() through the stuff array to make a new stuffItems array.</span></span><br><span class="line"><span class="keyword">const</span> stuffItems = stuff.map(<span class="function">(<span class="params">item</span>) =&gt;</span> &#123;</span><br><span class="line">  <span class="keyword">let</span> listItem = <span class="built_in">document</span>.createElement(<span class="string">&quot;li&quot;</span>);</span><br><span class="line">  listItem.innerHTML = item;</span><br><span class="line">  <span class="keyword">return</span> listItem;</span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+<p>Map is for creating a new array to do something further with the data.<br>If just wanna iterate through an array, use a foreach loop.<br><del>其实效果都一样.</del></p>
+<br>
+<br>
+<br>
+
+<h2 id="Addition-files"><a href="#Addition-files" class="headerlink" title="Addition files"></a>Addition files</h2><p>Links from JavaScript Essential Training with Morten Rand-Hendriksen</p>
+<p>Chapter 1. JavaScript: A Brief Introduction</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript">MDN Web Docs</a></li>
+<li><a target="_blank" rel="noopener" href="https://code.visualstudio.com/">Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint">ESLint for Visual Studio Code</a></li>
+<li><a target="_blank" rel="noopener" href="https://marketplace.visualstudio.com/items?itemName=esbenp.prettier-vscode">Prettier for Visual Studio Code</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 2. Up and Running with JavaScript</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script">script tag</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Modules">JavaScript modules</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 3. Objects</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object">Object</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/Objects/Basics#Object_basics">Object basics</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes">Classes</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Classes/constructor">Object constructor function</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects">Global object</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 4. Sidebar: String Output</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Template_literals">Template literals</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/String">String</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 5. DOM</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Introduction">DOM (Document Object Model)</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelector">querySelector() method:</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/querySelectorAll">querySelectorAll() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/className">className property</a></li>
+<li><a target="_blank" rel="noopener" href="https://reactjs.org/docs/faq-styling.html">className in React.js</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/classList">classList property</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/hasattribute">hasAttribute() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/getattribute">getAttribute() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/setattribute">setAttribute() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/removeattribute">removeAttribute() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/ElementCSSInlineStyle/style">style property</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Window/getComputedStyle">getComputedStyle() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Document/createElement">createElement() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/append">append() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/ParentNode/prepend">prepend() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/appendChild">appendChild() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/removeChild">removeChild() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/replaceChild">replaceChild() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Node/insertBefore">insertBefore() method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Element/insertAdjacentElement">insertAdjacentElement() method</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 6. Sidebar: Variables and Data Types</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/var">var statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/let">let statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/const">const statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Relational_operators">Relational operators</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Arithmetic_operators">Arithmetic operators</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat">Number format</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 7. Arrays</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Learn/JavaScript/First_steps/Arrays">Arrays</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array#Instance_methods">Array methods</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 8. Functions and Methods</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Function">Function</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions">Arrow function</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions#this_and_Arrow_Functions">this and arrow functions</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/this">this operator</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/NumberFormat">Intl.NumberFormat object</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.lingoes.net/en/translator/langcode.htm">List of international local and language codes</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Glossary/Callback_function">Callback function</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/WindowOrWorkerGlobalScope/setTimeout">setTimeout() callback method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else">if/else conditional statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators#Binary_logical_operators">Logical operators</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/switch">switch statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for">for statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...of">for…of statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array/forEach">forEach() array method</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/for...in">for…in statement</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/entries">Object entries</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements#Iterationst">Iteration statements</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 9. Events</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/Document_Object_Model/Events">DOM events</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/Events">Events</a></li>
+<li><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener">addEventListener() method</a></li>
+</ul>
+<br>
+<br>
+
+<p>Chapter 10. Advanced Things</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://developers.google.com/web/tools/chrome-devtools/javascript">Using the debugger in Chrome</a></li>
+<li><a target="_blank" rel="noopener" href="https://reactjs.org/docs/thinking-in-react.html">Understanding React components</a></li>
+</ul>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/WebDev/" rel="tag"># WebDev</a>
+              <a href="/blog/tags/JavaScript/" rel="tag"># JavaScript</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2022/08/26/P252/" rel="prev" title="总有结束的八月">
+      <i class="fa fa-chevron-left"></i> 总有结束的八月
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/08/18/P255/" rel="next" title="关于Excel的笔记 - VBA">
+      关于Excel的笔记 - VBA <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Comment"><span class="nav-number">1.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Link-to-html"><span class="nav-number">2.</span> <span class="nav-text">Link to html</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Modules"><span class="nav-number">3.</span> <span class="nav-text">Modules</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Class"><span class="nav-number">4.</span> <span class="nav-text">Class</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#String-output"><span class="nav-number">5.</span> <span class="nav-text">String output</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DOM-document-object-model"><span class="nav-number">6.</span> <span class="nav-text">DOM(document object model)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#return-DOM-object"><span class="nav-number">6.1.</span> <span class="nav-text">return DOM object</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#modify-class"><span class="nav-number">6.2.</span> <span class="nav-text">modify class</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Attribute"><span class="nav-number">6.3.</span> <span class="nav-text">Attribute</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Inline"><span class="nav-number">6.4.</span> <span class="nav-text">Inline</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Add-DOM-element"><span class="nav-number">6.5.</span> <span class="nav-text">Add DOM element</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Event"><span class="nav-number">6.6.</span> <span class="nav-text">Event</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Variable"><span class="nav-number">7.</span> <span class="nav-text">Variable</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">8.</span> <span class="nav-text">Array</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Built-in-function"><span class="nav-number">8.1.</span> <span class="nav-text">Built-in function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%BD%86%E6%98%AFdynamic"><span class="nav-number">8.2.</span> <span class="nav-text">但是dynamic</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">9.</span> <span class="nav-text">Function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-declaration"><span class="nav-number">9.1.</span> <span class="nav-text">Function declaration</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Function-expression"><span class="nav-number">9.2.</span> <span class="nav-text">Function expression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Immediately-Invoked-Function-Expression"><span class="nav-number">9.3.</span> <span class="nav-text">Immediately Invoked Function Expression</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Arrow-function"><span class="nav-number">9.4.</span> <span class="nav-text">Arrow function</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Example"><span class="nav-number">9.5.</span> <span class="nav-text">Example</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Callback"><span class="nav-number">9.6.</span> <span class="nav-text">Callback</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If-else"><span class="nav-number">10.</span> <span class="nav-text">If else</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">11.</span> <span class="nav-text">Loop</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Addition-files"><span class="nav-number">12.</span> <span class="nav-text">Addition files</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">20:57</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2022/08/26/P257/";
+    this.page.identifier = "2022/08/26/P257/";
+    this.page.title = "关于Javascript的笔记";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

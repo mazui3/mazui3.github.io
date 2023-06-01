@@ -1,0 +1,811 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="2021错题本.  这个系列两年后卷土重来了…最近在用ms access, access中也可以使用sql,但跟其他sql语法不大一样(低情商:简陋).于是记录access中的sql使用, 亦或是 用vba绕过sql的使用.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于SQL的笔记 - 和VBA新春混合喜庆版">
+<meta property="og:url" content="https://mazui3.github.io/blog/2022/12/20/P271/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="2021错题本.  这个系列两年后卷土重来了…最近在用ms access, access中也可以使用sql,但跟其他sql语法不大一样(低情商:简陋).于是记录access中的sql使用, 亦或是 用vba绕过sql的使用.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2022-12-20T05:19:40.000Z">
+<meta property="article:modified_time" content="2023-01-09T21:02:31.622Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="data">
+<meta property="article:tag" content="SQL">
+<meta property="article:tag" content="VBA">
+<meta property="article:tag" content="Access">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2022/12/20/P271/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于SQL的笔记 - 和VBA新春混合喜庆版 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2022/12/20/P271/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于SQL的笔记 - 和VBA新春混合喜庆版
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-12-20 00:19:40" itemprop="dateCreated datePublished" datetime="2022-12-20T00:19:40-05:00">2022-12-20</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-01-09 16:02:31" itemprop="dateModified" datetime="2023-01-09T16:02:31-05:00">2023-01-09</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">写码笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2022/12/20/P271/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/12/20/P271/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>8k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>7 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <blockquote>
+<p><a href="https://mazui3.github.io/blog/2021/01/31/P167/">2021错题本</a>.</p>
+</blockquote>
+<p>这个系列两年后卷土重来了…<br>最近在用ms access, access中也可以使用sql,但跟其他sql语法不大一样(<del>低情商:简陋</del>).<br>于是记录access中的sql使用, <strong>亦或是</strong> 用vba绕过sql的使用.</p>
+<span id="more"></span>
+
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><p>以下最常见在vba中的sql使用.</p>
+<h2 id="OpenRecordSet"><a href="#OpenRecordSet" class="headerlink" title="OpenRecordSet"></a>OpenRecordSet</h2><figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;SELECT First(Apple) FROM tableA;&quot;</span></span><br><span class="line"><span class="keyword">Set</span> rs = CurrentDb.OpenRecordSet(sSQL)</span><br></pre></td></tr></table></figure>
+
+<p>如果不需要select的情况可以直接开table.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> rs = CurrentDb.OpenRecordSet(<span class="string">&quot;The_Table_Name&quot;</span>, dbOpenTable)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> Oapple As Object</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields(<span class="string">&quot;Apple&quot;</span>).Value</span><br></pre></td></tr></table></figure>
+<p>这里table的value可以有很多种,table中甚至可以store文件.</p>
+<p>OpenRecordSet之后如何使用其value: 使用了<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/recordset-getrows-method-dao">getRows</a>.</p>
+<br>
+<br>
+
+<p>注意,</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> theName As String</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields(theName).Value</span><br></pre></td></tr></table></figure>
+<p>可以这样用variable.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> Oapple = rs.Fields!theName.Value</span><br></pre></td></tr></table></figure>
+<p>这时候theName必须生死rs中已有的column的名字,不可以用variable.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/24924969/using-variable-on-accessing-the-form-and-controls-in-ms-access">Using Variable on accessing the Form and Controls in MS Access</a>.<br>Form中也类似.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Set</span> theFields As String</span><br><span class="line">theFields = <span class="string">&quot;myFieldName&quot;</span></span><br><span class="line"></span><br><span class="line">Forms(“theFormName”).Controls(theFields).Locked = <span class="literal">False</span></span><br><span class="line">Forms(“theFormName”).Controls(theFields).Enabled = <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>这样用.</p>
+<br>
+<br>
+
+<h2 id="Execute"><a href="#Execute" class="headerlink" title="Execute"></a>Execute</h2><p>不需要store 信息时候使用db,也就是execute.<br>比如update, delete的function.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;UPDATE tableA &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;SET fruits = &quot;&quot;None&quot;&quot;, time = Now() &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;WHERE label = &quot;&quot;apple&quot;&quot;;&quot;</span></span><br><span class="line">CurrentDb.<span class="keyword">Execute</span> sSQL</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = OpenDatabase(<span class="string">&quot;MoreFruits.accdb&quot;</span>)</span><br><span class="line">sSQL = <span class="string">&quot;UPDATE tableA &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;SET fruits = &quot;&quot;None&quot;&quot;, time = Now() &quot;</span> &amp; _</span><br><span class="line">      <span class="string">&quot;WHERE label = &quot;&quot;apple&quot;&quot;;&quot;</span></span><br><span class="line">db.<span class="keyword">Execute</span> sSQL</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2781689/how-to-return-a-result-from-a-vba-function">How to return a result from a VBA function</a>.</p>
+<p>VBA有两种function,一种key word 是sub,一种key word是function.</p>
+<br>
+<br>
+
+<h2 id="Listbox"><a href="#Listbox" class="headerlink" title="Listbox"></a>Listbox</h2><p>这是access form中的信息display.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">sSQL = <span class="string">&quot;SELECT fruits FROM tableA;&quot;</span></span><br><span class="line"><span class="comment">&#x27;Display is listbox</span></span><br><span class="line"><span class="keyword">Me</span>.Display.RowSource = sSQL</span><br><span class="line"><span class="keyword">Me</span>.Display.Requery</span><br><span class="line"></span><br><span class="line"><span class="comment">&#x27;at the end of the form</span></span><br><span class="line">Forms!MyFruitForm.Refresh</span><br><span class="line">Forms!MyFruitForm.Requery</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.combobox.rowsource">ComboBox.RowSource property</a>.</p>
+<br>
+<br>
+
+<h2 id="vbCrLf"><a href="#vbCrLf" class="headerlink" title="vbCrLf"></a>vbCrLf</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/27223228/differences-between-vblf-vbcrlf-vbcr-constants">Differences Between vbLf, vbCrLf &amp; vbCr Constants</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Constant</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">vbCr</td>
+<td align="left">Chr(13)</td>
+<td align="left">Carriage return(返回到行首)</td>
+</tr>
+<tr>
+<td align="left">vbCrLf</td>
+<td align="left">Chr(13) &amp; Chr(10)</td>
+<td align="left">Carriage return–linefeed combination(类似于按回车键)</td>
+</tr>
+<tr>
+<td align="left">vbLf</td>
+<td align="left">Chr(10)</td>
+<td align="left">Line feed(转到下一行)</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h1 id="Cases"><a href="#Cases" class="headerlink" title="Cases"></a>Cases</h1><h2 id="SQL-join-against-date-ranges"><a href="#SQL-join-against-date-ranges" class="headerlink" title="SQL join against date ranges"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/2306462/sql-join-against-date-ranges">SQL join against date ranges</a></h2><blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/26415612/join-two-tables-on-the-same-date-or-closest-date-before-or-after">Join two tables on the same date or closest date</a></p>
+</blockquote>
+<p>这可真是个好问题,我觉得stack over flow的答案写的很好.<br>但在access 里面实现太麻烦了…</p>
+<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">--先用order和self join作出一个end_date的column</span></span><br><span class="line"><span class="keyword">WITH</span> IndexedExchangeRates <span class="keyword">AS</span> (           </span><br><span class="line">            <span class="keyword">SELECT</span>  <span class="built_in">Row_Number</span>() <span class="keyword">OVER</span> (<span class="keyword">ORDER</span> <span class="keyword">BY</span> <span class="type">Date</span>) ix,</span><br><span class="line">                    <span class="type">Date</span>,</span><br><span class="line">                    Rate</span><br><span class="line">            <span class="keyword">FROM</span>    ExchangeRates</span><br><span class="line">        ),</span><br><span class="line">        RangedExchangeRates <span class="keyword">AS</span> (             </span><br><span class="line">            <span class="keyword">SELECT</span>  <span class="keyword">CASE</span> <span class="keyword">WHEN</span> IER.ix<span class="operator">=</span><span class="number">1</span> <span class="keyword">THEN</span> <span class="built_in">CAST</span>(<span class="string">&#x27;1753-01-01&#x27;</span> <span class="keyword">AS</span> datetime)</span><br><span class="line">                    <span class="keyword">ELSE</span> IER.Date</span><br><span class="line">                    <span class="keyword">END</span> DateFrom,</span><br><span class="line">                    <span class="built_in">COALESCE</span>(IER2.Date, GETDATE()) DateTo,</span><br><span class="line">                    IER.Rate</span><br><span class="line">            <span class="keyword">FROM</span>    IndexedExchangeRates IER</span><br><span class="line">            <span class="keyword">LEFT</span> <span class="keyword">JOIN</span> IndexedExchangeRates IER2</span><br><span class="line">            <span class="keyword">ON</span> IER.ix <span class="operator">=</span> IER2.ix<span class="number">-1</span></span><br><span class="line">        )</span><br><span class="line"><span class="keyword">SELECT</span>  T.Date,</span><br><span class="line">        T.Amount,</span><br><span class="line">        RER.Rate,</span><br><span class="line">        T.Amount<span class="operator">/</span>RER.Rate ConvertedAmount</span><br><span class="line"><span class="keyword">FROM</span>    Transactions T</span><br><span class="line"><span class="keyword">LEFT</span> <span class="keyword">JOIN</span> RangedExchangeRates RER</span><br><span class="line"><span class="keyword">ON</span> (T.Date <span class="operator">&gt;</span> RER.DateFrom) <span class="keyword">AND</span> (T.Date <span class="operator">&lt;=</span> RER.DateTo)</span><br><span class="line"></span><br><span class="line"><span class="comment">--然后再comparison join</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Form-load"><a href="#Form-load" class="headerlink" title="Form load"></a>Form load</h2><p>Form load中的代码会over write在design view中各compent的default value.<br>Form的跳转的觉得下面这个link说的有道理.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/30643471/how-to-call-form-load-of-one-form-from-another-form-in-access-vba">How to call Form_Load of one form from another form in Access VBA</a></p>
+</blockquote>
+<p>做一个public的function然后call public就好了.Form load有的时候没办法handle从哪个form跳转而来的问题.</p>
+<br>
+<br>
+
+<h2 id="Add-index"><a href="#Add-index" class="headerlink" title="Add index"></a>Add index</h2><figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> fruits <span class="keyword">ADD</span> <span class="keyword">COLUMN</span> ID COUNTER;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="On-Error-Resume-Next"><a href="#On-Error-Resume-Next" class="headerlink" title="On Error Resume Next"></a><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/on-error-statement">On Error Resume Next</a></h2><p>才直到这个是一个switch,这行代码会让之后出现的所有error都被跳过.<br>超级危险,不要用.</p>
+<br>
+<br>
+
+<h2 id="Export-data"><a href="#Export-data" class="headerlink" title="Export data"></a><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.docmd.transferspreadsheet">Export data</a></h2><blockquote>
+<p>TableName:Variant    A string expression that is the name of the <strong>Office Access table</strong> that you want to import spreadsheet data into, export spreadsheet data from, or link spreadsheet data to, or the <strong>Access select query</strong> whose results you want to export to a spreadsheet.</p>
+</blockquote>
+<p>用query来export.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> MyQuery As DAO.QueryDef</span><br><span class="line"><span class="keyword">Dim</span> sSQL As String</span><br><span class="line"><span class="keyword">Dim</span> WorksheetPath As String</span><br><span class="line"></span><br><span class="line">WorksheetPath = <span class="string">&quot;C:/SomethingHere&quot;</span></span><br><span class="line"><span class="comment">&#x27;先造了一个query出来</span></span><br><span class="line"></span><br><span class="line">sSQL = <span class="string">&quot;SELECT * From DoYouStillHaveFruit&quot;</span></span><br><span class="line"><span class="keyword">Set</span> MyQuery = CurrentDb.CreateQueryDef(<span class="string">&quot;NewQuery&quot;</span>, sSQL)</span><br><span class="line"></span><br><span class="line">DoCmd.TransferSpreadsheet transfertype:acExport,</span><br><span class="line">  Spreadsheettype:=acSpreadsheetTypeExcel12Xml,</span><br><span class="line">  TableName:=<span class="string">&quot;NewQuery&quot;</span>,</span><br><span class="line">  FileName:=WorksheetPath &amp; <span class="string">&quot;theRobbingList.xlsx&quot;</span>,</span><br><span class="line">  Hasfieldnames:= <span class="literal">True</span></span><br></pre></td></tr></table></figure>
+<p>我觉得这个地方documentation写的“query也行”不是SQL string,而是真的得是define好的query.<br>比如在access页面也能create query.<br>用define好的query名字也行.</p>
+<p>Create后的<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/querydefs-delete-method-dao">delete</a>.</p>
+<br>
+<br>
+
+<p>用access中的table来export.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> MyQuery As DAO.QueryDef</span><br><span class="line"><span class="keyword">Dim</span> theTable As String</span><br><span class="line"><span class="keyword">Dim</span> WorksheetPath As String</span><br><span class="line"></span><br><span class="line">theTable = <span class="string">&quot;theAccessTable&quot;</span></span><br><span class="line">WorksheetPath = <span class="string">&quot;C:/SomethingHere&quot;</span></span><br><span class="line">DoCom.TransferSpreadsheet transfertype:acExport,</span><br><span class="line">  spreadsheettype:=acSpreadsheetTypeExcel12Xml,</span><br><span class="line">  TableName:=theTable,</span><br><span class="line">  FileName:=WorkSheetPath &amp; <span class="string">&quot;theRobbingList.xlsx&quot;</span>,</span><br><span class="line">  Hasfieldnames:=<span class="literal">True</span></span><br></pre></td></tr></table></figure>
+
+<p>关于如何用代码来修改table内容.<br>可以用<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/database-openrecordset-method-dao">OpenRecordset</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> myInput, myOutput As DAO.Recordset</span><br><span class="line"><span class="keyword">Set</span> myInput = CurrentDb.OpenRecordset(<span class="string">&quot;SELECT * FROM theTable&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment">&#x27;EOF应该是end of file</span></span><br><span class="line"><span class="comment">&#x27;代表跑完rst所选中的所有记录</span></span><br><span class="line"><span class="keyword">Do</span> <span class="keyword">While</span> <span class="keyword">Not</span> myInput.EOF</span><br><span class="line">  DoEvents</span><br><span class="line">  myOutput.AddNew</span><br><span class="line">  myInput![theColumnName] = myOutput![theOtherColumnName]</span><br><span class="line">  myOutput.Updaate</span><br><span class="line">  myInput.MoveNext</span><br><span class="line"><span class="keyword">Loop</span></span><br><span class="line"></span><br><span class="line">myInput.Close</span><br><span class="line">myOutput.Close</span><br></pre></td></tr></table></figure>
+
+<p>这里的DoEvents是用来让break button active的(据说).</p>
+<p>上面使用了EOF,microsoft给的例子是:</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">If</span> myInput.EOF = <span class="literal">True</span> <span class="keyword">Or</span> myInput.BOF = <span class="literal">True</span> <span class="keyword">Then</span></span><br></pre></td></tr></table></figure>
+<p>我觉得这样写好(?).</p>
+<br>
+<br>
+
+<h2 id="Default-value"><a href="#Default-value" class="headerlink" title="Default value"></a>Default value</h2><p>(For excel as well)<br>Data is stored as number, so when setting default values for date can use number format instead of any long/short data format cuz somethings I have no idea why it’s not working(怒).</p>
+<p>Btw for excel when a sheet is hidden… and the tab is locked for unhidden sheet, use alt+F11 to go to VBA module, can find the sheet name, then go back to sheet using reference to display the value anyway(暴怒).</p>
+<br>
+<br>
+
+<h2 id="Delete-table"><a href="#Delete-table" class="headerlink" title="Delete table"></a>Delete table</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.docmd.deleteobject">DoCmd.DeleteObject method</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">DoCmd.DeleteObject acTable, <span class="string">&quot;Former Employees Table&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/43833709/how-to-delete-a-table-if-it-exists">Delete if exist</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> DeleteIfExists()</span><br><span class="line"></span><br><span class="line">    <span class="keyword">Dim</span> tableName As String</span><br><span class="line">    tableName = <span class="string">&quot;Table3&quot;</span></span><br><span class="line"></span><br><span class="line">    <span class="keyword">If</span> <span class="keyword">Not</span> <span class="built_in">IsNull</span>(DLookup(<span class="string">&quot;Name&quot;</span>, <span class="string">&quot;MSysObjects&quot;</span>, <span class="string">&quot;Name=&#x27;&quot;</span> &amp; tableName &amp; <span class="string">&quot;&#x27;&quot;</span>)) <span class="keyword">Then</span></span><br><span class="line">        DoCmd.SetWarnings <span class="literal">False</span></span><br><span class="line">        DoCmd.Close acTable, tableName, acSaveYes</span><br><span class="line">        DoCmd.DeleteObject acTable = acDefault, tableName</span><br><span class="line">        Debug.Print <span class="string">&quot;Table&quot;</span> &amp; tableName &amp; <span class="string">&quot;deleted...&quot;</span></span><br><span class="line">        DoCmd.SetWarnings <span class="literal">True</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Open-file"><a href="#Open-file" class="headerlink" title="Open file"></a>Open file</h2><p>根据<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/access.application.filedialog">Application.FileDialog property</a>.</p>
+<table>
+<thead>
+<tr>
+<th align="left">Name</th>
+<th align="left">Value</th>
+<th align="left">Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">msoFileDialogFilePicker</td>
+<td align="left">3</td>
+<td align="left">File Picker dialog box.</td>
+</tr>
+<tr>
+<td align="left">msoFileDialogFolderPicker</td>
+<td align="left">4</td>
+<td align="left">Folder Picker dialog box.</td>
+</tr>
+<tr>
+<td align="left">msoFileDialogOpen</td>
+<td align="left">1</td>
+<td align="left">Open dialog box.</td>
+</tr>
+<tr>
+<td align="left">msoFileDialogSaveAs</td>
+<td align="left">2</td>
+<td align="left">Save As dialog box.</td>
+</tr>
+</tbody></table>
+<p>所以选中文件是<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1091484/show-open-file-dialog">f = Application.FileDialog(3)</a>.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> f As Object</span><br><span class="line"><span class="keyword">Dim</span> theFolderName As String</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> f = Application.FileDia<span class="built_in">log</span>(<span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> f</span><br><span class="line">  .InitialFileName = theFolderName</span><br><span class="line"><span class="keyword">End</span> Withs</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/api/office.filedialog">Property</a>.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/14915179/ms-access-browse-for-file-and-get-file-name-and-path">Browse for file and get file name and path</a></p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&#x27;在给f路径后,用f.show来打开folder.</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> theItem As Variant</span><br><span class="line"><span class="keyword">Dim</span> FileName, FolderPath As String</span><br><span class="line"></span><br><span class="line">f.AllowMultiSelect = <span class="literal">False</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">If</span> f.Show <span class="keyword">Then</span></span><br><span class="line">  <span class="keyword">For</span> <span class="keyword">Each</span> theItem <span class="keyword">in</span> f.SelectedItems</span><br><span class="line">    FileName = Dir(theItem)</span><br><span class="line">    FolderPath = <span class="built_in">Left</span>(theItem, <span class="built_in">Len</span>(theItem) - <span class="built_in">Len</span>(FileName))</span><br><span class="line">  <span class="keyword">Next</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">If</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Import-excel-data"><a href="#Import-excel-data" class="headerlink" title="Import excel data"></a><a target="_blank" rel="noopener" href="https://accessexperts.com/blog/2020/10/20/connection-string-parameters-for-excel-data-sources/">Import excel data</a></h2><blockquote>
+</blockquote>
+<p>Excel 8.0: 97-2003 xls files<br>Excel 12.0: xlsb files<br>Excel 12.0 Xml: xlsx files</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Set</span> db = DBEngine.OpenDatabase(vbNullString, <span class="literal">False</span>, <span class="literal">False</span>, <span class="string">&quot;Excel 12.0 Xml;HDR=YES;IMEX=2;ACCDB=YES;DATABASE=C:\Links\Products.xlsx&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"><span class="keyword">Set</span> rs = db.OpenRecordset(<span class="string">&quot;SELECT d.[Count] FROM [Sheet1$] AS d WHERE d.[Products] = &#x27;Bananas&#x27;;&quot;</span>)</span><br><span class="line">Debug.Print rs.Fields(<span class="number">0</span>).Value</span><br></pre></td></tr></table></figure>
+
+<p>老哥的代码,其中我觉得(…)是这样的.</p>
+<p>[Excel 12.0 Xml;HDR=YES;IMEX=2;ACCDB=YES;DATABASE=C:\Links\Products.xlsx].[Sheet1$]就可以当作一个table用了.</p>
+<p>My version:</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Select</span> * INTO newTable from [Excel <span class="number">12.0</span> Xml;HDR=YES;IMEX=<span class="number">2</span>;ACCDB=YES;DATABASE=C:\Links\Products.xlsx].[Sheet1$];</span><br></pre></td></tr></table></figure>
+
+<p>是一种开盲盒的select all大法.</p>
+<p><a target="_blank" rel="noopener" href="https://www.devhut.net/advanced-sql-to-connect-with-excel-workbooks/">Import when select.</a>.&lt;-傻子找到了但没有测.<br>傻子下次要import when select的时候再来补.</p>
+<br>
+<br>
+
+<h2 id="Object"><a href="#Object" class="headerlink" title="Object"></a>Object</h2><p>使用<a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/vba/language/reference/user-interface-help/with-statement">With</a>更改more than one field.<br><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/office/client-developer/access/desktop-database-reference/database-object-dao">在database中的使用</a>.</p>
+<p>类似的在recordset中的使用.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Dim</span> rstCategories As Recordset</span><br><span class="line"><span class="keyword">Set</span> rstCategories = CurrentDb.OpenRecordset(Name:=<span class="string">&quot;Categories&quot;</span>, Type:=RecordsetTypeEnum.dbOpenDynaset)</span><br><span class="line"><span class="keyword">With</span> rstCategories</span><br><span class="line">    .AddNew</span><br><span class="line">    ![Category Name] = <span class="string">&quot;Better software&quot;</span></span><br><span class="line">    !Description = <span class="string">&quot;5 star rated&quot;</span></span><br><span class="line">    .Update</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br></pre></td></tr></table></figure>
+<p>在with中更改record set.</p>
+<br>
+<br>
+
+<h2 id="How-to-List-Field’s-Name-in-table-in-Access-Using-SQL"><a href="#How-to-List-Field’s-Name-in-table-in-Access-Using-SQL" class="headerlink" title="How to List Field’s Name in table in Access Using SQL"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/11548697/how-to-list-fields-name-in-table-in-access-using-sql#:~:text=You%20can%20simply%20use%20the,the%20table%20and%20press%20OK">How to List Field’s Name in table in Access Using SQL</a></h2><p>遇到了盲盒case.<br>要import excel data到access中但import的table会是什么样完全不知道.</p>
+<p>于是依靠access自己去读column name,并且用<a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/8850984/populating-vba-dynamic-arrays">resize的array来store column name</a>.</p>
+<p>根据两位老哥的代码改了一改.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Sub</span> ListFields()</span><br><span class="line"><span class="keyword">Dim</span> rs As DAO.Recordset</span><br><span class="line"><span class="keyword">Dim</span> db As DAO.Database</span><br><span class="line"><span class="keyword">Dim</span> mysteryColNames() As string <span class="comment">&#x27;因为要resize所以先不decalre length</span></span><br><span class="line"><span class="keyword">Dim</span> ii as Long</span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = CurrentDb</span><br><span class="line"><span class="keyword">Set</span> rs = db.OpenRecordSet(<span class="string">&quot;mysteryTable&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="keyword">With</span> rs</span><br><span class="line">  <span class="keyword">ReDim</span> <span class="keyword">Preserve</span> mysteryColNames(.Fields.Count - <span class="number">1</span>)</span><br><span class="line">  <span class="keyword">for</span> ii = <span class="number">0</span> <span class="keyword">to</span> .fields.count - <span class="number">1</span></span><br><span class="line">      mysteryColNames(ii) =  .fields(ii).name</span><br><span class="line">  <span class="keyword">Next</span></span><br><span class="line">  .Close</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">With</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">Set</span> db = <span class="literal">nothing</span></span><br><span class="line"><span class="keyword">Set</span> rs = <span class="literal">nothing</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros"><a href="#How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros" class="headerlink" title="How to check if a table exists in MS Access for vb macros"></a><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/3350645/how-to-check-if-a-table-exists-in-ms-access-for-vb-macros">How to check if a table exists in MS Access for vb macros</a></h2><p>用DCount.</p>
+<figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Function</span> ifTableExists(tblName As String) As Boolean</span><br><span class="line">    <span class="keyword">If</span> DCount(<span class="string">&quot;[Name]&quot;</span>, <span class="string">&quot;MSysObjects&quot;</span>, <span class="string">&quot;[Name] = &#x27;&quot;</span> &amp; tblName &amp; <span class="string">&quot;&#x27;&quot;</span>) = <span class="number">1</span> <span class="keyword">Then</span></span><br><span class="line">        ifTableExists = <span class="literal">True</span></span><br><span class="line">    <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Function</span></span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/data/" rel="tag"># data</a>
+              <a href="/blog/tags/SQL/" rel="tag"># SQL</a>
+              <a href="/blog/tags/VBA/" rel="tag"># VBA</a>
+              <a href="/blog/tags/Access/" rel="tag"># Access</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2022/12/20/P272/" rel="prev" title="Hexo代码高亮">
+      <i class="fa fa-chevron-left"></i> Hexo代码高亮
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/12/06/P270/" rel="next" title="Graphic design - 下">
+      Graphic design - 下 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#OpenRecordSet"><span class="nav-number">1.1.</span> <span class="nav-text">OpenRecordSet</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Execute"><span class="nav-number">1.2.</span> <span class="nav-text">Execute</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">1.3.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Listbox"><span class="nav-number">1.4.</span> <span class="nav-text">Listbox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#vbCrLf"><span class="nav-number">1.5.</span> <span class="nav-text">vbCrLf</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Cases"><span class="nav-number">2.</span> <span class="nav-text">Cases</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-join-against-date-ranges"><span class="nav-number">2.1.</span> <span class="nav-text">SQL join against date ranges</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Form-load"><span class="nav-number">2.2.</span> <span class="nav-text">Form load</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Add-index"><span class="nav-number">2.3.</span> <span class="nav-text">Add index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-Error-Resume-Next"><span class="nav-number">2.4.</span> <span class="nav-text">On Error Resume Next</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Export-data"><span class="nav-number">2.5.</span> <span class="nav-text">Export data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Default-value"><span class="nav-number">2.6.</span> <span class="nav-text">Default value</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Delete-table"><span class="nav-number">2.7.</span> <span class="nav-text">Delete table</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Open-file"><span class="nav-number">2.8.</span> <span class="nav-text">Open file</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Import-excel-data"><span class="nav-number">2.9.</span> <span class="nav-text">Import excel data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object"><span class="nav-number">2.10.</span> <span class="nav-text">Object</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-List-Field%E2%80%99s-Name-in-table-in-Access-Using-SQL"><span class="nav-number">2.11.</span> <span class="nav-text">How to List Field’s Name in table in Access Using SQL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#How-to-check-if-a-table-exists-in-MS-Access-for-vb-macros"><span class="nav-number">2.12.</span> <span class="nav-text">How to check if a table exists in MS Access for vb macros</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">20:57</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2022/12/20/P271/";
+    this.page.identifier = "2022/12/20/P271/";
+    this.page.title = "关于SQL的笔记 - 和VBA新春混合喜庆版";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

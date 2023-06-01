@@ -1,5 +1,5 @@
 /*
-This file is made by Marketify (2021-2022)
+This file is made by Marketify (2022)
 
 01) BASE
 02) FORM ELEMENTS
@@ -63,10 +63,10 @@ a:hover{text-decoration:none;}
 
 textarea{
 	border-radius:0;
-	font-size:13px;
+	font-size:15px;
 	resize:vertical;
-	font-family:"Poppins";
-	letter-spacing: 1.2px !important;
+	font-family:"Montserrat";
+	letter-spacing: 0px !important;
 	
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
@@ -100,16 +100,16 @@ input[type="tel"],
 input[type="color"],
 .uneditable-input {
 	border-radius:0;
-	font-size:13px;
+	font-size:15px;
 	min-width:auto;
-	letter-spacing:1.4px;
+	letter-spacing:0px !important;
 	
 	-webkit-box-sizing: border-box; /* Safari/Chrome, other WebKit */
 	-moz-box-sizing: border-box;    /* Firefox, other Gecko */
 	-ms-box-sizing: border-box;     /* IE 10 + */
 	box-sizing: border-box;         /* Opera/IE 8+ */
 	
-	font-family:"Poppins";
+	font-family:"Montserrat";
 	
 	line-height:1.6;
 	padding:10px!important;
@@ -149,10 +149,10 @@ input[type="submit"]{
 	height: 40px;
 	line-height: 1;
 	text-transform: uppercase;
-	font-size: 13px;
+	font-size: 15px;
 	font-weight: 600;
 	text-decoration: none;
-	letter-spacing: 0.5px;
+	letter-spacing: 0px;
 	border:none;
 	cursor:pointer;
 	color: #FFF;

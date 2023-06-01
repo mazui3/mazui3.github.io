@@ -1,0 +1,1007 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="VBA它来了.  Excel的笔记.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Excel的笔记 - VBA">
+<meta property="og:url" content="https://mazui3.github.io/blog/2022/08/18/P255/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="VBA它来了.  Excel的笔记.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_2.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_1.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_3.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_4.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_5.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_6.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_8.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_7.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_11.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_12.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_13.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_14.jpg">
+<meta property="article:published_time" content="2022-08-18T14:45:06.000Z">
+<meta property="article:modified_time" content="2022-11-12T20:28:03.938Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="以头抢地(诚)">
+<meta property="article:tag" content="excel">
+<meta property="article:tag" content="VBA">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_2.jpg">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2022/08/18/P255/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于Excel的笔记 - VBA | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2022/08/18/P255/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于Excel的笔记 - VBA
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2022-08-18 10:45:06" itemprop="dateCreated datePublished" datetime="2022-08-18T10:45:06-04:00">2022-08-18</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2022-11-12 15:28:03" itemprop="dateModified" datetime="2022-11-12T15:28:03-05:00">2022-11-12</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E6%95%B0%E5%AD%A6%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">数学笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2022/08/18/P255/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2022/08/18/P255/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>15k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>13 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>VBA它来了.</p>
+<blockquote>
+<p><a href="https://mazui3.github.io/blog/2021/10/15/P166/">Excel的笔记</a>.</p>
+</blockquote>
+<span id="more"></span>
+
+<p>File &gt; option &gt; customize ribbon &gt; click developer in main tabs.<br>添加后在developer &gt; visual basic就可以to the developer window.<br>When saving, save file as macro-enabled workbook.</p>
+<br>
+<br>
+
+<img src="/blog/2022/08/18/P255/P255_2.jpg" class="">
+
+<h2 id="Macro"><a href="#Macro" class="headerlink" title="Macro"></a>Macro</h2><p>The easiest way to create VBA code is by recording a macro.</p>
+<p>Developer &gt; View&gt; Macro &gt; record macro</p>
+<p>After recording the macro, go to macro tab, then find the macro’s name (that you recorded).<br>有了macro之后可以在developer -&gt; control ribbon下面 -&gt; <strong>insert添加buttom</strong> -&gt; assign macro.<br>Right click button 可以edit text.</p>
+<p>Use <strong>relative references</strong> 是一个选择(boolean),如果不选就会默认record macro的时候使用absolute references.</p>
+<p>Macro names cannot include spaces. Use an underscore or camel case.</p>
+<br>
+<br>
+
+<h2 id="Set-up"><a href="#Set-up" class="headerlink" title="Set up"></a>Set up</h2><img src="/blog/2022/08/18/P255/P255_1.jpg" class="">
+
+<p>Immediate Window(<strong>ctrl + G</strong>),可以看到variable更改值的地方,很方便.<br>可以当作的terminal用.</p>
+<p>打开visual basic后,在modules中的才是co macro码的地方.<br>如果record一个macro,会默认存到module1(module2, etc)中.<br>Visual basic里的window如果不小心关了再打开是view -&gt; priority window.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.excelcampus.com/vba/excel-vba-macro-shortcuts/">Shortcut</a></p>
+</blockquote>
+<p>The keyboard shortcut to open the VB Editor in any Windows version of Excel is <strong>Alt+F11</strong>.</p>
+<p>用debug功能可以run your code one line by one line(<strong>按F8切下一行</strong>).</p>
+<p><strong>Ctrl+Y</strong> deletes the line of code that the text cursor is in.<br>没有undo shortcut,得手动edit -&gt; redo typing.</p>
+<p><strong>Ctrl+i</strong> displays the screentip that you see writing or running code.  This allows you to see all the parameters in a property, method, or function.</p>
+<br>
+<br>
+<br>
+<br>
+
+<h2 id="Data-type"><a href="#Data-type" class="headerlink" title="Data type"></a>Data type</h2><table>
+<thead>
+<tr>
+<th>Data type</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>Integer</td>
+<td>Store values between -32,768 and 32,767, No decimal places</td>
+</tr>
+<tr>
+<td>Long</td>
+<td>Store values between -2,147,483,648 to 2,147,483,647, No decimal places</td>
+</tr>
+<tr>
+<td>Single</td>
+<td>-3.402823E38 to -1.401298E-45 for negative values; 1.401298E-45 to 3.402823E38 for positive values, Numbers with decimal places</td>
+</tr>
+<tr>
+<td>Double</td>
+<td>-1.79769313486231E308 to -4.94065645841247E-324 for negative values; 4.94065645841247E-324 to 1.79769313486232E308 for positive values, Numbers with decimal places</td>
+</tr>
+<tr>
+<td>String</td>
+<td></td>
+</tr>
+<tr>
+<td>Date</td>
+<td></td>
+</tr>
+<tr>
+<td>Variant</td>
+<td>Open to any data type</td>
+</tr>
+</tbody></table>
+<p>顺便一提只有string是(在cell中)靠左,其他value都是靠右.<br>日期会识别成数字type.甚至可以date+100来计算100天后的日期.</p>
+<img src="/blog/2022/08/18/P255/P255_3.jpg" class="">
+<img src="/blog/2022/08/18/P255/P255_4.jpg" class="">
+<img src="/blog/2022/08/18/P255/P255_5.jpg" class="">
+<img src="/blog/2022/08/18/P255/P255_6.jpg" class="">
+
+<p>Strings are variable length by default. This code declares a fixed-length String of 20 characters:</p>
+<p>NB: Once a fixed string has been declared, it cannot be resized</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dim myFixedString As String * <span class="number">20</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Subroutine"><a href="#Subroutine" class="headerlink" title="Subroutine"></a>Subroutine</h2><p>Most of the code are contain in Subroutines.<br>我把它当作像代码里function一样的存在.需要手动跑.</p>
+<p>注:Excel中的function这个词,指的是前端,在cell内用的function,比如sum,max等.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Sub my_Macro()</span><br><span class="line"></span><br><span class="line">	<span class="built_in">code</span> goes here…</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>使用variable要跟c一样declare和type.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Sub my_Macro()</span><br><span class="line">	Dim myVariable As Integer</span><br><span class="line">	myVariable = <span class="number">20</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Variables can be created and assigned values without declaring them first, but, just don’t.</p>
+</blockquote>
+<br>
+<br>
+
+<p>You can pass values (arguments) into a subroutine by way of parameters<br>Declared when the Sub is defined:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Sub changeFontSize(theCell As String, newFontSize As Integer)</span><br><span class="line"></span><br><span class="line">    Range(theCell).Font.Size = newFontSize</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>Arguments are supplied by the code calling the sub:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Sub myMacro()</span><br><span class="line"></span><br><span class="line">	<span class="built_in">Call</span> changeFontSize(<span class="string">&quot;A1&quot;</span>, <span class="number">20</span>)</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Function"><a href="#Function" class="headerlink" title="Function"></a>Function</h2><p>可以用在前端的function.<br>Defined with the Function statement, and should include a data type for the return value:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Function myFunction() As Integer</span><br><span class="line"></span><br><span class="line">	myFunction = return <span class="built_in">value</span></span><br><span class="line"></span><br><span class="line">End Function</span><br></pre></td></tr></table></figure>
+
+<p>Arguments are passed by the calling code:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Sub myMacro()</span><br><span class="line"></span><br><span class="line">	MsgBox sayHello(<span class="string">&quot;John&quot;</span>)</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Array"><a href="#Array" class="headerlink" title="Array"></a>Array</h2><p>Arrays in VBA can be dynamic (the size is set after creation) or static:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dim myArray1()   &#x27; dynamic array</span><br><span class="line">Dim myArray2(<span class="number">3</span>)  &#x27; static array of <span class="number">3</span> elements</span><br></pre></td></tr></table></figure>
+
+<p>Arrays are of type Variant by default, but can be explicitly typed:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Dim myArray1(<span class="number">3</span>) As Integer</span><br></pre></td></tr></table></figure>
+
+<p>Use the ReDim (redimension) statement to assign a size to a dynamic array:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ReDim myArray1(<span class="number">3</span>)</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Once a dynamic array is redimensioned, it becomes static. You cannot redimension a static array, or change its data type.</p>
+</blockquote>
+<p>Assign values to an array by using index numbers:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Dim fruitArray(<span class="number">3</span>) As String</span><br><span class="line"></span><br><span class="line">fruitArray(<span class="number">0</span>) = <span class="string">&quot;Apple&quot;</span></span><br><span class="line">fruitArray(<span class="number">1</span>) = <span class="string">&quot;Orange&quot;</span></span><br><span class="line">fruitArray(<span class="number">2</span>) = <span class="string">&quot;Banana&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>Arrays can also be populated with the Array VBA function:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dim fruitArray As Variant</span><br><span class="line">fruitArray = Array(<span class="string">&quot;Apple&quot;</span>,<span class="string">&quot;Orange&quot;</span>,<span class="string">&quot;Banana&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>NB: If using the Array function, arrays are not declared with brackets and must be declared as Variant</p>
+<p>如果要run through the array,得提前造好一个pointer.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">Dim curShippingCharges(<span class="number">5</span>) As Currency</span><br><span class="line">Dim iCounter As Integer</span><br><span class="line"></span><br><span class="line">For iCounter = <span class="number">0</span> To <span class="number">5</span></span><br><span class="line">  curShippingCharges(iCounter) = ActiveCell.Offset(iCounter, <span class="number">1</span>).<span class="built_in">Value</span></span><br><span class="line">Next iCounter</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+
+<h2 id="ActiveCell"><a href="#ActiveCell" class="headerlink" title="ActiveCell"></a>ActiveCell</h2><p>Returns a Range object that represents the selected (active) cell in the displayed worksheet<br>Represents a single cell within the current selection, if more than one cell is selected<br>To refer to the ActiveCell on a different worksheet, activate the worksheet  first.Example - to get the value from the active cell on Sheet2 (if Sheet2 is not the active worksheet):</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Sub ActiveCellExample()</span><br><span class="line"></span><br><span class="line">&#x27;How to activate a <span class="built_in">cell</span></span><br><span class="line"></span><br><span class="line">Range(<span class="string">&quot;C31&quot;</span>).Active</span><br><span class="line">ActiveCell.Value = <span class="string">&quot;Finance&quot;</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>Change value.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub IntegerData()</span><br><span class="line"></span><br><span class="line">&#x27;Example of an integer</span><br><span class="line"></span><br><span class="line">Dim ExampleData Name As Integer</span><br><span class="line">ExampleData = <span class="number">75</span></span><br><span class="line">Cells(<span class="number">15</span>, <span class="number">2</span>) = ExampleData &#x27;在row15columnB中写入ExampleData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<div class="note ">
+            <p><strong>ctrl + shift + 8</strong> -&gt; 选择相近(包含)的active cell current region.</p>
+          </div>
+<p>在VBA中全取一片相邻的active cell(data region)的话.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">&#x27;turn autofilter no <span class="built_in">or</span> off,不会被先前原本的filter所干扰</span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">&#x27;选区</span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line">&#x27;在选区下加第<span class="number">2</span>列(<span class="built_in">column</span> counting from <span class="built_in">left</span> to <span class="built_in">right</span>)的idaho的filter</span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span>, Criteri<span class="symbol">al:</span>=<span class="string">&quot;Idaho&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>当选择两项的情况.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">Sub JustTwoItems()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line"></span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span>, Criter<span class="symbol">ia1:</span>=<span class="string">&quot;=Arizona&quot;</span>, _</span><br><span class="line">   Operat<span class="symbol">or:</span>=xlOr, Criter<span class="symbol">ia2:</span>=<span class="string">&quot;=California&quot;</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>空格和下划线好像是代码分行用的.</p>
+<p>多项.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Sub MultipleItems()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span>, Criter<span class="symbol">ia1:</span>=Array( _</span><br><span class="line">        <span class="string">&quot;Arizona&quot;</span>, <span class="string">&quot;California&quot;</span>, <span class="string">&quot;Oregon&quot;</span>), Operat<span class="symbol">or:</span>=xlFilterValues</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>使用AdvancedFilter 来find unique.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Sub UniqueItems()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line"></span><br><span class="line">Range(strAddress).AdvancedFilter Acti<span class="symbol">on:</span>=xlFilterInPlace, Uniq<span class="symbol">ue:</span>=<span class="built_in">True</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>顺便一提可以去home &gt; sort&amp;filter &gt; clear取消filter.</p>
+<p>在worksheet里我们已经有unique这个function.但不推荐在vba中使用worksheet的unique.</p>
+<p>Remove filter.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Sub RemoveFilter()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line"></span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span></span><br><span class="line">&#x27;因为输入的filter是null 所以会remove filter</span><br><span class="line">&#x27;remove第二列的所有filter</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub ClearAllFilters()</span><br><span class="line"></span><br><span class="line">ActiveSheet.ShowAllData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Offset"><a href="#Offset" class="headerlink" title="Offset"></a>Offset</h2><p>Returns a Range object that is offset from a specified cell or range by a given number of rows and/or columns<br>Positive row numbers move the offset down, negative numbers move the offset up<br>Positive column numbers move the offset to the right, negative numbers move the offset to the left</p>
+<blockquote>
+<p>选择其他cell根据与offset的距离.</p>
+</blockquote>
+<p>This example selects the cell that is 2 rows down and 3 columns to the right of the active cell:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActiveCell.Offset(<span class="number">2</span>,<span class="number">3</span>).Select</span><br></pre></td></tr></table></figure>
+
+<p>This example enters a value of 25 in the cell 3 rows up from the active cell:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ActiveCell.Offset(-<span class="number">3</span>,<span class="number">0</span>).<span class="built_in">Value</span> = <span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Field"><a href="#Field" class="headerlink" title="Field"></a>Field</h2><p>在excel里面每一个cell都是一个object,有不同的field.<br>If you are writing code to work with a number of properties and/or methods of the same object, it is more efficient to use a With…End With block.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">With Range(<span class="string">&quot;A1&quot;</span>).Font</span><br><span class="line">	.name = <span class="string">&quot;Arial&quot;</span></span><br><span class="line">	.Size = <span class="number">16</span></span><br><span class="line">	.Bold = <span class="built_in">True</span></span><br><span class="line">  .Color = vbRed</span><br><span class="line">End With</span><br></pre></td></tr></table></figure>
+
+<div class="note ">
+            <p>Colour properties can be set in one of two ways:<br>ColorIndex: uses an index number between 1-56 to refer to a specific colour (0 means “no colour”)<br>Color: set by using the RGB function or a built-in constant</p>
+          </div>
+
+<p>Excel里面也有build in constraint,一般以vb开头,比如.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Range(<span class="string">&quot;A1&quot;</span>).Interior.Color = vbYellow</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Range"><a href="#Range" class="headerlink" title="Range"></a>Range</h2><p>An object that represents a single cell (e.g. A1) or a range of cells (e.g. A1:C10)<br>Name of the Range must be in A1-format, or a user-defined range name<br>Name can include the range operator (colon), intersection operator (space) or union operator (comma),</p>
+<blockquote>
+<p>跟offset不同,可以选多个active cell.</p>
+</blockquote>
+<p>This example enters a value of 25 in the cell B3 of the current worksheet:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Range(<span class="string">&quot;B3&quot;</span>).<span class="built_in">Value</span> = <span class="number">25</span></span><br></pre></td></tr></table></figure>
+
+<p>This example changes the background colour of a user-defined range named redFill:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Range(<span class="string">&quot;redFill&quot;</span>).Interior.Color = vbRed</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Cell"><a href="#Cell" class="headerlink" title="Cell"></a>Cell</h2><blockquote>
+<p>另一种选区的方式.</p>
+</blockquote>
+<p>Returns a Range object that represents all the cells on the worksheet (not just the cells that are currently in use)<br>Accepts Row Index and Column Index parameters to refer to specific cells</p>
+<p>Example - this inserts a value of 100 in cell D5:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cells(<span class="number">5</span>, <span class="number">4</span>).<span class="built_in">Value</span> = <span class="number">100</span></span><br></pre></td></tr></table></figure>
+
+<p>A single numeric parameter will count from left to right, starting at 1 (cell A1) to 16384 (cell XFD1), and then wrap around to 16385 (cell A2)<br>If no argument is supplied, Cells will refer to all cells in the current worksheet. This example will colour the whole worksheet background yellow:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cells().Interior.Color = vbYellow</span><br></pre></td></tr></table></figure>
+
+<p><strong>Caution: Cells() will affect 17,179,869,184 individual cells!</strong></p>
+<br>
+<br>
+
+<h2 id="Selection"><a href="#Selection" class="headerlink" title="Selection"></a>Selection</h2><p>Returns the currently selected object<br>If the selection is a range of cells, they can be manipulated as a block, or individually (with a For Each loop)</p>
+<p>Examples: this will delete the contents of all cells in the selected range:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Selection.Clear</span><br></pre></td></tr></table></figure>
+
+<p>This will write the row number of the cell into each cell in the selection:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Dim myCell As Range</span><br><span class="line"></span><br><span class="line">For Each myCell In Selection</span><br><span class="line">	myCell.Value = myCell.Row</span><br><span class="line">Next myCell</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="SpecialCells"><a href="#SpecialCells" class="headerlink" title="SpecialCells"></a>SpecialCells</h2><blockquote>
+<p>选特定条件的cell.</p>
+</blockquote>
+<p>Returns a Range object that represents all the cells that match a specific type<br>SpecialCells accepts a mandatory Type constant and an optional Value constant (if Type refers to formulas or constants).</p>
+<p>Example: this will apply a yellow fill to all cells containing a formula:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cells.SpecialCells(xlCellTypeFormulas).Interior.Color = vbYellow</span><br></pre></td></tr></table></figure>
+
+<p>This will apply bold text to all formulas returning a number:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Cells.SpecialCells(xlCellTypeFormulas, xlNumbers).Font.Bold = <span class="built_in">True</span></span><br></pre></td></tr></table></figure>
+
+<img src="/blog/2022/08/18/P255/P255_9.png" class="">
+<img src="/blog/2022/08/18/P255/P255_10.png" class="">
+
+<br>
+<br>
+
+<h2 id="If-condition"><a href="#If-condition" class="headerlink" title="If condition"></a>If condition</h2><p>Condition里让我很痛苦的一点,是用于比较的=和assign value的=是一样的.<br>没有那样的==.<br>竟然没有.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">If</span> [logical test] Then</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> <span class="built_in">true</span></span><br><span class="line">End <span class="built_in">If</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">If</span> [logical test] Then</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> <span class="built_in">true</span></span><br><span class="line">Else</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> <span class="built_in">false</span></span><br><span class="line">End <span class="built_in">If</span></span><br></pre></td></tr></table></figure>
+
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">If</span> [logical test1] Then</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> test1 is <span class="built_in">true</span></span><br><span class="line">ElseIf [logical test2] Then</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> test2 is <span class="built_in">true</span></span><br><span class="line">Else</span><br><span class="line">	<span class="built_in">code</span> to run <span class="built_in">if</span> both tests are <span class="built_in">false</span></span><br><span class="line">End <span class="built_in">If</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Select Case Statement:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Select Case [<span class="built_in">value</span>]</span><br><span class="line">	Case [pattern1]</span><br><span class="line">		<span class="built_in">code</span> to run <span class="built_in">if</span> [<span class="built_in">value</span>] matches [pattern1]</span><br><span class="line">	Case [pattern2]</span><br><span class="line">		<span class="built_in">code</span> to run <span class="built_in">if</span> [<span class="built_in">value</span>] matches [pattern2]</span><br><span class="line">	Case [pattern3]</span><br><span class="line">		<span class="built_in">code</span> to run <span class="built_in">if</span> [<span class="built_in">value</span>] matches [pattern3]</span><br><span class="line">	Case Else</span><br><span class="line">		<span class="built_in">code</span> to run <span class="built_in">if</span> [<span class="built_in">value</span>] does <span class="built_in">not</span> <span class="built_in">match</span> any pattern</span><br><span class="line">End Select</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h2><h3 id="For"><a href="#For" class="headerlink" title="For"></a>For</h3><p>A For loop repeats a block of code until it meets a predefined end value. This example would run the code 5 times:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">Dim startPoint As Integer</span><br><span class="line">Dim endPoint As Integer</span><br><span class="line"></span><br><span class="line">endPoint = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">For startPoint = <span class="number">1</span> To endPoint</span><br><span class="line"></span><br><span class="line">	<span class="built_in">code</span> to run</span><br><span class="line"></span><br><span class="line">Next startPoint</span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>Must assign a value to a variable as the starting point for the loop<br>Next increments the counter variable by 1 as default, but can be changed by adding Step [number] after the ending value on the For…To line</p>
+</blockquote>
+<br>
+<br>
+
+<h3 id="ForEach"><a href="#ForEach" class="headerlink" title="ForEach"></a>ForEach</h3><p>Normally used with collections (e.g. a range of cells) and arrays<br>Cycles through each individual item in the collection/array</p>
+<p>Example: This fills the range A1:A20 with the numbers 1 to 20:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub my_loop()</span><br><span class="line">    Dim i As Integer</span><br><span class="line">    i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    For Each myCell In Range(<span class="string">&quot;A1:A20&quot;</span>)</span><br><span class="line">        myCell.Value = i</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    Next myCell</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="DoWhile"><a href="#DoWhile" class="headerlink" title="DoWhile"></a>DoWhile</h3><p>Includes a test condition, and loops while condition is true<br>Don’t need to set a start condition - just the end condition<br>Needs a line of code to increase the loop variable value, otherwise would create an infinite loop</p>
+<p>This fills the range A1:A20 with the numbers 1 to 20:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub my_Loop()</span><br><span class="line">Dim i As Integer</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    Do While i &lt; <span class="number">21</span></span><br><span class="line">        Cells(i, <span class="string">&quot;A&quot;</span>).<span class="built_in">Value</span> = i</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    Loop    </span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="DoUntil"><a href="#DoUntil" class="headerlink" title="DoUntil"></a>DoUntil</h3><p>This fills the range A1:A20 with the numbers 1 to 20:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Sub my_Loop()</span><br><span class="line">Dim i As Integer</span><br><span class="line">i = <span class="number">1</span></span><br><span class="line"></span><br><span class="line">    Do Until i &gt; <span class="number">20</span></span><br><span class="line">        Cells(i, <span class="string">&quot;A&quot;</span>).<span class="built_in">Value</span> = i</span><br><span class="line">        i = i + <span class="number">1</span></span><br><span class="line">    Loop    </span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h3 id="Exit"><a href="#Exit" class="headerlink" title="Exit"></a>Exit</h3><p>Exit statement followed by loop type will end the loop<br>Example: <strong>Exit For</strong> will end a For or For Each loop, <strong>Exit Do</strong> will end a While or Until loop</p>
+<p>This fills the range A1:A10 with the numbers 1 to 10, even though endPoint is set to 20:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Sub my_Loop()</span><br><span class="line">Dim startPoint As Integer</span><br><span class="line">Dim endPoint As Integer</span><br><span class="line">endPoint = <span class="number">20</span></span><br><span class="line">For startPoint = <span class="number">1</span> To endPoint</span><br><span class="line">    Cells(startPoint, <span class="string">&quot;A&quot;</span>).<span class="built_in">Value</span> = startPoint        </span><br><span class="line">        <span class="built_in">If</span> startPoint = <span class="number">10</span> Then</span><br><span class="line">        Exit For</span><br><span class="line">        End <span class="built_in">If</span></span><br><span class="line">Next startPoint</span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Event"><a href="#Event" class="headerlink" title="Event"></a>Event</h2><img src="/blog/2022/08/18/P255/P255_8.jpg" class="">
+
+<br>
+<br>
+
+<h2 id="Message-box"><a href="#Message-box" class="headerlink" title="Message box"></a>Message box</h2><img src="/blog/2022/08/18/P255/P255_7.png" class="">
+
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">Sub useMsgBox()</span><br><span class="line">MsgBox <span class="string">&quot;Hello world&quot;</span></span><br><span class="line"></span><br><span class="line">MsgBox <span class="string">&quot;Hello &quot;</span> &amp; ActiveCell.Value</span><br><span class="line"></span><br><span class="line">MsgBox <span class="string">&quot;The Sheet name is &quot;</span> &amp; ActiveSheet.Name</span><br><span class="line"></span><br><span class="line">MsgBox Range(<span class="string">&quot;b2&quot;</span>) &amp; <span class="string">&quot;,  &quot;</span> &amp; Range(<span class="string">&quot;C2&quot;</span>)</span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub useNewLine()</span><br><span class="line">MsgBox <span class="string">&quot;Top score&quot;</span> &amp; vbNewLine &amp; <span class="string">&quot;Smith: 102&quot;</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub useSpaceUnderscore()</span><br><span class="line">MsgBox <span class="string">&quot;this line goes on and on off the page so space and underscore &quot;</span> _</span><br><span class="line">                     &amp; <span class="string">&quot; makes it easier to read &quot;</span></span><br><span class="line"></span><br><span class="line">Worksheets(<span class="string">&quot;revenue&quot;</span>).Range(<span class="string">&quot;A1&quot;</span>).CurrentRegion.Rows(<span class="number">1</span>).Copy _</span><br><span class="line">                       Destinati<span class="symbol">on:</span>=Range(<span class="string">&quot;M2&quot;</span>)</span><br><span class="line"></span><br><span class="line">ActiveCell.Offset(<span class="number">0</span>, <span class="number">10</span>).<span class="built_in">Value</span> = _</span><br><span class="line">       <span class="string">&quot;Sentences which don&#x27;t fit on a line can be continued on the next line&quot;</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>The MsgBox statement accepts additional optional constants to display icons and different sets of buttons<br>Example: this code generates a message box with Abort/Retry/Ignore buttons and a Critical Message icon. The user’s response is stored in the variable response:</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">Dim response</span><br><span class="line">response = MsgBox(<span class="string">&quot;Something went wrong!&quot;</span>, vbAbortRetryIgnore + vbCritical)</span><br><span class="line"></span><br><span class="line">Select Case response</span><br><span class="line">	Case vbAbort</span><br><span class="line">		<span class="built_in">code</span> to run when user chooses Abort</span><br><span class="line">	Case vbRetry</span><br><span class="line">		<span class="built_in">code</span> to run when user chooses Retry</span><br><span class="line">	Case Else</span><br><span class="line">		<span class="built_in">code</span> to run when user chooses Ignore</span><br><span class="line">End Select</span><br></pre></td></tr></table></figure>
+
+<img src="/blog/2022/08/18/P255/P255_11.png" class="">
+
+<br>
+<br>
+
+<h2 id="InputBox"><a href="#InputBox" class="headerlink" title="InputBox"></a>InputBox</h2><p>Displays a dialog box with a textbox and OK/Cancel buttons<br>Value entered by the user is written to a variable</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dim userInput As Variant</span><br><span class="line">userInput = InputBox(<span class="string">&quot;Please enter a value&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<p>Can also display a custom title, and a default value</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">Dim userInput As Variant</span><br><span class="line">userInput = InputBox(<span class="string">&quot;Please enter a value&quot;</span>, <span class="string">&quot;Input&quot;</span>, <span class="string">&quot;Hello&quot;</span>)</span><br></pre></td></tr></table></figure>
+
+<img src="/blog/2022/08/18/P255/P255_12.jpg" class="">
+
+<br>
+<br>
+
+<h2 id="Run-a-procedure-when-you-open-close-save-a-workbook"><a href="#Run-a-procedure-when-you-open-close-save-a-workbook" class="headerlink" title="Run a procedure when you open / close / save a workbook"></a>Run a procedure when you open / close / save a workbook</h2><p>Auto_Open是excel build in 的function(可以理解成unity的update那样的存在).<br>(不过是一个很老很老的functionality)<br>需要private key word(只在这个workbook打开时发生).<br>同样还有before_close.</p>
+<p>在thisworkbook module里.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Private Sub Workbook_BeforeClose(Cancel As Boolean)</span><br><span class="line"></span><br><span class="line"><span class="built_in">If</span> WorkSheets(<span class="string">&quot;CorporateSales&quot;</span>).Range(<span class="string">&quot;F5&quot;</span>).<span class="built_in">Value</span> = <span class="string">&quot;&quot;</span> Then</span><br><span class="line">  MsgBox(<span class="string">&quot;Please enter a commission rate before closing the workbook.&quot;</span>)</span><br><span class="line"></span><br><span class="line">Cancel = <span class="built_in">True</span></span><br><span class="line">End <span class="built_in">If</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Private Sub Workbook_BeforeSave(ByVal SaveUI As Boolean, Cancel As Boolean)</span><br><span class="line">  Answer = MsgBox(<span class="string">&quot;Do you really want to save the workbook?&quot;</span>, vbYesNo)</span><br><span class="line">  <span class="built_in">If</span> Answer = vbNo Then Cancel = <span class="built_in">True</span></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Use-worksheet-function-in-macro"><a href="#Use-worksheet-function-in-macro" class="headerlink" title="Use worksheet function in macro"></a>Use worksheet function in macro</h2><blockquote>
+<p>application.WorkSheetFunction.XXX</p>
+</blockquote>
+<br>
+<br>
+
+<h2 id="On-error"><a href="#On-error" class="headerlink" title="On error"></a>On error</h2><p>有三种on error模式.</p>
+<ul>
+<li>On error goto 0 (which is the default)</li>
+<li>On error goto handler</li>
+<li>On error resume next</li>
+</ul>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Sub CheckError()</span><br><span class="line"></span><br><span class="line">Dim lngNumber As Long</span><br><span class="line">Dim lngResult As Long</span><br><span class="line"></span><br><span class="line">On Error GoTo Handl<span class="symbol">er:</span></span><br><span class="line"></span><br><span class="line">lngNumber = InputBox(<span class="string">&quot;Enter a number.&quot;</span>)</span><br><span class="line">lngResult = lngNumber + <span class="number">3</span></span><br><span class="line"></span><br><span class="line">MsgBox(lngResult)</span><br><span class="line">Exit Sub</span><br><span class="line"></span><br><span class="line">Handl<span class="symbol">er:</span></span><br><span class="line">MsgBox <span class="string">&quot;This is not a number!&quot;</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>这段代码要求用户输入一个数字,如果不是数字,那就会识别错误.<br>如果出错,就跳到handler的this is not a number.</p>
+<p>在其他模式,On error goto 0会跳出type错误的default error messenge<br>On error resume next continue on the best it can as if the error did not occur.<br>And in this case, it will return a 3.</p>
+<br>
+<br>
+
+<img src="/blog/2022/08/18/P255/P255_13.png" class="">
+
+<br>
+<br>
+
+<h2 id="UserForm"><a href="#UserForm" class="headerlink" title="UserForm"></a>UserForm</h2><p>让user input的弹窗.可以在不碰worksheet的情况下向user要input.</p>
+<p>在VBA editor里面 &gt; insert &gt; userform</p>
+<p>caption: 弹窗的左上角名称或文本本身.<br>可以在view &gt; properties window中check userform的属性.基本可以在这里更改不同element的属性.<br>RowSource: 需要在worksheet里面先把data做成一个table,再ref 用table name.</p>
+<img src="/blog/2022/08/18/P255/P255_14.jpg" class="">
+<p>点击toolbox,就可以编辑userform.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">theUserFormName.show</span><br></pre></td></tr></table></figure>
+<p>就可以run了.</p>
+<br>
+<br>
+
+<h2 id="Check"><a href="#Check" class="headerlink" title="Check"></a>Check</h2><p>Check workbook open.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line">Private Function CheckIfOpen(strFileName As String) As Boolean</span><br><span class="line"></span><br><span class="line">Dim w As Workbook</span><br><span class="line">On Error Resume Next</span><br><span class="line"></span><br><span class="line">Set w = Workbooks(strFileName)</span><br><span class="line"><span class="built_in">If</span> Err Then CheckIfOpen = <span class="built_in">False</span> Else CheckIfOpen = <span class="built_in">True</span></span><br><span class="line"></span><br><span class="line">On Error GoTo <span class="number">0</span></span><br><span class="line"></span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">Sub CheckIfWkbkOpen()</span><br><span class="line"></span><br><span class="line">&#x27;Add name of file you want to check</span><br><span class="line">bIsOpen = CheckIfOpen(<span class="string">&quot;Target.xlsx&quot;</span>)</span><br><span class="line"></span><br><span class="line">MsgBox (bIsOpen)</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>用代码打开一个workbook.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">Sub OpenAWorkbook()</span><br><span class="line"></span><br><span class="line">Workbooks.Open Filena<span class="symbol">me:</span>=<span class="string">&quot;C:\Users\theAddress.xlsx&quot;</span></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+<p>Close the workbook.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">Sub CloseAWorkbook()</span><br><span class="line">&#x27;保存</span><br><span class="line">ActiveWorkbook.Save</span><br><span class="line">&#x27;Close it</span><br><span class="line">ActiveWindow.Close</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<p>也可以手动turn on &amp; off alert.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">Application.DisplayAlerts = <span class="built_in">False</span></span><br><span class="line">&#x27;记得关闭后要再turn on</span><br><span class="line">Application.DisplayAlerts = <span class="built_in">True</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Check worksheet exist.</p>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line">Private Function WkshtExists(strSheetName) As Boolean</span><br><span class="line"></span><br><span class="line">On Error Resume Next</span><br><span class="line"></span><br><span class="line">WkshtExists = <span class="built_in">Sheets</span>(strSheetName).Name &lt;&gt; <span class="string">&quot;&quot;</span></span><br><span class="line">&#x27;<span class="built_in">if</span> worksheet exist, then the test here <span class="built_in">not</span> equal to zero is <span class="built_in">true</span></span><br><span class="line"></span><br><span class="line">On Error GoTo <span class="number">0</span></span><br><span class="line"></span><br><span class="line">End Function</span><br><span class="line"></span><br><span class="line">Sub CheckForSheet()</span><br><span class="line"></span><br><span class="line">Dim bIsThere As Boolean</span><br><span class="line"></span><br><span class="line">bIsThere = WkshtExists(<span class="string">&quot;March&quot;</span>)</span><br><span class="line">MsgBox (bIsThere)</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E4%BB%A5%E5%A4%B4%E6%8A%A2%E5%9C%B0-%E8%AF%9A/" rel="tag"># 以头抢地(诚)</a>
+              <a href="/blog/tags/excel/" rel="tag"># excel</a>
+              <a href="/blog/tags/VBA/" rel="tag"># VBA</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2022/08/26/P257/" rel="prev" title="关于Javascript的笔记">
+      <i class="fa fa-chevron-left"></i> 关于Javascript的笔记
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2022/07/29/P254/" rel="next" title="关于visualization的笔记(草稿)">
+      关于visualization的笔记(草稿) <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#Macro"><span class="nav-number">1.</span> <span class="nav-text">Macro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Set-up"><span class="nav-number">2.</span> <span class="nav-text">Set up</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Data-type"><span class="nav-number">3.</span> <span class="nav-text">Data type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subroutine"><span class="nav-number">4.</span> <span class="nav-text">Subroutine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Function"><span class="nav-number">5.</span> <span class="nav-text">Function</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Array"><span class="nav-number">6.</span> <span class="nav-text">Array</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ActiveCell"><span class="nav-number">7.</span> <span class="nav-text">ActiveCell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Filter"><span class="nav-number">8.</span> <span class="nav-text">Filter</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Offset"><span class="nav-number">9.</span> <span class="nav-text">Offset</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Field"><span class="nav-number">10.</span> <span class="nav-text">Field</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Range"><span class="nav-number">11.</span> <span class="nav-text">Range</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Cell"><span class="nav-number">12.</span> <span class="nav-text">Cell</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Selection"><span class="nav-number">13.</span> <span class="nav-text">Selection</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SpecialCells"><span class="nav-number">14.</span> <span class="nav-text">SpecialCells</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#If-condition"><span class="nav-number">15.</span> <span class="nav-text">If condition</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Loop"><span class="nav-number">16.</span> <span class="nav-text">Loop</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#For"><span class="nav-number">16.1.</span> <span class="nav-text">For</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ForEach"><span class="nav-number">16.2.</span> <span class="nav-text">ForEach</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DoWhile"><span class="nav-number">16.3.</span> <span class="nav-text">DoWhile</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#DoUntil"><span class="nav-number">16.4.</span> <span class="nav-text">DoUntil</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Exit"><span class="nav-number">16.5.</span> <span class="nav-text">Exit</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Event"><span class="nav-number">17.</span> <span class="nav-text">Event</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Message-box"><span class="nav-number">18.</span> <span class="nav-text">Message box</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#InputBox"><span class="nav-number">19.</span> <span class="nav-text">InputBox</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Run-a-procedure-when-you-open-close-save-a-workbook"><span class="nav-number">20.</span> <span class="nav-text">Run a procedure when you open &#x2F; close &#x2F; save a workbook</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Use-worksheet-function-in-macro"><span class="nav-number">21.</span> <span class="nav-text">Use worksheet function in macro</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#On-error"><span class="nav-number">22.</span> <span class="nav-text">On error</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UserForm"><span class="nav-number">23.</span> <span class="nav-text">UserForm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Check"><span class="nav-number">24.</span> <span class="nav-text">Check</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">20:57</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2022/08/18/P255/";
+    this.page.identifier = "2022/08/18/P255/";
+    this.page.title = "关于Excel的笔记 - VBA";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

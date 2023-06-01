@@ -1,0 +1,1194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="跟过去博客整理的编码笔记类似,存留一些搞事情用到的参考,代码,碎碎念.我搞事情又比较杂(五分钟热度),于是以时间开个合集.  这次在收集的:   游戏截图 游戏背景素材">
+<meta property="og:type" content="article">
+<meta property="og:title" content="积灰仓库与工具箱 - 春">
+<meta property="og:url" content="https://mazui3.github.io/blog/2023/03/26/P267/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="跟过去博客整理的编码笔记类似,存留一些搞事情用到的参考,代码,碎碎念.我搞事情又比较杂(五分钟热度),于是以时间开个合集.  这次在收集的:   游戏截图 游戏背景素材">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_57.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_58.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_59.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_60.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_61.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_62.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_143.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_144.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_145.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_146.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_142.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_147.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_83.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_40.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_41.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_38.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_39.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_42.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_43.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_176.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_177.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_178.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_74.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_75.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_76.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_77.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_106.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_44.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_45.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_46.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_47.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_48.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_49.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_50.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_63.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_84.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_51.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_52.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_53.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_179.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_180.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_181.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_182.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_23.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_24.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_25.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_28.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_26.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_27.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_29.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_30.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_31.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_32.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_33.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_34.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_35.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_82.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_78.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_79.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_81.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_80.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_187.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_183.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_184.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_185.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_186.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_188.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_107.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_108.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_109.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_110.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_111.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_112.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_8.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_12.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_16.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_11.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_14.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_13.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_15.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_70.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_71.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_72.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_73.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_164.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_165.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_166.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_167.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_168.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_169.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_170.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_171.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_173.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_174.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_175.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_85.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_86.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_87.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_88.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_89.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_90.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_91.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_92.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_202.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_203.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_205.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_204.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_206.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_207.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_208.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_209.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_210.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_211.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_212.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_192.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_195.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_193.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_194.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_196.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_197.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_198.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_200.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_201.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_199.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_93.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_94.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_64.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_65.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_67.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_66.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_220.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_222.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_68.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_69.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_213.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_214.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_215.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_221.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_216.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_223.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_217.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_218.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_219.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_116.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_117.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_118.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_119.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_120.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_95.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_96.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_97.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_100.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_101.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_102.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_103.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_99.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_104.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_105.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_98.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_54.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_55.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_56.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_190.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_189.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_191.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_36.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_149.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_150.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_155.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_152.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_154.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_148.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_172.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_163.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_156.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_162.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_157.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_151.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_158.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_161.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_153.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_159.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_160.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_0.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_7.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_18.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_17.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_6.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_19.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_21.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_20.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_22.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_113.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_121.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_122.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_123.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_124.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_125.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_126.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_127.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_128.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_129.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_130.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_131.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_132.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_133.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_134.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_135.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_136.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_137.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_138.png">
+<meta property="article:published_time" content="2023-03-27T01:07:03.000Z">
+<meta property="article:modified_time" content="2023-04-24T12:23:14.880Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="C4ToolBox">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/03/26/P267/P267_57.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2023/03/26/P267/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>积灰仓库与工具箱 - 春 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2023/03/26/P267/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          积灰仓库与工具箱 - 春
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-03-26 21:07:03" itemprop="dateCreated datePublished" datetime="2023-03-26T21:07:03-04:00">2023-03-26</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-04-24 08:23:14" itemprop="dateModified" datetime="2023-04-24T08:23:14-04:00">2023-04-24</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/GameDev%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">GameDev笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2023/03/26/P267/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/03/26/P267/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>2.7k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>2 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>跟过去博客整理的编码笔记类似,存留一些搞事情用到的参考,代码,碎碎念.<br>我搞事情又比较杂(五分钟热度),于是以时间开个合集.</p>
+<blockquote>
+<p>这次在收集的:</p>
+</blockquote>
+<ul>
+<li>游戏截图</li>
+<li>游戏背景素材</li>
+</ul>
+<span id="more"></span>
+
+<br>
+<br>
+<br>
+
+<h1 id="游戏截图收集"><a href="#游戏截图收集" class="headerlink" title="游戏截图收集"></a>游戏截图收集</h1><h2 id="プリンセスメーカー-1991"><a href="#プリンセスメーカー-1991" class="headerlink" title="プリンセスメーカー - 1991"></a><em>プリンセスメーカー</em> - 1991</h2><p>老式UI有老式的美…!!<br>在对话框上加花纹,补充背景用欧洲风图案都很有年代感…</p>
+<img src="/blog/2023/03/26/P267/P267_57.png" class="">
+<img src="/blog/2023/03/26/P267/P267_58.png" class="">
+<img src="/blog/2023/03/26/P267/P267_59.png" class="">
+<img src="/blog/2023/03/26/P267/P267_60.png" class="">
+<img src="/blog/2023/03/26/P267/P267_61.png" class="">
+<img src="/blog/2023/03/26/P267/P267_62.png" class="">
+
+<br>
+<br>
+
+<p>Steam里有princess maker refine,下载了看看.<br>跟截图的版本可能不一样……虽然也有那味.<br>比较硬核,开场白结束后就开始养成游戏了.这一点超级老游戏.</p>
+<img src="/blog/2023/03/26/P267/P267_143.png" class="" title="开场幻灯片">
+<img src="/blog/2023/03/26/P267/P267_144.png" class="" title="开场logo">
+<img src="/blog/2023/03/26/P267/P267_145.png" class="" title="主页面">
+<img src="/blog/2023/03/26/P267/P267_146.png" class="" title="event页面">
+<img src="/blog/2023/03/26/P267/P267_142.png" class="" title="日历">
+<img src="/blog/2023/03/26/P267/P267_147.png" class="" title="超硬核的存档页面">
+
+<br>
+<br>
+
+<h2 id="心跳回忆-1994"><a href="#心跳回忆-1994" class="headerlink" title="心跳回忆 - 1994"></a><em>心跳回忆</em> - 1994</h2><p>这一版的心跳回忆真的很老了…</p>
+<img src="/blog/2023/03/26/P267/P267_83.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_40.png" class="" title="小游戏">
+<img src="/blog/2023/03/26/P267/P267_41.png" class="" title="通讯录">
+<img src="/blog/2023/03/26/P267/P267_38.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_39.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_42.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_43.png" class="" title="对话3">
+
+<p>在网络冲浪时下到了…乱码的海贼版.没有调文字只截了两张图.</p>
+<img src="/blog/2023/03/26/P267/P267_176.png" class="" title="姓名">
+<img src="/blog/2023/03/26/P267/P267_177.png" class="" title="设置">
+<img src="/blog/2023/03/26/P267/P267_178.png" class="" title="存档">
+<p>最让我惊讶的是,图案背景都是会动的!包括上方对话的绿色网格是会动的!(很有那个味了).</p>
+<br>
+<br>
+
+<h2 id="樱花大战-1996-2003"><a href="#樱花大战-1996-2003" class="headerlink" title="樱花大战 - 1996(2003)"></a><em>樱花大战</em> - 1996(2003)</h2><img src="/blog/2023/03/26/P267/P267_74.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_75.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_76.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_77.png" class="" title="对话3">
+
+<br>
+<br>
+
+<h2 id="白色相簿-1998"><a href="#白色相簿-1998" class="headerlink" title="白色相簿 - 1998"></a><em>白色相簿</em> - 1998</h2><p>白色相簿的对话框与人物的比例真的很对美少女游戏的醍醐味…</p>
+<img src="/blog/2023/03/26/P267/P267_106.png" class="" title="logo">
+<img src="/blog/2023/03/26/P267/P267_44.png" class="" title="全屏对话">
+<img src="/blog/2023/03/26/P267/P267_45.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_46.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_47.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_48.png" class="" title="对话4">
+<img src="/blog/2023/03/26/P267/P267_49.png" class="" title="对话5">
+<img src="/blog/2023/03/26/P267/P267_50.png" class="" title="好老的页面!!">
+
+<p>白色相簿2的UI跟1代的差距感受到了时代的经历…<br>草草觉得UI从欧式fancy -&gt; 一抹色蓝底 -&gt; 花式设计 -&gt; 一抹色灰底 -&gt; 逐渐透明.</p>
+<img src="/blog/2023/03/26/P267/P267_63.png" class="" title="对话">
+
+<br>
+<br>
+
+<h2 id="秋之回忆2-2001"><a href="#秋之回忆2-2001" class="headerlink" title="秋之回忆2 - 2001"></a><em>秋之回忆2</em> - 2001</h2><p>那个时代画风也是我的头好…</p>
+<img src="/blog/2023/03/26/P267/P267_84.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_51.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_52.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_53.png" class="" title="对话3">
+
+<img src="/blog/2023/03/26/P267/P267_179.png" class="" title="过场">
+<img src="/blog/2023/03/26/P267/P267_180.png" class="" title="选项">
+<img src="/blog/2023/03/26/P267/P267_181.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_182.png" class="" title="设置">
+
+<p>让我惊讶的是…秋之回忆没有历史对话的页面!</p>
+<br>
+<br>
+
+<h2 id="心跳回忆-girl’s-side-2002"><a href="#心跳回忆-girl’s-side-2002" class="headerlink" title="心跳回忆 girl’s side - 2002"></a><em>心跳回忆 girl’s side</em> - 2002</h2><p>心跳回忆很经典攻略游戏,截了好多.</p>
+<img src="/blog/2023/03/26/P267/P267_23.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_24.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_25.png" class="" title="设定">
+<img src="/blog/2023/03/26/P267/P267_28.png" class="" title="设定2">
+<img src="/blog/2023/03/26/P267/P267_26.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_27.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_29.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_30.png" class="" title="对话4">
+<img src="/blog/2023/03/26/P267/P267_31.png" class="" title="对话5">
+<img src="/blog/2023/03/26/P267/P267_32.png" class="" title="对话6">
+<img src="/blog/2023/03/26/P267/P267_33.png" class="" title="对话7">
+<img src="/blog/2023/03/26/P267/P267_34.png" class="" title="对话8">
+<img src="/blog/2023/03/26/P267/P267_35.png" class="" title="对话9">
+
+<br>
+<br>
+
+<h2 id="Remember-11-2004"><a href="#Remember-11-2004" class="headerlink" title="Remember 11 - 2004"></a><em>Remember 11</em> - 2004</h2><p>对不起,因为喜欢悠尼,截的都是悠尼.<br>截的是Q老板录播的图,页面下方的Q老板信息我截掉了,所以对话框少许有些不完整.</p>
+<img src="/blog/2023/03/26/P267/P267_82.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_78.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_79.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_81.png" class="" title="对话3">
+<p>边框按男女主角线切换颜色.</p>
+<img src="/blog/2023/03/26/P267/P267_80.png" class="" title="历史">
+<p>Q老板和打越的黄段子共鸣原来从那时候就jpg.</p>
+<img src="/blog/2023/03/26/P267/P267_187.png" class="" title="历史跳转">
+<p>r11竟然可以在历史跳转.</p>
+<img src="/blog/2023/03/26/P267/P267_183.png" class="" title="过场">
+<img src="/blog/2023/03/26/P267/P267_184.png" class="" title="右键出设置">
+<img src="/blog/2023/03/26/P267/P267_185.png" class="" title="设置">
+<img src="/blog/2023/03/26/P267/P267_186.png" class="" title="tips">
+<img src="/blog/2023/03/26/P267/P267_188.png" class="" title="存档">
+<p>哇,这不秋之回忆的页面吗x.</p>
+<br>
+<br>
+
+<h2 id="Little-Busters-2007"><a href="#Little-Busters-2007" class="headerlink" title="Little Busters - 2007"></a><em>Little Busters</em> - 2007</h2><img src="/blog/2023/03/26/P267/P267_107.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_108.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_109.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_110.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_111.png" class="" title="对话4">
+<img src="/blog/2023/03/26/P267/P267_112.png" class="" title="对话5">
+
+<br>
+<br>
+
+<h2 id="女神异闻录4-2008"><a href="#女神异闻录4-2008" class="headerlink" title="女神异闻录4 - 2008"></a><em>女神异闻录4</em> - 2008</h2><img src="/blog/2023/03/26/P267/P267_8.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_12.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_16.png" class="" title="调查">
+<img src="/blog/2023/03/26/P267/P267_9.png" class="" title="教程">
+<img src="/blog/2023/03/26/P267/P267_10.png" class="" title="设定">
+<img src="/blog/2023/03/26/P267/P267_11.png" class="" title="设定2">
+<p>p系列的设定界面很花,建议不要学学不会.</p>
+<img src="/blog/2023/03/26/P267/P267_14.png" class="" title="地图">
+<img src="/blog/2023/03/26/P267/P267_13.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_15.png" class="" title="商店">
+
+<br>
+<br>
+
+<h2 id="命运石之门-2009"><a href="#命运石之门-2009" class="headerlink" title="命运石之门 - 2009"></a><em>命运石之门</em> - 2009</h2><img src="/blog/2023/03/26/P267/P267_70.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_71.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_72.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_73.png" class="" title="对话4">
+
+<p>我还挺馋石头门的,在steam买了一份.</p>
+<img src="/blog/2023/03/26/P267/P267_164.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_165.png" class="" title="OP">
+<p>石头门的op是主角自白+幻灯片,也许在那个年代还没法作酷酷pv,意外的效果很好(声优也很厉害…!).</p>
+<img src="/blog/2023/03/26/P267/P267_166.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_167.png" class="" title="tips">
+<img src="/blog/2023/03/26/P267/P267_168.png" class="" title="设定">
+<img src="/blog/2023/03/26/P267/P267_169.png" class="" title="设定2">
+<img src="/blog/2023/03/26/P267/P267_170.png" class="" title="设定3">
+<img src="/blog/2023/03/26/P267/P267_171.png" class="" title="历史对话">
+<img src="/blog/2023/03/26/P267/P267_173.png" class="" title="help">
+<img src="/blog/2023/03/26/P267/P267_174.png" class="" title="选项">
+<img src="/blog/2023/03/26/P267/P267_175.png" class="" title="右键出设置">
+<p>暂停的时候有淡淡的边框.</p>
+<br>
+<br>
+
+<h2 id="Your-diary-2011"><a href="#Your-diary-2011" class="headerlink" title="Your diary - 2011"></a><em>Your diary</em> - 2011</h2><p>俺的入宅作.<br>完全是因为kantoku老师神明的画作而去打的galgame.<br>纯爱,纯度百分百的纯爱.<br>打完后虽然什么都不记得但当时有感受到恋爱的感觉…</p>
+<img src="/blog/2023/03/26/P267/P267_85.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_86.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_87.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_88.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_89.png" class="" title="对话4">
+<img src="/blog/2023/03/26/P267/P267_90.png" class="" title="对话5">
+<img src="/blog/2023/03/26/P267/P267_91.png" class="" title="对话6">
+<img src="/blog/2023/03/26/P267/P267_92.png" class="" title="对话7">
+
+<p>惊讶之your diary是对话框基本消失的做法.<br>就算基本消失但都会白字,很有意思…</p>
+<br>
+<br>
+
+<h2 id="IB-2012"><a href="#IB-2012" class="headerlink" title="IB - 2012"></a><em>IB</em> - 2012</h2><p>找ib截一下经典rpg maker排版.<br>脑内的</p>
+<img src="/blog/2023/03/26/P267/P267_202.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_203.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_205.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_204.png" class="" title="道具">
+<img src="/blog/2023/03/26/P267/P267_206.png" class="" title="存档">
+<p>重制版.</p>
+<img src="/blog/2023/03/26/P267/P267_207.png" class="" title="菜单">
+<p>画框里的画会动,很好看.</p>
+<img src="/blog/2023/03/26/P267/P267_208.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_209.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_210.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_211.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_212.png" class="" title="道具">
+
+<br>
+<br>
+<br>
+
+<h2 id="海市蜃楼之馆-2012-2016"><a href="#海市蜃楼之馆-2012-2016" class="headerlink" title="海市蜃楼之馆 - 2012(2016)"></a><em>海市蜃楼之馆</em> - 2012(2016)</h2><img src="/blog/2023/03/26/P267/P267_192.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_195.png" class="" title="菜单2">
+<img src="/blog/2023/03/26/P267/P267_193.png" class="" title="设定">
+<img src="/blog/2023/03/26/P267/P267_194.png" class="" title="设定2">
+<img src="/blog/2023/03/26/P267/P267_196.png" class="" title="警告">
+<img src="/blog/2023/03/26/P267/P267_197.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_198.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_200.png" class="" title="选项">
+<p>应该是平行的,我没截到平行的.</p>
+<img src="/blog/2023/03/26/P267/P267_201.png" class="" title="快捷菜单">
+<img src="/blog/2023/03/26/P267/P267_199.png" class="" title="存档">
+
+<br>
+<br>
+
+<h2 id="混沌之子-2014"><a href="#混沌之子-2014" class="headerlink" title="混沌之子 - 2014"></a><em>混沌之子</em> - 2014</h2><p>虽然没有提过,我也是曾被混沌之子的中二味恶趣味gal吸引过,陷入过,伤害过的宅宅…</p>
+<img src="/blog/2023/03/26/P267/P267_93.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_94.png" class="" title="菜单2">
+<img src="/blog/2023/03/26/P267/P267_64.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_65.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_67.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_66.png" class="" title="对话4">
+<img src="/blog/2023/03/26/P267/P267_220.png" class="" title="对话5">
+<img src="/blog/2023/03/26/P267/P267_222.png" class="" title="对话6">
+<img src="/blog/2023/03/26/P267/P267_68.png" class="" title="演出地图">
+<img src="/blog/2023/03/26/P267/P267_69.png" class="" title="演出网页">
+<img src="/blog/2023/03/26/P267/P267_213.png" class="" title="设定">
+<img src="/blog/2023/03/26/P267/P267_214.png" class="" title="帮助">
+<img src="/blog/2023/03/26/P267/P267_215.png" class="" title="快捷菜单">
+<p>这个快捷菜单的设计挺妙的,有【脱出了游戏】的明显差别.</p>
+<img src="/blog/2023/03/26/P267/P267_221.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_216.png" class="" title="存档2">
+<img src="/blog/2023/03/26/P267/P267_223.png" class="" title="读取">
+<img src="/blog/2023/03/26/P267/P267_217.png" class="" title="tips">
+<img src="/blog/2023/03/26/P267/P267_218.png" class="" title="过场">
+<p>这个过场很动画!</p>
+<img src="/blog/2023/03/26/P267/P267_219.png" class="" title="历史对话">
+
+<br>
+<br>
+
+<h2 id="少女领域-2016"><a href="#少女领域-2016" class="headerlink" title="少女领域 - 2016"></a><em>少女领域</em> - 2016</h2><p>你是我见过为数不多会用白字之外的游戏…<br>边框透明度越来越低了,明明花纹做的精致.</p>
+<img src="/blog/2023/03/26/P267/P267_116.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_117.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_118.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_119.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_120.png" class="" title="对话4">
+
+<br>
+<br>
+
+<h2 id="Persona-5-2016"><a href="#Persona-5-2016" class="headerlink" title="Persona 5 - 2016"></a><em>Persona 5</em> - 2016</h2><p>P5是16年的游戏?!?!</p>
+<p>P系列的UI不要学,学不会(再放送).</p>
+<img src="/blog/2023/03/26/P267/P267_95.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_96.png" class="" title="菜单2">
+<img src="/blog/2023/03/26/P267/P267_97.png" class="" title="波特填表(笑)">
+<img src="/blog/2023/03/26/P267/P267_100.png" class="" title="过场">
+<img src="/blog/2023/03/26/P267/P267_101.png" class="" title="UI">
+<img src="/blog/2023/03/26/P267/P267_102.png" class="" title="字体">
+<img src="/blog/2023/03/26/P267/P267_103.png" class="" title="塔罗牌">
+<img src="/blog/2023/03/26/P267/P267_99.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_104.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_105.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_98.png" class="" title="存档">
+
+<br>
+<br>
+
+<h2 id="DDLC-2017"><a href="#DDLC-2017" class="headerlink" title="DDLC - 2017"></a><em>DDLC</em> - 2017</h2><p>这一定会提到 <em>那个游戏</em>…</p>
+<img src="/blog/2023/03/26/P267/P267_54.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_55.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_56.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_190.png" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_189.png" class="" title="设置">
+<img src="/blog/2023/03/26/P267/P267_191.png" class="" title="历史对话">
+<p>DDLC原来基本是renpy的默认排版.<br>plus版本应该是修了点对话框和字体.</p>
+<br>
+<br>
+
+<h2 id="审判之逝-2021"><a href="#审判之逝-2021" class="headerlink" title="审判之逝 - 2021"></a><em>审判之逝</em> - 2021</h2><img src="/blog/2023/03/26/P267/P267_36.png" class="" title="设定">
+<p>路过的时候看了眼对话框,不愧是电影系游戏,对话框的占比好矮,海藤哥的大头好大.</p>
+<br>
+<br>
+
+<h2 id="海沙风云-Far-Away-2021"><a href="#海沙风云-Far-Away-2021" class="headerlink" title="海沙风云 Far Away - 2021"></a><em>海沙风云 Far Away</em> - 2021</h2><p>我记得这款游戏,是少有的粤语配音,而去打的.<br>打得挺开心,看访谈是社团型制作,每条线的文本作者是不同的,难怪读起来有一点违和.是正统冒险+快乐选择你的cp向故事.<br>UI原来这么豪华…</p>
+<img src="/blog/2023/03/26/P267/P267_149.jpeg" class="" title="logo">
+<img src="/blog/2023/03/26/P267/P267_150.jpeg" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_155.jpeg" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_152.jpeg" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_154.jpeg" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_148.jpeg" class="" title="回忆对话">
+<img src="/blog/2023/03/26/P267/P267_172.jpeg" class="" title="历史对话">
+<img src="/blog/2023/03/26/P267/P267_163.jpeg" class="" title="存档">
+<img src="/blog/2023/03/26/P267/P267_156.jpeg" class="" title="人物">
+<img src="/blog/2023/03/26/P267/P267_162.jpeg" class="" title="人物2">
+<img src="/blog/2023/03/26/P267/P267_157.jpeg" class="" title="过场">
+<img src="/blog/2023/03/26/P267/P267_151.jpeg" class="" title="tips">
+<img src="/blog/2023/03/26/P267/P267_158.jpeg" class="" title="设置">
+<img src="/blog/2023/03/26/P267/P267_161.jpeg" class="" title="路线图">
+<img src="/blog/2023/03/26/P267/P267_153.jpeg" class="" title="gallery">
+<img src="/blog/2023/03/26/P267/P267_159.jpeg" class="" title="gallery2">
+<img src="/blog/2023/03/26/P267/P267_160.jpeg" class="" title="gallery3">
+
+<br>
+<br>
+
+<h2 id="AI：梦境档案涅槃肇始-2022"><a href="#AI：梦境档案涅槃肇始-2022" class="headerlink" title="AI：梦境档案涅槃肇始 - 2022"></a><em>AI：梦境档案涅槃肇始</em> - 2022</h2><img src="/blog/2023/03/26/P267/P267_0.png" class="" title="菜单">
+<img src="/blog/2023/03/26/P267/P267_1.png" class="" title="对话">
+<img src="/blog/2023/03/26/P267/P267_7.png" class="" title="对话2">
+<img src="/blog/2023/03/26/P267/P267_18.png" class="" title="对话3">
+<img src="/blog/2023/03/26/P267/P267_17.png" class="" title="调查">
+<img src="/blog/2023/03/26/P267/P267_2.png" class="" title="教程">
+<img src="/blog/2023/03/26/P267/P267_3.png" class="" title="地图">
+<img src="/blog/2023/03/26/P267/P267_5.png" class="" title="每次跳跃地图时有这个演出真的很喜欢">
+<img src="/blog/2023/03/26/P267/P267_6.png" class="" title="场景切换">
+<img src="/blog/2023/03/26/P267/P267_4.png" class="" title="存档">
+
+<br>
+<br>
+
+<h2 id="主播女孩重度依赖-2022"><a href="#主播女孩重度依赖-2022" class="headerlink" title="主播女孩重度依赖 - 2022"></a><em>主播女孩重度依赖</em> - 2022</h2><p>这游戏跟传统avg/rpg的界面很不一样,因为很好看所以也截了两张.</p>
+<img src="/blog/2023/03/26/P267/P267_19.png" class="">
+<img src="/blog/2023/03/26/P267/P267_21.png" class="">
+<img src="/blog/2023/03/26/P267/P267_20.png" class="">
+<img src="/blog/2023/03/26/P267/P267_22.png" class="">
+
+<br>
+<br>
+
+<p>琢磨着二次元logo味很不一样,又截了点神秘萌作封面.<br>二次元logo…和二次元校服…</p>
+<img src="/blog/2023/03/26/P267/P267_113.png" class="">
+<img src="/blog/2023/03/26/P267/P267_121.png" class="">
+<img src="/blog/2023/03/26/P267/P267_122.png" class="">
+<img src="/blog/2023/03/26/P267/P267_123.png" class="">
+<img src="/blog/2023/03/26/P267/P267_124.png" class="">
+<img src="/blog/2023/03/26/P267/P267_125.png" class="">
+<img src="/blog/2023/03/26/P267/P267_126.png" class="">
+<img src="/blog/2023/03/26/P267/P267_127.png" class="">
+<img src="/blog/2023/03/26/P267/P267_128.png" class="">
+<img src="/blog/2023/03/26/P267/P267_129.png" class="">
+<img src="/blog/2023/03/26/P267/P267_130.png" class="">
+<img src="/blog/2023/03/26/P267/P267_131.png" class="">
+<img src="/blog/2023/03/26/P267/P267_132.png" class="">
+<img src="/blog/2023/03/26/P267/P267_133.png" class="">
+<img src="/blog/2023/03/26/P267/P267_134.png" class="">
+<img src="/blog/2023/03/26/P267/P267_135.png" class="">
+<img src="/blog/2023/03/26/P267/P267_136.png" class="">
+<img src="/blog/2023/03/26/P267/P267_137.png" class="">
+<img src="/blog/2023/03/26/P267/P267_138.png" class="">
+<p>截完之后好累,也许不该去捅<a target="_blank" rel="noopener" href="https://www.cngal.org/">gal窝</a>…<br>不要再恋了……</p>
+<br>
+<br>
+
+
+<h1 id="背景素材收集"><a href="#背景素材收集" class="headerlink" title="背景素材收集"></a>背景素材收集</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://starfishdust.blog.fc2.com/blog-entry-39.html">深海の北極星 - 素材おすすめサイト紹介</a></p>
+</blockquote>
+<div class="note ">
+            <p>・<a target="_blank" rel="noopener" href="http://www5d.biglobe.ne.jp/~gakai/">きまぐれアフター</a><br>言わずと知れた超有名サイト。<br>商業レベルのハイクオリティな背景が多数。<br>ノベルゲーム作るならここはまず欠かせないでしょう。<br>有名すぎて他のゲームと被りまくる事だけが難点。</p><p>・<a target="_blank" rel="noopener" href="http://www.aj.undo.jp/">消失点</a><br>ここも商業レベルのクオリティ。<br>現在はもう更新してない所だけが難点。</p><p>・<a target="_blank" rel="noopener" href="http://kntgraphics.web.fc2.com/index.html">KNT graphics</a><br>またまた商業レベルのクオリティ。<br>学校系の素材、特に学食は他にあまりないので便利です。</p><p>・<a target="_blank" rel="noopener" href="http://loo.sakura.ne.jp/sozai_m.html">空彩～コレクション～</a><br>空の素材ならココ！！<br>朝昼夕晩、いろ～んな空があって、しかもクオリティ高いです。<br>視覚的にバーンと魅せたい人におすすめ。</p><p>・<a target="_blank" rel="noopener" href="http://kjkj21.ivory.ne.jp/">かじじ帝國</a><br>田舎、自然系の背景が多いです。クオリティも素晴らしい。<br>古いのは夕方とか夜の差分がないですが、非営利ならば加工OKなので自分で作りましょう。<br>「さよなら、リアル」制作にあたって非常にお世話になりました。<br>田舎とか海とか森とか出したい人におすすめです。</p><p>・<a target="_blank" rel="noopener" href="https://ayaemo.skr.jp/materials.html">あやえも研究所</a><br>写真をイラスト風に加工した背景が多数置いてあります。<br>他のサイトでなかなか見つからない背景を補完するのに便利です。<br>「五月雨の記憶」「冬時雨の記憶」ではここの背景をメインに使わせていただきました。</p><p>・<a target="_blank" rel="noopener" href="https://moonwind.pw/index.html">Moon☆Wind</a><br>クオリティがYES！高須クリニック！<br>最近現代背景が追加されたみたいです。<br>注目は校門の春夏秋冬差分！<br>こういう差分は非常に珍しいですね。<br>また、BGMやSE素材も揃っています。</p><p>・<a target="_blank" rel="noopener" href="http://winddorf.net/">ヴィントドルフ</a><br>老舗サイトなのでちょっとサイズが小さいですが、waifu2x等で拡大して使えば無問題。<br>洋風とか和風とか、ファンタジー風の素材が揃ってます。<br>残念なことに、現在は更新されていません。</p><p>・<a target="_blank" rel="noopener" href="https://radius-rave.com/ks_factory/">K’s Factory</a><br>色んなシーンの背景が揃っています。<br>ゲームセンター、ファミレス等は他にはあまりないので便利。<br>ここも現在は更新されていないようです。</p><p>・<a target="_blank" rel="noopener" href="http://mao.sub.jp/">mao space</a><br>サイズがちょっと小さいですが、他にあまりない素材が揃っています。<br>これが欲しいのに無い！　という時に覗いてみてはいかがでしょうか。</p><p>・<a target="_blank" rel="noopener" href="https://faraway.work/">Faraway</a><br>数は少ないですがクオリティが高いです。<br>映画館、水族館の背景が欲しい方におすすめ。</p><p>・<a target="_blank" rel="noopener" href="http://www7b.biglobe.ne.jp/~osumashi/">しじみのおすまし</a><br>ここも数は少ないですがクオリティ高いです。<br>ファンタジー系のゲームを作りたい方におすすめ。</p><p>・<a target="_blank" rel="noopener" href="https://blog.goo.ne.jp/ari1192jp_001/e/300120919a4c90232577f5777173262f">異教徒たちの踊り</a><br>ティラノビルダー公式のサンプルゲームに使われている素材です。<br>数少なめですがクオリティ高し。<br>男子トイレの素材が欲しい方（！？）におすすめ。</p><p>・<a target="_blank" rel="noopener" href="http://peter1728.blog38.fc2.com/blog-entry-436.html"><em>Peter</em></a><br>例によって数は少ないですがクオリティ高いです。<br>どこか幻想的な雰囲気を感じさせる現代背景です。<br>光の表現が上手いと思います。</p>
+          </div>
+
+<br>
+<br>
+<br>
+
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://miyagame.net/wallpaper/">【まとめ】ゲーム開発で使えるフリー素材＜背景編＞</a></p>
+</blockquote>
+<div class="note ">
+            <ul><li><p><a target="_blank" rel="noopener" href="http://www.vita-chi.net/sozai1.htm">びたちー素材館</a></p></li><li><p><a target="_blank" rel="noopener" href="http://masato.ciao.jp/haikei/furemu.html">背景写真補完の会</a></p></li><li><p><a target="_blank" rel="noopener" href="http://o-dan.net/ja/">O-DAN</a></p></li><li><p><a target="_blank" rel="noopener" href="https://free-cg.com/06-scenery/index.html">フリーCG　イラスト素材</a></p></li></ul>
+          </div>
+
+<div class="note ">
+            <p>其他还可以试试DLsite, 免费照片素材网.</p>
+          </div>
+
+<br>
+<br>
+<br>
+
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/C4ToolBox/" rel="tag"># C4ToolBox</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2023/03/27/P289/" rel="prev" title="考拉私厨">
+      <i class="fa fa-chevron-left"></i> 考拉私厨
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/03/12/P288/" rel="next" title="狼与兔 - 人设的笔记">
+      狼与兔 - 人设的笔记 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E6%B8%B8%E6%88%8F%E6%88%AA%E5%9B%BE%E6%94%B6%E9%9B%86"><span class="nav-number">1.</span> <span class="nav-text">游戏截图收集</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E3%83%97%E3%83%AA%E3%83%B3%E3%82%BB%E3%82%B9%E3%83%A1%E3%83%BC%E3%82%AB%E3%83%BC-1991"><span class="nav-number">1.1.</span> <span class="nav-text">プリンセスメーカー - 1991</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E8%B7%B3%E5%9B%9E%E5%BF%86-1994"><span class="nav-number">1.2.</span> <span class="nav-text">心跳回忆 - 1994</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%B1%E8%8A%B1%E5%A4%A7%E6%88%98-1996-2003"><span class="nav-number">1.3.</span> <span class="nav-text">樱花大战 - 1996(2003)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%99%BD%E8%89%B2%E7%9B%B8%E7%B0%BF-1998"><span class="nav-number">1.4.</span> <span class="nav-text">白色相簿 - 1998</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%A7%8B%E4%B9%8B%E5%9B%9E%E5%BF%862-2001"><span class="nav-number">1.5.</span> <span class="nav-text">秋之回忆2 - 2001</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BF%83%E8%B7%B3%E5%9B%9E%E5%BF%86-girl%E2%80%99s-side-2002"><span class="nav-number">1.6.</span> <span class="nav-text">心跳回忆 girl’s side - 2002</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Remember-11-2004"><span class="nav-number">1.7.</span> <span class="nav-text">Remember 11 - 2004</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Little-Busters-2007"><span class="nav-number">1.8.</span> <span class="nav-text">Little Busters - 2007</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%A5%B3%E7%A5%9E%E5%BC%82%E9%97%BB%E5%BD%954-2008"><span class="nav-number">1.9.</span> <span class="nav-text">女神异闻录4 - 2008</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%91%BD%E8%BF%90%E7%9F%B3%E4%B9%8B%E9%97%A8-2009"><span class="nav-number">1.10.</span> <span class="nav-text">命运石之门 - 2009</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Your-diary-2011"><span class="nav-number">1.11.</span> <span class="nav-text">Your diary - 2011</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IB-2012"><span class="nav-number">1.12.</span> <span class="nav-text">IB - 2012</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E5%B8%82%E8%9C%83%E6%A5%BC%E4%B9%8B%E9%A6%86-2012-2016"><span class="nav-number">1.13.</span> <span class="nav-text">海市蜃楼之馆 - 2012(2016)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B7%B7%E6%B2%8C%E4%B9%8B%E5%AD%90-2014"><span class="nav-number">1.14.</span> <span class="nav-text">混沌之子 - 2014</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%91%E5%A5%B3%E9%A2%86%E5%9F%9F-2016"><span class="nav-number">1.15.</span> <span class="nav-text">少女领域 - 2016</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Persona-5-2016"><span class="nav-number">1.16.</span> <span class="nav-text">Persona 5 - 2016</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DDLC-2017"><span class="nav-number">1.17.</span> <span class="nav-text">DDLC - 2017</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AE%A1%E5%88%A4%E4%B9%8B%E9%80%9D-2021"><span class="nav-number">1.18.</span> <span class="nav-text">审判之逝 - 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%B5%B7%E6%B2%99%E9%A3%8E%E4%BA%91-Far-Away-2021"><span class="nav-number">1.19.</span> <span class="nav-text">海沙风云 Far Away - 2021</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AI%EF%BC%9A%E6%A2%A6%E5%A2%83%E6%A1%A3%E6%A1%88%E6%B6%85%E6%A7%83%E8%82%87%E5%A7%8B-2022"><span class="nav-number">1.20.</span> <span class="nav-text">AI：梦境档案涅槃肇始 - 2022</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%BB%E6%92%AD%E5%A5%B3%E5%AD%A9%E9%87%8D%E5%BA%A6%E4%BE%9D%E8%B5%96-2022"><span class="nav-number">1.21.</span> <span class="nav-text">主播女孩重度依赖 - 2022</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E8%83%8C%E6%99%AF%E7%B4%A0%E6%9D%90%E6%94%B6%E9%9B%86"><span class="nav-number">2.</span> <span class="nav-text">背景素材收集</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">20:57</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2023/03/26/P267/";
+    this.page.identifier = "2023/03/26/P267/";
+    this.page.title = "积灰仓库与工具箱 - 春";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
