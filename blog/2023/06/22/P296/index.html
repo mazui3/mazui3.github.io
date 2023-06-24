@@ -1,0 +1,938 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="本篇文章定位为【杂谈】与【制作过程分享】.没有教程,笔记在这里.如果说想过oc的游戏,那十年前就梦过了.这里收录这梦所留下来的磕(鼻)磕(青)绊(脸)绊(肿).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="GJ记录_未完之约">
+<meta property="og:url" content="https://mazui3.github.io/blog/2023/06/22/P296/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="本篇文章定位为【杂谈】与【制作过程分享】.没有教程,笔记在这里.如果说想过oc的游戏,那十年前就梦过了.这里收录这梦所留下来的磕(鼻)磕(青)绊(脸)绊(肿).">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_0.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_2.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_3.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_4.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_6.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_7.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_1.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_8.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P292_00.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P292_01.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_10.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_11.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_18.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_12.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_13.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_19.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_14.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_20.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_16.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_15.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_17.jpg">
+<meta property="article:published_time" content="2023-06-22T23:50:52.000Z">
+<meta property="article:modified_time" content="2023-06-24T03:49:12.454Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Game jam">
+<meta property="article:tag" content="Renpy">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/06/22/P296/P296_0.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2023/06/22/P296/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>GJ记录_未完之约 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2023/06/22/P296/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          GJ记录_未完之约
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-06-22 19:50:52" itemprop="dateCreated datePublished" datetime="2023-06-22T19:50:52-04:00">2023-06-22</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-06-23 23:49:12" itemprop="dateModified" datetime="2023-06-23T23:49:12-04:00">2023-06-23</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E9%A1%B9%E7%9B%AE%E8%AE%B0%E5%BD%95/" itemprop="url" rel="index"><span itemprop="name">项目记录</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2023/06/22/P296/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/06/22/P296/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>9.2k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>8 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <img src="/blog/2023/06/22/P296/P296_0.png" class="" title="封面和宣传图是同一张真的会看腻">
+
+<p>本篇文章定位为【杂谈】与【制作过程分享】.没有教程,笔记在<a href="https://mazui3.github.io/blog/2023/04/10/P282/">这里</a>.<br>如果说想过oc的游戏,那十年前就梦过了.<br>这里收录这梦所留下来的磕(鼻)磕(青)绊(脸)绊(肿).</p>
+<span id="more"></span>
+
+<p>噢对了如果你在看这篇文章但没通过游戏,<a target="_blank" rel="noopener" href="https://www.gcores.com/games/105375">有条件的话去通一下游戏吧</a>.<br>这里的唠嗑都是默认读的朋友已经了解全部流程的(不重复解释了).</p>
+<br>
+<br>
+<br>
+
+<h2 id="全部废话的前言"><a href="#全部废话的前言" class="headerlink" title="全部废话的前言"></a>全部废话的前言</h2><blockquote>
+<p>这段跟这次game jam完全没关系.<br>只是找了个机会回忆些在博客里没写过的事.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>大家的游戏启蒙是什么?</p>
+<p>我自己打的游戏不多,但十年前正好赶上日系免费恐怖游戏的风潮.<br>名作比如【梦日记】【海底囚人】【ib】【魔女之家】,也看【retoruto】【岚少】的实况.<br>同期在国内还有【丝绮拉工作室】,翻译日恐的同好汉化组.<br>我看岚少的时长足够到可以自称她的粉丝,过去的实况都看完了,有些还因为记不大得而看过两遍.<br>因为憧憬嘛,还在丝绮拉画过做过几张海报,老丑了.<br>那时候只止步于圈子外围远远眺望,因为启蒙不是3A大作,对于初中时代的我心中存留了【诶,这个说不定可以做诶】的念头.</p>
+<img src="/blog/2023/06/22/P296/P296_2.jpg" class="" title="U老板说第一次跟我相识是这张海报">
+<img src="/blog/2023/06/22/P296/P296_3.jpg" class="" title="我也不记得为什么把百合两个字画得这么亮">
+<img src="/blog/2023/06/22/P296/P296_4.jpg" class="" title="这游戏我记得牙玩过,画得老努力了">
+<img src="/blog/2023/06/22/P296/P296_6.jpg" class="" title="这张的画法早期约的味太重了">
+<img src="/blog/2023/06/22/P296/P296_7.jpg" class="" title="这张的形状早期约的味太重了">
+<blockquote>
+<p>那时挺屑的,画力与责任感都飘忽不定,这里翻出几张努力画了的.<br>想想跟整篇文章一样,都是被挨打后跑两步的经历(…).</p>
+</blockquote>
+<p>我在国内的学生时代还挺忙.是补课班孩子.<br>记得是某个国庆大长假,七天的梦之天堂.<br>当时下定决心“不管流程有多短七天做一个游戏出来吧”,某种意义还算game jam.<br>那时脑内已有【x子与〇太】的剧本了,是三天流程小故事,觉得会合适.<br>使用的引擎当然是【RPG maker】,哪个版本不记得了.<br>很兴奋,还记得【默认封面怎么这么丑,得好好画.】</p>
+<br>
+<br>
+<br>
+
+<p>最后的结果.<br><strong>我七天就画了两个立绘草稿和一个行走图.</strong></p>
+<img src="/blog/2023/06/22/P296/P296_5.png" class="" title="〇太行走图">
+<blockquote>
+<p>于是之前<a href="https://mazui3.github.io/blog/2022/02/11/P229/">cpo</a>要行走图,我直接用模版改了</p>
+</blockquote>
+<p>关于游戏本体…<br><strong>完全是零.</strong></p>
+<br>
+<br>
+<br>
+
+<p>【啊…怎么画了那么久还没有做到游戏】<br>那时候还挺绝望的.<br>学生时代能多建设一张oc发老福特都是能支撑一两个礼拜的精神食粮,而一年一遇的大长假就这么无功而返,太不甘心了.</p>
+<p>不过在心中留下了…<br>【之前技能点点在了插画,是不是我不该画像素图啊】<br>【地图和美术画不完啊,是不是不该用RPG maker啊】<br>的种子.</p>
+<img src="/blog/2023/06/22/P296/P296_1.jpg" class="" title="失败尝试过于多记不起到底哪个是第一次">
+<blockquote>
+<p>哇在x子与〇太之前,已经试图开坑过<a href="https://mazui3.github.io/blog/2014/11/15/P00C/">炎炎大冒险</a>(树哥的故事).<br>原来已经记过了“没有死线做长篇绝对做不完”这一条了.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>时间跳到留学时代.<br>刚成为留学高中生时,时间还算宽裕.但一直没有再启动开坑,现在回想起是【觉得这是门槛很高的事情】.<br>大学专业选了数学,想向编码靠近些.<br>学校还有【游戏社】,我老兴奋了,去过一些他们的社团介绍,workshop,以及他们host站点的game jam.<br>workshop的类型还挺多的.<br>有【Blender入门】【第一次使用Unity】【Game jam经历分享】.<br>而社团招新会那天,我记得有两个项目.<br>一个已经是有demo的多人射击游戏,(名义)社长接手了,他们想做联网,包装美术,更多的飞艇角色.<br>这个游戏因为有demo,大多新人都去听他们主程的说明.<br>还有一个坐在边上的老哥,抓了落单的新人(包括我)安利自己的地下城桌游项目.<br>老哥好认真的解释了自己的设定,我第一感想是“这个人身上有oc厨那样的味道”,不过也诚实的回复了“对美术量要求很大”.<br>之后老传统迎来了学业的暴打,再过了几周去社团顺便问问射击游戏的进程,社长无奈的笑了笑说他也有几周没来社团了.</p>
+<br>
+<br>
+<br>
+
+<p>说是(名义)社长是因为那位前辈看起来好努力想打点+挂名游戏社,也许想拿来充实下简历什么的.<br>社团里稳定的开发互助小组倒是另一批人.<br>其中办【Blender入门】workshop的美术姐是3D大手,虽然她也是从如何建造正方体来讲workshop.<br>印象中美术姐说过类似“如果你说3D难吗,是难啊.但难就不做了吗”的话.<br>还有位程序佬,game jam时他搬了台式去会场,牛逼鼠标键盘显示器齐全,独狼参赛,48小时搓了个3D unreal引擎的蜘蛛侠式跑酷游戏.<br>酷毙了兄弟.</p>
+<p>名义社长也是有点东西的.他跟我们分享game jam经历.<br>社长说,game jam的48小时,去做了就是好的,就算多读一个unity的功能都算胜利.<br>他们组做了个拉百叶窗帘的小游戏,操作左边和右边的绳索,逻辑很简单,得了个game play有趣的奖,很激励人.</p>
+<p>这样说的前辈真的很温柔,说实话化解了我”虽然想做点什么,但游戏的技术入门坎感觉很高,而迟迟没有开始”的心结.<br>但因为过于乐观把自己扔在了48小时极限看码的境地也是想不到的刺激.</p>
+<blockquote>
+<p><a href="https://mazui3.github.io/blog/2018/03/14/P139/">勇者一抬头:办证打卡</a>也是第一次跟学校参workshop碰的unity.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>之后18年的夏天自己报了个unity的班啃了点.<br>代码还是吃力.在学校苟了几节代码课能力还是差,甚至心理障碍比技术先一步到达.<br>但就这抠抠嗖嗖三个月经验在之后的<a href="https://mazui3.github.io/blog/tags/Game-jam/">game jam</a>中也硬着头皮上了.</p>
+<img src="/blog/2023/06/22/P296/P296_8.jpg" class="" title="还记得当时写了点松木雨未初见面的故事,全丢了(故意),有点可惜">
+<p>这张图存了五年了兄弟,想什么时候真的发出游戏再带上博客做个纪念.没想到在这里,老福特都没了!</p>
+<br>
+<br>
+<br>
+
+<h2 id="还是充满废话的制作过程"><a href="#还是充满废话的制作过程" class="headerlink" title="还是充满废话的制作过程"></a>还是充满废话的制作过程</h2><p>这次参的game jam是<a target="_blank" rel="noopener" href="https://www.gcores.com/">机核网</a>办的booom.</p>
+<h3 id="前期倒霉"><a href="#前期倒霉" class="headerlink" title="前期倒霉"></a>前期倒霉</h3><p>4月的时候飞哥跑过来,说看中了个文字游戏的game jam问要不要参,用renpy.<br>我觉得文字游戏代码工程量不大说可以考虑做.<br>飞哥一开始想要的关键词有<strong>百合学园</strong>,<strong>恐怖元素</strong>,<strong>幽灵学姐爱上我</strong>.<br>现在回想起来她作为第一次搞故事,从那时就开始high起来了.<br>我(精神上)无法不往有趣的故事去做,说加点meta吧,花了一天两个人辩论把现在的大纲定了下来.</p>
+<blockquote>
+<p>好吧,说一天确认大纲不谨慎.<br>从周一开始brainstorm到周六定下来大概一周.<br>飞哥大多无法提出答案,会提建议,同时也会否定.<br>大纲本身的推进大多是我在做,周六的一天是在超努力说服一直超努力论破我的飞哥.</p>
+</blockquote>
+<img src="/blog/2023/06/22/P296/P292_00.png" class="" title="我私下把她们称为表白组">
+<img src="/blog/2023/06/22/P296/P292_01.png" class="" title="原本是想打完本体meta游戏后做一周目普通恋爱攻略游戏">
+<blockquote>
+<p>我们内部把第一次选项的周目叫做一周目.<br>第二次选项的周目叫为二周目.<br>甘奈跟玩家对抗的周目为三周目.<br>玩家选择结局后的周目为四周目.</p>
+</blockquote>
+<p>当时在我脑内剧情每个event只有五百字.<br>只有…五百字!</p>
+<p>因为参的是英文的game jam,我对开新坑不感兴趣,于是想着大纲都做出来了,游戏有底了,飞哥旁侧拉我开坑很久,想让她去写这个故事圆一下梦,我来做美术.</p>
+<img src="/blog/2023/06/22/P296/P296_10.jpg" class="" title="在等飞哥文案的时候做了UI和人设">
+<img src="/blog/2023/06/22/P296/P296_11.jpg" class="" title="原本存档做的像rpg maker,顿悟了不要做rpg maker">
+<blockquote>
+<p>我在做UI的同时,无数次提醒飞哥直接在我做好的renpy里写文案.<br>不要写成小说,要写成游戏.<br>不要写成小说,要写成游戏.<br>……<br>没听.</p>
+</blockquote>
+<p>四个礼拜的game jam结果大兄弟第一个做梦event就写了一千,去美国跟男朋友快乐四个礼拜,最后截止时跳着写到了和学姐初见.</p>
+<p>停在了第三个event呢…</p>
+<p>后来我问了为什么明明不擅长做文字向剧情还要参文字游戏jam.<br>她说你不是已经做了个文字游戏的demo吗,改一改就能参了.<br>指的是我用来测renpy做的跟松木对话terminal01.<br>……<br>兄弟,如果你有真的看完那个demo就知道那不是文字游戏.不要擅自揣测啊!</p>
+<br>
+<br>
+<br>
+
+<img src="/blog/2023/06/22/P296/P296_9.png" class="" title="我还叫松木来测了测效果">
+
+<p>后来机核开题,题目是【Re】.<br>这个题目比较符合的除了打了大纲的表白组外,还有x子与〇太.<br><em>哇怎么又回到了你们两位大兄弟.</em><br>x子与〇太的剧本后来更更改改,想用unity做.<br>因为这次真的很想完成,求稳选择了表白组和renpy.</p>
+<p>当然我也有问一嘴.</p>
+<div class="note ">
+            <p>我:这个故事是为了和你做上一个jam而做的,我可以回收吗.<br>飞哥:我对角色没有什么占有欲,怎么写都可以的.</p>
+          </div>
+<blockquote>
+<p>这里是伏笔.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>然后开题第三天,新冠了.<br>……一言难尽啊兄弟.<br>开题是在周五,周末两天都在社交,还去攀了岩.正好什么都还没来得及做.<br>一开始还没意识到是新冠,只感觉这病不一样,很重.<br>但我的合同一年只有三天病假,想省着点用,带病上了几天班.<br>那几天的记忆只剩下.<br><em>喝水,试图进食,喝水,睡觉,喝水,起夜,睡觉,喝水,起夜,看到不同位置的月亮,睡觉.</em><br>每天如果能保持几个小时的清醒都给工作了,其他时间强行睡觉.<br>有趣(?)的是每天症状都不一样,发烧,全身发热,头疼,嗓子疼,呕吐感,咳嗽,鼻塞.一种火锅就要料多的概念.</p>
+<p>以前脑袋疼我会害怕的.<br>觉得脑子是我为数不多能依靠,能获得快乐,能觉得我是我真是太好了的东西.<br>如果脑子不好使那所想要的东西一切都完蛋了.<br>但新冠时有神奇的现象.<br>突然一直一直伴随着自己的,想要做出什么的,想要追逐什么的焦虑被清除了,失去了思考的触感.<br>脑子还冒出“要好好对待身边人啊,要好好跟家庭联络,建立支撑自己的友谊”.<br>因为顿感而很……清爽(虽然脑袋还在疼).<br>病好了后又感觉不到那种放空感了.</p>
+<blockquote>
+<p>U老板:这果然是一种病啊.<br>:如何让卡尔马患者恢复正常,投毒.<br>:只要得了其他的病就不会得卡尔马了!</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>以下的想法打算用在余老师爬山记中的但:</p>
+<blockquote>
+<p>其实一切的社会norm都是水中捞月吧?<br>从小到大所受的期待与认知,构成的脑内奖罚机制.<br>构建人际关系是【人生的答案】.<br>如果第二天醒来发现【召唤阿撒托斯】才是活着的答案呢?<br>那如果信了一辈子要召唤阿撒托斯的信徒,第二天发觉过普通平凡的一生才是正确的呢?</p>
+</blockquote>
+<p>我知道这个例子过于偏激,只是个例子,只是个例子.</p>
+<p>然后思考了一段时间一直一直在我脑子里的月亮.<br>包括【感受到它就是水中倒影】的体验.<br>最后.<br><strong>就算是幻影一场也想去捞.</strong></p>
+<p>好的那没事了.</p>
+<br>
+<br>
+<br>
+
+<h3 id="中期挨打"><a href="#中期挨打" class="headerlink" title="中期挨打"></a>中期挨打</h3><p>倒霉阿约眼看着这怪病迟迟不好,躺在床上搓出了一二周目的草稿.<br>飞哥强烈推荐,担心时间的确来不及,于是摇来了考拉希望能帮助一些进度.</p>
+<p><em>～现在回想起来,那是阿约犯下的不知第多少的重大错误.～</em></p>
+<p>草稿文本我原本是想直接使用的.<br>我跟考拉说的是【希望你能帮忙做一些功能,比如输入主角名字,结尾表,校对文本之类的】.<br>飞哥读了些我的草稿,很嫌弃日语翻译腔,问考拉能不能修改一下语法.<br>考拉说可以,比起写代码更想写文本.</p>
+<p><strong>然后她把这个故事重写了.</strong></p>
+<br>
+<br>
+<br>
+
+<p>好的,先在这里暂停.</p>
+<p>我们三人的组合没有队长,没有策划.<br>因为以前三个人的行为模式是互相商量着一起做出游计划,谁有想法就提,有不同意时会提出理由和修改后的方案(挺建设性).<br>我跟考拉做室友时也不用商量太多,谁顺手就会把碗洗了,做个饭也分着吃,消耗品不够谁看到也会顺手带回来.</p>
+<p>但做游戏不一样.<br>做游戏不一样啊兄弟.</p>
+<p>我这时候才发现.<br>以前跟人沟通时是重于一个个单线【逻辑】而顺利进行的.<br>比如因为【A】所以【B】.<br>只要说通了【A】,那就容易让对方接受【B】.<br>而搞创作这件事逻辑极其复杂,达到【B】的逻辑可能得要【一百个A】.而且这一百个A是非常非常<strong>个人偏好</strong>的逻辑,没有绝对的对错.</p>
+<p>举个例子.<br>考拉强烈逮着我问【角色三人是什么性格的】.<br>我也回答【对我来说角色的逻辑是基于剧情需要而构造的,我会先考虑我要什么效果,再去融入角色性格】.<br>然后她崩溃了.<br>考拉不死心,试图问一个性格出来.<br>但就算问到了性格,如果没有理解我构造时的【剧情逻辑】,她还是会在重写故事时写出一个跟草稿天差地别的故事,同时无法理解为什么不同.<br>然后这时候飞哥来了,飞哥把最初自己写时希望的性格解释给了考拉,覆盖掉她看不惯的【主角痴汉】【学妹台湾腔】【学姐懦弱一面】的设定.<br>但之后写出来的成品,飞哥又难受【为什么学妹一点都不高冷而那么软】【为什么学姐会说“我家傻友里花”这样的话】.<br>单纯给标签是达不成理解一百个A的效果的.</p>
+<br>
+<br>
+<br>
+
+<p>我在构造东西时建立的逻辑已经跟这两人差太多了.<br>如果我坚持我的美学,会跃过跟队友同步一百个A,那就是得独裁.<br>好事是我认知到了这一点.<br>坏事是我不知道怎么独裁.<br>也没能把握到成功独裁.</p>
+<img src="/blog/2023/06/22/P296/P296_18.png" class="" title="两个人写文本的问题是一个人埋了伏笔另一个人没有收,比如这个告白一二三周目完全被忘掉">
+
+<p>我无视了飞哥对剧情的任何提议,跟考拉沟通了一遍又一遍.<br>考拉不愿直接把文本给我更改,她也有她的ego.但她做不到达成我草稿原本目的同时满足自己的ego,这是AT field的必然.<br><del>(又名人意识单位永远为个体的可悲性).</del><br>考拉累了,我也累了.<br>最后我看着考拉熬了好几个大夜写出来的文案.<br>文案是自洽的.<br>就像它是个很不错的苹果,又大又甜.<br>只是我想要的是香蕉.<br>然后我说,不吵了,game jam版本就这样走吧.你允许我做一个留给我观众的版本.她同意了.</p>
+<br>
+<br>
+<br>
+
+<p>如果说一起做创作性的东西一定只有吵架和痛苦吗,我觉得不是的.<br>虽然一百个A是障碍,但也是有趣的地方.<br>在观看别人作品时,能感觉到一些作者的为人,但大部分会被作品本身的内容覆盖过去.<br>但做同一个作品时,两人的巨大分歧会直面这一百个关于自己人生过往二十年经历构成的逻辑区别.<br>小到喜欢的用词,大到对生与死的看法.<br>一些用教育藏起来的冷漠,讨好,自大,都让人苦笑的暴露无遗.<br>真的,我从没这么清楚的直面到朋友社会意义的为人与人生的信念.</p>
+<p>但还是建议【在创作上】合得来的朋友一起搞创作,盲盒坏文明.</p>
+<br>
+<br>
+<br>
+
+<p>如果要展开讲还可以讲很多,因为心累所以折叠一下.</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        “故事逻辑与棋盘逻辑”
+    </div>
+    <div class='spoiler-content'>
+        <p>我把棋盘上棋子之间,棋子与世界之间的逻辑称为棋盘逻辑.<br>比如兔兔是高中时跟狼狼交往的,就不会写初中生时就作为情侣发生的故事.<br>作为作者想要怎么展现给观众,想要展现什么,表达什么思想的舞台逻辑.<br>比如兔兔和狼狼其实什么时间交往都逻辑可以搭建出来,但想写高中生这个年龄段的时候,所以这么设定了.</p>
+<p>跟队友吵架时一直在提醒“这个是舞台逻辑”“这个是棋盘逻辑”.<br>“不要用棋盘逻辑来论破舞台逻辑,棋盘逻辑是可以按舞台逻辑改的,要分开来”.<br>之类的.</p>
+
+    </div>
+</div>
+
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        “搞oc犯下的一百种罪”
+    </div>
+    <div class='spoiler-content'>
+        <p>为吵架说出伤敌一千自损八百万的语句:</p>
+<ul>
+<li>一个角色最完美的时候是在自己脑内</li>
+<li>你所想的角色还不存在于(除你脑外)这个世界的任何一个角落</li>
+<li>无论你再怎么设定,都是需要用情节来叙述角色的,我们没有那样的情节,所以这个设定从一开始就不存在</li>
+<li>你所提的设定我能理解,但对剧情上没有任何多余的帮助,对剧情推进完全是负面效果,还没有适合的情节呈现,这单纯是个人喜好的设定</li>
+<li>不要先爱上角色啊,他们还是混沌构造故事中的棋子,先爱上会不敢下笔的</li>
+<li>如果你真的要改,直接改文本,角色是无法用设定关键词传递给另一个人的,绝对会失真</li>
+<li>如果是你的故事那就从头到尾写完整</li>
+<li>不要随口就说花两年慢慢做,明白自己几斤几量是极为重要的,空有激情只会带来痛苦</li>
+</ul>
+<p>是的,这里有些还是(自己)绝对不会改的debuff.<br>骂了自己十年分量,感叹我这个人怎么这么狠.</p>
+
+    </div>
+</div>
+
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        “人大多对别人的自我没什么兴趣”
+    </div>
+    <div class='spoiler-content'>
+        <p>还会觉得烦.<br>这是可以讨论的吗,太暴言了.</p>
+<p>下意识会产生“这人对我有什么价值”的功能性想法,并把它当作友好或亲近的契机.<br>跟朋友合作,每个人都是来实现自己的梦想的.<br>说实话就算没有我,考拉和飞哥还是会打起来的,因为我对构造东西有点经历,想法比较多比较快,所以她们两人跟我打更多.<br>三个人怎么同时实现三份不同的梦想,我们在做同一件事诶.<br>而做组长的我要意识到这一点,也要负起责任来.</p>
+<p>平时对行为的思考在这时该死的派得上用,但再得更快一些.<br><em>“一些用教育藏起来的冷漠,讨好,自大,都让人苦笑的暴露无遗.”</em><br>人的举止是 <strong>自我</strong> -&gt; <strong>逻辑</strong> -&gt; <strong>行动</strong>.<br>而教育是对人本源的一些带刺行为的压制,并不是去掉刺.<br>也许对于世界来说“够用了吧”.<br>但对于个人来说…明明学习了比如善良,但善良的意义,作用,以及利弊都不会学到.<br>这对个人来说真的是好事吗,有些事情并不是压制就会消失的.<br>如果我想要的东西被以前的教育扯了后腿,那是需要把行为模式都重塑一遍吗.</p>
+
+    </div>
+</div>
+
+<br>
+<br>
+<br>
+
+<h3 id="后期半死不活"><a href="#后期半死不活" class="headerlink" title="后期半死不活"></a>后期半死不活</h3><p>什么时候真正感觉到自己在做游戏了?<br>改了第一张背景的时候.</p>
+<img src="/blog/2023/06/22/P296/P296_12.jpg" class="">
+<img src="/blog/2023/06/22/P296/P296_13.jpg" class="">
+
+<p>导入renpy后沉默了.<br>为了方便制作成本,找来了不少gal系校园背景图.图还不错,挺对味的.<br>把立绘放进去有【古早gal系】的味道.<br>但把背景改了后,变成了【约风格的古早gal】.<br>这不是一个【那样的gal游戏】了,是我的游戏了.<br>明明美术工期很吃紧,还是把背景都改了.</p>
+<p>游戏里面的语言也都是自己的语言.只有做起来才会意识到“还有那样的部分”.</p>
+<img src="/blog/2023/06/22/P296/P296_19.png" class="" title="比如又延期花了一天给主页加了动态花,让它更像个主页">
+
+<br>
+<br>
+<br>
+
+<img src="/blog/2023/06/22/P296/P296_14.jpg" class="">
+
+<p>顺便一提关于背景,准备大纲的时候在看<a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Kare_Kano">他和她的故事</a>的动画.<br>被古早动画狠狠的折服了,妈的这美术也太好看了.<br>颜色带给人的感觉都是照着那部动画仿的.<br>顺便一提那时候还在回顾<a target="_blank" rel="noopener" href="https://www.youtube.com/VIVINOS">vivinos</a>老师的PINK B*TCH CLUB.<br><em>啊,古早动画的感觉真好啊.</em><br>仿老游戏的窗口大小,简易UI都是照着那个年代仿的.<br><del>不过我的简陋个人风格太强烈,估计看不出来.</del></p>
+<br>
+<br>
+<br>
+
+<p>噢说起来,game jam提交前的一个礼拜我们才开始把东西整合起来.<br>考拉说最后一个礼拜来sleep over现场合宿,jam完开庆功宴.<br><del>你为什么假设最后那天一定能做完.</del><br>我极速跟大家算了一下,几个小时做一二周目,几个小时做三周目,来不及就砍内容,交上去就行.<br>对于自己我是这么干的,砍了cg,算了算必要的icon,标题其他美术,赶得上.<br>结果回头一看考拉跟演出较上了劲,完全无视安排的时间,还在第一周目较真.妈耶,赶紧把第三周目的内容拿过来写.<br>看看,这就是独狼制作者的问题,对自己的速度有B数,但对于【让队友跟上自己的节奏和思路】,我完全没有做到.</p>
+<blockquote>
+<p>跟队友分配任务时,队友说没问题能做到.<br>是【队友对自身认知下觉得没问题】.<br>而不是【这件事没问题了】.<br>之后催死线的时候我把焦虑传给了每一个人,队友老不理解了.<br>队伍真的需要磨合.</p>
+</blockquote>
+<img src="/blog/2023/06/22/P296/P296_20.png" class="" title="这个过场是考拉提议加的">
+
+<p>赶死线赶到交了后我才有机会跑一遍游戏,真的很离谱.<br>打到最后结局以一个error报错结束了进程,通宵三人组笑了整整三分钟.<br>我准备歇几天去做点画手的事,飞哥较上劲了.<br>她说她熬了三天做出来的程序必须给人玩到才行.</p>
+<blockquote>
+<p>我搞创作自己花大力气却无法得到回报的事可多了,没说出口.<br>这种较劲挺新人,虽然不一定是坏事.</p>
+</blockquote>
+<br>
+<br>
+<br>
+
+<p>ddl截止前几天,飞哥突然觉得对玩法很不满意,大半夜来敲门说要把三周目全改过.<br>原本的计划只有老年人操作改电脑文件,没有召唤学姐对每句话的吐槽.<br>很疲惫,很疲惫.<br>我觉得是个有趣的注意,但那基本把死线给碾过去了.<br>那时说的是用三天试,试不出来我来下跪求你做老年人改电脑操作.<br>飞哥三天时说写出来了,结果在最后的合宿程序炸了.<br>程序是最不可以出错的啊老兄.<br><del>(你真的那三天写完了还是在唬我.)</del></p>
+<img src="/blog/2023/06/22/P296/P296_16.png" class="" title="学姐的台词是在meta长门有希的电脑留言">
+
+<p>截止时三周目才开了个头.<br>再开发现【学姐吐槽每一句台词】的机制文案非常难写.<br>学姐的戏份本来就少,只能在三周目构造角色.<br>但三周目的机制导致【无法连续的写学姐台词】.<br>比如甘奈有123的台词,无法预测玩家能读全123的学姐台词.学姐的文案只能努力在琐碎的每句台词里揉一点人物性格进去.</p>
+<p>jam截止后考拉去搬家了,加上特殊机制难处理,三周目的文本大多保存了我的版本.</p>
+<img src="/blog/2023/06/22/P296/P296_15.jpg" class="" title="个人觉得约味很对头的台词">
+
+<p>结尾也很难写.<br>打完大纲时还挺爽快的,去厨房倒了被牛奶后发觉不对劲.<br>在这个谜题的结尾,【甘奈的死亡是既定事实】,也就是最初的【消除结局】.<br>问题是玩家跟游戏相处了那么多经历后,<strong>以死亡结尾,情绪太往下了</strong>.<br><strong>何况这是人为的不合理的痛苦.</strong><br>于是我看着这两张纸头,看结局的构造.<br>而结局是【如果人没有自由意识呢】的回答.<br>妈耶,这个问题很难写出 <em>安静的壁炉,火的温度,手捧热可可,</em> 般的温柔回答,毕竟地板都抽掉了.<br>我问飞哥,她说本来甘奈,如果没有自由意识那就该走向毁灭的.<br>好的这个人没法依靠.</p>
+<p>事实上对结局不满的反馈repo的确不少,这个是有遇见的.</p>
+<p>我想出来的结局是【飞升结局】,这是我能想出的积极一些的结局.<br>后来我们问考拉,她提议的是【删档结局】.我的感想是 <em>这的确挺符合考拉性格的,伪善般温暖的结局.</em></p>
+<img src="/blog/2023/06/22/P296/P296_17.jpg" class="" title="我提议的meta演出,被飞哥否决了">
+
+<br>
+<br>
+<br>
+
+<h2 id="Repo"><a href="#Repo" class="headerlink" title="Repo"></a>Repo</h2><p>这篇文章可能还会再编辑,但最后收录一下repo吧.<br>这次…可以说是【第一次收集创作的反馈】了,因为考拉重塑了我的文案,这次在文字上的反馈缺失了,但其他非常有帮助.</p>
+<ul>
+<li><p>二周目的甘奈犯罪自白比较突然<br>我也觉得,那段我的草稿中没有给甘奈解释一切的动机.<br>考拉想解释,但也以发疯的方式给信息,情绪很乱.</p>
+</li>
+<li><p>甘奈三周目结尾时提出【删除我吧】的提示不少人关闭了很多次.<br>玩家在跟甘奈共情.<br>透老师说过【角色越塑造越会被喜欢】.<br>因为这个故事学妹是线索人物,学姐是幕后角色,玩家只跟甘奈相处时间最长.<br>所以就算是甘奈这样负面的角色也能牵动玩家的感情.<br>而因为牵动了感情,玩家会喜欢给甘奈一个好结局.</p>
+</li>
+</ul>
+<br>
+<br>
+
+<ul>
+<li><p>玩家挺多没有按照我们预计的一周目存档后直接回选项进行游戏.<br>而是重新打了第二周目.<br>有反馈说这样打出来的第二周目(虽然我们准备了新东西),但有些confuse,也有些困意.<br>因为这个真的猜不到,只能记住的确要做测试,也许可以留意招募一些愿意测试的朋友…</p>
+</li>
+<li><p>设定要讲清楚.<br>在写剧本的时候“什么时候讲设定”,“要花多少时间讲设定”,我苦恼了很久.<br>一来我们故事内容没有很多,二来甘奈的性格没有什么兴趣讲前因后果,再来已经花了很多文本在结尾讨论人生了.<br>观众真的有耐心看设定解释吗…<br>重开前我回去看了遍 <em>凉宫春日的消失</em>.<br>消失里大部分都是冒险的推进,但在直面犯人前花了不少的时间给阿虚面对自己的真心,长门的痛苦.<br>原来这样的时间使用也是可以的吗,那我放心了.</p>
+</li>
+</ul>
+<p>噢还有一点.<br>因为我们的结局是2+1的结局,思考过到底要不要告诉玩家我们有一个稍微隐藏一点的飞升结局.<br>现在相信讲清楚比较好,不要让玩家去搜索不知道存在不存在的东西.</p>
+<br>
+<br>
+
+<ul>
+<li><p><em>如果说我觉得还可以再加强些的地方，就是友里花的情感反馈可以增添一些，因为紫苑的种种塑造明显高出友里花的文本wwww又因为第一回合就是友里花被单恋的场合，到了后期可能会让人疑惑友里花的情感反馈是否戛然而止了。</em><br>这是角色定位的问题.<br>一开始学妹只是引出学姐的线索人物,因为飞哥提议凑两个角色当攻略游戏才把学妹强行拓展.</p>
+</li>
+<li><p>两人的文本混在一起还是挺明显的,会影响体验.</p>
+</li>
+</ul>
+ <br>
+ <br>
+
+<ul>
+<li><em>玩一半出门思考出美术带来的一种隐约的感觉，大概就是白天剧情时大量暖色调美术带来的一种过量青春期甜腻感，不过想想大概也算本游戏的特点？倒也和故事相称了。一种青春悲伤物语？包含一枚时刻爆炸的炸弹。</em><br>我一开始是【想画这个】而决定的,美术完全没思考【该给观众这个感觉】.<br>这条点醒了我.</li>
+</ul>
+<br>
+<br>
+
+<ul>
+<li><p><em>约老师请补充,甘奈酱女仆装dlc🥺这对我很重要🥺🥺🥺学姐口中的可爱女仆装到底是怎样的……🥺🥺🥺给我看看🥺🥺🥺……</em><br>好的.</p>
+</li>
+<li><p><em>认真抉择了主角的姓名，后上来就光速遗忘掉（…）这是否……</em><br>这一点之后补充了四周目重新恢复玩家定义姓名,回收一点演出.<br>说真的演出也是跟剧情一样要互相呼应的.<br>我自己做的三周目在bgm,文字断句,跟一二周目差挺多,这一点也会打架.</p>
+</li>
+<li><p><em>没有甘奈酱的结局……( ´°̥̥̥̥̥̥̥̥Д°̥̥̥̥̥̥̥̥｀)应该会有三人都能得到幸福的结局吧…</em><br>虽然这是很正统的反馈,但怎样才是三人都幸福的结局呢…!<br>如果最后的结局没有传统意义的happy end,那要在前期就铺垫苦涩吗?</p>
+</li>
+</ul>
+<p><strong>欢声笑语中打出GG</strong>,比我想象的要严重的多.</p>
+<br>
+<br>
+
+<ul>
+<li><em>嗯.跟上了.最后还做了点恶.让”我”留在了原地,更悲伤一些.如果是我被这么搞的话,我也会自己留在原地…</em></li>
+<li><em>与其说是这个世界的精误的零件,不如说是这个世界的关键零件,因为有了“我”才让这个世界不会一直循环重复一样的事,因为”我”会想打破这个世界的循环.</em><br>同样还是结局的事.<br>你是否有假定玩家的情绪.<br>这一点说实话挺难的…最好还有实况才能更理解玩家的情绪.<br>如果假定太死,那的确有很强的无力感.</li>
+</ul>
+<br>
+<br>
+
+<ul>
+<li><p><em>后一段约味儿起来了，倒不如说太起来了，变得有点疯。</em><br>对不起其实我以为自己是普通常考人,直到朋友这么说才意识到可能自己是有点疯.<br>在写文本的时候得注意收放……</p>
+</li>
+<li><p><em>但这毕竟是一款游戏，玩家的期待是会得到答案。</em></p>
+</li>
+<li><p><em>即使是卖关子也好，需要留下一点什么。人会感到虚无，所以才会求助于作品来得到满足和“可能的答案”。</em><br>残念的是,这次的确强烈感觉到了,抛出提问,在游戏中是得给一个答案的.<br>虽然还没明白是为什么…</p>
+</li>
+</ul>
+<br>
+<br>
+
+<p>暂时先写到这里了.也许改完图书馆版本再来唠两句.</p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Game-jam/" rel="tag"># Game jam</a>
+              <a href="/blog/tags/Renpy/" rel="tag"># Renpy</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/06/15/P291/" rel="next" title="积灰仓库与工具箱 - 夏">
+      积灰仓库与工具箱 - 夏 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%85%A8%E9%83%A8%E5%BA%9F%E8%AF%9D%E7%9A%84%E5%89%8D%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">全部废话的前言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%BF%98%E6%98%AF%E5%85%85%E6%BB%A1%E5%BA%9F%E8%AF%9D%E7%9A%84%E5%88%B6%E4%BD%9C%E8%BF%87%E7%A8%8B"><span class="nav-number">2.</span> <span class="nav-text">还是充满废话的制作过程</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%89%8D%E6%9C%9F%E5%80%92%E9%9C%89"><span class="nav-number">2.1.</span> <span class="nav-text">前期倒霉</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E4%B8%AD%E6%9C%9F%E6%8C%A8%E6%89%93"><span class="nav-number">2.2.</span> <span class="nav-text">中期挨打</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#%E5%90%8E%E6%9C%9F%E5%8D%8A%E6%AD%BB%E4%B8%8D%E6%B4%BB"><span class="nav-number">2.3.</span> <span class="nav-text">后期半死不活</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Repo"><span class="nav-number">3.</span> <span class="nav-text">Repo</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_10.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">293</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">65</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.4m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">21:19</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2023/06/22/P296/";
+    this.page.identifier = "2023/06/22/P296/";
+    this.page.title = "GJ记录_未完之约";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

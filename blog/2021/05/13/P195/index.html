@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/05/13/P195/P195_1.png">
 <meta property="article:published_time" content="2021-05-13T19:02:46.000Z">
-<meta property="article:modified_time" content="2022-12-21T01:18:42.502Z">
+<meta property="article:modified_time" content="2023-06-23T04:06:33.332Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="WebDev">
 <meta property="article:tag" content="Hexo">
@@ -250,7 +250,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-12-20 20:18:42" itemprop="dateModified" datetime="2022-12-20T20:18:42-05:00">2022-12-20</time>
+                <time title="Modified: 2023-06-23 00:06:33" itemprop="dateModified" datetime="2023-06-23T00:06:33-04:00">2023-06-23</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -401,7 +401,19 @@ ___
 </li>
 <li><p>字数统计,<a target="_blank" rel="noopener" href="https://github.com/next-theme/hexo-word-counter">hexo-word-counter</a>.<br>next中半附带这个插件,先npm下载了直接在config中调整.</p>
 </li>
+<li><p>文字折叠,<a target="_blank" rel="noopener" href="https://github.com/fletchto99/hexo-sliding-spoiler">hexo-sliding-spoiler</a>.</p>
+</li>
 </ul>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        Several spaces in the title
+    </div>
+    <div class='spoiler-content'>
+        <p>content</p>
+
+    </div>
+</div>
+
 <p><a target="_blank" rel="noopener" href="https://co5.me/2018/180613-wordcount.html">附带网页</a>.</p>
 <p>顺便一提觉得”Symbols count in article”太长了,可以在next &gt; language &gt; en.yml(用的是英语系统)把对应的字符删减.<br>也可以在next的config里设置.</p>
 <figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">separated_meta: false</span><br><span class="line">item_text_post: false</span><br><span class="line">item_text_total: false</span><br><span class="line">awl: 2 //中文</span><br><span class="line">wpm: 300 //阅读速度吧</span><br></pre></td></tr></table></figure>
@@ -466,7 +478,7 @@ ___
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">br</span>&gt;</span></span><br></pre></td></tr></table></figure>
 <p>来偷懒的…!!<del>正常的方法应该不是这样吧…</del></p>
 <p>顺便<a target="_blank" rel="noopener" href="https://zakkan-vivi.com/cute-emoticons-summary/">Emoji</a>和markdown的相性很差,没有可爱emoji了,悲.</p>
-
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     
@@ -573,7 +585,7 @@ ___
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-count">293</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -586,7 +598,7 @@ ___
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">65</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -654,7 +666,7 @@ ___
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">21:01</span>
+    <span title="T">21:19</span>
 
   -->
 
