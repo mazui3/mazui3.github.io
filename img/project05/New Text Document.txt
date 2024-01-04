@@ -1,0 +1,10 @@
+Request: Mazui, Artist: Mazui, Character: Chiyaki Nanami
+Request: Mazui, Artist: Matsu, Character: Tsubasa Hanekawa
+Request: Matsu, Artist: Karim, Character: Gumi
+Request: Karim, Artist: Cae, Character: Motoko Kusanagi
+Request: Cae, Artist: Frayer, Character: Ishmael
+Request: Frayer, Artist: GitsAsh, Character: Sasaki Yuko
+Request: GitsAsh, Artist: Tarou, Character: Katsushika Hokusai/Oei
+Request: Tarou, Artist: Ari, Character: Noah
+Request: Ari, Artist: Momo, Character: Albedo
+Request: Momo, Artist: Mazui, Character: Shenhe 
