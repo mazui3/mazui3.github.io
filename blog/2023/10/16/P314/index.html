@@ -1,0 +1,792 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="翻了下记录,这个github base的博客是20年开始运营的,再久之前有尝试一些个人网页的制作.这里回忆下当年零零散散的踩坑与过程.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于过去的博客制作经历与踩坑">
+<meta property="og:url" content="https://mazui3.github.io/blog/2023/10/16/P314/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="翻了下记录,这个github base的博客是20年开始运营的,再久之前有尝试一些个人网页的制作.这里回忆下当年零零散散的踩坑与过程.">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_2.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_6.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_7.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_8.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_11.png">
+<meta property="article:published_time" content="2023-10-16T11:44:10.000Z">
+<meta property="article:modified_time" content="2023-10-18T08:52:00.434Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="大家都是赛博难民">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/10/16/P314/P314_1.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2023/10/16/P314/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于过去的博客制作经历与踩坑 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2023/10/16/P314/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于过去的博客制作经历与踩坑
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2023-10-16 07:44:10" itemprop="dateCreated datePublished" datetime="2023-10-16T07:44:10-04:00">2023-10-16</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2023-10-18 04:52:00" itemprop="dateModified" datetime="2023-10-18T04:52:00-04:00">2023-10-18</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">写码笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2023/10/16/P314/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2023/10/16/P314/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>4.6k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>4 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>翻了下记录,这个github base的博客是20年开始运营的,再久之前有尝试一些个人网页的制作.<br>这里回忆下当年零零散散的踩坑与过程.</p>
+<span id="more"></span>
+
+<br>
+<br>
+<br>
+<br>
+
+<h1 id="基础知识"><a href="#基础知识" class="headerlink" title="基础知识"></a>基础知识</h1><p>要制作网站,得明白 <strong>域名,服务器,与网页文件</strong> 这三者的定义与区别.<br>如果你明白我在说什么的话可以直接跳过这一段哩!</p>
+<p>如果把网站类比成建造房子的话,我个人的理解是.</p>
+<div class="note ">
+            <p>服务器(server or host):运营,存放房子的地皮.<br>网页文件(usually html file):房子建筑本身以及里面的各种家具设施.<br>域名(domain):连接房子与客人的地址.</p>
+          </div>
+
+<p>不同博客服务的网站,可能提供 <em>服务器+域名 ,或者 服务器+域名+网页文件模版, 或者 服务器+网页文件</em> 之类不同程度的服务.<br>因为给的东西不同,这三个定义还是自己能分得清楚一些比较好…!</p>
+<p>如果比喻有点难理解,详细点的解释:</p>
+<div class="note ">
+            <p><strong>服务器:</strong></p><p>比如github这个 <em>在线软件源代码托管服务平台</em> (来自wiki) 提供每个账号名一个免费的网页的host,我提供网页文件,网站是github帮忙让它展示在这个英特网中的.</p><p>其他服务器,比如Hostgator(<strong>图书馆用的是这个,不好用</strong>),GoDaddy.<br>谷歌也有,但谷歌要的操作技术有点高(指我这个笨蛋没搞懂).<br>因为hostgator host图书馆这个网站,每次hostgator那里出问题,我会打电话问客服.</p><p>这里没法提供说哪个host比较好,个人没有花大力气去排查,我按加拿大推荐host来搜的.<br>国内的host可能要求还不一样些,因为国内有审核制度的特殊性.</p>
+          </div>
+
+<div class="note ">
+            <p><strong>域名:</strong></p><p><a target="_blank" rel="noopener" href="http://www.google.ca/">www.google.ca</a><br>这个连接就叫域名.<br>常见单独申请域名的服务有<a target="_blank" rel="noopener" href="https://www.namecheap.com/">Namecheap</a>.不同后缀的价格也不一样.</p>
+          </div>
+
+<div class="note ">
+            <p><strong>网页文件:</strong></p><img src="/blog/2023/10/16/P314/P314_1.png" class="" title="b站">比如我现在的网页是b站,我右键点save as.<img src="/blog/2023/10/16/P314/P314_2.png" class="" title="本地文件">会存到一个html文件和一个文件夹,文件夹内的东西是html连接用的“素材”.如果直接点击本地的html文件,会看到一个跟存储网站很像的版本,这是本地的网页文件.
+          </div>
+<p>有些网站,特别是大网站,的使用素材还有本地连不上的网页连接,所以看本地存储到的版本会有微妙的不一样.<br>现在大部分的网页文件还是html,应该还有php.<br>俺没学过php不大懂,html要速成到能看懂还是比较快的.</p>
+<br>
+<br>
+<br>
+
+<h1 id="唐突的心理建设"><a href="#唐突的心理建设" class="headerlink" title="唐突的心理建设"></a>唐突的心理建设</h1><p>在讲经历前,还是写几行字说心理建设这件事.<br>做网站并不难,但代码跟我另一个爱好画图不同.<br>画图只要表达出来就行,画了苹果就是苹果,画不好的苹果也是苹果.<br>但代码,包括网站,出错了就是出错了,有的时候是有点沮丧的.</p>
+<p>要有一定的(虽然是废话但)</p>
+<ol>
+<li>耐心,真的就,耐心,包括花进去的时间</li>
+<li>搜索解决事情的能力</li>
+</ol>
+<p>希望能对此有一定的…意识.<br>那么我们继续吧.</p>
+<br>
+<br>
+<br>
+
+<h1 id="不同的服务"><a href="#不同的服务" class="headerlink" title="不同的服务"></a>不同的服务</h1><p>之前讲到不同的帮人做博客的服务.<br>有一条龙的 <em>服务器+域名+网页文件模版</em> , 也可以去diy搞定三个部分,甚至搞自己的服务器,然后连起来.</p>
+<p>我觉得利弊是:</p>
+<p>服务太周全,自己能更改的部分是比较有限的.<br>搬家也会困难,因为一个地点的内容,很大概率不能直接导入其他的地点.(比如lofter博文不能一键发布成新浪微博)<br>国内的审核机制还有个麻烦的地方.<br>国外成熟的大博客网站,国内会屏蔽掉的,比如没记错的话wordpress.com和blogger.<br>小的做大了也难逃屏蔽.</p>
+<p>但自己diy明显技术和时间是个有门槛,只能说选择自己合适的方案.</p>
+<br>
+<br>
+
+<h2 id="wix"><a href="#wix" class="headerlink" title="wix"></a>wix</h2><p>最初我用过wix,也是一条龙服务的博客网站.<br>比如一位utau活动老师的网页<a target="_blank" rel="noopener" href="https://kurukuru2suuzi.wixsite.com/kuzutokaze">​葛と風邪</a>也是wix.<br><del>国内能打开的话wix还没被屏.</del></p>
+<img src="/blog/2023/10/16/P314/P314_3.png" class="" title="wix后台">
+<p>wix前几年好像做过整改…我用的时候怎么记得还没有后台.</p>
+<img src="/blog/2023/10/16/P314/P314_4.png" class="" title="wix博文">
+<p>它的卖点在像拼图一样可以可视化地制作自己的博文.<br>但wix算大的博客网站了,功能肯定够用.</p>
+<br>
+<br>
+
+<p>如果要使用一条龙服务我认为可以看一下:</p>
+<ul>
+<li>自带的网页部件(component)和自定义的自由度(比如可以加多少代码).</li>
+<li>搬家能导出怎样的文件.</li>
+<li>国内有没有屏蔽.</li>
+<li>图片加载速度.</li>
+<li>网页生成时电脑端的版本和手机端的版本,是否可以分别调格式.</li>
+</ul>
+<br>
+<br>
+
+<p>比较野路子可以用notion或者腾讯文档自带的文件分享生成连接.<br>我个人不建议当个站,因为生成出来的地址并不像普通域名好记,但作为信息分享的页面是足够了.</p>
+<br>
+<br>
+
+<h2 id="wordpress"><a href="#wordpress" class="headerlink" title="wordpress"></a>wordpress</h2><p>有两个wordpress,一个是wordpress.com,是一条龙博客网站.<br>一个是wordpress.org,是网页组装可视化插件.<br>俺图书馆的网站是wordpress+租host.</p>
+<p>用wordpress的人挺多的,其中免费付费的插件也不少,包括网页模版.<br>网页模版我购买是从<a target="_blank" rel="noopener" href="https://themeforest.net/">themeforest</a>,有时有模版打折很厉害…!一种捡便宜.</p>
+<img src="/blog/2023/10/16/P314/P314_5.png" class="" title="wordpress后台">
+<p>我后台装了不少插件,跟default会有一些区别.<br>注意地址是图书馆本体的地址,装上wordpress只要地址/wp-admin就能登录了.</p>
+<img src="/blog/2023/10/16/P314/P314_6.png" class="" title="woocommerce">
+<p>有个我挺喜欢的插件,购物插件.<br>如果真要收钱得绑定一些paypal,税收相关信息等.但免费的不用,也支持电子下载.<br>于是现在是我的免费电子报刊亭.</p>
+<p>wordpress直接编辑<strong>有点慢</strong>,因为我是直接在host上更改…俺的host挺慢.</p>
+<br>
+<br>
+
+<h2 id="hexo"><a href="#hexo" class="headerlink" title="hexo"></a>hexo</h2><p>最后是博客阅览室了.</p>
+<blockquote>
+<p>联动:本博客细节更改的<a href="https://mazui3.github.io/blog/2021/05/13/P195/">制作记录_UnderlakeReadingRoom</a>.</p>
+</blockquote>
+<p>使用的是<a target="_blank" rel="noopener" href="https://hexo.io/zh-cn/">hexo</a>, <em>快速、简洁且高效的博客框架</em> (它自己说的).同类产品有Jekyll,Hugo.<br>我使用hexo因为hexo好像中国人用的比较多.<br>如果没写过代码的朋友可能初上手有点困惑…会用一些写码人的工具,比如terminal,文字编辑软件(我习惯用是atom或notepad++).</p>
+<p>基本流程是</p>
+<ol>
+<li>我把博客内容以它想要的格式写出来</li>
+<li>hexo帮我生成博客html文件</li>
+<li>再把生成的html文件上传到host</li>
+</ol>
+<p>分段解释.</p>
+<ol>
+<li>想要的格式.</li>
+</ol>
+<p>hexo支持的是<a target="_blank" rel="noopener" href="https://github.com/adam-p/markdown-here/wiki/Markdown-Cheatsheet">markdown</a>语言.<br>在写码用文字编辑器中,编辑器会识别使用语言(通过文件后缀,markdown文件的后缀是md),然后highlight(高亮不同颜色),看起来会方便.</p>
+<img src="/blog/2023/10/16/P314/P314_7.png" class="" title="现在在打的内容">
+<blockquote>
+<p>看出来了吗,右边的内容有不同的颜色.圆括号内的是超链接,下划线内的字是斜体等等.<br>编辑器左边还能直接跳转文件夹下不同的文件,平时写笔记也用这样的编辑器,很方便.<br><del>要什么word,md万岁.</del></p>
+</blockquote>
+<br>
+<br>
+
+<ol start="2">
+<li>hexo生成文件</li>
+</ol>
+<p>hexo是需要terminal的.<br>向没听过这词的朋友解释的话…像是电脑的“遥控器”.<br>像电视有遥控器和按钮,平时遥控器用惯了,但还有在电视背后的按钮,一共有两种操作电视的方式.<br>电脑除了我们平时可视化的鼠标键盘来操作,还有都自带的非可视化“遥控器”.</p>
+<p>mac用户直接搜索terminal,windows可能叫windows terminal.<br><del>我不喜欢windows写码,还得说到大二期末作业因为死都在win上装不了c语言冲去商场原地掏存款买mac赶死线这件事.</del></p>
+<br>
+<br>
+
+<div class="note info">
+            <p><del><strong>唐突开始三分钟学不完terminal小课堂.</strong></del></p>
+          </div>
+
+<p>打开terminal,界面看上去是这样的.</p>
+<img src="/blog/2023/10/16/P314/P314_8.png" class="" title="terminal">
+<blockquote>
+<p>我用的是iTerm,格式看上去会有一点不同.</p>
+</blockquote>
+<p><strong>Mazuis-Macbook-Air</strong> 是我这台电脑的名字<br><strong>mazuisan</strong> 是用户名<br><strong>～</strong> 是现在的所在路径,是～因为是最默认的地方(我的理解).</p>
+<br>
+<br>
+
+<p>我们输入几个指令.</p>
+<blockquote>
+<p>指令现在不用记,只是示范terminal常见能做啥.<br>指令的语言名字叫做bash顺便一提.</p>
+</blockquote>
+<img src="/blog/2023/10/16/P314/P314_9.png" class="" title="输入了几个指令">
+<p>我输入了pwd,回复了/Users/mazuisan.<br>指令和回复是分行的.</p>
+<p><strong>1.pwd - 我现在在哪</strong></p>
+<p>我所在的路径是/Users/mazuisan<br>(这个格式能发现吗,就是电脑的各个路径,用可视化文件夹时也会看到这样的路径)</p>
+<p><strong>2.ls - 现在路径下有什么东西</strong></p>
+<p>这里的东西不单单是【文件】还有【文件夹 - 新的路径】<br>我们看到了好理解的桌面(Desktop).</p>
+<p><strong>3.cd - 移动. cd Desktop - 移动到桌面</strong></p>
+<p>这里再ls给大家看一下我桌面有什么东西.</p>
+<img src="/blog/2023/10/16/P314/P314_10.png" class="" title="顺便给大家看一下美丽余老师">
+<p>对照着可视化桌面,桌面上的东西<strong>就是</strong>我们刚刚用ls指令所看到的东西.<br>意味着如果我在terminal指令里说“生成文件”,桌面就能看到生成的文件.</p>
+<br>
+<br>
+
+<p><em>问:terminal是干什么的.</em></p>
+<p>terminal当然不单单可以移动查看路径,能修改文件,<del>一键删库</del> 以及更多强大的作用.<br>回到在最初电脑能“可视化操作”前,都是非可视化操作.<br>不如说现在的可视化才是“抄近道”.<br>一些代码程序用terminal来在电脑操作也不奇怪了.</p>
+<br>
+<br>
+
+<div class="note danger">
+            <p><strong>唐突插一嘴刚刚截图上的hexo</strong>,如果有人注意到的话.<br>我在主页面路径下有<strong>hexo</strong>两个字.<br>那个<big><strong>不是</strong></big>hexo本体啊.</p><p>是我生成了一个叫hexo的快捷连接(symlink),每次要输入hexo博客文件的地址再操作好麻烦.<br>怎么做的有点忘了,大概是<a target="_blank" rel="noopener" href="https://superuser.com/questions/167221/can-i-add-a-shortcut-to-replace-a-path-in-linux">这条</a>,或者<a target="_blank" rel="noopener" href="https://unix.stackexchange.com/questions/52237/how-to-create-a-shortcut-to-a-folder-to-documents">这条</a>.<br>生成好了后每次就cd hexo跳转了.</p>
+          </div>
+
+<blockquote>
+<p>联动以前的<a href="https://mazui3.github.io/blog/2021/03/14/P176/">terminal指令笔记</a>.<br>我不推荐你直接看,因为是我大二的课堂笔记.<br>如果学了写bash(或者叫unix),可以用来对照.</p>
+</blockquote>
+<blockquote>
+<p>……<br><del>卧槽刚还在想symlink怎么做的呢,旧笔记备份了,没事了.</del></p>
+</blockquote>
+<br>
+<br>
+
+<p>对不住,刚才的小课堂不是用来吓人的.<br>但我展示给你看后,再跟着教程装hexo的话,这些东西突然冒出来就不会太惊讶了.</p>
+<p>hexo的操作这里不会细讲,教程网络上不少,b站也有,可以搜 <em>hexo blog github</em> 等关键字.</p>
+<div class="note info">
+            <p><del>最后你的教程大概会讲但还是多嘴提一句.</del><br>terminal输入指令后开始运行,如果运行的时间太长卡住了.<br>可以用ctrl+c强行杀死指令.以免运行一辈子.<br>(记得切英文输入法.)</p>
+          </div>
+
+<br>
+<br>
+
+<ol start="3">
+<li>上传host</li>
+</ol>
+<p>在用hexo生成好文件后,我们终于讲到上传host了.<br>一些host可以直接打包文件,在网页页面点击上传, <strong>太 棒 了</strong>.<br>我使用的是github, <em>源代码托管服务平台</em> ,上传也有点不一样.<br>写码人会用terminal传,我用的是<a target="_blank" rel="noopener" href="https://desktop.github.com/">github desktop</a>.<br><del>github也支持网页上传,网页端修改文件,博客文件太大东西多极其不推荐,小型文件做个笔记可以.</del></p>
+<img src="/blog/2023/10/16/P314/P314_11.png" class="" title="github desktop 界面">
+<p>东西有点多,先看右边.<br>这个文件P308.md是跟github云端记录有【修改】,不同的地方用颜色highlight出来了.<br>红色是删除的部分,绿色是增加的部分.<br>可以看出【原本讲好像树哥文是12年更新的】,改成了【13年】.<br>能快速比对修改部分这一点很方便!</p>
+<p>左边是所有这次有更改的文件.<br>具体操作我建议先<strong>快速学一下git</strong>的原理,<del>反正都要用github了还是学一下.</del> 再改用简单版本的github desktop就很快上手了.</p>
+<blockquote>
+<p>顺便一提截图举例用的是博文原材料markdown文件,不是hexo生成后的.提一嘴以免混淆.<br>要把github当作网站的host需要设定<strong>用户名.github.io的repository</strong>,具体得麻烦搜一下教程.</p>
+</blockquote>
+<br>
+<br>
+
+<p>最后讲一下图床.<br>有些朋友使用了图床服务,把图片放在其他server生成链接再插入,这样自己host可能加载图片会快一点.<br>我没用不大懂,但的确github的图是慢的.<del>虽然看到现在你也早发现了图加载真的很慢.</del><br>同样也是【把东西放在其他人那边靠不靠谱】这个问题.<br>github我还…比较信任.<br>一来政治上还好,虽然<strong>有过</strong>因为政治因素github官方屏蔽掉repository,国内相关事件我只听说过一次.<br>二来安全也还好,虽然github丢失数据也<strong>有过</strong>,记得是因为服务器本体被炸了好像(那是没办法了).</p>
+<br>
+<br>
+<br>
+<br>
+
+<p>以上就是零零散散制作博客的过程了,中途没想讲太技术的…对不住.<br>除了hexo,以前还用网页文字游戏inky做了个<a href="https://mazui3.github.io/blog/2021/08/08/P204/">老兔主页</a>.<br>有了自己的host,怎么做都好玩的.<br>用纯html写一个出来也不是不行.<br>我博客外的【主页】还是theme forest买了个html模版改的,营业好看一下.</p>
+<p>如果哪个部分讲的不清晰,私敲我一下或者回复此博文,我来解释.</p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/%E5%A4%A7%E5%AE%B6%E9%83%BD%E6%98%AF%E8%B5%9B%E5%8D%9A%E9%9A%BE%E6%B0%91/" rel="tag"># 大家都是赛博难民</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2023/10/22/P315/" rel="prev" title="多余的对话记录">
+      <i class="fa fa-chevron-left"></i> 多余的对话记录
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/10/12/P311/" rel="next" title="高中的sketch book">
+      高中的sketch book <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E7%9F%A5%E8%AF%86"><span class="nav-number">1.</span> <span class="nav-text">基础知识</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%94%90%E7%AA%81%E7%9A%84%E5%BF%83%E7%90%86%E5%BB%BA%E8%AE%BE"><span class="nav-number">2.</span> <span class="nav-text">唐突的心理建设</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E4%B8%8D%E5%90%8C%E7%9A%84%E6%9C%8D%E5%8A%A1"><span class="nav-number">3.</span> <span class="nav-text">不同的服务</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#wix"><span class="nav-number">3.1.</span> <span class="nav-text">wix</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#wordpress"><span class="nav-number">3.2.</span> <span class="nav-text">wordpress</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hexo"><span class="nav-number">3.3.</span> <span class="nav-text">hexo</span></a></li></ol></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_11.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">317</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2023</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.5m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">22:41</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.5m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2023/10/16/P314/";
+    this.page.identifier = "2023/10/16/P314/";
+    this.page.title = "关于过去的博客制作经历与踩坑";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>

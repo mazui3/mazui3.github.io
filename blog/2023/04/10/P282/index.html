@@ -33,9 +33,10 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_1.gif">
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_2.gif">
 <meta property="article:published_time" content="2023-04-10T16:50:40.000Z">
-<meta property="article:modified_time" content="2023-05-17T20:57:23.617Z">
+<meta property="article:modified_time" content="2023-11-19T16:29:20.351Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="C4ToolBox">
+<meta property="article:tag" content="Renpy">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_1.gif">
 
@@ -223,7 +224,7 @@
     <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2023/04/10/P282/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
       <meta itemprop="name" content="Mazui">
       <meta itemprop="description" content="与孤独和平共处.">
     </span>
@@ -250,7 +251,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-05-17 16:57:23" itemprop="dateModified" datetime="2023-05-17T16:57:23-04:00">2023-05-17</time>
+                <time title="Modified: 2023-11-19 11:29:20" itemprop="dateModified" datetime="2023-11-19T11:29:20-05:00">2023-11-19</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -281,13 +282,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>10k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 mins.</span>
+              <span>10 mins.</span>
             </span>
 
         </div>
@@ -308,7 +309,10 @@
 <br>
 <br>
 
-<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><h2 id="更改对话框"><a href="#更改对话框" class="headerlink" title="更改对话框"></a>更改对话框</h2><p>参数在gui.rpy的Dialogue section下.<br>没什么特别的,更换图片,按着参数慢慢改.</p>
+<h1 id="笔记"><a href="#笔记" class="headerlink" title="笔记"></a>笔记</h1><blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=FGFRTQIrn4k">代码structure建议.</a></p>
+</blockquote>
+<h2 id="更改对话框"><a href="#更改对话框" class="headerlink" title="更改对话框"></a>更改对话框</h2><p>参数在gui.rpy的Dialogue section下.<br>没什么特别的,更换图片,按着参数慢慢改.</p>
 <br>
 <br>
 
@@ -397,7 +401,7 @@
 <br>
 <br>
 
-<h2 id="打字机效果-每个字符出现"><a href="#打字机效果-每个字符出现" class="headerlink" title="打字机效果(每个字符出现)"></a>打字机效果(每个字符出现)</h2><p>需要调cp(characters per second)值.<br>如果是全局的话可以在option.py的preferences_text_cps里调.</p>
+<h2 id="打字机效果-每个字符出现"><a href="#打字机效果-每个字符出现" class="headerlink" title="打字机效果(每个字符出现)"></a>打字机效果(每个字符出现)</h2><p>需要调cp(characters per second)值.<br>如果是全局的话可以在option.py的preferences.text_cps里调.</p>
 <br>
 <br>
 
@@ -417,6 +421,10 @@
 <blockquote>
 <p>原理是把需要改变描边放到 Text 中，这样就能设置单独的 style。为了实现慢速显示，这里为每一个字都包装了单独的 Text，并且外包 Fixed 来控制字间距。</p>
 </blockquote>
+<br>
+<br>
+
+<h2 id="Screens"><a href="#Screens" class="headerlink" title="Screens"></a>Screens</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=R4Vvv_uapbk&t=0s&ab_channel=VisualNovelDesign">Ren’py Screens Tutorial</a></p>
 <br>
 <br>
 
@@ -495,6 +503,70 @@
 <blockquote>
 <p>一个国外的renpy论坛?<br>救我狗命.</p>
 </blockquote>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=47820">71 mini game Renpy</a></p>
+<blockquote>
+<p>互联网佛祖普度众生.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.bilibili.com/read/cv17013514/">一些有用的Renpy教程链接</a></p>
+<blockquote>
+<p>黑凤梨大佬普渡众生.</p>
+</blockquote>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        “黑凤梨教程链接”
+    </div>
+    <div class='spoiler-content'>
+        <p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=61319">人物说话的时候同时移动，callback的用法</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewforum.php?f=52&sid=6842a896fc8b003a82fd3542e575362c">renpy 游戏素材</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=25007">两个角色同时聊天</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=22481">Scrolling Credits 滚动字幕</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=42988">如何给程序增加dlc 程序打包</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=18047&start=15#p395926">简单小游戏</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=5055">对话框在游戏中变化</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=26885">音效循环播放</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=60527">对话框文字动态效果</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=57408&sid=98dea92a43f94f8e714c1b43fe108d7b#p521935">鼠标点击动画效果</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=51629">主菜单音乐变化</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=24237">主菜单音乐</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=51171#p492438">用真实时间控制游戏</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=53252#p502367">根据真实时间改变图像/屏幕</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?p=472714#p472714">摇动图片或者立绘</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=22196">点击继续按钮 ctc</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=13381">renpy timer的问题</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=47911#p476350">rpg游戏的角色stat</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=44034">射击游戏</a>,<a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=41347">射击游戏2</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=62436">商店</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=17232">自定义nvl 消息框</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=21978">钟表</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=8&t=63344">打字音效</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=28495">鼠标点不到的按钮</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=47482">会跟着鼠标动的图</a>,<a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=42368">会跟着鼠标动的图2</a>,<a target="_blank" rel="noopener" href="http://renpyfordummies.blogspot.com/2022/02/blog-post.html">会跟着鼠标动的图3</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=34323">Animated movement with AlphaMask problem</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=27422">女神异闻录样式日历</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=22636">renpy input box 输入框</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=25579#p313665">物品栏</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=47833#p475886">随机播放音乐</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?p=490843#p490843">renpy 小游戏</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=48233">自动移动鼠标</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=43685#p453004">检查玩家是否存档</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=oUhcXlzc2a4&t=514s">加google广告</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=50764">LayeredImage Tutorial 层叠式图</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=25749">第一视角睁眼效果</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.renpy.cn/doc/atl.html#transform-property-xtile">循环图片</a></p>
+<p><a target="_blank" rel="noopener" href="http://traumendes-madchen.com/blog/?p=1395">云朵移动效果</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=62120&p=542823&hilit=bar+music#p542823">音乐空间</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.renpy.org/wiki/renpy/doc/cookbook/Shake_effect">Shake Effect 抖动效果</a>,<a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=48419">抖动2</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=34328">Prevent users skipping transition effect like dissolve 在变幻的时候禁止用户跳过</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=10584">反复抖动</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?p=135622#p135622">blur effect 模糊效果</a>,<a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?t=35619">模糊效果2</a></p>
+<p><a target="_blank" rel="noopener" href="https://lemmasoft.renai.us/forums/viewtopic.php?f=51&t=62837">手机聊天</a></p>
+
+    </div>
+</div>
+
+<br>
+<br>
+
 <h2 id="Cookbook"><a href="#Cookbook" class="headerlink" title="Cookbook"></a>Cookbook</h2><p>Cookbook之中比较喜欢的:<br><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=B3bbdIAq-1M&ab_channel=VisualNovelDesign">Ren’py Cookbook - Kinetic Text!</a></p>
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://wattson.itch.io/kinetic-text-tags">itch</a><br>大多的神秘文字效果都可以用这个包来演出了.</p>
@@ -503,8 +575,10 @@
 <blockquote>
 <p><a target="_blank" rel="noopener" href="https://tofurocks.itch.io/snowfall-gui">itch</a></p>
 </blockquote>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=0Vjd7XhZNtU&ab_channel=VisualNovelDesign">Ren’py RPG Combat Engine!</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=KoYXzREFx4A&t=0s&ab_channel=VisualNovelDesign">Ren’py Images and Action Editor Tutorial</a></p>
 <img src="/blog/2023/04/10/P282/P282_2.gif" class="" width="123" height="200">
-
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     
@@ -514,6 +588,7 @@
       <footer class="post-footer">
           <div class="post-tags">
               <a href="/blog/tags/C4ToolBox/" rel="tag"># C4ToolBox</a>
+              <a href="/blog/tags/Renpy/" rel="tag"># Renpy</a>
           </div>
 
         
@@ -594,14 +669,14 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increase-space-between-lines-of-text"><span class="nav-number">1.8.</span> <span class="nav-text">increase space between lines of text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C-%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">1.9.</span> <span class="nav-text">打字机效果(每个字符出现)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.10.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.11.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.12.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.13.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E8%AE%A1%E6%95%B0"><span class="nav-number">1.14.</span> <span class="nav-text">存档计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.15.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.16.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.17.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookbook"><span class="nav-number">2.1.</span> <span class="nav-text">Cookbook</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increase-space-between-lines-of-text"><span class="nav-number">1.8.</span> <span class="nav-text">increase space between lines of text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C-%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">1.9.</span> <span class="nav-text">打字机效果(每个字符出现)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.10.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.11.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screens"><span class="nav-number">1.12.</span> <span class="nav-text">Screens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.13.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.14.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E8%AE%A1%E6%95%B0"><span class="nav-number">1.15.</span> <span class="nav-text">存档计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.16.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.17.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.18.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookbook"><span class="nav-number">2.1.</span> <span class="nav-text">Cookbook</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/blog/images/logo_10.jpg">
+      src="/blog/images/logo_11.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description">与孤独和平共处.</div>
 </div>
@@ -610,7 +685,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-count">317</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -623,7 +698,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -683,7 +758,7 @@
     </span>
 
 
-    <span title="C">1.4m</span>
+    <span title="C">1.5m</span>
   -->
 
   <!--
@@ -691,7 +766,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">20:57</span>
+    <span title="T">22:41</span>
 
   -->
 
@@ -701,7 +776,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有1.5m的老兔正在打瞌睡</span>
 </div>
 
         

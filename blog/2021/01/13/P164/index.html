@@ -223,7 +223,7 @@
     <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2021/01/13/P164/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="image" content="/blog/images/logo_10.jpg">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
       <meta itemprop="name" content="Mazui">
       <meta itemprop="description" content="与孤独和平共处.">
     </span>
@@ -372,7 +372,7 @@
 <br>
 
 <figure class="highlight r"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">################</span></span><br><span class="line"><span class="comment">### Plotting ###</span></span><br><span class="line"><span class="comment">################</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># Univariate plots (for quantitative variables)</span></span><br><span class="line">hist(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Histogram of Weight&quot;</span>)</span><br><span class="line">boxplot(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Boxplot of Weight&quot;</span>)</span><br><span class="line"></span><br><span class="line">hist(x = df$Time, xlab = <span class="string">&quot;Time (days)&quot;</span>, main = <span class="string">&quot;Histogram of Time&quot;</span>)</span><br><span class="line">boxplot(x = df$Time, xlab = <span class="string">&quot;Time (days)&quot;</span>, main = <span class="string">&quot;Boxplot of Time&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Univariate plots (for categorical variables)</span></span><br><span class="line"><span class="comment"># First the table() function:</span></span><br><span class="line">table(df$Diet)</span><br><span class="line">barplot(table(df$Diet), main = <span class="string">&quot;Frequency Barplot of Diet&quot;</span>)</span><br><span class="line">barplot(table(df$Diet)/<span class="built_in">sum</span>(table(df$Diet)), main = <span class="string">&quot;Relative Frequency Barplot of Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line">pie(x = table(df$Diet), main = <span class="string">&quot;Pie Chart of Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for quantitative variables)</span></span><br><span class="line">plot(x = df$Time, y = df$weight, xlab = <span class="string">&quot;Time (days)&quot;</span>, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Scatter Plot of Weight vs. Time&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for quantitative and categorical variables)</span></span><br><span class="line">boxplot(df$weight ~ df$Diet, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Weight by Diet Type&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Multiple plots in one window</span></span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">3</span>))</span><br><span class="line">hist(x = df$weight, xlab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Histogram of Weight&quot;</span>)</span><br><span class="line">plot(x = df$Time, y = df$weight, xlab = <span class="string">&quot;Time (days)&quot;</span>, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Scatter Plot of Weight vs. Time&quot;</span>)</span><br><span class="line">boxplot(df$weight ~ df$Diet, ylab = <span class="string">&quot;Weight (grams)&quot;</span>, main = <span class="string">&quot;Weight by Diet Type&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Bivariate plots (for categorical variables)</span></span><br><span class="line"><span class="comment"># First the table() function:</span></span><br><span class="line">table(df$Diet, df$Chick)</span><br><span class="line">par(mfrow = <span class="built_in">c</span>(<span class="number">1</span>,<span class="number">1</span>))</span><br><span class="line">mosaicplot(x = table(df$Diet, df$Chick), xlab = <span class="string">&quot;Diet&quot;</span>, ylab = <span class="string">&quot;Chick ID&quot;</span>, main = <span class="string">&quot;Chick ID by Diet&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Look at another dataset which is a better illustration of this function</span></span><br><span class="line">? HairEyeColor</span><br><span class="line">HairEyeColor</span><br><span class="line">mosaicplot(x = HairEyeColor[,,<span class="number">1</span>], main = <span class="string">&quot;Male Hair and Eye Colour&quot;</span>)</span><br><span class="line">mosaicplot(x = HairEyeColor[,,<span class="number">2</span>], main = <span class="string">&quot;Female Hair and Eye Colour&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding lines to plots</span></span><br><span class="line">plot(x = rnorm(n = <span class="number">1000</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>), y = rnorm(n = <span class="number">1000</span>, mean = <span class="number">0</span>, sd = <span class="number">1</span>), xlab = <span class="string">&quot;&quot;</span>, ylab = <span class="string">&quot;&quot;</span>, main = <span class="string">&quot;&quot;</span>, pch = <span class="number">16</span>, xlim = <span class="built_in">c</span>(-<span class="number">3.5</span>, <span class="number">3.5</span>), ylim = <span class="built_in">c</span>(-<span class="number">3.5</span>, <span class="number">3.5</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Diagonal Lines</span></span><br><span class="line">abline(a = <span class="number">0</span>, b = <span class="number">1</span>, col = <span class="string">&quot;red&quot;</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Lines with a specific slope/intercept</span></span><br><span class="line">abline(a = -<span class="number">1</span>, b = <span class="number">0.5</span>, col = <span class="string">&quot;green&quot;</span>, lwd = <span class="number">2</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Horizontal and vertical lines</span></span><br><span class="line">abline(h = <span class="number">0</span>, col = <span class="string">&quot;blue&quot;</span>, lwd = <span class="number">2</span>, lty = <span class="number">2</span>)</span><br><span class="line">abline(v = -<span class="number">2</span>, col = <span class="string">&quot;purple&quot;</span>, lwd = <span class="number">2</span>, lty = <span class="number">3</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Line Segments</span></span><br><span class="line">segments(x0 = -<span class="number">2</span>, y0 = -<span class="number">3</span>, x1 = -<span class="number">1</span>, y1 = -<span class="number">3</span>, col = <span class="string">&quot;magenta&quot;</span>, lwd = <span class="number">3</span>, lty = <span class="number">1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Curves</span></span><br><span class="line">lines(x = seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.1</span>), y = <span class="built_in">cos</span>(<span class="number">3</span>*seq(-<span class="number">3</span>, <span class="number">3</span>, <span class="number">0.1</span>)), col = <span class="string">&quot;orange&quot;</span>, lwd = <span class="number">4</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># Adding a legend</span></span><br><span class="line">legend(<span class="string">&quot;bottomright&quot;</span>, legend = <span class="built_in">c</span>(<span class="string">&quot;Diagonal&quot;</span>, <span class="string">&quot;General Line&quot;</span>, <span class="string">&quot;Horizontal&quot;</span>, <span class="string">&quot;Vertical&quot;</span>, <span class="string">&quot;Segment&quot;</span>, <span class="string">&quot;Curve&quot;</span>),</span><br><span class="line">       col = <span class="built_in">c</span>(<span class="string">&quot;red&quot;</span>, <span class="string">&quot;green&quot;</span>, <span class="string">&quot;blue&quot;</span>, <span class="string">&quot;purple&quot;</span>, <span class="string">&quot;magenta&quot;</span>, <span class="string">&quot;orange&quot;</span>),</span><br><span class="line">       lwd = <span class="built_in">c</span>(<span class="number">1</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">4</span>),</span><br><span class="line">       lty = <span class="built_in">c</span>(<span class="number">1</span>, <span class="number">1</span>, <span class="number">2</span>, <span class="number">3</span>, <span class="number">1</span>, <span class="number">1</span>))</span><br><span class="line"></span><br><span class="line"><span class="comment"># Add more points, but with a different colour and shape</span></span><br><span class="line">points(x = rnorm(n = <span class="number">100</span>, mean = -<span class="number">3</span>, sd = <span class="number">0.2</span>), y = rnorm(n = <span class="number">100</span>, mean = <span class="number">3</span>, sd = <span class="number">0.2</span>), col = <span class="string">&quot;cyan&quot;</span>, pch = <span class="number">17</span>)</span><br><span class="line"></span><br><span class="line"></span><br></pre></td></tr></table></figure>
-
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
     </div>
 
     
@@ -472,7 +472,7 @@
       <div class="site-overview-wrap sidebar-panel">
         <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
-      src="/blog/images/logo_10.jpg">
+      src="/blog/images/logo_11.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
   <div class="site-description" itemprop="description">与孤独和平共处.</div>
 </div>
@@ -481,7 +481,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">290</span>
+          <span class="site-state-item-count">317</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -494,7 +494,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">63</span>
+        <span class="site-state-item-count">68</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -554,7 +554,7 @@
     </span>
 
 
-    <span title="C">1.4m</span>
+    <span title="C">1.5m</span>
   -->
 
   <!--
@@ -562,7 +562,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">20:57</span>
+    <span title="T">22:41</span>
 
   -->
 
@@ -572,7 +572,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有1.4m的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有1.5m的老兔正在打瞌睡</span>
 </div>
 
         

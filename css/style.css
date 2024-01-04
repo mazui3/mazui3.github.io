@@ -1085,9 +1085,9 @@ a{
 	flex-wrap: wrap;
 }
 .tokyo_tm_services .list ul li{
-	margin: 0px 0px 40px 0px;
+	margin: 0px 0px 20px 0px; /* 0px 0px 40px 0px;*/
 	width: 33.3333%;
-	padding-left: 40px;
+	padding-left: 10px; /* 40px; */
 }
 .tokyo_tm_services .list ul li .list_inner{
 	width: 100%;
@@ -1097,7 +1097,7 @@ a{
 	position: relative;
 	border: 1px solid rgba(0,0,0,.1);
     background-color: #fff;
-    padding: 45px 30px 40px 30px;
+    padding: 10px 10px 10px 10px; /* 45px 30px 40px 30px;*/
 
 	-webkit-transition: all .3s ease;
 	   -moz-transition: all .3s ease;
@@ -1313,7 +1313,7 @@ a{
   float: left;
   position: relative;
   border: 1px solid rgba(0,0,0,.1);
-	padding: 25px 40px 45px;	/* padding: 27px 40px 45px; */
+	padding: 25px 30px 20px;	/* 25px 40px 45px; <- padding: 27px 40px 45px; */
 }
 .tokyo_tm_pricing .price{
 	width: 100%;
@@ -1330,11 +1330,11 @@ a{
 .tokyo_tm_pricing .price .currency{
 	position: absolute!important;
     bottom: 10px;
-    right: -10px;
+    right: -10px; /* right: -10px; */
     font-size: 15px;
 }
 .tokyo_tm_pricing .plan{
-	width: 100%;
+	width: 100%; /* width: 100%; */
 	float: left;
 }
 .tokyo_tm_pricing .plan h3{
