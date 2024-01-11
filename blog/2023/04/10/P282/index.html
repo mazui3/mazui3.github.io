@@ -31,9 +31,10 @@
 <meta property="og:description" content="这里是捣鼓renpy时的自用代码笔记.虽说是笔记,图省力有些内容直接copy&amp;paste各路教程,如果没标注原文链接就是忘了(对不起).">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_1.gif">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_3.jpeg">
 <meta property="og:image" content="https://mazui3.github.io/blog/2023/04/10/P282/P282_2.gif">
 <meta property="article:published_time" content="2023-04-10T16:50:40.000Z">
-<meta property="article:modified_time" content="2023-11-19T16:29:20.351Z">
+<meta property="article:modified_time" content="2024-01-01T16:36:10.344Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="C4ToolBox">
 <meta property="article:tag" content="Renpy">
@@ -251,7 +252,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-11-19 11:29:20" itemprop="dateModified" datetime="2023-11-19T11:29:20-05:00">2023-11-19</time>
+                <time title="Modified: 2024-01-01 11:36:10" itemprop="dateModified" datetime="2024-01-01T11:36:10-05:00">2024-01-01</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -282,13 +283,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>11k</span>
+              <span>24k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>10 mins.</span>
+              <span>22 mins.</span>
             </span>
 
         </div>
@@ -405,6 +406,169 @@
 <br>
 <br>
 
+<p>(cps以外的)</p>
+<h2 id="速度與等待"><a href="#速度與等待" class="headerlink" title="速度與等待"></a>速度與等待</h2><p>cps：<br>本標籤可以控制文字每秒顯示的字數。<br>可以是一個絕對的數字，也可以是基於當前顯示速度的變化值。比方說「{cps=*2}文字文字文字{/cps}」這樣。<br>fast：<br>這個標籤前的文字會瞬間顯示出來，無視於 cps 或其他設定。<br>nw：<br>表示 no wait（不等待）。本行文字顯示完後，「不用按滑鼠」就能自動前進到下一行的腳本指令。<br>p：<br>等待指定的秒數或經過滑鼠點擊，然後才換行繼續。<br>w：<br>同 p 不過不換行。</p>
+<br>
+<br>
+
+<h2 id="整体设置的聲音調控"><a href="#整体设置的聲音調控" class="headerlink" title="整体设置的聲音調控"></a>整体设置的聲音調控</h2><p>您可以指定讓遊戲在某些特殊時刻，播放特殊的音樂或音效。</p>
+<p>比較常用的有下面幾個：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># config.enter_sound = &quot;click.wav&quot;          # 進入 game menu 時的音效</span></span><br><span class="line"><span class="comment"># config.exit_sound = &quot;click.wav&quot;           # 離開 game menu 時的音效</span></span><br><span class="line"><span class="comment"># style.button.activate_sound = &quot;click.wav&quot; # 在遊戲中按按鈕時，會發出的音效</span></span><br><span class="line"><span class="comment"># config.main_menu_music = &quot;main_menu_theme.ogg&quot; # 這行定義在主選單 (main menu) 中，會播放什麼音</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>注,繁体字的一些是从12年的【雪凡与朋友们系列】ctrl c+v过来的.没有校对现今的版本冲突问题.</p>
+</blockquote>
+<br>
+<br>
+
+<h2 id="加密與略去"><a href="#加密與略去" class="headerlink" title="加密與略去"></a>加密與略去</h2><p>Ren’Py 遊戲引擎支援替遊戲資源「加密」的功能。</p>
+<p>簡單地說吧。這個功能可確保玩家無法手動挖掘您的遊戲資料夾，偷看您的遊戲圖檔與故事腳本。人性本惡是個好假設，否則網路上也就不會有那麼多ＣＧ包在四處流傳了。<br>我們可在建立分發版時，透過 build.classify() 函式來加密（或略去）某些檔案。</p>
+<p>它是這樣用的：</p>
+<p>build.classify(檔名匹配模式, 分類名)<br>build.classify() 會將所有滿足「檔名匹配模式」的檔案，歸入指定的「分類」中。依檔案所屬分類不同，遊戲在打包這些檔案時也會採用不同的處理方式。</p>
+<p>舉例如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">build.classify(<span class="string">&#x27;game/char/**&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>)    <span class="comment"># 將 game/char 資料夾下的一切檔案放入 archive 分類中</span></span><br><span class="line">build.classify(<span class="string">&#x27;game/*.rpy&#x27;</span>, <span class="string">&#x27;archive&#x27;</span>)      <span class="comment"># 將 game 資料夾下，附檔名為 rpy 的檔案放入 archive 分類中</span></span><br><span class="line">build.classofy(<span class="string">&#x27;README_win.html&#x27;</span>, <span class="string">&#x27;windows&#x27;</span>) <span class="comment"># 將 base 資料夾下的 README_win.html 檔案放入 windows 分類中</span></span><br></pre></td></tr></table></figure>
+<blockquote>
+<p>我记得这个在config文件?中有默认的一些代码,可以跟着代码续写需要隐藏的文件.</p>
+</blockquote>
+<br>
+<br>
+
+<h2 id="自動圖片定義"><a href="#自動圖片定義" class="headerlink" title="自動圖片定義"></a>自動圖片定義</h2><div class="note info:warning">
+            <p>这个功能倒是真的没听说过,得研究一下.</p>
+          </div>
+
+<p>透過設定以下兩個變數：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">config.automatic_images = [<span class="string">&#x27;_&#x27;</span>, <span class="string">&#x27;/&#x27;</span>] <span class="comment"># 定義分隔符號</span></span><br><span class="line">config.automatic_images_strip = [<span class="string">&#x27;char&#x27;</span>, <span class="string">&#x27;bg&#x27;</span>] <span class="comment"># 刪掉不需要的前綴</span></span><br></pre></td></tr></table></figure>
+<p>Ren’Py 會掃描 game 資料夾下所有檔案，並將 png 與 jpg 圖檔找出來，然後把副檔名去掉。接著用 config.automatic_image 所設定的分隔符號，將（包含路徑的）檔名切開。</p>
+<p>比方說以下幾個檔案：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">item/ufo_black.png</span><br><span class="line">char/info_happy.png</span><br><span class="line">bg/library.png</span><br><span class="line">bg/library_night.jpg</span><br></pre></td></tr></table></figure>
+<p>依照前面 config.automatic_images 設定的值，圖片名稱將會被切割成：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">item ufo black    <span class="comment"># / 與 _ 成為分隔符號</span></span><br><span class="line">char info happy   <span class="comment"># / 與 _ 成為分隔符號</span></span><br><span class="line">bg library        <span class="comment"># 只有 / 成為分隔符號</span></span><br><span class="line">bg library night  <span class="comment"># / 與 _ 成為分隔符號</span></span><br></pre></td></tr></table></figure>
+<p>然後再用 config.automatic_images_strip 中設定的內容，將不必要的前綴裁掉。</p>
+<p>依照先前的設定為例，圖片名字將變成為：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">item ufo black  <span class="comment"># 沒有任何東西被裁掉</span></span><br><span class="line">info happy      <span class="comment"># char 被裁掉</span></span><br><span class="line">library         <span class="comment"># bg 被裁掉</span></span><br><span class="line">library night   <span class="comment"># bg 被裁掉</span></span><br></pre></td></tr></table></figure>
+<p>而其中，「只有圖片名字在兩截以上」的圖片，才會列入自動圖片定義的範圍。</p>
+<p>所以最後您會得到三個被定義好的圖片，分別為：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">item ufo black</span><br><span class="line">info happy</span><br><span class="line">library night</span><br></pre></td></tr></table></figure>
+<p>以上三張圖片的自動定義，等效於手打以下三行：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">image item ufo black = <span class="string">&quot;item/ufo_black.png&quot;</span></span><br><span class="line">image info happy = <span class="string">&quot;char/info_happy.png&quot;</span></span><br><span class="line">image library night = <span class="string">&quot;bg/library_night.jpg&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="滑鼠游標自定義"><a href="#滑鼠游標自定義" class="headerlink" title="滑鼠游標自定義"></a>滑鼠游標自定義</h2><p>黑白箭頭的游標實在太過無趣？想換滑鼠游標，怎麼辦？</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">cursor_default_frame1 = (<span class="string">&quot;檔名1&quot;</span>, hotspot_x, hotspot_y) <span class="comment"># 設定一個單獨的「禎」</span></span><br><span class="line">cursor_default_frame2 = (<span class="string">&quot;檔名2&quot;</span>, hotspot_x, hotspot_y) <span class="comment"># 設定另一禎，多禎交替播放能造成動畫效果。</span></span><br><span class="line"></span><br><span class="line">cursor_default = [cursor_default_frame1, cursor_default_frame2] <span class="comment"># 將多個禎放在列表中，會依序播放。</span></span><br><span class="line"></span><br><span class="line">config.mouse = &#123;<span class="string">&#x27;default&#x27;</span>: cursor_default&#125; <span class="comment"># 將設定好的游標（含動畫）定名為 &#x27;default&#x27;</span></span><br></pre></td></tr></table></figure>
+<p>每個單獨的游標－－如上面範例中的 cursor_default－－都是由一個 list（列表）構成的。而列表中的每一個元素，都代表了一「禎 (frame)」，游標會以每秒 20 禎的播放速度（也就是 20 Hz）在禎與禎之間進行切換，由此組成游標動畫。</p>
+<p>每一個單獨的「禎」，都是一個有三項元素的元組 (tuple)。</p>
+<p>元組中第一個元素代表著該禎所用的圖檔檔名，而後兩個元素則代表著這張圖片的 hotspot 的座標。</p>
+<p>config.mouse 是一個存放著遊戲中所有可用滑鼠游標的字典 (dict)，其「鍵」就是游標的名稱。預設名稱包括：”default”, “say”, “with”, “menu”, “prompt”, “imagemap”, “pause”, “mainmenu” 與 “gamemenu”……這些名字應該很容易顧名思義，故不特別介紹。</p>
+<p>如果您實在搞不懂，如同上面的示範，只設定 “default” 一項就準沒錯了。</p>
+<div class='spoiler collapsed'>
+    <div class='spoiler-title'>
+        “【hotspot 熱點】”
+    </div>
+    <div class='spoiler-content'>
+        <p>hotspot 是游標的一項重要屬性。</p>
+<p>您可以想像一下，一張游標圖片本身有寬度也有高度。假設您現在正在玩踩地雷遊戲，遊戲中的地雷格子很小又全部擠成一團，當您按下滑鼠左鍵，想要點一個格子時，究竟是哪個格子被點到呢？畢竟游標的圖片比較大，一次壓到了四五個格子啊！</p>
+<p>所謂的 hotspot 就是說明，圖片中究竟是哪個點（用座標表示）才會實際和電腦中的元件互動，至於其他部份，僅僅只是當作視覺上的裝飾品而已。<br>通常箭頭形游標會將熱點設在箭頭尖端，手指形游標會設在指尖，圓形或 I 形游標會設在圖片中間……總之熱點各有不同。</p>
+<p>無論如何，您可以透過開發者工具中的 Image Location Picker 來確認圖片上的座標，進而去設定熱點的位置。</p>
+
+    </div>
+</div>
+
+<br>
+<br>
+
+<h2 id="區段觀念"><a href="#區段觀念" class="headerlink" title="區段觀念"></a>區段觀念</h2><p><strong>初始區段 (init block):</strong></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">init:</span><br><span class="line">    <span class="comment"># 這個內部就是初始區段</span></span><br><span class="line">    image library = <span class="string">&quot;bg/library.png&quot;</span></span><br></pre></td></tr></table></figure>
+<p>此處複習一下：您在初始區段中進行的設定，會在遊戲被載入的瞬間－－也就是在連主選單都還沒出現之前－－就被立刻執行完畢。不管這個區塊是被放在遊戲的哪個檔案中，又或是被放在檔案的最尾端，那都不例外。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">init -<span class="number">1</span>:</span><br><span class="line">    <span class="comment"># 後執行的內容</span></span><br><span class="line">init -<span class="number">2</span>:</span><br><span class="line">    <span class="comment"># 先執行的內容</span></span><br></pre></td></tr></table></figure>
+<p>您可以在 init 後面加上數字，數字愈小的區段就會愈先被執行完畢；至於數字相同的初始區段，其執行順序是不分先後的，只能放入平行性質的工作。</p>
+<p>初始區段的執行順序如果沒有被顯式指定的話，那預設就是 0。</p>
+<p>init python: 這種區段，就僅僅只是把 Python 區段與 init 區段合併起來而已。</p>
+<br>
+<br>
+
+<h2 id="特殊字體調整"><a href="#特殊字體調整" class="headerlink" title="特殊字體調整"></a>特殊字體調整</h2><p>以下標籤同樣與字體呈現方式有關，也需要透過前後兩個標籤標明影響範圍才能使用；但除此之外，這些還有些別的參數需要指定。</p>
+<p>color：輸入 #f00 之類的色碼，控制文字顏色<br>size：指定字體大小。可以用 =+10 來增大減小，也可以設為絕對值<br>font：字型，輸入為檔名。<br><strong>k：字元間距。可以加大每個字之間的距離。</strong></p>
+<p>下兩個標籤可以增加空白量，而且使用時都不需要加上尾部標籤。</p>
+<p>space:在當前行中，加入指定數量的空白量，單位是像素。<br>vspace:會立刻分行，並在下一行的垂直方向中，加入指定像素的額外行高。<br>使用範例見此：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;用一般分行方式\n分出來的行高&#123;vspace=0&#125;與用 vspace = 0 分出來的行，高度一樣；&#123;vspace=20&#125;而透過 vspace = ? 可以增加額外的行高。&#123;vspace=-10&#125;vspace 設為負數並沒有作用。&quot;</span></span><br><span class="line"><span class="string">&quot;用在增加一段&#123;space=50&#125;額外空白上&quot;</span></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="ruby-text"><a href="#ruby-text" class="headerlink" title="ruby text"></a><a target="_blank" rel="noopener" href="https://www.renpy.org/doc/html/text.html#ruby-text">ruby text</a></h2><p>嘩哈！終於出現了！上次預告過的，充滿著愛與夢想，還害咱被貼上醫療廢棄物標誌塞進垃圾桶的東西。</p>
+<p>先貼張圖來：</p>
+<img src="/blog/2023/04/10/P282/P282_3.jpeg" class="">
+
+<p>要在文字中產生 ruby text 效果，您必須同時使用兩個標籤：rb 與 rt。頂部的小字是由 rt (ruby on top) 定義，rb 則用來註記底部的字。比方說，剛剛那個範例事實上是這樣寫的：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;在&#123;rb&#125;ＤＭＺ&#123;/rb&#125;&#123;rt&#125;非武裝區&#123;/rt&#125;的便利商店中，\n&#123;rb&#125;ＡＴＭ&#123;/rb&#125;&#123;rt&#125;自動櫃員機&#123;/rt&#125;與&#123;rb&#125;ＡＴＭ&#123;/rb&#125;&#123;rt&#125;反戰車飛彈&#123;/rt&#125;的差別可是很重要的。&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>rb、rt 標籤的使用規則如下：</p>
+<p>rb 標籤須寫在前面，rt 標籤則緊跟在後。<br>有時您也可以不寫 rb 標籤，僅僅只去寫 rt 標籤。不過這樣一來，rt 文字就只會出現在「前一個字符」的上面，而不是「前面整個詞」的上面。</p>
+<p>您現在可能很想馬上試試看 ruby text 效果，不過……<br>直接使用 ruby text，你會收到一個 “Ruby glyph out of bounds” 的錯誤。</p>
+<p>以上錯誤的意思是說，您要求顯示一個 ruby 文字，但您沒有給他足夠的顯示空間……是的，Ren’Py 並不會自動替 ruby text 勻空間出來。想要使用 ruby text，您得自己動手，做一些事前配置。</p>
+<p>自己動手豐衣足食，請看下面的設定方式：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 先設定您所打算使用的 ruby 文字的特徵，這包括……</span></span><br><span class="line">init -<span class="number">1</span> python:</span><br><span class="line">    style.ruby_style = Style(style.default) <span class="comment"># 這行表示用預設的 style 為模版，建立一個全新的 style，名字為 style.ruby_style</span></span><br><span class="line">    style.ruby_style.size = <span class="number">12</span>      <span class="comment"># 設定 ruby 的字體大小是多少</span></span><br><span class="line">    style.ruby_style.yoffset = -<span class="number">20</span>  <span class="comment"># 「文字的高度」要「往下」偏移多少。因為期望中 ruby text 要往上偏，所以應該設成負值的。</span></span><br></pre></td></tr></table></figure>
+<p>以上區塊可以貼在任何地方，不過作為設定的一部份，建議貼在 options.rpy 中比較適當。</p>
+<p>前面的手續完成，新的 ruby style 就算是建立好了，然而建立好歸建立好，這個全新的 style 目前卻沒有被套用到任何實際顯示項目中。您必須再去設定對話者，讓對話者去使用這個 ruby style：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 隨便找一個 init block，來設定敘事者（您也可以設定在 script.rpy 檔案最上方）。</span></span><br><span class="line">init:</span><br><span class="line">    define ruby = Character(what_ruby_style = style.ruby_style, what_line_leading = <span class="number">10</span>) <span class="comment"># 一個沒有名稱的敘事者（旁白）</span></span><br><span class="line">    define info = Character(<span class="string">&quot;音符&quot;</span>,  color = <span class="string">&quot;#fff3c4&quot;</span>) <span class="comment"># 一個沒有 ruby 能力的敘事者，寫在這裡只是和下方做對比</span></span><br><span class="line">    define info_ruby = Character(<span class="string">&quot;音符&quot;</span>,  color = <span class="string">&quot;#fff3c4&quot;</span>, what_ruby_style = style.ruby_style, what_line_leading = <span class="number">10</span>) <span class="comment"># 一個帶有名字的敘事者</span></span><br></pre></td></tr></table></figure>
+<p>和平常的敘事者設定相比，追加了兩個參數，包括：</p>
+<p>what_ruby_style<br>將您剛剛設定好的 ruby style 指定給它，讓它使用您指定的字體大小、高度渲染。<br>what_line_leading<br>這個參數將定義「文字行上方」會被留下多少空間。數字愈大，每行文字的行高也會愈高。</p>
+<p>對於擁有 ruby 文字支援能力的敘事者來說，就算您沒有真的在文字中插入 ruby 字，line_leading 也會空在那裡，不會消失。而又因為平常沒在使用 ruby text 時，上面空著一大截空間很難看，故建議各位平常寫腳本時別用 ruby 敘事者說話，只要在 ruby 字出現時小用一下就好，這樣應該是比較妥當的用法。</p>
+<p>以上全數完成後，您就可以愉快地使用 ruby text 了，不過即使如此，如果不小心照顧她，您依然難免會在使用過程中碰上 “Ruby glyph out of bounds” 的問題，這是因為您雖然運用 line_leading 騰出了縱向行高，但是對於 ruby text 來說，其實橫向的寬度也是有限制的－－您不能讓 rt 字超出底部字 (rb) 允許的橫向空間太多。</p>
+<p>換句話說，小字的字數會受到大字的寬度所限制。要是您打太多字、字太長，那就會愉快地爆格……</p>
+<p>……嗯？您居然不覺得愉快？真是的，所以說這就是您嫩的地方了啊。具體地說，對於蹂躪不能坦率地感到歡愉，是無法從事這種好比幫地獄挖地窖的，充滿著燦爛希望的好工作啊……您看，地窖的天花板正在您頭頂上閃閃發亮呢。這是多麼美麗的現實啊！</p>
+<blockquote>
+<p>作者您十年前的精神状态还好吗.</p>
+</blockquote>
+<p>之前沒有特別提及，除了小字字數太多以外，還有另外一種狀況也會導致 “Ruby glyph out of bounds”，就是敘事者的 line_leading 與 ruby style 中的 size 尺寸不匹配－－簡單地說，ruby 文字的字體太大而文字上方留空空間不夠大，也會讓 Ren’Py 抗議沒有空間可以顯示。還請注意。</p>
+<p>請注意ruby官網範例中，將新設定的 ruby_style 指定給 style.default－－這種作法會讓遊戲中的所有文字（包括按鈕上的文字，所有的！），全都能使用 ruby style 效果，但副作用就是讓所有文字的上方都多出不自然的空白空間……故並不推荐直接套用。</p>
+<br>
+<br>
+
+<h2 id="標準式命名空間建立法"><a href="#標準式命名空間建立法" class="headerlink" title="標準式命名空間建立法"></a>標準式命名空間建立法</h2><p>請看下方的例子，您可以像這樣建立並使用一個命名空間：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 在開始區段建立一個名叫 Lancelot 的命名空間</span></span><br><span class="line">init python <span class="keyword">in</span> Lancelot:</span><br><span class="line">    <span class="keyword">pass</span> <span class="comment"># 可以在此做一些初始化。但也可以不做任何初始化，簡單跳過。</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="comment"># 遊戲開始</span></span><br><span class="line">label start:</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 您可以直接使用這個命名空間內的變數，為各種變數設值</span></span><br><span class="line">    $ Lancelot.pilot = <span class="string">&quot;Suzaku&quot;</span></span><br><span class="line">    $ Lancelot.HP = <span class="number">100</span></span><br><span class="line">    $ Lancelot.SP = <span class="number">50</span></span><br><span class="line">    $ Lancelot.weapon = [<span class="string">&quot;VARIS&quot;</span>, <span class="string">&quot;MVS&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 像用普通變數那樣，直接去使用命名空間中的變數</span></span><br><span class="line">    <span class="string">&quot;我的名字是[Lancelot.pilot]！&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>「標準式命名空間」的優勢，是可以在某些特定的狀況下，手動「進入」命名空間！</p>
+<p>如下範例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">label start:</span><br><span class="line"></span><br><span class="line">    python <span class="keyword">in</span> Lancelot:   <span class="comment"># 進入名叫 Lancelot 的命名空間……</span></span><br><span class="line"></span><br><span class="line">        pilot = <span class="string">&quot;Suzaku&quot;</span>  <span class="comment"># 在命名空間中，不用多事替變數指定命名空間的名稱。</span></span><br><span class="line">        HP = HP + SP      <span class="comment"># 省了好多打字數！看起來也更清晰了。</span></span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;我的名字是[Lancelot.pilot]！&quot;</span></span><br></pre></td></tr></table></figure>    
+<p>在特定命名空間中，您不用囉唆地輸入全名－－這也是理所當然的！就好像您在班上大喊「座號 39 號是誰」時，別人絕不會認為您在問隔壁班或隔壁學校 39 號一樣。這在某些計算密集的場合中有其方便之處。</p>
+<p>如果對 in 的用法還是不明白，官方在 changelog 中有一些說明，還請參考看看 。</p>
+<p>用了命名空間之後，遊戲中就不會一堆沒頭沒腦不知道是誰的 HP 滿地滾了。當您要製作一些規模更大、資料量也更多的遊戲時，這會讓遊戲變得更強健更好管理。還能最大限度避免打錯字。命名空間大致都能自動幫您找出問題。</p>
+<p>物件式命名空間建立法<br>除了前述的「標準式命名空間」外，您還可以用另一種手法建立許多獨立的命名空間：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">$ Lancelot = store.<span class="built_in">object</span>()    <span class="comment"># 用 store.object() 建立物件式命名空間。</span></span><br><span class="line"><span class="comment"># 如果沒有這行就直接設值給 Lancelot.xxx，則會出現錯誤訊息。</span></span><br></pre></td></tr></table></figure>
+<p>此種命名空間的建立法，咱稱之為「物件式」，因為它是用 python 物件模擬出一個命名空間。在 Ren’Py 6.13 版之前（含），這也是唯一一種命名空間的啟用方式。早期版本使用者請注意這點。</p>
+<p>同標準式命名空間那般，您可以透過「命名空間名稱」與點號 (.) 來精確指出變數：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">label start:</span><br><span class="line">    <span class="comment"># 以下這些變數都能被正常使用，也能正確地被儲存系統收錄</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 用法沒啥不一樣，只是非得要輸入全名而已</span></span><br><span class="line">    python:</span><br><span class="line">        Lancelot.pilot = <span class="string">&quot;Suzaku&quot;</span></span><br><span class="line">        Lancelot.HP = <span class="number">100</span></span><br><span class="line">        Lancelot.SP = <span class="number">50</span></span><br><span class="line">        Lancelot.weapon = [<span class="string">&quot;VARIS&quot;</span>, <span class="string">&quot;MVS&quot;</span>]</span><br><span class="line"></span><br><span class="line">    <span class="string">&quot;我的名字是[Lancelot.pilot]！&quot;</span></span><br></pre></td></tr></table></figure>
+
+<p>但請特別注意！物件式命名空間不支援 python in XXX 語法！</p>
+<p>請看以下範例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">label start:</span><br><span class="line">   <span class="string">&quot;開始實驗囉，請保持好心情～&quot;</span></span><br><span class="line"></span><br><span class="line">   $ somebody = <span class="built_in">object</span>()       <span class="comment"># 指定 somebody 為一個物件型命名空間</span></span><br><span class="line">   $ somebody.emotion = <span class="string">&#x27;x_x&#x27;</span></span><br><span class="line">   python <span class="keyword">in</span> somebody:         <span class="comment"># 嘗試運用標準型命名空間專用的方式來修改它……</span></span><br><span class="line">       emotion = <span class="string">&#x27;^_^&#x27;</span>         <span class="comment"># Ren&#x27;Py 不會提示您做錯任何事情</span></span><br><span class="line"></span><br><span class="line">   <span class="string">&quot;您的心情是「[somebody.emotion]」&quot;</span> <span class="comment"># 警告－－此處的結果絕非您想要的！！</span></span><br></pre></td></tr></table></figure>    
+<p>結果為：</p>
+<p>您的心情是「x_x」<br>過程中您不會得到藍白錯誤畫面，只會在最後得到一個不仔細看很難發現的錯誤結果，因此絕對不要混用兩種方法！絕對！</p>
+<p>【store.object 的命名？】<br>如果您對「物件式命名空間」進行深入測試的話，可能會發現除了 store.object() 以外，object() 與 renpy.store.object() 也都代表了相同的意思。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">label start:</span><br><span class="line">    $ t1 = <span class="built_in">object</span>()</span><br><span class="line">    $ t2 = store.<span class="built_in">object</span>()</span><br><span class="line">    $ t3 = renpy.store.<span class="built_in">object</span>()</span><br></pre></td></tr></table></figure>
+<p>以上三個命名空間 t1、t2、t3 都可以正確工作無誤，而事實上他們的意思也的確都是相等的：變數 t1、t2、t3 都會成為一個 renpy.python.RevertableObject 類型的物件。</p>
+<p>也就是說 renpy.store.object() 是全名，而其他的名稱則都是別名。</p>
+<p>更有甚者您還能發現，被變數也可以依此種命名方式設定或取回使用。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">label start:</span><br><span class="line"></span><br><span class="line">    $ count = <span class="number">5</span></span><br><span class="line"></span><br><span class="line">    baka <span class="string">&quot;這是……蘿妲之果？居然一次拿到[store.count]顆！&quot;</span> <span class="comment"># 5 顆。</span></span><br><span class="line"></span><br><span class="line">    $ fruit = <span class="built_in">object</span>()</span><br><span class="line">    $ fruit.name = <span class="string">&quot;蘋果&quot;</span></span><br><span class="line"></span><br><span class="line">    friend <span class="string">&quot;只是普通的[renpy.store.fruit.name]而已吧！&quot;</span> <span class="comment"># 蘋果</span></span><br></pre></td></tr></table></figure>
+<p>有經驗的電腦玩家應該已經看出來了－－Ren’Py 的主程式其實本身就是跑在名叫 renpy.store 的命名空間中，而所有我們自訂的遊戲變數，預設也都是被存放在這個空間裡。</p>
+<br>
+<br>
+
+<p>透過自定義類別 (class) 來控制物件式命名空間<br>從上面的介紹看起來，自從 6.14 版以後，標準式命名空間顯然更適合用來收藏變數。</p>
+<p>不過之所以刻意介紹物件式命名空間，是因為這種命名空間的本質是物件－－換言之，您可以用自訂類別 (class) 的方式來引導命名空間做一些特別的事情。像是進行一些限制或自動化什麼的。</p>
+<p>以下是個限制變數名稱的範例：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line">init python:</span><br><span class="line">    <span class="comment"># 自行定義一個叫作 Someone 的類別，用來存放角色的內部資料。</span></span><br><span class="line"></span><br><span class="line">    <span class="comment"># 注意 class 一定要繼承自「store.object」，否則內部資料不會被儲存。</span></span><br><span class="line">    <span class="class"><span class="keyword">class</span> <span class="title">Someone</span>(<span class="params">store.<span class="built_in">object</span></span>):</span></span><br><span class="line"></span><br><span class="line">        <span class="comment"># 這個類別的特徵是「您只能設定某些變數名稱」，此處指示本類別只能設定 name、race、description 三種東西。</span></span><br><span class="line">        <span class="comment"># 如此一來可以有效避免打錯字。</span></span><br><span class="line">        <span class="comment"># 比方說失手把 name 打成 mame 時，一旦腳本執行到此處就會立刻報錯，而不會就默不作聲地執行過去。</span></span><br><span class="line"></span><br><span class="line">        acceptable_attribute = &#123;<span class="string">&#x27;name&#x27;</span>, <span class="string">&#x27;description&#x27;</span>, <span class="string">&#x27;race&#x27;</span>&#125;</span><br><span class="line"></span><br><span class="line">        <span class="function"><span class="keyword">def</span> <span class="title">__setattr__</span>(<span class="params">self, name, value</span>):</span></span><br><span class="line">            <span class="keyword">if</span> name <span class="keyword">not</span> <span class="keyword">in</span> <span class="built_in">type</span>(self).acceptable_attribute:</span><br><span class="line">                <span class="keyword">raise</span> Exception(<span class="string">&#x27;Not allow this variable&#x27;</span>)</span><br><span class="line">            <span class="built_in">super</span>(store.<span class="built_in">object</span>, self).__setattr__(name, value)</span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 實際使用看看</span></span><br><span class="line">label start:</span><br><span class="line"></span><br><span class="line">    $ baka = Someone()</span><br><span class="line"></span><br><span class="line">    <span class="comment"># 試著設定各種數值</span></span><br><span class="line">    $ baka.name        = <span class="string">&#x27;⑨&#x27;</span></span><br><span class="line">    $ baka.race        = <span class="string">&#x27;妖精&#x27;</span></span><br><span class="line">    $ baka.description = <span class="string">&#x27;⑨應該不需要解釋&#x27;</span></span><br><span class="line"></span><br><span class="line">    $ baka.excuse      = <span class="string">&#x27;那個⑨是怎樣！我才不……&#x27;</span>     <span class="comment"># 這行會提示錯誤，因為 &quot;excuse&quot; 並不包括在可設定的變數之中……Resistance is futile.</span></span><br></pre></td></tr></table></figure>
+
+<p>因為這種可以被用來自訂的特質，所以物件式命名空間在某種意義上其實更具彈性。當然，如果您用不到自訂 class 的功能，用標準型命名空間也是完全足夠的。</p>
+<p>【自訂 class 的注意事項】<br>如果您用一些自訂類別 (class) 的物件來存放變數，則這個變數「一定要繼承自 store.object」，否則內部變數的變化，並不會被 Ren’Py 的 state 系統處理，當然也就無法收錄進存檔中，因此完全不能用。</p>
+<p>繼承 store.object 是最重要的事情。絕對不可以忘！</p>
+<br>
+<br>
+
 <h2 id="Map-Navigation"><a href="#Map-Navigation" class="headerlink" title="Map Navigation"></a>Map Navigation</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=o699N1TdlZ8&ab_channel=ZeilLearnings">Map Navigation in RenPy | Vlog #4 Creating a Map Screen</a>.</p>
 <br>
 <br>
@@ -425,6 +589,45 @@
 <br>
 
 <h2 id="Screens"><a href="#Screens" class="headerlink" title="Screens"></a>Screens</h2><p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=R4Vvv_uapbk&t=0s&ab_channel=VisualNovelDesign">Ren’py Screens Tutorial</a></p>
+<p>Screen是「一群 UI 元件的在螢幕上的排列組合」。</p>
+<p>依據官方手冊的說明，Screen 可能因為以下四種原因被呼叫出來：</p>
+<p>隱式呼叫：比方說讓 Ren’Py 顯示對話時，會自然叫出一個名叫 “say” 的 Screen，專門負責顯示對話框與對話內容。<br>自動呼叫：比方說啟動遊戲時，會自動秀出名叫 “main_menu” 的 Screen，這就是遊戲的封面主選單。<br>被現存的 UI 元件呼叫：「呼叫 Screen」這件事，有可能被當作一個行動 (action) 繫結到某些使用者操作上：如按螢幕上某個按鈕、按鍵盤的某個熱鍵等。此時可能呼叫出 Screen 來。<br>舉例而言，在遊戲中按右鍵，預設會叫出遊戲選單 (game_menu) 。<br>顯式呼叫：使用 “show screen” 指令，就會像顯示圖片那樣將 screen 直接顯示在螢幕上。</p>
+<p>此處稍加提醒：Screen 總是會出現在其他圖片上。這是因為 Screen 使用的圖層和 show 圖用的圖層並不相同的緣故，設計 Screen 時還請注意這個特性。</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># ================= 定義圖片與轉場特效 ===================</span></span><br><span class="line"></span><br><span class="line">define blight = Fade(<span class="number">0.25</span>, <span class="number">0.5</span>, <span class="number">1.5</span>, color = <span class="string">&quot;#FFF&quot;</span>)    <span class="comment"># 爆炸轉場特效，與 screen 無關</span></span><br><span class="line">image bg = <span class="string">&quot;bg.jpg&quot;</span>                                     <span class="comment"># 背景素材，與 screen 無關</span></span><br><span class="line"></span><br><span class="line"><span class="comment"># ================= screens.rpy ======================</span></span><br><span class="line"><span class="comment"># 以下是關於 screen 的定義</span></span><br><span class="line"></span><br><span class="line">screen timer:                 <span class="comment"># screen 定義在此，僅僅就只有四行而已。看起來有點複雜？等會兒再細講！</span></span><br><span class="line">    default time = <span class="number">30</span></span><br><span class="line">    timer time action [Hide(<span class="string">&quot;timer&quot;</span>), Jump(<span class="string">&quot;gameover&quot;</span>)]</span><br><span class="line">    add DynamicDisplayable(countdown, sec = time) align (<span class="number">0.5</span>, <span class="number">0.3</span>)  <span class="comment"># DynamicDisplayable 在此</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line">init python:                  <span class="comment"># countdown 是 DynamicDisplayable 所使用的函式，第六章有提到這是怎麼定義的，以及幹什麼用。不重複。</span></span><br><span class="line">    <span class="function"><span class="keyword">def</span> <span class="title">countdown</span>(<span class="params">show_time, same_tag_show_time, sec</span>):</span></span><br><span class="line">        remain_sec = sec - show_time</span><br><span class="line">        remain_text = Text(<span class="string">&#x27;剩下 &#123;:.1f&#125; 秒&#x27;</span>.<span class="built_in">format</span>(remain_sec), size = <span class="number">40</span>)</span><br><span class="line">        <span class="keyword">return</span> (remain_text, <span class="number">0.1</span>)</span><br><span class="line"></span><br><span class="line"><span class="comment"># ================= script.rpy =======================</span></span><br><span class="line"><span class="comment"># 以下是使用示範</span></span><br><span class="line"></span><br><span class="line">label start:</span><br><span class="line">    scene bg</span><br><span class="line">    <span class="string">&quot;我迅速打開箱子的最底層，扳過計時器&quot;</span></span><br><span class="line"></span><br><span class="line">    show screen timer(time = <span class="number">10</span>)                        <span class="comment"># 顯示出計時器 screen: &quot;timer&quot;</span></span><br><span class="line">    <span class="string">&quot;炸彈爆炸只剩十秒！該死……要剪紅線還是黃線？&quot;</span></span><br><span class="line"></span><br><span class="line">    menu:</span><br><span class="line">        <span class="string">&quot;「看清楚就下手！但是時間……」&quot;</span></span><br><span class="line"></span><br><span class="line">        <span class="string">&quot;紅線！&quot;</span>:</span><br><span class="line">            hide screen timer                           <span class="comment"># 收掉計時器 screen: &quot;timer&quot;</span></span><br><span class="line">            jump gameover</span><br><span class="line">        <span class="string">&quot;黃線！&quot;</span>:</span><br><span class="line">            hide screen timer</span><br><span class="line">            jump gameover</span><br><span class="line">        <span class="string">&quot;藍……疑！？&quot;</span>:</span><br><span class="line">            <span class="string">&quot;你猶豫了短短一息，將鐵剪放到藍線之間，深呼吸……&quot;</span></span><br><span class="line"></span><br><span class="line">    hide screen timer</span><br><span class="line">    <span class="keyword">with</span> dissolve</span><br><span class="line">    <span class="string">&quot;喀擦&quot;</span></span><br><span class="line">    <span class="string">&quot;……冷汗流滿了全身，計時器終於停住了。&quot;</span></span><br><span class="line">    <span class="keyword">return</span></span><br><span class="line"></span><br><span class="line">label gameover:</span><br><span class="line">    <span class="keyword">with</span> blight</span><br><span class="line">    <span class="string">&quot;轟隆的巨響迴盪在城市中間。少女感覺到了什麼，偶然將視線望向遠方。&quot;</span></span><br><span class="line">    <span class="string">&quot;（全篇完）&quot;</span></span><br><span class="line">    <span class="keyword">return</span></span><br></pre></td></tr></table></figure>
+
+<p>看過上面的範例，相信各位已經注意到了，召喚 Screen 的方法就是：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">show screen 名稱</span><br><span class="line">hide screen 名稱</span><br></pre></td></tr></table></figure>
+
+<p>show screen 不能像 show 那樣，在後方加上 at、with 語句。<br>但 with 語句可以作為獨立的語句而單獨存在，效果依然能套用上去。正如例子中的展示。</p>
+<h3 id="阻塞與非阻塞"><a href="#阻塞與非阻塞" class="headerlink" title="阻塞與非阻塞"></a>阻塞與非阻塞</h3><p>用 show screen 呼喚出來的 Screen，是不會「阻塞」遊戲正常進行的。</p>
+<p>這個意思是說，screen 只是顯示在螢幕上面，您繼續點滑鼠，故事還是能往下推進，screen 的存在並不會攔截正常遊戲腳本流程。</p>
+<p>如果您就是需要一個阻塞效果，讓 screen 攔在玩家面前說：「等等！你得先把我搞定才能繼續去做別的，否則此路不通。」則您必須用 call screen 語句來取代 show screen 語句。如下：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">call screen 名稱</span><br></pre></td></tr></table></figure>
+<p>您大可修改前述的爆炸範例來試試效果。</p>
+<p>注意，您只能透過在 screen 中加入兩種 action：”Jump” 和 “Return” 來讓玩家能脫離阻塞狀態。比方說：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">screen some_screen:</span><br><span class="line">    textbuttom <span class="string">&quot;脫離阻塞&quot;</span> action Return() at truecenter</span><br><span class="line"></span><br><span class="line">label start:</span><br><span class="line">    call screen some_screen</span><br></pre></td></tr></table></figure>
+<pre><code>&quot;您必須脫離阻塞才能看到這一行。換句話說，您剛剛按過那個按鈕，執行過 action Return 了。&quot;
+</code></pre>
+<p>當這兩種 action 的其中之一被運行時，故事才能繼續進行下去。</p>
+<br>
+<br>
+
+<p>咱們來看看爆炸範例中的 screen 到底是啥意思：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">screen timer:</span><br><span class="line">    default time = <span class="number">30</span></span><br><span class="line">    timer time action [Hide(<span class="string">&quot;timer&quot;</span>), Jump(<span class="string">&quot;gameover&quot;</span>)]</span><br><span class="line">    add DynamicDisplayable(countdown, sec = time) align (<span class="number">0.5</span>, <span class="number">0.3</span>)</span><br></pre></td></tr></table></figure>    
+<p>上述爆炸範例中的 Screen，就只是一個計時器，功能只有兩項，非常單純。</p>
+<p>首先，它會在被呼喚（show screen 或 call screen）時開始倒數計時，並在倒數歸零時，將敘事線跳轉到 label “gameover” 的地方。其次，它還會在螢幕中央顯示一個大大的倒數計時數字，來提醒玩家還剩多少時間可用。</p>
+<br>
+<br>
+
+<h3 id="Screen-的參數與設值"><a href="#Screen-的參數與設值" class="headerlink" title="Screen 的參數與設值"></a>Screen 的參數與設值</h3><p>第二行的 default time = 30 表示：time 這個參數預設值為 30。如果在 show screen 時忘了指定要倒數多久，則倒數的時限就會自動被設定為三十秒。建議您觀察一下上面四行中有哪些地方用到了 time 參數，來體會參數的用法。</p>
+<p>咱們對照一下顯示 screen 時的指令是什麼：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show screen timer(time = <span class="number">10</span>)</span><br></pre></td></tr></table></figure>    
+<p>括號中，變數 time 會被指定為 10……由於我並沒有偷懶或忘記給值，因此 time 在本例中事實上是被設為 10 的。</p>
+<p>但如果我這樣寫……</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show screen timer</span><br></pre></td></tr></table></figure>    
+<p>這樣腳本也不會出錯，不過 time 沒有給定，就會從 30 秒處開始倒數。</p>
+<p>您還可以在此設定別的變數，不過如果 screen 內部沒有用到這個變數，那就只是浪費時間而已：</p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">show screen timer(emotion = <span class="string">&#x27;XD&#x27;</span>) <span class="comment"># 不會出錯，但也沒意義，因為 screen 內部沒有用到 &quot;emotion&quot; 這個參數</span></span><br></pre></td></tr></table></figure>
 <br>
 <br>
 
@@ -480,6 +683,10 @@
 <h1 id="Reference"><a href="#Reference" class="headerlink" title="Reference"></a>Reference</h1><p>知乎:被诅咒的章鱼,<a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/53084385">Ren’Py引擎从入门到放弃</a>系列.</p>
 <blockquote>
 <p>很实用,很实用,推荐全看完.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://ossf.denny.one/foss-programs/8811.html">雪凡與好朋友們的 Ren’Py 遊戲引擎初學心得提示</a>系列.</p>
+<blockquote>
+<p>很实用,很实用,恩师啊.<br>不过这个是12年的写的!!跟现在的renpy版本差很多,需要注意.<br>我是写过一点再回去看看人思路,帮助很大.</p>
 </blockquote>
 <p><a target="_blank" rel="noopener" href="https://home.gamer.com.tw/creationDetail.php?sn=3755749">renpy小心得</a></p>
 <blockquote>
@@ -669,7 +876,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increase-space-between-lines-of-text"><span class="nav-number">1.8.</span> <span class="nav-text">increase space between lines of text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C-%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">1.9.</span> <span class="nav-text">打字机效果(每个字符出现)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.10.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.11.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screens"><span class="nav-number">1.12.</span> <span class="nav-text">Screens</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.13.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.14.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E8%AE%A1%E6%95%B0"><span class="nav-number">1.15.</span> <span class="nav-text">存档计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.16.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.17.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.18.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookbook"><span class="nav-number">2.1.</span> <span class="nav-text">Cookbook</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E7%AC%94%E8%AE%B0"><span class="nav-number">1.</span> <span class="nav-text">笔记</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9B%B4%E6%94%B9%E5%AF%B9%E8%AF%9D%E6%A1%86"><span class="nav-number">1.1.</span> <span class="nav-text">更改对话框</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%96%87%E5%AD%97%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.2.</span> <span class="nav-text">文字描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%80%E5%B1%8F%E9%A1%B5%E9%9D%A2-splashscreen"><span class="nav-number">1.3.</span> <span class="nav-text">开屏页面(splashscreen)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B0%81%E9%9D%A2-menu"><span class="nav-number">1.4.</span> <span class="nav-text">封面(menu)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Image-buttom"><span class="nav-number">1.5.</span> <span class="nav-text">Image buttom</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9B%BE%E5%83%8F-image"><span class="nav-number">1.6.</span> <span class="nav-text">图像(image)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#rollback"><span class="nav-number">1.7.</span> <span class="nav-text">rollback</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#increase-space-between-lines-of-text"><span class="nav-number">1.8.</span> <span class="nav-text">increase space between lines of text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%89%93%E5%AD%97%E6%9C%BA%E6%95%88%E6%9E%9C-%E6%AF%8F%E4%B8%AA%E5%AD%97%E7%AC%A6%E5%87%BA%E7%8E%B0"><span class="nav-number">1.9.</span> <span class="nav-text">打字机效果(每个字符出现)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E9%80%9F%E5%BA%A6%E8%88%87%E7%AD%89%E5%BE%85"><span class="nav-number">1.10.</span> <span class="nav-text">速度與等待</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%95%B4%E4%BD%93%E8%AE%BE%E7%BD%AE%E7%9A%84%E8%81%B2%E9%9F%B3%E8%AA%BF%E6%8E%A7"><span class="nav-number">1.11.</span> <span class="nav-text">整体设置的聲音調控</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8A%A0%E5%AF%86%E8%88%87%E7%95%A5%E5%8E%BB"><span class="nav-number">1.12.</span> <span class="nav-text">加密與略去</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%87%AA%E5%8B%95%E5%9C%96%E7%89%87%E5%AE%9A%E7%BE%A9"><span class="nav-number">1.13.</span> <span class="nav-text">自動圖片定義</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%BB%91%E9%BC%A0%E6%B8%B8%E6%A8%99%E8%87%AA%E5%AE%9A%E7%BE%A9"><span class="nav-number">1.14.</span> <span class="nav-text">滑鼠游標自定義</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%80%E6%AE%B5%E8%A7%80%E5%BF%B5"><span class="nav-number">1.15.</span> <span class="nav-text">區段觀念</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%89%B9%E6%AE%8A%E5%AD%97%E9%AB%94%E8%AA%BF%E6%95%B4"><span class="nav-number">1.16.</span> <span class="nav-text">特殊字體調整</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ruby-text"><span class="nav-number">1.17.</span> <span class="nav-text">ruby text</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%99%E6%BA%96%E5%BC%8F%E5%91%BD%E5%90%8D%E7%A9%BA%E9%96%93%E5%BB%BA%E7%AB%8B%E6%B3%95"><span class="nav-number">1.18.</span> <span class="nav-text">標準式命名空間建立法</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Map-Navigation"><span class="nav-number">1.19.</span> <span class="nav-text">Map Navigation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E5%86%85%E5%AD%97%E4%BD%93%E6%8F%8F%E8%BE%B9"><span class="nav-number">1.20.</span> <span class="nav-text">行内字体描边</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Screens"><span class="nav-number">1.21.</span> <span class="nav-text">Screens</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#%E9%98%BB%E5%A1%9E%E8%88%87%E9%9D%9E%E9%98%BB%E5%A1%9E"><span class="nav-number">1.21.1.</span> <span class="nav-text">阻塞與非阻塞</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Screen-%E7%9A%84%E5%8F%83%E6%95%B8%E8%88%87%E8%A8%AD%E5%80%BC"><span class="nav-number">1.21.2.</span> <span class="nav-text">Screen 的參數與設值</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%AD%89%E5%BE%85%E4%B8%80%E5%AE%9A%E6%97%B6%E9%97%B4%E5%90%8E%E8%A7%A6%E5%8F%91%E7%89%B9%E6%AE%8A%E5%89%A7%E6%83%85"><span class="nav-number">1.22.</span> <span class="nav-text">等待一定时间后触发特殊剧情</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E9%92%A9%E5%AD%90"><span class="nav-number">1.23.</span> <span class="nav-text">存档钩子</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%AD%98%E6%A1%A3%E8%AE%A1%E6%95%B0"><span class="nav-number">1.24.</span> <span class="nav-text">存档计数</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%EF%BC%88%E6%95%B0%E6%8D%AE%E5%88%A0%E9%99%A4%EF%BC%89%E6%95%88%E6%9E%9C"><span class="nav-number">1.25.</span> <span class="nav-text">（数据删除）效果</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%9C%A8%E7%AB%8B%E7%BB%98%E4%B8%8A%E7%94%A8%E6%B0%94%E6%B3%A1%E6%A0%87%E8%AF%86%E5%BD%93%E5%89%8D%E8%AF%B4%E8%AF%9D%E4%BA%BA"><span class="nav-number">1.26.</span> <span class="nav-text">在立绘上用气泡标识当前说话人</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Omake%E6%88%BF%E9%97%B4%E4%B9%8B%E7%B1%BB%E7%9A%84"><span class="nav-number">1.27.</span> <span class="nav-text">Omake房间之类的</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Reference"><span class="nav-number">2.</span> <span class="nav-text">Reference</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Cookbook"><span class="nav-number">2.1.</span> <span class="nav-text">Cookbook</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -685,7 +892,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">317</span>
+          <span class="site-state-item-count">320</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -698,7 +905,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">68</span>
+        <span class="site-state-item-count">70</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -745,7 +952,7 @@
 <div class="copyright">
   
   &copy; 2015 – 
-  <span itemprop="copyrightYear">2023</span>
+  <span itemprop="copyrightYear">2024</span>
   <span class="with-love">
     <i class="fa fa-heart"></i>
   </span>
@@ -766,7 +973,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">22:41</span>
+    <span title="T">23:08</span>
 
   -->
 

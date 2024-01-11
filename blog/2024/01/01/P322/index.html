@@ -1,0 +1,772 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="抄来的game design document template.想写这个的时候相当急,不记得从哪里抄来的了.机核也有一篇讲这个的文章.自己做的时候还行,与人沟通发现经常会出现跨服聊天.人类的语言真的好有限啊.">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Game Design Document">
+<meta property="og:url" content="https://mazui3.github.io/blog/2024/01/01/P322/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="抄来的game design document template.想写这个的时候相当急,不记得从哪里抄来的了.机核也有一篇讲这个的文章.自己做的时候还行,与人沟通发现经常会出现跨服聊天.人类的语言真的好有限啊.">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2024-01-01T16:53:18.000Z">
+<meta property="article:modified_time" content="2024-01-11T00:01:47.908Z">
+<meta property="article:author" content="Mazui">
+<meta name="twitter:card" content="summary">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2024/01/01/P322/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Game Design Document | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2024/01/01/P322/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Game Design Document
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-01-01 11:53:18" itemprop="dateCreated datePublished" datetime="2024-01-01T11:53:18-05:00">2024-01-01</time>
+            </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-01-10 19:01:47" itemprop="dateModified" datetime="2024-01-10T19:01:47-05:00">2024-01-10</time>
+              </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/GameDev%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">GameDev笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2024/01/01/P322/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/01/01/P322/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>11k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>10 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>抄来的game design document template.<br><del>想写这个的时候相当急,不记得从哪里抄来的了.</del><br><a target="_blank" rel="noopener" href="https://www.gcores.com/articles/165868">机核也有一篇讲这个的文章</a>.<br>自己做的时候还行,与人沟通发现经常会出现跨服聊天.<br>人类的语言真的好有限啊.</p>
+<span id="more"></span>
+
+<p>Project Description</p>
+<blockquote>
+<p>A summary of what this game is about, without going into too much detail about game mechanics or anything else.</p>
+</blockquote>
+<div class="note ">
+            <p>For example:<br>This game design document describes the details for a multi-platform touch based 2D puzzle game with novel mechanics and an original story and characters.<br>The name is to be defined but candidates are…</p>
+          </div>
+
+<p> Version History</p>
+<table>
+<thead>
+<tr>
+<th align="left">Version #</th>
+<th align="left">Implemented  By</th>
+<th align="left">Revision  Date</th>
+<th align="left">Approved  By</th>
+<th align="left">Approval  Date</th>
+<th align="left">Reason</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">1.01</td>
+<td align="left">Donna</td>
+<td align="left">1970Jan01</td>
+<td align="left">Donna</td>
+<td align="left">1970Jan01</td>
+<td align="left">First version</td>
+</tr>
+</tbody></table>
+<p> </p>
+<ol>
+<li>   Characters</li>
+<li>   Story</li>
+<li><ol>
+<li>   Theme</li>
+</ol>
+</li>
+<li>   Story Progression</li>
+<li>   Gameplay</li>
+<li><ol>
+<li>   Goal</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>   User Skills</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>   Game Mechanics</li>
+</ol>
+</li>
+<li><ol start="4">
+<li>   Items &amp; powerups</li>
+</ol>
+</li>
+<li><ol start="5">
+<li>   Progression &amp; Challenge</li>
+</ol>
+</li>
+<li><ol start="6">
+<li>   Losing</li>
+</ol>
+</li>
+<li>   Art style</li>
+<li>   Music &amp; Sounds</li>
+<li>   Technical description</li>
+<li>   Marketing &amp; Funding</li>
+<li><ol>
+<li>   Demographics</li>
+</ol>
+</li>
+<li><ol start="2">
+<li>   Platforms &amp; Monetization</li>
+</ol>
+</li>
+<li><ol start="3">
+<li>   Localization</li>
+</ol>
+</li>
+<li>   Other ideas</li>
+</ol>
+<p>This is just the index. You can put everything that comes to mind, we already added the sections that found most useful and come up in almost every game we designed
+ </p>
+<h1 id="Characters"><a href="#Characters" class="headerlink" title="Characters"></a>Characters</h1><p>The reason we start with characters is because you need to introduce them before the Story. If your game doesn’t have Characters and/or Story, you can just jump to the Gameplay section and remove Sections 1 to 3 (or leave them empty).</p>
+<p>An example of character descriptions:</p>
+<p>“Gnumies are the main characters in this game. These creatures are happy and wealthy, but not greedy. They are wealthy because their ancestry is related to money, or Numismatic, thus their name: Gnumies. They’re hairy and come in a variety of colors.<br>Red Gnumies are passionate and break stuff. Yellow Gnumies are electric and jump up and down. Green Gnumies are tranquil, relaxed and easy going. Blue Gnumies are a little sad and grumpy.<br>Gnumies also have a lot of arms, anywhere from 1 up to 4, and their arms have hands. They have a firm handshake and can combine when holding hands. Gnumies like rough play and leave everything messy…”<br>You can also add some character artwork here.
+ </p>
+<h1 id="Story"><a href="#Story" class="headerlink" title="Story"></a>Story</h1><p>“An important part of the art of storytelling is to create characters that the guests can empathize with easily, for the more the guests can empathize with the characters, the more interesting the events become that happen to those characters.” – Jesse Schell, Book of Lenses<br>Having introduced the characters, it’s a good time to talk about the events that will happen throughout the game.</p>
+<p>For example:</p>
+<blockquote>
+<p>Gnumies are happily playing inside their castle and causing mischief. The Butler is going insane, but everybody is enjoying. Joker makes jokes.<br>German is home watching TV and his mother bothers him. So he goes out to spy on the Gnumies. Outside is raining and German is looking envious through the window.<br>A strange mysterious person gives him a key that he can use to enter through a backdoor. He goes in with his army, kidnaps and jails female and baby Gnumies, and kicks everybody else out of the island…</p>
+</blockquote>
+<h2 id="Theme"><a href="#Theme" class="headerlink" title="Theme"></a>Theme</h2><p>“Resonant themes elevate your work from craft to art. An artist is someone who takes you where you could never go alone, and theme is the vehicle for getting there.”</p>
+<p>This is important for when other people read your design. Overall, the theme speaks about what kind of story you want to tell: is it comedy, is it serious or is it just fantasyyy… </p>
+<p>For example:</p>
+<blockquote>
+<p>This is a game about sadness and hardships. There are action and happy moments but between each chapter story must progress in a way that clearly state that the Gnumies are sad because they lost their home. It must also have a sense of humor and be funny looking.<br>You can skip this section if you think it’s irrelevant for your game.
+ </p>
+</blockquote>
+<h1 id="Story-Progression"><a href="#Story-Progression" class="headerlink" title="Story Progression"></a>Story Progression</h1><p>So, you have a Story, but how will the game take your players through that story.<br>“The world of your game is a thing that exists apart. Your game is a doorway to this magic place that exists only in the imagination of your players” – Jesse Schell, Book of Lenses</p>
+<p>For example:</p>
+<blockquote>
+<p>The game starts with a short intro scene where the Gnumies are getting kicked out of their homes. Then they land in an island and the first chapter begins.<br>The first chapter is the Tutorial. This can be skipped. Here the levels are few and the Butler introduces the user to the mechanics.<br>Once the player beats the tutorial he can advance into the First World Forest World.<br>When the player beats the Forest World, he gets the First Key and then can choose to open the Volcano World or Icy Mountain World. Once he defeats one of these worlds….</p>
+</blockquote>
+<p>It’s very important to develop the world like a place were not only this story, but multiple stories could be happening at the same time. This opens the door for sequels and merchandize.</p>
+<p> </p>
+<h1 id="Gameplay"><a href="#Gameplay" class="headerlink" title="Gameplay"></a>Gameplay</h1><p>“The game begins with an idea.” - Jesse Schell, Book of Lenses<br>This is (probably in 99% of games) the most important section of the GDD. It’s where you describe what your Gameplay (yes, with capital G), will be like.<br>Since this section can become humongous, we went ahead and divided it in sub-sections that made sense to us. Of course, this is a very subjective topic and what works for us may not work for you.</p>
+<h2 id="Goals"><a href="#Goals" class="headerlink" title="Goals"></a>Goals</h2><p>In short, why is the player playing your game? It’s good to add this to a separate section so you don’t have to guess while reading through the whole GDD.</p>
+<p>For example:</p>
+<blockquote>
+<p>Overall (long term): Help Gnumies return home<br>Gameplay (short term): Defeat the enemies, advance to the next level…</p>
+</blockquote>
+<h2 id="User-Skills"><a href="#User-Skills" class="headerlink" title="User Skills"></a>User Skills</h2><p>This is not the most intuitive section, but it really helps to narrow down your scope if you think about what are the skills your player needs to master in order to play your game.<br>Believe us, writing this list will help you find problems in your Game Design, for example, you may be trying to develop a game for kids but realize you require them to do something that is too advanced for their age, or some inputs may be good for Mobile but not for a Console with a Joystick.<br>Also, if your game is going to have Custom HW built around it, then this list will allow you to figure out what components you’ll need to make it work.</p>
+<div class="note ">
+            <p>For example:</p><ol><li>   Drag and drop</li><li>   Tap on the screen</li><li>   Memory</li><li>   Puzzle solving</li><li>   Rearranging pieces</li><li>   Manage resources</li><li>   Strategy</li></ol>
+          </div>
+
+<h2 id="Game-Mechanics"><a href="#Game-Mechanics" class="headerlink" title="Game Mechanics"></a>Game Mechanics</h2><p>This is where you describe your proper game mechanics. Spare no words, when you circulate this GDD around your team, there has to be the least reasonable amount of doubt about what the gameplay should be like.<br>This is a very good section to add some Artwork or Screenshots of your prototype (we prefer to prototype the mechanics and figure out if they are fun before committing resources to a game).</p>
+<p>There are complete books and sites with materials about how to describe game mechanics, so we’ll not elaborate with examples here.</p>
+<h2 id="Items-and-power-ups"><a href="#Items-and-power-ups" class="headerlink" title="Items and power-ups"></a>Items and power-ups</h2><p>We use this section to elaborate on the Game Mechanics. In order to avoid having a single section with everything in our brains poured into it, we use the section above to describe the core mechanics, and this section to talk about things that can be added to the game in order to improve the fun and empower the player.<br>So, if your game is a match-3 game, then in the previous section you’d go and describe exactly how a match-3 game would work (and adding your variations to the formulae).<br>In this section you’d add every power up and item the player can use/encounter/buy and how they would affect the core gameplay.</p>
+<p>For example:</p>
+<blockquote>
+<p>When finishing a world, you could get a power up related to that world.<br>For example, finishing the volcano world, can give you an item that makes red Gnumies more powerful. It could be a scarf, or something they can wear, and those items could be seen in-game later. You can level up items using in-game currency, or use real money to acquire in-game currency packs….</p>
+</blockquote>
+<h2 id="Progression-and-challenge"><a href="#Progression-and-challenge" class="headerlink" title="Progression and challenge"></a>Progression and challenge</h2><p>This is also a very subjective section that may or may not work in your design.<br>Our idea behind this section is to elaborate on how the difficulty will increase throughout the game, and making sure we give the player the tools to catch up with it.</p>
+<p>For example:</p>
+<blockquote>
+<p>Difficulty will advance by making the enemies harder. To mitigate difficulty, the user will have to play better, level up Gnumies and use items (also level up the items).<br>Also, here we can talk about the way players will unlock new levels or missions.</p>
+</blockquote>
+<p>For example:</p>
+<blockquote>
+<p>Each boss drops a key with a jewel of that world’s color.<br>Worlds can be tackled in any order.<br>When the user beats every world and has every key, then he can go and work his way through the last world.<br>The order in which a user tackles each world can be chosen by him.<br>The boss at the end of a world drops a key that can be used to open a different world.<br>Once the item is used, it is lost forever. That way, the user must complete the world he selected before opening the next.<br>At that point the difficulty for that world is set</p>
+</blockquote>
+<h2 id="Losing"><a href="#Losing" class="headerlink" title="Losing"></a>Losing</h2><p>Yes, losing! What are the losing conditions? Time, health, all of them? This is the section where you describe how the player gets to see your Game Over screen.</p>
+<p>For example:</p>
+<blockquote>
+<p>These are the losing conditions: losing by running out of time, losing by running out of moves, losing when there are no available combinations.<br>When the player loses, there must be an image showing the Gnumies wounded/scratched. Maybe they can lose some hair and you can see the skin under the hair.
+ </p>
+</blockquote>
+<h1 id="Art-style"><a href="#Art-style" class="headerlink" title="Art style"></a>Art style</h1><p>This section is self-explanatory, here’s where you describe your ideas about what the game should look like.<br>Since a picture is worth a thousand words, this is a great place to add some concept art.</p>
+<p>For example:</p>
+<blockquote>
+<p>This is a 2D isometric game, with high quality 2D sprites. The character design should resemble that of Studio Ghibli.</p>
+</blockquote>
+<p>Everything should be very colorful and feel alive, with highly animated scenarios and layered backgrounds….</p>
+<p> </p>
+<h1 id="Music-and-Sounds"><a href="#Music-and-Sounds" class="headerlink" title="Music and Sounds"></a>Music and Sounds</h1><p>“Music is the language of the soul, and as such, it speaks to players on a deep level.” – Jesse Schell, Book of Lenses</p>
+<p>Here is where you describe your Music and Sound FX. Depending on how important this is in your game, then you can split the section in different sub-sections.</p>
+<p>For example:</p>
+<blockquote>
+<p>The music should have a Retro style, appealing to 8 bit nostalgia but high quality.<br>It’s important that a lot of sound effects praise the user when he does something good. There should be immediate and positive feedback.<br>When time is running low, add a sound that makes the user nervous.<br>The sad scenes should be accompanied by Accordion/Violin music and sound like a sorrowful Tango.<br>For In-Game music, use a more relaxed approach with happy tunes and going up on tempo as the level progresses. When in caves the music should sound muffled.</p>
+</blockquote>
+<p> </p>
+<h1 id="Technical-description"><a href="#Technical-description" class="headerlink" title="Technical description"></a>Technical description</h1><p>Here’s where you describe the platforms you’d be launching for and tools you’ll be using or are considering to use throughout your development. This should not be a detailed technical description, for that you have the Technical Design Document (TDD). Here we are just scratching the Surface.</p>
+<div class="note ">
+            <p>Example:</p><p>Initially, the game will be Mobile Cross-platform:</p><p>•    iOS<br>•    Android<br>•    Windows Phone</p><p>Follow with PC standalone version and Facebook Canvas.</p><p>Could add Mac and/or console support (through e-stores) in a future.</p><p>Consider the following engines: Marmalade, Unity 3D, Unreal Engine 4.</p><p>For project management use JIRA. Use Perforce for storing code and assets.</p><p>TBD properly in Technical Design Document.</p>
+          </div>
+<p> </p>
+<h1 id="Marketing-amp-Funding"><a href="#Marketing-amp-Funding" class="headerlink" title="Marketing &amp; Funding"></a>Marketing &amp; Funding</h1><p>A completely optional section, but write your ideas now so you don’t forget them later.<br>It’s important to think about how you are going to market your game even before starting your development.<br>It’s also important to know where the money to make the game is coming from.<br>“A plan is a real thing.” – Jesse Schell, Book of Lenses</p>
+<p>For example:</p>
+<blockquote>
+<p>Prototype the first level, and launch a Kickstarter campaign where we show that level.<br>Try to land a publishing deal.<br>Is there any Government funding we can apply to?<br>Create a press kit and send to gaming news websites.<br>Start a YouTube Channel and post development diary videos.<br>Etc.…</p>
+</blockquote>
+<h2 id="Demographics"><a href="#Demographics" class="headerlink" title="Demographics"></a>Demographics</h2><p>It’s important to know who you’ll be targeting, this should spill into the game design.<br>If you are targeting 15 to 25 year old males, then your main character probably shouldn’t be a pink pony (no that there’s anything wrong with it).</p>
+<div class="note ">
+            <p>Example:</p><p>Age: 12 to 50<br>Sex: Everyone<br>Casual players mostly</p>
+          </div>
+
+<h2 id="Platforms-amp-Monetization"><a href="#Platforms-amp-Monetization" class="headerlink" title="Platforms &amp; Monetization"></a>Platforms &amp; Monetization</h2><p>You can detail a little bit more how you are going to approach release on each platform.</p>
+<div class="note ">
+            <p>For example:</p><p>Initially: Free android app with in-game ads, and paid version without ads.</p><p>Free iOS with ads. Paid iOS version without ads.</p><p>In game purchases.</p><p>Consider: Windows 8, Windows Phone 8, XBOX live and Nintendo e-shop.</p>
+          </div>
+
+<h2 id="Localization"><a href="#Localization" class="headerlink" title="Localization"></a>Localization</h2><p>Your supported languages. Just add whatever you have in mind, this is something that probably won’t be a priority.</p>
+<p>Example:</p>
+<blockquote>
+<p>Initially English/Spanish. Later update with: Italian, French, German, etc.<br>Consider getting an Asian publisher for expanding to Asia, someone that can help with localization.
+ </p>
+</blockquote>
+<h1 id="Other-ideas"><a href="#Other-ideas" class="headerlink" title="Other ideas"></a>Other ideas</h1><p>Another completely optional section. If you have ideas that you are not sure if they should go in the game or not, just add them here so you don’t forget them.</p>
+<div class="note ">
+            <p>For example:</p><p>•    Level designer<br>•    Be able to rate levels created by other users<br>•    Achievements<br>•    Leaderboards<br>•    Should the game have a Multiplayer mode?</p>
+          </div>
+
+<p>“Generally, it is safe to assume that a multiplayer online game will take four times the effort and expense to create compared to a similar single-player game.”<br>“There is an old rule of thumb that it takes six months to balance your game after you have a completely working version” – Jesse Schell, Book of Lenses</p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item">
+    <a href="/blog/2024/01/10/P313/" rel="prev" title="过去的记录整理 - 松木雨未的据点">
+      <i class="fa fa-chevron-left"></i> 过去的记录整理 - 松木雨未的据点
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2023/12/25/P321/" rel="next" title="2023的年终总结">
+      2023的年终总结 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Characters"><span class="nav-number">1.</span> <span class="nav-text">Characters</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Story"><span class="nav-number">2.</span> <span class="nav-text">Story</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Theme"><span class="nav-number">2.1.</span> <span class="nav-text">Theme</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Story-Progression"><span class="nav-number">3.</span> <span class="nav-text">Story Progression</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Gameplay"><span class="nav-number">4.</span> <span class="nav-text">Gameplay</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Goals"><span class="nav-number">4.1.</span> <span class="nav-text">Goals</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#User-Skills"><span class="nav-number">4.2.</span> <span class="nav-text">User Skills</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Game-Mechanics"><span class="nav-number">4.3.</span> <span class="nav-text">Game Mechanics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Items-and-power-ups"><span class="nav-number">4.4.</span> <span class="nav-text">Items and power-ups</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Progression-and-challenge"><span class="nav-number">4.5.</span> <span class="nav-text">Progression and challenge</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Losing"><span class="nav-number">4.6.</span> <span class="nav-text">Losing</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Art-style"><span class="nav-number">5.</span> <span class="nav-text">Art style</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Music-and-Sounds"><span class="nav-number">6.</span> <span class="nav-text">Music and Sounds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Technical-description"><span class="nav-number">7.</span> <span class="nav-text">Technical description</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Marketing-amp-Funding"><span class="nav-number">8.</span> <span class="nav-text">Marketing &amp; Funding</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Demographics"><span class="nav-number">8.1.</span> <span class="nav-text">Demographics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Platforms-amp-Monetization"><span class="nav-number">8.2.</span> <span class="nav-text">Platforms &amp; Monetization</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Localization"><span class="nav-number">8.3.</span> <span class="nav-text">Localization</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Other-ideas"><span class="nav-number">9.</span> <span class="nav-text">Other ideas</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_11.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">320</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">70</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.5m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">23:08</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.5m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2024/01/01/P322/";
+    this.page.identifier = "2024/01/01/P322/";
+    this.page.title = "Game Design Document";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
