@@ -31,8 +31,13 @@
 <meta property="og:description" content="可惜上一次记载unity笔记的时候还没有使用博客.纸质材料跟我的C++入门课一起静躺在书架上,不在脑内也不舍得丢弃.来都来了,记点记点. 个人用,杂乱,请见谅.">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_3.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_4.jpeg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_0.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_2.jpeg">
 <meta property="article:published_time" content="2024-07-14T02:59:16.000Z">
-<meta property="article:modified_time" content="2024-07-14T03:04:27.945Z">
+<meta property="article:modified_time" content="2024-07-30T04:27:49.562Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
@@ -242,10 +247,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2024-07-13 22:59:16 / Modified: 23:04:27" itemprop="dateCreated datePublished" datetime="2024-07-13T22:59:16-04:00">2024-07-13</time>
+              <time title="Created: 2024-07-13 22:59:16" itemprop="dateCreated datePublished" datetime="2024-07-13T22:59:16-04:00">2024-07-13</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-07-30 00:27:49" itemprop="dateModified" datetime="2024-07-30T00:27:49-04:00">2024-07-30</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -275,13 +286,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>5.5k</span>
+              <span>11k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>5 mins.</span>
+              <span>10 mins.</span>
             </span>
 
         </div>
@@ -297,6 +308,10 @@
 <p>个人用,杂乱,请见谅.</p>
 <span id="more"></span>
 
+<div class="note ">
+            <p>Ctrl + K + C : Comment out the selected code.<br>Ctrl + K + U : Uncomment the selected code.<br>Ctrl + / : Toggle line comments.</p>
+          </div>
+
 <br>
 <br>
 <br>
@@ -307,9 +322,17 @@
 <br>
 
 <h1 id="GameObject"><a href="#GameObject" class="headerlink" title="GameObject"></a>GameObject</h1><h2 id="Camera"><a href="#Camera" class="headerlink" title="Camera"></a>Camera</h2><p>Click on Main Camera -&gt; GameObject -&gt; Aligh with View,可以快捷调节camera的view.<br>Click on any window, shift space可以放大window.</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=3UO-1suMbNc">Scrolling Repeating Background in Unity</a>.</p>
 <h2 id="Sound"><a href="#Sound" class="headerlink" title="Sound"></a>Sound</h2><p>Camera default to have <strong>audio listener</strong>, but we can’t have 2 audio listener in scene, if we have two camera, remove one.<br>Background sound -&gt; audio source -&gt; 3D sound settings -&gt; min distance set to 0, there is no minimum distance the user need (they always hear).</p>
 <h2 id="Post-Process-volume"><a href="#Post-Process-volume" class="headerlink" title="Post Process volume"></a>Post Process volume</h2><p>很酷的一种visual滤镜.<br>首先要现在window(菜单),package manager,添加post processing.<br>Volume -&gt; global volume + camera -&gt; post processing turn on<br>Under global volume(object created) create new profile.<br>Then add override, vignette, intensity for testing. Bloom, tone mapping is fun too<br>effect -&gt; particle system.</p>
 <h2 id="Collision"><a href="#Collision" class="headerlink" title="Collision"></a>Collision</h2><p>For trigger object(碰撞trigger的情况), 2 objects(collision) all needs rigid body into it.</p>
+<br>
+Collision有两种.一种是“碰撞”,一种是"接触".
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnCollisionEnter2D</span><span class="params">(Collision2D collision)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(collision.gameObject.tag == <span class="string">&quot;Ground&quot;</span>)&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+这一种一般用于,比如合成大西瓜,物体与物体的碰撞.
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter2D</span><span class="params">(Collider2D other)</span></span>&#123;</span><br><span class="line">  <span class="keyword">if</span>(other.gameObject.tag == <span class="string">&quot;Coin&quot;</span>)&#123;</span><br><span class="line">    <span class="comment">// do something</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>这一种一般用于”路径点”,拾取道具.<br>需要在Collider 2D中turn on “Is trigger”.</p>
 <br>
 <br>
 
@@ -318,10 +341,31 @@
 <img src="/blog/2024/07/13/P329/P329_1.png" class="" title="rect transform">
 <p><strong>Left button selection + alt + shift</strong>, place object in one of default position.</p>
 <p>Frame canvas -&gt; canvas scaler-&gt; UI Scale Mode, scale with screen size.</p>
+<div class="note ">
+            <p>Sprite renderer renders a sprite in the sccene, UI image renders a sprite in UI.</p>
+          </div>
+
 <br>
 <br>
 
-<h1 id="General"><a href="#General" class="headerlink" title="General"></a>General</h1><p><em>gameObject</em>小写指是the script it attach to.</p>
+<h1 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Input.<span class="built_in">GetKeyDown</span>(KeyCode.Space))&#123;</span><br><span class="line">  <span class="comment">// do some action</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><del>关于博主把GetKeyDown和GetKey混着用的这件事.</del><br>GetKeyDown如题只记录Down这个action是否实施过.<br>GetKey而是get key的这段时间一直都会return true.</p>
+<br>
+<br>
+
+<h1 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h1><p>如果需要给game object增加动画,需要添加animator component.<br>Animator需要animation controller(assets).</p>
+<img src="/blog/2024/07/13/P329/P329_5.png" class="" title="记得freeze z">
+
+<br>
+<br>
+
+<h1 id="Object-Pooling"><a href="#Object-Pooling" class="headerlink" title="Object Pooling"></a>Object Pooling</h1><img src="/blog/2024/07/13/P329/P329_3.jpeg" class="">
+
+<br>
+<br>
+
+<h1 id="Sprite-Multi"><a href="#Sprite-Multi" class="headerlink" title="Sprite Multi"></a>Sprite Multi</h1><img src="/blog/2024/07/13/P329/P329_4.jpeg" class="">
+
 <br>
 <br>
 
@@ -344,6 +388,8 @@
 
 <br>
 <br>
+
+<img src="/blog/2024/07/13/P329/P329_0.png" class="">
 
 <h2 id="Abstraction"><a href="#Abstraction" class="headerlink" title="Abstraction"></a>Abstraction</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> abstract <span class="class"><span class="keyword">class</span> <span class="title">PlayableObject</span>:</span> MonoBehaviour, IDamageable</span><br><span class="line">&#123;</span><br><span class="line">  <span class="keyword">public</span> Health health = <span class="keyword">new</span> <span class="built_in">Health</span>();</span><br><span class="line">  <span class="keyword">public</span> Weapon weapon;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> abstract <span class="keyword">void</span> <span class="title">Move</span><span class="params">(Vector2 direction, Vector2 target)</span></span>;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> abstract <span class="keyword">void</span> <span class="title">Attack</span><span class="params">(<span class="keyword">float</span> interval)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Enemy</span>:</span> PlayableObject&#123;</span><br><span class="line">  <span class="keyword">private</span> string enemyName;</span><br><span class="line">  <span class="keyword">private</span> Transform target;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetEnemyType</span><span class="params">(EnemyType enemyType)</span></span>&#123;</span><br><span class="line">    <span class="keyword">this</span>.enemyType = enemyType;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Move</span><span class="params">(Vector2 direction, Vector2 target)</span></span>&#123;</span><br><span class="line">    <span class="comment">// the enemy move</span></span><br><span class="line">  &#125;</span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Attack</span><span class="params">(<span class="keyword">float</span> interval)</span></span>;</span><br><span class="line">    Debug.<span class="built_in">Log</span>($<span class="string">&quot;Attacking with an interval of &#123;interval&#125;&quot;</span>)</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
 
@@ -370,13 +416,99 @@
 <br>
 <br>
 
-<h2 id="Solid-Principle"><a href="#Solid-Principle" class="headerlink" title="Solid Principle"></a>Solid Principle</h2><blockquote>
+<h1 id="Custom-Module"><a href="#Custom-Module" class="headerlink" title="Custom Module"></a>Custom Module</h1><p>有几种比较便利的,常用class整理方法.</p>
+<ul>
+<li><p>PlayableObject</p>
+</li>
+<li><p>IDamageable</p>
+</li>
+<li><p>GameManager</p>
+</li>
+<li><p>LevelLoader</p>
+</li>
+<li><p>SceneManager</p>
+</li>
+<li><p>ScoreManager</p>
+</li>
+<li><p>SoundManager</p>
+</li>
+<li><p>UIManager</p>
+</li>
+</ul>
+<p>比较方便的data写法.</p>
+<ul>
+<li>Array</li>
+<li>List</li>
+<li>Stack</li>
+<li>Dictionary</li>
+</ul>
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">public</span> GameObject[] array = <span class="keyword">new</span> GameObject[<span class="number">2</span>];</span><br><span class="line"></span><br><span class="line">array[<span class="number">0</span>] = <span class="built_in">Instantiate</span>(testPrefab, transform);</span><br><span class="line">array[<span class="number">0</span>].transform.position = Vector2.zero;</span><br><span class="line"></span><br><span class="line">array[Random.<span class="built_in">Range</span>(<span class="number">0</span>,array.Length)].GetComponent&lt;SpriteRenderer&gt;().color = Random.<span class="built_in">ColorHSV</span>();</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<p>List is dynamic but array is not. (and least performance).<br>Array holds same type of object. (string array only holds strings).</p>
+<br>
+<br>
+
+ <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> GameObject testPrefab;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> List&lt;GameObejct&gt; list = <span class="keyword">new</span> List&lt;GameObject&gt;();</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span><span class="params">()</span></span>&#123;</span><br><span class="line">  GameObejct tempObject;</span><br><span class="line"></span><br><span class="line">  tempObject = <span class="built_in">Instantiate</span>(testPrefab, transform);</span><br><span class="line">  tempObject.transform.position = <span class="keyword">new</span> <span class="built_in">Vector2</span>(<span class="number">0</span>,<span class="number">0</span>);</span><br><span class="line">  list.<span class="built_in">Add</span>(tempObject);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line">list[Random.<span class="built_in">Range</span>(<span class="number">0</span>,list.Count)].GetComponent&lt;SpriteRenderer&gt;().color = Random.<span class="built_in">ColorHSV</span>();</span><br><span class="line"></span><br><span class="line">list.<span class="built_in">Clear</span>();</span><br><span class="line">list.<span class="built_in">RemoveAt</span>(Random.<span class="built_in">Range</span>(<span class="number">0</span>,list.Count));</span><br><span class="line"><span class="built_in">Destory</span>(list[Random.<span class="built_in">Range</span>(<span class="number">0</span>,list.Count]);</span><br><span class="line"> </span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Stack: last in first out. (Use in backtracking, search history, undo behavior).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Stack&lt;GameObject&gt; stack = <span class="keyword">new</span> Stack&lt;GameObject&gt;();</span><br><span class="line"><span class="keyword">private</span> GameObjet tempObject;</span><br><span class="line"></span><br><span class="line">tempObject = <span class="built_in">Instantiate</span>(testPrefab, transform);</span><br><span class="line">tempObject.transform.position = <span class="keyword">new</span> <span class="built_in">Vector2</span>(stack.Count,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">tempObject.name = <span class="string">&quot;Stacked: &quot;</span> + stack.Count;</span><br><span class="line">stack.<span class="built_in">Push</span>(tempObject);</span><br><span class="line"></span><br><span class="line">GameObject removeObject = stack.<span class="built_in">Pop</span>();</span><br><span class="line">Debug.<span class="built_in">Log</span>(<span class="string">&quot;object at the top of the stack&quot;</span> + stack.<span class="built_in">Peek</span>().name);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Queue: first in first out. (Use in order, schedule list, request).</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> Queue&lt;GameObject&gt; queue = <span class="keyword">new</span> Queue&lt;GameObject&gt;();</span><br><span class="line"><span class="keyword">private</span> GameObjet tempObject;</span><br><span class="line">Vector2 lastEnqueuedPosition = Vector2.zero;</span><br><span class="line"></span><br><span class="line">tempObject = <span class="built_in">Instantiate</span>(testPrefab, transform);</span><br><span class="line">tempObject.transform.position = <span class="keyword">new</span> <span class="built_in">Vector2</span>(lastEnqueuedPosition.x+<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line"></span><br><span class="line">queue.<span class="built_in">Enqueue</span>(tempObject);</span><br><span class="line">lastEnqueuedPosition = tempObject.transform.position;</span><br><span class="line"></span><br><span class="line">GameObject removeObject = queue.<span class="built_in">Dequeue</span>();</span><br><span class="line">Debug.<span class="built_in">Log</span>(<span class="string">&quot;object at the last of the queue&quot;</span> + queue.<span class="built_in">Peek</span>().name);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>Dictionary: Phonebook, user section (user id), inventory.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> TMPro;</span><br><span class="line"></span><br><span class="line">[Serialize Field] <span class="keyword">private</span> TMP_Text txtCoin, txtScore, txtGems;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Dictionary&lt;string, <span class="keyword">int</span>&gt; dictionary = <span class="keyword">new</span> dictionary&lt;string, <span class="keyword">int</span>&gt;();</span><br><span class="line"><span class="keyword">public</span> string CheckForKey = <span class="string">&quot;Bullets&quot;</span>;</span><br><span class="line"></span><br><span class="line">dictionary.<span class="built_in">Add</span>(<span class="string">&quot;Coins&quot;</span>, <span class="number">0</span>);</span><br><span class="line">dictionary.<span class="built_in">Add</span>(<span class="string">&quot;Scores&quot;</span>, <span class="number">0</span>);</span><br><span class="line">dictionary.<span class="built_in">Add</span>(<span class="string">&quot;Gems&quot;</span>, <span class="number">0</span>);</span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> (dictionary.<span class="built_in">ContainsKey</span>(<span class="string">&quot;Coins&quot;</span>))&#123;</span><br><span class="line">  dictionary[<span class="string">&quot;Coins&quot;</span>]++;</span><br><span class="line">  txtCoin.text = dictionary[<span class="string">&quot;Coins&quot;</span>].<span class="built_in">ToString</span>();</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">bool</span> hasKey = dictionary.<span class="built_in">TryGetValue</span>(CheckForKey, out val);</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="Singleton"><a href="#Singleton" class="headerlink" title="Singleton"></a>Singleton</h1><p>We can only have one singleton (therefore it called singleton).<br>Be careful for the variable in singleton (since they can only have one).</p>
+<p>Eg.GameManager:</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GameManager</span> :</span> MonoBehaviour&#123;</span><br><span class="line">  <span class="comment">/// &lt;summary&gt;</span></span><br><span class="line">  <span class="comment">/// Singleton</span></span><br><span class="line">  <span class="comment">/// &lt;/summary&gt;</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">private</span> <span class="keyword">static</span> GameManager instance;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">public</span> <span class="keyword">static</span> GameManager <span class="title">GetInstance</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> instance;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">Singleton</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (instance != null &amp;&amp; instance != <span class="keyword">this</span>)&#123;</span><br><span class="line">      <span class="built_in">Destroy</span>(<span class="keyword">this</span>);</span><br><span class="line">    &#125;<span class="keyword">else</span>&#123;</span><br><span class="line">      instance = <span class="keyword">this</span>;</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">  <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Awake</span><span class="params">()</span></span>&#123;</span><br><span class="line">    <span class="built_in">SetSingleton</span>();</span><br><span class="line">  &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line">[<span class="built_in">CreateAssetMenu</span>(filename = <span class="string">&quot;DataSample&quot;</span>, menuName = <span class="string">&quot;Data Menu Sample&quot;</span>, order = <span class="number">1</span>)]</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">NewTypeOfObject</span> :</span> ScriptableObject&#123;</span><br><span class="line">  <span class="keyword">public</span> string objectName;</span><br><span class="line">  <span class="keyword">public</span> string score;</span><br><span class="line">  <span class="keyword">public</span> Vector2 startPosition;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="Delay"><a href="#Delay" class="headerlink" title="Delay"></a>Delay</h1><p>Unity timer IEnumertator.</p>
+<div class="note ">
+            <p>//something wanna do before the wait<br>yield return new WaitForSeconds(0.5f);<br>//something wanna do after the wait</p>
+          </div>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">StartCoroutine</span>(<span class="built_in">EnemySpawner</span>());</span><br><span class="line"></span><br><span class="line"><span class="function">IEnumerator <span class="title">EnemySpawner</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">while</span> (isEnemySpawning) &#123;</span><br><span class="line">        <span class="comment">// Anthing abover here will fire when the Start Corountine is callled</span></span><br><span class="line">        <span class="function">yield <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span><span class="params">(<span class="number">1.0f</span> / enemySpawnRate)</span></span>;</span><br><span class="line">        <span class="comment">// Anthing after the wait, will be called.</span></span><br><span class="line">        <span class="built_in">CreateEnemy</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>除了IEnumertator,还能用Invoke.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">Invoke</span>(<span class="string">&quot;theFunctionName&quot;</span>, <span class="number">3</span>);<span class="comment">//3 seconds then the function</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">void</span> theFunctionName&#123;</span><br><span class="line">  <span class="comment">// can be anything</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="IDamageable"><a href="#IDamageable" class="headerlink" title="IDamageable"></a><a target="_blank" rel="noopener" href="https://medium.com/nerd-for-tech/idamageable-interface-unity-45bf961d141">IDamageable</a></h1><p>以我的理解,用interface(contract)来限制所有增加的class都会有其interface内的内容.<br>像给div增加class一样可以一起使用.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> interface IDamageable&#123;</span><br><span class="line">  <span class="function"><span class="keyword">void</span> <span class="title">GetDamage</span><span class="params">(<span class="keyword">float</span> damage)</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">OnTriggerEnter2D</span><span class="params">(Collider2D collision)</span></span>&#123;</span><br><span class="line">  Debug.<span class="built_in">Log</span>(collision.gameObject.name);</span><br><span class="line"></span><br><span class="line">  <span class="keyword">if</span>(!collision.gameObject.<span class="built_in">CompareTag</span>(targetTag))</span><br><span class="line">    <span class="keyword">return</span>;</span><br><span class="line"></span><br><span class="line">  <span class="comment">//using interface</span></span><br><span class="line">  IDamageable damageable = coollision.GetComponent&lt;IDamageable&gt;();</span><br><span class="line">  <span class="built_in">Damage</span>(damageable);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="Solid-Principle"><a href="#Solid-Principle" class="headerlink" title="Solid Principle"></a>Solid Principle</h1><blockquote>
 <p>Single responsibility<br>Open–closed<br>Liskov substitution<br>Interface segregation<br>Dependency inversion</p>
 </blockquote>
-<h2 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments">Comment</a></h2><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">连打三条杠(///).</span><br><span class="line">可以叫出&lt;summary&gt;&lt;/summary&gt;的commenting block.</span><br><span class="line">在function前面会自动变成那个function的summary.</span><br><span class="line">&lt;param name=&#x27;&#x27;&gt;&lt;/param&gt;解释function里的parameter.</span><br></pre></td></tr></table></figure>
+<h1 id="Comment"><a href="#Comment" class="headerlink" title="Comment"></a><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/language-specification/documentation-comments">Comment</a></h1><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">连打三条杠(///).</span><br><span class="line">可以叫出&lt;summary&gt;&lt;/summary&gt;的commenting block.</span><br><span class="line">在function前面会自动变成那个function的summary.</span><br><span class="line">&lt;param name=&#x27;&#x27;&gt;&lt;/param&gt;解释function里的parameter.</span><br></pre></td></tr></table></figure>
 
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=Zzklpdvue3A&ab_channel=JamesMakesGames">Using Interfaces in Unity Effectively | Unity Clean Code</a><br><a target="_blank" rel="noopener" href="https://www.researchgate.net/publication/292150724_An_Automated_Model_Based_Testing_Approach_for_Platform_Games">An Automated Model Based Testing Approach for Platform Games</a></p>
-
+<img src="/blog/2024/07/13/P329/P329_2.jpeg" class="">
 
 <br>
 <br>
@@ -407,7 +539,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2024/07/31/P331/" rel="prev" title="安静">
+      <i class="fa fa-chevron-left"></i> 安静
+    </a></div>
       <div class="post-nav-item">
     <a href="/blog/2024/07/13/P303/" rel="next" title="交错的真实(暂定)的笔记">
       交错的真实(暂定)的笔记 <i class="fa fa-chevron-right"></i>
@@ -477,7 +612,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lighting"><span class="nav-number">1.</span> <span class="nav-text">Lighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skybox"><span class="nav-number">1.1.</span> <span class="nav-text">Skybox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GameObject"><span class="nav-number">2.</span> <span class="nav-text">GameObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera"><span class="nav-number">2.1.</span> <span class="nav-text">Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sound"><span class="nav-number">2.2.</span> <span class="nav-text">Sound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-Process-volume"><span class="nav-number">2.3.</span> <span class="nav-text">Post Process volume</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision"><span class="nav-number">2.4.</span> <span class="nav-text">Collision</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Canvas"><span class="nav-number">3.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#General"><span class="nav-number">4.</span> <span class="nav-text">General</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP-Principles"><span class="nav-number">5.</span> <span class="nav-text">OOP Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">5.1.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">5.2.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">5.3.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstraction"><span class="nav-number">5.4.</span> <span class="nav-text">Abstraction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Solid-Principle"><span class="nav-number">5.5.</span> <span class="nav-text">Solid Principle</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Comment"><span class="nav-number">5.6.</span> <span class="nav-text">Comment</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Builds"><span class="nav-number">6.</span> <span class="nav-text">Builds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-on"><span class="nav-number">7.</span> <span class="nav-text">Add-on</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ProBuilder"><span class="nav-number">7.1.</span> <span class="nav-text">ProBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VRoid"><span class="nav-number">7.2.</span> <span class="nav-text">VRoid</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lighting"><span class="nav-number">1.</span> <span class="nav-text">Lighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skybox"><span class="nav-number">1.1.</span> <span class="nav-text">Skybox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GameObject"><span class="nav-number">2.</span> <span class="nav-text">GameObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera"><span class="nav-number">2.1.</span> <span class="nav-text">Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sound"><span class="nav-number">2.2.</span> <span class="nav-text">Sound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-Process-volume"><span class="nav-number">2.3.</span> <span class="nav-text">Post Process volume</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision"><span class="nav-number">2.4.</span> <span class="nav-text">Collision</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Canvas"><span class="nav-number">3.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Action"><span class="nav-number">4.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Animator"><span class="nav-number">5.</span> <span class="nav-text">Animator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Pooling"><span class="nav-number">6.</span> <span class="nav-text">Object Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sprite-Multi"><span class="nav-number">7.</span> <span class="nav-text">Sprite Multi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP-Principles"><span class="nav-number">8.</span> <span class="nav-text">OOP Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">8.1.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">8.2.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">8.3.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstraction"><span class="nav-number">8.4.</span> <span class="nav-text">Abstraction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Custom-Module"><span class="nav-number">9.</span> <span class="nav-text">Custom Module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Singleton"><span class="nav-number">10.</span> <span class="nav-text">Singleton</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delay"><span class="nav-number">11.</span> <span class="nav-text">Delay</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDamageable"><span class="nav-number">12.</span> <span class="nav-text">IDamageable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solid-Principle"><span class="nav-number">13.</span> <span class="nav-text">Solid Principle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comment"><span class="nav-number">14.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Builds"><span class="nav-number">15.</span> <span class="nav-text">Builds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-on"><span class="nav-number">16.</span> <span class="nav-text">Add-on</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ProBuilder"><span class="nav-number">16.1.</span> <span class="nav-text">ProBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VRoid"><span class="nav-number">16.2.</span> <span class="nav-text">VRoid</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -493,7 +628,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">328</span>
+          <span class="site-state-item-count">329</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -506,7 +641,7 @@
       <div class="site-state-item site-state-tags">
             <a href="/blog/tags/">
           
-        <span class="site-state-item-count">71</span>
+        <span class="site-state-item-count">72</span>
         <span class="site-state-item-name">tags</span></a>
       </div>
   </nav>
@@ -574,7 +709,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">24:08</span>
+    <span title="T">24:13</span>
 
   -->
 
