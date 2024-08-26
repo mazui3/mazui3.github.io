@@ -37,7 +37,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_0.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2024/07/13/P329/P329_2.jpeg">
 <meta property="article:published_time" content="2024-07-14T02:59:16.000Z">
-<meta property="article:modified_time" content="2024-07-30T04:27:49.562Z">
+<meta property="article:modified_time" content="2024-08-05T02:39:56.168Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2024-07-30 00:27:49" itemprop="dateModified" datetime="2024-07-30T00:27:49-04:00">2024-07-30</time>
+                <time title="Modified: 2024-08-04 22:39:56" itemprop="dateModified" datetime="2024-08-04T22:39:56-04:00">2024-08-04</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -336,7 +336,7 @@ Collision有两种.一种是“碰撞”,一种是"接触".
 <br>
 <br>
 
-<h1 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h1><p>要查看canvas的种类,在canvas -&gt; render mode中查看.<br>如果是screen space - camera, 或者screen space - overlay -&gt; 会让canvas的位置根据camera变动.<br>如果是world space -&gt; 可以rename成world canvas,是一个canvas物体,跟其他物品一样.</p>
+<h2 id="Canvas"><a href="#Canvas" class="headerlink" title="Canvas"></a>Canvas</h2><p>要查看canvas的种类,在canvas -&gt; render mode中查看.<br>如果是screen space - camera, 或者screen space - overlay -&gt; 会让canvas的位置根据camera变动.<br>如果是world space -&gt; 可以rename成world canvas,是一个canvas物体,跟其他物品一样.</p>
 <p>要加入canvas中的物件.推荐使用这个小窗口.</p>
 <img src="/blog/2024/07/13/P329/P329_1.png" class="" title="rect transform">
 <p><strong>Left button selection + alt + shift</strong>, place object in one of default position.</p>
@@ -348,14 +348,14 @@ Collision有两种.一种是“碰撞”,一种是"接触".
 <br>
 <br>
 
-<h1 id="Action"><a href="#Action" class="headerlink" title="Action"></a>Action</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Input.<span class="built_in">GetKeyDown</span>(KeyCode.Space))&#123;</span><br><span class="line">  <span class="comment">// do some action</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p><del>关于博主把GetKeyDown和GetKey混着用的这件事.</del><br>GetKeyDown如题只记录Down这个action是否实施过.<br>GetKey而是get key的这段时间一直都会return true.</p>
-<br>
-<br>
-
-<h1 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h1><p>如果需要给game object增加动画,需要添加animator component.<br>Animator需要animation controller(assets).</p>
+<h2 id="Animator"><a href="#Animator" class="headerlink" title="Animator"></a>Animator</h2><p>如果需要给game object增加动画,需要添加animator component.<br>Animator需要animation controller(assets).</p>
 <img src="/blog/2024/07/13/P329/P329_5.png" class="" title="记得freeze z">
 
+<br>
+<br>
+
+<h1 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span> (Input.<span class="built_in">GetKeyDown</span>(KeyCode.Space))&#123;</span><br><span class="line">  <span class="comment">// do some action</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p><del>关于博主把GetKeyDown和GetKey混着用的这件事.</del><br>GetKeyDown如题只记录Down这个action是否实施过.<br>GetKey而是get key的这段时间一直都会return true.</p>
 <br>
 <br>
 
@@ -513,6 +513,13 @@ Collision有两种.一种是“碰撞”,一种是"接触".
 <br>
 <br>
 
+<h1 id="shader"><a href="#shader" class="headerlink" title="shader"></a>shader</h1><p>Package Manager.<br>注意title选择Packages: Unity Registry.<br>Find <em>Shader Graph</em>.</p>
+<p>Create -&gt; Sharder Graph -&gt; URP -&gt; Lit Shader Graph/Unlit Shader Graph.</p>
+<p>做好的shader要先attach to material.再material attach to the plane(or other stuff).</p>
+<br>
+<br>
+
+
 <h1 id="Builds"><a href="#Builds" class="headerlink" title="Builds"></a>Builds</h1><p><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/PlatformDependentCompilation.html">For building in different platforms.</a></p>
 <p>Project setting -&gt; player -&gt; configuration -&gt; scripting backend<br>mono is fine for testing, but for deliver version should choose IL2CPP.</p>
 <p>For Api Compatibility Level -&gt; .NET Standard 2.1 is fine.<br>don’t build project in repository, will blow up it, just share source code.</p>
@@ -612,7 +619,7 @@ Collision有两种.一种是“碰撞”,一种是"接触".
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lighting"><span class="nav-number">1.</span> <span class="nav-text">Lighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skybox"><span class="nav-number">1.1.</span> <span class="nav-text">Skybox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GameObject"><span class="nav-number">2.</span> <span class="nav-text">GameObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera"><span class="nav-number">2.1.</span> <span class="nav-text">Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sound"><span class="nav-number">2.2.</span> <span class="nav-text">Sound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-Process-volume"><span class="nav-number">2.3.</span> <span class="nav-text">Post Process volume</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision"><span class="nav-number">2.4.</span> <span class="nav-text">Collision</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Canvas"><span class="nav-number">3.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Action"><span class="nav-number">4.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Animator"><span class="nav-number">5.</span> <span class="nav-text">Animator</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Pooling"><span class="nav-number">6.</span> <span class="nav-text">Object Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sprite-Multi"><span class="nav-number">7.</span> <span class="nav-text">Sprite Multi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP-Principles"><span class="nav-number">8.</span> <span class="nav-text">OOP Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">8.1.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">8.2.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">8.3.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstraction"><span class="nav-number">8.4.</span> <span class="nav-text">Abstraction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Custom-Module"><span class="nav-number">9.</span> <span class="nav-text">Custom Module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Singleton"><span class="nav-number">10.</span> <span class="nav-text">Singleton</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delay"><span class="nav-number">11.</span> <span class="nav-text">Delay</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDamageable"><span class="nav-number">12.</span> <span class="nav-text">IDamageable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solid-Principle"><span class="nav-number">13.</span> <span class="nav-text">Solid Principle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comment"><span class="nav-number">14.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Builds"><span class="nav-number">15.</span> <span class="nav-text">Builds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-on"><span class="nav-number">16.</span> <span class="nav-text">Add-on</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ProBuilder"><span class="nav-number">16.1.</span> <span class="nav-text">ProBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VRoid"><span class="nav-number">16.2.</span> <span class="nav-text">VRoid</span></a></li></ol></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Lighting"><span class="nav-number">1.</span> <span class="nav-text">Lighting</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Skybox"><span class="nav-number">1.1.</span> <span class="nav-text">Skybox</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#GameObject"><span class="nav-number">2.</span> <span class="nav-text">GameObject</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Camera"><span class="nav-number">2.1.</span> <span class="nav-text">Camera</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Sound"><span class="nav-number">2.2.</span> <span class="nav-text">Sound</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Post-Process-volume"><span class="nav-number">2.3.</span> <span class="nav-text">Post Process volume</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision"><span class="nav-number">2.4.</span> <span class="nav-text">Collision</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Canvas"><span class="nav-number">2.5.</span> <span class="nav-text">Canvas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Animator"><span class="nav-number">2.6.</span> <span class="nav-text">Animator</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Input"><span class="nav-number">3.</span> <span class="nav-text">Input</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Object-Pooling"><span class="nav-number">4.</span> <span class="nav-text">Object Pooling</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Sprite-Multi"><span class="nav-number">5.</span> <span class="nav-text">Sprite Multi</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#OOP-Principles"><span class="nav-number">6.</span> <span class="nav-text">OOP Principles</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Encapsulation"><span class="nav-number">6.1.</span> <span class="nav-text">Encapsulation</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Inheritance"><span class="nav-number">6.2.</span> <span class="nav-text">Inheritance</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Polymorphism"><span class="nav-number">6.3.</span> <span class="nav-text">Polymorphism</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Abstraction"><span class="nav-number">6.4.</span> <span class="nav-text">Abstraction</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Custom-Module"><span class="nav-number">7.</span> <span class="nav-text">Custom Module</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Singleton"><span class="nav-number">8.</span> <span class="nav-text">Singleton</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Delay"><span class="nav-number">9.</span> <span class="nav-text">Delay</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#IDamageable"><span class="nav-number">10.</span> <span class="nav-text">IDamageable</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Solid-Principle"><span class="nav-number">11.</span> <span class="nav-text">Solid Principle</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Comment"><span class="nav-number">12.</span> <span class="nav-text">Comment</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#shader"><span class="nav-number">13.</span> <span class="nav-text">shader</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Builds"><span class="nav-number">14.</span> <span class="nav-text">Builds</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Add-on"><span class="nav-number">15.</span> <span class="nav-text">Add-on</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#ProBuilder"><span class="nav-number">15.1.</span> <span class="nav-text">ProBuilder</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#VRoid"><span class="nav-number">15.2.</span> <span class="nav-text">VRoid</span></a></li></ol></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -709,7 +716,7 @@ Collision有两种.一种是“碰撞”,一种是"接触".
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">24:13</span>
+    <span title="T">24:14</span>
 
   -->
 
