@@ -1,0 +1,734 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="因为上一篇太乱了没看懂于是新开一篇(靠).">
+<meta property="og:type" content="article">
+<meta property="og:title" content="关于Unity的笔记 - 续">
+<meta property="og:url" content="https://mazui3.github.io/blog/2024/09/22/P338/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="因为上一篇太乱了没看懂于是新开一篇(靠).">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_6.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_8.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_9.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_11.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_0.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_1.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_3.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_7.png">
+<meta property="article:published_time" content="2024-09-22T11:10:43.000Z">
+<meta property="article:modified_time" content="2024-09-22T11:10:43.130Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_6.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2024/09/22/P338/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>关于Unity的笔记 - 续 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2024/09/22/P338/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          关于Unity的笔记 - 续
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+
+              <time title="Created: 2024-09-22 07:10:43" itemprop="dateCreated datePublished" datetime="2024-09-22T07:10:43-04:00">2024-09-22</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">写码笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2024/09/22/P338/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2024/09/22/P338/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>10k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>9 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>因为<a href="https://mazui3.github.io/blog/2024/07/13/P329/">上一篇</a>太乱了没看懂于是新开一篇(靠).</p>
+<span id="more"></span>
+
+<br>
+<br>
+<br>
+
+<h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a><a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/Events.UnityAction.html">Action</a></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine.Events;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Action&lt;<span class="keyword">float</span>&gt; OnHealthUpdated;</span><br><span class="line"><span class="comment">// this means onHealthUpdated func will take float as parameter</span></span><br><span class="line"><span class="keyword">public</span> Action OnDeath;</span><br><span class="line"><span class="comment">// this does not take parameter</span></span><br><span class="line"></span><br><span class="line">OnHealthUpdated += AnotherFunc_OnHealthUpdate;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AnotherFunc_OnHealthUpdate</span><span class="params">(<span class="keyword">float</span> health)</span></span>&#123;</span><br><span class="line">  <span class="comment">// actions</span></span><br><span class="line">  <span class="comment">// can be different script</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Unity-Events"><a href="#Unity-Events" class="headerlink" title="Unity Events"></a><a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/Events.UnityEvent.html">Unity Events</a></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"></span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Generics"><a href="#Generics" class="headerlink" title="Generics"></a>Generics</h2><p>可以用<T>来代表不定的parameter.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SomeClass</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="comment">//Here is a generic method. Notice the generic</span></span><br><span class="line">    <span class="comment">//type &#x27;T&#x27;. This &#x27;T&#x27; will be replaced at runtime</span></span><br><span class="line">    <span class="comment">//with an actual type.</span></span><br><span class="line">    <span class="keyword">public</span> T GenericMethod&lt;T&gt;(T param)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">return</span> param;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine;</span><br><span class="line"><span class="keyword">using</span> System.Collections;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SomeOtherClass</span> :</span> MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Start</span> <span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        SomeClass myClass = <span class="keyword">new</span> <span class="built_in">SomeClass</span>();</span><br><span class="line"></span><br><span class="line">        <span class="comment">//In order to use this method you must</span></span><br><span class="line">        <span class="comment">//tell the method what type to replace</span></span><br><span class="line">        <span class="comment">//&#x27;T&#x27; with.</span></span><br><span class="line">        myClass.GenericMethod&lt;<span class="keyword">int</span>&gt;(<span class="number">5</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br></pre></td></tr></table></figure>
+
+<img src="/blog/2024/09/22/P338/P338_6.png" class="">
+
+<br>
+<br>
+
+<h2 id="Collision-Trigger"><a href="#Collision-Trigger" class="headerlink" title="Collision / Trigger"></a>Collision / Trigger</h2><table>
+<thead>
+<tr>
+<th align="left">OnCollisionEnter</th>
+<th align="left">OnCollisionEnter is called when this collider/rigidbody has begun touching another rigidbody/collider.</th>
+</tr>
+</thead>
+<tbody><tr>
+<td align="left">OnCollisionExit</td>
+<td align="left">OnCollisionExit is called when this collider/rigidbody has stopped touching another rigidbody/collider.</td>
+</tr>
+<tr>
+<td align="left">OnCollisionStay</td>
+<td align="left">OnCollisionStay is called once per frame for every Collider or Rigidbody that touches another Collider or Rigidbody.</td>
+</tr>
+<tr>
+<td align="left">OnTriggerEnter</td>
+<td align="left">When a GameObject collides with another GameObject, Unity calls OnTriggerEnter.</td>
+</tr>
+<tr>
+<td align="left">OnTriggerExit</td>
+<td align="left">OnTriggerExit is called when the Collider other has stopped touching the trigger.</td>
+</tr>
+<tr>
+<td align="left">OnTriggerStay</td>
+<td align="left">OnTriggerStay is called almost all the frames for every Collider other that is touching the trigger. The function is on the physics timer so it won’t necessarily run every frame.</td>
+</tr>
+</tbody></table>
+<br>
+<br>
+
+<h2 id="Joints"><a href="#Joints" class="headerlink" title="Joints"></a><a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/joints-section.html">Joints</a></h2><p>也有<a target="_blank" rel="noopener" href="https://docs.unity3d.com/Manual/Joints2D.html">2Djoints</a>.</p>
+<br>
+<br>
+
+<h2 id="Observer-Design-Pattern"><a href="#Observer-Design-Pattern" class="headerlink" title="Observer Design Pattern"></a>Observer Design Pattern</h2><img src="/blog/2024/09/22/P338/P338_8.png" class="">
+<img src="/blog/2024/09/22/P338/P338_9.png" class="">
+
+<p>UnityEvents and Actions are Unity-specific implementations of the Observer pattern.<br>● AddListener and RemoveListener are the subscription functions.<br>● Invoking the Action/UnityEvent is the notify behavior.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"><span class="keyword">using</span> System.Collections.Generic;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Observer interface</span></span><br><span class="line"><span class="keyword">public</span> interface IObserver</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">double</span> stockPrice)</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Concrete Observer class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Investor</span> :</span> IObserver</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> string name;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Investor</span><span class="params">(string name)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.name = name;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Update</span><span class="params">(<span class="keyword">double</span> stockPrice)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>($<span class="string">&quot;&#123;name&#125; received an update:</span></span><br><span class="line"><span class="string">        Stock price is now &#123;stockPrice:C&#125;&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Subject (Observable) class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Stock</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> <span class="keyword">double</span> price;</span><br><span class="line">    <span class="keyword">private</span> List&lt;IObserver&gt; investors = <span class="keyword">new</span> List&lt;IObserver&gt;();</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Attach</span><span class="params">(IObserver observer)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        investors.<span class="built_in">Add</span>(observer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Detach</span><span class="params">(IObserver observer)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        investors.<span class="built_in">Remove</span>(observer);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetPrice</span><span class="params">(<span class="keyword">double</span> newPrice)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        price = newPrice;</span><br><span class="line">        <span class="built_in">Notify</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Notify</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        foreach (var investor in investors)</span><br><span class="line">        &#123;</span><br><span class="line">            investor.<span class="built_in">Update</span>(price);</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Stock techStock = <span class="keyword">new</span> <span class="built_in">Stock</span>();</span><br><span class="line"></span><br><span class="line">        Investor investor1 = <span class="keyword">new</span> <span class="built_in">Investor</span>(<span class="string">&quot;John&quot;</span>);</span><br><span class="line">        Investor investor2 = <span class="keyword">new</span> <span class="built_in">Investor</span>(<span class="string">&quot;Jane&quot;</span>);</span><br><span class="line"></span><br><span class="line">        techStock.<span class="built_in">Attach</span>(investor1);</span><br><span class="line">        techStock.<span class="built_in">Attach</span>(investor2);</span><br><span class="line"></span><br><span class="line">        techStock.<span class="built_in">SetPrice</span>(<span class="number">150.50</span>);</span><br><span class="line">        <span class="comment">// Outputs:</span></span><br><span class="line">        <span class="comment">// John received an update: Stock price is now $150.50</span></span><br><span class="line">        <span class="comment">// Jane received an update: Stock price is now $150.50</span></span><br><span class="line"></span><br><span class="line">        techStock.<span class="built_in">Detach</span>(investor1);</span><br><span class="line"></span><br><span class="line">        techStock.<span class="built_in">SetPrice</span>(<span class="number">155.25</span>);</span><br><span class="line">        <span class="comment">// Outputs:</span></span><br><span class="line">        <span class="comment">// Jane received an update: Stock price is now $155.25</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+
+<h2 id="The-Command-Design-Pattern"><a href="#The-Command-Design-Pattern" class="headerlink" title="The Command Design Pattern"></a>The Command Design Pattern</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> System;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Command interface</span></span><br><span class="line"><span class="keyword">public</span> interface ICommand</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Concrete Command classes</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LightOnCommand</span> :</span> ICommand</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> Light light;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LightOnCommand</span><span class="params">(Light light)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.light = light;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        light.<span class="built_in">TurnOn</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">LightOffCommand</span> :</span> ICommand</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">private</span> Light light;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">LightOffCommand</span><span class="params">(Light light)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.light = light;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        light.<span class="built_in">TurnOff</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Receiver class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Light</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TurnOn</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Light is ON&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">TurnOff</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Light is OFF&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Invoker class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RemoteControl</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> ICommand command;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetCommand</span><span class="params">(ICommand command)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="keyword">this</span>.command = command;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">PressButton</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        command.<span class="built_in">Execute</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Light livingRoomLight = <span class="keyword">new</span> <span class="built_in">Light</span>();</span><br><span class="line"></span><br><span class="line">        ICommand lightOn = <span class="keyword">new</span> <span class="built_in">LightOnCommand</span>(livingRoomLight);</span><br><span class="line">        ICommand lightOff = <span class="keyword">new</span> <span class="built_in">LightOffCommand</span>(livingRoomLight);</span><br><span class="line"></span><br><span class="line">        RemoteControl remote = <span class="keyword">new</span> <span class="built_in">RemoteControl</span>();</span><br><span class="line"></span><br><span class="line">        remote.<span class="built_in">SetCommand</span>(lightOn);</span><br><span class="line">        remote.<span class="built_in">PressButton</span>();  <span class="comment">// Outputs: Light is ON</span></span><br><span class="line"></span><br><span class="line">        remote.<span class="built_in">SetCommand</span>(lightOff);</span><br><span class="line">        remote.<span class="built_in">PressButton</span>();  <span class="comment">// Outputs: Light is OFF</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="Object-Pool-Design-Pattern"><a href="#Object-Pool-Design-Pattern" class="headerlink" title="Object Pool Design Pattern"></a>Object Pool Design Pattern</h2><p>Create a pool of instantiated objects, and use them as needed without destroying them, just return them to the pool.</p>
+<br>
+<br>
+
+<h2 id="State-Design-Pattern"><a href="#State-Design-Pattern" class="headerlink" title="State Design Pattern"></a>State Design Pattern</h2><img src="/blog/2024/09/22/P338/P338_10.png" class="">
+<img src="/blog/2024/09/22/P338/P338_11.png" class="">
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// State interface</span></span><br><span class="line"><span class="keyword">public</span> interface ITrafficSignalState</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Handle</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Concrete State classes</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">RedLightState</span> :</span> ITrafficSignalState</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Handle</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Traffic signal: RED - Stop!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">GreenLightState</span> :</span> ITrafficSignalState</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Handle</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Traffic signal: GREEN - Go!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">YellowLightState</span> :</span> ITrafficSignalState</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Handle</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span></span><br><span class="line">        (<span class="string">&quot;Traffic signal: YELLOW - Prepare to stop.&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Context class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">TrafficSignal</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> ITrafficSignalState currentState;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">TrafficSignal</span><span class="params">(ITrafficSignalState initialState)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        currentState = initialState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">ChangeState</span><span class="params">(ITrafficSignalState newState)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        currentState = newState;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Request</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        currentState.<span class="built_in">Handle</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        TrafficSignal</span><br><span class="line">        trafficSignal = <span class="keyword">new</span> <span class="built_in">TrafficSignal</span>(<span class="keyword">new</span> <span class="built_in">RedLightState</span>());</span><br><span class="line"></span><br><span class="line">        trafficSignal.<span class="built_in">Request</span>();  </span><br><span class="line">        <span class="comment">// Outputs: Traffic signal: RED - Stop!</span></span><br><span class="line"></span><br><span class="line">        trafficSignal.<span class="built_in">ChangeState</span>(<span class="keyword">new</span> <span class="built_in">GreenLightState</span>());</span><br><span class="line">        trafficSignal.<span class="built_in">Request</span>();  </span><br><span class="line">        <span class="comment">// Outputs: Traffic signal: GREEN - Go!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="The-Strategy-Design-Pattern"><a href="#The-Strategy-Design-Pattern" class="headerlink" title="The Strategy Design Pattern"></a>The Strategy Design Pattern</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Strategy interface</span></span><br><span class="line"><span class="keyword">public</span> interface IAbilityStrategy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Concrete Strategy classes</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">AttackStrategy</span> :</span> IAbilityStrategy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Character attacks!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">HealStrategy</span> :</span> IAbilityStrategy</span><br><span class="line">&#123;</span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">Execute</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Console.<span class="built_in">WriteLine</span>(<span class="string">&quot;Character heals!&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Context class</span></span><br><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">Character</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">private</span> IAbilityStrategy ability;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="title">Character</span><span class="params">(IAbilityStrategy initialAbility)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ability = initialAbility;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">SetAbility</span><span class="params">(IAbilityStrategy newAbility)</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ability = newAbility;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">void</span> <span class="title">UseAbility</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        ability.<span class="built_in">Execute</span>();</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Usage</span></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">Program</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="function"><span class="keyword">static</span> <span class="keyword">void</span> <span class="title">Main</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        Character warrior = <span class="keyword">new</span> <span class="built_in">Character</span>(<span class="keyword">new</span> <span class="built_in">AttackStrategy</span>());</span><br><span class="line">        Character healer = <span class="keyword">new</span> <span class="built_in">Character</span>(<span class="keyword">new</span> <span class="built_in">HealStrategy</span>());</span><br><span class="line"></span><br><span class="line">        warrior.<span class="built_in">UseAbility</span>();  </span><br><span class="line">        <span class="comment">// Outputs: Character attacks!</span></span><br><span class="line">        healer.<span class="built_in">UseAbility</span>();   </span><br><span class="line">        <span class="comment">// Outputs: Character heals!</span></span><br><span class="line"></span><br><span class="line">        <span class="comment">// Switching abilities dynamically</span></span><br><span class="line">        warrior.<span class="built_in">SetAbility</span>(<span class="keyword">new</span> <span class="built_in">HealStrategy</span>());</span><br><span class="line">        warrior.<span class="built_in">UseAbility</span>();  </span><br><span class="line">        <span class="comment">// Outputs: Character heals!</span></span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h1 id="Notes"><a href="#Notes" class="headerlink" title="Notes"></a>Notes</h1><h2 id="Universal-RP"><a href="#Universal-RP" class="headerlink" title="Universal RP"></a>Universal RP</h2><p>这个在unity 3D universal中自带,但3D core中没有.<br>导致部分material会出现显示错误(pink).</p>
+<img src="/blog/2024/09/22/P338/P338_0.png" class="">
+<p>可以把material给成standard或者增添这个package.</p>
+<br>
+<br>
+
+<h1 id="Data-Structure"><a href="#Data-Structure" class="headerlink" title="Data Structure"></a>Data Structure</h1><p>一些过去的回忆.就只贴点图了.</p>
+<img src="/blog/2024/09/22/P338/P338_1.png" class="">
+<img src="/blog/2024/09/22/P338/P338_3.png" class="">
+<img src="/blog/2024/09/22/P338/P338_4.png" class="">
+<img src="/blog/2024/09/22/P338/P338_5.png" class="">
+<img src="/blog/2024/09/22/P338/P338_7.png" class="">
+
+<br>
+<br>
+
+<p>Recursive factorial function.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Factorial</span><span class="params">(<span class="keyword">int</span> n)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// Base case: factorial of 0 is 1</span></span><br><span class="line">    <span class="keyword">if</span> (n == <span class="number">0</span>)</span><br><span class="line">        <span class="keyword">return</span> <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Recursive case: multiply n by factorial of (n - 1)</span></span><br><span class="line">    <span class="keyword">return</span> n * <span class="built_in">Factorial</span>(n - <span class="number">1</span>);</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example usage</span></span><br><span class="line"><span class="keyword">int</span> result = <span class="built_in">Factorial</span>(<span class="number">5</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Output: 120</span></span><br><span class="line">Console.<span class="built_in">WriteLine</span>(result);</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s Algorithm</a>.</p>
+<div class="note ">
+            <p>One of the most common algorithms used for finding the shortest path in graphs is Dijkstra’s algorithm.<br>Here’s a simplified explanation of how it works:</p><p>Start by assigning a tentative distance value to every vertex in the graph.<br>Set the distance of the source vertex to 0 and all other vertices to infinity.<br>Mark the source vertex as the current vertex.<br>For the current vertex, consider all of its unvisited neighbors and calculate their tentative distances by summing the distance of the current vertex and the weight of the edge between them.<br>If the calculated tentative distance of a neighbor is less than its current assigned distance, update the neighbor’s distance value.<br>Once all the neighbors of the current vertex have been considered, mark the current vertex as visited and select the unvisited vertex with the smallest tentative distance as the next current vertex.<br>Repeat steps 3-5 until the destination vertex is marked as visited or there are no more unvisited vertices.<br>The shortest path can then be reconstructed by backtracking from the destination vertex to the source vertex using the recorded distances and visited vertices.<br>Dijkstra’s algorithm guarantees that the shortest path is found, given that the graph doesn’t contain negative weight cycles.<br>It explores vertices in a greedy manner, always selecting the vertex with the smallest tentative distance as the next current vertex.</p>
+          </div>
+
+<br>
+<br>
+
+<p>Quick Sort implementation in C#.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// Function to perform Quick Sort</span></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">QuickSort</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">if</span> (low &lt; high)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">// Partition the array and get the pivot index</span></span><br><span class="line">        <span class="keyword">int</span> pivotIndex = <span class="built_in">Partition</span>(array, low, high);</span><br><span class="line"></span><br><span class="line">        <span class="comment">// Recursively sort the subarrays before and after the pivot</span></span><br><span class="line">        <span class="built_in">QuickSort</span>(array, low, pivotIndex - <span class="number">1</span>);</span><br><span class="line">        <span class="built_in">QuickSort</span>(array, pivotIndex + <span class="number">1</span>, high);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Function to partition the array and find the pivot index</span></span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Partition</span><span class="params">(<span class="keyword">int</span>[] array, <span class="keyword">int</span> low, <span class="keyword">int</span> high)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">int</span> pivot = array[high]; <span class="comment">// Choose the last element as the pivot</span></span><br><span class="line">    <span class="keyword">int</span> i = low - <span class="number">1</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">for</span> (<span class="keyword">int</span> j = low; j &lt; high; j++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">if</span> (array[j] &lt; pivot)</span><br><span class="line">        &#123;</span><br><span class="line">            i++;</span><br><span class="line">            <span class="comment">// Swap elements at indices i and j</span></span><br><span class="line">            <span class="keyword">int</span> temp = array[i];</span><br><span class="line">            array[i] = array[j];</span><br><span class="line">            array[j] = temp;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="comment">// Place the pivot in its correct position</span></span><br><span class="line">    <span class="keyword">int</span> pivotIndex = i + <span class="number">1</span>;</span><br><span class="line">    <span class="keyword">int</span> temp2 = array[pivotIndex];</span><br><span class="line">    array[pivotIndex] = array[high];</span><br><span class="line">    array[high] = temp2;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> pivotIndex;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="comment">// Example usage</span></span><br><span class="line"><span class="keyword">int</span>[] numbers = &#123; <span class="number">5</span>, <span class="number">2</span>, <span class="number">9</span>, <span class="number">1</span>, <span class="number">3</span> &#125;;</span><br><span class="line"><span class="built_in">QuickSort</span>(numbers, <span class="number">0</span>, numbers.Length - <span class="number">1</span>);</span><br><span class="line"></span><br><span class="line"><span class="comment">// Output: 1, 2, 3, 5, 9</span></span><br><span class="line">Console.<span class="built_in">WriteLine</span>(string.<span class="built_in">Join</span>(<span class="string">&quot;, &quot;</span>, numbers));</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<p>What is the difference between a layer and a tag?</p>
+<blockquote>
+<p>Layers are used to isolate things in the engine. Tags are used to label or categorize things.</p>
+</blockquote>
+<br>
+<br>
+
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=ZZuD6iUe3Pc&ab_channel=ViktorBohush">Visualization and Comparison of Sorting Algorithms</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.freecodecamp.org/news/big-o-cheat-sheet-time-complexity-chart/">Big O Cheat Sheet – Time Complexity Chart</a></li>
+<li><a target="_blank" rel="noopener" href="https://learn.unity.com/tutorial/memory-management-in-unity#64a2c5a1edbc2a1b8cbbf2b0">Native memory</a></li>
+</ul>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/blog/tags/C/" rel="tag"># C#</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2024/09/14/P341/" rel="next" title="办公楼幻梦">
+      办公楼幻梦 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Action"><span class="nav-number">1.1.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity-Events"><span class="nav-number">1.2.</span> <span class="nav-text">Unity Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generics"><span class="nav-number">1.3.</span> <span class="nav-text">Generics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision-Trigger"><span class="nav-number">1.4.</span> <span class="nav-text">Collision &#x2F; Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joints"><span class="nav-number">1.5.</span> <span class="nav-text">Joints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observer-Design-Pattern"><span class="nav-number">1.6.</span> <span class="nav-text">Observer Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Command-Design-Pattern"><span class="nav-number">1.7.</span> <span class="nav-text">The Command Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Pool-Design-Pattern"><span class="nav-number">1.8.</span> <span class="nav-text">Object Pool Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-Design-Pattern"><span class="nav-number">1.9.</span> <span class="nav-text">State Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Strategy-Design-Pattern"><span class="nav-number">1.10.</span> <span class="nav-text">The Strategy Design Pattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">2.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Universal-RP"><span class="nav-number">2.1.</span> <span class="nav-text">Universal RP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Structure"><span class="nav-number">3.</span> <span class="nav-text">Data Structure</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_11.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">72</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2024</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.6m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">24:47</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.6m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2024/09/22/P338/";
+    this.page.identifier = "2024/09/22/P338/";
+    this.page.title = "关于Unity的笔记 - 续";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
