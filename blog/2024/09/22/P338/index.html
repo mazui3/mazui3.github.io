@@ -42,7 +42,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_5.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2024/09/22/P338/P338_7.png">
 <meta property="article:published_time" content="2024-09-22T11:10:43.000Z">
-<meta property="article:modified_time" content="2024-09-22T11:10:43.130Z">
+<meta property="article:modified_time" content="2024-09-29T12:38:37.480Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
@@ -255,6 +255,13 @@
 
               <time title="Created: 2024-09-22 07:10:43" itemprop="dateCreated datePublished" datetime="2024-09-22T07:10:43-04:00">2024-09-22</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2024-09-29 08:38:37" itemprop="dateModified" datetime="2024-09-29T08:38:37-04:00">2024-09-29</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -284,13 +291,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>10k</span>
+              <span>12k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>9 mins.</span>
+              <span>11 mins.</span>
             </span>
 
         </div>
@@ -308,6 +315,23 @@
 <br>
 <br>
 <br>
+
+<h1 id="Temp"><a href="#Temp" class="headerlink" title="Temp"></a>Temp</h1><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[<span class="built_in">RequireComponent</span>(<span class="built_in">typeof</span>(CharacterController))]</span><br></pre></td></tr></table></figure>
+
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/68613057/which-one-is-the-best-practice-to-get-instance-in-unity">Get Instance</a>.</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">private</span> PlayerInput _input;</span><br><span class="line"><span class="keyword">private</span> CharacterController _characterController;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">Start</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="comment">// dynamicly finding it -&gt; because it is singleton?</span></span><br><span class="line">    _input = PlayerInput.<span class="built_in">GetInstance</span>();</span><br><span class="line">    <span class="comment">// this is finding the component attached to the same game object</span></span><br><span class="line">    _characterController = GetComponent&lt;CharacterController&gt;();</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">GroundCheck</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    _isGrounded = Physics.<span class="built_in">CheckSphere</span>(_groundCheck.position, _groundCheckDistance, _groundMask);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> abstract <span class="class"><span class="keyword">class</span> <span class="title">Interactor</span> :</span> MonoBehaviour</span><br><span class="line">&#123;</span><br><span class="line">    <span class="keyword">protected</span> PlayerInput _input;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Start</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        _input = PlayerInput.<span class="built_in">GetInstance</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">private</span> <span class="keyword">void</span> <span class="title">Update</span><span class="params">()</span></span></span><br><span class="line"><span class="function">    </span>&#123;</span><br><span class="line">        <span class="built_in">Interact</span>();</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> abstract <span class="keyword">void</span> <span class="title">Interact</span><span class="params">()</span></span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">class</span> <span class="title">SimpleInteractor</span> :</span> Interactor</span><br><span class="line">&#123;</span><br><span class="line">    [<span class="built_in">Header</span>(<span class="string">&quot;Interact&quot;</span>)]</span><br><span class="line">    [SerializeField] <span class="keyword">private</span> Camera _cam;</span><br><span class="line">    [SerializeField] <span class="keyword">private</span> LayerMask _interactionLayer;</span><br><span class="line">    [SerializeField] <span class="keyword">private</span> <span class="keyword">float</span> _interactionDistance;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">private</span> RaycastHit _raycastHit;</span><br><span class="line">    <span class="keyword">protected</span> ISelectable _selectable;</span><br><span class="line"></span><br><span class="line">    <span class="function"><span class="keyword">public</span> <span class="keyword">override</span> <span class="keyword">void</span> <span class="title">Interact</span><span class="params">()</span> </span>&#123;</span><br><span class="line">        Ray ray = _cam.<span class="built_in">ScreenPointToRay</span>(<span class="keyword">new</span> <span class="built_in">Vector3</span>(Screen.width / <span class="number">2</span>, Screen.height / <span class="number">2</span>, <span class="number">0</span>)); <span class="comment">// **Physics.Raycast**</span></span><br><span class="line">        <span class="keyword">if</span> (Physics.<span class="built_in">Raycast</span>(ray, out _raycastHit, _interactionDistance, _interactionLayer))</span><br><span class="line">        &#123;</span><br><span class="line">            _selectable = _raycastHit.transform.GetComponent&lt;ISelectable&gt;();</span><br><span class="line">            <span class="keyword">if</span> (_selectable != null) &#123;</span><br><span class="line">                _selectable.<span class="built_in">OnHoverEnter</span>();</span><br><span class="line"></span><br><span class="line">                <span class="keyword">if</span> (_input._interactPressed) &#123;</span><br><span class="line">                    _selectable.<span class="built_in">OnSelect</span>();</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (_raycastHit.transform == null &amp;&amp; _selectable != null)</span><br><span class="line">        &#123;</span><br><span class="line">            _selectable.<span class="built_in">OnHoverExit</span>();</span><br><span class="line">            _selectable = null;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line"></span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">public</span> <span class="class"><span class="keyword">enum</span> <span class="title">Input</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    Primary,</span><br><span class="line">    Secondary</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
 
 <h1 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h1><h2 id="Action"><a href="#Action" class="headerlink" title="Action"></a><a target="_blank" rel="noopener" href="https://docs.unity3d.com/ScriptReference/Events.UnityAction.html">Action</a></h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">using</span> UnityEngine.Events;</span><br><span class="line"></span><br><span class="line"><span class="keyword">public</span> Action&lt;<span class="keyword">float</span>&gt; OnHealthUpdated;</span><br><span class="line"><span class="comment">// this means onHealthUpdated func will take float as parameter</span></span><br><span class="line"><span class="keyword">public</span> Action OnDeath;</span><br><span class="line"><span class="comment">// this does not take parameter</span></span><br><span class="line"></span><br><span class="line">OnHealthUpdated += AnotherFunc_OnHealthUpdate;</span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AnotherFunc_OnHealthUpdate</span><span class="params">(<span class="keyword">float</span> health)</span></span>&#123;</span><br><span class="line">  <span class="comment">// actions</span></span><br><span class="line">  <span class="comment">// can be different script</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
@@ -462,7 +486,10 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2024/10/05/P333/" rel="prev" title="柴葱老师的雨未服饰介绍">
+      <i class="fa fa-chevron-left"></i> 柴葱老师的雨未服饰介绍
+    </a></div>
       <div class="post-nav-item">
     <a href="/blog/2024/09/14/P341/" rel="next" title="办公楼幻梦">
       办公楼幻梦 <i class="fa fa-chevron-right"></i>
@@ -532,7 +559,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">1.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Action"><span class="nav-number">1.1.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity-Events"><span class="nav-number">1.2.</span> <span class="nav-text">Unity Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generics"><span class="nav-number">1.3.</span> <span class="nav-text">Generics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision-Trigger"><span class="nav-number">1.4.</span> <span class="nav-text">Collision &#x2F; Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joints"><span class="nav-number">1.5.</span> <span class="nav-text">Joints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observer-Design-Pattern"><span class="nav-number">1.6.</span> <span class="nav-text">Observer Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Command-Design-Pattern"><span class="nav-number">1.7.</span> <span class="nav-text">The Command Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Pool-Design-Pattern"><span class="nav-number">1.8.</span> <span class="nav-text">Object Pool Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-Design-Pattern"><span class="nav-number">1.9.</span> <span class="nav-text">State Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Strategy-Design-Pattern"><span class="nav-number">1.10.</span> <span class="nav-text">The Strategy Design Pattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">2.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Universal-RP"><span class="nav-number">2.1.</span> <span class="nav-text">Universal RP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Structure"><span class="nav-number">3.</span> <span class="nav-text">Data Structure</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Temp"><span class="nav-number">1.</span> <span class="nav-text">Temp</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Action"><span class="nav-number">2.1.</span> <span class="nav-text">Action</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Unity-Events"><span class="nav-number">2.2.</span> <span class="nav-text">Unity Events</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Generics"><span class="nav-number">2.3.</span> <span class="nav-text">Generics</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Collision-Trigger"><span class="nav-number">2.4.</span> <span class="nav-text">Collision &#x2F; Trigger</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Joints"><span class="nav-number">2.5.</span> <span class="nav-text">Joints</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Observer-Design-Pattern"><span class="nav-number">2.6.</span> <span class="nav-text">Observer Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Command-Design-Pattern"><span class="nav-number">2.7.</span> <span class="nav-text">The Command Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Object-Pool-Design-Pattern"><span class="nav-number">2.8.</span> <span class="nav-text">Object Pool Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#State-Design-Pattern"><span class="nav-number">2.9.</span> <span class="nav-text">State Design Pattern</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#The-Strategy-Design-Pattern"><span class="nav-number">2.10.</span> <span class="nav-text">The Strategy Design Pattern</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">3.</span> <span class="nav-text">Notes</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#Universal-RP"><span class="nav-number">3.1.</span> <span class="nav-text">Universal RP</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Data-Structure"><span class="nav-number">4.</span> <span class="nav-text">Data Structure</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -548,7 +575,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">333</span>
+          <span class="site-state-item-count">336</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -621,7 +648,7 @@
     </span>
 
 
-    <span title="C">1.6m</span>
+    <span title="C">1.7m</span>
   -->
 
   <!--
@@ -629,7 +656,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">24:47</span>
+    <span title="T">25:01</span>
 
   -->
 
@@ -639,7 +666,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有1.6m的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有1.7m的老兔正在打瞌睡</span>
 </div>
 
         
