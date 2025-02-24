@@ -1,0 +1,1035 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
+<meta name="theme-color" content="#222">
+<meta name="generator" content="Hexo 5.4.0">
+  <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
+  <link rel="mask-icon" href="/blog/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/blog/css/main.css">
+
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
+  <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
+  <script src="/blog/lib/pace/pace.min.js"></script>
+
+<script id="hexo-configurations">
+    var NexT = window.NexT || {};
+    var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
+  </script>
+
+  <meta name="description" content="parsec   unity input systemUniversal Render Pipeline (URP)">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Unity错题本">
+<meta property="og:url" content="https://mazui3.github.io/blog/2025/02/25/P336/index.html">
+<meta property="og:site_name" content="Underlake Reading Room">
+<meta property="og:description" content="parsec   unity input systemUniversal Render Pipeline (URP)">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/P336.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/05.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/04.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/01.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/02.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/03.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/06.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/08.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/09.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/11.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/pipeline.png">
+<meta property="article:published_time" content="2025-02-24T19:08:08.000Z">
+<meta property="article:modified_time" content="2025-02-24T19:08:29.385Z">
+<meta property="article:author" content="Mazui">
+<meta property="article:tag" content="Unity">
+<meta property="article:tag" content="C#">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2025/02/25/P336/P336.png">
+
+<link rel="canonical" href="https://mazui3.github.io/blog/2025/02/25/P336/">
+
+
+<script id="page-configurations">
+  // https://hexo.io/docs/variables.html
+  CONFIG.page = {
+    sidebar: "",
+    isHome : false,
+    isPost : true,
+    lang   : 'en'
+  };
+</script>
+
+  <title>Unity错题本 | Underlake Reading Room</title>
+  
+
+
+
+
+
+
+  <noscript>
+  <style>
+  .use-motion .brand,
+  .use-motion .menu-item,
+  .sidebar-inner,
+  .use-motion .post-block,
+  .use-motion .pagination,
+  .use-motion .comments,
+  .use-motion .post-header,
+  .use-motion .post-body,
+  .use-motion .collection-header { opacity: initial; }
+
+  .use-motion .site-title,
+  .use-motion .site-subtitle {
+    opacity: initial;
+    top: initial;
+  }
+
+  .use-motion .logo-line-before i { left: initial; }
+  .use-motion .logo-line-after i { right: initial; }
+  </style>
+</noscript>
+
+<!-- hexo injector head_end start -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.12.0/dist/katex.min.css">
+
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/hexo-math@4.0.0/dist/style.css">
+<!-- hexo injector head_end end --></head>
+
+<body itemscope itemtype="http://schema.org/WebPage">
+  <div class="container use-motion">
+    <div class="headband"></div>
+
+    <header class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="Toggle navigation bar">
+      <span class="toggle-line toggle-line-first"></span>
+      <span class="toggle-line toggle-line-middle"></span>
+      <span class="toggle-line toggle-line-last"></span>
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/blog/" class="brand" rel="start">
+      <span class="logo-line-before"><i></i></span>
+      <h1 class="site-title">Underlake Reading Room</h1>
+      <span class="logo-line-after"><i></i></span>
+    </a>
+      <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger">
+        <i class="fa fa-search fa-fw fa-lg"></i>
+    </div>
+  </div>
+</div>
+
+
+
+
+<nav class="site-nav">
+  <ul id="menu" class="main-menu menu">
+        <li class="menu-item menu-item-home">
+
+    <a href="/blog/" rel="section"><i class="fa fa-home fa-fw"></i>Home</a>
+
+  </li>
+        <li class="menu-item menu-item-about">
+
+    <a href="/blog/about/" rel="section"><i class="fa fa-user fa-fw"></i>About</a>
+
+  </li>
+        <li class="menu-item menu-item-tags">
+
+    <a href="/blog/tags/" rel="section"><i class="fa fa-tags fa-fw"></i>Tags</a>
+
+  </li>
+        <li class="menu-item menu-item-categories">
+
+    <a href="/blog/categories/" rel="section"><i class="fa fa-th fa-fw"></i>Categories</a>
+
+  </li>
+        <li class="menu-item menu-item-archives">
+
+    <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
+
+  </li>
+        <li class="menu-item menu-item-schedule">
+
+    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
+
+  </li>
+        <li class="menu-item menu-item-zone">
+
+    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
+
+  </li>
+        <li class="menu-item menu-item-back">
+
+    <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
+
+  </li>
+      <li class="menu-item menu-item-search">
+        <a role="button" class="popup-trigger"><i class="fa fa-search fa-fw"></i>Search
+        </a>
+      </li>
+  </ul>
+</nav>
+
+
+
+  <div class="search-pop-overlay">
+    <div class="popup search-popup">
+        <div class="search-header">
+  <span class="search-icon">
+    <i class="fa fa-search"></i>
+  </span>
+  <div class="search-input-container">
+    <input autocomplete="off" autocapitalize="off"
+           placeholder="Searching..." spellcheck="false"
+           type="search" class="search-input">
+  </div>
+  <span class="popup-btn-close">
+    <i class="fa fa-times-circle"></i>
+  </span>
+</div>
+<div id="search-result">
+  <div id="no-result">
+    <i class="fa fa-spinner fa-pulse fa-5x fa-fw"></i>
+  </div>
+</div>
+
+    </div>
+  </div>
+
+</div>
+    </header>
+
+    
+  <div class="back-to-top">
+    <i class="fa fa-arrow-up"></i>
+    <span>0%</span>
+  </div>
+
+
+    <main class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          
+
+          <div class="content post posts-expand">
+            
+
+    
+  
+  
+  <article itemscope itemtype="http://schema.org/Article" class="post-block" lang="en">
+    <link itemprop="mainEntityOfPage" href="https://mazui3.github.io/blog/2025/02/25/P336/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/blog/images/logo_11.jpg">
+      <meta itemprop="name" content="Mazui">
+      <meta itemprop="description" content="与孤独和平共处.">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Underlake Reading Room">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          Unity错题本
+        </h1>
+
+        <div class="post-meta">
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-calendar"></i>
+              </span>
+              <span class="post-meta-item-text">Posted on</span>
+              
+
+              <time title="Created: 2025-02-25 03:08:08 / Modified: 03:08:29" itemprop="dateCreated datePublished" datetime="2025-02-25T03:08:08+08:00">2025-02-25</time>
+            </span>
+            <span class="post-meta-item">
+              <span class="post-meta-item-icon">
+                <i class="far fa-folder"></i>
+              </span>
+              <span class="post-meta-item-text">In</span>
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/" itemprop="url" rel="index"><span itemprop="name">写码笔记</span></a>
+                </span>
+            </span>
+
+          
+  
+  <span class="post-meta-item">
+    
+      <span class="post-meta-item-icon">
+        <i class="far fa-comment"></i>
+      </span>
+      <span class="post-meta-item-text">Disqus: </span>
+    
+    <a title="disqus" href="/blog/2025/02/25/P336/#disqus_thread" itemprop="discussionUrl">
+      <span class="post-comments-count disqus-comment-count" data-disqus-identifier="2025/02/25/P336/" itemprop="commentCount"></span>
+    </a>
+  </span>
+  
+  
+            <span class="post-meta-item" title="C">
+              <span class="post-meta-item-icon">
+                <i class="far fa-file-word"></i>
+              </span>
+              <span>17k</span>
+            </span>
+            <span class="post-meta-item" title="T">
+              <span class="post-meta-item-icon">
+                <i class="far fa-clock"></i>
+              </span>
+              <span>15 mins.</span>
+            </span>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+        <p>parsec</p>
+<blockquote>
+</blockquote>
+<p>unity input system<br>Universal Render Pipeline (URP)</p>
+<span id="more"></span>
+
+<br>
+<br>
+<br>
+
+<h2 id="1-Boxing"><a href="#1-Boxing" class="headerlink" title="1 - Boxing"></a>1 - Boxing</h2><p>值类型与引用类型互相转换:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qiaoquan3/article/details/51439726">拆箱装箱.</a></p>
+<br>
+<br>
+
+<h2 id="2-Type"><a href="#2-Type" class="headerlink" title="2 - Type"></a>2 - Type</h2><blockquote>
+<p>public 全局<br>protected 子类<br>internal 同集<br>private 隐藏<br>sealed 封闭</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/protected">Protected</a>: Any field marked with ‘protected’ means it is only visible to itself and any children (classes that inherit from it).</p>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/internal">Internal</a>: Accessible within the same <em>assembly</em> but not from another project.<br><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/165719/practical-uses-for-the-internal-keyword-in-c-sharp">The internal keyword is heavily used when you are building a wrapper over non-managed code.</a></p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/7777611/when-and-why-would-you-seal-a-class">Sealed</a>: When applied to a class, the sealed modifier prevents other classes from inheriting from it. In the following example, class B inherits from class A, but no class can inherit from class B.</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">A</span> &#123;</span>&#125;</span><br><span class="line">sealed <span class="class"><span class="keyword">class</span> <span class="title">B</span> :</span> A &#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<br>
+<br>
+
+<h2 id="3-Keywords"><a href="#3-Keywords" class="headerlink" title="3 - Keywords"></a>3 - Keywords</h2><p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/virtual">Virtual</a>.</p>
+<blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/56860/what-is-an-example-of-the-liskov-substitution-principle">Liskov Substitution Principle</a><br>Virtual method用于override.拥有virtual method的base class可以单独存在,单独使用.</p>
+</blockquote>
+<p>From 飞哥.</p>
+<blockquote>
+<p>但是简单的讲一下的话，就是说比如说这个A，它这个class它有一个virtual的method叫什么，就是print，然后B呢，它就是inherit a, 然后B它就必须要inherit a的，它这个print method然后也是virtual。<br>那然后如果我们就我们这个时候如果call就B就是指针嘛，就B的print的话，正常情况下，它这个print是走就是去call b它那个print。就B，the print, the definition, 但是如果你看，因为B它是继承A的嘛，我们可以用A的指针去指B，就一个a star就是指B是可以的，那如果我们用这个指针去call它这个print的话，就是普通就没有virtual的话，他就会跑到A的print那边去。<br>那有virtual，他就会找啊，原来B他也define了。那我就直接去call B的print。</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/abstract">Abstract</a>.</p>
+<blockquote>
+<p>Abstract跟virtual不一样不能define,abstract class也不能使用.Implement了sub class必须要override abstract class.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/6802573/interfaces-whats-the-point">Interface</a>.</p>
+<blockquote>
+<p>Interface不是class,是可以单独存在的blueprint.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1735203/delegates-in-c-sharp">Delegate</a>.</p>
+<blockquote>
+<p>有点像unity的UnityEvent.需要对方的object.method.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://learn.microsoft.com/en-us/dotnet/csharp/language-reference/builtin-types/struct">Struct</a>.</p>
+<blockquote>
+<p>class.<br>A structure type (or struct type) is a value type that can encapsulate data and related functionality.</p>
+</blockquote>
+<p>Enum.</p>
+<blockquote>
+<p>We can create a new type with Enum. So for example;<br>enum color {red, black, orange, blue, yellow}<br>‘color’ is a type and can be any of the colors we defined (red, black, orange, blue, yellow).</p>
+</blockquote>
+<br>
+<br>
+
+<h2 id="4-GC-Alloc"><a href="#4-GC-Alloc" class="headerlink" title="4 - GC Alloc"></a>4 - GC Alloc</h2><p>GC.Alloc means that during the run time your code (or something in the API) allocates this much of the managed memory.<br>This can cause problems later (that’s why it has the row in the profiler), because when the Garbage Collector runs, it tends to slow down or even hang your game.<br>It is always a good idea to try to write your game allocation free, which means you avoid APIs and techniques which result in allocation on said managed memory.</p>
+<ul>
+<li>Using a dictionary with an enum will generate garbage, but using a dictionary with int’s won’t, even though you can easily cast between ints and enums</li>
+<li>Debug.Log and prints create garbage (probably the strings)</li>
+</ul>
+<p><em>It’s a huge topic anyways.</em></p>
+<br>
+<br>
+
+<p>CLR: Common Language Runtime, 公共语言运行时，是一种可以支持多种语言的运行时，其基本的核心功能包含:</p>
+<blockquote>
+<p>内存管理<br>程序集加载和卸载<br>类型安全<br>异常处理<br>线程同步</p>
+</blockquote>
+<p>在CLR中的自动内存管理，就会使用垃圾回收器来执行内存管理，其会定时执行，或者在申请内存分配是发现内存不足时触发执行，也可以手动触发执行(System.GC.Collect)</p>
+<p>垃圾回收的几种基本算法</p>
+<blockquote>
+<p>标记清除算法(Mark-Sweep)关键点是，清除后，并不会执行内存的压缩<br>复制算法(Copying) 内存等额划分，每次执行垃圾回收后，拷贝不被回收的内存到没有被使用的内存块，自带内存压缩，弊端是内存浪费大(每次只能使用部分，预留部分给拷贝使用)<br>标记整理算法(Mark-Compact)关键点，清除后，会执行内存压缩，不会有内存碎片<br>分代收集算法(Generational Collection)对内存对象进行分代标记，避免全量垃圾回收带来的性能消耗。下文会详细讲解。<br>垃圾回收模型</p>
+</blockquote>
+<p>垃圾回收的目的<br>缘由： 内存是有限的，为了避免内存溢出，需要清理无效内存</p>
+<p>触发时机<br>申请分配内存时内存不足(本身不足或者内存碎片过多没有足够大小的内存片)<br>强制调用System.GC.Collect<br>CLR卸载应用程序域(AppDomain)<br>CLR正在关闭(后面2种在进程运行时不会触发)</p>
+<p>垃圾回收的流程<br>GC准备阶段 暂停进程中的所有线程，避免线程在CLR检测根期间访问堆内存<br>GC的标记阶段 首先，会默认托管堆上所有的对象都是垃圾(可回收对象)，然后开始遍历根对象并构建一个由所有和根对象之间有引用关系的对象构成的对象图，然后GC会挨个遍历根对象和其引用对象，如果根对象没有任何引用对象(null)GC会忽略该根对象。对于含有引用对象的根对象以及其引用对象，GC将其纳入对象图中，如果发现已经处于对象图中，则换一个路径遍历，避免无限循环。PS： 所有的全局和静态对象指针是应用程序的根对象。<br>垃圾回收阶段 完成遍历操作后，对于没有被纳入对象图中的对象，执行清理操作<br>碎片整理阶段 如果垃圾回收算法包含这个阶段，则会对剩下的保留的对象进行一次内存整理，重新归类到堆内存中，相应的引用地址也会对应的整理，避免内存碎片的产生。</p>
+<br>
+<br>
+
+<h2 id="5-进程（Process）、线程（Thread）和协程（Coroutine）"><a href="#5-进程（Process）、线程（Thread）和协程（Coroutine）" class="headerlink" title="5 - 进程（Process）、线程（Thread）和协程（Coroutine）"></a>5 - 进程（Process）、线程（Thread）和协程（Coroutine）</h2><p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/1050222/what-is-the-difference-between-concurrency-and-parallelism">Difference between concurrency and parallelism</a>.</p>
+<p>Coroutines are a form of sequential processing: only one is executing at any given time (just like subroutines AKA procedures AKA functions – they just pass the baton among each other more fluidly).</p>
+<p>Threads are (at least conceptually) a form of concurrent processing: multiple threads may be executing at any given time.</p>
+<br>
+<br>
+
+
+<h2 id="6-Socket通讯"><a href="#6-Socket通讯" class="headerlink" title="6 - Socket通讯"></a>6 - <a target="_blank" rel="noopener" href="https://c.biancheng.net/socket/">Socket通讯</a></h2><img src="/blog/2025/02/25/P336/P336.png" class="">
+
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/socket-programming-cc/">Programming</a>.</p>
+<p><a target="_blank" rel="noopener" href="https://stackoverflow.com/questions/4782105/understanding-socket-basics">https://stackoverflow.com/questions/4782105/understanding-socket-basics</a></p>
+<p><a target="_blank" rel="noopener" href="https://www.geeksforgeeks.org/what-is-web-socket-and-how-it-is-different-from-the-http/">WebSocket and Http</a>.</p>
+<p>Http</p>
+<blockquote>
+<p>Let’s take an example when a user sends a request to the server this request goes in the form of HTTP or HTTPS, and after receiving a request server sends the response to the client, each request is associated with a corresponding response, and after sending the response the connection gets closed, each HTTP or HTTPS request establish a new connection to the server every time and after getting the response the connection gets terminated by itself.</p>
+</blockquote>
+<p><a target="_blank" rel="noopener" href="https://developer.mozilla.org/en-US/docs/Web/API/WebSockets_API">Websocket</a></p>
+<blockquote>
+<p>WebSocket is a stateful protocol, which means the connection between client and server will stay alive until it gets terminated by either party (client or server).</p>
+</blockquote>
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://www.videosdk.live/developer-hub/socketio/socket-vs-websocket">Socket vs. Websocket</a><br>The primary difference between sockets and WebSockets lies in their underlying protocols and communication models. Traditional sockets use protocols like TCP and UDP, where the connection is either connection-oriented (TCP) or connectionless (UDP).<br>WebSockets, however, operate over the HTTP/1.1 or HTTP/2 protocols, establishing a persistent, bidirectional connection that allows for continuous data exchange without the overhead of repeatedly opening and closing connections.</p>
+<br>
+<br>
+
+<p>TCP/IP -&gt; Transmission Control Protocol/Internet Protocol</p>
+<br>
+<br>
+
+<h2 id="7-List"><a href="#7-List" class="headerlink" title="7 - List"></a>7 - List</h2><p><a target="_blank" rel="noopener" href="https://www.c-sharpcorner.com/article/what-is-the-difference-between-an-array-arraylist-and-a-list/">Array list &amp; list</a>.</p>
+<ol>
+<li><p>Array in C#<br>An array is a fixed-size collection of items of the same type.<br>Arrays are declared using square brackets ([]).<br>The size of the array is specified when the array is created and cannot be changed afterward.<br>Arrays provide fast access to elements by their index.</p>
+</li>
+<li><p>ArrayList in C#<br>An ArrayList is a dynamic-size collection of items of any type.<br>ArrayLists are declared using the ArrayList class.<br>The size of the ArrayList can be changed by adding or removing elements.<br>ArrayLists provide flexibility to add, remove, and modify elements at any position in the List.</p>
+</li>
+<li><p>List in C#<br>A List is also a dynamic-size collection of items of any type.<br>Lists are declared using the List <T> class, where T is the type of item to be stored.<br>The size of the List can be changed by adding or removing elements.<br>Lists provide the same flexibility to add, remove, and modify elements at any position in the List as ArrayLists.<br>Lists also provide type safety through generics, ensuring that only items of the specified type can be added to the List.</p>
+</li>
+</ol>
+<br>
+<br>
+
+<h2 id="8-版本控制与文档管理"><a href="#8-版本控制与文档管理" class="headerlink" title="8 - 版本控制与文档管理"></a>8 - 版本控制与文档管理</h2><p><em>“使用版本控制工具（如Git、SVN）进行代码管理，撰写技术文档，确保代码的可维护性和可扩展性.”</em></p>
+<br>
+<br>
+
+
+<h2 id="9-What-is-OOP"><a href="#9-What-is-OOP" class="headerlink" title="9 - What is OOP?"></a>9 - What is OOP?</h2><p>Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code: data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods).<br>In OOP, computer programs are designed by making them out of objects that interact with one another.</p>
+<br>
+<br>
+
+<h2 id="10-SDK接入-software-development-kit"><a href="#10-SDK接入-software-development-kit" class="headerlink" title="10 - SDK接入 - software development kit"></a>10 - SDK接入 - <a target="_blank" rel="noopener" href="https://www.ibm.com/think/topics/api-vs-sdk">software development kit</a></h2><br>
+<br>
+
+<h2 id="11-六大设计模式"><a href="#11-六大设计模式" class="headerlink" title="11 - 六大设计模式"></a>11 - 六大设计模式</h2><p>开闭原则：一个软件实体如类、模块和函数应该对修改封闭，对扩展开放。</p>
+<p>单一职责原则：一个类只做一件事，一个类应该只有一个引起它修改的原因。</p>
+<p>里氏替换原则：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。</p>
+<p>依赖倒置原则：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。</p>
+<p>迪米特法则：又名「最少知道原则」，一个类不应知道自己操作的类的细节，换言之，只和朋友谈话，不和朋友的朋友谈话。</p>
+<p>接口隔离原则：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。</p>
+<br>
+<br>
+
+<p>Design pattern</p>
+<br>
+<br>
+
+<h2 id="12-A-search-algorithm"><a href="#12-A-search-algorithm" class="headerlink" title="12 - A* search algorithm"></a>12 - A* search algorithm</h2><p>Given a weighted graph, a source node and a goal node, the algorithm finds the shortest path (with respect to the given weights) from source to goal.</p>
+<p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-L-WgKMFuhE&ab_channel=SebastianLague">A* Pathfinding in grid</a>.</p>
+<p>G cost -&gt; the distance from the starting node.<br>H cost(heuristic) -&gt; the distance from the end node.<br>F cost -&gt; G cost + H cost.<br>The algorithm compare the lowest F cost in the node and choose it as the path.</p>
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Dijkstra%27s_algorithm">Dijkstra’s algorithm</a>.</p>
+<blockquote>
+<p>Dijkstra’s algorithm (/ˈdaɪkstrəz/ DYKE-strəz) is an algorithm for finding the shortest paths between nodes in a weighted graph, which may represent, for example, a road network.</p>
+</blockquote>
+<p>Dijkstra(戴克斯特拉算法)是本科时学的找short path的方法,放在grid里面过于繁琐.</p>
+<br>
+<br>
+
+<h2 id="14-状态机-finite-state-machine"><a href="#14-状态机-finite-state-machine" class="headerlink" title="14 - 状态机 - finite-state machine"></a>14 - 状态机 - <a target="_blank" rel="noopener" href="https://github.com/jakesgordon/javascript-state-machine">finite-state machine</a></h2><p>状态机中有几个术语：state(状态) 、transition(转移) 、action(动作) 、transition condition(转移条件) 。</p>
+<div class="note ">
+            <p>第一个是 State，状态。一个状态机至少要包含两个状态。例如上面自动门的例子，有 open 和 closed 两个状态。</p>
+          </div>
+
+<div class="note ">
+            <p>第二个是 Event ，事件。事件就是执行某个操作的触发条件或者口令。对于自动门，“按下开门按钮”就是一个事件。</p>
+          </div>
+
+<div class="note ">
+            <p>第三个是 Action ，动作。事件发生以后要执行动作。例如事件是“按开门按钮”，动作是“开门”。编程的时候，一个 Action 一般就对应一个函数。</p>
+          </div>
+
+<div class="note ">
+            <p>第四个是 Transition ，变换。也就是从一个状态变化为另一个状态。例如“开门过程”就是一个变换。</p>
+          </div>
+
+<p>如下图，就定义了一个只有opened 和closed两种状态的状态机。当系统处于opened状态，在收到输入“关闭事件”，达到了状态机转移条件，系统就转移到了closed状态，并执行相应的动作，此例有一个进入动作(entry action)，进入closed状态，会执行close door动作。</p>
+<img src="/blog/2025/02/25/P336/05.png" class="">
+
+<br>
+<br>
+
+<p>来举个例子。街上的自动售货机中明显能看到状态机逻辑。我们做一下简化，假设这是一台只卖2元一瓶的汽水的售货机，只接受五毛和一块的硬币。初始状态是”未付款“，中间状态有”已付款5毛“，”已付款1块“，”已付款1.5块“，”已足额付款“，四个状态。状态切换的触发条件是”投一块硬币“和”投5毛硬币“两种，”到达足额付款“状态，还要进行余额清零和弹出汽水操作。</p>
+<br>
+<br>
+
+<p>acceptors(接收器) 是指产生一个二值的输出，指示接收的输入是否能被接受。acceptors(接收器)的每一种状态都是接受或不接受的。如果一组所有的输入都被接受并且当前的状态是接受状态，那么这一组输入就是可接受的。有限状态机的acceptors(接收器)这一类在正则引擎的实现中用的非常多。<br>如下图是一种acceptors(接收器) 类型有限状态机，用来识别所输入的字符串是否为nice，其总共被划分为了七种状态，其中只有第七种状态Success被认为是可接受状态。如果所输入的字串不是nice，则会被转移到第六种状态Error。</p>
+<img src="/blog/2025/02/25/P336/04.png" class="">
+
+<p>如下给出acceptors(接收器) 的数学形式化定义，acceptors(接收器) 型有限状态机是一个五元组(Σ,S,s0,δ,F)(\Sigma,S,s_0,\delta,F)(Σ,S,s0​,δ,F),其中：</p>
+<p>Σ\SigmaΣ是输入字符集合(有限的非空符号集合)；<br>SSS是有限非空状态集合；<br>s0是初始状态，属于S中的元素；<br>δ\deltaδ是状态转移函数：δ\deltaδ：S×Σ→SS\times\Sigma \rightarrow SS×Σ→S；<br>F是最终状态集合，是S的子集。</p>
+<br>
+<br>
+
+<p>transducers(转换器) 是根据当前的状态和(或)给定的输入产生输出，输出的同时可能也伴随着状态的转移(不是必须)。在一些事件驱动型应用和计算语言学(computational linguistics)领域应用普遍。transducers(转换器) 型有限状态机可以分为两种子类型，moore machine (摩尔型有限状态机)和mealy machine (米利型有限状态机) ，其中：</p>
+<ul>
+<li>若输出只和状态有关而与输入无关，则称为moore状态机</li>
+<li>输出不仅和状态有关而且和输入有关系，则称为mealy状态机</li>
+</ul>
+<br>
+<br>
+
+<img src="/blog/2025/02/25/P336/01.png" class="">
+
+<p>moore状态机：<br>如下所示的状态机为moore状态机，其有q0、q1、q2​、q3四个状态，X,Y,Z三个输入，a、b、c三个输出。可以看出其四个状态q0、q1、q2、q3对应的输出分别为b、a、a、c，就是说输出已经和状态绑定好，不管输入为哪一个，均不影响输出。其中q0为初始状态，假设输入为XYZY，可以看出输出为bcac；假设输入为ZXYZ，则输出为baca，可以看出，虽然输出只和状态有关而与输入无关，但改变输入的序列顺序，输出序列也会改变。</p>
+<p>mealy状态机：</p>
+<img src="/blog/2025/02/25/P336/02.png" class="">
+<img src="/blog/2025/02/25/P336/03.png" class="">
+
+<br>
+<br>
+
+<img src="/blog/2025/02/25/P336/06.png" class="">
+
+<br>
+<br>
+
+<p><a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/33288542">图灵机</a>.</p>
+<br>
+<br>
+
+<h2 id="15-Behavior-tree-行为树"><a href="#15-Behavior-tree-行为树" class="headerlink" title="15 - Behavior tree (行为树)"></a>15 - <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/463182588">Behavior tree</a> (行为树)</h2><img src="/blog/2025/02/25/P336/08.png" class="">
+
+<p>行为节点（Action Node）一般分为两种运行状态：</p>
+<p>运行中（Executing）：该行为还在处理中<br>完成（Completed）：该行为处理完成，成功或者失败</p>
+<p>除了行为节点，其余一般称之为控制节点（Control Node）.</p>
+<p>我们可以为行为树定义各种各样的控制节点（这也是行为树有意思的地方之一），一般来说，常用的控制节点有以下三种</p>
+<p>选择（Selector）：选择其子节点的某一个执行<br>序列（Sequence）：将其所有子节点依次执行，也就是说当前一个返回“完成”状态后，再运行先一个子节点</p>
+<blockquote>
+<p>顺序(Sequence)结点：按顺序执行孩子结点直到其中一个孩子结点返回失败状态或所有孩子结点返回成功状态。</p>
+</blockquote>
+<blockquote>
+<p>备选(Fallback)结点：按顺序执行孩子结点直到其中一个孩子结点返回成功状态或所有孩子结点返回失败状态。一般用来实现角色的备选行为。</p>
+</blockquote>
+<p>并行（Parallel）：将其所有子节点都运行一遍</p>
+<blockquote>
+<p>并行结点：“并行执行”所有孩子结点。直到至少M个孩子(M的值在1到N之间)结点返回成功状态或所有孩子结点返回失败状态。</p>
+</blockquote>
+<p>而装饰(Decorator)结点只能有一个孩子结点，用来对孩子结点的行为进行自定义修改。</p>
+<blockquote>
+<p>Common policy: invert, repeat/retry, timeout, force failure, success if failure.</p>
+</blockquote>
+<br>
+<br>
+
+<p>我们可以使用装饰器结点(decorator node)来对行为树进行优化。考虑上面的在多个地点搜寻物体的行为树，如果地点数目达到20个以上，整个行为树看上去就会变得非常庞大，也为我们进一步添加新的结点带来麻烦。</p>
+<p>下面是避免这些麻烦的常用方法：</p>
+<p>引入装饰器结点(decorator node)：相较于每增加一个搜寻地点就复制一份完全相同的子树，我们可以定义一个规则为Repeat的装饰器结点，用来重复执行它的孩子结点，完成搜寻多个地点。<br>在每一次迭代更新目标位置：使用一个队列存储所有待搜寻地点，每次迭代从队列中取出一个地点进行搜寻，当队列为空时，所有地点都被搜寻完毕。<br>为了存储可以被多个结点访问的共享信息(比如上面提到的存储有所有待搜寻地点的队列)，我们引入黑板(blackboard)的概念。黑板是一块可以被结点读写的公共存储区。</p>
+<br>
+<br>
+
+<img src="/blog/2025/02/25/P336/09.jpg" class="">
+
+<br>
+<br>
+
+<p>寻路路径<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Britripe/article/details/117083092">stack and heap</a>(heap是堆，stack是栈)</p>
+<p>stack是一块连续的内存的区域.栈由系统自动分配，速度较快。但程序员是无法控制的.<br>heap是不连续的内存区域.堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便.</p>
+<img src="/blog/2025/02/25/P336/10.png" class="">
+<img src="/blog/2025/02/25/P336/11.png" class="">
+
+<p>热更新-&gt;用c#需要编译所以比较麻烦<br>用文本文件，SLua，lua，pureTS，是unity热更新的方案</p>
+<br>
+<br>
+
+
+<br>
+<br>
+
+<h2 id="Others-Questions"><a href="#Others-Questions" class="headerlink" title="Others - Questions"></a>Others - Questions</h2><ol>
+<li>CharacterController和Rigidbody的区别<br>Rigidbody具有完全真实物理的特性，⽽CharacterController可以说是受限的Rigidbody，具有⼀定的物理效果但不是完全真实的。<blockquote>
+<p>是两种不一样的东西.<br>CharacterController的建造目的是如其名字.</p>
+</blockquote>
+</li>
+</ol>
+<br>
+
+<ol start="2">
+<li>当一个细小的高速物体撞向另一个较大的物体时，会出现什么情况?如何避免?<br>穿透(碰撞检测失败)</li>
+</ol>
+<br>
+
+<ol start="3">
+<li>物理更新一般放在哪个系统函数里？<br>FixedUpdate，每固定帧绘制时执行一次，和Update不同的是FixedUpdate是渲染帧执行，如果你的渲染效率低下的时候FixedUpdate调用次数就会跟着下降。<br>FixedUpdate比较适用于物理引擎的计算，因为是跟每帧渲染有关。Update就比较适合做控制。</li>
+</ol>
+<p>FixedUpdate，固定时间间隔执行 可以在edit-&gt;project setting-&gt;time设置 update 是在渲染帧执行</p>
+<p>Awake —&gt; OnEnable —&gt; Start —&gt; FixedUpdate —&gt;Update —&gt; LateUpdate—&gt; OnGUl —&gt; OnDisable —&gt; OnDestroy</p>
+<br>
+
+<ol start="4">
+<li>Image和RawImage的区别<br>Image比RawImage更消耗性能<br>Image只能使用Sprite属性的图片，但是RawImage什么样的都可以使用<br>Image适合放一些有操作的图片，裁剪平铺旋转什么的，针对Image Type属性<br>RawImage就放单独展示的图片就可以，性能会比Image好很多<blockquote>
+<p>The Raw Image can display any Texture whereas an Image component can only show a Sprite Texture.<br>Note : Keep in mind that using a RawImage creates an extra draw call with each RawImage present, so it’s best to use it only for backgrounds or temporary visible graphics.</p>
+</blockquote>
+</li>
+</ol>
+<br>
+
+<ol start="5">
+<li>画布的三种模式.缩放模式<br>屏幕空间-覆盖模式(Screen Space-Overlay)，<br>Canvas创建出来后，默认就是该模式，该模式和摄像机无关，即使场景内没有摄像机，UI游戏物体照样渲染屏幕空间：电脑或者手机显示屏的2D空间，只有x轴和y轴 覆盖模式：UI元素永远在3D元素的前面</li>
+</ol>
+<p>屏幕空间-摄像机模式(Screen Space-Camera)，<br>设置成该模式后需要指定一个摄像机游戏物体，指定后UGUI就会自动出现在该摄像机的“投射范围”内，和NGUI的默认UI Root效果一致，如果隐藏掉摄像机，UGUI当然就无法渲染</p>
+<p>世界空间模式(WorldSpace)，<br>设置成该模式后UGUI就相当于是场景内的一个普通的“Cube 游戏模型”，可以在场景内任意的移动UGUI元素的位置，通常用于怪物血条显示和VR开发</p>
+<br>
+
+<ol start="6">
+<li>简述进程（Process）、线程（Thread）和协程（Coroutine）的概念<br>进程<br>保存在硬盘上的程序运行以后，会在内存空间里形成一个独立的内存体，这个内存体有自己独立的地址空间，有自己的堆，不同进程间可以进行进程间通信，上级挂靠单位是操作系统。一个应用程序相当于一个进程，操作系统会以进程为单位，分配系统资源（CPU 时间片、内存等资源），进程是资源分配的最小单位。</li>
+</ol>
+<p>线程<br>线程从属于进程，也被称为轻量级进程，是程序的实际执行者。线程是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条一线程并行执行不同的任务。一个线程只有一个进程。<br>每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。<br>线程拥有自己独立的栈和共享的堆，共享堆，不共享栈，线程亦由操作系统调度(标准线程是的)。</p>
+<p>协程<br>协程是伴随着主线程一起运行的一段程序。<br>协程与协程之间是并行执行，与主线程也是并行执行，同一时间只能执行一个协程提起协程，自然是要想到线程，因为协程的定义就是伴随主线程来运行的。<br>一个线程可以拥有多个协程，协程不是被操作系统内核所管理，而完全是由程序所控制。<br>协程和线程一样共享堆，不共享栈，协程由程序员在协程的代码里显示调度。<br>协成是单线程下由应用程序级别实现的并发。</p>
+<br>
+
+<ol start="7">
+<li>简述协程的作用<br>在Unity中只有主线程才能访问Unity3D的对象、方法、组件。当主线程在执行一个对资源消耗很大的操作时，在这一帧我们的程序就会出现帧率下降，画面卡顿的现象!<br>那这个时候我们就可以利用协程来做这件事，因为协程是伴随着主线程运行的，主线程依旧可以丝滑轻松的工作，把脏活累活交给协程处理就好了！简单来说：协程是辅助主线程的操作，避免游戏卡顿。</li>
+</ol>
+<br>
+
+<ol start="8">
+<li>简述协程的底层原理<br>协程是通过迭代器来实现功能的，通过关键字IEnumerator来定义一个迭代方法。<br>StartCoroutine 接受到的是一个 IEnumerator，这是个接口，并且是枚举器或迭代器的意思。<br>yield 是 C#的一个关键字，也是一个语法糖，背后的原理会生成一个类，并且也是一个枚举器，而且不同于 return，yield 可以出现多次。<br>yield 实际上就是返回一次结果，因为我们要一次一次枚举一个值出来，所以多个 yield 其实是个状态模式，第一个 yield 是状态 1，第二个 yield 是状态 2，每次访问时会基于状态知道当前应该执行哪一个 yield，取得哪一个值。</li>
+</ol>
+<br>
+
+<ol start="9">
+<li>动态加载资源的方式<br>Instantiate：最简单的一种方式，以实例化的方式动态生成一个物体。<br>Assetsbundle：即将资源打成 asset bundle 放在服务器或本地磁盘，然后使用www模块get下来，然后从这个bundle中load某个object，unity官方推荐也是绝大多数商业化项目使用的一种方式。<br>Resource.Load:可以直接load并返回某个类型的Object，前提是要把这个资源放在Resource命名的文件夹下，Unity不管有没有场景引用，都会将其全部打入到安装包中。<br>AssetDatabase.loadasset：这种方式只在editor范围内有效，游戏运行时没有这个函数，它通常是在开发中调试用的。</li>
+</ol>
+<br>
+
+<ol start="10">
+<li>使用Unity3d实现2d游戏，有几种方式？</li>
+</ol>
+<p>1.使用本身的GUI，在Unity4.6以后出现的UGUI<br>2.把摄像机的Projection(投影)值调为Orthographic(正交投影)，不考虑z轴；<br>3.使用2d插件，如：2DToolKit，和NGUI</p>
+<br>
+
+<ol start="11">
+<li>什么叫做链条关节？</li>
+</ol>
+<p>Hinge Joint，可以模拟两个物体间用一根链条连接在一起的情况，能保持两个物体在一个固定距离内部相互移动而不产生作用力，但是达到固定距离后就会产生拉力。</p>
+<br>
+
+<ol start="12">
+<li>Unity3d提供了一个用于保存和读取数据的类(PlayerPrefs)，请列出保存和读取整形数据的函数</li>
+</ol>
+<p>PlayerPrefs.SetInt() PlayerPrefs.GetInt()</p>
+<br>
+
+<ol start="13">
+<li>Unity3d脚本从唤醒到销毁有着一套比较完整的生命周期，请列出系统自带的几个重要的方法。</li>
+</ol>
+<p>Awake——&gt;OnEnable–&gt;Start——&gt;Update——&gt;FixedUpdate——&gt;LateUpdate——&gt;OnGUI——&gt;OnDisable——&gt;OnDestroy</p>
+<br>
+
+<ol start="14">
+<li>在场景中放置多个Camera并同时处于活动状态会发生什么？</li>
+</ol>
+<p>游戏界面可以看到很多摄像机的混合。<em>试一下??</em></p>
+<br>
+
+<ol start="15">
+<li>MipMap是什么，作用？</li>
+</ol>
+<p>MipMapping：在三维计算机图形的贴图渲染中有常用的技术，为加快渲染进度和减少图像锯齿，贴图被处理成由一系列被预先计算和优化过的图片组成的文件，这样的贴图被称为MipMap。</p>
+<br>
+
+<ol start="16">
+<li>.Net与Mono的关系？</li>
+</ol>
+<p>mono是.net的一个开源跨平台工具，就类似java虚拟机，java本身不是跨平台语言，但运行在虚拟机上就能够实现了跨平台。.net只能在windows下运行，mono可以实现跨平台跑，可以运行于linux，Unix，Mac OS等。</p>
+<br>
+
+<ol start="17">
+<li>向量的点乘、叉乘以及归一化的意义？</li>
+</ol>
+<p>1.点乘描述了两个向量的相似程度，结果越大两向量越相似，还可表示投影</p>
+<p>2.叉乘得到的向量垂直于原来的两个向量</p>
+<p>3.标准化向量：用在只关系方向，不关心大小的时候</p>
+<br>
+
+<ol start="18">
+<li>什么是LightMap？</li>
+</ol>
+<p>LightMap:就是指在三维软件里实现打好光，然后渲染把场景各表面的光照输出到贴图上，最后又通过引擎贴到场景上，这样就使物体有了光照的感觉。</p>
+<br>
+
+<ol start="19">
+<li>uGUI，页面上的一个按钮不能响应点击事件，原因可能有哪些？</li>
+</ol>
+<ol>
+<li>可能按钮没有link上应该的onClick event</li>
+<li>有其他的UI部分，比如说图片透明的部分盖住了按钮本身</li>
+<li>EventSytem这个object被不小心删掉了（eventsystem会默认生成，但是比如开新的scene但是复制了按钮没有复制eventsystem那就会出错）<br>4）按钮的interactable box没有勾上或者是按钮这个component没有勾上（没有active）</li>
+<li>按钮的Y轴反了</li>
+</ol>
+<br>
+
+<ol start="20">
+<li>uGUI 中 Mask 和 Rect Mask 2D 的区别是什么？</li>
+</ol>
+<p>Mask是对物品的遮挡，rect mask 2D是快捷的矩形状显示，有padding和softness的两大调整功能。Mask可以做矩形以外的物品遮挡。Mask需要创造image的子组件来划出遮挡区域。</p>
+<br>
+
+<ol start="21">
+<li>Unity 中有哪些方式可以实现异步操作，分别给出优缺点。</li>
+</ol>
+<p>1） Coroutine<br>格式为<br>// inside of the function<br>StartCoroutine(theCoroutine());</p>
+<p>// separate function<br>IEnumerator theCoroutine(){<br>    // do something<br>    yield return new WaitForSeconds(0.5f);<br>    // do something after 0.5f<br>}</p>
+<p>在iEnumerator中没法return一个值。<br>当使用coroutine的时候，如果附带代码的object被destory或者inactive了，coroutine中的代码不会执行。</p>
+<ol start="2">
+<li>Async and Await and Task</li>
+</ol>
+<p>async void theFunction(){<br>    await Task.Run( () =&gt; {<br>        Thread.Sleep(2000);<br>        // do something<br>        }<br>    );<br>}<br>当使用coroutine的时候，如果附带代码的object被destory或者inactive，async和await可以执行代码，也可以return一个值。Awaitablede的任务会拍成池子放到limit allocations里面。<br>但是任务会把本身正在运行的主线程停住，如果有两个任务互相等待，就会被堵住。</p>
+<br>
+
+<ol start="22">
+<li>从渲染的角度，简要描述一下从加载模型，到屏幕中显示模型中间经历了哪些步骤。</li>
+</ol>
+<img src="/blog/2025/02/25/P336/pipeline.png" class="">
+<p>Note that the blue sections represent sections where we can inject our own shaders.</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134356782452834334">顶点着色器的核心功能</a>就是完成将3维坐标中的点，通过变换和投影，转换为2维的屏幕上。<br>作为渲染管线的开端，顶点着色器不止承担着接收顶点的任务，作为一段拥有具体逻辑的应用程序，它还承受着处理顶点位置以便完成一些效果等任务（比如位置变换、调整形状，或者三维变换），另外还起着传输各种从客户端程序传入的各种数据（比如颜色、变换矩阵、时间参数等）并将数据传递给后面阶段的任务。</p>
+<p><a target="_blank" rel="noopener" href="https://juejin.cn/post/7134356782452834334">https://juejin.cn/post/7134356782452834334</a></p>
+<blockquote>
+<p>ApplicationStage：准备场景信息，定义模型的渲染命令（材质，shader）<br>GemetryStage：顶点着色器，曲面细分着色器，几何着色器，裁剪，屏幕映射<br>RasterizerStage：三角形设置，三角形设置遍历，片元着色器，逐片元操作</p>
+</blockquote>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unlit/NewUnlitShader&quot;</span></span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (<span class="string">&quot;Texture&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> &#125;</span><br><span class="line">        LOD <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">            <span class="comment">// make fog work</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_fog</span></span><br><span class="line"></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="class"><span class="keyword">struct</span> <span class="title">v2f</span></span></span><br><span class="line"><span class="class">            &#123;</span></span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                <span class="built_in">UNITY_FOG_COORDS</span>(<span class="number">1</span>)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            <span class="function">v2f <span class="title">vert</span> <span class="params">(appdata v)</span></span></span><br><span class="line"><span class="function">            </span>&#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">                o.uv = <span class="built_in">TRANSFORM_TEX</span>(v.uv, _MainTex);</span><br><span class="line">                <span class="built_in">UNITY_TRANSFER_FOG</span>(o,o.vertex);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function">fixed4 <span class="title">frag</span> <span class="params">(v2f i)</span> : SV_Target</span></span><br><span class="line"><span class="function">            &#123;</span></span><br><span class="line">                <span class="comment">// sample the texture</span></span><br><span class="line">                fixed4 col = <span class="built_in">tex2D</span>(_MainTex, i.uv);</span><br><span class="line">                <span class="comment">// apply fog</span></span><br><span class="line">                <span class="built_in">UNITY_APPLY_FOG</span>(i.fogCoord, col);</span><br><span class="line">                <span class="keyword">return</span> col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>Each SubShader is composed of a number of passes, and each Pass represents an execution of the vertex and fragment code for the same object rendered with the material of the shader.<br>Many simple shaders use just one pass, but shaders that interact with lighting might need more (see Lighting Pipeline for details).<br>Commands inside Pass typically setup fixed function state, for example blending modes.</p>
+<p>GPU工作流程：顶点处理、光栅化、纹理贴图、像素处理</p>
+<p>顶点处理：这阶段GPU读取描述3D图形外观的顶点数 据并根据顶点数据确定3D图形的形状及位置关系，建 ⽴起3D图形的⻣架。<br>光栅化：把⼀个⽮ᰁ图形转换为 ⼀系列像素点的过程就称为光栅化<br>纹理贴图：就是将多边形的表⾯贴 上相应的图⽚，从⽽⽣成“真实”的图形。<br>像素处理：这阶段（在对每个像素进⾏光栅化处理期 间）GPU完成对像素的计算和处理，从⽽确定每个像 素的最终属性。<br>最终输出：由ROP（光栅化引擎）最终完成像素的输 出，1帧渲染完毕后，被送到显存帧缓冲区。<br>————————————————</p>
+<p>23<br>localPosition 与 Position 的使用区别？<br>localPosition :自身坐标系，相对于父级的位置</p>
+<p>24<br>Position ：世界坐标系中的位置</p>
+<p>Unity3D Shader分哪几种，有什么区别？<br>表面着色器的抽象层次比较高，它可以轻松地以简洁方式实现复杂着色。表面着色器可同时在前向渲染及延迟渲染模式下正常工作。<br>顶点片段着色器可以非常灵活地实现需要的效果，但是需要编写更多的代码，并且很难与Unity的渲染管线完美集成。<br>固定功能管线着色器可以作为前两种着色器的备用选择，当硬件无法运行那些酷炫Shader的时，还可以通过固定功能管线着色器来绘制出一些基本的内容。</p>
+<p>红点系统<br>ScriptableObejct</p>
+<p><a target="_blank" rel="noopener" href="https://unity.com/how-to">https://unity.com/how-to</a></p>
+<p><a target="_blank" rel="noopener" href="https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-ui-toolkit-sample-project-231178">https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-ui-toolkit-sample-project-231178</a></p>
+<p><a target="_blank" rel="noopener" href="https://developer.unity.cn/projects/665a7cc9edbc2a001dac7033">https://developer.unity.cn/projects/665a7cc9edbc2a001dac7033</a></p>
+<p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21407523/article/details/108814300">https://blog.csdn.net/qq_21407523/article/details/108814300</a></p>
+<p><a target="_blank" rel="noopener" href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/README.md">https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/README.md</a></p>
+<p>NGUI</p>
+<p><a target="_blank" rel="noopener" href="https://unity.com/resources/user-interface-design-and-implementation-in-unity">https://unity.com/resources/user-interface-design-and-implementation-in-unity</a></p>
+<p><a target="_blank" rel="noopener" href="https://anthony-zhang.me/University-Notes/CS341/CS341.html">https://anthony-zhang.me/University-Notes/CS341/CS341.html</a></p>
+<link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
+    </div>
+
+    
+    
+    
+
+      <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/blog/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/blog/tags/C/" rel="tag"># C#</a>
+          </div>
+
+        
+
+
+        
+    <div class="post-nav">
+      <div class="post-nav-item"></div>
+      <div class="post-nav-item">
+    <a href="/blog/2025/02/10/P337/" rel="next" title="在VBS中查询文件的代码">
+      在VBS中查询文件的代码 <i class="fa fa-chevron-right"></i>
+    </a></div>
+    </div>
+      </footer>
+    
+  </article>
+  
+  
+  
+
+
+
+          </div>
+          
+    
+  <div class="comments">
+    <div id="disqus_thread">
+      <noscript>Please enable JavaScript to view the comments powered by Disqus.</noscript>
+    </div>
+  </div>
+  
+
+<script>
+  window.addEventListener('tabs:register', () => {
+    let { activeClass } = CONFIG.comments;
+    if (CONFIG.comments.storage) {
+      activeClass = localStorage.getItem('comments_active') || activeClass;
+    }
+    if (activeClass) {
+      let activeTab = document.querySelector(`a[href="#comment-${activeClass}"]`);
+      if (activeTab) {
+        activeTab.click();
+      }
+    }
+  });
+  if (CONFIG.comments.storage) {
+    window.addEventListener('tabs:click', event => {
+      if (!event.target.matches('.tabs-comment .tab-content .tab-pane')) return;
+      let commentClass = event.target.classList[1];
+      localStorage.setItem('comments_active', commentClass);
+    });
+  }
+</script>
+
+        </div>
+          
+  
+  <div class="toggle sidebar-toggle">
+    <span class="toggle-line toggle-line-first"></span>
+    <span class="toggle-line toggle-line-middle"></span>
+    <span class="toggle-line toggle-line-last"></span>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-inner">
+
+      <ul class="sidebar-nav motion-element">
+        <li class="sidebar-nav-toc">
+          Table of Contents
+        </li>
+        <li class="sidebar-nav-overview">
+          Overview
+        </li>
+      </ul>
+
+      <!--noindex-->
+      <div class="post-toc-wrap sidebar-panel">
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Boxing"><span class="nav-number">1.</span> <span class="nav-text">1 - Boxing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Type"><span class="nav-number">2.</span> <span class="nav-text">2 - Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Keywords"><span class="nav-number">3.</span> <span class="nav-text">3 - Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-GC-Alloc"><span class="nav-number">4.</span> <span class="nav-text">4 - GC Alloc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%BF%9B%E7%A8%8B%EF%BC%88Process%EF%BC%89%E3%80%81%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89%E5%92%8C%E5%8D%8F%E7%A8%8B%EF%BC%88Coroutine%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">5 - 进程（Process）、线程（Thread）和协程（Coroutine）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Socket%E9%80%9A%E8%AE%AF"><span class="nav-number">6.</span> <span class="nav-text">6 - Socket通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-List"><span class="nav-number">7.</span> <span class="nav-text">7 - List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">8 - 版本控制与文档管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-What-is-OOP"><span class="nav-number">9.</span> <span class="nav-text">9 - What is OOP?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-SDK%E6%8E%A5%E5%85%A5-software-development-kit"><span class="nav-number">10.</span> <span class="nav-text">10 - SDK接入 - software development kit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%85%AD%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">11.</span> <span class="nav-text">11 - 六大设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-A-search-algorithm"><span class="nav-number">12.</span> <span class="nav-text">12 - A* search algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E7%8A%B6%E6%80%81%E6%9C%BA-finite-state-machine"><span class="nav-number">13.</span> <span class="nav-text">14 - 状态机 - finite-state machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Behavior-tree-%E8%A1%8C%E4%B8%BA%E6%A0%91"><span class="nav-number">14.</span> <span class="nav-text">15 - Behavior tree (行为树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others-Questions"><span class="nav-number">15.</span> <span class="nav-text">Others - Questions</span></a></li></ol></div>
+      </div>
+      <!--/noindex-->
+
+      <div class="site-overview-wrap sidebar-panel">
+        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+    <img class="site-author-image" itemprop="image" alt="Mazui"
+      src="/blog/images/logo_11.jpg">
+  <p class="site-author-name" itemprop="name">Mazui</p>
+  <div class="site-description" itemprop="description">与孤独和平共处.</div>
+</div>
+<div class="site-state-wrap motion-element">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+          <a href="/blog/archives/">
+        
+          <span class="site-state-item-count">341</span>
+          <span class="site-state-item-name">posts</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+            <a href="/blog/categories/">
+          
+        <span class="site-state-item-count">14</span>
+        <span class="site-state-item-name">categories</span></a>
+      </div>
+      <div class="site-state-item site-state-tags">
+            <a href="/blog/tags/">
+          
+        <span class="site-state-item-count">73</span>
+        <span class="site-state-item-name">tags</span></a>
+      </div>
+  </nav>
+</div>
+  <div class="links-of-author motion-element">
+      <span class="links-of-author-item">
+        <a href="mailto:mazui.and.rio@gmail.com" title="E-Mail → mailto:mazui.and.rio@gmail.com" rel="noopener" target="_blank"><i class="fa fa-envelope fa-fw"></i>E-Mail</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://weibo.com/u/3032131561?topnav=1&wvr=6&topsug=1&ssl_rnd=1606158448.6943&is_all=1" title="Weibo → https:&#x2F;&#x2F;weibo.com&#x2F;u&#x2F;3032131561?topnav&#x3D;1&amp;wvr&#x3D;6&amp;topsug&#x3D;1&amp;ssl_rnd&#x3D;1606158448.6943&amp;is_all&#x3D;1" rel="noopener" target="_blank"><i class="fab fa-weibo fa-fw"></i>Weibo</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://twitter.com/mazui_3" title="Twitter → https:&#x2F;&#x2F;twitter.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-twitter fa-fw"></i>Twitter</a>
+      </span>
+      <span class="links-of-author-item">
+        <a href="https://instagram.com/mazui_3" title="Instagram → https:&#x2F;&#x2F;instagram.com&#x2F;mazui_3" rel="noopener" target="_blank"><i class="fab fa-instagram fa-fw"></i>Instagram</a>
+      </span>
+  </div>
+
+
+
+      </div>
+
+<br>
+      <!--new music test-->
+
+  <!--网易云插件-->
+<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
+
+    </div>
+  </aside>
+  <div id="sidebar-dimmer"></div>
+
+
+      </div>
+    </main>
+
+    <footer class="footer">
+      <div class="footer-inner">
+        
+
+        
+
+<div class="copyright">
+  
+  &copy; 2015 – 
+  <span itemprop="copyrightYear">2025</span>
+  <span class="with-love">
+    <i class="fa fa-heart"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">Mazui</span>
+
+<!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-chart-area"></i>
+    </span>
+
+
+    <span title="C">1.7m</span>
+  -->
+
+  <!--
+    <span class="post-meta-divider">|</span>
+    <span class="post-meta-item-icon">
+      <i class="fa fa-coffee"></i>
+    </span>
+    <span title="T">26:23</span>
+
+  -->
+
+</div>
+  <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
+  </div>
+<br>
+<div class="theme-info">
+  <div class="powered-by"></div>
+  <span class="post-count">阅览室一共有1.7m的老兔正在打瞌睡</span>
+</div>
+
+        
+
+
+
+
+
+
+
+
+      </div>
+    </footer>
+  </div>
+
+  
+  <script src="/blog/lib/anime.min.js"></script>
+  <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
+  <script src="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.min.js"></script>
+  <script src="/blog/lib/velocity/velocity.ui.min.js"></script>
+
+<script src="/blog/js/utils.js"></script>
+
+<script src="/blog/js/motion.js"></script>
+
+
+<script src="/blog/js/schemes/pisces.js"></script>
+
+
+<script src="/blog/js/next-boot.js"></script>
+
+
+
+
+  
+
+
+
+
+  
+<script src="/blog/js/local-search.js"></script>
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  
+
+<script>
+  function loadCount() {
+    var d = document, s = d.createElement('script');
+    s.src = 'https://mazui3-com.disqus.com/count.js';
+    s.id = 'dsq-count-scr';
+    (d.head || d.body).appendChild(s);
+  }
+  // defer loading until the whole page loading is completed
+  window.addEventListener('load', loadCount, false);
+</script>
+<script>
+  var disqus_config = function() {
+    this.page.url = "https://mazui3.github.io/blog/2025/02/25/P336/";
+    this.page.identifier = "2025/02/25/P336/";
+    this.page.title = "Unity错题本";
+    };
+  NexT.utils.loadComments(document.querySelector('#disqus_thread'), () => {
+    if (window.DISQUS) {
+      DISQUS.reset({
+        reload: true,
+        config: disqus_config
+      });
+    } else {
+      var d = document, s = d.createElement('script');
+      s.src = 'https://mazui3-com.disqus.com/embed.js';
+      s.setAttribute('data-timestamp', '' + +new Date());
+      (d.head || d.body).appendChild(s);
+    }
+  });
+</script>
+
+</body>
+</html>
