@@ -23,19 +23,15 @@
     var CONFIG = {"hostname":"mazui3.github.io","root":"/blog/","scheme":"Pisces","version":"7.8.0","exturl":false,"sidebar":{"position":"left","width":265,"display":"post","padding":18,"offset":12,"onmobile":false},"copycode":{"enable":true,"show_result":true,"style":"mac"},"back2top":{"enable":true,"sidebar":false,"scrollpercent":true},"bookmark":{"enable":false,"color":"#222","save":"auto"},"fancybox":true,"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":{"text":"Load Disqus","order":-1}},"algolia":{"hits":{"per_page":10},"labels":{"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}},"localsearch":{"enable":true,"trigger":"auto","top_n_per_article":1,"unescape":false,"preload":true},"motion":{"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},"path":"search.xml"};
   </script>
 
-  <meta name="description" content="parsec   unity input systemUniversal Render Pipeline (URP)">
+  <meta name="description" content="——">
 <meta property="og:type" content="article">
 <meta property="og:title" content="Unity错题本">
 <meta property="og:url" content="https://mazui3.github.io/blog/2025/02/25/P336/index.html">
 <meta property="og:site_name" content="Underlake Reading Room">
-<meta property="og:description" content="parsec   unity input systemUniversal Render Pipeline (URP)">
+<meta property="og:description" content="——">
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/P336.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/05.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/04.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/01.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/02.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/03.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/06.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/08.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/09.jpg">
@@ -43,10 +39,10 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/11.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/pipeline.png">
 <meta property="article:published_time" content="2025-02-24T19:08:08.000Z">
-<meta property="article:modified_time" content="2025-02-24T19:08:29.385Z">
+<meta property="article:modified_time" content="2025-02-26T07:39:13.209Z">
 <meta property="article:author" content="Mazui">
-<meta property="article:tag" content="Unity">
 <meta property="article:tag" content="C#">
+<meta property="article:tag" content="Unity">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mazui3.github.io/blog/2025/02/25/P336/P336.png">
 
@@ -253,10 +249,16 @@
                 <i class="far fa-calendar"></i>
               </span>
               <span class="post-meta-item-text">Posted on</span>
-              
 
-              <time title="Created: 2025-02-25 03:08:08 / Modified: 03:08:29" itemprop="dateCreated datePublished" datetime="2025-02-25T03:08:08+08:00">2025-02-25</time>
+              <time title="Created: 2025-02-25 03:08:08" itemprop="dateCreated datePublished" datetime="2025-02-25T03:08:08+08:00">2025-02-25</time>
             </span>
+              <span class="post-meta-item">
+                <span class="post-meta-item-icon">
+                  <i class="far fa-calendar-check"></i>
+                </span>
+                <span class="post-meta-item-text">Edited on</span>
+                <time title="Modified: 2025-02-26 15:39:13" itemprop="dateModified" datetime="2025-02-26T15:39:13+08:00">2025-02-26</time>
+              </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
                 <i class="far fa-folder"></i>
@@ -286,13 +288,13 @@
               <span class="post-meta-item-icon">
                 <i class="far fa-file-word"></i>
               </span>
-              <span>17k</span>
+              <span>25k</span>
             </span>
             <span class="post-meta-item" title="T">
               <span class="post-meta-item-icon">
                 <i class="far fa-clock"></i>
               </span>
-              <span>15 mins.</span>
+              <span>23 mins.</span>
             </span>
 
         </div>
@@ -304,10 +306,7 @@
     <div class="post-body" itemprop="articleBody">
 
       
-        <p>parsec</p>
-<blockquote>
-</blockquote>
-<p>unity input system<br>Universal Render Pipeline (URP)</p>
+        <p>——</p>
 <span id="more"></span>
 
 <br>
@@ -315,6 +314,42 @@
 <br>
 
 <h2 id="1-Boxing"><a href="#1-Boxing" class="headerlink" title="1 - Boxing"></a>1 - Boxing</h2><p>值类型与引用类型互相转换:<a target="_blank" rel="noopener" href="https://blog.csdn.net/qiaoquan3/article/details/51439726">拆箱装箱.</a></p>
+<p>引用类型（Reference types）</p>
+<blockquote>
+<p>引用类型不包含存储在变量中的实际数据，但它们包含对变量的引用。 换句话说，它们指的是一个内存位置。<br>使用多个变量时，引用类型可以指向一个内存位置。如果内存位置的数据是由一个变量改变的，其他变量会自动反映这种值的变化。<br>内置的引用类型有：object、dynamic 和 string。</p>
+</blockquote>
+<br>
+<br>
+
+<p><strong>（1）、对象（Object）类型</strong></p>
+<p>对象（Object）类型 是 C# 通用类型系统（Common Type System - CTS）中所有数据类型的终极基类。Object 是 System.Object 类的别名。<br>所以对象（Object）类型可以被分配任何其他类型（值类型、引用类型、预定义类型或用户自定义类型）的值。但是，在分配值之前，需要先进行类型转换。<br>当一个值类型转换为对象类型时，则被称为 装箱；另一方面，当一个对象类型转换为值类型时，则被称为 拆箱。</p>
+<br>
+<br>
+
+<p><strong>（2）、动态（Dynamic）类型</strong></p>
+<p>您可以存储任何类型的值在动态数据类型变量中。这些变量的类型检查是在运行时发生的。 声明动态类型的语法：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dynamic &lt;variable_name&gt; = value;</span><br></pre></td></tr></table></figure>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dynamic d = 20;</span><br></pre></td></tr></table></figure>
+<p>动态类型与对象类型相似，但是对象类型变量的类型检查是在编译时发生的，而动态类型变量的类型检查是在运行时发生的。</p>
+<br>
+<br>
+
+<p><strong>（3）、字符串（String）类型</strong></p>
+<p>字符串（String）类型 允许您给变量分配任何字符串值。字符串（String）类型是 System.String 类的别名。它是从对象（Object）类型派生的。字符串（String）类型的值可以通过两种形式进行分配：引号和 @引号。</p>
+<p>例如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">String str = &quot;runoob.com&quot;;</span><br></pre></td></tr></table></figure>
+
+<p>一个 @引号字符串：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">@&quot;runoob.com&quot;;</span><br></pre></td></tr></table></figure>  
+
+<p>C# string 字符串的前面可以加 @（称作”逐字字符串”）将转义字符（\）当作普通字符对待，比如：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string str = @&quot;C:\Windows&quot;;</span><br></pre></td></tr></table></figure>
+<p>等价于：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">string str = &quot;C:\\Windows&quot;;</span><br></pre></td></tr></table></figure>
+<p>@ 字符串中可以任意换行，换行符及缩进空格都计算在字符串长度之内。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">string str = @&quot;&lt;script type=&quot;&quot;text/javascript&quot;&quot;&gt;</span><br><span class="line">    &lt;!--</span><br><span class="line">    --&gt;</span><br><span class="line">&lt;/script&gt;&quot;;</span><br></pre></td></tr></table></figure>   
+<p>用户自定义引用类型有：class、interface 或 delegate。我们将在以后的章节中讨论这些类型。</p>
 <br>
 <br>
 
@@ -378,9 +413,9 @@
 <blockquote>
 <p>标记清除算法(Mark-Sweep)关键点是，清除后，并不会执行内存的压缩<br>复制算法(Copying) 内存等额划分，每次执行垃圾回收后，拷贝不被回收的内存到没有被使用的内存块，自带内存压缩，弊端是内存浪费大(每次只能使用部分，预留部分给拷贝使用)<br>标记整理算法(Mark-Compact)关键点，清除后，会执行内存压缩，不会有内存碎片<br>分代收集算法(Generational Collection)对内存对象进行分代标记，避免全量垃圾回收带来的性能消耗。下文会详细讲解。<br>垃圾回收模型</p>
 </blockquote>
-<p>垃圾回收的目的<br>缘由： 内存是有限的，为了避免内存溢出，需要清理无效内存</p>
+<p>垃圾回收的目的<br>缘由：内存是有限的，为了避免内存溢出，需要清理无效内存</p>
 <p>触发时机<br>申请分配内存时内存不足(本身不足或者内存碎片过多没有足够大小的内存片)<br>强制调用System.GC.Collect<br>CLR卸载应用程序域(AppDomain)<br>CLR正在关闭(后面2种在进程运行时不会触发)</p>
-<p>垃圾回收的流程<br>GC准备阶段 暂停进程中的所有线程，避免线程在CLR检测根期间访问堆内存<br>GC的标记阶段 首先，会默认托管堆上所有的对象都是垃圾(可回收对象)，然后开始遍历根对象并构建一个由所有和根对象之间有引用关系的对象构成的对象图，然后GC会挨个遍历根对象和其引用对象，如果根对象没有任何引用对象(null)GC会忽略该根对象。对于含有引用对象的根对象以及其引用对象，GC将其纳入对象图中，如果发现已经处于对象图中，则换一个路径遍历，避免无限循环。PS： 所有的全局和静态对象指针是应用程序的根对象。<br>垃圾回收阶段 完成遍历操作后，对于没有被纳入对象图中的对象，执行清理操作<br>碎片整理阶段 如果垃圾回收算法包含这个阶段，则会对剩下的保留的对象进行一次内存整理，重新归类到堆内存中，相应的引用地址也会对应的整理，避免内存碎片的产生。</p>
+<p><strong>垃圾回收的流程</strong><br><em>GC准备阶段</em><br>暂停进程中的所有线程，避免线程在CLR检测根期间访问堆内存.<br><em>GC的标记阶段</em><br>首先，会默认托管堆上所有的对象都是垃圾(可回收对象)，然后开始遍历根对象并构建一个由所有和根对象之间有引用关系的对象构成的对象图，然后GC会挨个遍历根对象和其引用对象，如果根对象没有任何引用对象(null)GC会忽略该根对象。对于含有引用对象的根对象以及其引用对象，GC将其纳入对象图中，如果发现已经处于对象图中，则换一个路径遍历，避免无限循环。<br>PS：所有的全局和静态对象指针是应用程序的根对象。<br><em>垃圾回收阶段</em><br>完成遍历操作后，对于没有被纳入对象图中的对象，执行清理操作.<br><em>碎片整理阶段</em><br>如果垃圾回收算法包含这个阶段，则会对剩下的保留的对象进行一次内存整理，重新归类到堆内存中，相应的引用地址也会对应的整理，避免内存碎片的产生。</p>
 <br>
 <br>
 
@@ -431,7 +466,6 @@
 <br>
 <br>
 
-
 <h2 id="9-What-is-OOP"><a href="#9-What-is-OOP" class="headerlink" title="9 - What is OOP?"></a>9 - What is OOP?</h2><p>Object-oriented programming (OOP) is a programming paradigm based on the concept of objects, which can contain data and code: data in the form of fields (often known as attributes or properties), and code in the form of procedures (often known as methods).<br>In OOP, computer programs are designed by making them out of objects that interact with one another.</p>
 <br>
 <br>
@@ -439,20 +473,31 @@
 <h2 id="10-SDK接入-software-development-kit"><a href="#10-SDK接入-software-development-kit" class="headerlink" title="10 - SDK接入 - software development kit"></a>10 - SDK接入 - <a target="_blank" rel="noopener" href="https://www.ibm.com/think/topics/api-vs-sdk">software development kit</a></h2><br>
 <br>
 
-<h2 id="11-六大设计模式"><a href="#11-六大设计模式" class="headerlink" title="11 - 六大设计模式"></a>11 - 六大设计模式</h2><p>开闭原则：一个软件实体如类、模块和函数应该对修改封闭，对扩展开放。</p>
-<p>单一职责原则：一个类只做一件事，一个类应该只有一个引起它修改的原因。</p>
-<p>里氏替换原则：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。</p>
-<p>依赖倒置原则：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。</p>
-<p>迪米特法则：又名「最少知道原则」，一个类不应知道自己操作的类的细节，换言之，只和朋友谈话，不和朋友的朋友谈话。</p>
-<p>接口隔离原则：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。</p>
+<h2 id="11-六大设计模式"><a href="#11-六大设计模式" class="headerlink" title="11 - 六大设计模式"></a>11 - 六大设计模式</h2><p>单一职责原则(Single responsibility principle)：一个类只做一件事，一个类应该只有一个引起它修改的原因。</p>
+<blockquote>
+<p>A class should have only one reason to change</p>
+</blockquote>
+<p>开闭原则(The Open/Closed Principle)：规定“软件中的对象（类，模块，函数等等）应该对于扩展是开放的，但是对于修改是封闭的”，这意味着一个实体是允许在不改变它的源代码的前提下变更它的行为。</p>
+<blockquote>
+<p>Software entities (classes, modules, functions, etc.) should be open for extension, but closed for modification</p>
+</blockquote>
+<p>里氏替换原则(Liskov’s Substitution Principle)：子类应该可以完全替换父类。也就是说在使用继承时，只扩展新功能，而不要破坏父类原有的功能。</p>
+<blockquote>
+<p>Derived or child classes must be substitutable for their base or parent classes</p>
+</blockquote>
+<p>接口隔离原则(Interface Segregation Principle)：客户端不应依赖它不需要的接口。如果一个接口在实现时，部分方法由于冗余被客户端空实现，则应该将接口拆分，让实现类只需依赖自己需要的接口方法。</p>
+<blockquote>
+<p>do not force any client to implement an interface which is irrelevant to them</p>
+</blockquote>
+<p>依赖倒置原则(Dependency Inversion Principle)：细节应该依赖于抽象，抽象不应依赖于细节。把抽象层放在程序设计的高层，并保持稳定，程序的细节变化由低层的实现层来完成。</p>
+<blockquote>
+<p>High-level modules should not depend on low-level modules. Both should depend on abstractions</p>
+</blockquote>
+<p>迪米特法则(The Least Knowledge Principle)：又名「最少知道原则」，一个类不应知道自己操作的类的细节，换言之，只和朋友谈话，不和朋友的朋友谈话。</p>
 <br>
 <br>
 
-<p>Design pattern</p>
-<br>
-<br>
-
-<h2 id="12-A-search-algorithm"><a href="#12-A-search-algorithm" class="headerlink" title="12 - A* search algorithm"></a>12 - A* search algorithm</h2><p>Given a weighted graph, a source node and a goal node, the algorithm finds the shortest path (with respect to the given weights) from source to goal.</p>
+<h2 id="12-A-search-algorithm-寻路路径"><a href="#12-A-search-algorithm-寻路路径" class="headerlink" title="12 - A* search algorithm - 寻路路径"></a>12 - A* search algorithm - 寻路路径</h2><p>Given a weighted graph, a source node and a goal node, the algorithm finds the shortest path (with respect to the given weights) from source to goal.</p>
 <p><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=-L-WgKMFuhE&ab_channel=SebastianLague">A* Pathfinding in grid</a>.</p>
 <p>G cost -&gt; the distance from the starting node.<br>H cost(heuristic) -&gt; the distance from the end node.<br>F cost -&gt; G cost + H cost.<br>The algorithm compare the lowest F cost in the node and choose it as the path.</p>
 <br>
@@ -463,6 +508,9 @@
 <p>Dijkstra’s algorithm (/ˈdaɪkstrəz/ DYKE-strəz) is an algorithm for finding the shortest paths between nodes in a weighted graph, which may represent, for example, a road network.</p>
 </blockquote>
 <p>Dijkstra(戴克斯特拉算法)是本科时学的找short path的方法,放在grid里面过于繁琐.</p>
+<blockquote>
+<p>Dijkstra’s shortest path algorithm is O(ElogV) where:<br>V is the number of vertices<br>E is the total number of edges</p>
+</blockquote>
 <br>
 <br>
 
@@ -483,42 +531,13 @@
             <p>第四个是 Transition ，变换。也就是从一个状态变化为另一个状态。例如“开门过程”就是一个变换。</p>
           </div>
 
-<p>如下图，就定义了一个只有opened 和closed两种状态的状态机。当系统处于opened状态，在收到输入“关闭事件”，达到了状态机转移条件，系统就转移到了closed状态，并执行相应的动作，此例有一个进入动作(entry action)，进入closed状态，会执行close door动作。</p>
+<p>如下图，就定义了一个只有opened和closed两种状态的状态机。当系统处于opened状态，在收到输入“关闭事件”，达到了状态机转移条件，系统就转移到了closed状态，并执行相应的动作，此例有一个进入动作(entry action)，进入closed状态，会执行close door动作。</p>
 <img src="/blog/2025/02/25/P336/05.png" class="">
 
 <br>
 <br>
 
 <p>来举个例子。街上的自动售货机中明显能看到状态机逻辑。我们做一下简化，假设这是一台只卖2元一瓶的汽水的售货机，只接受五毛和一块的硬币。初始状态是”未付款“，中间状态有”已付款5毛“，”已付款1块“，”已付款1.5块“，”已足额付款“，四个状态。状态切换的触发条件是”投一块硬币“和”投5毛硬币“两种，”到达足额付款“状态，还要进行余额清零和弹出汽水操作。</p>
-<br>
-<br>
-
-<p>acceptors(接收器) 是指产生一个二值的输出，指示接收的输入是否能被接受。acceptors(接收器)的每一种状态都是接受或不接受的。如果一组所有的输入都被接受并且当前的状态是接受状态，那么这一组输入就是可接受的。有限状态机的acceptors(接收器)这一类在正则引擎的实现中用的非常多。<br>如下图是一种acceptors(接收器) 类型有限状态机，用来识别所输入的字符串是否为nice，其总共被划分为了七种状态，其中只有第七种状态Success被认为是可接受状态。如果所输入的字串不是nice，则会被转移到第六种状态Error。</p>
-<img src="/blog/2025/02/25/P336/04.png" class="">
-
-<p>如下给出acceptors(接收器) 的数学形式化定义，acceptors(接收器) 型有限状态机是一个五元组(Σ,S,s0,δ,F)(\Sigma,S,s_0,\delta,F)(Σ,S,s0​,δ,F),其中：</p>
-<p>Σ\SigmaΣ是输入字符集合(有限的非空符号集合)；<br>SSS是有限非空状态集合；<br>s0是初始状态，属于S中的元素；<br>δ\deltaδ是状态转移函数：δ\deltaδ：S×Σ→SS\times\Sigma \rightarrow SS×Σ→S；<br>F是最终状态集合，是S的子集。</p>
-<br>
-<br>
-
-<p>transducers(转换器) 是根据当前的状态和(或)给定的输入产生输出，输出的同时可能也伴随着状态的转移(不是必须)。在一些事件驱动型应用和计算语言学(computational linguistics)领域应用普遍。transducers(转换器) 型有限状态机可以分为两种子类型，moore machine (摩尔型有限状态机)和mealy machine (米利型有限状态机) ，其中：</p>
-<ul>
-<li>若输出只和状态有关而与输入无关，则称为moore状态机</li>
-<li>输出不仅和状态有关而且和输入有关系，则称为mealy状态机</li>
-</ul>
-<br>
-<br>
-
-<img src="/blog/2025/02/25/P336/01.png" class="">
-
-<p>moore状态机：<br>如下所示的状态机为moore状态机，其有q0、q1、q2​、q3四个状态，X,Y,Z三个输入，a、b、c三个输出。可以看出其四个状态q0、q1、q2、q3对应的输出分别为b、a、a、c，就是说输出已经和状态绑定好，不管输入为哪一个，均不影响输出。其中q0为初始状态，假设输入为XYZY，可以看出输出为bcac；假设输入为ZXYZ，则输出为baca，可以看出，虽然输出只和状态有关而与输入无关，但改变输入的序列顺序，输出序列也会改变。</p>
-<p>mealy状态机：</p>
-<img src="/blog/2025/02/25/P336/02.png" class="">
-<img src="/blog/2025/02/25/P336/03.png" class="">
-
-<br>
-<br>
-
 <img src="/blog/2025/02/25/P336/06.png" class="">
 
 <br>
@@ -563,74 +582,98 @@
 <br>
 <br>
 
-<p>寻路路径<br><a target="_blank" rel="noopener" href="https://blog.csdn.net/Britripe/article/details/117083092">stack and heap</a>(heap是堆，stack是栈)</p>
+<h2 id="16-stack-and-heap"><a href="#16-stack-and-heap" class="headerlink" title="16 - stack and heap"></a>16 - <a target="_blank" rel="noopener" href="https://blog.csdn.net/Britripe/article/details/117083092">stack and heap</a></h2><p>(heap是堆，stack是栈)</p>
 <p>stack是一块连续的内存的区域.栈由系统自动分配，速度较快。但程序员是无法控制的.<br>heap是不连续的内存区域.堆是由new分配的内存，一般速度比较慢，而且容易产生内存碎片,不过用起来最方便.</p>
 <img src="/blog/2025/02/25/P336/10.png" class="">
 <img src="/blog/2025/02/25/P336/11.png" class="">
 
-<p>热更新-&gt;用c#需要编译所以比较麻烦<br>用文本文件，SLua，lua，pureTS，是unity热更新的方案</p>
 <br>
 <br>
 
-
+<h2 id="17-热更新-热加载（Hot-Loading）"><a href="#17-热更新-热加载（Hot-Loading）" class="headerlink" title="17 - 热更新 - 热加载（Hot Loading）"></a>17 - 热更新 - 热加载（Hot Loading）</h2><blockquote>
+<p>指的是在运行时动态加载和更新软件组件或资源，而无需停止整个应用程序或服务。这种技术允许开发人员在不中断用户体验的情况下，快速地修改和测试代码、样式或配置。</p>
+</blockquote>
+<p>“-&gt;用c#需要编译所以比较麻烦”<br>“用文本文件，SLua，lua，pureTS，是unity热更新的方案”</p>
+<p>AssemblyLoadContext<br>System.Runtime.Loader.AssemblyLoadContext 是 .NET Core 中引入的类，用于加载和管理程序集</p>
+<p>在传统的 .NET Framework 中，可以使用 AppDomain 来实现类似的热加载效果。</p>
 <br>
+<br>
+
+<h2 id="18-Unity-Input-system"><a href="#18-Unity-Input-system" class="headerlink" title="18 - Unity Input system"></a>18 - Unity Input system</h2><br>
+<br>
+
+<h2 id="19-ScriptableObject"><a href="#19-ScriptableObject" class="headerlink" title="19 - ScriptableObject"></a>19 - ScriptableObject</h2><br>
+<br>
+
+<h2 id="20-红点系统-Reddot-System"><a href="#20-红点系统-Reddot-System" class="headerlink" title="20 - 红点系统(Reddot System)"></a>20 - <a target="_blank" rel="noopener" href="https://zhuanlan.zhihu.com/p/85978429">红点系统</a>(Reddot System)</h2><br>
+<br>
+
+<h2 id="21-QFramework"><a href="#21-QFramework" class="headerlink" title="21 - QFramework"></a>21 - QFramework</h2><br>
 <br>
 
 <h2 id="Others-Questions"><a href="#Others-Questions" class="headerlink" title="Others - Questions"></a>Others - Questions</h2><ol>
-<li>CharacterController和Rigidbody的区别<br>Rigidbody具有完全真实物理的特性，⽽CharacterController可以说是受限的Rigidbody，具有⼀定的物理效果但不是完全真实的。<blockquote>
+<li>CharacterController和Rigidbody的区别</li>
+</ol>
+<p>Rigidbody具有完全真实物理的特性，⽽CharacterController可以说是受限的Rigidbody，具有⼀定的物理效果但不是完全真实的。</p>
+<blockquote>
 <p>是两种不一样的东西.<br>CharacterController的建造目的是如其名字.</p>
 </blockquote>
-</li>
-</ol>
 <br>
 
 <ol start="2">
-<li>当一个细小的高速物体撞向另一个较大的物体时，会出现什么情况?如何避免?<br>穿透(碰撞检测失败)</li>
+<li>当一个细小的高速物体撞向另一个较大的物体时，会出现什么情况?如何避免?</li>
 </ol>
+<p>穿透(碰撞检测失败)</p>
 <br>
 
 <ol start="3">
-<li>物理更新一般放在哪个系统函数里？<br>FixedUpdate，每固定帧绘制时执行一次，和Update不同的是FixedUpdate是渲染帧执行，如果你的渲染效率低下的时候FixedUpdate调用次数就会跟着下降。<br>FixedUpdate比较适用于物理引擎的计算，因为是跟每帧渲染有关。Update就比较适合做控制。</li>
+<li>物理更新一般放在哪个系统函数里？</li>
 </ol>
+<p>FixedUpdate，每固定帧绘制时执行一次，和Update不同的是FixedUpdate是渲染帧执行，如果你的渲染效率低下的时候FixedUpdate调用次数就会跟着下降。<br>FixedUpdate比较适用于物理引擎的计算，因为是跟每帧渲染有关。Update就比较适合做控制。</p>
 <p>FixedUpdate，固定时间间隔执行 可以在edit-&gt;project setting-&gt;time设置 update 是在渲染帧执行</p>
-<p>Awake —&gt; OnEnable —&gt; Start —&gt; FixedUpdate —&gt;Update —&gt; LateUpdate—&gt; OnGUl —&gt; OnDisable —&gt; OnDestroy</p>
 <br>
 
 <ol start="4">
-<li>Image和RawImage的区别<br>Image比RawImage更消耗性能<br>Image只能使用Sprite属性的图片，但是RawImage什么样的都可以使用<br>Image适合放一些有操作的图片，裁剪平铺旋转什么的，针对Image Type属性<br>RawImage就放单独展示的图片就可以，性能会比Image好很多<blockquote>
+<li>Image和RawImage的区别</li>
+</ol>
+<p>Image比RawImage更消耗性能<br>Image只能使用Sprite属性的图片，但是RawImage什么样的都可以使用<br>Image适合放一些有操作的图片，裁剪平铺旋转什么的，针对Image Type属性<br>RawImage就放单独展示的图片就可以，性能会比Image好很多</p>
+<blockquote>
 <p>The Raw Image can display any Texture whereas an Image component can only show a Sprite Texture.<br>Note : Keep in mind that using a RawImage creates an extra draw call with each RawImage present, so it’s best to use it only for backgrounds or temporary visible graphics.</p>
 </blockquote>
-</li>
-</ol>
 <br>
 
 <ol start="5">
-<li>画布的三种模式.缩放模式<br>屏幕空间-覆盖模式(Screen Space-Overlay)，<br>Canvas创建出来后，默认就是该模式，该模式和摄像机无关，即使场景内没有摄像机，UI游戏物体照样渲染屏幕空间：电脑或者手机显示屏的2D空间，只有x轴和y轴 覆盖模式：UI元素永远在3D元素的前面</li>
+<li>画布的三种模式.缩放模式</li>
 </ol>
+<p>屏幕空间-覆盖模式(Screen Space-Overlay)，<br>Canvas创建出来后，默认就是该模式，该模式和摄像机无关，即使场景内没有摄像机，UI游戏物体照样渲染屏幕空间：电脑或者手机显示屏的2D空间，只有x轴和y轴 覆盖模式：UI元素永远在3D元素的前面</p>
 <p>屏幕空间-摄像机模式(Screen Space-Camera)，<br>设置成该模式后需要指定一个摄像机游戏物体，指定后UGUI就会自动出现在该摄像机的“投射范围”内，和NGUI的默认UI Root效果一致，如果隐藏掉摄像机，UGUI当然就无法渲染</p>
 <p>世界空间模式(WorldSpace)，<br>设置成该模式后UGUI就相当于是场景内的一个普通的“Cube 游戏模型”，可以在场景内任意的移动UGUI元素的位置，通常用于怪物血条显示和VR开发</p>
 <br>
 
 <ol start="6">
-<li>简述进程（Process）、线程（Thread）和协程（Coroutine）的概念<br>进程<br>保存在硬盘上的程序运行以后，会在内存空间里形成一个独立的内存体，这个内存体有自己独立的地址空间，有自己的堆，不同进程间可以进行进程间通信，上级挂靠单位是操作系统。一个应用程序相当于一个进程，操作系统会以进程为单位，分配系统资源（CPU 时间片、内存等资源），进程是资源分配的最小单位。</li>
+<li>简述进程（Process）、线程（Thread）和协程（Coroutine）的概念</li>
 </ol>
+<p>进程<br>保存在硬盘上的程序运行以后，会在内存空间里形成一个独立的内存体，这个内存体有自己独立的地址空间，有自己的堆，不同进程间可以进行进程间通信，上级挂靠单位是操作系统。一个应用程序相当于一个进程，操作系统会以进程为单位，分配系统资源（CPU 时间片、内存等资源），进程是资源分配的最小单位。</p>
 <p>线程<br>线程从属于进程，也被称为轻量级进程，是程序的实际执行者。线程是操作系统能够进行运算调度的最小单位。它被包含在进程之中，是进程中的实际运作单位。一条线程指的是进程中一个单一顺序的控制流，一个进程中可以并发多个线程，每条一线程并行执行不同的任务。一个线程只有一个进程。<br>每个独立的线程有一个程序运行的入口、顺序执行序列和程序的出口，但是线程不能够独立执行，必须依存在应用程序中，由应用程序提供多个线程执行控制。<br>线程拥有自己独立的栈和共享的堆，共享堆，不共享栈，线程亦由操作系统调度(标准线程是的)。</p>
 <p>协程<br>协程是伴随着主线程一起运行的一段程序。<br>协程与协程之间是并行执行，与主线程也是并行执行，同一时间只能执行一个协程提起协程，自然是要想到线程，因为协程的定义就是伴随主线程来运行的。<br>一个线程可以拥有多个协程，协程不是被操作系统内核所管理，而完全是由程序所控制。<br>协程和线程一样共享堆，不共享栈，协程由程序员在协程的代码里显示调度。<br>协成是单线程下由应用程序级别实现的并发。</p>
 <br>
 
 <ol start="7">
-<li>简述协程的作用<br>在Unity中只有主线程才能访问Unity3D的对象、方法、组件。当主线程在执行一个对资源消耗很大的操作时，在这一帧我们的程序就会出现帧率下降，画面卡顿的现象!<br>那这个时候我们就可以利用协程来做这件事，因为协程是伴随着主线程运行的，主线程依旧可以丝滑轻松的工作，把脏活累活交给协程处理就好了！简单来说：协程是辅助主线程的操作，避免游戏卡顿。</li>
+<li>简述协程的作用</li>
 </ol>
+<p>在Unity中只有主线程才能访问Unity3D的对象、方法、组件。当主线程在执行一个对资源消耗很大的操作时，在这一帧我们的程序就会出现帧率下降，画面卡顿的现象!<br>那这个时候我们就可以利用协程来做这件事，因为协程是伴随着主线程运行的，主线程依旧可以丝滑轻松的工作，把脏活累活交给协程处理就好了！简单来说：协程是辅助主线程的操作，避免游戏卡顿。</p>
 <br>
 
 <ol start="8">
-<li>简述协程的底层原理<br>协程是通过迭代器来实现功能的，通过关键字IEnumerator来定义一个迭代方法。<br>StartCoroutine 接受到的是一个 IEnumerator，这是个接口，并且是枚举器或迭代器的意思。<br>yield 是 C#的一个关键字，也是一个语法糖，背后的原理会生成一个类，并且也是一个枚举器，而且不同于 return，yield 可以出现多次。<br>yield 实际上就是返回一次结果，因为我们要一次一次枚举一个值出来，所以多个 yield 其实是个状态模式，第一个 yield 是状态 1，第二个 yield 是状态 2，每次访问时会基于状态知道当前应该执行哪一个 yield，取得哪一个值。</li>
+<li>简述协程的底层原理</li>
 </ol>
+<p>协程是通过迭代器来实现功能的，通过关键字IEnumerator来定义一个迭代方法。<br>StartCoroutine 接受到的是一个 IEnumerator，这是个接口，并且是枚举器或迭代器的意思。<br>yield 是 C#的一个关键字，也是一个语法糖，背后的原理会生成一个类，并且也是一个枚举器，而且不同于 return，yield 可以出现多次。<br>yield 实际上就是返回一次结果，因为我们要一次一次枚举一个值出来，所以多个 yield 其实是个状态模式，第一个 yield 是状态 1，第二个 yield 是状态 2，每次访问时会基于状态知道当前应该执行哪一个 yield，取得哪一个值。</p>
 <br>
 
 <ol start="9">
-<li>动态加载资源的方式<br>Instantiate：最简单的一种方式，以实例化的方式动态生成一个物体。<br>Assetsbundle：即将资源打成 asset bundle 放在服务器或本地磁盘，然后使用www模块get下来，然后从这个bundle中load某个object，unity官方推荐也是绝大多数商业化项目使用的一种方式。<br>Resource.Load:可以直接load并返回某个类型的Object，前提是要把这个资源放在Resource命名的文件夹下，Unity不管有没有场景引用，都会将其全部打入到安装包中。<br>AssetDatabase.loadasset：这种方式只在editor范围内有效，游戏运行时没有这个函数，它通常是在开发中调试用的。</li>
+<li>动态加载资源的方式</li>
 </ol>
+<p>Instantiate：最简单的一种方式，以实例化的方式动态生成一个物体。<br>Assetsbundle：即将资源打成 asset bundle 放在服务器或本地磁盘，然后使用www模块get下来，然后从这个bundle中load某个object，unity官方推荐也是绝大多数商业化项目使用的一种方式。<br>Resource.Load:可以直接load并返回某个类型的Object，前提是要把这个资源放在Resource命名的文件夹下，Unity不管有没有场景引用，都会将其全部打入到安装包中。<br>AssetDatabase.loadasset：这种方式只在editor范围内有效，游戏运行时没有这个函数，它通常是在开发中调试用的。</p>
 <br>
 
 <ol start="10">
@@ -678,9 +721,7 @@
 <ol start="17">
 <li>向量的点乘、叉乘以及归一化的意义？</li>
 </ol>
-<p>1.点乘描述了两个向量的相似程度，结果越大两向量越相似，还可表示投影</p>
-<p>2.叉乘得到的向量垂直于原来的两个向量</p>
-<p>3.标准化向量：用在只关系方向，不关心大小的时候</p>
+<p>1.点乘描述了两个向量的相似程度，结果越大两向量越相似，还可表示投影<br>2.叉乘得到的向量垂直于原来的两个向量<br>3.标准化向量：用在只关系方向，不关心大小的时候</p>
 <br>
 
 <ol start="18">
@@ -709,13 +750,14 @@
 <ol start="21">
 <li>Unity 中有哪些方式可以实现异步操作，分别给出优缺点。</li>
 </ol>
-<p>1） Coroutine<br>格式为<br>// inside of the function<br>StartCoroutine(theCoroutine());</p>
-<p>// separate function<br>IEnumerator theCoroutine(){<br>    // do something<br>    yield return new WaitForSeconds(0.5f);<br>    // do something after 0.5f<br>}</p>
+<p>1） Coroutine<br>格式为</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">// inside of the function</span></span><br><span class="line"><span class="built_in">StartCoroutine</span>(<span class="built_in">theCoroutine</span>());</span><br><span class="line"></span><br><span class="line"><span class="comment">// separate function</span></span><br><span class="line"><span class="function">IEnumerator <span class="title">theCoroutine</span><span class="params">()</span></span>&#123;</span><br><span class="line">	<span class="comment">// do something</span></span><br><span class="line">	<span class="function">yield <span class="keyword">return</span> <span class="keyword">new</span> <span class="title">WaitForSeconds</span><span class="params">(<span class="number">0.5f</span>)</span></span>;</span><br><span class="line">	<span class="comment">// do something after 0.5f</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>在iEnumerator中没法return一个值。<br>当使用coroutine的时候，如果附带代码的object被destory或者inactive了，coroutine中的代码不会执行。</p>
 <ol start="2">
 <li>Async and Await and Task</li>
 </ol>
-<p>async void theFunction(){<br>    await Task.Run( () =&gt; {<br>        Thread.Sleep(2000);<br>        // do something<br>        }<br>    );<br>}<br>当使用coroutine的时候，如果附带代码的object被destory或者inactive，async和await可以执行代码，也可以return一个值。Awaitablede的任务会拍成池子放到limit allocations里面。<br>但是任务会把本身正在运行的主线程停住，如果有两个任务互相等待，就会被堵住。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">async <span class="keyword">void</span> <span class="title">theFunction</span><span class="params">()</span></span>&#123;</span><br><span class="line">	await Task.<span class="built_in">Run</span>( () =&gt; &#123;</span><br><span class="line">		Thread.<span class="built_in">Sleep</span>(<span class="number">2000</span>);</span><br><span class="line">		<span class="comment">// do something</span></span><br><span class="line">		&#125;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>当使用coroutine的时候，如果附带代码的object被destory或者inactive，async和await可以执行代码，也可以return一个值。Awaitablede的任务会拍成池子放到limit allocations里面。<br>但是任务会把本身正在运行的主线程停住，如果有两个任务互相等待，就会被堵住。</p>
 <br>
 
 <ol start="22">
@@ -732,17 +774,38 @@
 
 <p>Each SubShader is composed of a number of passes, and each Pass represents an execution of the vertex and fragment code for the same object rendered with the material of the shader.<br>Many simple shaders use just one pass, but shaders that interact with lighting might need more (see Lighting Pipeline for details).<br>Commands inside Pass typically setup fixed function state, for example blending modes.</p>
 <p>GPU工作流程：顶点处理、光栅化、纹理贴图、像素处理</p>
-<p>顶点处理：这阶段GPU读取描述3D图形外观的顶点数 据并根据顶点数据确定3D图形的形状及位置关系，建 ⽴起3D图形的⻣架。<br>光栅化：把⼀个⽮ᰁ图形转换为 ⼀系列像素点的过程就称为光栅化<br>纹理贴图：就是将多边形的表⾯贴 上相应的图⽚，从⽽⽣成“真实”的图形。<br>像素处理：这阶段（在对每个像素进⾏光栅化处理期 间）GPU完成对像素的计算和处理，从⽽确定每个像 素的最终属性。<br>最终输出：由ROP（光栅化引擎）最终完成像素的输 出，1帧渲染完毕后，被送到显存帧缓冲区。<br>————————————————</p>
-<p>23<br>localPosition 与 Position 的使用区别？<br>localPosition :自身坐标系，相对于父级的位置</p>
-<p>24<br>Position ：世界坐标系中的位置</p>
-<p>Unity3D Shader分哪几种，有什么区别？<br>表面着色器的抽象层次比较高，它可以轻松地以简洁方式实现复杂着色。表面着色器可同时在前向渲染及延迟渲染模式下正常工作。<br>顶点片段着色器可以非常灵活地实现需要的效果，但是需要编写更多的代码，并且很难与Unity的渲染管线完美集成。<br>固定功能管线着色器可以作为前两种着色器的备用选择，当硬件无法运行那些酷炫Shader的时，还可以通过固定功能管线着色器来绘制出一些基本的内容。</p>
-<p>红点系统<br>ScriptableObejct</p>
+<p>顶点处理：这阶段GPU读取描述3D图形外观的顶点数 据并根据顶点数据确定3D图形的形状及位置关系，建⽴起3D图形的⻣架。<br>光栅化：把⼀个⽮ᰁ图形转换为 ⼀系列像素点的过程就称为光栅化<br>纹理贴图：就是将多边形的表⾯贴 上相应的图⽚，从⽽⽣成“真实”的图形。<br>像素处理：这阶段（在对每个像素进⾏光栅化处理期 间）GPU完成对像素的计算和处理，从⽽确定每个像素的最终属性。<br>最终输出：由ROP（光栅化引擎）最终完成像素的输 出，1帧渲染完毕后，被送到显存帧缓冲区。<br>————————————————</p>
+<ol start="23">
+<li>localPosition 与 Position 的使用区别？</li>
+</ol>
+<p>localPosition :自身坐标系，相对于父级的位置<br>Position ：世界坐标系中的位置</p>
+<br>
+<br>
+
+<ol start="24">
+<li>Unity3D Shader分哪几种，有什么区别？</li>
+</ol>
+<p>表面着色器的抽象层次比较高，它可以轻松地以简洁方式实现复杂着色。表面着色器可同时在前向渲染及延迟渲染模式下正常工作。<br>顶点片段着色器可以非常灵活地实现需要的效果，但是需要编写更多的代码，并且很难与Unity的渲染管线完美集成。<br>固定功能管线着色器可以作为前两种着色器的备用选择，当硬件无法运行那些酷炫Shader的时，还可以通过固定功能管线着色器来绘制出一些基本的内容。</p>
+<br>
+<br>
+
+<div class="note ">
+            <p>Before going into the whole chain, I’m going to talk about what a draw call is. A draw call is something the CPU does when it tells the GPU it should render. It’s big and scary; it’s the thing all the young game devs talk about when they tell their tales of trying to get their game to run fast!</p><p>An actual draw call looks something like this:</p><p>context-&gt;Draw(24, 0);<br>That’s it. That draws a cube, with a specific shader, and has all the other important data needed to put that object on screen. No really. When the GPU receives that, it immediately starts rendering a cube, or at least as soon as it’s not doing anything else.</p><p>But how? There are just two numbers there, that couldn’t possibly be enough information! Yep, it’s not. That’s because the draw call by itself is really just saying “okay, now draw with all the information I’ve previously setup”.</p><p>Okay, let’s start at the beginning again. This won’t be exactly how Unity does things, but it’ll be a little more accurate than what your rundown was.</p><p>You’ve got a single camera scene of several cubes, all the same mesh, but using a mix of different shaders and textures. Let’s render the first frame.</p><p>CPU:</p><p>Renderers: Unity goes through the scene’s renderer components and adds them to a list.<br>Culling: Unity does a pass at culling the renderers. Each mesh has a bounding box, that’s converted into an AABB per renderer, and Unity checks those against the frustum of the camera. Any renderers who’s bounds that aren’t visible are skipped and removed from the lists. It also compares the layer mask on the camera against the renderer’s game object and skips those that aren’t visible.<br>Gather Asset Data: Unity gets a list of all meshes, textures, and shaders that the remaining renderer components are referencing. Note, I’m not mentioning materials here, but those are really just ways to reference textures, shaders, and a list of extra variables.<br>Upload Asset Data: Unity checks if this is the first time any of them have been seen, and if so it uploads them to the GPU. In the case of the textures, it uploads the texture data and gets a handle to that texture. It then does the same for the two shaders, and the mesh data. The mesh data is actually multiple chunks of data. For a cube, that’s a struct array of data for each of the 24 vertices (position, UVs, color, etc), and an index array which would be 36 ints that index those 24 vertices, 3 for each triangle with some triangles sharing vertices. For a lot of this data, once it’s uploaded to the GPU, it’s deleted from the CPU memory.<br>Sorting: Next Unity is going to sort off of the renderer components. There’s several parts to this, render queue, materials, lighting, distance, etc. We’ll ignore most of those and just focus on distance, or “depth” sorting and transparent vs opaque sorting and say all materials are using one of those two queues. Opaque objects get put into one pile, then sorted front to back. That is the objects closer to the camera (based on a sphere that encapsulates the AABB) get sorted to the top of the list. Transparent objects get put into the other pile and sorted back to front; further away objects are sorted to the top of that list.<br>Setup Rendering: Here’s where the real meat begins. Unity already uploaded the asset data to the GPU, and has handles to them rather than direct references. So to draw something it just needs to say “hey, we want to use this asset now”. But before that we also need to setup some other data that isn’t going to change between objects. Mainly stuff like the camera’s world to view transform and projection matrices. Those will get shared by everything so that gets setup once and sent to the GPU. This also tells the GPU to set up the render target / frame buffer, or clear it from the previous frame.<br>Render Object: After the shared data is setup we tell the GPU the per object data for the first object on the list: It’s object to world transform matrix, any float / vector / color parameters the material had, what textures it needs and on which inputs, and what mesh asset to use. It also tells the GPU which shader to use, and sets up the effect state. Things like the blend mode, front or back face culling, ZTest, ZWrite, etc. Then it says “draw that”. Any values that don’t change from the previously rendered object are left alone and don’t need to be sent again.<br>Opaques: Repeat step 7 until we’re out of stuff in the opaque list.<br>Skybox: At this point Unity renders the skybox mesh with a special transform matrix so that it is effectively infinitely far away. Really this is no different than step 7, it just isn’t a “renderer” component.<br>Transparencies: Repeat step 7 again, but for all of the transparent list.<br>Tell the GPU we’re done, and display the results.<br>And we’re done, Repeat 1 through 11 for the next frame. At least we’re done for the CPU.</p><p>GPU:</p><p>Assets: During step 4 of the CPU side, the GPU took the data uploaded to it and put it into it’s memory. That’s it. Technically the handle was returned by the CPU side graphics APIs, which got them from the CPU side graphics drivers, which told the GPU “here’s some data, put it at this memory address”. The GPU just took the data and responded with “ah-yup!”</p><p>Mutable Data: During CPU step 6, basically the same thing as GPU step 1 happens. “Ah-yup”. Same with CPU step 7, with some additional switches being flipped and instructions being handed out. Get some memory space ready to render into.</p><p>Draw Call: And then it begins. We draw one cube.</p><p>Vertex Shader: The GPU has multiple cores, somewhere between several tens to many thousands. In most modern GPUs these are general purpose, at least in terms of the kind of code that GPUs can run. So for something like a cube with only 24 vertices, all of these will get processed in parallel. Each vertex position is transformed from the “local” space (the data that’s stored in the GPU’s vertex data struct array) to homogeneous clip space. It also optionally modified or passes on any extra data, like the UVs and color, if the shader has code for that, as well as take and process any other material properties it might need for this stage.</p><p>Rasterization: Next the GPU goes through the index array and calculates the screen coverage for each triangle based on the vertex positions. This is done in the order they exist in the array and not in parallel. If a triangle doesn’t cover any pixels on screen, it is skipped. If it has ZTest it’ll test against the depth buffer and skip pixels that aren’t visible. If ZWrite is on, it’ll update the depth buffer with the new depth. Then it’ll start drawing the pixels for that triangle. For each pixel it needs to calculate the barycentric coordinate, and interpolate the vertex data to pass on to that pixel’s fragment shader.</p><p>Fragment Shader: Pixels on screen are processed in batches. At the smallest, this is in groups of 2x2 pixels calculated in parallel. But that may also be as part of larger batches of 8x8 pixels or 16x8 pixels or other size groups. The pixels in each batch all run in parallel, per triangle. If a single pixel is visible in one of these larger groups, the other cores may be completely idle, or calculating values for pixels outside the triangle’s coverage or otherwise hidden. The fragment shader takes the interpolated data for its position, as well as any of the material properties and a texture data, and puts it together to form a single color value. Textures are sampled with specialized hardware that handles fast decoding of the various texture formats and filtering and splits out a color value for the shader to use.</p><p>ROP: The values output by the fragment shader are blended into the frame buffer. For opaques, this is usually just a replacement of the current color value. For transparent objects this may be alpha blending or additive blending. The GPU has specialized hardware that handles this.</p><p>Repeat all parts of step 3 for every draw call, in the order the CPU sent them.</p><p>Send the final image in the frame buffer to the monitor.</p><p>Then the next frame starts and we do it all over. Note that all that texture, shader, and mesh data just sits there on the GPU and gets reused over and over. I’m skipping a bunch of things in there too, but that’s the gist.</p>
+          </div>
+
+<p>Fundamentally a UV is a 2D position within a texture<br>letters U (Horizontal) and V (Vertical)<br>UV is a texture coordinate in 2D form that corresponds to an object in 3D form<br>The term UV mapping originates from the coordinate system used to apply 2D textures onto 3D models.</p>
+<p>Input a custom vertex structure<br>To access different vertex data, you need to declare the vertex structure yourself, or add input parameters to the vertex shader. Vertex data is identified by Cg/HLSL semantics, and must be from the following list:</p>
+<p>POSITION is the vertex position, typically a float3 or float4.<br>NORMAL is the vertex normal, typically a float3.<br>TEXCOORD0 is the first UV coordinate, typically float2, float3 or float4.<br>TEXCOORD1, TEXCOORD2 and TEXCOORD3 are the 2nd, 3rd and 4th UV coordinates, respectively.<br>TANGENT is the tangent vector (used for normal mapping), typically a float4.<br>COLOR is the per-vertex color, typically a float4.</p>
+<br>
+<br>
+
+
 <p><a target="_blank" rel="noopener" href="https://unity.com/how-to">https://unity.com/how-to</a></p>
 <p><a target="_blank" rel="noopener" href="https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-ui-toolkit-sample-project-231178">https://assetstore.unity.com/packages/essentials/tutorial-projects/dragon-crashers-ui-toolkit-sample-project-231178</a></p>
 <p><a target="_blank" rel="noopener" href="https://developer.unity.cn/projects/665a7cc9edbc2a001dac7033">https://developer.unity.cn/projects/665a7cc9edbc2a001dac7033</a></p>
 <p><a target="_blank" rel="noopener" href="https://blog.csdn.net/qq_21407523/article/details/108814300">https://blog.csdn.net/qq_21407523/article/details/108814300</a></p>
 <p><a target="_blank" rel="noopener" href="https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/README.md">https://github.com/Lafree317/Unity-InterviewQuestion/blob/master/README.md</a></p>
-<p>NGUI</p>
+<p><a target="_blank" rel="noopener" href="https://parsec.app/">Parsec</a>.<br>Parsec is a proprietary remote desktop application primarily used for playing games through video streaming.</p>
 <p><a target="_blank" rel="noopener" href="https://unity.com/resources/user-interface-design-and-implementation-in-unity">https://unity.com/resources/user-interface-design-and-implementation-in-unity</a></p>
 <p><a target="_blank" rel="noopener" href="https://anthony-zhang.me/University-Notes/CS341/CS341.html">https://anthony-zhang.me/University-Notes/CS341/CS341.html</a></p>
 <link rel="stylesheet" href="/blog/css/spoiler.css" type="text/css"><script src="/blog/js/spoiler.js" type="text/javascript" async></script>
@@ -754,8 +817,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/Unity/" rel="tag"># Unity</a>
               <a href="/blog/tags/C/" rel="tag"># C#</a>
+              <a href="/blog/tags/Unity/" rel="tag"># Unity</a>
           </div>
 
         
@@ -763,10 +826,13 @@
 
         
     <div class="post-nav">
-      <div class="post-nav-item"></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/02/10/P337/" rel="next" title="在VBS中查询文件的代码">
-      在VBS中查询文件的代码 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/02/28/P297/" rel="prev" title="地铁通勤时半死不活的读书记录 - 夏">
+      <i class="fa fa-chevron-left"></i> 地铁通勤时半死不活的读书记录 - 夏
+    </a></div>
+      <div class="post-nav-item">
+    <a href="/blog/2025/02/25/P339/" rel="next" title="关于C#的笔记">
+      关于C#的笔记 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -833,7 +899,7 @@
 
       <!--noindex-->
       <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Boxing"><span class="nav-number">1.</span> <span class="nav-text">1 - Boxing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Type"><span class="nav-number">2.</span> <span class="nav-text">2 - Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Keywords"><span class="nav-number">3.</span> <span class="nav-text">3 - Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-GC-Alloc"><span class="nav-number">4.</span> <span class="nav-text">4 - GC Alloc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%BF%9B%E7%A8%8B%EF%BC%88Process%EF%BC%89%E3%80%81%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89%E5%92%8C%E5%8D%8F%E7%A8%8B%EF%BC%88Coroutine%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">5 - 进程（Process）、线程（Thread）和协程（Coroutine）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Socket%E9%80%9A%E8%AE%AF"><span class="nav-number">6.</span> <span class="nav-text">6 - Socket通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-List"><span class="nav-number">7.</span> <span class="nav-text">7 - List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">8 - 版本控制与文档管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-What-is-OOP"><span class="nav-number">9.</span> <span class="nav-text">9 - What is OOP?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-SDK%E6%8E%A5%E5%85%A5-software-development-kit"><span class="nav-number">10.</span> <span class="nav-text">10 - SDK接入 - software development kit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%85%AD%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">11.</span> <span class="nav-text">11 - 六大设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-A-search-algorithm"><span class="nav-number">12.</span> <span class="nav-text">12 - A* search algorithm</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E7%8A%B6%E6%80%81%E6%9C%BA-finite-state-machine"><span class="nav-number">13.</span> <span class="nav-text">14 - 状态机 - finite-state machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Behavior-tree-%E8%A1%8C%E4%B8%BA%E6%A0%91"><span class="nav-number">14.</span> <span class="nav-text">15 - Behavior tree (行为树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others-Questions"><span class="nav-number">15.</span> <span class="nav-text">Others - Questions</span></a></li></ol></div>
+          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#1-Boxing"><span class="nav-number">1.</span> <span class="nav-text">1 - Boxing</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#2-Type"><span class="nav-number">2.</span> <span class="nav-text">2 - Type</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#3-Keywords"><span class="nav-number">3.</span> <span class="nav-text">3 - Keywords</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#4-GC-Alloc"><span class="nav-number">4.</span> <span class="nav-text">4 - GC Alloc</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#5-%E8%BF%9B%E7%A8%8B%EF%BC%88Process%EF%BC%89%E3%80%81%E7%BA%BF%E7%A8%8B%EF%BC%88Thread%EF%BC%89%E5%92%8C%E5%8D%8F%E7%A8%8B%EF%BC%88Coroutine%EF%BC%89"><span class="nav-number">5.</span> <span class="nav-text">5 - 进程（Process）、线程（Thread）和协程（Coroutine）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#6-Socket%E9%80%9A%E8%AE%AF"><span class="nav-number">6.</span> <span class="nav-text">6 - Socket通讯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#7-List"><span class="nav-number">7.</span> <span class="nav-text">7 - List</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#8-%E7%89%88%E6%9C%AC%E6%8E%A7%E5%88%B6%E4%B8%8E%E6%96%87%E6%A1%A3%E7%AE%A1%E7%90%86"><span class="nav-number">8.</span> <span class="nav-text">8 - 版本控制与文档管理</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#9-What-is-OOP"><span class="nav-number">9.</span> <span class="nav-text">9 - What is OOP?</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#10-SDK%E6%8E%A5%E5%85%A5-software-development-kit"><span class="nav-number">10.</span> <span class="nav-text">10 - SDK接入 - software development kit</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#11-%E5%85%AD%E5%A4%A7%E8%AE%BE%E8%AE%A1%E6%A8%A1%E5%BC%8F"><span class="nav-number">11.</span> <span class="nav-text">11 - 六大设计模式</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#12-A-search-algorithm-%E5%AF%BB%E8%B7%AF%E8%B7%AF%E5%BE%84"><span class="nav-number">12.</span> <span class="nav-text">12 - A* search algorithm - 寻路路径</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#14-%E7%8A%B6%E6%80%81%E6%9C%BA-finite-state-machine"><span class="nav-number">13.</span> <span class="nav-text">14 - 状态机 - finite-state machine</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#15-Behavior-tree-%E8%A1%8C%E4%B8%BA%E6%A0%91"><span class="nav-number">14.</span> <span class="nav-text">15 - Behavior tree (行为树)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#16-stack-and-heap"><span class="nav-number">15.</span> <span class="nav-text">16 - stack and heap</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#17-%E7%83%AD%E6%9B%B4%E6%96%B0-%E7%83%AD%E5%8A%A0%E8%BD%BD%EF%BC%88Hot-Loading%EF%BC%89"><span class="nav-number">16.</span> <span class="nav-text">17 - 热更新 - 热加载（Hot Loading）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#18-Unity-Input-system"><span class="nav-number">17.</span> <span class="nav-text">18 - Unity Input system</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#19-ScriptableObject"><span class="nav-number">18.</span> <span class="nav-text">19 - ScriptableObject</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#20-%E7%BA%A2%E7%82%B9%E7%B3%BB%E7%BB%9F-Reddot-System"><span class="nav-number">19.</span> <span class="nav-text">20 - 红点系统(Reddot System)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#21-QFramework"><span class="nav-number">20.</span> <span class="nav-text">21 - QFramework</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Others-Questions"><span class="nav-number">21.</span> <span class="nav-text">Others - Questions</span></a></li></ol></div>
       </div>
       <!--/noindex-->
 
@@ -849,7 +915,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">341</span>
+          <span class="site-state-item-count">344</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -922,7 +988,7 @@
     </span>
 
 
-    <span title="C">1.7m</span>
+    <span title="C">1.8m</span>
   -->
 
   <!--
@@ -930,7 +996,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">26:23</span>
+    <span title="T">26:44</span>
 
   -->
 
@@ -940,7 +1006,7 @@
 <br>
 <div class="theme-info">
   <div class="powered-by"></div>
-  <span class="post-count">阅览室一共有1.7m的老兔正在打瞌睡</span>
+  <span class="post-count">阅览室一共有1.8m的老兔正在打瞌睡</span>
 </div>
 
         
