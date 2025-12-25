@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -45,7 +45,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_13.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2022/08/18/P255/P255_14.jpg">
 <meta property="article:published_time" content="2022-08-18T02:45:06.000Z">
-<meta property="article:modified_time" content="2022-11-12T20:28:03.938Z">
+<meta property="article:modified_time" content="2025-12-20T09:20:36.757Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="excel">
@@ -264,7 +264,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-13 04:28:03" itemprop="dateModified" datetime="2022-11-13T04:28:03+08:00">2022-11-13</time>
+                <time title="Modified: 2025-12-20 17:20:36" itemprop="dateModified" datetime="2025-12-20T17:20:36+08:00">2025-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -470,7 +470,7 @@
 <br>
 <br>
 
-<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">&#x27;turn autofilter no <span class="built_in">or</span> off,不会被先前原本的filter所干扰</span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">&#x27;选区</span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line">&#x27;在选区下加第<span class="number">2</span>列(<span class="built_in">column</span> counting from <span class="built_in">left</span> to <span class="built_in">right</span>)的idaho的filter</span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span>, Criteri<span class="symbol">al:</span>=<span class="string">&quot;Idaho&quot;</span></span><br></pre></td></tr></table></figure>
+<h2 id="Filter"><a href="#Filter" class="headerlink" title="Filter"></a>Filter</h2><figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">&#x27;turn autofilter no <span class="built_in">or</span> off,不会被先前原本的<span class="built_in">filter</span>所干扰</span><br><span class="line">Selection.AutoFilter</span><br><span class="line"></span><br><span class="line">&#x27;选区</span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line">&#x27;在选区下加第<span class="number">2</span>列(<span class="built_in">column</span> counting from <span class="built_in">left</span> to <span class="built_in">right</span>)的idaho的<span class="built_in">filter</span></span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span>, Criteri<span class="symbol">al:</span>=<span class="string">&quot;Idaho&quot;</span></span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -489,7 +489,7 @@
 <p>顺便一提可以去home &gt; sort&amp;filter &gt; clear取消filter.</p>
 <p>在worksheet里我们已经有unique这个function.但不推荐在vba中使用worksheet的unique.</p>
 <p>Remove filter.</p>
-<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Sub RemoveFilter()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line"></span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span></span><br><span class="line">&#x27;因为输入的filter是null 所以会remove filter</span><br><span class="line">&#x27;remove第二列的所有filter</span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub ClearAllFilters()</span><br><span class="line"></span><br><span class="line">ActiveSheet.ShowAllData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
+<figure class="highlight excel"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">Sub RemoveFilter()</span><br><span class="line"></span><br><span class="line">Dim strAddress As String</span><br><span class="line"></span><br><span class="line">strAddress = ActiveCell.CurrentRegion.Address</span><br><span class="line"></span><br><span class="line">ActiveSheet.Range(strAddress).AutoFilter Fie<span class="symbol">ld:</span>=<span class="number">2</span></span><br><span class="line">&#x27;因为输入的<span class="built_in">filter</span>是null 所以会remove <span class="built_in">filter</span></span><br><span class="line">&#x27;remove第二列的所有<span class="built_in">filter</span></span><br><span class="line"></span><br><span class="line">End Sub</span><br><span class="line"></span><br><span class="line">Sub ClearAllFilters()</span><br><span class="line"></span><br><span class="line">ActiveSheet.ShowAllData</span><br><span class="line"></span><br><span class="line">End Sub</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -821,7 +821,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">349</span>
+          <span class="site-state-item-count">350</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -902,7 +902,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:11</span>
+    <span title="T">30:15</span>
 
   -->
 

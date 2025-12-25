@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -39,10 +39,10 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/11.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2025/02/25/P336/pipeline.png">
 <meta property="article:published_time" content="2025-02-24T19:08:08.000Z">
-<meta property="article:modified_time" content="2025-02-26T07:39:13.209Z">
+<meta property="article:modified_time" content="2025-12-20T09:21:17.571Z">
 <meta property="article:author" content="Mazui">
-<meta property="article:tag" content="C#">
 <meta property="article:tag" content="Unity">
+<meta property="article:tag" content="C#">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://mazui3.github.io/blog/2025/02/25/P336/P336.png">
 
@@ -257,7 +257,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-02-26 15:39:13" itemprop="dateModified" datetime="2025-02-26T15:39:13+08:00">2025-02-26</time>
+                <time title="Modified: 2025-12-20 17:21:17" itemprop="dateModified" datetime="2025-12-20T17:21:17+08:00">2025-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -756,7 +756,7 @@
 <ol start="2">
 <li>Async and Await and Task</li>
 </ol>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">async <span class="keyword">void</span> <span class="title">theFunction</span><span class="params">()</span></span>&#123;</span><br><span class="line">	await Task.<span class="built_in">Run</span>( () =&gt; &#123;</span><br><span class="line">		Thread.<span class="built_in">Sleep</span>(<span class="number">2000</span>);</span><br><span class="line">		<span class="comment">// do something</span></span><br><span class="line">		&#125;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="function">async <span class="type">void</span> <span class="title">theFunction</span><span class="params">()</span></span>&#123;</span><br><span class="line">	await Task.<span class="built_in">Run</span>( () =&gt; &#123;</span><br><span class="line">		Thread.<span class="built_in">Sleep</span>(<span class="number">2000</span>);</span><br><span class="line">		<span class="comment">// do something</span></span><br><span class="line">		&#125;</span><br><span class="line">	);</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 <p>当使用coroutine的时候，如果附带代码的object被destory或者inactive，async和await可以执行代码，也可以return一个值。Awaitablede的任务会拍成池子放到limit allocations里面。<br>但是任务会把本身正在运行的主线程停住，如果有两个任务互相等待，就会被堵住。</p>
 <br>
 
@@ -770,7 +770,7 @@
 <blockquote>
 <p>ApplicationStage：准备场景信息，定义模型的渲染命令（材质，shader）<br>GemetryStage：顶点着色器，曲面细分着色器，几何着色器，裁剪，屏幕映射<br>RasterizerStage：三角形设置，三角形设置遍历，片元着色器，逐片元操作</p>
 </blockquote>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unlit/NewUnlitShader&quot;</span></span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (<span class="string">&quot;Texture&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> &#125;</span><br><span class="line">        LOD <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> fragment frag</span></span><br><span class="line">            <span class="comment">// make fog work</span></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">pragma</span> multi_compile_fog</span></span><br><span class="line"></span><br><span class="line">            <span class="meta">#<span class="meta-keyword">include</span> <span class="meta-string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line"></span><br><span class="line">            struct appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="class"><span class="keyword">struct</span> <span class="title">v2f</span></span></span><br><span class="line"><span class="class">            &#123;</span></span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                <span class="built_in">UNITY_FOG_COORDS</span>(<span class="number">1</span>)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            <span class="function">v2f <span class="title">vert</span> <span class="params">(appdata v)</span></span></span><br><span class="line"><span class="function">            </span>&#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">                o.uv = <span class="built_in">TRANSFORM_TEX</span>(v.uv, _MainTex);</span><br><span class="line">                <span class="built_in">UNITY_TRANSFER_FOG</span>(o,o.vertex);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function">fixed4 <span class="title">frag</span> <span class="params">(v2f i)</span> : SV_Target</span></span><br><span class="line"><span class="function">            &#123;</span></span><br><span class="line">                <span class="comment">// sample the texture</span></span><br><span class="line">                fixed4 col = <span class="built_in">tex2D</span>(_MainTex, i.uv);</span><br><span class="line">                <span class="comment">// apply fog</span></span><br><span class="line">                <span class="built_in">UNITY_APPLY_FOG</span>(i.fogCoord, col);</span><br><span class="line">                <span class="keyword">return</span> col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line">Shader <span class="string">&quot;Unlit/NewUnlitShader&quot;</span></span><br><span class="line">&#123;</span><br><span class="line">    Properties</span><br><span class="line">    &#123;</span><br><span class="line">        _MainTex (<span class="string">&quot;Texture&quot;</span>, <span class="number">2</span>D) = <span class="string">&quot;white&quot;</span> &#123;&#125;</span><br><span class="line">    &#125;</span><br><span class="line">    SubShader</span><br><span class="line">    &#123;</span><br><span class="line">        Tags &#123; <span class="string">&quot;RenderType&quot;</span>=<span class="string">&quot;Opaque&quot;</span> &#125;</span><br><span class="line">        LOD <span class="number">100</span></span><br><span class="line"></span><br><span class="line">        Pass</span><br><span class="line">        &#123;</span><br><span class="line">            CGPROGRAM</span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> vertex vert</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> fragment frag</span></span><br><span class="line">            <span class="comment">// make fog work</span></span><br><span class="line">            <span class="meta">#<span class="keyword">pragma</span> multi_compile_fog</span></span><br><span class="line"></span><br><span class="line">            <span class="meta">#<span class="keyword">include</span> <span class="string">&quot;UnityCG.cginc&quot;</span></span></span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> appdata</span><br><span class="line">            &#123;</span><br><span class="line">                float4 vertex : POSITION;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            <span class="keyword">struct</span> <span class="title class_">v2f</span></span><br><span class="line">            &#123;</span><br><span class="line">                float2 uv : TEXCOORD0;</span><br><span class="line">                <span class="built_in">UNITY_FOG_COORDS</span>(<span class="number">1</span>)</span><br><span class="line">                float4 vertex : SV_POSITION;</span><br><span class="line">            &#125;;</span><br><span class="line"></span><br><span class="line">            sampler2D _MainTex;</span><br><span class="line">            float4 _MainTex_ST;</span><br><span class="line"></span><br><span class="line">            <span class="function">v2f <span class="title">vert</span> <span class="params">(appdata v)</span></span></span><br><span class="line"><span class="function">            </span>&#123;</span><br><span class="line">                v2f o;</span><br><span class="line">                o.vertex = <span class="built_in">UnityObjectToClipPos</span>(v.vertex);</span><br><span class="line">                o.uv = <span class="built_in">TRANSFORM_TEX</span>(v.uv, _MainTex);</span><br><span class="line">                <span class="built_in">UNITY_TRANSFER_FOG</span>(o,o.vertex);</span><br><span class="line">                <span class="keyword">return</span> o;</span><br><span class="line">            &#125;</span><br><span class="line"></span><br><span class="line">            <span class="function">fixed4 <span class="title">frag</span> <span class="params">(v2f i)</span> : SV_Target</span></span><br><span class="line"><span class="function">            &#123;</span></span><br><span class="line">                <span class="comment">// sample the texture</span></span><br><span class="line">                fixed4 col = <span class="built_in">tex2D</span>(_MainTex, i.uv);</span><br><span class="line">                <span class="comment">// apply fog</span></span><br><span class="line">                <span class="built_in">UNITY_APPLY_FOG</span>(i.fogCoord, col);</span><br><span class="line">                <span class="keyword">return</span> col;</span><br><span class="line">            &#125;</span><br><span class="line">            ENDCG</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
 
 <p>Each SubShader is composed of a number of passes, and each Pass represents an execution of the vertex and fragment code for the same object rendered with the material of the shader.<br>Many simple shaders use just one pass, but shaders that interact with lighting might need more (see Lighting Pipeline for details).<br>Commands inside Pass typically setup fixed function state, for example blending modes.</p>
 <p>GPU工作流程：顶点处理、光栅化、纹理贴图、像素处理</p>
@@ -817,8 +817,8 @@
 
       <footer class="post-footer">
           <div class="post-tags">
-              <a href="/blog/tags/C/" rel="tag"># C#</a>
               <a href="/blog/tags/Unity/" rel="tag"># Unity</a>
+              <a href="/blog/tags/C/" rel="tag"># C#</a>
           </div>
 
         
@@ -827,12 +827,12 @@
         
     <div class="post-nav">
       <div class="post-nav-item">
-    <a href="/blog/2025/02/28/P297/" rel="prev" title="地铁通勤时半死不活的读书记录 - 夏">
-      <i class="fa fa-chevron-left"></i> 地铁通勤时半死不活的读书记录 - 夏
+    <a href="/blog/2025/02/25/P339/" rel="prev" title="关于C#的笔记">
+      <i class="fa fa-chevron-left"></i> 关于C#的笔记
     </a></div>
       <div class="post-nav-item">
-    <a href="/blog/2025/02/25/P339/" rel="next" title="关于C#的笔记">
-      关于C#的笔记 <i class="fa fa-chevron-right"></i>
+    <a href="/blog/2025/02/10/P337/" rel="next" title="在VBS中查询文件的代码">
+      在VBS中查询文件的代码 <i class="fa fa-chevron-right"></i>
     </a></div>
     </div>
       </footer>
@@ -915,7 +915,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">349</span>
+          <span class="site-state-item-count">350</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -996,7 +996,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:11</span>
+    <span title="T">30:15</span>
 
   -->
 

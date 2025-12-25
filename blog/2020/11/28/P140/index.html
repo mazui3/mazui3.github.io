@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -31,7 +31,7 @@
 <meta property="og:description" content="那就开始吧(吧).">
 <meta property="og:locale" content="en_US">
 <meta property="article:published_time" content="2020-11-28T12:56:27.000Z">
-<meta property="article:modified_time" content="2022-11-12T20:38:34.679Z">
+<meta property="article:modified_time" content="2025-12-20T09:20:12.515Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -249,7 +249,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-13 04:38:34" itemprop="dateModified" datetime="2022-11-13T04:38:34+08:00">2022-11-13</time>
+                <time title="Modified: 2025-12-20 17:20:12" itemprop="dateModified" datetime="2025-12-20T17:20:12+08:00">2025-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -318,16 +318,16 @@
 <h3 id="entering-Activate-an-environment"><a href="#entering-Activate-an-environment" class="headerlink" title="entering (Activate) an environment"></a>entering (Activate) an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># For  conda 4.6 and later versions on Linux/macOS/Windows, use</span></span><br><span class="line">conda activate my_env</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Linux/macOS, use</span></span><br><span class="line"><span class="built_in">source</span> activate my_env</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Windows, use</span></span><br><span class="line">activate my_env</span><br><span class="line"><span class="comment"># For  conda 4.6 and later versions on Linux/macOS/Windows, use</span></span><br><span class="line">conda deactivate</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Linux/macOS, use</span></span><br><span class="line"><span class="built_in">source</span> deactivate</span><br><span class="line"><span class="comment">#For conda versions prior to 4.6 on Windows, use</span></span><br><span class="line">deactivate</span><br></pre></td></tr></table></figure>
 <p>大概是用create先装好一个环境,什么时候用都可以进去的.不是一次性的.</p>
 <h3 id="换environment"><a href="#换environment" class="headerlink" title="换environment"></a>换environment</h3><p>Save all the above information in the current environment to a YAML file, environment.yaml, and later share this file with other users over GitHub or other means.<br>This file will get created (or overwritten) in your current directory.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env <span class="built_in">export</span> &gt; environment.yaml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">env</span> <span class="built_in">export</span> &gt; environment.yaml</span><br></pre></td></tr></table></figure>
 <p>To create an environment from an environment file</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env create -f environment.yaml</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">env</span> create -f environment.yaml</span><br></pre></td></tr></table></figure>
 
 <p>如果忘了自己的environment叫什么名字.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda env list</span><br><span class="line">//或者</span><br><span class="line">conda info --envs</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">env</span> list</span><br><span class="line">//或者</span><br><span class="line">conda info --envs</span><br></pre></td></tr></table></figure>
 
 <h3 id="list-the-packages-inside-an-environment"><a href="#list-the-packages-inside-an-environment" class="headerlink" title="list the packages inside an environment"></a>list the packages inside an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># If the environment is not activated</span></span><br><span class="line">conda list -n env_name</span><br><span class="line"></span><br><span class="line"><span class="comment"># If the environment is activated</span></span><br><span class="line">conda list</span><br><span class="line"></span><br><span class="line"><span class="comment"># To see if a specific package, say `scipy` is installed in an environment</span></span><br><span class="line">conda list -n env_name scipy</span><br></pre></td></tr></table></figure>
 
-<h3 id="removing-an-environment"><a href="#removing-an-environment" class="headerlink" title="removing an environment"></a>removing an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda env remove -n env_name</span><br></pre></td></tr></table></figure>
+<h3 id="removing-an-environment"><a href="#removing-an-environment" class="headerlink" title="removing an environment"></a>removing an environment</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">conda <span class="built_in">env</span> remove -n env_name</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -667,7 +667,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">349</span>
+          <span class="site-state-item-count">350</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -748,7 +748,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:11</span>
+    <span title="T">30:15</span>
 
   -->
 

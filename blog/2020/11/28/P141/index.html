@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -32,7 +32,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/28/P141/P141.png">
 <meta property="article:published_time" content="2020-11-28T15:03:36.000Z">
-<meta property="article:modified_time" content="2022-11-12T20:38:26.138Z">
+<meta property="article:modified_time" content="2025-12-20T09:20:12.516Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -251,7 +251,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2022-11-13 04:38:26" itemprop="dateModified" datetime="2022-11-13T04:38:26+08:00">2022-11-13</time>
+                <time title="Modified: 2025-12-20 17:20:12" itemprop="dateModified" datetime="2025-12-20T17:20:12+08:00">2025-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -488,7 +488,7 @@
 
 <p><strong>Pivot Table Challenge</strong></p>
 <p>To provide the required df we use the function pivot_table with the parameters index=’Col X’, columns=’Col Y’ and as aggfunc, len:</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pd.pivot_table(df, index=[<span class="string">&#x27;Col X&#x27;</span>], columns=[<span class="string">&#x27;Col Y&#x27;</span>], aggfunc=<span class="built_in">len</span>, fill_value=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    Col Y	cat <span class="number">1</span>	cat <span class="number">2</span>	cat <span class="number">3</span></span><br><span class="line">    Col X			</span><br><span class="line">    <span class="class"><span class="keyword">class</span> 1	    1	    0	    0</span></span><br><span class="line"><span class="class">    <span class="title">class</span> 2	    1	    0	    1</span></span><br><span class="line"><span class="class">    <span class="title">class</span> 3	    0	    1	    0</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class"><span class="title">df</span>.<span class="title">groupby</span>(<span class="params">[<span class="string">&#x27;Col X&#x27;</span>,<span class="string">&#x27;Col Y&#x27;</span>]</span>).<span class="title">size</span>().<span class="title">unstack</span>(<span class="params"><span class="string">&#x27;Col Y&#x27;</span>, fill_value=<span class="number">0</span></span>)[&#x27;<span class="title">Col</span> <span class="title">Y</span>&#x27;], <span class="title">aggfunc</span>=<span class="title">len</span>, <span class="title">fill_value</span>=0)</span></span><br><span class="line"><span class="class"></span></span><br><span class="line"><span class="class">    <span class="title">Col</span> <span class="title">Y</span>	<span class="title">cat</span> 1	<span class="title">cat</span> 2	<span class="title">cat</span> 3</span></span><br><span class="line"><span class="class">    <span class="title">Col</span> <span class="title">X</span>			</span></span><br><span class="line"><span class="class">    <span class="title">class</span> 1	    1	    0	    0</span></span><br><span class="line"><span class="class">    <span class="title">class</span> 2	    1	    0	    1</span></span><br><span class="line"><span class="class">    <span class="title">class</span> 3	    0	    1	    0</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">pd.pivot_table(df, index=[<span class="string">&#x27;Col X&#x27;</span>], columns=[<span class="string">&#x27;Col Y&#x27;</span>], aggfunc=<span class="built_in">len</span>, fill_value=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    Col Y	cat <span class="number">1</span>	cat <span class="number">2</span>	cat <span class="number">3</span></span><br><span class="line">    Col X			</span><br><span class="line">    <span class="keyword">class</span> <span class="number">1</span>	    <span class="number">1</span>	    <span class="number">0</span>	    <span class="number">0</span></span><br><span class="line">    <span class="keyword">class</span> <span class="number">2</span>	    <span class="number">1</span>	    <span class="number">0</span>	    <span class="number">1</span></span><br><span class="line">    <span class="keyword">class</span> <span class="number">3</span>	    <span class="number">0</span>	    <span class="number">1</span>	    <span class="number">0</span></span><br><span class="line"></span><br><span class="line">df.groupby([<span class="string">&#x27;Col X&#x27;</span>,<span class="string">&#x27;Col Y&#x27;</span>]).size().unstack(<span class="string">&#x27;Col Y&#x27;</span>, fill_value=<span class="number">0</span>)[<span class="string">&#x27;Col Y&#x27;</span>], aggfunc=<span class="built_in">len</span>, fill_value=<span class="number">0</span>)</span><br><span class="line"></span><br><span class="line">    Col Y	cat <span class="number">1</span>	cat <span class="number">2</span>	cat <span class="number">3</span></span><br><span class="line">    Col X			</span><br><span class="line">    <span class="keyword">class</span> <span class="number">1</span>	    <span class="number">1</span>	    <span class="number">0</span>	    <span class="number">0</span></span><br><span class="line">    <span class="keyword">class</span> <span class="number">2</span>	    <span class="number">1</span>	    <span class="number">0</span>	    <span class="number">1</span></span><br><span class="line">    <span class="keyword">class</span> <span class="number">3</span>	    <span class="number">0</span>	    <span class="number">1</span>	    <span class="number">0</span></span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -677,7 +677,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">349</span>
+          <span class="site-state-item-count">350</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -758,7 +758,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:11</span>
+    <span title="T">30:15</span>
 
   -->
 

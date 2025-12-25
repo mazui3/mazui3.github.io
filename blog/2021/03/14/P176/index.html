@@ -4,7 +4,7 @@
   <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=2">
 <meta name="theme-color" content="#222">
-<meta name="generator" content="Hexo 5.4.0">
+<meta name="generator" content="Hexo 5.4.2">
   <link rel="apple-touch-icon" sizes="180x180" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="32x32" href="/blog/images/star.png">
   <link rel="icon" type="image/png" sizes="16x16" href="/blog/images/star.png">
@@ -36,7 +36,7 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/03/14/P176/P176.png">
 <meta property="article:published_time" content="2021-03-13T16:02:10.000Z">
-<meta property="article:modified_time" content="2023-01-11T22:27:23.222Z">
+<meta property="article:modified_time" content="2025-12-20T09:20:13.906Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="Thank you Mr.goose">
 <meta property="article:tag" content="以头抢地(诚)">
@@ -255,7 +255,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2023-01-12 06:27:23" itemprop="dateModified" datetime="2023-01-12T06:27:23+08:00">2023-01-12</time>
+                <time title="Modified: 2025-12-20 17:20:13" itemprop="dateModified" datetime="2025-12-20T17:20:13+08:00">2025-12-20</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -327,7 +327,7 @@
             <p>uname用来check Unix version.</p>
           </div>
 
-<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## input和output使用&gt;和&lt;</span></span><br><span class="line"></span><br><span class="line">cat &lt; in.txt &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从in.txt用cat读取数据,输出到out.txt中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 同时&gt;&gt;是append的意思</span></span><br><span class="line"></span><br><span class="line">cat &gt;&gt; out</span><br></pre></td></tr></table></figure>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">## input和output使用&gt;和&lt;</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &lt; in.txt &gt; out.txt</span><br><span class="line"></span><br><span class="line"><span class="comment">## 从in.txt用cat读取数据,输出到out.txt中</span></span><br><span class="line"></span><br><span class="line"><span class="comment">## 同时&gt;&gt;是append的意思</span></span><br><span class="line"></span><br><span class="line"><span class="built_in">cat</span> &gt;&gt; out</span><br></pre></td></tr></table></figure>
 
 <p>Every linux process has <a target="_blank" rel="noopener" href="https://en.wikipedia.org/wiki/Standard_streams">3 streams</a>, std in(standard input), std err(standard error), std out(standard output).</p>
 <blockquote>
@@ -411,10 +411,10 @@
 <br>
 
 <h2 id="Symlink"><a href="#Symlink" class="headerlink" title="Symlink"></a>Symlink</h2><p>一种快捷链接的意义.<br>可以把文件所在的directory存成一个快捷链接.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln theDirectory linkName</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> theDirectory linkName</span><br></pre></td></tr></table></figure>
 
 <p>要给directory instead of file 做symlink,<a target="_blank" rel="noopener" href="https://linuxhint.com/symlink-a-directory-in-linux/">有一点点不同</a>.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ln -s theDirectory linkName</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">ln</span> -s theDirectory linkName</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -455,7 +455,7 @@
 <br>
 
 <p>ctrl + Z pauses, or stops, the foreground process.<br>nohup prevents a background process from aborting when you exit the shell.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">nohup batchprog &gt; bpresults 2&gt; bperrors &amp;</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">nohup</span> batchprog &gt; bpresults 2&gt; bperrors &amp;</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -467,10 +467,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!commandID</span><br></pre></td></tr></table></figure>
 <p>可以跑历史里的command.</p>
 <p>还有种快捷跑history command的方法.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!cat</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">!<span class="built_in">cat</span></span><br></pre></td></tr></table></figure>
 <p>会跑出上一次使用cat的情况,比如cat sample.txt<br>也就是说忘记pass给cat的argument是什么也能再跑一次.</p>
 <p>还有$会store上一次的argument.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano sample.txt</span><br><span class="line">cat !$</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">nano sample.txt</span><br><span class="line"><span class="built_in">cat</span> !$</span><br></pre></td></tr></table></figure>
 <p>第二行的cat可以默认成cat sample.txt</p>
 <ul>
 <li>!3 : ref history cmmd #3</li>
@@ -482,7 +482,7 @@
 <br>
 <br>
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo !!</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">sudo</span> !!</span><br></pre></td></tr></table></figure>
 <p>Do the last command, but with sudo.<br><br><br><br></p>
 <h2 id="Unix-file-system"><a href="#Unix-file-system" class="headerlink" title="Unix file system"></a>Unix file system</h2><img src="/blog/2021/03/14/P176/P176_2.png" class="">
 
@@ -502,10 +502,10 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">prog1 | prog 2</span><br><span class="line"><span class="comment">## 等于</span></span><br><span class="line"></span><br><span class="line">prog1 &gt; temp 和 prog2 &lt; temp</span><br></pre></td></tr></table></figure>
 
 <p>Example: Count the # of words in the first 20 lines of sample.txt.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">head -20 sample.txt | wc - w</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">head</span> -20 sample.txt | <span class="built_in">wc</span> - w</span><br></pre></td></tr></table></figure>
 
 <p>Example: Suppose files words1.txt, words2.txt, etc. Contain words one per line. Print a dulicate free list if all words that occur in any of these files.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat words*.txt | sort | uniq</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cat</span> words*.txt | <span class="built_in">sort</span> | <span class="built_in">uniq</span></span><br></pre></td></tr></table></figure>
 <p>Uniq remove the duplicate that adjcent to each other.</p>
 <p>Use the output of a program as an argument to another program.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> <span class="string">&quot;Today is <span class="subst">$(date)</span> and I am <span class="subst">$(whoami)</span>&quot;</span></span><br></pre></td></tr></table></figure>
@@ -615,7 +615,7 @@
 <br>
 
 <h3 id="Arithmetic"><a href="#Arithmetic" class="headerlink" title="Arithmetic"></a>Arithmetic</h3><p>We can use $((mathExpression)) or $[mathExpression].</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $((<span class="number">4</span>/<span class="number">2</span>))</span><br><span class="line"><span class="built_in">echo</span> $[3+2*5]</span><br><span class="line">result=$[3*5]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">num1=7</span><br><span class="line">num2=2</span><br><span class="line">num3=4</span><br><span class="line"><span class="built_in">echo</span> $[ (<span class="variable">$num1</span>-<span class="variable">$num2</span>) * <span class="variable">$num3</span> ]</span><br><span class="line"></span><br><span class="line">expr 4 + 7</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">echo</span> $((<span class="number">4</span>/<span class="number">2</span>))</span><br><span class="line"><span class="built_in">echo</span> $[3+2*5]</span><br><span class="line">result=$[3*5]</span><br><span class="line"><span class="built_in">echo</span> <span class="variable">$result</span></span><br><span class="line">num1=7</span><br><span class="line">num2=2</span><br><span class="line">num3=4</span><br><span class="line"><span class="built_in">echo</span> $[ (<span class="variable">$num1</span>-<span class="variable">$num2</span>) * <span class="variable">$num3</span> ]</span><br><span class="line"></span><br><span class="line"><span class="built_in">expr</span> 4 + 7</span><br></pre></td></tr></table></figure>
 
 
 <p>Bash support integer arithmetic only, but we can use bc command for support of decimal places.</p>
@@ -656,7 +656,7 @@
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">case</span> value <span class="keyword">in</span></span><br><span class="line">   pattern1)</span><br><span class="line">      code ;;</span><br><span class="line">   pattern2)</span><br><span class="line">      code ;;</span><br><span class="line">   patternN)</span><br><span class="line">      code ;;</span><br><span class="line">   *)</span><br><span class="line">      code ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
 
 
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line">cat&lt;&lt;<span class="string">eof</span></span><br><span class="line"><span class="string">                ATM</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">        1. Deposit</span></span><br><span class="line"><span class="string">        2. Withdraw</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">eof</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Enter an option : &quot;</span> optVar</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$optVar</span> <span class="keyword">in</span></span><br><span class="line">   1) <span class="built_in">echo</span> <span class="string">&quot;Deposit option was selected.&quot;</span> ;;</span><br><span class="line">   2) <span class="built_in">echo</span> <span class="string">&quot;Withdraw option was selected.&quot;</span> ;;</span><br><span class="line">   *) <span class="built_in">echo</span> <span class="string">&quot;Invalid option.&quot;</span> ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="built_in">cat</span>&lt;&lt;<span class="string">eof</span></span><br><span class="line"><span class="string">                ATM</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">        1. Deposit</span></span><br><span class="line"><span class="string">        2. Withdraw</span></span><br><span class="line"><span class="string">        -------------------</span></span><br><span class="line"><span class="string">eof</span></span><br><span class="line"><span class="built_in">read</span> -p <span class="string">&quot;Enter an option : &quot;</span> optVar</span><br><span class="line"></span><br><span class="line"><span class="keyword">case</span> <span class="variable">$optVar</span> <span class="keyword">in</span></span><br><span class="line">   1) <span class="built_in">echo</span> <span class="string">&quot;Deposit option was selected.&quot;</span> ;;</span><br><span class="line">   2) <span class="built_in">echo</span> <span class="string">&quot;Withdraw option was selected.&quot;</span> ;;</span><br><span class="line">   *) <span class="built_in">echo</span> <span class="string">&quot;Invalid option.&quot;</span> ;;</span><br><span class="line"><span class="keyword">esac</span></span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -687,17 +687,17 @@
 <br>
 
 <h3 id="Loop"><a href="#Loop" class="headerlink" title="Loop"></a>Loop</h3><p>For loop.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3 4 5 6 7 8 9 10</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> ((i=1;i&lt;=10;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> $(ls)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$file</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> 1 2 3 4 5 6 7 8 9 10</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> ((i=<span class="number">1</span>;i&lt;=<span class="number">10</span>;i++))</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> i <span class="keyword">in</span> $*</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$i</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">for</span> file <span class="keyword">in</span> $(<span class="built_in">ls</span>)</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">	<span class="built_in">echo</span> <span class="variable">$file</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <p>While loop.</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span> [ condition ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> [ condition ] ; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <p>Input redirection and a while loop can also be combined to read a file line by line.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># script reads line by line the file that was passed</span></span><br><span class="line"><span class="comment"># as a command line argument</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$line</span></span><br><span class="line">    sleep 0.5</span><br><span class="line"><span class="keyword">done</span> &lt; <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#!/bin/bash</span></span><br><span class="line"><span class="comment"># script reads line by line the file that was passed</span></span><br><span class="line"><span class="comment"># as a command line argument</span></span><br><span class="line"></span><br><span class="line"><span class="keyword">while</span> <span class="built_in">read</span> line</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">    <span class="built_in">echo</span> <span class="variable">$line</span></span><br><span class="line">    <span class="built_in">sleep</span> 0.5</span><br><span class="line"><span class="keyword">done</span> &lt; <span class="variable">$1</span></span><br></pre></td></tr></table></figure>
 
 
 <p>Until loop.</p>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">until [ condition ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line">until [ condition ] ; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">until</span> [ condition ]</span><br><span class="line"><span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br><span class="line"><span class="comment"># or</span></span><br><span class="line"><span class="keyword">until</span> [ condition ] ; <span class="keyword">do</span></span><br><span class="line">   <span class="built_in">command</span></span><br><span class="line"><span class="keyword">done</span></span><br></pre></td></tr></table></figure>
 
 <img src="/blog/2021/03/14/P176/P176_4.png" class="">
 
@@ -1081,7 +1081,7 @@
 <td>execute permission. for files—file may be executed as a program or script. for directories—directory can be traversed (i.e. can cd into the directory)</td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">chmod u+x dir3/filename</span><br><span class="line">chmod o-r dir3</span><br><span class="line">chmod ug+x,o-w file1</span><br><span class="line">chmod a=rw file2</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> u+x dir3/filename</span><br><span class="line"><span class="built_in">chmod</span> o-r dir3</span><br><span class="line"><span class="built_in">chmod</span> ug+x,o-w file1</span><br><span class="line"><span class="built_in">chmod</span> a=rw file2</span><br></pre></td></tr></table></figure>
 
 <table>
 <thead>
@@ -1112,7 +1112,7 @@
 <td>No permissions</td>
 </tr>
 </tbody></table>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">chmod 751 dir3/filename</span><br><span class="line">chmod 750 dir3</span><br></pre></td></tr></table></figure>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">chmod</span> 751 dir3/filename</span><br><span class="line"><span class="built_in">chmod</span> 750 dir3</span><br></pre></td></tr></table></figure>
 
 <br>
 <br>
@@ -1386,7 +1386,7 @@
       <div class="site-state-item site-state-posts">
           <a href="/blog/archives/">
         
-          <span class="site-state-item-count">349</span>
+          <span class="site-state-item-count">350</span>
           <span class="site-state-item-name">posts</span>
         </a>
       </div>
@@ -1467,7 +1467,7 @@
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:11</span>
+    <span title="T">30:15</span>
 
   -->
 
