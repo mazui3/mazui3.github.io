@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/blog/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Courier Prime:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
@@ -99,11 +99,48 @@
 <!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+  <div class="desktop-icons">
+    <div class="icon-shortcut">
+        <div class="icon-box">📁</div>
+        <span>My Briefcase</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🌐</div>
+        <span>Network</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🗑️</div>
+        <span>Trash</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">📝</div>
+        <span>Notepad</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon">
+    <div class="icon-shortcut">
+        <div class="icon-box"><img src="/blog/images/Rio.png"></div>
+        <span style="padding: 13px;">Love you</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon2">
+    <div class="icon-shortcut">
+        <div class="icon-box">🌈</div>
+        <span>Be Happy</span>
+    </div>
+  </div>
   <div class="container use-motion">
     <div class="headband"></div>
-
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+      <div class="header-inner"><div class="title-bar">
+    <span>Folders</span>
+    <div class="title-controls">
+        <div class="win-btn">_</div>
+        <div class="win-btn">×</div>
+    </div>
+</div>
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
@@ -112,15 +149,21 @@
     </div>
   </div>
 
-  <div class="site-meta">
+  <div class="phosphor-text mono">
+      > BOOTING BLOG OS...<br>
+      > USER: ADMIN_M3<br>
+      > PACKET LOSS: 99%<br>
+      > DESTINATION: UNKNOWN<span class="cursor"></span>
+  </div>
 
+  <!-- <div class="site-meta">
     <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
-  </div>
+  </div> -->
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
@@ -159,16 +202,6 @@
     <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-zone">
-
-    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
-
-  </li>
         <li class="menu-item menu-item-back">
 
     <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
@@ -185,6 +218,14 @@
 
   <div class="search-pop-overlay">
     <div class="popup search-popup">
+      <div class="title-bar">
+          <span>Command Prompt</span>
+          <div class="title-controls"><div class="win-btn">
+            <span class="popup-btn-close">
+              x
+            </span>
+          </div></div>
+      </div>
         <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
@@ -194,9 +235,6 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
 </div>
 <div id="search-result">
   <div id="no-result">
@@ -209,17 +247,32 @@
 
 </div>
     </header>
-
     
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-
     <main class="main">
       <div class="main-inner">
-        <div class="content-wrap">
+        <div class="content-wrap-temp">
+          <div class="title-bar">
+              <span>Notepad - README.TXT</span>
+              <div class="title-controls">
+                  <div class="win-btn"><button class="none-btn" onclick="toggleWindow()">_</button></div>
+                  <div class="win-btn">□</div>
+                  <div class="win-btn">×</div>
+              </div>
+          </div>
+          <div class="menu-bar">
+              <span class="menu-item">File</span>
+              <span class="menu-item">Edit</span>
+              <span class="menu-item">View</span>
+              <span class="menu-item">Go</span>
+              <span class="menu-item">Favorites</span>
+              <span class="menu-item">Help</span>
+          </div>
+          <div class="content-wrap inset">
           
 
           <div class="content post posts-expand">
@@ -1768,6 +1821,7 @@ You may need to scan more than one row in a table to arrive at an answer.
 
 
           </div>
+        </div>
           
     
   <div class="comments">
@@ -1810,24 +1864,29 @@ You may need to scan more than one row in a table to arrive at an answer.
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO-Oracle"><span class="nav-number">2.13.</span> <span class="nav-text">INSERT INTO(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inserting-nulls"><span class="nav-number">2.13.1.</span> <span class="nav-text">Inserting nulls</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE-Oracle"><span class="nav-number">2.15.</span> <span class="nav-text">CREATE TABLE(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index"><span class="nav-number">2.16.</span> <span class="nav-text">Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.17.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.18.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL-Oracle"><span class="nav-number">2.19.</span> <span class="nav-text">NVL(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.20.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.20.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.21.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.22.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.23.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join-Oracle"><span class="nav-number">2.23.1.</span> <span class="nav-text">Natural Join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Join-using-Oracle"><span class="nav-number">2.23.2.</span> <span class="nav-text">Join using(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-way-join-Oracle"><span class="nav-number">2.23.3.</span> <span class="nav-text">Three way join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-equijoin-Oracle"><span class="nav-number">2.23.4.</span> <span class="nav-text">Non equijoin(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-standard-joins-Oracle"><span class="nav-number">2.23.5.</span> <span class="nav-text">Non standard joins(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.23.6.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.23.7.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.23.8.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.23.9.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-variables-Oracle"><span class="nav-number">2.24.</span> <span class="nav-text">Substitution variables(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.25.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle"><span class="nav-number">2.25.1.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle-1"><span class="nav-number">2.25.2.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Char-data-type-Oracle"><span class="nav-number">2.25.3.</span> <span class="nav-text">Char data type(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.25.4.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM-Oracle"><span class="nav-number">2.25.5.</span> <span class="nav-text">TRIM(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.25.6.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.25.7.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.25.8.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.26.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.26.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.26.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.26.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-and-Repeated-Data"><span class="nav-number">2.27.</span> <span class="nav-text">Nested and Repeated Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.28.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time-Oracle"><span class="nav-number">2.29.</span> <span class="nav-text">SQL date and time(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">2.29.1.</span> <span class="nav-text">TO_CHAR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.30.</span> <span class="nav-text">Aggregate(聚合函数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WITH-AS"><span class="nav-number">2.31.</span> <span class="nav-text">WITH AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analytic-function"><span class="nav-number">2.32.</span> <span class="nav-text">Analytic function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.32.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.32.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.33.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.34.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.35.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exists-Oracle"><span class="nav-number">2.36.</span> <span class="nav-text">Exists(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.37.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schemas"><span class="nav-number">2.38.</span> <span class="nav-text">Schemas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.39.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.40.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery-Oracle"><span class="nav-number">2.41.</span> <span class="nav-text">Subquery(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-where-clause"><span class="nav-number">2.41.1.</span> <span class="nav-text">Subqueries in the where clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-row-subqueries"><span class="nav-number">2.41.2.</span> <span class="nav-text">Single row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-row-subqueries"><span class="nav-number">2.41.3.</span> <span class="nav-text">Multi row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-having-clause"><span class="nav-number">2.41.4.</span> <span class="nav-text">Subqueries in the having clause</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.42.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.43.</span> <span class="nav-text">Autoincrement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing-Efficient-Queries"><span class="nav-number">2.44.</span> <span class="nav-text">Writing Efficient Queries</span></a></li></ol></li></ol></div>
+      <div class="title-bar">
+        <span>System_Monitor</span>
+        <div class="title-controls"><div class="win-btn">×</div></div>
       </div>
-      <!--/noindex-->
+      <div class="sidebar-inner-wrapper">
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview">
+            Overview
+          </li>
+        </ul>
+
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#Notes"><span class="nav-number">1.</span> <span class="nav-text">Notes</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Code"><span class="nav-number">2.</span> <span class="nav-text">Code</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#SELECT"><span class="nav-number">2.1.</span> <span class="nav-text">SELECT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DISTINCT"><span class="nav-number">2.2.</span> <span class="nav-text">DISTINCT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHEN"><span class="nav-number">2.3.</span> <span class="nav-text">WHEN</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FROM"><span class="nav-number">2.4.</span> <span class="nav-text">FROM</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#UPDATE"><span class="nav-number">2.5.</span> <span class="nav-text">UPDATE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DELETE"><span class="nav-number">2.6.</span> <span class="nav-text">DELETE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#AS"><span class="nav-number">2.7.</span> <span class="nav-text">AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ORDER-BY"><span class="nav-number">2.8.</span> <span class="nav-text">ORDER BY</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WHERE"><span class="nav-number">2.9.</span> <span class="nav-text">WHERE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#LIMIT-and-OFFSET"><span class="nav-number">2.10.</span> <span class="nav-text">LIMIT and OFFSET</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#COUNT"><span class="nav-number">2.11.</span> <span class="nav-text">COUNT</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO"><span class="nav-number">2.12.</span> <span class="nav-text">INSERT INTO</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#INSERT-INTO-Oracle"><span class="nav-number">2.13.</span> <span class="nav-text">INSERT INTO(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Inserting-nulls"><span class="nav-number">2.13.1.</span> <span class="nav-text">Inserting nulls</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE"><span class="nav-number">2.14.</span> <span class="nav-text">CREATE TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#CREATE-TABLE-Oracle"><span class="nav-number">2.15.</span> <span class="nav-text">CREATE TABLE(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Index"><span class="nav-number">2.16.</span> <span class="nav-text">Index</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#DROP-TABLE"><span class="nav-number">2.17.</span> <span class="nav-text">DROP TABLE</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#IS-NULL"><span class="nav-number">2.18.</span> <span class="nav-text">IS NULL</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NVL-Oracle"><span class="nav-number">2.19.</span> <span class="nav-text">NVL(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#NULL"><span class="nav-number">2.20.</span> <span class="nav-text">NULL</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#COALESCE"><span class="nav-number">2.20.1.</span> <span class="nav-text">COALESCE</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ALTER"><span class="nav-number">2.21.</span> <span class="nav-text">ALTER</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#ID-columns"><span class="nav-number">2.22.</span> <span class="nav-text">ID columns</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Join-table"><span class="nav-number">2.23.</span> <span class="nav-text">Join table</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Natural-Join-Oracle"><span class="nav-number">2.23.1.</span> <span class="nav-text">Natural Join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Join-using-Oracle"><span class="nav-number">2.23.2.</span> <span class="nav-text">Join using(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Three-way-join-Oracle"><span class="nav-number">2.23.3.</span> <span class="nav-text">Three way join(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-equijoin-Oracle"><span class="nav-number">2.23.4.</span> <span class="nav-text">Non equijoin(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Non-standard-joins-Oracle"><span class="nav-number">2.23.5.</span> <span class="nav-text">Non standard joins(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Combine-two-tables-right-and-left-relationship"><span class="nav-number">2.23.6.</span> <span class="nav-text">Combine two tables(right and left relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Junction-table-many-to-many-relationship"><span class="nav-number">2.23.7.</span> <span class="nav-text">Junction table(many to many relationship)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UNION"><span class="nav-number">2.23.8.</span> <span class="nav-text">UNION</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Self-join"><span class="nav-number">2.23.9.</span> <span class="nav-text">Self join</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Substitution-variables-Oracle"><span class="nav-number">2.24.</span> <span class="nav-text">Substitution variables(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-string"><span class="nav-number">2.25.</span> <span class="nav-text">SQL string</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle"><span class="nav-number">2.25.1.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#INSTR-Oracle-1"><span class="nav-number">2.25.2.</span> <span class="nav-text">INSTR(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Char-data-type-Oracle"><span class="nav-number">2.25.3.</span> <span class="nav-text">Char data type(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM"><span class="nav-number">2.25.4.</span> <span class="nav-text">TRIM</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#TRIM-Oracle"><span class="nav-number">2.25.5.</span> <span class="nav-text">TRIM(Oracle)</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#REPLACE"><span class="nav-number">2.25.6.</span> <span class="nav-text">REPLACE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CONCAT"><span class="nav-number">2.25.7.</span> <span class="nav-text">CONCAT</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#UPPER-and-LOWER"><span class="nav-number">2.25.8.</span> <span class="nav-text">UPPER and LOWER</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-number"><span class="nav-number">2.26.</span> <span class="nav-text">SQL number</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TYPEOF"><span class="nav-number">2.26.1.</span> <span class="nav-text">TYPEOF</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CAST"><span class="nav-number">2.26.2.</span> <span class="nav-text">CAST</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#ROUND"><span class="nav-number">2.26.3.</span> <span class="nav-text">ROUND</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Nested-and-Repeated-Data"><span class="nav-number">2.27.</span> <span class="nav-text">Nested and Repeated Data</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time"><span class="nav-number">2.28.</span> <span class="nav-text">SQL date and time</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#SQL-date-and-time-Oracle"><span class="nav-number">2.29.</span> <span class="nav-text">SQL date and time(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#TO-CHAR"><span class="nav-number">2.29.1.</span> <span class="nav-text">TO_CHAR</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Aggregate-%E8%81%9A%E5%90%88%E5%87%BD%E6%95%B0"><span class="nav-number">2.30.</span> <span class="nav-text">Aggregate(聚合函数)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#WITH-AS"><span class="nav-number">2.31.</span> <span class="nav-text">WITH AS</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Analytic-function"><span class="nav-number">2.32.</span> <span class="nav-text">Analytic function</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#HAVING-and-WHERE"><span class="nav-number">2.32.1.</span> <span class="nav-text">HAVING and WHERE</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#AVG-and-MIN-MAX-and-SUM"><span class="nav-number">2.32.2.</span> <span class="nav-text">AVG and MIN, MAX and SUM</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Printf"><span class="nav-number">2.33.</span> <span class="nav-text">Printf</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Transaction"><span class="nav-number">2.34.</span> <span class="nav-text">Transaction</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Triggers"><span class="nav-number">2.35.</span> <span class="nav-text">Triggers</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Exists-Oracle"><span class="nav-number">2.36.</span> <span class="nav-text">Exists(Oracle)</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#View"><span class="nav-number">2.37.</span> <span class="nav-text">View</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Schemas"><span class="nav-number">2.38.</span> <span class="nav-text">Schemas</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subselect"><span class="nav-number">2.39.</span> <span class="nav-text">Subselect</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery"><span class="nav-number">2.40.</span> <span class="nav-text">Subquery</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Subquery-Oracle"><span class="nav-number">2.41.</span> <span class="nav-text">Subquery(Oracle)</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-where-clause"><span class="nav-number">2.41.1.</span> <span class="nav-text">Subqueries in the where clause</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Single-row-subqueries"><span class="nav-number">2.41.2.</span> <span class="nav-text">Single row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Multi-row-subqueries"><span class="nav-number">2.41.3.</span> <span class="nav-text">Multi row subqueries</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#Subqueries-in-the-having-clause"><span class="nav-number">2.41.4.</span> <span class="nav-text">Subqueries in the having clause</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#With"><span class="nav-number">2.42.</span> <span class="nav-text">With</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Autoincrement"><span class="nav-number">2.43.</span> <span class="nav-text">Autoincrement</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#Writing-Efficient-Queries"><span class="nav-number">2.44.</span> <span class="nav-text">Writing Efficient Queries</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/blog/images/logo_11.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
@@ -1873,14 +1932,8 @@ You may need to scan more than one row in a table to arrive at an answer.
 
 
 
+        </div>
       </div>
-
-<br>
-      <!--new music test-->
-
-  <!--网易云插件-->
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -1888,7 +1941,6 @@ You may need to scan more than one row in a table to arrive at an answer.
 
       </div>
     </main>
-
     <footer class="footer">
       <div class="footer-inner">
         
@@ -1912,18 +1964,15 @@ You may need to scan more than one row in a table to arrive at an answer.
 
 
     <span title="C">2m</span>
-  -->
+-->
 
-  <!--
+<!--
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:22</span>
-
-  -->
-
-</div>
+    <span title="T">30:24</span>
+-->
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
@@ -1944,7 +1993,23 @@ You may need to scan more than one row in a table to arrive at an answer.
       </div>
     </footer>
   </div>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-btn">
+        <span style="background: #000; color: #fff; padding: 0 3px; border-radius: 2px;">田</span>
+        Start
+    </button>
 
+    <div style="width: 2px; border-left: 1px solid var(--win-shadow); border-right: 1px solid var(--win-high); height: 100%; margin: 0 4px;"></div>
+    <button class="start-btn" onclick="toggleWindow()">
+      <div class="window" style="flex-direction: row; align-items: center; padding: 2px 8px; font-size: 12px; min-width: 120px;">
+          <span style="margin-right: 8px;">📁</span> Underlake_Reading_Room
+      </div>
+    </button>
+    <div class="tray">
+        <span id="clock">12:00 PM</span>
+    </div>
+  </div>
   
   <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
@@ -2020,5 +2085,58 @@ You may need to scan more than one row in a table to arrive at an answer.
   });
 </script>
 
+  <script>
+    // Update Clock
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('clock').textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Generate Mosaic Pixels
+    const grid = document.getElementById('pixelGrid');
+    for (let i = 0; i < 16; i++) {
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        if (Math.random() > 0.6) pixel.classList.add('active');
+        if (grid !== null) grid.appendChild(pixel);
+    }
+
+    // Randomize blink for mosaic
+    setInterval(() => {
+        const pixels = document.querySelectorAll('.pixel');
+        const target = pixels[Math.floor(Math.random() * pixels.length)];
+        if (target !== undefined) target.classList.toggle('active');
+    }, 800);
+  </script>
+  <script>
+    function toggleWindow() {
+      var elements = document.getElementsByClassName("content-wrap-temp");
+      var n = elements.length;
+      for (var i = 0; i < n; i++) {
+        var e = elements[i];
+
+        if(e.style.display === 'none') {
+          e.style.display = 'block';
+        } else {
+          e.style.display = 'none';
+        }
+     }
+
+     var elements2 = document.getElementsByClassName("footer-inner");
+     var n2 = elements2.length;
+     for (var j = 0; j < n2; j++) {
+       var e2 = elements2[j];
+
+       if(e2.style.display === 'none') {
+         e2.style.display = 'block';
+       } else {
+         e2.style.display = 'none';
+       }
+      }
+    }
+  </script>
 </body>
 </html>

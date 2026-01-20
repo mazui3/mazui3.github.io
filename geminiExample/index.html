@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RetroGrid // Phosphor Mosaic</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Space+Grotesk:wght@300;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --win-bg: #c0c0c0;
+            --win-high: #ffffff;
+            --win-shadow: #808080;
+            --win-deep: #0a0a0a;
+            --win-blue: #000080;
+            --win-blue-light: #1084d0;
+            --desktop-teal: #008080;
+            --phosphor-green: #33ff33;
+            --phosphor-dim: #1a5c1a;
+            --dither-pattern: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAIAAAACCAYAAABytg0kAAAAFElEQVQImWMQFBRkYGBgYDAwMAAAAwAHAH6/7mQAAAAASUVORK5CYII=');
+        }
+
+        * {
+            box-sizing: border-box;
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M0,0 L0,15 L4,11 L9,20 L12,18 L7,10 L13,10 Z" fill="white" stroke="black" stroke-width="1"/></svg>'), auto;
+        }
+
+        body {
+            margin: 0;
+            padding: 12px;
+            background-color: var(--desktop-teal);
+            font-family: 'Space Grotesk', sans-serif;
+            height: 100vh;
+            overflow: hidden;
+            display: flex;
+            flex-direction: column;
+            gap: 12px;
+        }
+
+        /* Scanline Overlay */
+        body::after {
+            content: " ";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.1) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+            background-size: 100% 2px, 3px 100%;
+            z-index: 1000;
+            pointer-events: none;
+            mix-blend-mode: overlay;
+        }
+
+        /* Mosaic Grid Layout */
+        .desktop-grid {
+            display: grid;
+            grid-template-columns: 240px 1fr 300px;
+            grid-template-rows: 1fr 200px;
+            gap: 12px;
+            flex-grow: 1;
+        }
+
+        /* Win95 Component Logic */
+        .window {
+            background: var(--win-bg);
+            border: 2px solid;
+            border-color: var(--win-high) var(--win-deep) var(--win-deep) var(--win-high);
+            box-shadow: inset 1px 1px 0px #dfdfdf, inset -1px -1px 0px var(--win-shadow);
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            position: relative;
+        }
+
+        .window::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-image: var(--dither-pattern);
+            opacity: 0.05;
+            pointer-events: none;
+        }
+
+        .title-bar {
+            background: linear-gradient(90deg, var(--win-blue), var(--win-blue-light));
+            padding: 3px 5px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            color: white;
+            font-weight: bold;
+            font-size: 13px;
+            letter-spacing: 0.5px;
+        }
+
+        .title-controls {
+            display: flex;
+            gap: 2px;
+        }
+
+        .win-btn {
+            width: 16px;
+            height: 14px;
+            background: var(--win-bg);
+            border: 1px solid;
+            border-color: var(--win-high) var(--win-deep) var(--win-deep) var(--win-high);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 9px;
+            color: black;
+            font-weight: bold;
+            padding-bottom: 2px;
+        }
+
+        .content {
+            padding: 12px;
+            flex-grow: 1;
+            overflow-y: auto;
+            scrollbar-width: thin;
+            scrollbar-color: var(--win-bg) var(--win-high);
+        }
+
+        /* Typography & Phosphor Dithering */
+        h1, h2, h3 {
+            margin: 0 0 10px 0;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        .mono {
+            font-family: 'Courier Prime', monospace;
+            font-size: 14px;
+            line-height: 1.4;
+        }
+
+        .phosphor-text {
+            color: var(--phosphor-green);
+            background: #000;
+            padding: 15px;
+            border: 2px inset var(--win-shadow);
+            text-shadow: 0 0 5px var(--phosphor-green);
+            position: relative;
+        }
+
+        /* Sidebar Window */
+        .sidebar {
+            grid-row: span 2;
+        }
+
+        .nav-item {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 8px;
+            text-decoration: none;
+            color: black;
+            border: 1px solid transparent;
+            transition: all 0.1s;
+        }
+
+        .nav-item:hover {
+            border-color: var(--win-shadow) var(--win-high) var(--win-high) var(--win-shadow);
+            background: rgba(255,255,255,0.2);
+        }
+
+        .icon-box {
+            width: 32px;
+            height: 32px;
+            background: #808080;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            image-rendering: pixelated;
+        }
+
+        /* Main Feed */
+        .post-card {
+            margin-bottom: 20px;
+            padding-bottom: 20px;
+            border-bottom: 2px dashed var(--win-shadow);
+        }
+
+        .post-meta {
+            font-size: 11px;
+            color: var(--win-shadow);
+            margin-bottom: 5px;
+        }
+
+        /* Taskbar */
+        .taskbar {
+            height: 30px;
+            background: var(--win-bg);
+            border-top: 2px solid var(--win-high);
+            display: flex;
+            align-items: center;
+            padding: 2px 4px;
+            gap: 4px;
+            z-index: 100;
+        }
+
+        .start-btn {
+            background: var(--win-bg);
+            border: 2px solid;
+            border-color: var(--win-high) var(--win-deep) var(--win-deep) var(--win-high);
+            padding: 2px 8px;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            font-weight: bold;
+            font-size: 13px;
+        }
+
+        .start-btn:active {
+            border-color: var(--win-deep) var(--win-high) var(--win-high) var(--win-deep);
+        }
+
+        .tray {
+            margin-left: auto;
+            border: 2px inset var(--win-shadow);
+            padding: 2px 8px;
+            font-size: 12px;
+            background: rgba(0,0,0,0.05);
+        }
+
+        /* Mosaic Blocks */
+        .mosaic-cell {
+            background: #eee;
+            border: 2px inset var(--win-shadow);
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            grid-template-rows: repeat(4, 1fr);
+            gap: 2px;
+            padding: 4px;
+        }
+
+        .pixel {
+            background: var(--win-shadow);
+            opacity: 0.3;
+        }
+
+        .pixel.active {
+            background: var(--win-blue-light);
+            animation: blink 2s infinite alternate;
+        }
+
+        @keyframes blink {
+            0% { opacity: 0.2; }
+            100% { opacity: 1; }
+        }
+
+        /* Custom Scrollbar */
+        ::-webkit-scrollbar { width: 16px; }
+        ::-webkit-scrollbar-track { background: var(--win-high); box-shadow: inset 1px 1px var(--win-shadow); }
+        ::-webkit-scrollbar-thumb { background: var(--win-bg); border: 2px solid; border-color: var(--win-high) var(--win-deep) var(--win-deep) var(--win-high); }
+
+    </style>
+</head>
+<body>
+
+    <div class="desktop-grid">
+        <!-- Explorer Sidebar -->
+        <div class="window sidebar">
+            <div class="title-bar">
+                <span>Folders</span>
+                <div class="title-controls">
+                    <div class="win-btn">_</div>
+                    <div class="win-btn">×</div>
+                </div>
+            </div>
+            <div class="content">
+                <a href="#" class="nav-item">
+                    <div class="icon-box">📁</div>
+                    <span>C:\JOURNAL_ENTRIES</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="icon-box">📁</div>
+                    <span>C:\COLLECTIONS</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="icon-box">💾</div>
+                    <span>A:\ARCHIVE_95</span>
+                </a>
+                <a href="#" class="nav-item">
+                    <div class="icon-box">🖼️</div>
+                    <span>PHOTOS.EXE</span>
+                </a>
+                <div style="margin-top: 20px; border-top: 1px solid var(--win-shadow); padding-top: 10px;">
+                    <div class="mono" style="font-size: 10px; color: #444;">
+                        System Status: OPTIMAL<br>
+                        Disk Space: 412MB Free<br>
+                        Memory: 16MB RAM
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Main Post Window -->
+        <div class="window">
+            <div class="title-bar">
+                <span>Notepad - README.TXT</span>
+                <div class="title-controls">
+                    <div class="win-btn">_</div>
+                    <div class="win-btn">□</div>
+                    <div class="win-btn">×</div>
+                </div>
+            </div>
+            <div class="content" style="background: white;">
+                <div class="post-card">
+                    <div class="post-meta">PUBLISHED: OCT 14, 1998 // 14:02</div>
+                    <h2 style="font-family: 'Courier Prime', monospace; font-weight: 700;">THE PHOSPHOR DITHER METAPHOR</h2>
+                    <p class="mono">
+                        Welcome to the terminal. This blog design utilizes a tiled mosaic layout to ensure no windows overlap—mimicking a rigid, hardware-bound visual structure. The phosphor dither effect simulates the organic decay of CRT pixels.
+                    </p>
+                    <p class="mono">
+                        I am building a space where data feels tactile. High-fidelity doesn't always mean gradients and transparency; sometimes it means the perfect bevel and a 2x2 pixel grid.
+                    </p>
+                </div>
+
+                <div class="post-card">
+                    <div class="post-meta">PUBLISHED: OCT 12, 1998 // 09:45</div>
+                    <h2 style="font-family: 'Courier Prime', monospace; font-weight: 700;">WHY TEAL #008080?</h2>
+                    <p class="mono">
+                        The color of productivity. The color of the void. In this interface, we explore the intersection of 90s corporate aesthetics and experimental dither-punk.
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- System Stats / Right Rail -->
+        <div class="window">
+            <div class="title-bar">
+                <span>System_Monitor</span>
+                <div class="title-controls"><div class="win-btn">×</div></div>
+            </div>
+            <div class="content">
+                <div class="phosphor-text mono">
+                    > BOOTING BLOG OS...<br>
+                    > USER: GUEST_01<br>
+                    > PACKET LOSS: 0%<br>
+                    > MOOD: NOSTALGIC
+                </div>
+                <div style="margin-top: 15px;">
+                    <div class="mosaic-cell" id="pixelGrid">
+                        <!-- JS Generated Pixels -->
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Terminal Output Window -->
+        <div class="window" style="grid-column: 2 / 4;">
+            <div class="title-bar">
+                <span>Command Prompt</span>
+                <div class="title-controls"><div class="win-btn">×</div></div>
+            </div>
+            <div class="content" style="background: black; color: white; font-family: 'Courier Prime', monospace; font-size: 12px;">
+                <p>> Loading components... OK</p>
+                <p>> Applying visual execution rules... OK</p>
+                <p>> Initializing Phosphor Dither Mosaic... [DONE]</p>
+                <p>> <span style="background: white; color: black; animation: blink 1s step-end infinite;">_</span></p>
+            </div>
+        </div>
+    </div>
+
+    <!-- Taskbar -->
+    <div class="taskbar">
+        <button class="start-btn">
+            <span style="background: #000; color: #fff; padding: 0 3px; border-radius: 2px;">田</span>
+            Start
+        </button>
+        <div style="width: 2px; border-left: 1px solid var(--win-shadow); border-right: 1px solid var(--win-high); height: 100%; margin: 0 4px;"></div>
+
+        <div class="window" style="flex-direction: row; align-items: center; padding: 2px 8px; font-size: 12px; min-width: 120px;">
+            <span style="margin-right: 8px;">📁</span> Journal_Entries
+        </div>
+
+        <div class="tray">
+            <span id="clock">12:00 PM</span>
+        </div>
+    </div>
+
+    <script>
+        // Update Clock
+        function updateClock() {
+            const now = new Date();
+            const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+            document.getElementById('clock').textContent = timeStr;
+        }
+        setInterval(updateClock, 1000);
+        updateClock();
+
+        // Generate Mosaic Pixels
+        const grid = document.getElementById('pixelGrid');
+        for (let i = 0; i < 16; i++) {
+            const pixel = document.createElement('div');
+            pixel.className = 'pixel';
+            if (Math.random() > 0.6) pixel.classList.add('active');
+            grid.appendChild(pixel);
+        }
+
+        // Randomize blink for mosaic
+        setInterval(() => {
+            const pixels = document.querySelectorAll('.pixel');
+            const target = pixels[Math.floor(Math.random() * pixels.length)];
+            target.classList.toggle('active');
+        }, 800);
+    </script>
+</body>
+</html>

@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/blog/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Courier Prime:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
@@ -145,11 +145,48 @@
 <!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+  <div class="desktop-icons">
+    <div class="icon-shortcut">
+        <div class="icon-box">📁</div>
+        <span>My Briefcase</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🌐</div>
+        <span>Network</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🗑️</div>
+        <span>Trash</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">📝</div>
+        <span>Notepad</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon">
+    <div class="icon-shortcut">
+        <div class="icon-box"><img src="/blog/images/Rio.png"></div>
+        <span style="padding: 13px;">Love you</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon2">
+    <div class="icon-shortcut">
+        <div class="icon-box">🌈</div>
+        <span>Be Happy</span>
+    </div>
+  </div>
   <div class="container use-motion">
     <div class="headband"></div>
-
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+      <div class="header-inner"><div class="title-bar">
+    <span>Folders</span>
+    <div class="title-controls">
+        <div class="win-btn">_</div>
+        <div class="win-btn">×</div>
+    </div>
+</div>
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
@@ -158,15 +195,21 @@
     </div>
   </div>
 
-  <div class="site-meta">
+  <div class="phosphor-text mono">
+      > BOOTING BLOG OS...<br>
+      > USER: ADMIN_M3<br>
+      > PACKET LOSS: 99%<br>
+      > DESTINATION: UNKNOWN<span class="cursor"></span>
+  </div>
 
+  <!-- <div class="site-meta">
     <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
-  </div>
+  </div> -->
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
@@ -205,16 +248,6 @@
     <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-zone">
-
-    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
-
-  </li>
         <li class="menu-item menu-item-back">
 
     <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
@@ -231,6 +264,14 @@
 
   <div class="search-pop-overlay">
     <div class="popup search-popup">
+      <div class="title-bar">
+          <span>Command Prompt</span>
+          <div class="title-controls"><div class="win-btn">
+            <span class="popup-btn-close">
+              x
+            </span>
+          </div></div>
+      </div>
         <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
@@ -240,9 +281,6 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
 </div>
 <div id="search-result">
   <div id="no-result">
@@ -255,17 +293,32 @@
 
 </div>
     </header>
-
     
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-
     <main class="main">
       <div class="main-inner">
-        <div class="content-wrap">
+        <div class="content-wrap-temp">
+          <div class="title-bar">
+              <span>Notepad - README.TXT</span>
+              <div class="title-controls">
+                  <div class="win-btn"><button class="none-btn" onclick="toggleWindow()">_</button></div>
+                  <div class="win-btn">□</div>
+                  <div class="win-btn">×</div>
+              </div>
+          </div>
+          <div class="menu-bar">
+              <span class="menu-item">File</span>
+              <span class="menu-item">Edit</span>
+              <span class="menu-item">View</span>
+              <span class="menu-item">Go</span>
+              <span class="menu-item">Favorites</span>
+              <span class="menu-item">Help</span>
+          </div>
+          <div class="content-wrap inset">
           
 
           <div class="content post posts-expand">
@@ -658,6 +711,7 @@
 
 
           </div>
+        </div>
           
     
   <div class="comments">
@@ -700,24 +754,29 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
-          <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E7%99%BD%E7%A0%82%E9%9D%92%E6%9D%BE"><span class="nav-number">1.</span> <span class="nav-text">基础套装介绍 - 白砂青松</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%BE%E5%B0%BE%E8%BE%AB"><span class="nav-number">1.1.</span> <span class="nav-text">虾尾辫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%A1%B6%E7%A1%AC%E8%8D%89%E5%B8%BD"><span class="nav-number">1.2.</span> <span class="nav-text">平顶硬草帽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%8C%AF%E8%A2%96"><span class="nav-number">1.3.</span> <span class="nav-text">中振袖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E7%81%AF%E8%A2%B4"><span class="nav-number">1.4.</span> <span class="nav-text">行灯袴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E7%AD%92%E9%9D%B4"><span class="nav-number">1.5.</span> <span class="nav-text">中筒靴</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E6%B5%B7%E6%9D%BE%E8%8A%BD"><span class="nav-number">2.</span> <span class="nav-text">基础套装介绍 - 海松芽</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E9%9B%B7%E5%B8%BD"><span class="nav-number">2.1.</span> <span class="nav-text">贝雷帽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%95%BE%E4%B8%9D%E8%9D%B4%E8%9D%B6%E7%BB%93"><span class="nav-number">2.2.</span> <span class="nav-text">蕾丝蝴蝶结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%B1%E8%8A%B1%E5%8F%91%E5%A4%B9"><span class="nav-number">2.3.</span> <span class="nav-text">樱花发夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C%E6%9C%8D%EF%BC%88%E4%BB%98%E3%81%91%E4%B8%8B%E3%81%92%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">和服（付け下げ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%B9%85%E5%B8%AF"><span class="nav-number">2.5.</span> <span class="nav-text">半幅帯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B6%E7%B7%A0"><span class="nav-number">2.6.</span> <span class="nav-text">帶締</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%95%BE%E4%B8%9D%E8%A1%BF%E3%80%81%E5%B8%A6%E8%95%BE%E4%B8%9D%E9%95%BF%E8%A5%A6%E7%BB%8A"><span class="nav-number">2.7.</span> <span class="nav-text">蕾丝衿、带蕾丝长襦绊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E5%86%AC%E6%9A%81"><span class="nav-number">3.</span> <span class="nav-text">基础套装介绍 - 冬暁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E9%9B%B7%E5%B8%BD%E3%80%81%E5%B8%83%E8%8A%B1%EF%BC%88%E3%81%A4%E3%81%BE%E3%81%BF%E7%BB%86%E5%B7%A5%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">贝雷帽、布花（つまみ细工）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%AB%E8%82%A9%EF%BC%88%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%AB%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">披肩（ショール）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%BD%E7%BB%87"><span class="nav-number">3.3.</span> <span class="nav-text">羽织</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%98%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%9D%80%EF%BC%88%E4%BB%98%E3%81%91%E4%B8%8B%E3%81%92%E8%A8%AA%E5%95%8F%E7%9D%80%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">付下访问着（付け下げ訪問着）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A2%8B%E5%B8%B6%E3%80%81%E5%B8%B6%E7%B7%A0"><span class="nav-number">3.5.</span> <span class="nav-text">袋帶、帶締</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8D%89%E5%B1%A5"><span class="nav-number">3.6.</span> <span class="nav-text">草履</span></a></li></ol></li></ol></div>
+      <div class="title-bar">
+        <span>System_Monitor</span>
+        <div class="title-controls"><div class="win-btn">×</div></div>
       </div>
-      <!--/noindex-->
+      <div class="sidebar-inner-wrapper">
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview">
+            Overview
+          </li>
+        </ul>
+
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc motion-element"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E7%99%BD%E7%A0%82%E9%9D%92%E6%9D%BE"><span class="nav-number">1.</span> <span class="nav-text">基础套装介绍 - 白砂青松</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%99%BE%E5%B0%BE%E8%BE%AB"><span class="nav-number">1.1.</span> <span class="nav-text">虾尾辫</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B9%B3%E9%A1%B6%E7%A1%AC%E8%8D%89%E5%B8%BD"><span class="nav-number">1.2.</span> <span class="nav-text">平顶硬草帽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E6%8C%AF%E8%A2%96"><span class="nav-number">1.3.</span> <span class="nav-text">中振袖</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A1%8C%E7%81%AF%E8%A2%B4"><span class="nav-number">1.4.</span> <span class="nav-text">行灯袴</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%B8%AD%E7%AD%92%E9%9D%B4"><span class="nav-number">1.5.</span> <span class="nav-text">中筒靴</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E6%B5%B7%E6%9D%BE%E8%8A%BD"><span class="nav-number">2.</span> <span class="nav-text">基础套装介绍 - 海松芽</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E9%9B%B7%E5%B8%BD"><span class="nav-number">2.1.</span> <span class="nav-text">贝雷帽</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%95%BE%E4%B8%9D%E8%9D%B4%E8%9D%B6%E7%BB%93"><span class="nav-number">2.2.</span> <span class="nav-text">蕾丝蝴蝶结</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%A8%B1%E8%8A%B1%E5%8F%91%E5%A4%B9"><span class="nav-number">2.3.</span> <span class="nav-text">樱花发夹</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%92%8C%E6%9C%8D%EF%BC%88%E4%BB%98%E3%81%91%E4%B8%8B%E3%81%92%EF%BC%89"><span class="nav-number">2.4.</span> <span class="nav-text">和服（付け下げ）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8D%8A%E5%B9%85%E5%B8%AF"><span class="nav-number">2.5.</span> <span class="nav-text">半幅帯</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%B8%B6%E7%B7%A0"><span class="nav-number">2.6.</span> <span class="nav-text">帶締</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%95%BE%E4%B8%9D%E8%A1%BF%E3%80%81%E5%B8%A6%E8%95%BE%E4%B8%9D%E9%95%BF%E8%A5%A6%E7%BB%8A"><span class="nav-number">2.7.</span> <span class="nav-text">蕾丝衿、带蕾丝长襦绊</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#%E5%9F%BA%E7%A1%80%E5%A5%97%E8%A3%85%E4%BB%8B%E7%BB%8D-%E5%86%AC%E6%9A%81"><span class="nav-number">3.</span> <span class="nav-text">基础套装介绍 - 冬暁</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%B4%9D%E9%9B%B7%E5%B8%BD%E3%80%81%E5%B8%83%E8%8A%B1%EF%BC%88%E3%81%A4%E3%81%BE%E3%81%BF%E7%BB%86%E5%B7%A5%EF%BC%89"><span class="nav-number">3.1.</span> <span class="nav-text">贝雷帽、布花（つまみ细工）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%8A%AB%E8%82%A9%EF%BC%88%E3%82%B7%E3%83%A7%E3%83%BC%E3%83%AB%EF%BC%89"><span class="nav-number">3.2.</span> <span class="nav-text">披肩（ショール）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BE%BD%E7%BB%87"><span class="nav-number">3.3.</span> <span class="nav-text">羽织</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%98%E4%B8%8B%E8%AE%BF%E9%97%AE%E7%9D%80%EF%BC%88%E4%BB%98%E3%81%91%E4%B8%8B%E3%81%92%E8%A8%AA%E5%95%8F%E7%9D%80%EF%BC%89"><span class="nav-number">3.4.</span> <span class="nav-text">付下访问着（付け下げ訪問着）</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%A2%8B%E5%B8%B6%E3%80%81%E5%B8%B6%E7%B7%A0"><span class="nav-number">3.5.</span> <span class="nav-text">袋帶、帶締</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E8%8D%89%E5%B1%A5"><span class="nav-number">3.6.</span> <span class="nav-text">草履</span></a></li></ol></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/blog/images/logo_11.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
@@ -763,14 +822,8 @@
 
 
 
+        </div>
       </div>
-
-<br>
-      <!--new music test-->
-
-  <!--网易云插件-->
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -778,7 +831,6 @@
 
       </div>
     </main>
-
     <footer class="footer">
       <div class="footer-inner">
         
@@ -802,18 +854,15 @@
 
 
     <span title="C">2m</span>
-  -->
+-->
 
-  <!--
+<!--
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:22</span>
-
-  -->
-
-</div>
+    <span title="T">30:24</span>
+-->
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
@@ -834,7 +883,23 @@
       </div>
     </footer>
   </div>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-btn">
+        <span style="background: #000; color: #fff; padding: 0 3px; border-radius: 2px;">田</span>
+        Start
+    </button>
 
+    <div style="width: 2px; border-left: 1px solid var(--win-shadow); border-right: 1px solid var(--win-high); height: 100%; margin: 0 4px;"></div>
+    <button class="start-btn" onclick="toggleWindow()">
+      <div class="window" style="flex-direction: row; align-items: center; padding: 2px 8px; font-size: 12px; min-width: 120px;">
+          <span style="margin-right: 8px;">📁</span> Underlake_Reading_Room
+      </div>
+    </button>
+    <div class="tray">
+        <span id="clock">12:00 PM</span>
+    </div>
+  </div>
   
   <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
@@ -910,5 +975,58 @@
   });
 </script>
 
+  <script>
+    // Update Clock
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('clock').textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Generate Mosaic Pixels
+    const grid = document.getElementById('pixelGrid');
+    for (let i = 0; i < 16; i++) {
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        if (Math.random() > 0.6) pixel.classList.add('active');
+        if (grid !== null) grid.appendChild(pixel);
+    }
+
+    // Randomize blink for mosaic
+    setInterval(() => {
+        const pixels = document.querySelectorAll('.pixel');
+        const target = pixels[Math.floor(Math.random() * pixels.length)];
+        if (target !== undefined) target.classList.toggle('active');
+    }, 800);
+  </script>
+  <script>
+    function toggleWindow() {
+      var elements = document.getElementsByClassName("content-wrap-temp");
+      var n = elements.length;
+      for (var i = 0; i < n; i++) {
+        var e = elements[i];
+
+        if(e.style.display === 'none') {
+          e.style.display = 'block';
+        } else {
+          e.style.display = 'none';
+        }
+     }
+
+     var elements2 = document.getElementsByClassName("footer-inner");
+     var n2 = elements2.length;
+     for (var j = 0; j < n2; j++) {
+       var e2 = elements2[j];
+
+       if(e2.style.display === 'none') {
+         e2.style.display = 'block';
+       } else {
+         e2.style.display = 'none';
+       }
+      }
+    }
+  </script>
 </body>
 </html>

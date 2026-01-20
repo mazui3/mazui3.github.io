@@ -12,7 +12,7 @@
 
 <link rel="stylesheet" href="/blog/css/main.css">
 
-<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Lato:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
+<link rel="stylesheet" href="//fonts.googleapis.com/css?family=Courier Prime:300,300italic,400,400italic,700,700italic&display=swap&subset=latin,latin-ext">
 <link rel="stylesheet" href="/blog/lib/font-awesome/css/all.min.css">
   <link rel="stylesheet" href="//cdn.jsdelivr.net/gh/fancyapps/fancybox@3/dist/jquery.fancybox.min.css">
   <link rel="stylesheet" href="/blog/lib/pace/pace-theme-minimal.min.css">
@@ -97,11 +97,48 @@
 <!-- hexo injector head_end end --></head>
 
 <body itemscope itemtype="http://schema.org/WebPage">
+  <div class="desktop-icons">
+    <div class="icon-shortcut">
+        <div class="icon-box">📁</div>
+        <span>My Briefcase</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🌐</div>
+        <span>Network</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">🗑️</div>
+        <span>Trash</span>
+    </div>
+    <div class="icon-shortcut">
+        <div class="icon-box">📝</div>
+        <span>Notepad</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon">
+    <div class="icon-shortcut">
+        <div class="icon-box"><img src="/blog/images/Rio.png"></div>
+        <span style="padding: 13px;">Love you</span>
+    </div>
+  </div>
+  <div class="desktop-hidden-icon2">
+    <div class="icon-shortcut">
+        <div class="icon-box">🌈</div>
+        <span>Be Happy</span>
+    </div>
+  </div>
   <div class="container use-motion">
     <div class="headband"></div>
-
     <header class="header" itemscope itemtype="http://schema.org/WPHeader">
-      <div class="header-inner"><div class="site-brand-container">
+      <div class="header-inner"><div class="title-bar">
+    <span>Folders</span>
+    <div class="title-controls">
+        <div class="win-btn">_</div>
+        <div class="win-btn">×</div>
+    </div>
+</div>
+
+<div class="site-brand-container">
   <div class="site-nav-toggle">
     <div class="toggle" aria-label="Toggle navigation bar">
       <span class="toggle-line toggle-line-first"></span>
@@ -110,15 +147,21 @@
     </div>
   </div>
 
-  <div class="site-meta">
+  <div class="phosphor-text mono">
+      > BOOTING BLOG OS...<br>
+      > USER: ADMIN_M3<br>
+      > PACKET LOSS: 99%<br>
+      > DESTINATION: UNKNOWN<span class="cursor"></span>
+  </div>
 
+  <!-- <div class="site-meta">
     <a href="/blog/" class="brand" rel="start">
       <span class="logo-line-before"><i></i></span>
       <h1 class="site-title">Underlake Reading Room</h1>
       <span class="logo-line-after"><i></i></span>
     </a>
       <p class="site-subtitle" itemprop="description">这里是图书馆外的阅览室🌟</p>
-  </div>
+  </div> -->
 
   <div class="site-nav-right">
     <div class="toggle popup-trigger">
@@ -157,16 +200,6 @@
     <a href="/blog/archives/" rel="section"><i class="fa fa-archive fa-fw"></i>Archives</a>
 
   </li>
-        <li class="menu-item menu-item-schedule">
-
-    <a href="/blog/schedule/" rel="section"><i class="fa fa-calendar fa-fw"></i>Schedule</a>
-
-  </li>
-        <li class="menu-item menu-item-zone">
-
-    <a href="https://cerulean-raclette-358.notion.site/QQ-7770800c659c4c5cbda0ba1b6720dec8" rel="noopener" target="_blank"><i class="fab fa-diaspora fa-fw"></i>Zone</a>
-
-  </li>
         <li class="menu-item menu-item-back">
 
     <a href="https://mazui3.github.io/" rel="section"><i class="fa fa-cloud fa-fw"></i>Back</a>
@@ -183,6 +216,14 @@
 
   <div class="search-pop-overlay">
     <div class="popup search-popup">
+      <div class="title-bar">
+          <span>Command Prompt</span>
+          <div class="title-controls"><div class="win-btn">
+            <span class="popup-btn-close">
+              x
+            </span>
+          </div></div>
+      </div>
         <div class="search-header">
   <span class="search-icon">
     <i class="fa fa-search"></i>
@@ -192,9 +233,6 @@
            placeholder="Searching..." spellcheck="false"
            type="search" class="search-input">
   </div>
-  <span class="popup-btn-close">
-    <i class="fa fa-times-circle"></i>
-  </span>
 </div>
 <div id="search-result">
   <div id="no-result">
@@ -207,17 +245,32 @@
 
 </div>
     </header>
-
     
   <div class="back-to-top">
     <i class="fa fa-arrow-up"></i>
     <span>0%</span>
   </div>
 
-
     <main class="main">
       <div class="main-inner">
-        <div class="content-wrap">
+        <div class="content-wrap-temp">
+          <div class="title-bar">
+              <span>Notepad - README.TXT</span>
+              <div class="title-controls">
+                  <div class="win-btn"><button class="none-btn" onclick="toggleWindow()">_</button></div>
+                  <div class="win-btn">□</div>
+                  <div class="win-btn">×</div>
+              </div>
+          </div>
+          <div class="menu-bar">
+              <span class="menu-item">File</span>
+              <span class="menu-item">Edit</span>
+              <span class="menu-item">View</span>
+              <span class="menu-item">Go</span>
+              <span class="menu-item">Favorites</span>
+              <span class="menu-item">Help</span>
+          </div>
+          <div class="content-wrap inset">
           
 
           <div class="content post posts-expand">
@@ -379,6 +432,7 @@
 
 
           </div>
+        </div>
           
     
   <div class="comments">
@@ -421,23 +475,28 @@
 
   <aside class="sidebar">
     <div class="sidebar-inner">
-
-      <ul class="sidebar-nav motion-element">
-        <li class="sidebar-nav-toc">
-          Table of Contents
-        </li>
-        <li class="sidebar-nav-overview">
-          Overview
-        </li>
-      </ul>
-
-      <!--noindex-->
-      <div class="post-toc-wrap sidebar-panel">
+      <div class="title-bar">
+        <span>System_Monitor</span>
+        <div class="title-controls"><div class="win-btn">×</div></div>
       </div>
-      <!--/noindex-->
+      <div class="sidebar-inner-wrapper">
 
-      <div class="site-overview-wrap sidebar-panel">
-        <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc">
+            Table of Contents
+          </li>
+          <li class="sidebar-nav-overview">
+            Overview
+          </li>
+        </ul>
+
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
     <img class="site-author-image" itemprop="image" alt="Mazui"
       src="/blog/images/logo_11.jpg">
   <p class="site-author-name" itemprop="name">Mazui</p>
@@ -483,14 +542,8 @@
 
 
 
+        </div>
       </div>
-
-<br>
-      <!--new music test-->
-
-  <!--网易云插件-->
-<iframe style="border-radius:12px" src="https://open.spotify.com/embed/track/4mCwspCTPF1aoWUNxsS5aD?utm_source=generator" width="100%" height="80" frameBorder="0" allowfullscreen="" allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"></iframe>
-
     </div>
   </aside>
   <div id="sidebar-dimmer"></div>
@@ -498,7 +551,6 @@
 
       </div>
     </main>
-
     <footer class="footer">
       <div class="footer-inner">
         
@@ -522,18 +574,15 @@
 
 
     <span title="C">2m</span>
-  -->
+-->
 
-  <!--
+<!--
     <span class="post-meta-divider">|</span>
     <span class="post-meta-item-icon">
       <i class="fa fa-coffee"></i>
     </span>
-    <span title="T">30:22</span>
-
-  -->
-
-</div>
+    <span title="T">30:24</span>
+-->
   <div class="powered-by">Powered by <a href="https://hexo.io/" class="theme-link" rel="noopener" target="_blank">Hexo</a> & <a href="https://pisces.theme-next.org/" class="theme-link" rel="noopener" target="_blank">NexT.Pisces</a>
   </div>
 <br>
@@ -554,7 +603,23 @@
       </div>
     </footer>
   </div>
+  <!-- Taskbar -->
+  <div class="taskbar">
+    <button class="start-btn">
+        <span style="background: #000; color: #fff; padding: 0 3px; border-radius: 2px;">田</span>
+        Start
+    </button>
 
+    <div style="width: 2px; border-left: 1px solid var(--win-shadow); border-right: 1px solid var(--win-high); height: 100%; margin: 0 4px;"></div>
+    <button class="start-btn" onclick="toggleWindow()">
+      <div class="window" style="flex-direction: row; align-items: center; padding: 2px 8px; font-size: 12px; min-width: 120px;">
+          <span style="margin-right: 8px;">📁</span> Underlake_Reading_Room
+      </div>
+    </button>
+    <div class="tray">
+        <span id="clock">12:00 PM</span>
+    </div>
+  </div>
   
   <script src="/blog/lib/anime.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/jquery@3/dist/jquery.min.js"></script>
@@ -630,5 +695,58 @@
   });
 </script>
 
+  <script>
+    // Update Clock
+    function updateClock() {
+        const now = new Date();
+        const timeStr = now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
+        document.getElementById('clock').textContent = timeStr;
+    }
+    setInterval(updateClock, 1000);
+    updateClock();
+
+    // Generate Mosaic Pixels
+    const grid = document.getElementById('pixelGrid');
+    for (let i = 0; i < 16; i++) {
+        const pixel = document.createElement('div');
+        pixel.className = 'pixel';
+        if (Math.random() > 0.6) pixel.classList.add('active');
+        if (grid !== null) grid.appendChild(pixel);
+    }
+
+    // Randomize blink for mosaic
+    setInterval(() => {
+        const pixels = document.querySelectorAll('.pixel');
+        const target = pixels[Math.floor(Math.random() * pixels.length)];
+        if (target !== undefined) target.classList.toggle('active');
+    }, 800);
+  </script>
+  <script>
+    function toggleWindow() {
+      var elements = document.getElementsByClassName("content-wrap-temp");
+      var n = elements.length;
+      for (var i = 0; i < n; i++) {
+        var e = elements[i];
+
+        if(e.style.display === 'none') {
+          e.style.display = 'block';
+        } else {
+          e.style.display = 'none';
+        }
+     }
+
+     var elements2 = document.getElementsByClassName("footer-inner");
+     var n2 = elements2.length;
+     for (var j = 0; j < n2; j++) {
+       var e2 = elements2[j];
+
+       if(e2.style.display === 'none') {
+         e2.style.display = 'block';
+       } else {
+         e2.style.display = 'none';
+       }
+      }
+    }
+  </script>
 </body>
 </html>
