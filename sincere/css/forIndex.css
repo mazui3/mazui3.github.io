@@ -29,3 +29,49 @@ p{
   bottom : auto;
   /* display: none; */
 }
+
+
+/* Chromatic Atmospheric Gradients */
+.atmosphere {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background:
+        radial-gradient(circle at 10% 20%, var(--ether-blue) 0%, transparent 40%),
+        radial-gradient(circle at 90% 80%, var(--morning-rose) 0%, transparent 40%),
+        radial-gradient(circle at 50% 50%, var(--sage-mist) 0%, transparent 60%);
+    filter: blur(80px);
+    opacity: 0.6;
+}
+
+/* Sticky Navigation (The Jump Buttons) */
+.anchor-nav {
+    position: sticky;
+    top: 10vh;
+    height: fit-content;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.anchor-nav a {
+    writing-mode: vertical-rl;
+    text-decoration: none;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 11px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: var(--deep-pool);
+    padding: 15px 5px;
+    border-left: 1px solid rgba(58, 84, 109, 0.2);
+    transition: all 0.4s cubic-bezier(0.23, 1, 0.32, 1);
+}
+
+.anchor-nav a:hover {
+    border-left: 3px solid var(--deep-pool);
+    background: var(--sun-glint);
+    transform: translateX(5px);
+}
