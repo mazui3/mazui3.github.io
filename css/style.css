@@ -1735,6 +1735,131 @@ a{
 }
 
 /*---------------------------------------------------*/
+/*	07b) TOKYO GALLERY
+/*---------------------------------------------------*/
+
+.tokyo_tm_gallery{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	padding: 100px 0px 40px 0px;
+}
+.tokyo_tm_gallery .gallery_filter ul{
+	margin: 0px;
+	list-style-type: none;
+}
+.tokyo_tm_gallery .gallery_filter ul li{
+	margin: 0px 25px 0px 0px;
+	display: inline-block;
+}
+.tokyo_tm_gallery .gallery_filter ul li:last-child{
+	margin-right: 0px;
+}
+.tokyo_tm_gallery .gallery_filter ul li a{
+	color: #767676;
+	display: inline-block;
+	font-weight: 500;
+	font-family: "Montserrat";
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_gallery .gallery_filter ul li a.current{
+	color: #000;
+}
+.tokyo_tm_gallery .gallery_filter ul li a:hover{
+	color: #000;
+}
+.tokyo_tm_gallery .list_wrapper{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+/* pinterest style wall: css multi-column so portrait and landscape
+   images can sit side by side without being cropped to a square */
+.tokyo_tm_gallery .gallery_list{
+	margin: 0px;
+	list-style-type: none;
+	-webkit-column-count: 3;
+	   -moz-column-count: 3;
+	        column-count: 3;
+	-webkit-column-gap: 40px;
+	   -moz-column-gap: 40px;
+	        column-gap: 40px;
+	/* kills the stray line boxes the whitespace between the li's would
+	   otherwise create inside the columns */
+	font-size: 0px;
+	line-height: 0;
+}
+.tokyo_tm_gallery .gallery_list > li{
+	margin: 0px 0px 40px 0px;
+	width: 100%;
+	display: inline-block;
+	vertical-align: top;
+	font-size: 15px;
+	line-height: 30px;
+	-webkit-column-break-inside: avoid;
+	   -moz-column-break-inside: avoid;
+	          page-break-inside: avoid;
+	               break-inside: avoid;
+}
+.tokyo_tm_gallery .gallery_list > li.filtered_out{
+	display: none;
+}
+.tokyo_tm_gallery .gallery_list > li .inner{
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+	line-height: 0;
+}
+.tokyo_tm_gallery .gallery_list > li .inner img{
+	width: 100%;
+	height: auto;
+	display: block;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_gallery .gallery_list > li .inner:hover img{
+	transform: scale(1.05) translateZ(0);
+}
+/* only ever rendered inside the popup, never on the wall */
+.tokyo_tm_gallery .gallery_details_wrap{
+	display: none;
+}
+/* gallery popup */
+.tokyo_tm_modalbox .gallery_popup_details{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image{
+	width: 100%;
+	float: left;
+	text-align: center;
+	margin-bottom: 37px;
+}
+.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image img{
+	max-width: 100%;
+	max-height: 70vh;
+	width: auto;
+	height: auto;
+	display: inline-block;
+}
+.tokyo_tm_modalbox .gallery_popup_details .main_details{
+	margin-bottom: 0px;
+}
+
+/*---------------------------------------------------*/
 /*	08) TOKYO NEWS
 /*---------------------------------------------------*/
 
@@ -2010,7 +2135,8 @@ a{
 	position: absolute;
 	top: 70px;
 	bottom: 70px;
-	width: 968px;
+	width: 1000px; /* was 968px */
+	max-width: calc(100% - 160px);
 	left: 50%;
 	transform: translateX(-50%);
 	background-color: #fff;
@@ -2384,6 +2510,7 @@ body.modal{
 	.tokyo_tm_all_wrap .rightpart_in{border-left: none;}
 	.tokyo_tm_about{padding-top: 130px;}
 	.tokyo_tm_portfolio{padding-top: 130px;}
+	.tokyo_tm_gallery{padding-top: 130px;}
 	.tokyo_tm_contact{padding-top: 130px;}
 	.tokyo_tm_news{padding-top: 130px;}
 	.tokyo_tm_services{padding-top: 130px;}
@@ -2404,6 +2531,8 @@ body.modal{
 	.tokyo_tm_home .details{margin-left: 0px;}
 	.tokyo_tm_title .title_flex{flex-direction: column;align-items: flex-start;}
 	.tokyo_tm_title .portfolio_filter{padding-top: 48px;}
+	.tokyo_tm_title .gallery_filter{padding-top: 48px;}
+	.tokyo_tm_gallery .gallery_list{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
 	.container{padding: 0px 20px;}
 	.tokyo_tm_services .list ul li{width: 50%;}
 	.tokyo_tm_partners ul li{width: 33.3333%;}
@@ -2416,6 +2545,9 @@ body.modal{
 	.tokyo_tm_home .avatar{min-width: 200px;min-height: 200px;}
 	.tokyo_tm_portfolio .portfolio_list{margin: 0px;}
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
+	.tokyo_tm_gallery .gallery_list{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;-webkit-column-gap: 0px;-moz-column-gap: 0px;column-gap: 0px;}
+	.tokyo_tm_gallery .gallery_list > li{margin-bottom: 30px;}
+	.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image{margin-bottom: 25px;}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_news ul li .details{padding-left: 30px;padding-right: 30px;}

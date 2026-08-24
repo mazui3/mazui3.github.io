@@ -16,9 +16,11 @@ jQuery(document).ready(function(){
 	tokyo_tm_service_popup();
 	tokyo_tm_modalbox_news();
 	tokyo_tm_modalbox_portfolio();
+	tokyo_tm_modalbox_gallery();
 	tokyo_tm_my_progress();
 	tokyo_tm_projects();
 	tokyo_tm_portfolio();
+	tokyo_tm_gallery();
 	tokyo_tm_cursor();
 	tokyo_tm_imgtosvg();
 	tokyo_tm_popup();
@@ -216,6 +218,69 @@ function tokyo_tm_modalbox_portfolio(){
 		modalBox.find('.popup_details').prepend('<div class="top_image"><img src="img/thumbs/4-2.jpg" alt="" /><div class="main" data-img-url="'+image+'"></div></div>');
 		modalBox.find('.popup_details .top_image').after('<div class="portfolio_main_title"><h3>'+title+'</h3><span>'+category+'</span><div>');
 		tokyo_tm_data_images();
+		return false;
+	});
+}
+
+// -------------------------------------------------
+// -------------  MODALBOX GALLERY  ----------------
+// -------------------------------------------------
+
+function tokyo_tm_modalbox_gallery(){
+
+	"use strict";
+
+	var modalBox	= jQuery('.tokyo_tm_modalbox');
+	var button		= jQuery('.tokyo_tm_gallery .gallery_popup');
+
+	button.on('click',function(){
+		var element		= jQuery(this);
+		var parent		= element.closest('li');
+		// data-full-img lets you serve a bigger file in the popup than on the wall
+		var image		= element.data('full-img') || element.find('img').attr('src');
+		var details 	= parent.find('.gallery_details_wrap').html();
+		var title 		= parent.find('.entry').data('title');
+		var category 	= parent.find('.entry').data('category');
+
+		jQuery('body').addClass('modal');
+		modalBox.addClass('opened');
+		modalBox.find('.description_wrap').html(details);
+		modalBox.find('.gallery_popup_details').prepend('<div class="gallery_full_image"><img src="'+image+'" alt="'+title+'" /></div>');
+		modalBox.find('.gallery_popup_details .gallery_full_image').after('<div class="portfolio_main_title"><h3>'+title+'</h3><span>'+category+'</span></div>');
+		return false;
+	});
+}
+
+// -------------------------------------------------
+// -------------------  GALLERY  -------------------
+// -------------------------------------------------
+
+// filterable. no isotope here: the wall is a css multi-column layout,
+// so hiding an item is enough and the columns reflow on their own.
+
+function tokyo_tm_gallery(){
+
+	"use strict";
+
+	var list	= jQuery('.tokyo_tm_gallery .gallery_list > li');
+	var filter	= jQuery('.tokyo_tm_gallery .gallery_filter ul');
+
+	if(!filter.length){
+		return;
+	}
+
+	filter.find('a').on('click',function(){
+		var element		= jQuery(this);
+		var selector	= element.attr('data-filter');
+
+		filter.find('a').removeClass('current');
+		element.addClass('current');
+
+		if(selector === '*'){
+			list.removeClass('filtered_out');
+		}else{
+			list.addClass('filtered_out').filter(selector).removeClass('filtered_out');
+		}
 		return false;
 	});
 }

@@ -83,6 +83,7 @@ table {
 					<li class="active"><a href="#home">Home</a></li>
 					<li><a href="#about">About</a></li>
 					<li><a href="#portfolio">DiskDrive</a></li>
+					<li><a href="#gallery">Gallery</a></li>
 					<li><a href="#news">Infomation</a></li>
 					<li><a href="https://mazui3.github.io/blog/">Blog</a></li>
 					<li><a href="https://www.mazui3.net/">Library</a></li>
@@ -107,6 +108,7 @@ table {
 						<li class="active"><a href="#home">Home</a></li>
 						<li><a href="#about">About</a></li>
 						<li><a href="#portfolio">DiskDrive</a></li>
+						<li><a href="#gallery">Gallery</a></li>
 						<li><a href="#news">Infomation</a></li>
 						<li><a href="https://mazui3.github.io/blog/">Blog</a></li>
 						<li><a href="https://www.mazui3.net/">Library</a></li>
@@ -994,10 +996,12 @@ table {
 
 
                 <!-- The projects 1st panel end -->
-								</ul>
 
-                <ul class="portfolio_list gallery_zoom">
                 <!-- The projects 2nd panel -->
+                <!-- NOTE: panel 1 and panel 2 are deliberately one single <ul>.
+                     Splitting them into two portfolio_list lists makes each list
+                     lay out its own grid, so panel 1's partial last row leaves a
+                     hole in the middle of the wall once a filter is applied. -->
 
                 <!--comic-->
                 <li class="detail">
@@ -1631,6 +1635,229 @@ table {
 				</div>
 				<!-- /PORTFOLIO -->
 
+				<!-- GALLERY -->
+				<div id="gallery" class="tokyo_tm_section">
+					<div class="container">
+						<div class="tokyo_tm_gallery">
+							<div class="tokyo_tm_title">
+								<div class="title_flex">
+									<div class="left">
+										<span>Gallery</span>
+										<h3>Mazui's drawings</h3>
+									</div>
+									<div class="gallery_filter">
+										<ul>
+											<li><a href="#" class="current" data-filter="*">All</a></li>
+											<li><a href="#" data-filter=".commission">Commission</a></li>
+											<li><a href="#" data-filter=".oc">Original Character</a></li>
+											<li><a href="#" data-filter=".fanart">Fan Art</a></li>
+										</ul>
+									</div>
+								</div>
+							</div>
+							<div class="list_wrapper">
+								<ul class="gallery_list">
+
+                <!--
+                  ===== HOW TO ADD A DRAWING =====
+                  1. li class = commission | oc | fanart   (this is what the filter uses)
+                  2. data-title / data-category  -> the label that follows the cursor on hover
+                  3. <img src="...">             -> the thumbnail in the masonry wall.
+                                                    Any aspect ratio works, no cropping.
+                  4. data-full-img (optional)    -> bigger file to show in the popup.
+                                                    Leave it out and the thumbnail is reused.
+                  5. .gallery_details_wrap       -> never shown on the wall, only copied into
+                                                    the popup when the image is clicked.
+                                                    textbox = free description,
+                                                    detailbox = the "field" of detail info.
+                                                    Both are optional, drop either one.
+
+                <li class="oc">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="TITLE" data-category="Original Character">
+                      <a class="gallery_popup" href="#" data-full-img="img/gallery/full/xxx.jpg">
+                        <img src="img/gallery/xxx.jpg" alt="TITLE" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Description goes here.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Character</span><span>NAME</span></li>
+                            <li><span class="first">Tools</span><span>Clip Studio Paint</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+                -->
+
+                <!-- ===== SAMPLE ENTRIES - replace the images and text with your own ===== -->
+
+                <li class="oc">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Gekka" data-category="Original Character">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/gekka.jpg" alt="Gekka" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description. Write whatever you want about the piece here.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Character</span><span>Gekka</span></li>
+                            <li><span class="first">Tools</span><span>Clip Studio Paint</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="fanart">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Arknights - Grayhe" data-category="Fan Art">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/arkgrayhe.jpg" alt="Arknights - Grayhe" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Series</span><span>Arknights</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="commission">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Matsu" data-category="Commission">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/matsu_sake.jpg" alt="Matsu" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Client</span><span>NAME</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="oc">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Tototo" data-category="Original Character">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/tototo.png" alt="Tototo" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Character</span><span>Tototo</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="fanart">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Cowbell Tiara" data-category="Fan Art">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/cowbelltiara.jpeg" alt="Cowbell Tiara" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+                <li class="commission">
+                  <div class="inner">
+                    <div class="entry tokyo_tm_portfolio_animation_wrap" data-title="Arfies" data-category="Commission">
+                      <a class="gallery_popup" href="#">
+                        <img src="img/portfolio/Arfies.jpeg" alt="Arfies" />
+                      </a>
+                    </div>
+                  </div>
+                  <div class="gallery_details_wrap">
+                    <div class="gallery_popup_details">
+                      <div class="main_details">
+                        <div class="textbox">
+                          <p>Sample description.</p>
+                        </div>
+                        <div class="detailbox">
+                          <ul>
+                            <li><span class="first">Client</span><span>NAME</span></li>
+                            <li><span class="first">Date</span><span>Jan 1, 2026</span></li>
+                          </ul>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </li>
+
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+				<!-- /GALLERY -->
+
 				<!-- NEWS -->
 				<div id="news" class="tokyo_tm_section">
 					<div class="container">
@@ -1759,41 +1986,41 @@ table {
 										</div>
 									</div>
 								</li>
-								<li>
-									<div class="list_inner">
-										<div class="image">
-											<img src="img/thumbs/4-3.jpg" alt="" />
-											<div class="main" data-img-url="img/news/post_cover3.png"></div>
-											<a class="tokyo_tm_full_link" href="#"></a>
-										</div>
-										<div class="details">
-											<div class="extra">
-												<div class="short">
-													<p class="date">By <a href="#">Mazui</a> <span>Update: 01 Dec 2021</span></p>
-												</div>
+<!--								<li>-->
+<!--									<div class="list_inner">-->
+<!--										<div class="image">-->
+<!--											<img src="img/thumbs/4-3.jpg" alt="" />-->
+<!--											<div class="main" data-img-url="img/news/post_cover3.png"></div>-->
+<!--											<a class="tokyo_tm_full_link" href="#"></a>-->
+<!--										</div>-->
+<!--										<div class="details">-->
+<!--											<div class="extra">-->
+<!--												<div class="short">-->
+<!--													<p class="date">By <a href="#">Mazui</a> <span>Update: 01 Dec 2021</span></p>-->
+<!--												</div>-->
 
-											</div>
-											<h3 class="title"><a href="#">About Meteo.</a></h3>
-											<div class="tokyo_tm_read_more">
-												<a href="#"><span>Read More</span></a>
-											</div>
-										</div>
-										<div class="main_content">
-											<div class="descriptions">
-												<p>I want to record our friendship, therefore I started to make videos with Meteo.<br>
-													Although Meteo is my character, she is not "acting" to be my character, she does whatever she wants.<br>
-													We share the same Youtube channel, you can also contact her from me.
-												</p>
-												<br>
-												<p>我想记录下和朋友相处的时间，所以和Me君一起做视频。<br>
-													我们都出自于乐趣，完全不懂营业。但我很珍重留下来的Me君的声音与和她的谈话。<br>
-													Meteo这个角色出于我的故事，但并不是在“出演”我的角色，Me君作为Meteo的活动是自己决定的。<br>
-													Bilibili和图书馆是我在代理投稿，Youtube是共享的账号。你也可以通过我来联系Me君。
-												</p>
-											</div>
-										</div>
-									</div>
-								</li>
+<!--											</div>-->
+<!--											<h3 class="title"><a href="#">About Meteo.</a></h3>-->
+<!--											<div class="tokyo_tm_read_more">-->
+<!--												<a href="#"><span>Read More</span></a>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--										<div class="main_content">-->
+<!--											<div class="descriptions">-->
+<!--												<p>I want to record our friendship, therefore I started to make videos with Meteo.<br>-->
+<!--													Although Meteo is my character, she is not "acting" to be my character, she does whatever she wants.<br>-->
+<!--													We share the same Youtube channel, you can also contact her from me.-->
+<!--												</p>-->
+<!--												<br>-->
+<!--												<p>我想记录下和朋友相处的时间，所以和Me君一起做视频。<br>-->
+<!--													我们都出自于乐趣，完全不懂营业。但我很珍重留下来的Me君的声音与和她的谈话。<br>-->
+<!--													Meteo这个角色出于我的故事，但并不是在“出演”我的角色，Me君作为Meteo的活动是自己决定的。<br>-->
+<!--													Bilibili和图书馆是我在代理投稿，Youtube是共享的账号。你也可以通过我来联系Me君。-->
+<!--												</p>-->
+<!--											</div>-->
+<!--										</div>-->
+<!--									</div>-->
+<!--								</li>-->
 								<li>
 									<div class="list_inner">
 										<div class="image">

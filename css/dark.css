@@ -171,6 +171,15 @@ body.dark .tokyo_tm_portfolio .portfolio_filter ul li a{
 body.dark .tokyo_tm_portfolio .portfolio_filter ul li a:hover{
 	color: #fff;
 }
+body.dark .tokyo_tm_gallery .gallery_filter ul li a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_gallery .gallery_filter ul li a.current{
+	color: #fff;
+}
+body.dark .tokyo_tm_gallery .gallery_filter ul li a:hover{
+	color: #fff;
+}
 body.dark .tokyo_tm_news ul li .details .title a{
 	color: #fff;
 }
