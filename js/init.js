@@ -371,6 +371,8 @@ function tokyo_tm_gallery_lightbox(){
 
 // filterable. no isotope here: the wall is a css multi-column layout,
 // so hiding an item is enough and the columns reflow on their own.
+// The survivors then slide to their new spots with a FLIP pass, which is
+// what gives the same feel as the isotope powered DiskDrive wall.
 
 function tokyo_tm_gallery(){
 
@@ -383,9 +385,33 @@ function tokyo_tm_gallery(){
 		return;
 	}
 
+	// same timing isotope uses on the DiskDrive wall
+	var duration = 400;
+
+	// getBoundingClientRect of every item, null while it is display:none
+	function positions(){
+		var map = [];
+		list.each(function(i){
+			map[i] = this.offsetParent === null ? null : this.getBoundingClientRect();
+		});
+		return map;
+	}
+
 	filter.find('a').on('click',function(){
 		var element		= jQuery(this);
 		var selector	= element.attr('data-filter');
+
+		// FIRST: where everything sits right now. Read before anything is
+		// cleared so a fast second click continues from what is on screen
+		// instead of jumping.
+		var before = positions();
+
+		// drop whatever the previous run left behind
+		list.each(function(){
+			this.style.transition	= 'none';
+			this.style.transform	= '';
+			this.style.opacity		= '';
+		});
 
 		filter.find('a').removeClass('current');
 		element.addClass('current');
@@ -395,6 +421,46 @@ function tokyo_tm_gallery(){
 		}else{
 			list.addClass('filtered_out').filter(selector).removeClass('filtered_out');
 		}
+
+		// LAST: the columns have reflowed, read the new resting places
+		var after	 = positions();
+		var moved	 = [];
+		var appeared = [];
+
+		// INVERT: shove everything back to where it just was
+		list.each(function(i){
+			if(after[i] === null){
+				return;					// filtered out, nothing to animate
+			}
+			if(before[i] === null){
+				this.style.opacity = 0;	// was hidden, fade it in where it landed
+				appeared.push(this);
+				return;
+			}
+			var dx = before[i].left - after[i].left;
+			var dy = before[i].top  - after[i].top;
+			if(dx || dy){
+				this.style.transform = 'translate('+dx+'px,'+dy+'px)';
+				moved.push(this);
+			}
+		});
+
+		// one forced reflow, so the inverted state above is committed before
+		// the transitions below are switched on
+		if(list.length){
+			list[0].getBoundingClientRect();
+		}
+
+		// PLAY: let them travel to the new positions
+		jQuery(moved).each(function(){
+			this.style.transition	= 'transform '+duration+'ms ease';
+			this.style.transform	= '';
+		});
+		jQuery(appeared).each(function(){
+			this.style.transition	= 'opacity '+duration+'ms ease';
+			this.style.opacity		= '';
+		});
+
 		return false;
 	});
 }
@@ -444,11 +510,12 @@ function tokyo_tm_portfolio(){
 				var selector = jQuery(this).attr('data-filter');
 				list.isotope({
 					filter				: selector,
-					animationOptions	: {
-						duration			: 750,
-						easing				: 'linear',
-						queue				: false
-					}
+					// plain fade instead of a zoom, to match the Gallery wall.
+					// isotope's own hiddenStyle default is
+					// {opacity:0, transform:'scale(0.001)'} and that transform
+					// is where the zoom in came from, so both are overridden.
+					hiddenStyle			: {opacity: 0},
+					visibleStyle		: {opacity: 1}
 				});
 				return false;
 			});
