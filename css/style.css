@@ -724,6 +724,43 @@ a{
 .tokyo_tm_info ul li a:hover{
 	color: #000;
 }
+/* self portrait: picture on the left, description on the right.
+   Sits between tokyo_tm_about and tokyo_tm_progressbox, both of which already
+   bring ~100px of padding, so this one adds none of its own vertically. */
+.tokyo_tm_portraitbox{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+}
+.tokyo_tm_portraitbox .in{
+	width: 100%;
+	height: auto;
+	clear: both;
+	float: left;
+	display: flex;
+	align-items: center;
+}
+.tokyo_tm_portraitbox .left{
+	width: 50%;
+	padding-right: 50px;
+}
+.tokyo_tm_portraitbox .right{
+	width: 50%;
+	padding-left: 50px;
+}
+.tokyo_tm_portraitbox .portrait_image img{
+	display: block;
+	width: 100%;
+	height: auto;
+}
+.tokyo_tm_portraitbox .portrait_desc p{
+	margin-bottom: 15px;
+}
+.tokyo_tm_portraitbox .portrait_desc p:last-child{
+	margin-bottom: 0px;
+}
+
 .tokyo_tm_progressbox{
 	width: 100%;
 	height: auto;
@@ -1733,6 +1770,25 @@ a{
 	background-size: cover;
 	background-position: center;
 }
+/* two pictures side by side inside one row. Self contained on purpose:
+   it does not touch the float / nth-child sizing of the li above. */
+.tokyo_tm_modalbox .additional_images .image_pair{
+	display: flex;
+	align-items: flex-start;
+	gap: 30px;
+}
+.tokyo_tm_modalbox .additional_images .image_pair > *{
+	flex: 1 1 0;
+	min-width: 0;
+}
+/* a real <img> instead of the spacer + background-size:cover trick, so the
+   picture keeps its own aspect ratio and never gets cropped */
+.tokyo_tm_modalbox .additional_images .plain_image img{
+	display: block;
+	width: 100%;
+	height: auto;
+	opacity: 1;
+}
 
 /*---------------------------------------------------*/
 /*	07b) TOKYO GALLERY
@@ -1835,28 +1891,201 @@ a{
 .tokyo_tm_gallery .gallery_details_wrap{
 	display: none;
 }
-/* gallery popup */
-.tokyo_tm_modalbox .gallery_popup_details{
-	width: 100%;
-	height: auto;
-	clear: both;
-	float: left;
+/* full screen viewer: image on the left, narrow text column on the right */
+.tokyo_tm_gallery_lightbox{
+	position: fixed;
+	top: 0px;
+	left: 0px;
+	right: 0px;
+	bottom: 0px;
+	z-index: 20;
+	background-color: rgba(0,0,0,.92);
+	opacity: 0;
+	visibility: hidden;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
 }
-.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image{
-	width: 100%;
-	float: left;
-	text-align: center;
-	margin-bottom: 37px;
+.tokyo_tm_gallery_lightbox.opened{
+	opacity: 1;
+	visibility: visible;
 }
-.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image img{
+.tokyo_tm_gallery_lightbox .lightbox_inner{
+	width: 100%;
+	height: 100%;
+	display: flex;
+	align-items: stretch;
+}
+.tokyo_tm_gallery_lightbox .lightbox_stage{
+	position: relative;
+	flex: 1 1 auto;
+	min-width: 0;
+	min-height: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	padding: 60px 75px;
+}
+/* the img is the flex item itself so max-height:100% resolves against the
+   stage instead of collapsing on an auto height wrapper */
+.tokyo_tm_gallery_lightbox .lightbox_image{
+	display: block;
 	max-width: 100%;
-	max-height: 70vh;
+	max-height: 100%;
 	width: auto;
 	height: auto;
-	display: inline-block;
+	object-fit: contain;
 }
-.tokyo_tm_modalbox .gallery_popup_details .main_details{
+.tokyo_tm_gallery_lightbox .lightbox_close{
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	z-index: 3;
+}
+.tokyo_tm_gallery_lightbox .lightbox_close a{
+	display: block;
+	width: 40px;
+	height: 40px;
+	color: #fff;
+	border: 2px solid rgba(255,255,255,.4);
+	border-radius: 10px;
+	position: relative;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_gallery_lightbox .lightbox_close a:hover{
+	border-radius: 100%;
+	border-color: #fff;
+}
+.tokyo_tm_gallery_lightbox .lightbox_close a i{
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%,-50%);
+}
+.tokyo_tm_gallery_lightbox .lightbox_nav{
+	position: absolute;
+	top: 50%;
+	margin-top: -22px;
+	width: 44px;
+	height: 44px;
+	line-height: 40px;
+	text-align: center;
+	color: #fff;
+	font-size: 18px;
+	border: 2px solid rgba(255,255,255,.4);
+	border-radius: 50%;
+	z-index: 3;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_gallery_lightbox .lightbox_nav:hover{
+	color: #fff;
+	border-color: #fff;
+	background-color: rgba(255,255,255,.12);
+}
+.tokyo_tm_gallery_lightbox .lightbox_nav.prev{
+	left: 18px;
+}
+.tokyo_tm_gallery_lightbox .lightbox_nav.next{
+	right: 18px;
+}
+.tokyo_tm_gallery_lightbox .lightbox_counter{
+	position: absolute;
+	left: 50%;
+	transform: translateX(-50%);
+	bottom: 20px;
+	color: rgba(255,255,255,.65);
+	font-family: "Montserrat";
+	font-size: 12px;
+	letter-spacing: 1px;
+}
+/* a single image needs neither arrows nor a counter */
+.tokyo_tm_gallery_lightbox.single_image .lightbox_nav,
+.tokyo_tm_gallery_lightbox.single_image .lightbox_counter{
+	display: none;
+}
+.tokyo_tm_gallery_lightbox .lightbox_side{
+	flex: 0 0 320px;
+	width: 320px;
+	background-color: #fff;
+	padding: 50px 35px;
+	overflow-y: auto;
+}
+.tokyo_tm_gallery_lightbox .lightbox_head{
+	margin-bottom: 25px;
+	padding-bottom: 18px;
+	border-bottom: 1px solid rgba(0,0,0,.1);
+}
+.tokyo_tm_gallery_lightbox .lightbox_head h3{
+	font-weight: 700;
+	font-size: 20px;
+	line-height: 28px;
+	margin-bottom: 5px;
+	color: #000;
+}
+.tokyo_tm_gallery_lightbox .lightbox_head .category{
+	font-family: "Montserrat";
+	font-size: 12px;
+	text-transform: uppercase;
+	letter-spacing: 1px;
+	color: #767676;
+}
+.tokyo_tm_gallery_lightbox .lightbox_desc{
+	font-size: 14px;
+	line-height: 26px;
+}
+.tokyo_tm_gallery_lightbox .lightbox_desc p{
+	margin-bottom: 15px;
+}
+.tokyo_tm_gallery_lightbox .lightbox_desc p:last-child{
 	margin-bottom: 0px;
+}
+.tokyo_tm_gallery_lightbox .lightbox_meta{
+	margin-top: 28px;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta{
+	margin: 0px;
+	list-style-type: none;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta li{
+	margin: 0px 0px 14px 0px;
+	width: 100%;
+	float: left;
+	font-size: 14px;
+	line-height: 24px;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta li:last-child{
+	margin-bottom: 0px;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta .first{
+	font-weight: 700;
+	display: block;
+	color: #000;
+	margin-bottom: 2px;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta a{
+	color: #767676;
+
+	-webkit-transition: all .3s ease;
+	   -moz-transition: all .3s ease;
+	    -ms-transition: all .3s ease;
+	     -o-transition: all .3s ease;
+	        transition: all .3s ease;
+}
+.tokyo_tm_gallery_lightbox .gallery_meta a:hover{
+	color: #000;
 }
 
 /*---------------------------------------------------*/
@@ -2533,6 +2762,8 @@ body.modal{
 	.tokyo_tm_title .portfolio_filter{padding-top: 48px;}
 	.tokyo_tm_title .gallery_filter{padding-top: 48px;}
 	.tokyo_tm_gallery .gallery_list{-webkit-column-count: 2;-moz-column-count: 2;column-count: 2;}
+	.tokyo_tm_gallery_lightbox .lightbox_side{flex-basis: 260px;width: 260px;padding: 40px 25px;}
+	.tokyo_tm_gallery_lightbox .lightbox_stage{padding: 55px 60px;}
 	.container{padding: 0px 20px;}
 	.tokyo_tm_services .list ul li{width: 50%;}
 	.tokyo_tm_partners ul li{width: 33.3333%;}
@@ -2547,10 +2778,21 @@ body.modal{
 	.tokyo_tm_portfolio .portfolio_list li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_gallery .gallery_list{-webkit-column-count: 1;-moz-column-count: 1;column-count: 1;-webkit-column-gap: 0px;-moz-column-gap: 0px;column-gap: 0px;}
 	.tokyo_tm_gallery .gallery_list > li{margin-bottom: 30px;}
-	.tokyo_tm_modalbox .gallery_popup_details .gallery_full_image{margin-bottom: 25px;}
+	/* on a phone the side column goes under the image instead of beside it */
+	.tokyo_tm_gallery_lightbox .lightbox_inner{flex-direction: column;}
+	.tokyo_tm_gallery_lightbox .lightbox_stage{padding: 50px 15px 40px 15px;}
+	.tokyo_tm_gallery_lightbox .lightbox_side{flex: 0 0 auto;width: 100%;max-height: 42vh;padding: 25px 20px;}
+	.tokyo_tm_gallery_lightbox .lightbox_nav{width: 36px;height: 36px;line-height: 32px;margin-top: -18px;font-size: 15px;}
+	.tokyo_tm_gallery_lightbox .lightbox_nav.prev{left: 8px;}
+	.tokyo_tm_gallery_lightbox .lightbox_nav.next{right: 8px;}
+	.tokyo_tm_gallery_lightbox .lightbox_close{top: 10px;right: 10px;}
+	.tokyo_tm_gallery_lightbox .lightbox_close a{width: 32px;height: 32px;font-size: 14px;}
+	.tokyo_tm_gallery_lightbox .lightbox_counter{bottom: 12px;}
 	.tokyo_tm_news ul{margin: 0px;}
 	.tokyo_tm_news ul li{width: 100%;padding-left: 0px;}
 	.tokyo_tm_news ul li .details{padding-left: 30px;padding-right: 30px;}
+	/* the modal is only 300px wide down here, a diptych would be unreadable */
+	.tokyo_tm_modalbox .additional_images .image_pair{flex-direction: column;gap: 20px;}
 	.tokyo_tm_modalbox .main_content .icon{position: relative;margin-bottom: 25px;}
 	.tokyo_tm_modalbox .main_content .quotebox{padding-left: 0px;}
 	.tokyo_tm_modalbox .close a{width: 30px;height: 30px;font-size: 14px;}
@@ -2560,6 +2802,9 @@ body.modal{
 	.tokyo_tm_short_info{flex-direction: column;}
 	.tokyo_tm_short_info .left{width: 100%;padding-right: 0px;}
 	.tokyo_tm_short_info .right{width: 100%;padding-left: 0px;}
+	.tokyo_tm_portraitbox .in{flex-direction: column;}
+	.tokyo_tm_portraitbox .in .left{width: 100%;padding-right: 0px;margin-bottom: 40px;}
+	.tokyo_tm_portraitbox .in .right{width: 100%;padding-left: 0px;}
 	.tokyo_tm_progressbox .in{flex-direction: column;}
 	.tokyo_tm_progressbox .in .left{width: 100%;padding-right: 0px;margin-bottom: 60px;}
 	.tokyo_tm_progressbox .in .right{width: 100%;padding-left: 0px;}

@@ -16,7 +16,7 @@ jQuery(document).ready(function(){
 	tokyo_tm_service_popup();
 	tokyo_tm_modalbox_news();
 	tokyo_tm_modalbox_portfolio();
-	tokyo_tm_modalbox_gallery();
+	tokyo_tm_gallery_lightbox();
 	tokyo_tm_my_progress();
 	tokyo_tm_projects();
 	tokyo_tm_portfolio();
@@ -223,31 +223,145 @@ function tokyo_tm_modalbox_portfolio(){
 }
 
 // -------------------------------------------------
-// -------------  MODALBOX GALLERY  ----------------
+// -------------  GALLERY LIGHTBOX  ----------------
 // -------------------------------------------------
 
-function tokyo_tm_modalbox_gallery(){
+// Full screen viewer, deliberately NOT the tokyo_tm_modalbox: the image
+// takes the whole stage on the left and a narrow column on the right holds
+// the description / date / optional fields.
+// One wall item can carry a group of images that share a single set of
+// informations. The wall only shows the cover, the group is walked through
+// with the arrows, the arrow keys or a swipe.
+
+function tokyo_tm_gallery_lightbox(){
 
 	"use strict";
 
-	var modalBox	= jQuery('.tokyo_tm_modalbox');
-	var button		= jQuery('.tokyo_tm_gallery .gallery_popup');
+	var wall = jQuery('.tokyo_tm_gallery');
 
-	button.on('click',function(){
-		var element		= jQuery(this);
-		var parent		= element.closest('li');
-		// data-full-img lets you serve a bigger file in the popup than on the wall
-		var image		= element.data('full-img') || element.find('img').attr('src');
-		var details 	= parent.find('.gallery_details_wrap').html();
-		var title 		= parent.find('.entry').data('title');
-		var category 	= parent.find('.entry').data('category');
+	if(!wall.length){
+		return;
+	}
 
+	jQuery('.tokyo_tm_all_wrap').prepend(
+		'<div class="tokyo_tm_gallery_lightbox">'+
+			'<div class="lightbox_inner">'+
+				'<div class="lightbox_stage">'+
+					'<div class="lightbox_close"><a href="#"><i class="icon-cancel"></i></a></div>'+
+					'<a class="lightbox_nav prev" href="#"><i class="icon-left-open"></i></a>'+
+					'<a class="lightbox_nav next" href="#"><i class="icon-right-open"></i></a>'+
+					'<img class="lightbox_image" src="" alt="" />'+
+					'<div class="lightbox_counter"><span class="current"></span> / <span class="total"></span></div>'+
+				'</div>'+
+				'<div class="lightbox_side">'+
+					'<div class="lightbox_head"><h3></h3><span class="category"></span></div>'+
+					'<div class="lightbox_desc"></div>'+
+					'<div class="lightbox_meta"></div>'+
+				'</div>'+
+			'</div>'+
+		'</div>'
+	);
+
+	var box		 = jQuery('.tokyo_tm_gallery_lightbox');
+	var stageImg = box.find('.lightbox_image');
+	var group	 = [];
+	var index	 = 0;
+
+	function render(){
+		if(!group.length){
+			return;
+		}
+		stageImg.attr('src',group[index]);
+		box.find('.lightbox_counter .current').text(index + 1);
+		box.find('.lightbox_counter .total').text(group.length);
+	}
+
+	function step(dir){
+		if(group.length < 2){
+			return;
+		}
+		index = (index + dir + group.length) % group.length;
+		render();
+	}
+
+	function close(){
+		box.removeClass('opened');
+		jQuery('body').removeClass('modal');
+		stageImg.attr('src','');
+		group = [];
+	}
+
+	wall.find('.gallery_popup').on('click',function(){
+		var element	= jQuery(this);
+		var parent	= element.closest('.gallery_list > li');
+		var details	= parent.find('.gallery_details_wrap');
+		var entry	= parent.find('.entry');
+
+		group = [];
+		details.find('.gallery_group > li').each(function(){
+			group.push(jQuery(this).data('img'));
+		});
+		// no group declared -> the wall image is the only one
+		if(!group.length){
+			group.push(element.find('img').attr('src'));
+		}
+		index = 0;
+
+		box.find('.lightbox_head h3').text(entry.data('title'));
+		box.find('.lightbox_head .category').text(entry.data('category'));
+		box.find('.lightbox_desc').empty().append(details.find('.gallery_desc').clone());
+		box.find('.lightbox_meta').empty().append(details.find('.gallery_meta').clone());
+		box.toggleClass('single_image',group.length < 2);
+
+		render();
 		jQuery('body').addClass('modal');
-		modalBox.addClass('opened');
-		modalBox.find('.description_wrap').html(details);
-		modalBox.find('.gallery_popup_details').prepend('<div class="gallery_full_image"><img src="'+image+'" alt="'+title+'" /></div>');
-		modalBox.find('.gallery_popup_details .gallery_full_image').after('<div class="portfolio_main_title"><h3>'+title+'</h3><span>'+category+'</span></div>');
+		box.addClass('opened');
 		return false;
+	});
+
+	box.find('.lightbox_nav.prev').on('click',function(){
+		step(-1);
+		return false;
+	});
+	box.find('.lightbox_nav.next').on('click',function(){
+		step(1);
+		return false;
+	});
+	box.find('.lightbox_close a').on('click',function(){
+		close();
+		return false;
+	});
+
+	// clicking the empty space around the image closes the viewer
+	box.find('.lightbox_stage').on('click',function(e){
+		if(jQuery(e.target).closest('.lightbox_image,.lightbox_nav,.lightbox_close').length){
+			return;
+		}
+		close();
+	});
+
+	jQuery(document).on('keydown',function(e){
+		if(!box.hasClass('opened')){
+			return;
+		}
+		if(e.keyCode === 27){close();}
+		if(e.keyCode === 37){step(-1);}
+		if(e.keyCode === 39){step(1);}
+	});
+
+	// swipe on touch devices
+	var touchX = null;
+	box.find('.lightbox_stage').on('touchstart',function(e){
+		touchX = e.originalEvent.changedTouches[0].clientX;
+	}).on('touchend',function(e){
+		if(touchX === null){
+			return;
+		}
+		var diff = e.originalEvent.changedTouches[0].clientX - touchX;
+		if(Math.abs(diff) > 50){
+			step(diff < 0 ? 1 : -1);
+		}
+		touchX = null;
 	});
 }
 

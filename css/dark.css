@@ -180,6 +180,42 @@ body.dark .tokyo_tm_gallery .gallery_filter ul li a.current{
 body.dark .tokyo_tm_gallery .gallery_filter ul li a:hover{
 	color: #fff;
 }
+body.dark .tokyo_tm_gallery_lightbox .lightbox_side{
+	background-color: #34353a;
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_head{
+	border-bottom-color: rgba(255,255,255,.1);
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_head h3{
+	color: #fff;
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_head .category{
+	color: #bbb;
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_desc{
+	color: #bbb;
+}
+body.dark .tokyo_tm_gallery_lightbox .gallery_meta li{
+	color: #bbb;
+}
+body.dark .tokyo_tm_gallery_lightbox .gallery_meta .first{
+	color: #fff;
+}
+body.dark .tokyo_tm_gallery_lightbox .gallery_meta a{
+	color: #bbb;
+}
+body.dark .tokyo_tm_gallery_lightbox .gallery_meta a:hover{
+	color: #fff;
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_side{
+  scrollbar-width: thin;
+  scrollbar-color: #777 #34353a;
+}
+body.dark .tokyo_tm_gallery_lightbox .lightbox_side::-webkit-scrollbar-thumb{
+  background-color: #777;
+  border-radius: 6px;
+  border: 3px solid #34353a;
+}
 body.dark .tokyo_tm_news ul li .details .title a{
 	color: #fff;
 }
