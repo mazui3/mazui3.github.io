@@ -30,7 +30,9 @@
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="个人用笔记,因为太长了所以分成了两份.上一回.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_8.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_4.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_5.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_8.webp">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_3.png">
@@ -39,13 +41,13 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_6.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_7.png">
 <meta property="article:published_time" content="2021-01-31T06:30:10.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:20:13.619Z">
+<meta property="article:modified_time" content="2026-08-29T09:35:13.481Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
 <meta property="article:tag" content="SQL">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_8.png">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2021/01/31/P167/P167_4.png">
 
 <link rel="canonical" href="https://mazui3.github.io/blog/2021/01/31/P167/">
 
@@ -311,7 +313,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-12-20 17:20:13" itemprop="dateModified" datetime="2025-12-20T17:20:13+08:00">2025-12-20</time>
+                <time title="Modified: 2026-08-29 17:35:13" itemprop="dateModified" datetime="2026-08-29T17:35:13+08:00">2026-08-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -396,11 +398,11 @@
 <h3 id="Categories-triangle"><a href="#Categories-triangle" class="headerlink" title="Categories triangle"></a>Categories triangle</h3><p>Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:</p>
 <p>Equilateral: It’s a triangle with  sides of equal length.<br>Isosceles: It’s a triangle with  sides of equal length.<br>Scalene: It’s a triangle with  sides of differing lengths.<br>Not A Triangle: The given values of A, B, and C don’t form a triangle.<br>Input Format</p>
 <p>The TRIANGLES table is described as follows:</p>
-
+<img src="/blog/2021/01/31/P167/P167_4.png" class="">
 
 <p>Each row in the table denotes the lengths of each of a triangle’s three sides.</p>
 <p>Sample Input:</p>
-
+<img src="/blog/2021/01/31/P167/P167_5.png" class="">
 
 <p>Sample Output</p>
 <div class="note ">
@@ -578,7 +580,7 @@
 </tbody></table>
 <p>id is the primary key column for this table.<br>Each row of this table indicates the ID of a department and its name.</p>
 <p>Write an SQL query to find employees who have the highest salary in each of the departments.</p>
-<img src="/blog/2021/01/31/P167/P167_8.png" class="">
+<img src="/blog/2021/01/31/P167/P167_8.webp" class="">
 
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">SELECT</span> D.Name <span class="keyword">as</span> Department, E.Name <span class="keyword">as</span> Employee, E.Salary</span><br><span class="line"><span class="keyword">FROM</span> Department D, Employee E, Employee E2  </span><br><span class="line"><span class="keyword">WHERE</span> D.ID <span class="operator">=</span> E.DepartmentId <span class="keyword">and</span> E.DepartmentId <span class="operator">=</span> E2.DepartmentId <span class="keyword">and</span></span><br><span class="line">E.Salary <span class="operator">&lt;=</span> E2.Salary</span><br><span class="line"><span class="keyword">group</span> <span class="keyword">by</span> D.ID,E.Name <span class="keyword">having</span> <span class="built_in">count</span>(<span class="keyword">distinct</span> E2.Salary) <span class="operator">=</span> <span class="number">1</span></span><br><span class="line"><span class="keyword">order</span> <span class="keyword">by</span> D.Name <span class="keyword">desc</span></span><br></pre></td></tr></table></figure>
 

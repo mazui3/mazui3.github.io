@@ -33,14 +33,14 @@
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_1.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_2.png">
 <meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_3.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_6.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_7.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_9.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_11.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_12.png">
-<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_10.png">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_6.webp">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_7.webp">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_9.webp">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_11.webp">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_12.webp">
+<meta property="og:image" content="https://mazui3.github.io/blog/2020/11/24/P134/P134_10.webp">
 <meta property="article:published_time" content="2020-11-24T07:07:13.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:20:12.364Z">
+<meta property="article:modified_time" content="2026-08-29T09:35:13.464Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="以头抢地(诚)">
 <meta property="article:tag" content="data">
@@ -312,7 +312,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-12-20 17:20:12" itemprop="dateModified" datetime="2025-12-20T17:20:12+08:00">2025-12-20</time>
+                <time title="Modified: 2026-08-29 17:35:13" itemprop="dateModified" datetime="2026-08-29T17:35:13+08:00">2026-08-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -1149,7 +1149,7 @@ You may need to scan more than one row in a table to arrive at an answer.
 <br>
 <br>
 
-<h2 id="Nested-and-Repeated-Data"><a href="#Nested-and-Repeated-Data" class="headerlink" title="Nested and Repeated Data"></a><a target="_blank" rel="noopener" href="https://www.kaggle.com/code/alexisbcook/nested-and-repeated-data/tutorial">Nested and Repeated Data</a></h2><img src="/blog/2020/11/24/P134/P134_6.png" class="" title="nested data">
+<h2 id="Nested-and-Repeated-Data"><a href="#Nested-and-Repeated-Data" class="headerlink" title="Nested and Repeated Data"></a><a target="_blank" rel="noopener" href="https://www.kaggle.com/code/alexisbcook/nested-and-repeated-data/tutorial">Nested and Repeated Data</a></h2><img src="/blog/2020/11/24/P134/P134_6.webp" class="" title="nested data">
 <p>自带class的感觉.</p>
 <p>Nested columns have type STRUCT (or type RECORD). This is reflected in the table schema below.</p>
 <p>Recall that we refer to the structure of a table as its schema. If you need to review how to interpret table schema, feel free to check out <a target="_blank" rel="noopener" href="https://www.kaggle.com/code/dansbecker/getting-started-with-sql-and-bigquery/tutorial">this lesson</a> from the Intro to SQL micro-course.</p>
@@ -1158,10 +1158,10 @@ You may need to scan more than one row in a table to arrive at an answer.
 <p>SchemaField(‘author’, ‘RECORD’, ‘NULLABLE’, None, (SchemaField(‘name’, ‘STRING’, ‘NULLABLE’, None, (), None), SchemaField(‘email’, ‘STRING’, ‘NULLABLE’, None, (), None), SchemaField(‘time_sec’, ‘INTEGER’, ‘NULLABLE’, None, (), None), SchemaField(‘tz_offset’, ‘INTEGER’, ‘NULLABLE’, None, (), None), SchemaField(‘date’, ‘TIMESTAMP’, ‘NULLABLE’, None, (), None)), None),</p>
 </blockquote>
 <p>比如说在这个名为committer的column里面,有很多种项目.<br>如果要access name这一栏,用committer.name.</p>
-<img src="/blog/2020/11/24/P134/P134_7.png" class="" title="repeated data">
+<img src="/blog/2020/11/24/P134/P134_7.webp" class="" title="repeated data">
 <p>自带array的感觉.</p>
 <p>When querying repeated data, we need to put the name of the column containing the repeated data inside an UNNEST() function.</p>
-<img src="/blog/2020/11/24/P134/P134_9.png" class="" title="repeated data">
+<img src="/blog/2020/11/24/P134/P134_9.webp" class="" title="repeated data">
 
 <p>要选择repeated data的时候:</p>
 <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">FROM</span> `bigquery<span class="operator">-</span>public<span class="operator">-</span>data.github_repos.languages`,</span><br><span class="line">                     <span class="built_in">UNNEST</span>(<span class="keyword">language</span>) <span class="keyword">AS</span> l</span><br></pre></td></tr></table></figure>
@@ -1430,8 +1430,8 @@ You may need to scan more than one row in a table to arrive at an answer.
 
 <h2 id="WITH-AS"><a href="#WITH-AS" class="headerlink" title="WITH AS"></a><a target="_blank" rel="noopener" href="https://www.kaggle.com/code/dansbecker/as-with">WITH AS</a></h2><p>On its own, AS is a convenient way to clean up the data returned by your query. It’s even more powerful when combined with WITH in what’s called a “common table expression”.</p>
 <p>A common table expression (or CTE) is a temporary table that you return within your query. CTEs are helpful for splitting your queries into readable chunks, and you can write queries against them.</p>
-<img src="/blog/2020/11/24/P134/P134_11.png" class="">
-<img src="/blog/2020/11/24/P134/P134_12.png" class="">
+<img src="/blog/2020/11/24/P134/P134_11.webp" class="">
+<img src="/blog/2020/11/24/P134/P134_12.webp" class="">
 
 <br>
 <br>
@@ -1756,7 +1756,7 @@ You may need to scan more than one row in a table to arrive at an answer.
 <br>
 
 <p>关于bigQuery这个web service.</p>
-<img src="/blog/2020/11/24/P134/P134_10.png" class="">
+<img src="/blog/2020/11/24/P134/P134_10.webp" class="">
 
 <p>BigQuery里的数据结构.</p>
 <p>在bigQuery里可以create a <a target="_blank" rel="noopener" href="https://www.kaggle.com/code/dansbecker/select-from-where">QueryJobConfig object</a> and set the dry_run parameter to True to see how much data a query will scan.</p>

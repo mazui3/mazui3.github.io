@@ -30,14 +30,14 @@
 <meta property="og:site_name" content="Underlake Reading Room">
 <meta property="og:description" content="在VBA里写过了次爬虫,在其他语言里大概爬虫都很成熟了,姑且记一下.">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://mazui3.github.io/blog/2023/04/17/P290/P290_1.jpg">
+<meta property="og:image" content="https://mazui3.github.io/blog/2023/04/17/P290/P290_1.webp">
 <meta property="article:published_time" content="2023-04-16T17:06:07.000Z">
-<meta property="article:modified_time" content="2025-12-20T09:20:56.218Z">
+<meta property="article:modified_time" content="2026-08-29T09:35:13.666Z">
 <meta property="article:author" content="Mazui">
 <meta property="article:tag" content="VBA">
 <meta property="article:tag" content="Access">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/04/17/P290/P290_1.jpg">
+<meta name="twitter:image" content="https://mazui3.github.io/blog/2023/04/17/P290/P290_1.webp">
 
 <link rel="canonical" href="https://mazui3.github.io/blog/2023/04/17/P290/">
 
@@ -303,7 +303,7 @@
                   <i class="far fa-calendar-check"></i>
                 </span>
                 <span class="post-meta-item-text">Edited on</span>
-                <time title="Modified: 2025-12-20 17:20:56" itemprop="dateModified" datetime="2025-12-20T17:20:56+08:00">2025-12-20</time>
+                <time title="Modified: 2026-08-29 17:35:13" itemprop="dateModified" datetime="2026-08-29T17:35:13+08:00">2026-08-29</time>
               </span>
             <span class="post-meta-item">
               <span class="post-meta-item-icon">
@@ -371,7 +371,7 @@
 <figure class="highlight vbscript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">Public</span> <span class="keyword">Sub</span> WaitForPageReady(<span class="keyword">ByRef</span> aWebObj As Object, <span class="keyword">ByVal</span> aWebStr As String, Optional <span class="keyword">ByVal</span> aTimeOut As Long = <span class="number">10</span>)</span><br><span class="line">  <span class="keyword">Dim</span> vFrame As HTMLDocument</span><br><span class="line">  <span class="keyword">Dim</span> vElement As Object</span><br><span class="line">  <span class="keyword">Dim</span> vBuffer As Variant</span><br><span class="line">  <span class="keyword">Dim</span> vTimeLimit As Date</span><br><span class="line">  vTimeLimit = <span class="built_in">DateAdd</span>(<span class="string">&quot;s&quot;</span>, aTimeOut, VBA.Now)</span><br><span class="line"></span><br><span class="line">  <span class="keyword">On</span> <span class="keyword">Error</span> <span class="keyword">Resume</span> <span class="keyword">Next</span></span><br><span class="line"></span><br><span class="line">  <span class="keyword">Select</span> <span class="keyword">Case</span> aWebStr</span><br><span class="line">  <span class="keyword">Case</span> <span class="string">&quot;Page1&quot;</span> <span class="comment">&#x27; depends on different kind of page, the &quot;last load object&quot; is different</span></span><br><span class="line">    <span class="keyword">Do</span> <span class="keyword">While</span> vBuffer &lt;&gt; <span class="string">&quot;theTarget&quot;</span></span><br><span class="line">      <span class="keyword">Set</span> vFrame = aWeb.Object.Document</span><br><span class="line">      <span class="keyword">Set</span> vElement = vFrame.Document.GetElementsByClassName(<span class="string">&quot;some class name here&quot;</span>)</span><br><span class="line">      vBuffer = vElement.innerText <span class="comment">&#x27; get the compare string</span></span><br><span class="line">      <span class="keyword">If</span> <span class="built_in">DateDiff</span>(<span class="string">&quot;s&quot;</span>, vTimeLimit, VBA.Now) &gt; <span class="number">0</span> <span class="keyword">Then</span></span><br><span class="line">          Err.Raise <span class="comment">&#x27; Add Err message here</span></span><br><span class="line">        <span class="keyword">End</span> <span class="keyword">If</span></span><br><span class="line">        DoEvents</span><br><span class="line">      <span class="keyword">Loop</span></span><br><span class="line">  <span class="keyword">End</span> <span class="keyword">Select</span></span><br><span class="line"></span><br><span class="line">EXIT_CleanUp:</span><br><span class="line">  <span class="keyword">On</span> <span class="keyword">Error</span> <span class="keyword">GoTo</span> <span class="number">0</span></span><br><span class="line">  Err.Clear</span><br><span class="line">  <span class="keyword">Exit</span> <span class="keyword">Sub</span></span><br><span class="line">ERR_CleanUp:</span><br><span class="line">  <span class="keyword">On</span> <span class="keyword">Error</span> <span class="keyword">GoTo</span> <span class="number">0</span></span><br><span class="line">  Err.Raise <span class="comment">&#x27; Add Err message here</span></span><br><span class="line">ERR_Handler:</span><br><span class="line">  <span class="comment">&#x27; Store Err message</span></span><br><span class="line">  <span class="keyword">Resume</span> ERR_CleanUp:</span><br><span class="line"><span class="keyword">End</span> <span class="keyword">Sub</span></span><br></pre></td></tr></table></figure>
 
 <p>在pass这两个function后就可以开始scripting网页上的内容了.<br>注意,在access 网页object的时候,除了class name,还有frame的区别.<br>需要在“可以读取的frame”内,access 相应的object,不然读不到.<br>辨别方式:在inspect,select element in the page to inspect看看是否有不同的frame.</p>
-<img src="/blog/2023/04/17/P290/P290_1.jpg" class="">
+<img src="/blog/2023/04/17/P290/P290_1.webp" class="">
 
 <p>在这里查看属于哪一个frame.</p>
 <p>注意vFrame.Document.GetElementsByClassName -&gt; 根据不同需求,可以用getElementById等其他function.<br>Mentor的代码是自己搓了个类似WaitForBrowserReady的Function.<br>如果一定时间内getElement function没有get到target的内容,也time out 给error然后退出.</p>
