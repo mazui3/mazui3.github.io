@@ -1,12 +1,9 @@
 # mazui3.github.io
 
-No I did not code it, I used hexo for the blog part.
+I did not code it; I used Hexo for the blog part.
+Additional formatting by Gemini with the prompt: 2000s website style.
 
-Html template for the index page.
+HTML template for the index page.
 (https://themeforest.net/item/tokyo-personal-portfolio-template/31647361)
 
-email: mazui.and.rio@gmail.com
-
-## note
-
-1. Tho 000.png for project is not used but it is necessary for overwrite the format.
+Email: mazui.and.rio@gmail.com
