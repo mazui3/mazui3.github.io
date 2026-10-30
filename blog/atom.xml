@@ -10,7 +10,7 @@
   <rights>All rights reserved 2026, Mazui</rights>
   <subtitle>这里是图书馆外的阅览室🌟</subtitle>
   <title>Underlake Reading Room</title>
-  <updated>2026-10-29T12:09:47.443Z</updated>
+  <updated>2026-10-30T09:59:59.340Z</updated>
   <entry>
     <author>
       <name>Mazui</name>
@@ -23,7 +23,7 @@
       <![CDATA[<p>顺手把纸团和身份证一起当作了乐色扔掉.<br>约师傅在大白天的淮海中路上猛猛掏垃圾桶.</p>]]>
     </summary>
     <title>文娱是什么</title>
-    <updated>2026-10-29T12:09:47.443Z</updated>
+    <updated>2026-10-30T09:59:59.340Z</updated>
   </entry>
   <entry>
     <author>
@@ -209,21 +209,6 @@
       <name>Mazui</name>
     </author>
     <category term="写码笔记" scheme="https://mazui3.github.io/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
-    <category term="C#" scheme="https://mazui3.github.io/blog/tags/C/"/>
-    <id>https://mazui3.github.io/blog/2025/02/25/P339/</id>
-    <link href="https://mazui3.github.io/blog/2025/02/25/P339/"/>
-    <published>2025-02-24T19:08:08.000Z</published>
-    <summary>
-      <![CDATA[<p>这份笔记……在我全部整理完想快速发布的时候,编辑器崩坏,记录全丢惹(atom你真的不行了).<br>……不准备再记一遍惹反正看过有点印象在脑子里也足够.<br>只剩下一点碎片的截图和没搞懂的概念重新看一遍.</p>]]>
-    </summary>
-    <title>关于C#的笔记</title>
-    <updated>2026-08-29T09:35:13.777Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Mazui</name>
-    </author>
-    <category term="写码笔记" scheme="https://mazui3.github.io/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
     <category term="Unity" scheme="https://mazui3.github.io/blog/tags/Unity/"/>
     <category term="C#" scheme="https://mazui3.github.io/blog/tags/C/"/>
     <id>https://mazui3.github.io/blog/2025/02/25/P336/</id>
@@ -234,6 +219,21 @@
     </summary>
     <title>Unity错题本</title>
     <updated>2026-08-29T09:35:13.770Z</updated>
+  </entry>
+  <entry>
+    <author>
+      <name>Mazui</name>
+    </author>
+    <category term="写码笔记" scheme="https://mazui3.github.io/blog/categories/%E5%86%99%E7%A0%81%E7%AC%94%E8%AE%B0/"/>
+    <category term="C#" scheme="https://mazui3.github.io/blog/tags/C/"/>
+    <id>https://mazui3.github.io/blog/2025/02/25/P339/</id>
+    <link href="https://mazui3.github.io/blog/2025/02/25/P339/"/>
+    <published>2025-02-24T19:08:08.000Z</published>
+    <summary>
+      <![CDATA[<p>这份笔记……在我全部整理完想快速发布的时候,编辑器崩坏,记录全丢惹(atom你真的不行了).<br>……不准备再记一遍惹反正看过有点印象在脑子里也足够.<br>只剩下一点碎片的截图和没搞懂的概念重新看一遍.</p>]]>
+    </summary>
+    <title>关于C#的笔记</title>
+    <updated>2026-08-29T09:35:13.777Z</updated>
   </entry>
   <entry>
     <author>
