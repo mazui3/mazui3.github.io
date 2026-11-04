@@ -10,7 +10,22 @@
   <rights>All rights reserved 2026, Mazui</rights>
   <subtitle>这里是图书馆外的阅览室🌟</subtitle>
   <title>Underlake Reading Room</title>
-  <updated>2026-11-01T04:24:24.760Z</updated>
+  <updated>2026-11-04T00:27:16.664Z</updated>
+  <entry>
+    <author>
+      <name>Mazui</name>
+    </author>
+    <category term="在起跑线平地摔的博弈" scheme="https://mazui3.github.io/blog/tags/%E5%9C%A8%E8%B5%B7%E8%B7%91%E7%BA%BF%E5%B9%B3%E5%9C%B0%E6%91%94%E7%9A%84%E5%8D%9A%E5%BC%88/"/>
+    <category term="图书馆的大厅流淌着爵士乐" scheme="https://mazui3.github.io/blog/tags/%E5%9B%BE%E4%B9%A6%E9%A6%86%E7%9A%84%E5%A4%A7%E5%8E%85%E6%B5%81%E6%B7%8C%E7%9D%80%E7%88%B5%E5%A3%AB%E4%B9%90/"/>
+    <id>https://mazui3.github.io/blog/2026/11/04/P359/</id>
+    <link href="https://mazui3.github.io/blog/2026/11/04/P359/"/>
+    <published>2026-11-04T00:21:00.000Z</published>
+    <summary>
+      <![CDATA[<p>记录一下喜欢的播客节目.</p>]]>
+    </summary>
+    <title>简中播客 - 小宇宙使用三周年</title>
+    <updated>2026-11-04T00:27:16.664Z</updated>
+  </entry>
   <entry>
     <author>
       <name>Mazui</name>
@@ -293,19 +308,5 @@
     <summary>今年过的真他妈有点幽默.年总结因为会聊起他人的故事甚至还得设置密码.</summary>
     <title>2024的年终总结</title>
     <updated>2026-08-29T09:35:13.807Z</updated>
-  </entry>
-  <entry>
-    <author>
-      <name>Mazui</name>
-    </author>
-    <category term="日记" scheme="https://mazui3.github.io/blog/categories/%E6%97%A5%E8%AE%B0/"/>
-    <id>https://mazui3.github.io/blog/2024/10/07/P343/</id>
-    <link href="https://mazui3.github.io/blog/2024/10/07/P343/"/>
-    <published>2024-10-07T04:04:57.000Z</published>
-    <summary>
-      <![CDATA[<img src="/blog/2024/10/07/P343/P343_2.webp" class="">]]>
-    </summary>
-    <title>Hello sir, I am a first aider, may I help you?</title>
-    <updated>2026-08-29T09:35:13.802Z</updated>
   </entry>
 </feed>
